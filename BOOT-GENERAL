@@ -7,7 +7,7 @@
 # and interaction which has to be respected
 # between each of them and their JACK server.
 # jpctrl, a Python library for Jack Process Control,
-# handles this, and thus this file is a Python
+# handles this, and thus this file is a Python3
 # script.
 #
 # This file is the scene of very active development right now.
