@@ -29,11 +29,10 @@ jack_control start
 /usr/bin/jackd -nSOFT2 -ddummy -r48000 -p128 > jackd-SOFT2.log &
 /usr/bin/jackd -nSOFT3 -ddummy -r48000 -p128 > jackd-SOFT3.log &
 
-# Can be useful to start JACK setup and patchage GUIs in place of this
-# block of comments.
+# Can be useful to start JACK setup and connection GUIs in place of this
+# block of comments during development.
 #
-# Not using qjackctl anymore, it is out of date
-# and not fully compatible with current JACK setup.
+# Not using qjackctl anymore, it can cause problems with what we are doing here.
 #
 # 'cadence' works well for hard JACK setup, and 'catia' for connections.
 #
