@@ -15,7 +15,7 @@
 # https://lsn.ponderworthy.com/doku.php/concurrent_patch_management
 ####################################################################
 
-#!/usr/bin/env python
+#!/usr/bin/python3
 
 import sys
 import os
