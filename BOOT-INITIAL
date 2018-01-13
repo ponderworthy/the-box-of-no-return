@@ -1,3 +1,12 @@
+#######################################
+# BOOT-INITIAL
+#
+# This runs first at BNR startup.
+# It does everything that is simplest
+# if done in bash rather than needing
+# careful process control.
+########################################
+
 #!/bin/bash
 
 echo "Reset JACK log..." > /home/jeb/BOOT-INITIAL.log
