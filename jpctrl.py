@@ -12,7 +12,8 @@
 import subprocess
 import psutil
 import shlex
-import jack  # This is JACK-Client, installed as python-jack-client for python3
+import jack     # This is JACK-Client, installed as python-jack-client for python3
+                # see https://pypi.python.org/pypi/JACK-Client/
 import time
 import os
 
