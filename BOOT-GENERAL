@@ -10,9 +10,10 @@
 # handles this, and thus this file is a Python
 # script.
 #
-# This file is the scene of strong development
-# right now.  A 2015 working version, in Python 2, is visible here:
+# This file is the scene of very active development right now.
+# A 2015 working version, in Python 2, is visible here:
 # https://lsn.ponderworthy.com/doku.php/concurrent_patch_management
+####################################################################
 
 #!/usr/bin/env python
 
