@@ -43,7 +43,7 @@ def beep(freq, length):
 
 
 # Set up jpctrl's JACK client if not already done so.
-# Return 1 on fail, 0 on succss
+# Return 1 on fail, 0 on success
 def setup_jack_client(context_string):
 
     global jack_client
@@ -57,6 +57,7 @@ def setup_jack_client(context_string):
     # Connect to JACK if possible.
     try:
         jack_client = jack.Client('jpctrl_client')
+        jack_client.activate()
     except:
         print(context_string + ' could not connect to JACK server.')
         print('Aborting.')
