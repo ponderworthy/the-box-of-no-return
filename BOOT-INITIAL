@@ -1,0 +1,51 @@
+#!/bin/bash
+
+echo "Reset JACK log..." > /home/jeb/BOOT-INITIAL.log
+
+rm /home/jeb/.log/jack/jackdbus.log
+touch /home/jeb/.log/jack/jackdbus.log
+
+# Reset any saved JACK configuration info
+rm -f ~/.jackdrc 
+rm -f ~/.config/jack/conf.xml 
+rm -f ~/.config/rncbc.org/QjackCtl.conf
+
+# Configure and start JACK hard server
+echo "Configure and start JACK hard server ..." >> /home/jeb/BOOT-INITIAL.log
+jack_control ds alsa
+jack_control dps device hw:DAC,0
+jack_control dps rate 48000
+jack_control dps period 128
+jack_control dps nperiods 3
+jack_control dps midi-driver none
+jack_control eps realtime True
+jack_control eps realtime-priority 90
+jack_control eps clock-source 1
+jack_control eps sync false
+jack_control start
+
+# Configure and start JACK soft servers
+/usr/bin/jackd -nSOFT1 -ddummy -r48000 -p128 > jackd-SOFT1.log &
+/usr/bin/jackd -nSOFT2 -ddummy -r48000 -p128 > jackd-SOFT2.log &
+/usr/bin/jackd -nSOFT3 -ddummy -r48000 -p128 > jackd-SOFT3.log &
+
+# Can be useful to start JACK setup and patchage GUIs in place of this
+# block of comments.
+#
+# Not using qjackctl anymore, it is out of date
+# and not fully compatible with current JACK setup.
+#
+# 'cadence' works well for hard JACK setup, and 'catia' for connections.
+#
+# 'patchage' may be helpful for soft server connections, to help keep visible
+# the distinction between hard and soft.  It is unclear whether you will 
+# ever need a GUI configurator for soft servers.
+
+if [ $1 ]; then
+	echo Exiting BOOT-INITIAL due to command-line parameter.
+	exit
+fi
+
+echo "Starting BOOT-GENERAL..." >> /home/jeb/BOOT-INITIAL.log
+# Start BOOT-GENERAL
+/home/jeb/BOOT-GENERAL >> /home/jeb/BOOT-GENERAL.log
