@@ -39,9 +39,10 @@ def beep(freq, length):
     try:
         os.system('sudo beep ' + '-f ' + freq + '-l ' + length)
     except:
-        return 1
-    return 0
+        return False
+    return True
 
+##############################################################################
 # Try once to set up new jpctrl JACK client in the optionally named server
 # and return the JACK client's object, or None if fails
 def setup_jack_client(context_string, jack_client_name='jpctrl_client', jack_server_name='default'):
@@ -62,6 +63,7 @@ def setup_jack_client(context_string, jack_client_name='jpctrl_client', jack_ser
 
     return jack_client
   
+###################################################################################  
 # For 20 seconds, try to set up new jpctrl JACK client, trying once per second.
 # Return JACK client object on success, None on failure.
 def wait_for_jack(jack_client_name='jpctrl_client', jack_server_name='default'):
@@ -80,22 +82,22 @@ def wait_for_jack(jack_client_name='jpctrl_client', jack_server_name='default'):
             print('JACK server discovered, verified, and client created!')
             return jack_client
 
-
+#######################################################################
 # Wait for a particular port to become present in the JACK server.
-# Returns 1 on error or 6-second timeout, 0 on success.
-def wait_for_jackport(name2chk,jack_server_name):
+# Returns true on success, false on 6-second timeout and/or failure.
+def wait_for_jackport(name2chk, jack_client_name='jpctrl_client', jack_server_name='default'):
 
-    if setup_jack_client('wait_for_jackport',jack_server_name):
+    if setup_jack_client('wait_for_jackport', jack_client_name, jack_server_name):
         print('wait_for_jackport() could not connect to JACK server.')
         print('Aborting.')
-        return 1
+        return False
 
     timecount = 0
     while True:
         if timecount > 5:
             print('wait_for_jackport timed out waiting for port: ', name2chk)
             print('Aborting.')
-            return 1
+            return False
         print('wait_for_jackport: get_port_by_name attempt ',
               timecount, ' for ', name2chk)
         try:
@@ -103,18 +105,18 @@ def wait_for_jackport(name2chk,jack_server_name):
                 sleep(1)
                 timecount += 1
             else:
-                return 0
+                return True
         except:
             sleep(1)
             timecount += 1
 
 # Find JACK port by substring in the name.
-# Return 1 on fail, 0 on success
+# Return True on success, False on failure
 def find_jackport_by_substring(jack_client, str2find):
 
     if jack_client is None:
         print('find_jackport_by_substring() failed: JACK client is invalid/None.')
-        return 1
+        return False
 
     try:
         jack_client.get_ports('*' + str2find + '*')
@@ -122,9 +124,9 @@ def find_jackport_by_substring(jack_client, str2find):
         print(
             'find_jackport_by_substring() connected to JACK, but found no matching ports.')
         print('Aborting.')
-        return 1
+        return False
 
-    return 0
+    return True
 
 
 # A jpctrl-standardized sleep method.
@@ -134,12 +136,12 @@ def sleep(time_in_secs):
 
 
 # Starts a process in the background.
-# Return 0 if successful, 1 if fails.
+# Return True if successful, False if fails.
 def spawn_background(cmd_and_args):
     if try_popen(cmd_and_args) != None:
-        return 0
+        return True
     else:
-        return 1
+        return False
 
 
 # Start a process in the background, wait until its I/O
@@ -149,24 +151,23 @@ def spawn_and_settle(cmdstr):
     if p_popen == None:
         print('spawn_and_settle failed for: ', cmdstr)
         print('Could not start process.')
-        return 1
+        return False
     p_psutil = psutil.Process(p_popen.pid)
     p_io = try_pio(p_psutil)
     if p_io == None:
         print('spawn_and_settle failed for: ', cmdstr)
         print('Could not get pio data.')
-        return 1
+        return False
     else:
         print('spawn_and_settle: process appears ready:', cmdstr)
         sleep(1)
-        return 0
+        return True
 
 # Tries to get the p_io data used in spawn_and_settle.
 # Waits 15 seconds maximum.  This turns out to be valuable
 # towards stability, because as load on the system increases,
 # processes take longer at startup to become ready
 # to give p_io stats.
-
 
 def try_pio(p_psutil):
     timecount = 0
@@ -186,8 +187,6 @@ def try_pio(p_psutil):
             return p_io
 
 # Tries to start a background process.
-
-
 def try_popen(cmdstr):
     timecount = 0
     p_popen = subprocess.Popen(shlex.split(cmdstr), -1)
@@ -206,10 +205,7 @@ def try_popen(cmdstr):
             return p_popen
 
 
-
-
 marker = 1
-
 
 def marker():
     print('Marker: ' + marker)
