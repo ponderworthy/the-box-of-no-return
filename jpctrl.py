@@ -1,13 +1,17 @@
-#################################
+############################################
 # JACK Process Control module
 #
 # by Jonathan E. Brickman
 #
 # version 0.71, 2017-01-13, Python 3
-# (c) 2016 Jonathan E. Brickman
+# (c) 2017 Jonathan E. Brickman
 # released under the LGPL:
 # https://www.gnu.org/copyleft/lesser.html
-#################################
+#
+# This file is the scene of very active development right now.
+# A 2015 working version, in Python 2, is visible here:
+# https://lsn.ponderworthy.com/doku.php/concurrent_patch_management
+#############################################
 
 import subprocess
 import psutil
