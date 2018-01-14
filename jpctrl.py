@@ -42,25 +42,70 @@ def beep(freq, length):
         return 1
     return 0
 
-
-# Set up new jpctrl JACK client in the optionally named server
+# Try once to set up new jpctrl JACK client in the optionally named server
 # and return the JACK client's object, or None if fails
-def setup_jack_client(context_string, jack_server_name='default'):
+def setup_jack_client(context_string, jack_client_name='jpctrl_client', jack_server_name='default'):
 
     # Connect to JACK if possible.
     try:
-        jack_client = jack.Client('jpctrl_client', false, false, jack_server_name)
+        jack_client = jack.Client(jack_client_name, false, false, jack_server_name)
         jack_client.activate()
     except:
         print(context_string + ' could not connect to JACK server.')
         print('Aborting.')
+        jack_client = None
         return None
 
     return jack_client
+  
+# For 20 seconds, try to set up new jpctrl JACK client, trying once per second.
+# Return JACK client object on success, None on failure.
+def wait_for_jack(jack_client_name='jpctrl_client', jack_server_name='default'):
+
+    timecount = 0
+    while True:
+        jack_client = setup_jack_client('wait_for_jack', jack_client_name, jack_server_name)
+        if jack_client is None:
+            timecount += 1
+            if timecount > 20:
+                print('JACK server error.  Aborting.')
+                return None
+            else:
+                sleep(1)
+        else:
+            print('JACK server discovered, verified, and client created!')
+            return jack_client
+
+
+# Wait for a particular port to become present in the JACK server.
+# Returns 1 on error or 6-second timeout, 0 on success.
+def wait_for_jackport(name2chk,jack_server_name):
+
+    if setup_jack_client('wait_for_jackport',jack_server_name):
+        print('wait_for_jackport() could not connect to JACK server.')
+        print('Aborting.')
+        return 1
+
+    timecount = 0
+    while True:
+        if timecount > 5:
+            print('wait_for_jackport timed out waiting for port: ', name2chk)
+            print('Aborting.')
+            return 1
+        print('wait_for_jackport: get_port_by_name attempt ',
+              timecount, ' for ', name2chk)
+        try:
+            if jack_client.get_port_by_name(name2chk) is None:
+                sleep(1)
+                timecount += 1
+            else:
+                return 0
+        except:
+            sleep(1)
+            timecount += 1
 
 # Find JACK port by substring in the name.
 # Return 1 on fail, 0 on success
-
 def find_jackport_by_substring(jack_client, str2find):
 
     if jack_client is None:
@@ -156,52 +201,7 @@ def try_popen(cmdstr):
         else:
             return p_popen
 
-# Waits 20 seconds maximum for the JACK server to become available and
-# apparently usable.
 
-
-def wait_for_jack(jack_server_name='default'):
-
-    timecount = 0
-    while True:
-        if setup_jack_client('wait_for_jack',jack_server_name):  # Returns 1 on failure
-            timecount += 1
-            if timecount > 20:
-                print('JACK server error.  Aborting.')
-                return 1
-            else:
-                sleep(1)
-        else:
-            print('JACK server discovered, verified, and client created!')
-            return 0
-
-
-# Wait for a particular port to become present in the JACK server.
-# Returns 1 on error or 6-second timeout, 0 on success.
-def wait_for_jackport(name2chk,jack_server_name):
-
-    if setup_jack_client('wait_for_jackport',jack_server_name):
-        print('wait_for_jackport() could not connect to JACK server.')
-        print('Aborting.')
-        return 1
-
-    timecount = 0
-    while True:
-        if timecount > 5:
-            print('wait_for_jackport timed out waiting for port: ', name2chk)
-            print('Aborting.')
-            return 1
-        print('wait_for_jackport: get_port_by_name attempt ',
-              timecount, ' for ', name2chk)
-        try:
-            if jack_client.get_port_by_name(name2chk) is None:
-                sleep(1)
-                timecount += 1
-            else:
-                return 0
-        except:
-            sleep(1)
-            timecount += 1
 
 
 marker = 1
