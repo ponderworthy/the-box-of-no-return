@@ -1,5 +1,5 @@
 #################################################
-# BOOT-GENERAL
+# BOOT-HARD
 #
 # This is called by BOOT-INITIAL.
 # JACK clients cannot be simply started
