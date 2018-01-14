@@ -49,11 +49,9 @@ def setup_jack_client(context_string, jack_client_name='jpctrl_client', jack_ser
     # Connect to JACK if possible.
     try:
         jack_client = jack.Client(jack_client_name, false, false, jack_server_name)
-        jack_client.activate()
     except:
         print(context_string + ' could not connect to JACK server.')
         print('Aborting.')
-        jack_client = None
         return None
 
     return jack_client
