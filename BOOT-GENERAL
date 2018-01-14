@@ -1,7 +1,11 @@
 #################################################
 # BOOT-HARD
 #
-# This is called by BOOT-INITIAL.
+# This is called by BOOT-INITIAL.  It starts
+# the JACK client processes associated with the
+# hard server (see https://github.com/jebofponderworthy/MultiJACK).
+# It calls BOOT-SOFT1.
+#
 # JACK clients cannot be simply started
 # all at once, there is relationship
 # and interaction which has to be respected
