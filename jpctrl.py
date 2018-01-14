@@ -16,10 +16,10 @@
 import subprocess
 import psutil
 import shlex
-import jack     # This is JACK-Client, installed as python-jack-client for python3
-                # see https://pypi.python.org/pypi/JACK-Client/
 import time
 import os
+import jack     # This is JACK-Client, installed as python-jack-client for python3
+                # see https://pypi.python.org/pypi/JACK-Client/
 
 # This and the next depend on a Linux command by the name of "beep",
 # In some distros it requires "sudo" to run for permissions.
@@ -160,13 +160,11 @@ def try_popen(cmdstr):
 # apparently usable.
 
 
-def wait_for_jack():
-
-    global jack_client
+def wait_for_jack(jack_server_name='default'):
 
     timecount = 0
     while True:
-        if setup_jack_client('wait_for_jack'):  # Returns 1 on failure
+        if setup_jack_client('wait_for_jack',jack_server_name):  # Returns 1 on failure
             timecount += 1
             if timecount > 20:
                 print('JACK server error.  Aborting.')
@@ -180,11 +178,9 @@ def wait_for_jack():
 
 # Wait for a particular port to become present in the JACK server.
 # Returns 1 on error or 6-second timeout, 0 on success.
-def wait_for_jackport(name2chk):
+def wait_for_jackport(name2chk,jack_server_name):
 
-    global jack_client
-
-    if setup_jack_client('wait_for_jackport'):
+    if setup_jack_client('wait_for_jackport',jack_server_name):
         print('wait_for_jackport() could not connect to JACK server.')
         print('Aborting.')
         return 1
