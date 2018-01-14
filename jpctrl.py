@@ -3,7 +3,7 @@
 #
 # by Jonathan E. Brickman
 #
-# version 0.71, 2017-01-13, Python 3
+# version 0.8, 2017-01-14, Python 3
 # (c) 2017 Jonathan E. Brickman
 # released under the LGPL:
 # https://www.gnu.org/copyleft/lesser.html
