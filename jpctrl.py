@@ -53,9 +53,11 @@ def setup_jack_client(context_string, jack_client_name='jpctrl_client', jack_ser
     except:
         print(context_string + ' JACK client setup failed.')
         print('Aborting.')
+        jack_client = None
         return None
       
-    if jack_client.status.failure:
+    if jack_client.status.failure or jack_client.status.server_error or jack_client.status.client_zombie:
+        jack_client = None
         return None
 
     return jack_client
