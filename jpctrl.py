@@ -1,4 +1,4 @@
-############################################
+#########################################################################
 # JACK Process Control module
 #
 # by Jonathan E. Brickman
@@ -11,7 +11,7 @@
 # This file is the scene of very active development right now.
 # A 2015 working version, in Python 2, is visible here:
 # https://lsn.ponderworthy.com/doku.php/concurrent_patch_management
-#############################################
+###########################################################################
 
 import subprocess
 import psutil
@@ -21,12 +21,9 @@ import jack     # This is JACK-Client, installed as python-jack-client for pytho
 import time
 import os
 
-jack_client = None
-
 # This and the next depend on a Linux command by the name of "beep",
 # In some distros it requires "sudo" to run for permissions.
 # Great info here: https://wiki.archlinux.org/index.php/Beep
-
 
 def exit_with_beep():
     for count in range(5):
@@ -46,39 +43,28 @@ def beep(freq, length):
     return 0
 
 
-# Set up jpctrl's JACK client if not already done so.
-# Return 1 on fail, 0 on success
-def setup_jack_client(context_string):
-
-    global jack_client
-
-    # Set jack_client to None if it got munged somehow
-    try:
-        jack_client
-    except:
-        jack_client = None
+# Set up new jpctrl JACK client in the optionally named server
+# and return the JACK client's object, or None if fails
+def setup_jack_client(context_string, jack_server_name='default'):
 
     # Connect to JACK if possible.
     try:
-        jack_client = jack.Client('jpctrl_client')
+        jack_client = jack.Client('jpctrl_client', false, false, jack_server_name)
         jack_client.activate()
     except:
         print(context_string + ' could not connect to JACK server.')
         print('Aborting.')
-        return 1
+        return None
 
-    return 0
+    return jack_client
 
 # Find JACK port by substring in the name.
 # Return 1 on fail, 0 on success
 
+def find_jackport_by_substring(jack_client, str2find):
 
-def find_jackport_by_substring(str2find):
-
-    global jack_client
-
-    if setup_jack_client('find_jackport_by_substring'):
-        print('find_jackport_by_substring() could not connect to JACK.')
+    if jack_client is None:
+        print('find_jackport_by_substring() failed: JACK client is invalid/None.')
         return 1
 
     try:
