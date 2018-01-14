@@ -71,7 +71,7 @@ def wait_for_jack(jack_client_name='jpctrl_client', jack_server_name='default'):
     timecount = 0
     while True:
         jack_client = setup_jack_client('wait_for_jack', jack_client_name, jack_server_name)
-        if jack_client is None:
+        if jack_client == None:
             timecount += 1
             if timecount > 20:
                 print('JACK server error.  Aborting.')
@@ -101,7 +101,7 @@ def wait_for_jackport(name2chk, jack_client_name='jpctrl_client', jack_server_na
         print('wait_for_jackport: get_port_by_name attempt ',
               timecount, ' for ', name2chk)
         try:
-            if jack_client.get_port_by_name(name2chk) is None:
+            if jack_client.get_port_by_name(name2chk) == None:
                 sleep(1)
                 timecount += 1
             else:
@@ -114,7 +114,7 @@ def wait_for_jackport(name2chk, jack_client_name='jpctrl_client', jack_server_na
 # Return True on success, False on failure
 def find_jackport_by_substring(jack_client, str2find):
 
-    if jack_client is None:
+    if jack_client == None:
         print('find_jackport_by_substring() failed: JACK client is invalid/None.')
         return False
 
