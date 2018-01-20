@@ -1,7 +1,9 @@
 
-The spawn group has to have JACK server name capability
+The spawn code has to have JACK server name capability.
+https://stackoverflow.com/questions/2231227/python-subprocess-popen-with-a-modified-environment
 
-Need to check and revise code for all True/False return values
+Need to check and revise code for all True/False return values.
+Done.
 
 Need to revise jpctrl.py and BOOT-GENERAL.py.  jpctrl.py
 used a single jack_client variable, external, until
