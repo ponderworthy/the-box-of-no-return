@@ -101,59 +101,84 @@ print('-----------------------------------------------------------------')
 
 print('Start Yoshimi SRO 1...')
 if Not jpctrl.spawn_and_settle(
-        'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO1 -j -J -l /home/jeb/YOSHIMI/SROpart1.xmz'):
+        'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO1 -j -J -l /home/jeb/YOSHIMI/SROpart1.xmz',
+        'SOFT1'):
     jpctrl.exit_with_beep()
 
 print('Start Yoshimi SRO 2...')
 if Not jpctrl.spawn_and_settle(
-        'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO2 -j -J -l /home/jeb/YOSHIMI/SROpart2.xmz'):
+        'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO2 -j -J -l /home/jeb/YOSHIMI/SROpart2.xmz',
+        'SOFT1'):
     jpctrl.exit_with_beep()
 
 print('Start Yoshimi SRO 3...')
 if Not jpctrl.spawn_and_settle(
-        'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO3 -j -J -l /home/jeb/YOSHIMI/SROpart3.xmz'):
+        'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO3 -j -J -l /home/jeb/YOSHIMI/SROpart3.xmz',
+        'SOFT1'):
     jpctrl.exit_with_beep()
 
 print('Start CalfSRO...')
 if Not jpctrl.spawn_and_settle(
-        'calfjackhost --client CalfSRO eq12:SRO ! reverb:SRO ! multibandcompressor:SRO'):
+        'calfjackhost --client CalfSRO eq12:SRO ! reverb:SRO ! multibandcompressor:SRO',
+        'SOFT1'):
     jpctrl.exit_with_beep()
 
 jpctrl.sleep(3)
 
 print('-----------------------------------------------------------------')
-print('Start components for patch Strings...')
+print('Start components for patch Strings, on server SOFT2...')
 print('-----------------------------------------------------------------')
 
 print('Start StringsSSO...')
 if Not jpctrl.spawn_and_settle(
-        'calfjackhost --client StringsSSO fluidsynth:StringsSSO'):
+        'calfjackhost --client StringsSSO fluidsynth:StringsSSO',
+        'SOFT2'):
     jpctrl.exit_with_beep()
 
 print('Start StringsBassAdd...')
 if Not jpctrl.spawn_and_settle(
-    'calfjackhost --client StringsBassAdd ' +
-        'fluidsynth:BassoonsSustain fluidsynth:ContrabassoonSolo fluidsynth:GeneralBass'):
+        'calfjackhost --client StringsBassAdd ' +
+        'fluidsynth:BassoonsSustain fluidsynth:ContrabassoonSolo fluidsynth:GeneralBass',
+        'SOFT2'):
     jpctrl.exit_with_beep()
 
 print('Start MaxStringsFilters...')
 if Not jpctrl.spawn_and_settle(
-        'calfjackhost --client MaxStringsFilters eq12:MaxStrings ! reverb:MaxStrings ! multibandcompressor:Strings'):
+        'calfjackhost --client MaxStringsFilters eq12:MaxStrings ! reverb:MaxStrings ! multibandcompressor:Strings',
+        'SOFT2'):
     jpctrl.exit_with_beep()
 
 print('-----------------------------------------------------------------')
-print('Start component for patch FlowBells...')
+print('Start component for patch FlowBells, on server SOFT3...')
 print('-----------------------------------------------------------------')
 
 print('Start Yoshimi for FlowBells...')
 if Not jpctrl.spawn_and_settle(
-        'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshFlowBells -j -J -l /home/jeb/YOSHIMI/FlowBells.xmz'):
+        'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshFlowBells -j -J -l /home/jeb/YOSHIMI/FlowBells.xmz',
+        'SOFT3'):
     jpctrl.exit_with_beep()
 
-print('-----------------------------------------------------------------')
-print('Last big step, create JACK connections using aj-snapshot...')
-print('-----------------------------------------------------------------')
+print('-------------------------------------------------------------------------------')
+print('Last big step, create JACK connections using aj-snapshot, on all servers...')
+print('-------------------------------------------------------------------------------')
 
-if Not jpctrl.spawn_background('aj-snapshot -r /home/jeb/AJBoot.xml'):
+print('aj-snapshot for hard server...')
+if Not jpctrl.spawn_background('aj-snapshot -r /home/jeb/AJhard.xml'):
     jpctrl.exit_with_beep()
 
+print('aj-snapshot for server SOFT1...')
+if Not jpctrl.spawn_background('aj-snapshot -r /home/jeb/AJSOFT1.xml'):
+    jpctrl.exit_with_beep()
+
+print('aj-snapshot for server SOFT2...')
+if Not jpctrl.spawn_background('aj-snapshot -r /home/jeb/AJSOFT2.xml'):
+    jpctrl.exit_with_beep()
+
+print('aj-snapshot for server SOFT3...')
+if Not jpctrl.spawn_background('aj-snapshot -r /home/jeb/AJSOFT3.xml'):
+    jpctrl.exit_with_beep()
+
+# We don't need the JACK clients we created above.  Release them.
+for jc in [jack_client_hard, jack_client_soft1, jack_client_soft2, jack_client_soft3]:
+    jc.deactivate()
+    jc.close()
