@@ -83,14 +83,12 @@ def wait_for_jack(jack_client_name='jpctrl_client', jack_server_name='default'):
             return jack_client
 
 #######################################################################
-# Wait for a particular port to become present in the JACK server.
+# Wait for a particular port to become present in a JACK server.
 # Returns true on success, false on 6-second timeout and/or failure.
-def wait_for_jackport(name2chk, jack_client_name='jpctrl_client', jack_server_name='default'):
-
-    if setup_jack_client('wait_for_jackport', jack_client_name, jack_server_name):
-        print('wait_for_jackport() could not connect to JACK server.')
-        print('Aborting.')
-        return False
+# Requires an active, running, confirmed JACK server, referred to
+# by an object given by a function like wait_for_jack or setup_jack_client
+# above.
+def wait_for_jackport(name2chk, jack_client):
 
     timecount = 0
     while True:
@@ -110,11 +108,15 @@ def wait_for_jackport(name2chk, jack_client_name='jpctrl_client', jack_server_na
             sleep(1)
             timecount += 1
 
+#######################################################################
 # Find JACK port by substring in the name.
 # Return True on success, False on failure
+# Requires an active, running, confirmed JACK server, referred to
+# by an object given by a function like wait_for_jack or setup_jack_client
+# above.
 def find_jackport_by_substring(jack_client, str2find):
 
-    if jack_client == None:
+    if jack_client Is None:
         print('find_jackport_by_substring() failed: JACK client is invalid/None.')
         return False
 
@@ -129,9 +131,9 @@ def find_jackport_by_substring(jack_client, str2find):
     return True
 
 
-# A jpctrl-standardized sleep method.
+# A jpctrl-namespace standard sleep method.
 # Accepts fractions as well as positive integers.
-def sleep(time_in_secs):
+def stdsleep(time_in_secs):
     time.sleep(time_in_secs)
 
 
@@ -203,6 +205,7 @@ def try_popen(cmdstr):
         else:
             return p_popen
 
+# Useful for debugging and tracing.
 
 marker = 1
 
