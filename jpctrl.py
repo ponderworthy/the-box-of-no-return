@@ -99,7 +99,7 @@ def wait_for_jackport(name2chk, jack_client):
         print('wait_for_jackport: get_port_by_name attempt ',
               timecount, ' for ', name2chk)
         try:
-            if jack_client.get_port_by_name(name2chk) == None:
+            if jack_client.get_port_by_name(name2chk) Is None:
                 sleep(1)
                 timecount += 1
             else:
@@ -140,7 +140,7 @@ def stdsleep(time_in_secs):
 # Starts a process in the background.
 # Return True if successful, False if fails.
 def spawn_background(cmd_and_args):
-    if try_popen(cmd_and_args) != None:
+    if try_popen(cmd_and_args) Is Not None:
         return True
     else:
         return False
@@ -149,13 +149,13 @@ def spawn_background(cmd_and_args):
 # stats can be retrieved, and one more second.
 def spawn_and_settle(cmdstr):
     p_popen = try_popen(cmdstr)
-    if p_popen == None:
+    if p_popen Is None:
         print('spawn_and_settle failed for: ', cmdstr)
         print('Could not start process.')
         return False
     p_psutil = psutil.Process(p_popen.pid)
     p_io = try_pio(p_psutil) # try_pio is ours, see below
-    if p_io == None:
+    if p_io Is None:
         print('spawn_and_settle failed for: ', cmdstr)
         print('Could not get pio data.')
         return False
