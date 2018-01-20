@@ -1,5 +1,6 @@
 
-The spawn code has to have JACK server name capability.
+The spawn code in jpctrl.py has to have JACK server name capability
+through environment variable change.
 https://stackoverflow.com/questions/2231227/python-subprocess-popen-with-a-modified-environment
 
 Need to check and revise code for all True/False return values.
