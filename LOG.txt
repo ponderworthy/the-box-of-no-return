@@ -1,7 +1,16 @@
 
+The spawn group has to have JACK server name capability
 
+Need to check and revise code for all True/False return values
 
-
+Need to revise jpctrl.py and BOOT-GENERAL.py.  jpctrl.py
+used a single jack_client variable, external, until
+this MultiJACK BNR rewrite.  New design:
+- BOOT-GENERAL.py needs to have four jack_client
+variables, one per JACK server
+- These get used economically, as needed
+- These get closed/removed cleanly after
+all BOOT-GENERAL operations are done.
 
 Found that the github integration plugin bundled with
 'atom', does not build on Linux.  Installed PyCharm.
