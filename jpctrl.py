@@ -14,10 +14,10 @@
 ###########################################################################
 
 import subprocess
+import os
 import psutil
 import shlex
 import time
-import os
 import jack     # This is JACK-Client, installed as python-jack-client for python3
                 # see https://pypi.python.org/pypi/JACK-Client/
 
@@ -137,18 +137,26 @@ def stdsleep(time_in_secs):
     time.sleep(time_in_secs)
 
 
+# All process spawning code in jpctrl,
+# has JACK server name choice capability.
+# This is done by environment variable a la:
+#
+# my_env = os.environ.copy()
+# my_env["JACK_DEFAULT_SERVER"] = jack_server_name
+# subprocess.Popen(my_command, env=my_env)
+
 # Starts a process in the background.
 # Return True if successful, False if fails.
-def spawn_background(cmd_and_args):
-    if try_popen(cmd_and_args) Is Not None:
+def spawn_background(cmd_and_args, jack_server_name='default'):
+    if try_popen(cmd_and_args, jack_server_name) Is Not None:
         return True
     else:
         return False
 
 # Start a process in the background, wait until its I/O
 # stats can be retrieved, and one more second.
-def spawn_and_settle(cmdstr):
-    p_popen = try_popen(cmdstr)
+def spawn_and_settle(cmdstr, jack_server_name='default'):
+    p_popen = try_popen(cmdstr, jack_server_name)
     if p_popen Is None:
         print('spawn_and_settle failed for: ', cmdstr)
         print('Could not start process.')
@@ -188,9 +196,16 @@ def try_pio(p_psutil):
             return p_io
 
 # Tries to start a background process.
-def try_popen(cmdstr):
+def try_popen(cmdstr, jack_server_name='default'):
+
+    # Set jack_server_name into the environment for the popen
+    my_env = os.environ.copy()
+    my_env["JACK_DEFAULT_SERVER"] = jack_server_name
+
     timecount = 0
-    p_popen = subprocess.Popen(shlex.split(cmdstr), -1)
+    # Original command without jack_server_name handling
+    # p_popen = subprocess.Popen(shlex.split(cmdstr), -1)
+    p_popen = subprocess.Popen(shlex.split(cmdstr), my_env)
     while True:
         sleep(1)
         try:
