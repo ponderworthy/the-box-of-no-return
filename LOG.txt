@@ -1,0 +1,83 @@
+Found that the github integration plugin bundled with
+'atom', does not build on Linux.  Am going to try
+Eclipse.
+
+Used yaourt [this is Manjaro after all] and installed
+Mididings.  It installs for python2.  Ran it.  Seems to
+work fine with python2.
+
+Added atom-runner to atom, runs scripts:
+Hit Ctrl+R (Alt+R on Win/Linux) to launch the runner for the active window.
+Hit Ctrl+Shift+R (Alt+Shift+R on Win/Linux) to run the currently selected text in the active window.
+Hit Ctrl+Shift+C to kill a currently running process.
+Hit Escape to close the runner window.
+
+Will set up github synchronization.
+https://vwannabe.com/2016/05/26/how-to-use-github-and-atom/
+
+Built and installed Mididings.
+Did not run under python3, errored.
+Did not run under python2, not found.
+Posted Issue in github for mididings.
+
+Moved all to ~/BNR.  Logs will go to ~ for now.
+
+Mididings.
+Most recent version appears here:
+https://github.com/dsacre/mididings
+Built and installed from source according to readme instructions.
+Has not seen updates since 2015 at the latest.
+Don't know that it needs updates.  Probably not.
+Just in case, a few possibles here:
+https://wiki.linuxaudio.org/apps/midi_apps
+A GUI option found here, don't know that it does note range selection:
+https://open-music-kontrollers.ch/lv2/midi_matrix/
+ALSA Modular Synth is reported to have this capability.
+Its SourceForge is down.  kxstudio appears to be helping the project.
+http://linuxsynths.com/AMSPatchesDemos/alsamodularsynth.html
+
+
+Now need plan for Distribute.
+This is mididings.  This has to run on the hard server,
+because it has to interact with real hardware.
+MIDI.
+ALSA MIDI, not anything else at this time.  Might eventually transition
+to JACK MIDI over IP.  Will have to do the transition if all JACK
+servers cannot see ALSA MIDI at the same time.  There is a
+manual op for a2jmidid analogous to multi-JACK server starts,
+will try this first.
+
+Revisited wait_for_jack code near beginning of BOOT-GENERAL.py.
+Tested in live python3.  Working.
+
+Tested jpctrl JACK server check primitives.  All appear working.
+
+Set clock_source to 0 in BOOT-INITIAL.sh for hard server.
+0.3% DSP load with four (4) JACK servers running !!!!
+
+Found JACK setting to use HPET, is causing jack.Client to fail.
+Found HPET and RTC docs:
+https://wiki.linuxaudio.org/wiki/system_configuration#hpet
+with optimizations.  Immediate optimizations:
+--
+sudo sysctl -p /etc/sysctl.d/60-max-user-freq.conf
+echo -n 3072 | sudo tee /sys/class/rtc/rtc0/max_user_freq
+sudo chmod 660 /dev/hpet /dev/rtc0
+sudo chgrp audio /dev/hpet /dev/rtc0
+--
+The n.p.c standard is set in sysctl.d/bnr.conf, then added the above
+to rc.local.
+Also added this to /etc/sysctl.d/bnf.conf :
+dev.hpet.max-user-freq=3072
+
+Found BOOT-INITIAL.sh still using DAC (the Peavey).  Set it to use O12 (oh one two), the Mackie.
+Probably no USB power management issue.
+
+In morning, default JACK was apparently broken, stopped, would not start.  Could be USB power management?
+Disabled USB power management with /etc/modprobe.d/usb-autosuspend.conf .
+
+Did find that Python True/False has to have capital first letters.
+
+Mackie works at 96000/64, 0.7ms latency.  Set all JACK processes to this.
+
+Old HD install will not boot.  Will build new.

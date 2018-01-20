@@ -1,11 +1,7 @@
-###################################################################
+#################################################
 # BOOT-GENERAL
 #
-# This is called by BOOT-INITIAL.  It starts
-# the JACK client processes associated with the
-# hard and soft servers (please do see 
-# https://github.com/jebofponderworthy/MultiJACK).
-#
+# This is called by BOOT-INITIAL.
 # JACK clients cannot be simply started
 # all at once, there is relationship
 # and interaction which has to be respected
@@ -45,14 +41,32 @@ if debugmode:
 else:
     yoshimi_debug_param = '-i'
 
-if jpctrl.wait_for_jack():
+# Verify / wait for JACK server 'default'.  This is the hard server.
+print('Verify / wait for JACK hard server...')
+jack_client_hard = jpctrl.wait_for_jack('jpctrl_client')
+If jack_client_hard is None:
     jpctrl.exit_with_beep()
 
-print('Wait 3 seconds for JACK to settle...')
-jpctrl.sleep(3)
+# Verify / wait for JACK soft server 'SOFT1'.
+print('Verify / wait for JACK soft server SOFT1...')
+jack_client_soft1 = jpctrl.wait_for_jack('jpctrl_client', 'SOFT1')
+if jack_client_soft1 is None:
+    jpctrl.exit_with_beep()
+
+# Verify / wait for JACK soft server 'SOFT2'.
+print('Verify / wait for JACK soft server SOFT2...')
+jack_client_soft2 = jpctrl.wait_for_jack('jpctrl_client', 'SOFT2')
+if jack_client_soft2 is None:
+    jpctrl.exit_with_beep()
+
+# Verify / wait for JACK soft server 'SOFT3'.
+print('Verify / wait for JACK soft server SOFT3...')
+jack_client_soft3 = jpctrl.wait_for_jack('jpctrl_client', 'SOFT3')
+if jack_client_soft3 is None:
+    jpctrl.exit_with_beep()
 
 print('-----------------------------------------------------------------')
-print('Start Distribute...')
+print('Start Distribute on hard server...')
 print('-----------------------------------------------------------------')
 
 if jpctrl.spawn_and_settle('/home/jeb/Distribute'):

@@ -24,20 +24,20 @@ import jack     # This is JACK-Client, installed as python-jack-client for pytho
 # This and the next depend on a Linux command by the name of "beep",
 # In some distros it requires "sudo" to run for permissions.
 # Great info here: https://wiki.archlinux.org/index.php/Beep
+# Currently we have this set for permissions: chmod +s beep
 
 def exit_with_beep():
     for count in range(5):
         try:
-            os.system('sudo beep')
+            os.system('beep')
         except:
             exit(1)
         sleep(0.1)
     exit(1)
 
-
 def beep(freq, length):
     try:
-        os.system('sudo beep ' + '-f ' + freq + '-l ' + length)
+        os.system('beep ' + '-f ' + freq + '-l ' + length)
     except:
         return False
     return True
@@ -49,21 +49,21 @@ def setup_jack_client(context_string, jack_client_name='jpctrl_client', jack_ser
 
     # Connect to JACK if possible.
     try:
-        jack_client = jack.Client(jack_client_name, false, false, jack_server_name)
+        jack_client = jack.Client(jack_client_name, False, False, jack_server_name)
         jack_client.activate()
     except:
         print(context_string + ' JACK client setup failed.')
         print('Aborting.')
         jack_client = None
         return None
-      
+
     if jack_client.status.failure or jack_client.status.server_error or jack_client.status.client_zombie:
         jack_client = None
         return None
 
     return jack_client
-  
-###################################################################################  
+
+###################################################################################
 # For 20 seconds, try to set up new jpctrl JACK client, trying once per second.
 # Return JACK client object on success, None on failure.
 def wait_for_jack(jack_client_name='jpctrl_client', jack_server_name='default'):
@@ -143,7 +143,6 @@ def spawn_background(cmd_and_args):
     else:
         return False
 
-
 # Start a process in the background, wait until its I/O
 # stats can be retrieved, and one more second.
 def spawn_and_settle(cmdstr):
@@ -153,7 +152,7 @@ def spawn_and_settle(cmdstr):
         print('Could not start process.')
         return False
     p_psutil = psutil.Process(p_popen.pid)
-    p_io = try_pio(p_psutil)
+    p_io = try_pio(p_psutil) # try_pio is ours, see below
     if p_io == None:
         print('spawn_and_settle failed for: ', cmdstr)
         print('Could not get pio data.')
@@ -165,9 +164,9 @@ def spawn_and_settle(cmdstr):
 
 # Tries to get the p_io data used in spawn_and_settle.
 # Waits 15 seconds maximum.  This turns out to be valuable
-# towards stability, because as load on the system increases,
-# processes take longer at startup to become ready
-# to give p_io stats.
+# towards determining stability, because as load on the
+# system increases, processes take longer at startup to
+# become ready to give p_io stats.
 
 def try_pio(p_psutil):
     timecount = 0
