@@ -1,6 +1,13 @@
+
+
+
+
+
 Found that the github integration plugin bundled with
-'atom', does not build on Linux.  Am going to try
-Eclipse.
+'atom', does not build on Linux.  Installed PyCharm.
+Very nice.  Github integration very sweetly simple.
+Handles bash too.  Set up github sync, did first commit.
+Love it.
 
 Used yaourt [this is Manjaro after all] and installed
 Mididings.  It installs for python2.  Ran it.  Seems to
