@@ -158,9 +158,9 @@ if Not jpctrl.spawn_and_settle(
         'SOFT3'):
     jpctrl.exit_with_beep()
 
-print('-------------------------------------------------------------------------------')
-print('Last big step, create JACK connections using aj-snapshot, on all servers...')
-print('-------------------------------------------------------------------------------')
+print('-----------------------------------------------------------------')
+print('Create JACK connections using aj-snapshot, on all servers...')
+print('-----------------------------------------------------------------')
 
 print('aj-snapshot for hard server...')
 if Not jpctrl.spawn_background('aj-snapshot -r /home/jeb/AJhard.xml'):
@@ -178,7 +178,11 @@ print('aj-snapshot for server SOFT3...')
 if Not jpctrl.spawn_background('aj-snapshot -r /home/jeb/AJSOFT3.xml'):
     jpctrl.exit_with_beep()
 
-# We don't need the JACK clients we created above.  Release them.
+print('-----------------------------------------------------------------')
+print('Clean up JACK clients created for BNR system boot...')
+print('-----------------------------------------------------------------')
+
 for jc in [jack_client_hard, jack_client_soft1, jack_client_soft2, jack_client_soft3]:
     jc.deactivate()
     jc.close()
+
