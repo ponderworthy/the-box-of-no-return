@@ -69,10 +69,10 @@ print('-----------------------------------------------------------------')
 print('Start Distribute on hard server...')
 print('-----------------------------------------------------------------')
 
-if jpctrl.spawn_and_settle('/home/jeb/Distribute'):
+if Not jpctrl.spawn_and_settle('/home/jeb/Distribute'):
     jpctrl.exit_with_beep()
 
-if jpctrl.wait_for_jackport('Distribute:out_1', jack_client_hard) or jpctrl.wait_for_jackport('Distribute:out_16', jack_client_hard):
+if Not jpctrl.wait_for_jackport('Distribute:out_1', jack_client_hard) or Not jpctrl.wait_for_jackport('Distribute:out_16', jack_client_hard):
     print('wait_for_jackport on Distribute failed.')
     jpctrl.exit_with_beep()
 else:
@@ -83,11 +83,11 @@ print('-----------------------------------------------------------------')
 print('Start non-mixer, Mixer-General, on hard server...')
 print('-----------------------------------------------------------------')
 
-if jpctrl.spawn_and_settle(
+if Not jpctrl.spawn_and_settle(
         'non-mixer --instance Mixer-General /home/jeb/non-mixer/Mixer-General'):
-    jpctrl.exit_with_beep()
+    Not jpctrl.exit_with_beep()
 
-if jpctrl.wait_for_jackport('Mixer-General/FinalOutput:out-1', jack_client_hard) or jpctrl.wait_for_jackport('Mixer-General/FinalOutput:out-2', jack_client_hard):
+if Not jpctrl.wait_for_jackport('Mixer-General/FinalOutput:out-1', jack_client_hard) or Not jpctrl.wait_for_jackport('Mixer-General/FinalOutput:out-2', jack_client_hard):
     print('wait_for_jackport on Mixer-General failed.')
     jpctrl.exit_with_beep()
 else:
@@ -100,22 +100,22 @@ print('Start components for patch SRO, on server SOFT1...')
 print('-----------------------------------------------------------------')
 
 print('Start Yoshimi SRO 1...')
-if jpctrl.spawn_and_settle(
+if Not jpctrl.spawn_and_settle(
         'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO1 -j -J -l /home/jeb/YOSHIMI/SROpart1.xmz'):
     jpctrl.exit_with_beep()
 
 print('Start Yoshimi SRO 2...')
-if jpctrl.spawn_and_settle(
+if Not jpctrl.spawn_and_settle(
         'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO2 -j -J -l /home/jeb/YOSHIMI/SROpart2.xmz'):
     jpctrl.exit_with_beep()
 
 print('Start Yoshimi SRO 3...')
-if jpctrl.spawn_and_settle(
+if Not jpctrl.spawn_and_settle(
         'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO3 -j -J -l /home/jeb/YOSHIMI/SROpart3.xmz'):
     jpctrl.exit_with_beep()
 
 print('Start CalfSRO...')
-if jpctrl.spawn_and_settle(
+if Not jpctrl.spawn_and_settle(
         'calfjackhost --client CalfSRO eq12:SRO ! reverb:SRO ! multibandcompressor:SRO'):
     jpctrl.exit_with_beep()
 
@@ -126,18 +126,18 @@ print('Start components for patch Strings...')
 print('-----------------------------------------------------------------')
 
 print('Start StringsSSO...')
-if jpctrl.spawn_and_settle(
+if Not jpctrl.spawn_and_settle(
         'calfjackhost --client StringsSSO fluidsynth:StringsSSO'):
     jpctrl.exit_with_beep()
 
 print('Start StringsBassAdd...')
-if jpctrl.spawn_and_settle(
+if Not jpctrl.spawn_and_settle(
     'calfjackhost --client StringsBassAdd ' +
         'fluidsynth:BassoonsSustain fluidsynth:ContrabassoonSolo fluidsynth:GeneralBass'):
     jpctrl.exit_with_beep()
 
 print('Start MaxStringsFilters...')
-if jpctrl.spawn_and_settle(
+if Not jpctrl.spawn_and_settle(
         'calfjackhost --client MaxStringsFilters eq12:MaxStrings ! reverb:MaxStrings ! multibandcompressor:Strings'):
     jpctrl.exit_with_beep()
 
@@ -146,13 +146,14 @@ print('Start component for patch FlowBells...')
 print('-----------------------------------------------------------------')
 
 print('Start Yoshimi for FlowBells...')
-if jpctrl.spawn_and_settle(
+if Not jpctrl.spawn_and_settle(
         'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshFlowBells -j -J -l /home/jeb/YOSHIMI/FlowBells.xmz'):
     jpctrl.exit_with_beep()
 
 print('-----------------------------------------------------------------')
-print('And lastly, create JACK connections using aj-snapshot...')
+print('Last big step, create JACK connections using aj-snapshot...')
 print('-----------------------------------------------------------------')
 
-if jpctrl.spawn_background('aj-snapshot -r /home/jeb/AJBoot.xml'):
+if Not jpctrl.spawn_background('aj-snapshot -r /home/jeb/AJBoot.xml'):
     jpctrl.exit_with_beep()
+
