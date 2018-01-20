@@ -205,6 +205,7 @@ def try_popen(cmdstr, jack_server_name='default'):
     timecount = 0
     # Original command without jack_server_name handling
     # p_popen = subprocess.Popen(shlex.split(cmdstr), -1)
+    # -1 was probably something needed for older python3
     p_popen = subprocess.Popen(shlex.split(cmdstr), my_env)
     while True:
         sleep(1)
