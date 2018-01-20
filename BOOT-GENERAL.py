@@ -72,7 +72,7 @@ print('-----------------------------------------------------------------')
 if jpctrl.spawn_and_settle('/home/jeb/Distribute'):
     jpctrl.exit_with_beep()
 
-if jpctrl.wait_for_jackport('Distribute:out_1') or jpctrl.wait_for_jackport('Distribute:out_16'):
+if jpctrl.wait_for_jackport('Distribute:out_1', jack_client_hard) or jpctrl.wait_for_jackport('Distribute:out_16', jack_client_hard):
     print('wait_for_jackport on Distribute failed.')
     jpctrl.exit_with_beep()
 else:
@@ -80,14 +80,14 @@ else:
 
 
 print('-----------------------------------------------------------------')
-print('Start non-mixer, Mixer-General...')
+print('Start non-mixer, Mixer-General, on hard server...')
 print('-----------------------------------------------------------------')
 
 if jpctrl.spawn_and_settle(
         'non-mixer --instance Mixer-General /home/jeb/non-mixer/Mixer-General'):
     jpctrl.exit_with_beep()
 
-if jpctrl.wait_for_jackport('Mixer-General/FinalOutput:out-1') or jpctrl.wait_for_jackport('Mixer-General/FinalOutput:out-2'):
+if jpctrl.wait_for_jackport('Mixer-General/FinalOutput:out-1', jack_client_hard) or jpctrl.wait_for_jackport('Mixer-General/FinalOutput:out-2', jack_client_hard):
     print('wait_for_jackport on Mixer-General failed.')
     jpctrl.exit_with_beep()
 else:
@@ -96,7 +96,7 @@ else:
 jpctrl.sleep(3)
 
 print('-----------------------------------------------------------------')
-print('Start components for patch SRO...')
+print('Start components for patch SRO, on server SOFT1...')
 print('-----------------------------------------------------------------')
 
 print('Start Yoshimi SRO 1...')
