@@ -1,4 +1,10 @@
 
+Copied back working files from previous production set.
+Added .calfpresets to the git repo set.
+
+Syntax checking complete.  Recoded to permit flexible paths,
+using ~/BNR.
+
 First draft coding appears done.  Now syntax checking.
 python -m py_compile yourpythonscript.py
 
