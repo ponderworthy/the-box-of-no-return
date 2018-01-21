@@ -1,0 +1,1105 @@
+<presets>
+<preset bank="0" program="1" plugin="compressor" name="SRO">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="1.24833" />
+  <param name="meter_in" value="0" />
+  <param name="meter_out" value="0" />
+  <param name="clip_in" value="0" />
+  <param name="clip_out" value="0" />
+  <param name="threshold" value="0.0441942" />
+  <param name="ratio" value="2.19792" />
+  <param name="attack" value="20" />
+  <param name="release" value="250" />
+  <param name="makeup" value="2.49666" />
+  <param name="knee" value="2.82843" />
+  <param name="detection" value="1" />
+  <param name="stereo_link" value="0" />
+  <param name="compression" value="1" />
+</preset>
+<preset bank="0" program="2" plugin="compressor" name="Strings">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="0.846745" />
+  <param name="meter_in" value="0" />
+  <param name="meter_out" value="0" />
+  <param name="clip_in" value="0" />
+  <param name="clip_out" value="0" />
+  <param name="threshold" value="0.0384733" />
+  <param name="ratio" value="1" />
+  <param name="attack" value="20" />
+  <param name="release" value="154.104" />
+  <param name="makeup" value="5.50217" />
+  <param name="knee" value="2.82843" />
+  <param name="detection" value="1" />
+  <param name="stereo_link" value="1" />
+  <param name="compression" value="1" />
+</preset>
+<preset bank="0" program="1" plugin="eq12" name="Strings">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="0.514057" />
+  <param name="level_out" value="2.56685" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
+  <param name="clip_inL" value="0" />
+  <param name="clip_inR" value="0" />
+  <param name="clip_outL" value="0" />
+  <param name="clip_outR" value="0" />
+  <param name="hp_active" value="0" />
+  <param name="hp_freq" value="10" />
+  <param name="hp_mode" value="1" />
+  <param name="lp_active" value="0" />
+  <param name="lp_freq" value="18000" />
+  <param name="lp_mode" value="1" />
+  <param name="ls_active" value="1" />
+  <param name="ls_level" value="2.11403" />
+  <param name="ls_freq" value="39.2813" />
+  <param name="hs_active" value="1" />
+  <param name="hs_level" value="1" />
+  <param name="hs_freq" value="8667.96" />
+  <param name="p1_active" value="1" />
+  <param name="p1_level" value="1.79005" />
+  <param name="p1_freq" value="60" />
+  <param name="p1_q" value="1" />
+  <param name="p2_active" value="1" />
+  <param name="p2_level" value="1.51572" />
+  <param name="p2_freq" value="120" />
+  <param name="p2_q" value="1" />
+  <param name="p3_active" value="1" />
+  <param name="p3_level" value="1" />
+  <param name="p3_freq" value="250" />
+  <param name="p3_q" value="1" />
+  <param name="p4_active" value="1" />
+  <param name="p4_level" value="1" />
+  <param name="p4_freq" value="500" />
+  <param name="p4_q" value="1" />
+  <param name="p5_active" value="1" />
+  <param name="p5_level" value="0.920188" />
+  <param name="p5_freq" value="1000" />
+  <param name="p5_q" value="1" />
+  <param name="p6_active" value="1" />
+  <param name="p6_level" value="0.312083" />
+  <param name="p6_freq" value="2500" />
+  <param name="p6_q" value="1" />
+  <param name="p7_active" value="1" />
+  <param name="p7_level" value="1.39474" />
+  <param name="p7_freq" value="4000" />
+  <param name="p7_q" value="1.04713" />
+  <param name="p8_active" value="1" />
+  <param name="p8_level" value="1.08673" />
+  <param name="p8_freq" value="6000" />
+  <param name="p8_q" value="1" />
+</preset>
+<preset bank="0" program="1" plugin="reverb" name="Strings">
+  <param name="clip" value="0" />
+  <param name="meter_wet" value="0" />
+  <param name="meter_out" value="0" />
+  <param name="decay_time" value="0.810039" />
+  <param name="hf_damp" value="5000" />
+  <param name="room_size" value="1" />
+  <param name="diffusion" value="0.5" />
+  <param name="amount" value="0.25" />
+  <param name="dry" value="1" />
+  <param name="predelay" value="0" />
+  <param name="bass_cut" value="300" />
+  <param name="treble_cut" value="5000" />
+</preset>
+<preset bank="0" program="0" plugin="eq12" name="SRO">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="1" />
+  <param name="level_out" value="1" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
+  <param name="clip_inL" value="0" />
+  <param name="clip_inR" value="0" />
+  <param name="clip_outL" value="0" />
+  <param name="clip_outR" value="0" />
+  <param name="hp_active" value="0" />
+  <param name="hp_freq" value="30" />
+  <param name="hp_mode" value="1" />
+  <param name="lp_active" value="0" />
+  <param name="lp_freq" value="18000" />
+  <param name="lp_mode" value="1" />
+  <param name="ls_active" value="1" />
+  <param name="ls_level" value="1.39474" />
+  <param name="ls_freq" value="45.7305" />
+  <param name="hs_active" value="1" />
+  <param name="hs_level" value="1" />
+  <param name="hs_freq" value="8033.53" />
+  <param name="p1_active" value="1" />
+  <param name="p1_level" value="1.18099" />
+  <param name="p1_freq" value="60" />
+  <param name="p1_q" value="1.04713" />
+  <param name="p2_active" value="1" />
+  <param name="p2_level" value="1.80328" />
+  <param name="p2_freq" value="121.489" />
+  <param name="p2_q" value="1" />
+  <param name="p3_active" value="1" />
+  <param name="p3_level" value="1.96578" />
+  <param name="p3_freq" value="245.684" />
+  <param name="p3_q" value="1" />
+  <param name="p4_active" value="1" />
+  <param name="p4_level" value="2.20546" />
+  <param name="p4_freq" value="559.455" />
+  <param name="p4_q" value="1" />
+  <param name="p5_active" value="1" />
+  <param name="p5_level" value="1.8559" />
+  <param name="p5_freq" value="1294.27" />
+  <param name="p5_q" value="1" />
+  <param name="p6_active" value="1" />
+  <param name="p6_level" value="1.65421" />
+  <param name="p6_freq" value="2596.76" />
+  <param name="p6_q" value="1" />
+  <param name="p7_active" value="1" />
+  <param name="p7_level" value="1.181" />
+  <param name="p7_freq" value="4000" />
+  <param name="p7_q" value="1" />
+  <param name="p8_active" value="1" />
+  <param name="p8_level" value="1" />
+  <param name="p8_freq" value="6000" />
+  <param name="p8_q" value="1" />
+  <param name="individuals" value="1" />
+  <param name="zoom" value="0.25" />
+  <param name="analyzer" value="0" />
+  <param name="analyzer_mode" value="1" />
+</preset>
+<preset bank="0" program="2" plugin="reverb" name="SRO">
+  <param name="clip" value="0" />
+  <param name="meter_wet" value="0" />
+  <param name="meter_out" value="0" />
+  <param name="decay_time" value="0.737193" />
+  <param name="hf_damp" value="5000" />
+  <param name="room_size" value="3" />
+  <param name="diffusion" value="0.5" />
+  <param name="amount" value="0.25" />
+  <param name="dry" value="1" />
+  <param name="predelay" value="0" />
+  <param name="bass_cut" value="300" />
+  <param name="treble_cut" value="5000" />
+</preset>
+<preset bank="0" program="1" plugin="saturator" name="SROoverdrive">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="30.2738" />
+  <param name="level_out" value="1" />
+  <param name="mix" value="1" />
+  <param name="meter_in" value="0" />
+  <param name="meter_out" value="2.40338e-13" />
+  <param name="clip_in" value="0" />
+  <param name="clip_out" value="0" />
+  <param name="drive" value="8.812" />
+  <param name="blend" value="-2.76" />
+  <param name="meter_drive" value="0" />
+  <param name="lp_pre_freq" value="20000" />
+  <param name="hp_pre_freq" value="10" />
+  <param name="lp_post_freq" value="15922.1" />
+  <param name="hp_post_freq" value="10" />
+  <param name="p_freq" value="2203.38" />
+  <param name="p_level" value="5.27803" />
+  <param name="p_q" value="7.94328" />
+</preset>
+<preset bank="0" program="1" plugin="gate" name="SROoverdrive">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="1" />
+  <param name="meter_in" value="0" />
+  <param name="meter_out" value="0" />
+  <param name="clip_in" value="0" />
+  <param name="clip_out" value="0" />
+  <param name="range" value="0.06125" />
+  <param name="threshold" value="0.125" />
+  <param name="ratio" value="2" />
+  <param name="attack" value="20" />
+  <param name="release" value="250" />
+  <param name="makeup" value="1" />
+  <param name="knee" value="2.82843" />
+  <param name="detection" value="0" />
+  <param name="stereo_link" value="0" />
+  <param name="gating" value="1" />
+</preset>
+<preset bank="0" program="3" plugin="eq12" name="SROoverdrive">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="1" />
+  <param name="level_out" value="1" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
+  <param name="clip_inL" value="0" />
+  <param name="clip_inR" value="0" />
+  <param name="clip_outL" value="0" />
+  <param name="clip_outR" value="0" />
+  <param name="hp_active" value="0" />
+  <param name="hp_freq" value="30" />
+  <param name="hp_mode" value="1" />
+  <param name="lp_active" value="0" />
+  <param name="lp_freq" value="18000" />
+  <param name="lp_mode" value="1" />
+  <param name="ls_active" value="0" />
+  <param name="ls_level" value="1" />
+  <param name="ls_freq" value="200" />
+  <param name="hs_active" value="0" />
+  <param name="hs_level" value="1" />
+  <param name="hs_freq" value="4000" />
+  <param name="p1_active" value="0" />
+  <param name="p1_level" value="1" />
+  <param name="p1_freq" value="60" />
+  <param name="p1_q" value="1" />
+  <param name="p2_active" value="0" />
+  <param name="p2_level" value="1" />
+  <param name="p2_freq" value="120" />
+  <param name="p2_q" value="1" />
+  <param name="p3_active" value="0" />
+  <param name="p3_level" value="1" />
+  <param name="p3_freq" value="250" />
+  <param name="p3_q" value="1" />
+  <param name="p4_active" value="0" />
+  <param name="p4_level" value="1" />
+  <param name="p4_freq" value="500" />
+  <param name="p4_q" value="1" />
+  <param name="p5_active" value="0" />
+  <param name="p5_level" value="1" />
+  <param name="p5_freq" value="1000" />
+  <param name="p5_q" value="1" />
+  <param name="p6_active" value="0" />
+  <param name="p6_level" value="1" />
+  <param name="p6_freq" value="2500" />
+  <param name="p6_q" value="1" />
+  <param name="p7_active" value="0" />
+  <param name="p7_level" value="1" />
+  <param name="p7_freq" value="4000" />
+  <param name="p7_q" value="1" />
+  <param name="p8_active" value="0" />
+  <param name="p8_level" value="1" />
+  <param name="p8_freq" value="6000" />
+  <param name="p8_q" value="1" />
+</preset>
+<preset bank="0" program="3" plugin="reverb" name="SROoverdrive">
+  <param name="clip" value="0" />
+  <param name="meter_wet" value="0" />
+  <param name="meter_out" value="0" />
+  <param name="decay_time" value="1.5" />
+  <param name="hf_damp" value="5000" />
+  <param name="room_size" value="3" />
+  <param name="diffusion" value="0.5" />
+  <param name="amount" value="0.25" />
+  <param name="dry" value="1" />
+  <param name="predelay" value="0" />
+  <param name="bass_cut" value="300" />
+  <param name="treble_cut" value="5000" />
+</preset>
+<preset bank="0" program="4" plugin="eq12" name="Piano">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="1" />
+  <param name="level_out" value="1" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
+  <param name="clip_inL" value="0" />
+  <param name="clip_inR" value="0" />
+  <param name="clip_outL" value="0" />
+  <param name="clip_outR" value="0" />
+  <param name="hp_active" value="0" />
+  <param name="hp_freq" value="30" />
+  <param name="hp_mode" value="1" />
+  <param name="lp_active" value="0" />
+  <param name="lp_freq" value="18000" />
+  <param name="lp_mode" value="1" />
+  <param name="ls_active" value="1" />
+  <param name="ls_level" value="11.158" />
+  <param name="ls_freq" value="61.9794" />
+  <param name="hs_active" value="1" />
+  <param name="hs_level" value="5.27804" />
+  <param name="hs_freq" value="5927.41" />
+  <param name="p1_active" value="1" />
+  <param name="p1_level" value="2.11403" />
+  <param name="p1_freq" value="60" />
+  <param name="p1_q" value="1" />
+  <param name="p2_active" value="1" />
+  <param name="p2_level" value="2.71321" />
+  <param name="p2_freq" value="120" />
+  <param name="p2_q" value="1" />
+  <param name="p3_active" value="1" />
+  <param name="p3_level" value="2.29739" />
+  <param name="p3_freq" value="250" />
+  <param name="p3_q" value="1" />
+  <param name="p4_active" value="1" />
+  <param name="p4_level" value="2.49666" />
+  <param name="p4_freq" value="500" />
+  <param name="p4_q" value="1" />
+  <param name="p5_active" value="1" />
+  <param name="p5_level" value="1.18099" />
+  <param name="p5_freq" value="1000" />
+  <param name="p5_q" value="1" />
+  <param name="p6_active" value="1" />
+  <param name="p6_level" value="1.18099" />
+  <param name="p6_freq" value="2500" />
+  <param name="p6_q" value="1" />
+  <param name="p7_active" value="1" />
+  <param name="p7_level" value="1.18099" />
+  <param name="p7_freq" value="4000" />
+  <param name="p7_q" value="1" />
+  <param name="p8_active" value="1" />
+  <param name="p8_level" value="1.64718" />
+  <param name="p8_freq" value="6000" />
+  <param name="p8_q" value="1" />
+</preset>
+<preset bank="0" program="3" plugin="compressor" name="SRO+Strings">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="1.24833" />
+  <param name="meter_in" value="0" />
+  <param name="meter_out" value="0" />
+  <param name="clip_in" value="0" />
+  <param name="clip_out" value="0" />
+  <param name="threshold" value="0.0441942" />
+  <param name="ratio" value="2.19792" />
+  <param name="attack" value="20" />
+  <param name="release" value="250" />
+  <param name="makeup" value="2.71321" />
+  <param name="knee" value="2.82843" />
+  <param name="detection" value="1" />
+  <param name="stereo_link" value="0" />
+  <param name="compression" value="1" />
+</preset>
+<preset bank="0" program="4" plugin="compressor" name="SROandSTRINGS">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="1.24833" />
+  <param name="meter_in" value="0" />
+  <param name="meter_out" value="0" />
+  <param name="clip_in" value="0" />
+  <param name="clip_out" value="0" />
+  <param name="threshold" value="0.0441942" />
+  <param name="ratio" value="2.19792" />
+  <param name="attack" value="20" />
+  <param name="release" value="250" />
+  <param name="makeup" value="2.71321" />
+  <param name="knee" value="2.82843" />
+  <param name="detection" value="1" />
+  <param name="stereo_link" value="0" />
+  <param name="compression" value="1" />
+</preset>
+<preset bank="0" program="5" plugin="compressor" name="SROplusSTRINGS">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="1" />
+  <param name="meter_in" value="3.24004e-07" />
+  <param name="meter_out" value="6.57054e-07" />
+  <param name="clip_in" value="0" />
+  <param name="clip_out" value="0" />
+  <param name="threshold" value="0.0583146" />
+  <param name="ratio" value="2" />
+  <param name="attack" value="20" />
+  <param name="release" value="250" />
+  <param name="makeup" value="2.02792" />
+  <param name="knee" value="2.65737" />
+  <param name="detection" value="0" />
+  <param name="stereo_link" value="0" />
+  <param name="compression" value="1" />
+</preset>
+<preset bank="0" program="1" plugin="multibandcompressor" name="Strings">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="1" />
+  <param name="level_out" value="1" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
+  <param name="clip_inL" value="0" />
+  <param name="clip_inR" value="0" />
+  <param name="clip_outL" value="0" />
+  <param name="clip_outR" value="0" />
+  <param name="freq0" value="120" />
+  <param name="freq1" value="1000" />
+  <param name="freq2" value="6000" />
+  <param name="mode" value="1" />
+  <param name="threshold0" value="0.0209051" />
+  <param name="ratio0" value="3.20221" />
+  <param name="attack0" value="150" />
+  <param name="release0" value="300" />
+  <param name="makeup0" value="2.49666" />
+  <param name="knee0" value="2.82843" />
+  <param name="detection0" value="0" />
+  <param name="compression0" value="1" />
+  <param name="output0" value="0" />
+  <param name="bypass0" value="0" />
+  <param name="solo0" value="0" />
+  <param name="threshold1" value="0.0209051" />
+  <param name="ratio1" value="3.08359" />
+  <param name="attack1" value="100" />
+  <param name="release1" value="200" />
+  <param name="makeup1" value="2.49666" />
+  <param name="knee1" value="2.82843" />
+  <param name="detection1" value="0" />
+  <param name="compression1" value="1" />
+  <param name="output1" value="0" />
+  <param name="bypass1" value="0" />
+  <param name="solo1" value="0" />
+  <param name="threshold2" value="0.0209051" />
+  <param name="ratio2" value="2.89557" />
+  <param name="attack2" value="50" />
+  <param name="release2" value="100" />
+  <param name="makeup2" value="2" />
+  <param name="knee2" value="2.82843" />
+  <param name="detection2" value="0" />
+  <param name="compression2" value="1" />
+  <param name="output2" value="0" />
+  <param name="bypass2" value="0" />
+  <param name="solo2" value="0" />
+  <param name="threshold3" value="0.0214929" />
+  <param name="ratio3" value="3.04503" />
+  <param name="attack3" value="25" />
+  <param name="release3" value="50" />
+  <param name="makeup3" value="2.49666" />
+  <param name="knee3" value="2.82843" />
+  <param name="detection3" value="0" />
+  <param name="compression3" value="1" />
+  <param name="output3" value="0" />
+  <param name="bypass3" value="0" />
+  <param name="solo3" value="0" />
+  <param name="notebook" value="3" />
+</preset>
+<preset bank="0" program="5" plugin="eq12" name="Strings.longstanding">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="0.514057" />
+  <param name="level_out" value="2.56685" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
+  <param name="clip_inL" value="0" />
+  <param name="clip_inR" value="0" />
+  <param name="clip_outL" value="0" />
+  <param name="clip_outR" value="0" />
+  <param name="hp_active" value="0" />
+  <param name="hp_freq" value="10" />
+  <param name="hp_mode" value="1" />
+  <param name="lp_active" value="0" />
+  <param name="lp_freq" value="18000" />
+  <param name="lp_mode" value="1" />
+  <param name="ls_active" value="1" />
+  <param name="ls_level" value="2.11403" />
+  <param name="ls_freq" value="39.2813" />
+  <param name="hs_active" value="1" />
+  <param name="hs_level" value="0.659754" />
+  <param name="hs_freq" value="8667.96" />
+  <param name="p1_active" value="1" />
+  <param name="p1_level" value="1.79005" />
+  <param name="p1_freq" value="60" />
+  <param name="p1_q" value="1" />
+  <param name="p2_active" value="1" />
+  <param name="p2_level" value="1.51572" />
+  <param name="p2_freq" value="120" />
+  <param name="p2_q" value="1" />
+  <param name="p3_active" value="1" />
+  <param name="p3_level" value="1" />
+  <param name="p3_freq" value="250" />
+  <param name="p3_q" value="1" />
+  <param name="p4_active" value="1" />
+  <param name="p4_level" value="1" />
+  <param name="p4_freq" value="500" />
+  <param name="p4_q" value="1" />
+  <param name="p5_active" value="1" />
+  <param name="p5_level" value="0.920188" />
+  <param name="p5_freq" value="1000" />
+  <param name="p5_q" value="1" />
+  <param name="p6_active" value="1" />
+  <param name="p6_level" value="0.312083" />
+  <param name="p6_freq" value="2500" />
+  <param name="p6_q" value="1" />
+  <param name="p7_active" value="1" />
+  <param name="p7_level" value="0.716977" />
+  <param name="p7_freq" value="4000" />
+  <param name="p7_q" value="1.04713" />
+  <param name="p8_active" value="1" />
+  <param name="p8_level" value="0.779165" />
+  <param name="p8_freq" value="6000" />
+  <param name="p8_q" value="1" />
+</preset>
+<preset bank="0" program="2" plugin="multibandcompressor" name="SRO">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="1" />
+  <param name="level_out" value="1" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
+  <param name="clip_inL" value="0" />
+  <param name="clip_inR" value="0" />
+  <param name="clip_outL" value="0" />
+  <param name="clip_outR" value="0" />
+  <param name="freq0" value="120" />
+  <param name="freq1" value="1000" />
+  <param name="freq2" value="6000" />
+  <param name="mode" value="1" />
+  <param name="threshold0" value="0.0211969" />
+  <param name="ratio0" value="3.32539" />
+  <param name="attack0" value="150" />
+  <param name="release0" value="300" />
+  <param name="makeup0" value="2.62442" />
+  <param name="knee0" value="2.82843" />
+  <param name="detection0" value="0" />
+  <param name="compression0" value="1" />
+  <param name="output0" value="0" />
+  <param name="bypass0" value="0" />
+  <param name="solo0" value="0" />
+  <param name="threshold1" value="0.0211969" />
+  <param name="ratio1" value="3.12263" />
+  <param name="attack1" value="100" />
+  <param name="release1" value="200" />
+  <param name="makeup1" value="2.49666" />
+  <param name="knee1" value="2.82843" />
+  <param name="detection1" value="0" />
+  <param name="compression1" value="1" />
+  <param name="output1" value="0" />
+  <param name="bypass1" value="0" />
+  <param name="solo1" value="0" />
+  <param name="threshold2" value="0.0214929" />
+  <param name="ratio2" value="3.36749" />
+  <param name="attack2" value="50" />
+  <param name="release2" value="100" />
+  <param name="makeup2" value="2.49666" />
+  <param name="knee2" value="2.82843" />
+  <param name="detection2" value="0" />
+  <param name="compression2" value="1" />
+  <param name="output2" value="0" />
+  <param name="bypass2" value="0" />
+  <param name="solo2" value="0" />
+  <param name="threshold3" value="0.0209051" />
+  <param name="ratio3" value="3.12263" />
+  <param name="attack3" value="25" />
+  <param name="release3" value="50" />
+  <param name="makeup3" value="2.49666" />
+  <param name="knee3" value="2.82843" />
+  <param name="detection3" value="0" />
+  <param name="compression3" value="1" />
+  <param name="output3" value="0" />
+  <param name="bypass3" value="0" />
+  <param name="solo3" value="0" />
+  <param name="notebook" value="3" />
+</preset>
+<preset bank="0" program="3" plugin="multibandcompressor" name="SROplusStrings">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="1" />
+  <param name="level_out" value="1" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
+  <param name="clip_inL" value="0" />
+  <param name="clip_inR" value="0" />
+  <param name="clip_outL" value="0" />
+  <param name="clip_outR" value="0" />
+  <param name="freq0" value="120" />
+  <param name="freq1" value="1000" />
+  <param name="freq2" value="6000" />
+  <param name="sep0" value="-0.17" />
+  <param name="sep1" value="-0.17" />
+  <param name="sep2" value="-0.17" />
+  <param name="q0" value="0.776247" />
+  <param name="q1" value="0.776247" />
+  <param name="q2" value="0.776247" />
+  <param name="mode" value="1" />
+  <param name="threshold0" value="0.0441942" />
+  <param name="ratio0" value="2.19543" />
+  <param name="attack0" value="150" />
+  <param name="release0" value="300" />
+  <param name="makeup0" value="2.49666" />
+  <param name="knee0" value="2.82843" />
+  <param name="detection0" value="0" />
+  <param name="compression0" value="1" />
+  <param name="output0" value="0" />
+  <param name="bypass0" value="0" />
+  <param name="solo0" value="0" />
+  <param name="threshold1" value="0.0441942" />
+  <param name="ratio1" value="2.19543" />
+  <param name="attack1" value="100" />
+  <param name="release1" value="200" />
+  <param name="makeup1" value="2.49666" />
+  <param name="knee1" value="2.82843" />
+  <param name="detection1" value="0" />
+  <param name="compression1" value="1" />
+  <param name="output1" value="0" />
+  <param name="bypass1" value="0" />
+  <param name="solo1" value="0" />
+  <param name="threshold2" value="0.0441942" />
+  <param name="ratio2" value="2.19543" />
+  <param name="attack2" value="50" />
+  <param name="release2" value="100" />
+  <param name="makeup2" value="2.49666" />
+  <param name="knee2" value="2.82843" />
+  <param name="detection2" value="0" />
+  <param name="compression2" value="1" />
+  <param name="output2" value="0" />
+  <param name="bypass2" value="0" />
+  <param name="solo2" value="0" />
+  <param name="threshold3" value="0.0441942" />
+  <param name="ratio3" value="2.19543" />
+  <param name="attack3" value="25" />
+  <param name="release3" value="50" />
+  <param name="makeup3" value="2.49666" />
+  <param name="knee3" value="2.82843" />
+  <param name="detection3" value="0" />
+  <param name="compression3" value="1" />
+  <param name="output3" value="0" />
+  <param name="bypass3" value="0" />
+  <param name="solo3" value="0" />
+</preset>
+<preset bank="0" program="4" plugin="multibandcompressor" name="SROplusSTRINGS">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="0.607097" />
+  <param name="level_out" value="1" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
+  <param name="clip_inL" value="0" />
+  <param name="clip_inR" value="0" />
+  <param name="clip_outL" value="0" />
+  <param name="clip_outR" value="0" />
+  <param name="freq0" value="120" />
+  <param name="freq1" value="1000" />
+  <param name="freq2" value="6000" />
+  <param name="sep0" value="-0.17" />
+  <param name="sep1" value="-0.17" />
+  <param name="sep2" value="-0.17" />
+  <param name="q0" value="0.776247" />
+  <param name="q1" value="0.776247" />
+  <param name="q2" value="0.776247" />
+  <param name="mode" value="1" />
+  <param name="threshold0" value="0.0441942" />
+  <param name="ratio0" value="2.19543" />
+  <param name="attack0" value="150" />
+  <param name="release0" value="300" />
+  <param name="makeup0" value="2.49666" />
+  <param name="knee0" value="2.82843" />
+  <param name="detection0" value="0" />
+  <param name="compression0" value="1" />
+  <param name="output0" value="0" />
+  <param name="bypass0" value="0" />
+  <param name="solo0" value="0" />
+  <param name="threshold1" value="0.0441942" />
+  <param name="ratio1" value="2.19543" />
+  <param name="attack1" value="100" />
+  <param name="release1" value="200" />
+  <param name="makeup1" value="2.49666" />
+  <param name="knee1" value="2.82843" />
+  <param name="detection1" value="0" />
+  <param name="compression1" value="1" />
+  <param name="output1" value="0" />
+  <param name="bypass1" value="0" />
+  <param name="solo1" value="0" />
+  <param name="threshold2" value="0.0441942" />
+  <param name="ratio2" value="2.19543" />
+  <param name="attack2" value="50" />
+  <param name="release2" value="100" />
+  <param name="makeup2" value="2.49666" />
+  <param name="knee2" value="2.82843" />
+  <param name="detection2" value="0" />
+  <param name="compression2" value="1" />
+  <param name="output2" value="0" />
+  <param name="bypass2" value="0" />
+  <param name="solo2" value="0" />
+  <param name="threshold3" value="0.0441942" />
+  <param name="ratio3" value="2.19543" />
+  <param name="attack3" value="25" />
+  <param name="release3" value="50" />
+  <param name="makeup3" value="2.49666" />
+  <param name="knee3" value="2.82843" />
+  <param name="detection3" value="0" />
+  <param name="compression3" value="1" />
+  <param name="output3" value="0" />
+  <param name="bypass3" value="0" />
+  <param name="solo3" value="0" />
+</preset>
+<preset bank="0" program="1" plugin="fluidsynth" name="1stViolinsStaccato">
+  <param name="master" value="0.5" />
+  <param name="interpolation" value="2" />
+  <param name="reverb" value="0" />
+  <param name="chorus" value="0" />
+  <var name="preset_key_set">0</var>
+  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Strings - 1st Violins Staccato.sf2</var>
+</preset>
+<preset bank="0" program="2" plugin="fluidsynth" name="1stViolinsSustain">
+  <param name="master" value="0.5" />
+  <param name="interpolation" value="2" />
+  <param name="reverb" value="0" />
+  <param name="chorus" value="0" />
+  <var name="preset_key_set">0</var>
+  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Strings - 1st Violins Sustain.sf2</var>
+</preset>
+<preset bank="0" program="3" plugin="fluidsynth" name="2ndViolinsStaccato">
+  <param name="master" value="0.5" />
+  <param name="interpolation" value="2" />
+  <param name="reverb" value="0" />
+  <param name="chorus" value="0" />
+  <var name="preset_key_set">0</var>
+  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Strings - 2nd Violins Staccato.sf2</var>
+</preset>
+<preset bank="0" program="4" plugin="fluidsynth" name="2ndViolinsSustain">
+  <param name="master" value="0.5" />
+  <param name="interpolation" value="2" />
+  <param name="reverb" value="0" />
+  <param name="chorus" value="0" />
+  <var name="preset_key_set">0</var>
+  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Strings - 2nd Violins Sustain.sf2</var>
+</preset>
+<preset bank="0" program="5" plugin="fluidsynth" name="ViolasSustain">
+  <param name="master" value="0.5" />
+  <param name="interpolation" value="2" />
+  <param name="reverb" value="0" />
+  <param name="chorus" value="0" />
+  <var name="preset_key_set">0</var>
+  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Strings - Violas Sustain.sf2</var>
+</preset>
+<preset bank="0" program="6" plugin="fluidsynth" name="CelliStaccato">
+  <param name="master" value="0.5" />
+  <param name="interpolation" value="2" />
+  <param name="reverb" value="0" />
+  <param name="chorus" value="0" />
+  <var name="preset_key_set">0</var>
+  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Strings - Celli Staccato.sf2</var>
+</preset>
+<preset bank="0" program="7" plugin="fluidsynth" name="CelliSustain">
+  <param name="master" value="0.5" />
+  <param name="interpolation" value="2" />
+  <param name="reverb" value="0" />
+  <param name="chorus" value="0" />
+  <var name="preset_key_set">0</var>
+  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Strings - Celli Sustain.sf2</var>
+</preset>
+<preset bank="0" program="8" plugin="fluidsynth" name="BassesStaccato">
+  <param name="master" value="0.5" />
+  <param name="interpolation" value="2" />
+  <param name="reverb" value="0" />
+  <param name="chorus" value="0" />
+  <var name="preset_key_set">0</var>
+  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Strings - Basses Staccato.sf2</var>
+</preset>
+<preset bank="0" program="9" plugin="fluidsynth" name="BassesSustain">
+  <param name="master" value="0.5" />
+  <param name="interpolation" value="2" />
+  <param name="reverb" value="0" />
+  <param name="chorus" value="0" />
+  <var name="preset_key_set">0</var>
+  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Strings - Basses Sustain.sf2</var>
+</preset>
+<preset bank="0" program="10" plugin="fluidsynth" name="BassoonsSustain">
+  <param name="master" value="0.5" />
+  <param name="interpolation" value="1" />
+  <param name="reverb" value="0" />
+  <param name="chorus" value="0" />
+  <var name="preset_key_set">0</var>
+  <var name="preset_key_set10">0</var>
+  <var name="preset_key_set11">0</var>
+  <var name="preset_key_set12">0</var>
+  <var name="preset_key_set13">0</var>
+  <var name="preset_key_set14">0</var>
+  <var name="preset_key_set15">0</var>
+  <var name="preset_key_set16">0</var>
+  <var name="preset_key_set2">0</var>
+  <var name="preset_key_set3">0</var>
+  <var name="preset_key_set4">0</var>
+  <var name="preset_key_set5">0</var>
+  <var name="preset_key_set6">0</var>
+  <var name="preset_key_set7">0</var>
+  <var name="preset_key_set8">0</var>
+  <var name="preset_key_set9">0</var>
+  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Woodwinds - Bassoons Sustain.sf2</var>
+</preset>
+<preset bank="0" program="11" plugin="fluidsynth" name="ContrabassoonSolo">
+  <param name="master" value="0.5" />
+  <param name="interpolation" value="1" />
+  <param name="reverb" value="0" />
+  <param name="chorus" value="0" />
+  <var name="preset_key_set">0</var>
+  <var name="preset_key_set10">0</var>
+  <var name="preset_key_set11">0</var>
+  <var name="preset_key_set12">0</var>
+  <var name="preset_key_set13">0</var>
+  <var name="preset_key_set14">0</var>
+  <var name="preset_key_set15">0</var>
+  <var name="preset_key_set16">0</var>
+  <var name="preset_key_set2">0</var>
+  <var name="preset_key_set3">0</var>
+  <var name="preset_key_set4">0</var>
+  <var name="preset_key_set5">0</var>
+  <var name="preset_key_set6">0</var>
+  <var name="preset_key_set7">0</var>
+  <var name="preset_key_set8">0</var>
+  <var name="preset_key_set9">0</var>
+  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Woodwinds - Contrabassoon Solo.sf2</var>
+</preset>
+<preset bank="0" program="12" plugin="fluidsynth" name="GeneralBass">
+  <param name="master" value="0.870551" />
+  <param name="interpolation" value="1" />
+  <param name="reverb" value="0" />
+  <param name="chorus" value="0" />
+  <var name="preset_key_set">0</var>
+  <var name="preset_key_set10">0</var>
+  <var name="preset_key_set11">0</var>
+  <var name="preset_key_set12">0</var>
+  <var name="preset_key_set13">0</var>
+  <var name="preset_key_set14">0</var>
+  <var name="preset_key_set15">0</var>
+  <var name="preset_key_set16">0</var>
+  <var name="preset_key_set2">0</var>
+  <var name="preset_key_set3">0</var>
+  <var name="preset_key_set4">0</var>
+  <var name="preset_key_set5">0</var>
+  <var name="preset_key_set6">0</var>
+  <var name="preset_key_set7">0</var>
+  <var name="preset_key_set8">0</var>
+  <var name="preset_key_set9">0</var>
+  <var name="soundfont">/home/jeb/SOUNDFONTS/PWStrings.sf2</var>
+</preset>
+<preset bank="0" program="6" plugin="eq12" name="MaxStrings">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="0.339151" />
+  <param name="level_out" value="0.312083" />
+  <param name="meter_inL" value="2.15017e-06" />
+  <param name="meter_inR" value="2.03502e-06" />
+  <param name="meter_outL" value="2.02834e-06" />
+  <param name="meter_outR" value="1.75487e-06" />
+  <param name="clip_inL" value="0" />
+  <param name="clip_inR" value="0" />
+  <param name="clip_outL" value="0" />
+  <param name="clip_outR" value="0" />
+  <param name="hp_active" value="0" />
+  <param name="hp_freq" value="33.8796" />
+  <param name="hp_mode" value="1" />
+  <param name="lp_active" value="0" />
+  <param name="lp_freq" value="18000" />
+  <param name="lp_mode" value="1" />
+  <param name="ls_active" value="1" />
+  <param name="ls_level" value="3.93564" />
+  <param name="ls_freq" value="32.0544" />
+  <param name="hs_active" value="1" />
+  <param name="hs_level" value="1.28343" />
+  <param name="hs_freq" value="4000" />
+  <param name="p1_active" value="1" />
+  <param name="p1_level" value="2.54656" />
+  <param name="p1_freq" value="60.0749" />
+  <param name="p1_q" value="1" />
+  <param name="p2_active" value="1" />
+  <param name="p2_level" value="2.20546" />
+  <param name="p2_freq" value="121.489" />
+  <param name="p2_q" value="1" />
+  <param name="p3_active" value="1" />
+  <param name="p3_level" value="2.33604" />
+  <param name="p3_freq" value="265.914" />
+  <param name="p3_q" value="1" />
+  <param name="p4_active" value="1" />
+  <param name="p4_level" value="1.94531" />
+  <param name="p4_freq" value="500" />
+  <param name="p4_q" value="1" />
+  <param name="p5_active" value="1" />
+  <param name="p5_level" value="1.82008" />
+  <param name="p5_freq" value="1000" />
+  <param name="p5_q" value="1" />
+  <param name="p6_active" value="1" />
+  <param name="p6_level" value="1.56174" />
+  <param name="p6_freq" value="2496.03" />
+  <param name="p6_q" value="1" />
+  <param name="p7_active" value="1" />
+  <param name="p7_level" value="1.08673" />
+  <param name="p7_freq" value="4000" />
+  <param name="p7_q" value="1" />
+  <param name="p8_active" value="1" />
+  <param name="p8_level" value="1.20557" />
+  <param name="p8_freq" value="5639" />
+  <param name="p8_q" value="1" />
+  <param name="individuals" value="1" />
+  <param name="zoom" value="0.25" />
+  <param name="analyzer" value="0" />
+  <param name="analyzer_mode" value="1" />
+</preset>
+<preset bank="0" program="4" plugin="reverb" name="MaxStrings">
+  <param name="clip" value="0" />
+  <param name="meter_wet" value="0" />
+  <param name="meter_out" value="0" />
+  <param name="decay_time" value="0.7534" />
+  <param name="hf_damp" value="5000" />
+  <param name="room_size" value="0" />
+  <param name="diffusion" value="0.5" />
+  <param name="amount" value="0.25" />
+  <param name="dry" value="1" />
+  <param name="predelay" value="0" />
+  <param name="bass_cut" value="300" />
+  <param name="treble_cut" value="5000" />
+</preset>
+<preset bank="0" program="5" plugin="multibandcompressor" name="MaxStrings">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="1" />
+  <param name="level_out" value="1" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
+  <param name="clip_inL" value="0" />
+  <param name="clip_inR" value="0" />
+  <param name="clip_outL" value="0" />
+  <param name="clip_outR" value="0" />
+  <param name="freq0" value="120" />
+  <param name="freq1" value="1000" />
+  <param name="freq2" value="6000" />
+  <param name="mode" value="1" />
+  <param name="threshold0" value="0.0209051" />
+  <param name="ratio0" value="3.20221" />
+  <param name="attack0" value="150" />
+  <param name="release0" value="300" />
+  <param name="makeup0" value="2.49666" />
+  <param name="knee0" value="2.82843" />
+  <param name="detection0" value="0" />
+  <param name="compression0" value="1" />
+  <param name="output0" value="0" />
+  <param name="bypass0" value="0" />
+  <param name="solo0" value="0" />
+  <param name="threshold1" value="0.0209051" />
+  <param name="ratio1" value="3.08359" />
+  <param name="attack1" value="100" />
+  <param name="release1" value="200" />
+  <param name="makeup1" value="2.49666" />
+  <param name="knee1" value="2.82843" />
+  <param name="detection1" value="0" />
+  <param name="compression1" value="1" />
+  <param name="output1" value="0" />
+  <param name="bypass1" value="0" />
+  <param name="solo1" value="0" />
+  <param name="threshold2" value="0.0209051" />
+  <param name="ratio2" value="2.89557" />
+  <param name="attack2" value="50" />
+  <param name="release2" value="100" />
+  <param name="makeup2" value="2" />
+  <param name="knee2" value="2.82843" />
+  <param name="detection2" value="0" />
+  <param name="compression2" value="1" />
+  <param name="output2" value="0" />
+  <param name="bypass2" value="0" />
+  <param name="solo2" value="0" />
+  <param name="threshold3" value="0.00634572" />
+  <param name="ratio3" value="1.60292" />
+  <param name="attack3" value="25" />
+  <param name="release3" value="50" />
+  <param name="makeup3" value="1" />
+  <param name="knee3" value="2.82843" />
+  <param name="detection3" value="0" />
+  <param name="compression3" value="1" />
+  <param name="output3" value="0" />
+  <param name="bypass3" value="0" />
+  <param name="solo3" value="0" />
+  <param name="notebook" value="3" />
+</preset>
+<preset bank="0" program="13" plugin="fluidsynth" name="Strings1">
+  <param name="master" value="0.108819" />
+  <param name="interpolation" value="3" />
+  <param name="reverb" value="0" />
+  <param name="chorus" value="0" />
+  <var name="preset_key_set">0</var>
+  <var name="soundfont">/home/jeb/SOUNDFONTS/PWStrings.sf2</var>
+</preset>
+<preset bank="0" program="14" plugin="fluidsynth" name="Strings1-4-SRO">
+  <param name="master" value="0.108819" />
+  <param name="interpolation" value="3" />
+  <param name="reverb" value="1" />
+  <param name="chorus" value="1" />
+  <var name="preset_key_set">0</var>
+  <var name="soundfont">/home/jeb/SOUNDFONTS/PWStrings.sf2</var>
+</preset>
+<preset bank="0" program="15" plugin="fluidsynth" name="Strings1-4-SRO-PLUS">
+  <param name="master" value="0.0921938" />
+  <param name="interpolation" value="3" />
+  <param name="reverb" value="0" />
+  <param name="chorus" value="0" />
+  <var name="preset_key_set">0</var>
+  <var name="preset_key_set10">0</var>
+  <var name="preset_key_set11">0</var>
+  <var name="preset_key_set12">0</var>
+  <var name="preset_key_set13">0</var>
+  <var name="preset_key_set14">0</var>
+  <var name="preset_key_set15">0</var>
+  <var name="preset_key_set16">0</var>
+  <var name="preset_key_set2">0</var>
+  <var name="preset_key_set3">0</var>
+  <var name="preset_key_set4">0</var>
+  <var name="preset_key_set5">0</var>
+  <var name="preset_key_set6">0</var>
+  <var name="preset_key_set7">0</var>
+  <var name="preset_key_set8">0</var>
+  <var name="preset_key_set9">0</var>
+  <var name="soundfont">/home/jeb/SOUNDFONTS/PWStrings.sf2</var>
+</preset>
+<preset bank="0" program="16" plugin="fluidsynth" name="SRO2midrange">
+  <param name="master" value="0.0738121" />
+  <param name="interpolation" value="3" />
+  <param name="reverb" value="0" />
+  <param name="chorus" value="0" />
+  <var name="preset_key_set">141</var>
+  <var name="preset_key_set10">0</var>
+  <var name="preset_key_set11">0</var>
+  <var name="preset_key_set12">0</var>
+  <var name="preset_key_set13">0</var>
+  <var name="preset_key_set14">0</var>
+  <var name="preset_key_set15">0</var>
+  <var name="preset_key_set16">0</var>
+  <var name="preset_key_set2">5</var>
+  <var name="preset_key_set3">0</var>
+  <var name="preset_key_set4">0</var>
+  <var name="preset_key_set5">0</var>
+  <var name="preset_key_set6">0</var>
+  <var name="preset_key_set7">0</var>
+  <var name="preset_key_set8">0</var>
+  <var name="preset_key_set9">0</var>
+  <var name="soundfont">/home/jeb/SOUNDFONTS/Organs/j3.19_Stiehr-Mockers_1.04/Stiehr-Mockers_1.04.pph.sf2</var>
+</preset>
+<preset bank="0" program="5" plugin="reverb" name="SRO4PLUS">
+  <param name="clip" value="0" />
+  <param name="meter_wet" value="0" />
+  <param name="meter_out" value="0" />
+  <param name="decay_time" value="0.737193" />
+  <param name="hf_damp" value="11775.2" />
+  <param name="room_size" value="0" />
+  <param name="diffusion" value="0.5" />
+  <param name="amount" value="0.25" />
+  <param name="dry" value="1" />
+  <param name="predelay" value="0" />
+  <param name="bass_cut" value="300" />
+  <param name="treble_cut" value="5000" />
+</preset>
+<preset bank="0" program="6" plugin="reverb" name="SROplusSTRINGS">
+  <param name="clip" value="0" />
+  <param name="meter_wet" value="0" />
+  <param name="meter_out" value="0" />
+  <param name="decay_time" value="0.737193" />
+  <param name="hf_damp" value="11775.2" />
+  <param name="room_size" value="0" />
+  <param name="diffusion" value="0.5" />
+  <param name="amount" value="0.25" />
+  <param name="dry" value="1" />
+  <param name="predelay" value="0" />
+  <param name="bass_cut" value="300" />
+  <param name="treble_cut" value="5000" />
+</preset>
+<preset bank="0" program="17" plugin="fluidsynth" name="StringsSSO">
+  <param name="master" value="0.5" />
+  <param name="interpolation" value="1" />
+  <param name="reverb" value="0" />
+  <param name="chorus" value="0" />
+  <var name="preset_key_set">2</var>
+  <var name="preset_key_set10">0</var>
+  <var name="preset_key_set11">0</var>
+  <var name="preset_key_set12">0</var>
+  <var name="preset_key_set13">0</var>
+  <var name="preset_key_set14">0</var>
+  <var name="preset_key_set15">0</var>
+  <var name="preset_key_set16">0</var>
+  <var name="preset_key_set2">0</var>
+  <var name="preset_key_set3">0</var>
+  <var name="preset_key_set4">0</var>
+  <var name="preset_key_set5">0</var>
+  <var name="preset_key_set6">0</var>
+  <var name="preset_key_set7">0</var>
+  <var name="preset_key_set8">0</var>
+  <var name="preset_key_set9">0</var>
+  <var name="soundfont">/home/jeb/SOUNDFONTS/StringsSSO.sf2</var>
+</preset>
+</presets>
