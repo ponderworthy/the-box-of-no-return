@@ -32,7 +32,7 @@ def exit_with_beep():
             os.system('beep')
         except:
             exit(1)
-        sleep(0.1)
+        stdsleep(0.1)
     exit(1)
 
 def beep(freq, length):
@@ -77,7 +77,7 @@ def wait_for_jack(jack_client_name='jpctrl_client', jack_server_name='default'):
                 print('JACK server error.  Aborting.')
                 return None
             else:
-                sleep(1)
+                stdsleep(1)
         else:
             print('JACK server discovered, verified, and client created!')
             return jack_client
@@ -102,12 +102,12 @@ def wait_for_jackport(name2chk, jack_client):
 
         try:
             if jack_client.get_port_by_name(name2chk) is None:
-                sleep(1)
+                stdsleep(1)
                 timecount += 1
             else:
                 return True
         except:
-            sleep(1)
+            stdsleep(1)
             timecount += 1
 
 #######################################################################
@@ -171,7 +171,7 @@ def spawn_and_settle(cmdstr, jack_server_name='default'):
         return False
     else:
         print('spawn_and_settle: process appears ready:', cmdstr)
-        sleep(1)
+        stdsleep(1)
         return True
 
 # Tries to get the p_io data used in spawn_and_settle.
@@ -191,7 +191,7 @@ def try_pio(p_psutil):
             if timecount > 15:
                 print('Could not get pio stats after 15 seconds; aborting.')
                 return None
-            sleep(1)
+            stdsleep(1)
             continue
         else:
             print('successful!')
@@ -208,9 +208,9 @@ def try_popen(cmdstr, jack_server_name='default'):
     # Original command without jack_server_name handling
     # p_popen = subprocess.Popen(shlex.split(cmdstr), -1)
     # -1 was probably something needed for older python3
-    p_popen = subprocess.Popen(shlex.split(cmdstr), my_env)
+    p_popen = subprocess.Popen(shlex.split(cmdstr), bufsize=-1, env=my_env)
     while True:
-        sleep(1)
+        stdsleep(1)
         try:
             p_psutil = psutil.Process(p_popen.pid)
         except:

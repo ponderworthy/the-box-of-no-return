@@ -15,11 +15,11 @@
 # https://lsn.ponderworthy.com/doku.php/concurrent_patch_management
 ####################################################################
 
-#!/usr/bin/python3
-
 import sys
 import os
 import jpctrl  # our own Jack Process Control library
+
+bnr_dir = os.getcwd() + '/'
 
 # Detect debug mode.
 # In debug mode, Yoshimi is run with GUI enabled, else with GUI disabled.
@@ -69,10 +69,11 @@ print('-----------------------------------------------------------------')
 print('Start Distribute on hard server...')
 print('-----------------------------------------------------------------')
 
-if Not jpctrl.spawn_and_settle('/home/jeb/Distribute'):
+if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute'):
     jpctrl.exit_with_beep()
 
-if Not jpctrl.wait_for_jackport('Distribute:out_1', jack_client_hard) or Not jpctrl.wait_for_jackport('Distribute:out_16', jack_client_hard):
+if not jpctrl.wait_for_jackport('Distribute:out_1', jack_client_hard)   \
+        or not jpctrl.wait_for_jackport('Distribute:out_16', jack_client_hard):
     print('wait_for_jackport on Distribute failed.')
     jpctrl.exit_with_beep()
 else:
@@ -83,11 +84,12 @@ print('-----------------------------------------------------------------')
 print('Start non-mixer, Mixer-General, on hard server...')
 print('-----------------------------------------------------------------')
 
-if Not jpctrl.spawn_and_settle(
-        'non-mixer --instance Mixer-General /home/jeb/non-mixer/Mixer-General'):
-    Not jpctrl.exit_with_beep()
+if not jpctrl.spawn_and_settle(
+        'non-mixer --instance Mixer-General ' + bnr_dir + 'non-mixer/Mixer-General'):
+    jpctrl.exit_with_beep()
 
-if Not jpctrl.wait_for_jackport('Mixer-General/FinalOutput:out-1', jack_client_hard) or Not jpctrl.wait_for_jackport('Mixer-General/FinalOutput:out-2', jack_client_hard):
+if not jpctrl.wait_for_jackport('Mixer-General/FinalOutput:out-1', jack_client_hard)    \
+        or not jpctrl.wait_for_jackport('Mixer-General/FinalOutput:out-2', jack_client_hard):
     print('wait_for_jackport on Mixer-General failed.')
     jpctrl.exit_with_beep()
 else:
@@ -100,25 +102,25 @@ print('Start components for patch SRO, on server SOFT1...')
 print('-----------------------------------------------------------------')
 
 print('Start Yoshimi SRO 1...')
-if Not jpctrl.spawn_and_settle(
-        'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO1 -j -J -l /home/jeb/YOSHIMI/SROpart1.xmz',
+if not jpctrl.spawn_and_settle(
+        'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO1 -j -J -l ' + bnr_dir + 'YOSHIMI/SROpart1.xmz',
         'SOFT1'):
     jpctrl.exit_with_beep()
 
 print('Start Yoshimi SRO 2...')
-if Not jpctrl.spawn_and_settle(
-        'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO2 -j -J -l /home/jeb/YOSHIMI/SROpart2.xmz',
+if not jpctrl.spawn_and_settle(
+        'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO2 -j -J -l ' + bnr_dir + 'YOSHIMI/SROpart2.xmz',
         'SOFT1'):
     jpctrl.exit_with_beep()
 
 print('Start Yoshimi SRO 3...')
-if Not jpctrl.spawn_and_settle(
-        'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO3 -j -J -l /home/jeb/YOSHIMI/SROpart3.xmz',
+if not jpctrl.spawn_and_settle(
+        'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO3 -j -J -l ' + bnr_dir + 'YOSHIMI/SROpart3.xmz',
         'SOFT1'):
     jpctrl.exit_with_beep()
 
 print('Start CalfSRO...')
-if Not jpctrl.spawn_and_settle(
+if not jpctrl.spawn_and_settle(
         'calfjackhost --client CalfSRO eq12:SRO ! reverb:SRO ! multibandcompressor:SRO',
         'SOFT1'):
     jpctrl.exit_with_beep()
@@ -130,20 +132,20 @@ print('Start components for patch Strings, on server SOFT2...')
 print('-----------------------------------------------------------------')
 
 print('Start StringsSSO...')
-if Not jpctrl.spawn_and_settle(
+if not jpctrl.spawn_and_settle(
         'calfjackhost --client StringsSSO fluidsynth:StringsSSO',
         'SOFT2'):
     jpctrl.exit_with_beep()
 
 print('Start StringsBassAdd...')
-if Not jpctrl.spawn_and_settle(
+if not jpctrl.spawn_and_settle(
         'calfjackhost --client StringsBassAdd ' +
         'fluidsynth:BassoonsSustain fluidsynth:ContrabassoonSolo fluidsynth:GeneralBass',
         'SOFT2'):
     jpctrl.exit_with_beep()
 
 print('Start MaxStringsFilters...')
-if Not jpctrl.spawn_and_settle(
+if not jpctrl.spawn_and_settle(
         'calfjackhost --client MaxStringsFilters eq12:MaxStrings ! reverb:MaxStrings ! multibandcompressor:Strings',
         'SOFT2'):
     jpctrl.exit_with_beep()
@@ -153,8 +155,8 @@ print('Start component for patch FlowBells, on server SOFT3...')
 print('-----------------------------------------------------------------')
 
 print('Start Yoshimi for FlowBells...')
-if Not jpctrl.spawn_and_settle(
-        'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshFlowBells -j -J -l /home/jeb/YOSHIMI/FlowBells.xmz',
+if not jpctrl.spawn_and_settle(
+        'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshFlowBells -j -J -l ' + bnr_dir + 'YOSHIMI/FlowBells.xmz',
         'SOFT3'):
     jpctrl.exit_with_beep()
 
@@ -163,19 +165,19 @@ print('Create JACK connections using aj-snapshot, on all servers...')
 print('-----------------------------------------------------------------')
 
 print('aj-snapshot for hard server...')
-if Not jpctrl.spawn_background('aj-snapshot -r /home/jeb/AJhard.xml'):
+if not jpctrl.spawn_background('aj-snapshot -r ' + bnr_dir + 'AJhard.xml'):
     jpctrl.exit_with_beep()
 
 print('aj-snapshot for server SOFT1...')
-if Not jpctrl.spawn_background('aj-snapshot -r /home/jeb/AJSOFT1.xml'):
+if not jpctrl.spawn_background('aj-snapshot -r ' + bnr_dir + 'AJSOFT1.xml'):
     jpctrl.exit_with_beep()
 
 print('aj-snapshot for server SOFT2...')
-if Not jpctrl.spawn_background('aj-snapshot -r /home/jeb/AJSOFT2.xml'):
+if not jpctrl.spawn_background('aj-snapshot -r ' + bnr_dir + 'AJSOFT2.xml'):
     jpctrl.exit_with_beep()
 
 print('aj-snapshot for server SOFT3...')
-if Not jpctrl.spawn_background('aj-snapshot -r /home/jeb/AJSOFT3.xml'):
+if not jpctrl.spawn_background('aj-snapshot -r ' + bnr_dir + 'AJSOFT3.xml'):
     jpctrl.exit_with_beep()
 
 print('-----------------------------------------------------------------')

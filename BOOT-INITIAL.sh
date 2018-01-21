@@ -59,4 +59,4 @@ fi
 
 echo "Starting BOOT-GENERAL..." >> ~/BOOT-INITIAL.log
 # Start BOOT-GENERAL
-~/BNR/BOOT-GENERAL > ~/BOOT-GENERAL.log
+# ~/BNR/BOOT-GENERAL.py > ~/BOOT-GENERAL.log
