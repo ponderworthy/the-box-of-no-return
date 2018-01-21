@@ -41,6 +41,10 @@ if debugmode:
 else:
     yoshimi_debug_param = '-i'
 
+print('-----------------------------------------------------------------')
+print('Verify all JACK servers...')
+print('-----------------------------------------------------------------')
+
 # Verify / wait for JACK server 'default'.  This is the hard server.
 print('Verify / wait for JACK hard server...')
 jack_client_hard = jpctrl.wait_for_jack('jpctrl_client')
@@ -66,6 +70,26 @@ if jack_client_soft3 is None:
     jpctrl.exit_with_beep()
 
 print('-----------------------------------------------------------------')
+print('Start all a2jmidi_bridge processes for soft servers...'
+print('-----------------------------------------------------------------')
+
+# on hard server
+if not jpctrl.spawn_and_settle('a2jmidi_bridge'):
+    jpctrl.exit_with_beep()
+
+# on SOFT1
+if not jpctrl.spawn_and_settle('a2jmidi_bridge', 'SOFT1'):
+    jpctrl.exit_with_beep()
+
+# on SOFT2
+if not jpctrl.spawn_and_settle('a2jmidi_bridge', 'SOFT2'):
+    jpctrl.exit_with_beep()
+
+# on SOFT3
+if not jpctrl.spawn_and_settle('a2jmidi_bridge', 'SOFT3'):
+    jpctrl.exit_with_beep()
+
+print('-----------------------------------------------------------------')
 print('Start Distribute on hard server...')
 print('-----------------------------------------------------------------')
 
@@ -79,23 +103,27 @@ if not jpctrl.wait_for_jackport('Distribute:out_1', jack_client_hard)   \
 else:
     print('Distribute ports confirmed.')
 
+print('-----------------------------------------------------------------')
+print('Start Zita IP bridge processes...')
+print('-----------------------------------------------------------------')
+
 
 print('-----------------------------------------------------------------')
-print('Start non-mixer, Mixer-General, on hard server...')
+print('Start non-mixer, Mixer-hard, on hard server...')
 print('-----------------------------------------------------------------')
 
 if not jpctrl.spawn_and_settle(
-        'non-mixer --instance Mixer-General ' + bnr_dir + 'non-mixer/Mixer-General'):
+        'non-mixer --instance Mixer-Hard ' + bnr_dir + 'non-mixer/Mixer-Hard'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport('Mixer-General/FinalOutput:out-1', jack_client_hard)    \
-        or not jpctrl.wait_for_jackport('Mixer-General/FinalOutput:out-2', jack_client_hard):
-    print('wait_for_jackport on Mixer-General failed.')
+if not jpctrl.wait_for_jackport('Mixer-Hard/FinalOutput:out-1', jack_client_hard)    \
+        or not jpctrl.wait_for_jackport('Mixer-Hard/FinalOutput:out-2', jack_client_hard):
+    print('wait_for_jackport on Mixer-Hard failed.')
     jpctrl.exit_with_beep()
 else:
-    print('Mixer-General ports confirmed.')
+    print('Mixer-Hard ports confirmed.')
 
-jpctrl.sleep(3)
+jpctrl.stdsleep(3)
 
 print('-----------------------------------------------------------------')
 print('Start components for patch SRO, on server SOFT1...')
