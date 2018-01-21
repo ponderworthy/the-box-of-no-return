@@ -24,7 +24,7 @@ echo "Configure and start JACK hard server ..." >> /home/jeb/BOOT-INITIAL.log
 jack_control ds alsa
 jack_control dps device hw:O12,0
 jack_control dps rate 96000
-jack_control dps period 64
+jack_control dps period 128
 jack_control dps nperiods 3
 jack_control dps midi-driver none
 jack_control eps realtime True
@@ -34,9 +34,12 @@ jack_control eps sync false
 jack_control start
 
 # Configure and start JACK soft servers
-/usr/bin/jackd -nSOFT1 -ddummy -r96000 -p64 > jackd-SOFT1.log > ~/SOFT1.log &
-/usr/bin/jackd -nSOFT2 -ddummy -r96000 -p64 > jackd-SOFT2.log > ~/SOFT2.log &
-/usr/bin/jackd -nSOFT3 -ddummy -r96000 -p64 > jackd-SOFT3.log > ~/SOFT3.log &
+# Using identical parameters as hard which may help;
+# unclear thus far whether there may be advantageous
+# changes
+/usr/bin/jackd -nSOFT1 -ddummy -r96000 -p128 > jackd-SOFT1.log &
+/usr/bin/jackd -nSOFT2 -ddummy -r96000 -p128 > jackd-SOFT2.log &
+/usr/bin/jackd -nSOFT3 -ddummy -r96000 -p128 > jackd-SOFT3.log &
 
 # Can be useful to start JACK setup and connection GUIs in place of this
 # block of comments during development.

@@ -71,7 +71,7 @@ def wait_for_jack(jack_client_name='jpctrl_client', jack_server_name='default'):
     timecount = 0
     while True:
         jack_client = setup_jack_client('wait_for_jack', jack_client_name, jack_server_name)
-        if jack_client == None:
+        if jack_client is None:
             timecount += 1
             if timecount > 20:
                 print('JACK server error.  Aborting.')
@@ -96,10 +96,12 @@ def wait_for_jackport(name2chk, jack_client):
             print('wait_for_jackport timed out waiting for port: ', name2chk)
             print('Aborting.')
             return False
+
         print('wait_for_jackport: get_port_by_name attempt ',
-              timecount, ' for ', name2chk)
+            timecount, ' for ', name2chk)
+
         try:
-            if jack_client.get_port_by_name(name2chk) Is None:
+            if jack_client.get_port_by_name(name2chk) is None:
                 sleep(1)
                 timecount += 1
             else:
@@ -116,7 +118,7 @@ def wait_for_jackport(name2chk, jack_client):
 # above.
 def find_jackport_by_substring(jack_client, str2find):
 
-    if jack_client Is None:
+    if jack_client is None:
         print('find_jackport_by_substring() failed: JACK client is invalid/None.')
         return False
 
@@ -148,7 +150,7 @@ def stdsleep(time_in_secs):
 # Starts a process in the background.
 # Return True if successful, False if fails.
 def spawn_background(cmd_and_args, jack_server_name='default'):
-    if try_popen(cmd_and_args, jack_server_name) Is Not None:
+    if try_popen(cmd_and_args, jack_server_name) is not None:
         return True
     else:
         return False
@@ -157,13 +159,13 @@ def spawn_background(cmd_and_args, jack_server_name='default'):
 # stats can be retrieved, and one more second.
 def spawn_and_settle(cmdstr, jack_server_name='default'):
     p_popen = try_popen(cmdstr, jack_server_name)
-    if p_popen Is None:
+    if p_popen is None:
         print('spawn_and_settle failed for: ', cmdstr)
         print('Could not start process.')
         return False
     p_psutil = psutil.Process(p_popen.pid)
     p_io = try_pio(p_psutil) # try_pio is ours, see below
-    if p_io Is None:
+    if p_io is None:
         print('spawn_and_settle failed for: ', cmdstr)
         print('Could not get pio data.')
         return False
