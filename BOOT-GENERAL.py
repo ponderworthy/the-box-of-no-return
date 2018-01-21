@@ -44,7 +44,7 @@ else:
 # Verify / wait for JACK server 'default'.  This is the hard server.
 print('Verify / wait for JACK hard server...')
 jack_client_hard = jpctrl.wait_for_jack('jpctrl_client')
-If jack_client_hard is None:
+if jack_client_hard is None:
     jpctrl.exit_with_beep()
 
 # Verify / wait for JACK soft server 'SOFT1'.

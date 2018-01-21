@@ -1,4 +1,7 @@
 
+First draft coding appears done.  Now syntax checking.
+python -m py_compile yourpythonscript.py
+
 The spawn code in jpctrl.py has to have JACK server name capability
 through environment variable change.
 https://stackoverflow.com/questions/2231227/python-subprocess-popen-with-a-modified-environment
