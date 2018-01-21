@@ -1,4 +1,23 @@
 
+Found that spawn_and_settle may not be sending processes
+appropriate environment for JACK server selection.  Testing.
+
+Realized MIDI architecture needs to be established.
+- If we run a2jmidi_bridge on each soft server we
+should be able to connect each soft server to MIDI
+hardware, through ALSA.
+- This does require a separate Distribute process for each
+JACK soft server, and none on the hard server.
+- They can all be exactly the same Distribute code.
+- Given that we are designing for most efficient use
+of truly ample CPU and RAM, this is probably the best,
+because it keeps the stage count at a minimum for each
+MIDI signal sent and received.
+- Even though each Distribute process will be considerably
+larger than necessary, using the same code (the same
+executable script!) for each will keep the system as a whole
+as simple as possible.
+
 Copied back working files from previous production set.
 Added .calfpresets to the git repo set.
 

@@ -70,8 +70,12 @@ if jack_client_soft3 is None:
     jpctrl.exit_with_beep()
 
 print('-----------------------------------------------------------------')
-print('Start all a2jmidi_bridge processes for soft servers...'
+print('Start all a2jmidi_bridge processes for soft servers...')
 print('-----------------------------------------------------------------')
+
+# The idea here is that all of the JACK servers, hard and soft,
+# are given access to MIDI hardware via j2amidi_bridge, which
+# is installed as part of a2jmidid.
 
 # on hard server
 if not jpctrl.spawn_and_settle('a2jmidi_bridge'):
@@ -153,7 +157,7 @@ if not jpctrl.spawn_and_settle(
         'SOFT1'):
     jpctrl.exit_with_beep()
 
-jpctrl.sleep(3)
+jpctrl.stdsleep(3)
 
 print('-----------------------------------------------------------------')
 print('Start components for patch Strings, on server SOFT2...')
