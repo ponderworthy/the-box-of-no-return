@@ -153,6 +153,10 @@ print('-----------------------------------------------------------------')
 print('Start Zita IP bridge processes...')
 print('-----------------------------------------------------------------')
 
+# Three receivers on the hard server, and one transmitter on each soft server.
+
+
+
 
 print('-----------------------------------------------------------------')
 print('Start non-mixer, Mixer-hard, on hard server...')
