@@ -9,3 +9,17 @@ receive the files for its next major iteration, which is using the [MultiJACK](h
 The original name for the project was "Supermega Rumblic Organ", or SRO, after its first patch.  But more patches came about, not organ-ic.  It is 
 called the Box of No Return because after playing it, its creator cannot go back to his former instrumentation, at least not for long.
 
+## Implementation Notes
+
+* These files are designed for building a standalone, headless box, which 
+one connects via either MIDI interface or USB cord to an appropriate keyboard
+controller.  As such, the machine needs to boot into a user profile,
+without password, and BOOT-INITIAL.sh needs to be automatically run at boot.  
+
+* Any dot-files (e.g., .calfpresets) need to be placed in the root of the user profile 
+used for this purpose.
+
+* Everything else is designed to work from any other folder, e.g., ~/BNR.
+
+
+

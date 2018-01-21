@@ -9,8 +9,8 @@ hardware, through ALSA.
 - This does require a separate Distribute process for each
 JACK soft server, and none on the hard server.
 - They can all be exactly the same Distribute code.
-- Given that we are designing for most efficient use
-of truly ample CPU and RAM, this is probably the best,
+- Given that we are designing for most effective (not stingy)
+use of truly ample CPU and RAM, this is probably the best,
 because it keeps the stage count at a minimum for each
 MIDI signal sent and received.
 - Even though each Distribute process will be considerably
