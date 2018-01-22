@@ -45,23 +45,25 @@ def beep(freq, length):
 ##############################################################################
 # Try once to set up new jpctrl JACK client in the optionally named server
 # and return the JACK client's object, or None if fails
-def setup_jack_client(jack_client, context_string, jack_client_name='jpctrl_client', jack_server_name='default'):
+def setup_jack_client(context_string, jack_client_name='jpctrl_client', jack_server_name='default'):
 
     # Connect to JACK if possible.
     try:
-        jack_client = jack.Client(jack_client_name, False, False, jack_server_name)
-        jack_client.activate()
+        jack_client_new = jack.Client(jack_client_name, False, False, jack_server_name)
+        jack_client_new.activate()
     except:
         print(context_string + ' JACK client setup failed.')
         print('Aborting.')
-        jack_client = None
+        jack_client_new = None
         return None
 
-    if jack_client.status.failure or jack_client.status.server_error or jack_client.status.client_zombie:
-        jack_client = None
+    if jack_client_new.status.failure or \
+            jack_client_new.status.server_error or \
+            jack_client_new.status.client_zombie:
+        jack_client_new = None
         return None
 
-    return jack_client
+    return jack_client_new
 
 ###################################################################################
 # For 20 seconds, try to set up new jpctrl JACK client, trying once per second.
@@ -70,8 +72,8 @@ def wait_for_jack(jack_client_name='jpctrl_client', jack_server_name='default'):
 
     timecount = 0
     while True:
-        jack_client = setup_jack_client(jack_client, 'wait_for_jack', jack_client_name, jack_server_name)
-        if jack_client is None:
+        jack_client_new = setup_jack_client('wait_for_jack', jack_client_name, jack_server_name)
+        if jack_client_new is None:
             timecount += 1
             if timecount > 20:
                 print('JACK server error.  Aborting.')
@@ -80,7 +82,7 @@ def wait_for_jack(jack_client_name='jpctrl_client', jack_server_name='default'):
                 stdsleep(1)
         else:
             print('JACK server discovered, verified, and client created!')
-            return jack_client
+            return jack_client_new
 
 #######################################################################
 # Wait for a particular port to become present in a JACK server.
