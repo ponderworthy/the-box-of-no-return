@@ -45,7 +45,7 @@ def beep(freq, length):
 ##############################################################################
 # Try once to set up new jpctrl JACK client in the optionally named server
 # and return the JACK client's object, or None if fails
-def setup_jack_client(context_string, jack_client_name='jpctrl_client', jack_server_name='default'):
+def setup_jack_client(jack_client, context_string, jack_client_name='jpctrl_client', jack_server_name='default'):
 
     # Connect to JACK if possible.
     try:
@@ -70,7 +70,7 @@ def wait_for_jack(jack_client_name='jpctrl_client', jack_server_name='default'):
 
     timecount = 0
     while True:
-        jack_client = setup_jack_client('wait_for_jack', jack_client_name, jack_server_name)
+        jack_client = setup_jack_client(jack_client, 'wait_for_jack', jack_client_name, jack_server_name)
         if jack_client is None:
             timecount += 1
             if timecount > 20:
