@@ -34,8 +34,9 @@ jack_control eps sync false
 jack_control start
 
 # Start a2jmidid for hard server
-a2j_control ehw
-a2j_control start
+# Don't think this will be needed
+# a2j_control ehw
+# a2j_control start
 
 # Configure and start JACK soft servers
 # Using identical parameters as hard which may help;

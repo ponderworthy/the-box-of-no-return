@@ -88,7 +88,7 @@ def wait_for_jack(jack_client_name='jpctrl_client', jack_server_name='default'):
 # Requires an active, running, confirmed JACK server, referred to
 # by an object given by a function like wait_for_jack or setup_jack_client
 # above.
-def wait_for_jackport(name2chk, jack_client):
+def wait_for_jackport(jack_client, name2chk):
 
     timecount = 0
     while True:

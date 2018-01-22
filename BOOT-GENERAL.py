@@ -48,24 +48,28 @@ print('-----------------------------------------------------------------')
 # Verify / wait for JACK server 'default'.  This is the hard server.
 print('Verify / wait for JACK hard server...')
 jack_client_hard = jpctrl.wait_for_jack('jpctrl_client')
+jack_client_hard.midi_outports.register('dummy_hard_outport')
 if jack_client_hard is None:
     jpctrl.exit_with_beep()
 
 # Verify / wait for JACK soft server 'SOFT1'.
 print('Verify / wait for JACK soft server SOFT1...')
 jack_client_soft1 = jpctrl.wait_for_jack('jpctrl_client', 'SOFT1')
+jack_client_soft1.midi_outports.register('dummy_soft1_outport')
 if jack_client_soft1 is None:
     jpctrl.exit_with_beep()
 
 # Verify / wait for JACK soft server 'SOFT2'.
 print('Verify / wait for JACK soft server SOFT2...')
 jack_client_soft2 = jpctrl.wait_for_jack('jpctrl_client', 'SOFT2')
+jack_client_soft2.midi_outports.register('dummy_soft2_outport')
 if jack_client_soft2 is None:
     jpctrl.exit_with_beep()
 
 # Verify / wait for JACK soft server 'SOFT3'.
 print('Verify / wait for JACK soft server SOFT3...')
 jack_client_soft3 = jpctrl.wait_for_jack('jpctrl_client', 'SOFT3')
+jack_client_soft3.midi_outports.register('dummy_soft3_outport')
 if jack_client_soft3 is None:
     jpctrl.exit_with_beep()
 
@@ -73,13 +77,9 @@ print('-----------------------------------------------------------------')
 print('Start all a2jmidi_bridge processes for soft servers...')
 print('-----------------------------------------------------------------')
 
-# The idea here is that all of the JACK servers, hard and soft,
-# are given access to MIDI hardware via j2amidi_bridge, which
-# is installed as part of a2jmidid.
-
-# on hard server
-if not jpctrl.spawn_and_settle('a2jmidi_bridge'):
-    jpctrl.exit_with_beep()
+# The idea here is that all of the JACK soft servers are given
+# access to MIDI hardware via j2amidi_bridge, which is installed
+# as part of a2jmidid.
 
 # on SOFT1
 if not jpctrl.spawn_and_settle('a2jmidi_bridge', 'SOFT1'):
@@ -112,37 +112,39 @@ print('-----------------------------------------------------------------')
 # executable script!) for each will keep the system as a whole
 # as simple as possible for study and change.
 
-# on SOFT1
+print('Starting Distribute on SOFT1...')
 
 if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute', 'SOFT1'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport('Distribute:out_1', jack_client_soft1)   \
-        or not jpctrl.wait_for_jackport('Distribute:out_16', jack_client_soft1):
+print(jack_client_soft1.get_ports())
+
+if not jpctrl.wait_for_jackport(jack_client_soft1, 'Distribute:out_1')   \
+        or not jpctrl.wait_for_jackport(jack_client_soft1, 'Distribute:out_16'):
     print('wait_for_jackport on Distribute failed.')
     jpctrl.exit_with_beep()
 else:
     print('Distribute confirmed on SOFT1.')
 
-# on SOFT2
+print('Starting Distribute on SOFT2...')
 
 if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute', 'SOFT2'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport('Distribute:out_1', jack_client_soft2)   \
-        or not jpctrl.wait_for_jackport('Distribute:out_16', jack_client_soft2):
+if not jpctrl.wait_for_jackport(jack_client_soft2, 'Distribute:out_1')   \
+        or not jpctrl.wait_for_jackport(jack_client_soft2, 'Distribute:out_16'):
     print('wait_for_jackport on Distribute failed.')
     jpctrl.exit_with_beep()
 else:
     print('Distribute confirmed on SOFT2.')
 
-# on SOFT3
+print('Starting Distribute on SOFT3...')
 
 if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute', 'SOFT3'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport('Distribute:out_1', jack_client_soft3)   \
-        or not jpctrl.wait_for_jackport('Distribute:out_16', jack_client_soft3):
+if not jpctrl.wait_for_jackport(jack_client_soft3, 'Distribute:out_1')   \
+        or not jpctrl.wait_for_jackport(jack_client_soft3, 'Distribute:out_16'):
     print('wait_for_jackport on Distribute failed.')
     jpctrl.exit_with_beep()
 else:
