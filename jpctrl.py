@@ -90,7 +90,7 @@ def wait_for_jack(jack_client_name, jack_server_name='default'):
 # Requires an active, running, confirmed JACK server, referred to
 # by an object given by a function like wait_for_jack or setup_jack_client
 # above.
-def wait_for_jackport(jack_client, name2chk):
+def wait_for_jackport_old(jack_client, name2chk):
 
     timecount = 0
     while True:
@@ -111,6 +111,40 @@ def wait_for_jackport(jack_client, name2chk):
         except:
             stdsleep(1)
             timecount += 1
+
+########
+# A new wait_for_jackport() which creates its own jack_client every time
+
+def wait_for_jackport(name2chk, jack_server_name='default'):
+
+    jack_client_temp = jack.Client('jack_client_temp', servername=jack_server_name)
+    jack_client_temp.activate()
+    jack_client_temp.outports.register('dummy_temp_port')
+
+    timecount = 0
+    while True:
+        if timecount > 5:
+            print('wait_for_jackport timed out waiting for port: ', name2chk)
+            print('Aborting.')
+            jack_client_temp.deactivate()
+            jack_client_temp.close()
+            return False
+
+        print('wait_for_jackport: get_port_by_name attempt ',
+            timecount, ' for ', name2chk)
+
+        try:
+            if jack_client_temp.get_port_by_name(name2chk) is None:
+                stdsleep(1)
+                timecount += 1
+            else:
+                jack_client_temp.deactivate()
+                jack_client_temp.close()
+                return True
+        except:
+            stdsleep(1)
+            timecount += 1
+
 
 #######################################################################
 # Find JACK port by substring in the name.

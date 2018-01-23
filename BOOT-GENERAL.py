@@ -43,50 +43,6 @@ else:
     yoshimi_debug_param = '-i'
 
 print('-----------------------------------------------------------------')
-print('Create JACK clients, and use them to verify JACK servers...')
-print('-----------------------------------------------------------------')
-
-jack_client_hard = jack.Client('jack_client_hard', servername='default')
-jack_client_hard.activate()
-jack_client_hard.outports.register('dummy_4hard')
-
-print('JACK ports for hard server:')
-print(jack_client_hard.name)
-print(jack_client_hard.get_ports())
-print('')
-
-jack_client_soft1 = jack.Client('jack_client_soft1', servername='SOFT1')
-jack_client_soft1.activate()
-jack_client_soft1.outports.register('dummy_4soft1')
-
-print('JACK ports for server SOFT1:')
-print(jack_client_soft1.name)
-print(jack_client_soft1.get_ports())
-print('')
-
-jack_client_soft2 = jack.Client('jack_client_soft2', servername='SOFT2')
-jack_client_soft2.activate()
-jack_client_soft2.outports.register('dummy_4soft2')
-
-print('JACK ports for server SOFT2:')
-print(jack_client_soft2.name)
-print(jack_client_soft2.get_ports())
-print('')
-
-jack_client_soft3 = jack.Client('jack_client_soft3', servername='SOFT3')
-jack_client_soft3.activate()
-jack_client_soft3.outports.register('dummy_4soft3')
-
-print('JACK ports for server SOFT3:')
-print(jack_client_soft3.name)
-print(jack_client_soft3.get_ports())
-print('')
-
-input("Press Enter to continue...")
-
-exit(0)
-
-print('-----------------------------------------------------------------')
 print('Start all a2jmidi_bridge processes for soft servers...')
 print('-----------------------------------------------------------------')
 
@@ -125,14 +81,22 @@ print('-----------------------------------------------------------------')
 # executable script!) for each will keep the system as a whole
 # as simple as possible for study and change.
 
+# spawn_and_settle is not sufficient to determine readiness
+# of Distribute (mididings).  We must use wait_for_jackport.
+
+# The original wait_for_jackport used jack.Client objects
+# created for each JACK server.  For some reason, this did not work.
+# This test code still exists in BOOT-GENERAL.BAK.py and jpctrl.py.
+# The code below creates a new jack.Client for each test.
+
 print('Starting Distribute on SOFT1...')
 
 if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute', 'SOFT1'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport(jack_client_soft1, 'Distribute:out_1')   \
-        or not jpctrl.wait_for_jackport(jack_client_soft1, 'Distribute:out_16'):
-    print('wait_for_jackport on Distribute failed.')
+if not jpctrl.wait_for_jackport('Distribute:out_1', 'SOFT1')   \
+        or not jpctrl.wait_for_jackport('Distribute:out_16', 'SOFT1'):
+    print('wait_for_jackport on Distribute/SOFT1 failed.')
     jpctrl.exit_with_beep()
 else:
     print('Distribute confirmed on SOFT1.')
@@ -142,9 +106,9 @@ print('Starting Distribute on SOFT2...')
 if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute', 'SOFT2'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport(jack_client_soft2, 'Distribute:out_1')   \
-        or not jpctrl.wait_for_jackport(jack_client_soft2, 'Distribute:out_16'):
-    print('wait_for_jackport on Distribute failed.')
+if not jpctrl.wait_for_jackport('Distribute:out_1', 'SOFT2')   \
+        or not jpctrl.wait_for_jackport('Distribute:out_16', 'SOFT2'):
+    print('wait_for_jackport on Distribute/SOFT2 failed.')
     jpctrl.exit_with_beep()
 else:
     print('Distribute confirmed on SOFT2.')
@@ -154,22 +118,36 @@ print('Starting Distribute on SOFT3...')
 if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute', 'SOFT3'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport(jack_client_soft3, 'Distribute:out_1')   \
-        or not jpctrl.wait_for_jackport(jack_client_soft3, 'Distribute:out_16'):
-    print('wait_for_jackport on Distribute failed.')
+if not jpctrl.wait_for_jackport('Distribute:out_1', 'SOFT3')   \
+        or not jpctrl.wait_for_jackport('Distribute:out_16', 'SOFT3'):
+    print('wait_for_jackport on Distribute/SOFT3 failed.')
     jpctrl.exit_with_beep()
 else:
     print('Distribute confirmed on SOFT3.')
-
 
 print('-----------------------------------------------------------------')
 print('Start Zita IP bridge processes...')
 print('-----------------------------------------------------------------')
 
-# Three receivers on the hard server, and one transmitter on each soft server.
+print('Three receivers on the hard server...')
 
+if not jpctrl.spawn_and_settle('zita-n2j --jname zita-n2j-4soft1 127.0.0.1 55551'):
+    jpctrl.exit_with_beep()
+if not jpctrl.spawn_and_settle('zita-n2j --jname zita-n2j-4soft2 127.0.0.2 55552'):
+    jpctrl.exit_with_beep()
+if not jpctrl.spawn_and_settle('zita-n2j --jname zita-n2j-4soft3 127.0.0.3 55553'):
+    jpctrl.exit_with_beep()
 
+print('One transmitter on each soft server...')
 
+if not jpctrl.spawn_and_settle('zita-j2n --jname zita-j2n-soft1 --jserv SOFT1 127.0.0.1 55551'):
+    jpctrl.exit_with_beep()
+if not jpctrl.spawn_and_settle('zita-j2n --jname zita-j2n-soft2 --jserv SOFT2 127.0.0.2 55552'):
+    jpctrl.exit_with_beep()
+if not jpctrl.spawn_and_settle('zita-j2n --jname zita-j2n-soft3 --jserv SOFT3 127.0.0.3 55553'):
+    jpctrl.exit_with_beep()
+
+exit(0)
 
 print('-----------------------------------------------------------------')
 print('Start non-mixer, Mixer-hard, on hard server...')
