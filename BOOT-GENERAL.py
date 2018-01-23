@@ -17,7 +17,8 @@
 
 import sys
 import os
-import jpctrl  # our own Jack Process Control library
+import jack
+import jpctrl  # our own Jack Process Control
 
 bnr_dir = os.getcwd() + '/'
 
@@ -42,36 +43,48 @@ else:
     yoshimi_debug_param = '-i'
 
 print('-----------------------------------------------------------------')
-print('Verify all JACK servers...')
+print('Create JACK clients, and use them to verify JACK servers...')
 print('-----------------------------------------------------------------')
 
-# Verify / wait for JACK server 'default'.  This is the hard server.
-print('Verify / wait for JACK hard server...')
-jack_client_hard = jpctrl.wait_for_jack('jpctrl_client_hard')
-jack_client_hard.midi_outports.register('dummy_hard_outport')
-if jack_client_hard is None:
-    jpctrl.exit_with_beep()
+jack_client_hard = jack.Client('jack_client_hard', servername='default')
+jack_client_hard.activate()
+jack_client_hard.outports.register('dummy_4hard')
 
-# Verify / wait for JACK soft server 'SOFT1'.
-print('Verify / wait for JACK soft server SOFT1...')
-jack_client_soft1 = jpctrl.wait_for_jack('jpctrl_client_soft1', 'SOFT1')
-jack_client_soft1.midi_outports.register('dummy_soft1_outport')
-if jack_client_soft1 is None:
-    jpctrl.exit_with_beep()
+print('JACK ports for hard server:')
+print(jack_client_hard.name)
+print(jack_client_hard.get_ports())
+print('')
 
-# Verify / wait for JACK soft server 'SOFT2'.
-print('Verify / wait for JACK soft server SOFT2...')
-jack_client_soft2 = jpctrl.wait_for_jack('jpctrl_client_soft2', 'SOFT2')
-jack_client_soft2.midi_outports.register('dummy_soft2_outport')
-if jack_client_soft2 is None:
-    jpctrl.exit_with_beep()
+jack_client_soft1 = jack.Client('jack_client_soft1', servername='SOFT1')
+jack_client_soft1.activate()
+jack_client_soft1.outports.register('dummy_4soft1')
 
-# Verify / wait for JACK soft server 'SOFT3'.
-print('Verify / wait for JACK soft server SOFT3...')
-jack_client_soft3 = jpctrl.wait_for_jack('jpctrl_client_soft3', 'SOFT3')
-jack_client_soft3.midi_outports.register('dummy_soft3_outport')
-if jack_client_soft3 is None:
-    jpctrl.exit_with_beep()
+print('JACK ports for server SOFT1:')
+print(jack_client_soft1.name)
+print(jack_client_soft1.get_ports())
+print('')
+
+jack_client_soft2 = jack.Client('jack_client_soft2', servername='SOFT2')
+jack_client_soft2.activate()
+jack_client_soft2.outports.register('dummy_4soft2')
+
+print('JACK ports for server SOFT2:')
+print(jack_client_soft2.name)
+print(jack_client_soft2.get_ports())
+print('')
+
+jack_client_soft3 = jack.Client('jack_client_soft3', servername='SOFT3')
+jack_client_soft3.activate()
+jack_client_soft3.outports.register('dummy_4soft3')
+
+print('JACK ports for server SOFT3:')
+print(jack_client_soft3.name)
+print(jack_client_soft3.get_ports())
+print('')
+
+input("Press Enter to continue...")
+
+exit(0)
 
 print('-----------------------------------------------------------------')
 print('Start all a2jmidi_bridge processes for soft servers...')
@@ -116,8 +129,6 @@ print('Starting Distribute on SOFT1...')
 
 if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute', 'SOFT1'):
     jpctrl.exit_with_beep()
-
-print(jack_client_soft1.get_ports())
 
 if not jpctrl.wait_for_jackport(jack_client_soft1, 'Distribute:out_1')   \
         or not jpctrl.wait_for_jackport(jack_client_soft1, 'Distribute:out_16'):
