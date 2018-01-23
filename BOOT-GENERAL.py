@@ -94,8 +94,7 @@ print('Starting Distribute.py on SOFT1...')
 if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute.py', 'SOFT1'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport('Distribute.py:out_1', 'SOFT1')   \
-        or not jpctrl.wait_for_jackport('Distribute.py:out_16', 'SOFT1'):
+if not jpctrl.wait_for_jackport('Distribute.py:SRO', 'SOFT1'):
     print('wait_for_jackport on Distribute.py/SOFT1 failed.')
     jpctrl.exit_with_beep()
 else:
@@ -106,8 +105,7 @@ print('Starting Distribute.py on SOFT2...')
 if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute.py', 'SOFT2'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport('Distribute.py:out_1', 'SOFT2')   \
-        or not jpctrl.wait_for_jackport('Distribute.py:out_16', 'SOFT2'):
+if not jpctrl.wait_for_jackport('Distribute.py:Strings', 'SOFT2'):
     print('wait_for_jackport on Distribute.py/SOFT2 failed.')
     jpctrl.exit_with_beep()
 else:
@@ -118,8 +116,7 @@ print('Starting Distribute.py on SOFT3...')
 if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute.py', 'SOFT3'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport('Distribute.py:out_1', 'SOFT3')   \
-        or not jpctrl.wait_for_jackport('Distribute.py:out_16', 'SOFT3'):
+if not jpctrl.wait_for_jackport('Distribute.py:FlowBells', 'SOFT3'):
     print('wait_for_jackport on Distribute.py/SOFT3 failed.')
     jpctrl.exit_with_beep()
 else:
