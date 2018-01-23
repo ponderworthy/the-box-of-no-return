@@ -247,11 +247,4 @@ print('aj-snapshot for server SOFT3...')
 if not jpctrl.spawn_background('aj-snapshot -r ' + bnr_dir + 'AJSOFT3.xml'):
     jpctrl.exit_with_beep()
 
-print('-----------------------------------------------------------------')
-print('Clean up JACK clients created for BNR system boot...')
-print('-----------------------------------------------------------------')
-
-for jc in [jack_client_hard, jack_client_soft1, jack_client_soft2, jack_client_soft3]:
-    jc.deactivate()
-    jc.close()
 
