@@ -22,7 +22,7 @@ import jpctrl  # our own Jack Process Control
 
 bnr_dir = os.getcwd() + '/'
 
-# Detect debug mode.
+# Detect debug mode.  On with any command-line argument.
 # In debug mode, Yoshimi is run with GUI enabled, else with GUI disabled.
 cmdargcount = len(sys.argv)
 if cmdargcount == 2:
@@ -155,8 +155,8 @@ if not jpctrl.spawn_and_settle(
         'non-mixer --instance Mixer-Hard ' + bnr_dir + 'non-mixer/Mixer-Hard'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport('Mixer-Hard/FinalOutput:out-1', jack_client_hard)    \
-        or not jpctrl.wait_for_jackport('Mixer-Hard/FinalOutput:out-2', jack_client_hard):
+if not jpctrl.wait_for_jackport('Mixer-Hard/FinalOutput:out-1')    \
+        or not jpctrl.wait_for_jackport('Mixer-Hard/FinalOutput:out-2'):
     print('wait_for_jackport on Mixer-Hard failed.')
     jpctrl.exit_with_beep()
 else:
