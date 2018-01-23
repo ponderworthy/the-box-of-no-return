@@ -85,11 +85,19 @@ def wait_for_jack(jack_client_name, jack_server_name='default'):
             return jack_client_new
 
 #######################################################################
+# wait_for_jackport()
+#
 # Wait for a particular port to become present in a JACK server.
 # Returns true on success, false on 6-second timeout and/or failure.
 # Requires an active, running, confirmed JACK server, referred to
 # by an object given by a function like wait_for_jack or setup_jack_client
 # above.
+#
+# wait_for_jackport_old presumes a pre-created jack_client object.
+# Not known why it doesn't work.  Its replacement, just below,
+# creates a new JACK client each time it's run.  Not efficient,
+# but works well.
+
 def wait_for_jackport_old(jack_client, name2chk):
 
     timecount = 0
@@ -113,7 +121,7 @@ def wait_for_jackport_old(jack_client, name2chk):
             timecount += 1
 
 ########
-# A new wait_for_jackport() which creates its own jack_client every time
+# Current working wait_for_jackport() which creates its own jack_client every time
 
 def wait_for_jackport(name2chk, jack_server_name='default'):
 
@@ -152,6 +160,11 @@ def wait_for_jackport(name2chk, jack_server_name='default'):
 # Requires an active, running, confirmed JACK server, referred to
 # by an object given by a function like wait_for_jack or setup_jack_client
 # above.
+#
+# Not currently in use.  Probably would need to create a new
+# jack_client every time, due to the issue exposed
+# by wait_for_jackport_old above.
+
 def find_jackport_by_substring(jack_client, str2find):
 
     if jack_client is None:
