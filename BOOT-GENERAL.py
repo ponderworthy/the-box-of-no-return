@@ -63,67 +63,67 @@ if not jpctrl.spawn_and_settle('a2jmidi_bridge', 'SOFT3'):
     jpctrl.exit_with_beep()
 
 print('-----------------------------------------------------------------')
-print('Start Distribute on all soft servers...')
+print('Start Distribute.py on all soft servers...')
 print('-----------------------------------------------------------------')
 
 # - If we run a2jmidi_bridge on each soft server we
 # should be able to connect each soft server to MIDI
 # hardware, through ALSA.
-# - This does require a separate Distribute process for each
+# - This does require a separate Distribute.py process for each
 # JACK soft server, and none on the hard server.
-# - They can all be exactly the same Distribute code.
+# - They can all be exactly the same Distribute.py code.
 # - Given that we are designing for most effective (not stingy)
 # use of truly ample CPU and RAM, this is probably the best,
 # because it keeps the stage count at a minimum for each
 # MIDI signal sent and received.
-# - Even though each Distribute process will be considerably
+# - Even though each Distribute.py process will be considerably
 # larger than necessary, using the same code (the same
 # executable script!) for each will keep the system as a whole
 # as simple as possible for study and change.
 
 # spawn_and_settle is not sufficient to determine readiness
-# of Distribute (mididings).  We must use wait_for_jackport.
+# of Distribute.py (mididings).  We must use wait_for_jackport.
 
 # The original wait_for_jackport used jack.Client objects
 # created for each JACK server.  For some reason, this did not work.
 # This test code still exists in BOOT-GENERAL.BAK.py and jpctrl.py.
 # The code below creates a new jack.Client for each test.
 
-print('Starting Distribute on SOFT1...')
+print('Starting Distribute.py on SOFT1...')
 
-if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute', 'SOFT1'):
+if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute.py', 'SOFT1'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport('Distribute:out_1', 'SOFT1')   \
-        or not jpctrl.wait_for_jackport('Distribute:out_16', 'SOFT1'):
-    print('wait_for_jackport on Distribute/SOFT1 failed.')
-    jpctrl.exit_with_beep()
-else:
-    print('Distribute confirmed on SOFT1.')
-
-print('Starting Distribute on SOFT2...')
-
-if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute', 'SOFT2'):
-    jpctrl.exit_with_beep()
-
-if not jpctrl.wait_for_jackport('Distribute:out_1', 'SOFT2')   \
-        or not jpctrl.wait_for_jackport('Distribute:out_16', 'SOFT2'):
-    print('wait_for_jackport on Distribute/SOFT2 failed.')
+if not jpctrl.wait_for_jackport('Distribute.py:out_1', 'SOFT1')   \
+        or not jpctrl.wait_for_jackport('Distribute.py:out_16', 'SOFT1'):
+    print('wait_for_jackport on Distribute.py/SOFT1 failed.')
     jpctrl.exit_with_beep()
 else:
-    print('Distribute confirmed on SOFT2.')
+    print('Distribute.py confirmed on SOFT1.')
 
-print('Starting Distribute on SOFT3...')
+print('Starting Distribute.py on SOFT2...')
 
-if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute', 'SOFT3'):
+if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute.py', 'SOFT2'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport('Distribute:out_1', 'SOFT3')   \
-        or not jpctrl.wait_for_jackport('Distribute:out_16', 'SOFT3'):
-    print('wait_for_jackport on Distribute/SOFT3 failed.')
+if not jpctrl.wait_for_jackport('Distribute.py:out_1', 'SOFT2')   \
+        or not jpctrl.wait_for_jackport('Distribute.py:out_16', 'SOFT2'):
+    print('wait_for_jackport on Distribute.py/SOFT2 failed.')
     jpctrl.exit_with_beep()
 else:
-    print('Distribute confirmed on SOFT3.')
+    print('Distribute.py confirmed on SOFT2.')
+
+print('Starting Distribute.py on SOFT3...')
+
+if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute.py', 'SOFT3'):
+    jpctrl.exit_with_beep()
+
+if not jpctrl.wait_for_jackport('Distribute.py:out_1', 'SOFT3')   \
+        or not jpctrl.wait_for_jackport('Distribute.py:out_16', 'SOFT3'):
+    print('wait_for_jackport on Distribute.py/SOFT3 failed.')
+    jpctrl.exit_with_beep()
+else:
+    print('Distribute.py confirmed on SOFT3.')
 
 print('-----------------------------------------------------------------')
 print('Start Zita IP bridge processes...')

@@ -31,7 +31,7 @@ from mididings import *
 
 config(
     backend='jack',
-    client_name='Distribute',
+    client_name='Distribute.py',
     in_ports=1,
     out_ports=16,
 )
@@ -61,7 +61,7 @@ config(
 #
 ## Filter(NOTEON | NOTEOFF) >> ChannelSplit({
 # The above line, before the >>, takes all note on and note off data.
-# After the >> begins perhaps the 'meat' of Distribute,
+# After the >> begins perhaps the 'meat' of Distribute.py,
 # where all data coming in on MIDI Channel 1 is routed
 # to output JACK MIDI port #1 of this process, and
 # some are handled specially, e.g., #3, #5, #6.
