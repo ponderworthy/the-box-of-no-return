@@ -1,4 +1,24 @@
 
+Now rewriting Distribute as Distribute.py.
+Using named output ports, to make it
+a lot easier, hopefully, to understand
+JACK wiring.
+
+All processes appear to be functional!!!!!!
+
+Found, after much thrashing, that if we create multiple
+jack.Client objects and attach each to a different JACK
+server, it doesn't work, they all see the ports on
+the first.  Have no idea why.  Have posted query to
+the jack.Client github issues area with sample code.
+It affects us in exactly one way: wait_for_jackport
+and relatives cannot be built to take jack.Client objects,
+they have to create their own JACK clients at each
+function run.  This is not terrible, it's just
+mildly inefficient.  Recoded for this, keeping the
+old code available in the files for possible
+future reference.
+
 Found that spawn_and_settle may not be sending processes
 appropriate environment for JACK server selection.  Testing.
 

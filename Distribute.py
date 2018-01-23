@@ -3,13 +3,11 @@
 # Level 1:
 # All control changes (e.g., the foot-pedal) are sent to all active JACK ports (currently, 1 2 4 5)
 # Everything which is not a control change (e.g., notes) are split:
-#	If it comes in on MIDI channel 1, it is designated for applet JACK port 1 (SRO)
-#	If it comes in on MIDI channel 2, it is designated for applet JACK port 2 (Strings)
-#	If it comes in on MIDI channel 3, it is designated for applet JACK ports 1 and 2 (SRO+Strings)
-#	If it comes in on MIDI channel 4, it is designated for applet JACK port 4 (FlowBells)
-#	If it comes in on MIDI channel 5, it is designated for applet JACK ports 2 and 4 (Strings+FlowBells)
-# If it comes in on MIDI channel 6, it is designated for applet JACK ports
-# 1 and 5 (SRO+MidOrgan)
+#	If it comes in on MIDI channel 1, it is designated for applet JACK port 'SRO'
+#	If it comes in on MIDI channel 2, it is designated for applet JACK port 'Strings'
+#	If it comes in on MIDI channel 3, it is designated for applet JACK ports 'SRO' plus 'Strings'
+#	If it comes in on MIDI channel 4, it is designated for applet JACK port 'FlowBells'
+#	If it comes in on MIDI channel 5, it is designated for applet JACK ports 'Strings' + 'FlowBells'
 
 # Level 2:
 # All signals, after leaving Level 1, are designated for MIDI channel 1, and sent out the applet JACK port(s)
@@ -18,14 +16,11 @@
 # Double patches are described below.  Relative volumes
 # are adjusted in MIDI as velocity.  Overload is always a concern.
 
-# Channel 3 is SRO+Strings, and uses #1 and #2 in parallel.
+# Channel 3 is SRO+Strings.
 # Trying Port 1 (SRO) at 0.5, Port 2 (Strings) at 0.5.
 
-# Channel 5 is Strings+FlowBells, and uses #2 and #4 in parallel.
+# Channel 5 is Strings+FlowBells.
 # Trying Port 2 (Strings) at 0.85, Port 4 (FlowBells) at 0.35.
-
-# Channel 6 is SRO+MidOrgan, and will uses #1 and #6 in parallel.
-# No volume changes yet.
 
 from mididings import *
 
@@ -33,7 +28,7 @@ config(
     backend='jack',
     client_name='Distribute.py',
     in_ports=1,
-    out_ports=16,
+    out_ports=['SRO', 'Strings', 'FlowBells'],
 )
 
 # Documentation for the "run" code below.
@@ -52,12 +47,11 @@ config(
 #
 # Specifics to the below:
 #
-## CtrlFilter(64) >> [Port(1), Port(2), Port(4), Port(6)],
+## CtrlFilter(64) >> [Port('SRO'), Port('Strings'), Port('FlowBells')],
 # The above line takes all CTRL data of type 64, which means 
 # all sustain/damper pedal changes only, and routes them to 
-# all four active output ports at the same time.  This way we
-# minimize cutoffs and other unpleasantries when channels
-# are changed at the controller.
+# all four live patch channels at the same time.  We don't route
+# to combinations, because that doubles up.
 #
 ## Filter(NOTEON | NOTEOFF) >> ChannelSplit({
 # The above line, before the >>, takes all note on and note off data.
@@ -80,24 +74,24 @@ config(
 run(
 
     [
-        CtrlFilter(64) >> [Port(1), Port(2), Port(4), Port(6)],
+        CtrlFilter(64) >> [Port('SRO'), Port('Strings'), Port('FlowBells')],
         Filter(NOTEON | NOTEOFF) >> ChannelSplit({
-            1: Port(1),
-            2: Port(2),
-            3: [Port(1) >> Velocity(multiply=0.5), Port(2) >> Velocity(multiply=0.5)],
-            4: Port(4),
-            5: [Port(2) >> Velocity(multiply=0.55), Port(4)],
-            6: [Port(1), Port(6)],
-            7: Port(7),
-            8: Port(8),
-            9: Port(9),
-            10: Port(10),
-            11: Port(11),
-            12: Port(12),
-            13: Port(13),
-            14: Port(14),
-            15: Port(15),
-            16: Port(16),
+            1: Port('SRO'),
+            2: Port('Strings'),
+            3: [Port('SRO') >> Velocity(multiply=0.5), Port('Strings') >> Velocity(multiply=0.5)],
+            4: Port('FlowBells'),
+            5: [Port('Strings') >> Velocity(multiply=0.55), Port('FlowBells')],
+#            6: [Port(1), Port(6)],
+#            7: Port(7),
+#            8: Port(8),
+#            9: Port(9),
+#            10: Port(10),
+#            11: Port(11),
+#            12: Port(12),
+#            13: Port(13),
+#            14: Port(14),
+#            15: Port(15),
+#            16: Port(16),
         })
     ] >> Channel(1)
 
