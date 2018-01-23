@@ -147,8 +147,6 @@ if not jpctrl.spawn_and_settle('zita-j2n --jname zita-j2n-soft2 --jserv SOFT2 12
 if not jpctrl.spawn_and_settle('zita-j2n --jname zita-j2n-soft3 --jserv SOFT3 127.0.0.3 55553'):
     jpctrl.exit_with_beep()
 
-exit(0)
-
 print('-----------------------------------------------------------------')
 print('Start non-mixer, Mixer-hard, on hard server...')
 print('-----------------------------------------------------------------')
