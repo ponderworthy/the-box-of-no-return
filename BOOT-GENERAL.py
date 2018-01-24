@@ -184,7 +184,7 @@ if not jpctrl.spawn_and_settle(
         'non-mixer --instance Mixer-SOFT2 ' + bnr_dir + 'non-mixer/Mixer-SOFT2', 'SOFT2'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport('Mixer-SOFT1/FinalOutput:out-1', 'SOFT2'):
+if not jpctrl.wait_for_jackport('Mixer-SOFT2/FinalOutput:out-1', 'SOFT2'):
     print('wait_for_jackport on Mixer-SOFT2 failed.')
     jpctrl.exit_with_beep()
 else:

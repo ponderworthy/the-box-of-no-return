@@ -17,12 +17,6 @@
 	Gain_Module 0x10 create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0xE :active 1
 	Meter_Module 0x11 create :is_default 1 :chain 0xE :active 1
 	JACK_Module 0x12 create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0xE :active 1
-	Mixer_Strip 0x37 create :name "MIXSRO" :width "narrow" :tab "fader" :color 2091557836 :gain_mode 0 :mute_mode 0 :group 0x0 :auto_input "" :manual_connection 0
-	Chain 0x38 create :strip 0x37 :tab "chain"
-	JACK_Module 0x39 create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0x38 :active 1
-	Gain_Module 0x3A create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0x38 :active 1
-	Meter_Module 0x3B create :is_default 1 :chain 0x38 :active 1
-	JACK_Module 0x3C create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x38 :active 1
 	Mixer_Strip 0x31 create :name "FinalOutput" :width "wide" :tab "fader" :color 1486043484 :gain_mode 0 :mute_mode 0 :group 0x0 :auto_input "" :manual_connection 0
 	Chain 0x32 create :strip 0x31 :tab "chain"
 	JACK_Module 0x33 create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0x32 :active 1
