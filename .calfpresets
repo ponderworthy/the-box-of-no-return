@@ -717,7 +717,7 @@
   <param name="reverb" value="0" />
   <param name="chorus" value="0" />
   <var name="preset_key_set">0</var>
-  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Strings - 1st Violins Staccato.sf2</var>
+  <var name="soundfont">/home/jeb/BNR/SOUNDFONTS/Sonatina SF2 Individuals/Strings - 1st Violins Staccato.sf2</var>
 </preset>
 <preset bank="0" program="2" plugin="fluidsynth" name="1stViolinsSustain">
   <param name="master" value="0.5" />
@@ -725,7 +725,7 @@
   <param name="reverb" value="0" />
   <param name="chorus" value="0" />
   <var name="preset_key_set">0</var>
-  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Strings - 1st Violins Sustain.sf2</var>
+  <var name="soundfont">/home/jeb/BNR/SOUNDFONTS/Sonatina SF2 Individuals/Strings - 1st Violins Sustain.sf2</var>
 </preset>
 <preset bank="0" program="3" plugin="fluidsynth" name="2ndViolinsStaccato">
   <param name="master" value="0.5" />
@@ -733,7 +733,7 @@
   <param name="reverb" value="0" />
   <param name="chorus" value="0" />
   <var name="preset_key_set">0</var>
-  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Strings - 2nd Violins Staccato.sf2</var>
+  <var name="soundfont">/home/jeb/BNR/SOUNDFONTS/Sonatina SF2 Individuals/Strings - 2nd Violins Staccato.sf2</var>
 </preset>
 <preset bank="0" program="4" plugin="fluidsynth" name="2ndViolinsSustain">
   <param name="master" value="0.5" />
@@ -741,7 +741,7 @@
   <param name="reverb" value="0" />
   <param name="chorus" value="0" />
   <var name="preset_key_set">0</var>
-  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Strings - 2nd Violins Sustain.sf2</var>
+  <var name="soundfont">/home/jeb/BNR/SOUNDFONTS/Sonatina SF2 Individuals/Strings - 2nd Violins Sustain.sf2</var>
 </preset>
 <preset bank="0" program="5" plugin="fluidsynth" name="ViolasSustain">
   <param name="master" value="0.5" />
@@ -749,7 +749,7 @@
   <param name="reverb" value="0" />
   <param name="chorus" value="0" />
   <var name="preset_key_set">0</var>
-  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Strings - Violas Sustain.sf2</var>
+  <var name="soundfont">/home/jeb/BNR/SOUNDFONTS/Sonatina SF2 Individuals/Strings - Violas Sustain.sf2</var>
 </preset>
 <preset bank="0" program="6" plugin="fluidsynth" name="CelliStaccato">
   <param name="master" value="0.5" />
@@ -757,7 +757,7 @@
   <param name="reverb" value="0" />
   <param name="chorus" value="0" />
   <var name="preset_key_set">0</var>
-  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Strings - Celli Staccato.sf2</var>
+  <var name="soundfont">/home/jeb/BNR/SOUNDFONTS/Sonatina SF2 Individuals/Strings - Celli Staccato.sf2</var>
 </preset>
 <preset bank="0" program="7" plugin="fluidsynth" name="CelliSustain">
   <param name="master" value="0.5" />
@@ -765,7 +765,7 @@
   <param name="reverb" value="0" />
   <param name="chorus" value="0" />
   <var name="preset_key_set">0</var>
-  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Strings - Celli Sustain.sf2</var>
+  <var name="soundfont">/home/jeb/BNR/SOUNDFONTS/Sonatina SF2 Individuals/Strings - Celli Sustain.sf2</var>
 </preset>
 <preset bank="0" program="8" plugin="fluidsynth" name="BassesStaccato">
   <param name="master" value="0.5" />
@@ -773,7 +773,7 @@
   <param name="reverb" value="0" />
   <param name="chorus" value="0" />
   <var name="preset_key_set">0</var>
-  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Strings - Basses Staccato.sf2</var>
+  <var name="soundfont">/home/jeb/BNR/SOUNDFONTS/Sonatina SF2 Individuals/Strings - Basses Staccato.sf2</var>
 </preset>
 <preset bank="0" program="9" plugin="fluidsynth" name="BassesSustain">
   <param name="master" value="0.5" />
@@ -781,7 +781,7 @@
   <param name="reverb" value="0" />
   <param name="chorus" value="0" />
   <var name="preset_key_set">0</var>
-  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Strings - Basses Sustain.sf2</var>
+  <var name="soundfont">/home/jeb/BNR/SOUNDFONTS/Sonatina SF2 Individuals/Strings - Basses Sustain.sf2</var>
 </preset>
 <preset bank="0" program="10" plugin="fluidsynth" name="BassoonsSustain">
   <param name="master" value="0.5" />
@@ -804,7 +804,7 @@
   <var name="preset_key_set7">0</var>
   <var name="preset_key_set8">0</var>
   <var name="preset_key_set9">0</var>
-  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Woodwinds - Bassoons Sustain.sf2</var>
+  <var name="soundfont">/home/jeb/BNR/SOUNDFONTS/Sonatina SF2 Individuals/Woodwinds - Bassoons Sustain.sf2</var>
 </preset>
 <preset bank="0" program="11" plugin="fluidsynth" name="ContrabassoonSolo">
   <param name="master" value="0.5" />
@@ -827,7 +827,7 @@
   <var name="preset_key_set7">0</var>
   <var name="preset_key_set8">0</var>
   <var name="preset_key_set9">0</var>
-  <var name="soundfont">/home/jeb/SOUNDFONTS/Sonatina SF2 Individuals/Woodwinds - Contrabassoon Solo.sf2</var>
+  <var name="soundfont">/home/jeb/BNR/SOUNDFONTS/Sonatina SF2 Individuals/Woodwinds - Contrabassoon Solo.sf2</var>
 </preset>
 <preset bank="0" program="12" plugin="fluidsynth" name="GeneralBass">
   <param name="master" value="0.870551" />
@@ -850,7 +850,7 @@
   <var name="preset_key_set7">0</var>
   <var name="preset_key_set8">0</var>
   <var name="preset_key_set9">0</var>
-  <var name="soundfont">/home/jeb/SOUNDFONTS/PWStrings.sf2</var>
+  <var name="soundfont">/home/jeb/BNR/SOUNDFONTS/PWStrings.sf2</var>
 </preset>
 <preset bank="0" program="6" plugin="eq12" name="MaxStrings">
   <param name="bypass" value="0" />
@@ -995,7 +995,7 @@
   <param name="reverb" value="0" />
   <param name="chorus" value="0" />
   <var name="preset_key_set">0</var>
-  <var name="soundfont">/home/jeb/SOUNDFONTS/PWStrings.sf2</var>
+  <var name="soundfont">/home/jeb/BNR/SOUNDFONTS/PWStrings.sf2</var>
 </preset>
 <preset bank="0" program="14" plugin="fluidsynth" name="Strings1-4-SRO">
   <param name="master" value="0.108819" />
@@ -1003,7 +1003,7 @@
   <param name="reverb" value="1" />
   <param name="chorus" value="1" />
   <var name="preset_key_set">0</var>
-  <var name="soundfont">/home/jeb/SOUNDFONTS/PWStrings.sf2</var>
+  <var name="soundfont">/home/jeb/BNR/SOUNDFONTS/PWStrings.sf2</var>
 </preset>
 <preset bank="0" program="15" plugin="fluidsynth" name="Strings1-4-SRO-PLUS">
   <param name="master" value="0.0921938" />
@@ -1026,7 +1026,7 @@
   <var name="preset_key_set7">0</var>
   <var name="preset_key_set8">0</var>
   <var name="preset_key_set9">0</var>
-  <var name="soundfont">/home/jeb/SOUNDFONTS/PWStrings.sf2</var>
+  <var name="soundfont">/home/jeb/BNR/SOUNDFONTS/PWStrings.sf2</var>
 </preset>
 <preset bank="0" program="16" plugin="fluidsynth" name="SRO2midrange">
   <param name="master" value="0.0738121" />
@@ -1049,7 +1049,7 @@
   <var name="preset_key_set7">0</var>
   <var name="preset_key_set8">0</var>
   <var name="preset_key_set9">0</var>
-  <var name="soundfont">/home/jeb/SOUNDFONTS/Organs/j3.19_Stiehr-Mockers_1.04/Stiehr-Mockers_1.04.pph.sf2</var>
+  <var name="soundfont">/home/jeb/BNR/SOUNDFONTS/Organs/j3.19_Stiehr-Mockers_1.04/Stiehr-Mockers_1.04.pph.sf2</var>
 </preset>
 <preset bank="0" program="5" plugin="reverb" name="SRO4PLUS">
   <param name="clip" value="0" />
@@ -1100,6 +1100,6 @@
   <var name="preset_key_set7">0</var>
   <var name="preset_key_set8">0</var>
   <var name="preset_key_set9">0</var>
-  <var name="soundfont">/home/jeb/SOUNDFONTS/StringsSSO.sf2</var>
+  <var name="soundfont">/home/jeb/BNR/SOUNDFONTS/StringsSSO.sf2</var>
 </preset>
 </presets>

@@ -145,19 +145,36 @@ if not jpctrl.spawn_and_settle('zita-j2n --jname zita-j2n-soft3 --jserv SOFT3 12
     jpctrl.exit_with_beep()
 
 print('-----------------------------------------------------------------')
-print('Start non-mixer, Mixer-hard, on hard server...')
+print('Start non-mixers...')
 print('-----------------------------------------------------------------')
+
+print('')
+print('non-mixer Mixer-Hard...')
+print('')
 
 if not jpctrl.spawn_and_settle(
         'non-mixer --instance Mixer-Hard ' + bnr_dir + 'non-mixer/Mixer-Hard'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport('Mixer-Hard/FinalOutput:out-1')    \
-        or not jpctrl.wait_for_jackport('Mixer-Hard/FinalOutput:out-2'):
+if not jpctrl.wait_for_jackport('Mixer-Hard/FinalOutput:out-1'):
     print('wait_for_jackport on Mixer-Hard failed.')
     jpctrl.exit_with_beep()
 else:
     print('Mixer-Hard ports confirmed.')
+
+print('')
+print('non-mixer Mixer-SOFT1...')
+print('')
+
+if not jpctrl.spawn_and_settle(
+        'non-mixer --instance Mixer-SOFT1 ' + bnr_dir + 'non-mixer/Mixer-SOFT1', 'SOFT1'):
+    jpctrl.exit_with_beep()
+
+if not jpctrl.wait_for_jackport('Mixer-SOFT1/FinalOutput:out-1', 'SOFT1'):
+    print('wait_for_jackport on Mixer-SOFT1 failed.')
+    jpctrl.exit_with_beep()
+else:
+    print('Mixer-SOFT1 ports confirmed.')
 
 jpctrl.stdsleep(3)
 
