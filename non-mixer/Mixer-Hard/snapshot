@@ -1,0 +1,26 @@
+{
+	Mixer_Strip 0x1 create :name "SRO" :width "wide" :tab "fader" :color 1567501911 :gain_mode 0 :mute_mode 0 :group 0x0 :auto_input "" :manual_connection 0
+	Chain 0x2 create :strip 0x1 :tab "chain"
+	JACK_Module 0x3 create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0x2 :active 1
+	Gain_Module 0x4 create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0x2 :active 1
+	Meter_Module 0x5 create :is_default 1 :chain 0x2 :active 1
+	JACK_Module 0x6 create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x2 :active 1
+	Mixer_Strip 0x13 create :name "Strings" :width "wide" :tab "fader" :color 1713746265 :gain_mode 0 :mute_mode 0 :group 0x0 :auto_input "" :manual_connection 0
+	Chain 0x14 create :strip 0x13 :tab "chain"
+	JACK_Module 0x15 create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0x14 :active 1
+	Gain_Module 0x16 create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0x14 :active 1
+	Meter_Module 0x17 create :is_default 1 :chain 0x14 :active 1
+	JACK_Module 0x18 create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x14 :active 1
+	Mixer_Strip 0x2B create :name "FlowBells" :width "wide" :tab "fader" :color 1452965558 :gain_mode 0 :mute_mode 0 :group 0x0 :auto_input "" :manual_connection 0
+	Chain 0x2C create :strip 0x2B :tab "chain"
+	JACK_Module 0x2D create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0x2C :active 1
+	Gain_Module 0x2E create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0x2C :active 1
+	Meter_Module 0x2F create :is_default 1 :chain 0x2C :active 1
+	JACK_Module 0x30 create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x2C :active 1
+	Mixer_Strip 0x31 create :name "FinalOutput" :width "wide" :tab "fader" :color 1486043484 :gain_mode 0 :mute_mode 0 :group 0x0 :auto_input "" :manual_connection 0
+	Chain 0x32 create :strip 0x31 :tab "chain"
+	JACK_Module 0x33 create :parameter_values "0.000000:2.000000" :is_default 1 :chain 0x32 :active 1
+	Gain_Module 0x34 create :parameter_values "0.000000:0.000000" :is_default 1 :chain 0x32 :active 1
+	Meter_Module 0x35 create :is_default 1 :chain 0x32 :active 1
+	JACK_Module 0x36 create :parameter_values "2.000000:0.000000" :is_default 1 :chain 0x32 :active 1
+}
