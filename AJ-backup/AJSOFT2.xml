@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aj-snapshot>
+<alsa>
+  <client name="System">
+    <port id="0" />
+    <port id="1" />
+  </client>
+  <client name="Midi Through">
+    <port id="0" />
+  </client>
+  <client name="a2j_bridge" />
+  <client name="a2j_bridge" />
+  <client name="a2j_bridge" />
+</alsa>
+<jack>
+  <client name="system">
+    <port name="capture_1" />
+    <port name="capture_2" />
+  </client>
+  <client name="a2j_bridge">
+    <port name="capture">
+      <connection port="Distribute.py:in_1" />
+    </port>
+  </client>
+  <client name="Distribute.py">
+    <port name="SRO" />
+    <port name="Strings">
+      <connection port="StringsBassAdd:Fluidsynth MIDI In" />
+      <connection port="StringsBassAdd:Fluidsynth (2) MIDI In" />
+      <connection port="StringsBassAdd:Fluidsynth (3) MIDI In" />
+      <connection port="StringsSSO:Fluidsynth MIDI In" />
+    </port>
+    <port name="FlowBells" />
+  </client>
+  <client name="Mixer-SOFT2/Strings 1">
+    <port name="out-1">
+      <connection port="Mixer-SOFT2/FinalOutput:in-1" />
+    </port>
+    <port name="out-2">
+      <connection port="Mixer-SOFT2/FinalOutput:in-2" />
+    </port>
+  </client>
+  <client name="Mixer-SOFT2/Strings 2">
+    <port name="out-1">
+      <connection port="Mixer-SOFT2/FinalOutput:in-1" />
+    </port>
+    <port name="out-2">
+      <connection port="Mixer-SOFT2/FinalOutput:in-2" />
+    </port>
+  </client>
+  <client name="Mixer-SOFT2/Strings 3">
+    <port name="out-1">
+      <connection port="Mixer-SOFT2/FinalOutput:in-1" />
+    </port>
+    <port name="out-2">
+      <connection port="Mixer-SOFT2/FinalOutput:in-2" />
+    </port>
+  </client>
+  <client name="Mixer-SOFT2/Strings 4">
+    <port name="out-1">
+      <connection port="Mixer-SOFT2/FinalOutput:in-1" />
+    </port>
+    <port name="out-2">
+      <connection port="Mixer-SOFT2/FinalOutput:in-2" />
+    </port>
+  </client>
+  <client name="Mixer-SOFT2/FinalOutput">
+    <port name="out-1">
+      <connection port="MaxStringsFilters:Equalizer 12 Band In #1" />
+    </port>
+    <port name="out-2">
+      <connection port="MaxStringsFilters:Equalizer 12 Band In #2" />
+    </port>
+  </client>
+  <client name="StringsSSO">
+    <port name="Fluidsynth Out #1">
+      <connection port="Mixer-SOFT2/Strings 4:in-1" />
+    </port>
+    <port name="Fluidsynth Out #2">
+      <connection port="Mixer-SOFT2/Strings 4:in-2" />
+    </port>
+  </client>
+  <client name="StringsBassAdd">
+    <port name="Fluidsynth Out #1">
+      <connection port="Mixer-SOFT2/Strings 1:in-1" />
+    </port>
+    <port name="Fluidsynth Out #2">
+      <connection port="Mixer-SOFT2/Strings 1:in-2" />
+    </port>
+    <port name="Fluidsynth (2) Out #1">
+      <connection port="Mixer-SOFT2/Strings 2:in-1" />
+    </port>
+    <port name="Fluidsynth (2) Out #2">
+      <connection port="Mixer-SOFT2/Strings 2:in-2" />
+    </port>
+    <port name="Fluidsynth (3) Out #1">
+      <connection port="Mixer-SOFT2/Strings 3:in-1" />
+    </port>
+    <port name="Fluidsynth (3) Out #2">
+      <connection port="Mixer-SOFT2/Strings 3:in-2" />
+    </port>
+  </client>
+  <client name="MaxStringsFilters">
+    <port name="Equalizer 12 Band Out #1">
+      <connection port="MaxStringsFilters:Reverb In #1" />
+    </port>
+    <port name="Equalizer 12 Band Out #2">
+      <connection port="MaxStringsFilters:Reverb In #2" />
+    </port>
+    <port name="Reverb Out #1">
+      <connection port="MaxStringsFilters:Multiband Compressor In #1" />
+    </port>
+    <port name="Reverb Out #2">
+      <connection port="MaxStringsFilters:Multiband Compressor In #2" />
+    </port>
+    <port name="Multiband Compressor Out #1">
+      <connection port="zita-j2n-soft2:in_1" />
+    </port>
+    <port name="Multiband Compressor Out #2">
+      <connection port="zita-j2n-soft2:in_2" />
+    </port>
+  </client>
+</jack>
+</aj-snapshot>

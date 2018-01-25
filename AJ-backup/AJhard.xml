@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aj-snapshot>
+<alsa>
+  <client name="System">
+    <port id="0" />
+    <port id="1" />
+  </client>
+  <client name="Midi Through">
+    <port id="0" />
+  </client>
+  <client name="a2j_bridge" />
+  <client name="a2j_bridge" />
+  <client name="a2j_bridge" />
+</alsa>
+<jack>
+  <client name="system">
+    <port name="capture_1" />
+    <port name="capture_2" />
+  </client>
+  <client name="zita-n2j-4soft1">
+    <port name="out_1">
+      <connection port="Mixer-Hard/SRO:in-1" />
+    </port>
+    <port name="out_2">
+      <connection port="Mixer-Hard/SRO:in-2" />
+    </port>
+  </client>
+  <client name="zita-n2j-4soft2">
+    <port name="out_1">
+      <connection port="Mixer-Hard/Strings:in-1" />
+    </port>
+    <port name="out_2">
+      <connection port="Mixer-Hard/Strings:in-2" />
+    </port>
+  </client>
+  <client name="zita-n2j-4soft3">
+    <port name="out_1">
+      <connection port="Mixer-Hard/FlowBells:in-1" />
+    </port>
+    <port name="out_2">
+      <connection port="Mixer-Hard/FlowBells:in-2" />
+    </port>
+  </client>
+  <client name="Mixer-Hard/SRO">
+    <port name="out-1">
+      <connection port="Mixer-Hard/FinalOutput:in-1" />
+    </port>
+    <port name="out-2">
+      <connection port="Mixer-Hard/FinalOutput:in-2" />
+    </port>
+  </client>
+  <client name="Mixer-Hard/Strings">
+    <port name="out-1">
+      <connection port="Mixer-Hard/FinalOutput:in-1" />
+    </port>
+    <port name="out-2">
+      <connection port="Mixer-Hard/FinalOutput:in-2" />
+    </port>
+  </client>
+  <client name="Mixer-Hard/FlowBells">
+    <port name="out-1">
+      <connection port="Mixer-Hard/FinalOutput:in-1" />
+    </port>
+    <port name="out-2">
+      <connection port="Mixer-Hard/FinalOutput:in-2" />
+    </port>
+  </client>
+  <client name="Mixer-Hard/FinalOutput">
+    <port name="out-1">
+      <connection port="system:playback_1" />
+    </port>
+    <port name="out-2">
+      <connection port="system:playback_2" />
+    </port>
+  </client>
+</jack>
+</aj-snapshot>

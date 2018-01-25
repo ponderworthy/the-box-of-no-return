@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aj-snapshot>
+<alsa>
+  <client name="System">
+    <port id="0" />
+    <port id="1" />
+  </client>
+  <client name="Midi Through">
+    <port id="0" />
+  </client>
+  <client name="a2j_bridge" />
+  <client name="a2j_bridge" />
+  <client name="a2j_bridge" />
+</alsa>
+<jack>
+  <client name="system">
+    <port name="capture_1" />
+    <port name="capture_2" />
+  </client>
+  <client name="a2j_bridge">
+    <port name="capture">
+      <connection port="Distribute.py:in_1" />
+    </port>
+  </client>
+  <client name="Distribute.py">
+    <port name="SRO">
+      <connection port="yoshimi-YoshSRO1:midi in" />
+      <connection port="yoshimi-YoshSRO2:midi in" />
+      <connection port="yoshimi-YoshSRO3:midi in" />
+    </port>
+    <port name="Strings" />
+    <port name="FlowBells" />
+  </client>
+  <client name="Mixer-SOFT1/Yoshimi 1">
+    <port name="out-1">
+      <connection port="Mixer-SOFT1/FinalOutput:in-1" />
+    </port>
+    <port name="out-2">
+      <connection port="Mixer-SOFT1/FinalOutput:in-2" />
+    </port>
+  </client>
+  <client name="Mixer-SOFT1/Yoshimi 2">
+    <port name="out-1">
+      <connection port="Mixer-SOFT1/FinalOutput:in-1" />
+    </port>
+    <port name="out-2">
+      <connection port="Mixer-SOFT1/FinalOutput:in-2" />
+    </port>
+  </client>
+  <client name="Mixer-SOFT1/Yoshimi 3">
+    <port name="out-1">
+      <connection port="Mixer-SOFT1/FinalOutput:in-1" />
+    </port>
+    <port name="out-2">
+      <connection port="Mixer-SOFT1/FinalOutput:in-2" />
+    </port>
+  </client>
+  <client name="Mixer-SOFT1/FinalOutput">
+    <port name="out-1">
+      <connection port="CalfSRO:Equalizer 12 Band In #1" />
+    </port>
+    <port name="out-2">
+      <connection port="CalfSRO:Equalizer 12 Band In #2" />
+    </port>
+  </client>
+  <client name="yoshimi-YoshSRO1">
+    <port name="left">
+      <connection port="Mixer-SOFT1/Yoshimi 1:in-1" />
+    </port>
+    <port name="right">
+      <connection port="Mixer-SOFT1/Yoshimi 1:in-2" />
+    </port>
+  </client>
+  <client name="yoshimi-YoshSRO2">
+    <port name="left">
+      <connection port="Mixer-SOFT1/Yoshimi 2:in-1" />
+    </port>
+    <port name="right">
+      <connection port="Mixer-SOFT1/Yoshimi 2:in-2" />
+    </port>
+  </client>
+  <client name="yoshimi-YoshSRO3">
+    <port name="left">
+      <connection port="Mixer-SOFT1/Yoshimi 3:in-1" />
+    </port>
+    <port name="right">
+      <connection port="Mixer-SOFT1/Yoshimi 3:in-2" />
+    </port>
+  </client>
+  <client name="CalfSRO">
+    <port name="Equalizer 12 Band Out #1">
+      <connection port="CalfSRO:Reverb In #1" />
+    </port>
+    <port name="Equalizer 12 Band Out #2">
+      <connection port="CalfSRO:Reverb In #2" />
+    </port>
+    <port name="Reverb Out #1">
+      <connection port="CalfSRO:Multiband Compressor In #1" />
+    </port>
+    <port name="Reverb Out #2">
+      <connection port="CalfSRO:Multiband Compressor In #2" />
+    </port>
+    <port name="Multiband Compressor Out #1">
+      <connection port="zita-j2n-soft1:in_1" />
+    </port>
+    <port name="Multiband Compressor Out #2">
+      <connection port="zita-j2n-soft1:in_2" />
+    </port>
+  </client>
+</jack>
+</aj-snapshot>
