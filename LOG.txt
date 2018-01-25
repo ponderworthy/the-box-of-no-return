@@ -1,6 +1,8 @@
 
+
+
 The next highest usage is Yoshimi, not surprisingly given setup.
-7-8% each, several.  Won't touch this yet.
+7-8% each, several.  Won't touch this yet, next priority is MIDI/control.
 
 Tested full run again.
 Now four listings 13-14% each,
