@@ -1,4 +1,51 @@
 
+The next highest usage is Yoshimi, not surprisingly given setup.
+7-8% each, several.  Won't touch this yet.
+
+Tested full run again.
+Now four listings 13-14% each,
+and the 40% on-and-off is entirely gone.
+
+Began compilation from source again.
+Edited configure script as below.
+Ran configure:
+./configure --enable-sse --enable-experimental
+
+Found that Arch's production calf build includes experimental plugins.
+This is probably what fluidsynth is.
+Found that Arch production calf logic does not keep high optimizations
+a la the below.
+
+Set in /etc/makepkg.conf:
+CFLAGS="-march=native -mtune=native -O3 -msse4.2 -mavx -mfpmath=sse -pipe -fstack-protector-strong -fno-plt"
+CXXFLAGS="-march=native -mtune=native -O3 -msse4.2 -mavx -mfpmath=sse -pipe -fstack-protector-strong -fno-plt"
+
+The source compile did not permit 'fluidsynth' to work, don't know why,
+did not find reason.  Will try Arch's 'pbget' to use Arch logic.
+Needed package python3-memoizedb for 'pbget'.  This successfully
+retrieved Calf's PKGBUILD.
+
+Recompiled calf set from source.
+Found the following needs changed in the configure script:
+---
+if test "$set_enable_sse" = "yes"; then
+  CXXFLAGS="$CXXFLAGS -O3 -march=native -mtune=native -msse4.2 -mavx -mfpmath=sse"
+  fi
+---
+then configure:
+./configure --enable-sse
+then 'make', then 'sudo make install'
+
+Studied CPU usage via htop.
+Found that by far the most power is being used by calf plugins, surprisingly.
+Four listings, 14-15% each.
+One CPU is being pushed to 40% on and off and off again, visibly.
+Will CPU-optimize calf plugins.
+
+Wired all, saved with aj-snapshots, tested Yoshimi
+sound engine in toto.
+Working!!!
+
 Now rewriting Distribute as Distribute.py.
 Using named output ports, to make it
 a lot easier, hopefully, to understand
