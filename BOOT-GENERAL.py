@@ -264,15 +264,15 @@ if not jpctrl.spawn_background('aj-snapshot -r ' + bnr_dir + 'AJhard.xml'):
     jpctrl.exit_with_beep()
 
 print('aj-snapshot for server SOFT1...')
-if not jpctrl.spawn_background('aj-snapshot -r ' + bnr_dir + 'AJSOFT1.xml'):
+if not jpctrl.spawn_background('aj-snapshot -r ' + bnr_dir + 'AJSOFT1.xml', 'SOFT1'):
     jpctrl.exit_with_beep()
 
 print('aj-snapshot for server SOFT2...')
-if not jpctrl.spawn_background('aj-snapshot -r ' + bnr_dir + 'AJSOFT2.xml'):
+if not jpctrl.spawn_background('aj-snapshot -r ' + bnr_dir + 'AJSOFT2.xml', 'SOFT2'):
     jpctrl.exit_with_beep()
 
 print('aj-snapshot for server SOFT3...')
-if not jpctrl.spawn_background('aj-snapshot -r ' + bnr_dir + 'AJSOFT3.xml'):
+if not jpctrl.spawn_background('aj-snapshot -r ' + bnr_dir + 'AJSOFT3.xml', 'SOFT3'):
     jpctrl.exit_with_beep()
 
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aj-snapshot>
+<alsa>
+  <client name="System">
+    <port id="0" />
+    <port id="1" />
+  </client>
+  <client name="Midi Through">
+    <port id="0" />
+  </client>
+  <client name="a2j_bridge" />
+  <client name="a2j_bridge" />
+  <client name="a2j_bridge" />
+</alsa>
+<jack>
+  <client name="system">
+    <port name="capture_1" />
+    <port name="capture_2" />
+  </client>
+  <client name="a2j_bridge">
+    <port name="capture">
+      <connection port="Distribute.py:in_1" />
+    </port>
+  </client>
+  <client name="Distribute.py">
+    <port name="SRO" />
+    <port name="Strings" />
+    <port name="FlowBells">
+      <connection port="yoshimi-YoshFlowBells:midi in" />
+    </port>
+  </client>
+  <client name="yoshimi-YoshFlowBells">
+    <port name="left">
+      <connection port="zita-j2n-soft3:in_1" />
+    </port>
+    <port name="right">
+      <connection port="zita-j2n-soft3:in_2" />
+    </port>
+  </client>
+</jack>
+</aj-snapshot>
