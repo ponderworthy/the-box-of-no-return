@@ -131,13 +131,13 @@ print('-----------------------------------------------------------------')
 
 print('\nThree receivers on the hard server...\n')
 
-if not jpctrl.spawn_and_settle('zita-n2j --jname zita-n2j-4soft1 127.0.0.1 55551'):
+if not jpctrl.spawn_and_settle('zita-n2j --filt 20 --jname zita-n2j-4soft1 127.0.0.1 55551'):
     jpctrl.exit_with_beep()
 print('\n')
-if not jpctrl.spawn_and_settle('zita-n2j --jname zita-n2j-4soft2 127.0.0.2 55552'):
+if not jpctrl.spawn_and_settle('zita-n2j --filt 20 --jname zita-n2j-4soft2 127.0.0.2 55552'):
     jpctrl.exit_with_beep()
 print('\n')
-if not jpctrl.spawn_and_settle('zita-n2j --jname zita-n2j-4soft3 127.0.0.3 55553'):
+if not jpctrl.spawn_and_settle('zita-n2j --filt 20 --jname zita-n2j-4soft3 127.0.0.3 55553'):
     jpctrl.exit_with_beep()
 
 print('\nOne transmitter on each soft server...\n')
