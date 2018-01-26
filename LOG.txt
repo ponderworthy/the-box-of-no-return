@@ -1,4 +1,13 @@
 
+Completed revision of startup sequence.  Appears solid.
+Best method appears to be to run it all in/from an lxterminal,
+the lxterminal being run by the 'boot' script.
+
+Found that by using the NAME argument to a2jmidi_bridge, giving
+each port an appropriate name, aj-snapshot became deconfused and
+wired them all, and also, the audio attack zzt in Yoshimi went
+away (no clue why).
+
 Note for future reference.  Using:
   ./soft1 catia
 to see and edit soft server #1's JACK and ALSA connections.  Using:
@@ -12,7 +21,8 @@ Set up Roland UM-ONE USB MIDI interface to keyboard.
 Found that if I run Catia on the hard server, with ALSA MIDI
 visible, I can wire the USB-ONE's output to all three of the visible
 a2j_bridge ALSA MIDI ports.  And it worked.  Audio not quite
-smooth on the attack.  Investigating.
+smooth on the attack.  Automatic rewiring via aj-snapshot
+only connected one of the three ports.  Investigating.
 
 The next highest usage is Yoshimi, not surprisingly given setup.
 7-8% each, several.  Won't touch this yet, next priority is MIDI/control.
