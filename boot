@@ -1,2 +1,2 @@
 #!/bin/bash
-~/BNR/BOOT-INITIAL.sh
+lxterminal -t "BNR Live Report" -e bash -i ~/BNR/BOOT-INITIAL.sh

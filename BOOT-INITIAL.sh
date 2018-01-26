@@ -9,7 +9,7 @@
 
 #!/bin/bash
 
-echo "Reset JACK log..." > /home/jeb/BOOT-INITIAL.log
+echo "Reset JACK log..."
 
 rm ~/.log/jack/jackdbus.log
 touch ~/.log/jack/jackdbus.log
@@ -20,7 +20,7 @@ rm -f ~/.config/jack/conf.xml
 rm -f ~/.config/rncbc.org/QjackCtl.conf
 
 # Configure and start JACK hard server
-echo "Configure and start JACK hard server ..." >> /home/jeb/BOOT-INITIAL.log
+echo "Configure and start JACK hard server ..."
 jack_control ds alsa
 jack_control dps device hw:O12,0
 jack_control dps rate 96000
@@ -62,5 +62,8 @@ if [ $1 ]; then
 	exit
 fi
 
-echo "Starting BOOT-GENERAL..." >> ~/BOOT-INITIAL.log
-nohup /usr/bin/python ~/BNR/BOOT-GENERAL.py > ~/BOOT-GENERAL.log &
+echo "Starting BOOT-GENERAL..."
+/usr/bin/python ~/BNR/BOOT-GENERAL.py
+
+read -rsp $'Press any key to continue...\n' -n1 key
+
