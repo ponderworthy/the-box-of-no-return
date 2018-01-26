@@ -20,7 +20,8 @@ import os
 import jack
 import jpctrl  # our own Jack Process Control
 
-bnr_dir = os.getcwd() + '/'
+from os.path import expanduser
+bnr_dir = expanduser("~") + '/BNR/'
 
 # Detect debug mode.  On with any command-line argument.
 # In debug mode, Yoshimi is run with GUI enabled, else with GUI disabled.
