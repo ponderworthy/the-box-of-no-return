@@ -12,9 +12,9 @@ To build more and better.  The rest is details :-)
 
 From the beginning, the BNR was designed to handle patches of maximum, profound and terrible, tonal content.  Current patches include one with three simultaneous Yoshimis, another with five simultaneous large FluidSynth soundfonts, and the ability to mix the two and a third together.  A very large amount of study, work, and trial and error has gone into making this happen reliably and well.
 
-A quad-core 3 GHz CPU is used up very easily like this, and one of this writer's two BNRs is such a box.  The other is an eight-core 4GHz machine, and less than one-quarter of its CPU capacity was being used, while JACK reported that 75% of its capacity was being used; and in 2015 began an effort, now successful, to use multiple JACK processes together in one box, so more can be produced.
+The current known box running with this code, is an eight-core 4GHz machine with 8G RAM.  In an earlier iteration, it used the conventional single JACK server; but less than one-quarter of its CPU capacity was being used, while JACK reported that 75% of its capacity was being used.  In 2015 began an effort, now successful, to use multiple JACK processes together in one box, and this is the rebuild of the BNR with MultiJACK at its core.
 
-There are quite a few people using tools like NetJACK to do this with multiple boxes, or at least multiple motherboards.  But if you value portability, if you value space, and/or if you are a gigging musician, a fragile or heavy (one, the other, or both; not neither) multi-motherboard construct is not preferable.   
+There are quite a few people using tools like NetJACK to do this with multiple boxes, or at least multiple motherboards.  But if you value portability, if you value space, and/or if you are a gigging musician, a fragile or heavy (one, the other, or both; not neither) multi-motherboard construct is not preferable.  Most users of Linux-hardware synths limit themselves as a result of what one JACK server can do; here we have an effort to blow the door open a bit more :-)
 
 ## implementation notes
 
