@@ -30,7 +30,7 @@ one connects via either MIDI interface or USB cord to an appropriate keyboard co
 * Any dot-files (e.g., .calfpresets) need to be placed in the root of the user profile 
 used for this purpose.
 
-* Everything else is designed to work from any other folder, e.g., ~/BNR.
+* In the current implementation, there is just one sound card, so there is just one JACK server connected to real audio hardware; this is the default, which can be studied and controlled initially using 'cadence'.  
 
 
 
