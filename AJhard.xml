@@ -10,14 +10,14 @@
   </client>
   <client name="UM-ONE">
     <port id="0">
-      <connection client="a2j_bridge" port="0" />
-      <connection client="a2j_bridge" port="0" />
-      <connection client="a2j_bridge" port="0" />
+      <connection client="soft1_midi" port="0" />
+      <connection client="soft2_midi" port="0" />
+      <connection client="soft3_midi" port="0" />
     </port>
   </client>
-  <client name="a2j_bridge" />
-  <client name="a2j_bridge" />
-  <client name="a2j_bridge" />
+  <client name="soft1_midi" />
+  <client name="soft2_midi" />
+  <client name="soft3_midi" />
 </alsa>
 <jack>
   <client name="system">

@@ -8,16 +8,23 @@
   <client name="Midi Through">
     <port id="0" />
   </client>
-  <client name="a2j_bridge" />
-  <client name="a2j_bridge" />
-  <client name="a2j_bridge" />
+  <client name="UM-ONE">
+    <port id="0">
+      <connection client="soft1_midi" port="0" />
+      <connection client="soft2_midi" port="0" />
+      <connection client="soft3_midi" port="0" />
+    </port>
+  </client>
+  <client name="soft1_midi" />
+  <client name="soft2_midi" />
+  <client name="soft3_midi" />
 </alsa>
 <jack>
   <client name="system">
     <port name="capture_1" />
     <port name="capture_2" />
   </client>
-  <client name="a2j_bridge">
+  <client name="soft3_midi">
     <port name="capture">
       <connection port="Distribute.py:in_1" />
     </port>

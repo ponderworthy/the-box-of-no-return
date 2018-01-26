@@ -1,5 +1,9 @@
 
-
+Note for future reference.  Using:
+  ./soft1 catia
+to see and edit soft server #1's JACK and ALSA connections.  Using:
+  ./soft3 aj-snapshot AJSOFT3.xml
+to save soft server #3's JACK and ALSA connections.
 
 So far, recompiling the Calf plugins and Yoshimi, from
 original source, with optimizations as below.
