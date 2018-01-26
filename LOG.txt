@@ -1,7 +1,11 @@
 
-Restart/reengage not needed at --filt 20, but shorter cutouts
-and xruns occurring.  Setting --filt to 32.  No change.
-Probably need to set --filt to 24 or so and then add --buff.
+Improved, not enough.  Set --filt to 32.  No change.
+Probably need to keep --filt to 24 or so and then add
+something new.  Perhaps --buff, although --buff is for
+network jitter and we're localhost.  Might be the moment
+to take Yoshimi to single-process.  Perhaps multi-instance
+single-process, perhaps combine all.  If need to use
+immediately, probably reducing from 96K would help a lot.
 
 xruns at very high load using SRO.  Momentary cutouts.
 Not surprising, this is the highest-powered patch at the moment.
