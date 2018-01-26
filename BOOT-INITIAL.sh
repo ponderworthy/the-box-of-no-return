@@ -63,6 +63,4 @@ if [ $1 ]; then
 fi
 
 echo "Starting BOOT-GENERAL..." >> ~/BOOT-INITIAL.log
-# Start BOOT-GENERAL
-# nohup python ~/BNR/BOOT-GENERAL.py > ~/BOOT-GENERAL.log &
-python ~/BNR/BOOT-GENERAL.py Debug
+nohup /usr/bin/python ~/BNR/BOOT-GENERAL.py > ~/BOOT-GENERAL.log &
