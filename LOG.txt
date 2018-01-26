@@ -1,5 +1,9 @@
 
-
+Set up Roland UM-ONE USB MIDI interface to keyboard.
+Found that if I run Catia on the hard server, with ALSA MIDI
+visible, I can wire the USB-ONE's output to all three of the visible
+a2j_bridge ALSA MIDI ports.  And it worked.  SRO patch working
+gloriously.  Very responsive.
 
 The next highest usage is Yoshimi, not surprisingly given setup.
 7-8% each, several.  Won't touch this yet, next priority is MIDI/control.

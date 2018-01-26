@@ -8,6 +8,13 @@
   <client name="Midi Through">
     <port id="0" />
   </client>
+  <client name="UM-ONE">
+    <port id="0">
+      <connection client="a2j_bridge" port="0" />
+      <connection client="a2j_bridge" port="0" />
+      <connection client="a2j_bridge" port="0" />
+    </port>
+  </client>
   <client name="a2j_bridge" />
   <client name="a2j_bridge" />
   <client name="a2j_bridge" />
