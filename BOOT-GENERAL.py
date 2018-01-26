@@ -51,15 +51,15 @@ print('-----------------------------------------------------------------')
 # as part of a2jmidid.
 
 # on SOFT1
-if not jpctrl.spawn_and_settle('a2jmidi_bridge', 'SOFT1'):
+if not jpctrl.spawn_and_settle('a2jmidi_bridge SOFT1', 'SOFT1'):
     jpctrl.exit_with_beep()
 
 # on SOFT2
-if not jpctrl.spawn_and_settle('a2jmidi_bridge', 'SOFT2'):
+if not jpctrl.spawn_and_settle('a2jmidi_bridge SOFT2', 'SOFT2'):
     jpctrl.exit_with_beep()
 
 # on SOFT3
-if not jpctrl.spawn_and_settle('a2jmidi_bridge', 'SOFT3'):
+if not jpctrl.spawn_and_settle('a2jmidi_bridge SOFT3', 'SOFT3'):
     jpctrl.exit_with_beep()
 
 print('-----------------------------------------------------------------')
@@ -89,7 +89,7 @@ print('-----------------------------------------------------------------')
 # This test code still exists in BOOT-GENERAL.BAK.py and jpctrl.py.
 # The code below creates a new jack.Client for each test.
 
-print('Starting Distribute.py on SOFT1...')
+print('\nStarting Distribute.py on SOFT1...\n')
 
 if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute.py', 'SOFT1'):
     jpctrl.exit_with_beep()
@@ -100,7 +100,7 @@ if not jpctrl.wait_for_jackport('Distribute.py:SRO', 'SOFT1'):
 else:
     print('Distribute.py confirmed on SOFT1.')
 
-print('Starting Distribute.py on SOFT2...')
+print('\nStarting Distribute.py on SOFT2...\n')
 
 if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute.py', 'SOFT2'):
     jpctrl.exit_with_beep()
@@ -111,7 +111,7 @@ if not jpctrl.wait_for_jackport('Distribute.py:Strings', 'SOFT2'):
 else:
     print('Distribute.py confirmed on SOFT2.')
 
-print('Starting Distribute.py on SOFT3...')
+print('\nStarting Distribute.py on SOFT3...\n')
 
 if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute.py', 'SOFT3'):
     jpctrl.exit_with_beep()
@@ -126,7 +126,7 @@ print('-----------------------------------------------------------------')
 print('Start Zita IP bridge processes...')
 print('-----------------------------------------------------------------')
 
-print('Three receivers on the hard server...')
+print('\nThree receivers on the hard server...\n')
 
 if not jpctrl.spawn_and_settle('zita-n2j --jname zita-n2j-4soft1 127.0.0.1 55551'):
     jpctrl.exit_with_beep()
@@ -135,7 +135,7 @@ if not jpctrl.spawn_and_settle('zita-n2j --jname zita-n2j-4soft2 127.0.0.2 55552
 if not jpctrl.spawn_and_settle('zita-n2j --jname zita-n2j-4soft3 127.0.0.3 55553'):
     jpctrl.exit_with_beep()
 
-print('One transmitter on each soft server...')
+print('\nOne transmitter on each soft server...\n')
 
 if not jpctrl.spawn_and_settle('zita-j2n --jname zita-j2n-soft1 --jserv SOFT1 127.0.0.1 55551'):
     jpctrl.exit_with_beep()
@@ -148,9 +148,7 @@ print('-----------------------------------------------------------------')
 print('Start non-mixers...')
 print('-----------------------------------------------------------------')
 
-print('')
-print('non-mixer Mixer-Hard...')
-print('')
+print('\nnon-mixer Mixer-Hard...\n')
 
 if not jpctrl.spawn_and_settle(
         'non-mixer --instance Mixer-Hard ' + bnr_dir + 'non-mixer/Mixer-Hard'):
@@ -162,9 +160,7 @@ if not jpctrl.wait_for_jackport('Mixer-Hard/FinalOutput:out-1'):
 else:
     print('Mixer-Hard ports confirmed.')
 
-print('')
-print('non-mixer Mixer-SOFT1...')
-print('')
+print('\nnon-mixer Mixer-SOFT1...\n')
 
 if not jpctrl.spawn_and_settle(
         'non-mixer --instance Mixer-SOFT1 ' + bnr_dir + 'non-mixer/Mixer-SOFT1', 'SOFT1'):
@@ -176,9 +172,7 @@ if not jpctrl.wait_for_jackport('Mixer-SOFT1/FinalOutput:out-1', 'SOFT1'):
 else:
     print('Mixer-SOFT1 ports confirmed.')
 
-print('')
-print('non-mixer Mixer-SOFT2...')
-print('')
+print('\nnon-mixer Mixer-SOFT2...\n')
 
 if not jpctrl.spawn_and_settle(
         'non-mixer --instance Mixer-SOFT2 ' + bnr_dir + 'non-mixer/Mixer-SOFT2', 'SOFT2'):
@@ -196,25 +190,25 @@ print('-----------------------------------------------------------------')
 print('Start components for patch SRO, on server SOFT1...')
 print('-----------------------------------------------------------------')
 
-print('Start Yoshimi SRO 1...')
+print('\nStart Yoshimi SRO 1...')
 if not jpctrl.spawn_and_settle(
         'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO1 -j -J -l ' + bnr_dir + 'YOSHIMI/SROpart1.xmz',
         'SOFT1'):
     jpctrl.exit_with_beep()
 
-print('Start Yoshimi SRO 2...')
+print('\nStart Yoshimi SRO 2...')
 if not jpctrl.spawn_and_settle(
         'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO2 -j -J -l ' + bnr_dir + 'YOSHIMI/SROpart2.xmz',
         'SOFT1'):
     jpctrl.exit_with_beep()
 
-print('Start Yoshimi SRO 3...')
+print('\nStart Yoshimi SRO 3...')
 if not jpctrl.spawn_and_settle(
         'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO3 -j -J -l ' + bnr_dir + 'YOSHIMI/SROpart3.xmz',
         'SOFT1'):
     jpctrl.exit_with_beep()
 
-print('Start CalfSRO...')
+print('\nStart CalfSRO...')
 if not jpctrl.spawn_and_settle(
         'calfjackhost --client CalfSRO eq12:SRO ! reverb:SRO ! multibandcompressor:SRO',
         'SOFT1'):
@@ -226,20 +220,20 @@ print('-----------------------------------------------------------------')
 print('Start components for patch Strings, on server SOFT2...')
 print('-----------------------------------------------------------------')
 
-print('Start StringsSSO...')
+print('\nStart StringsSSO...')
 if not jpctrl.spawn_and_settle(
         'calfjackhost --client StringsSSO fluidsynth:StringsSSO',
         'SOFT2'):
     jpctrl.exit_with_beep()
 
-print('Start StringsBassAdd...')
+print('\nStart StringsBassAdd...')
 if not jpctrl.spawn_and_settle(
         'calfjackhost --client StringsBassAdd ' +
         'fluidsynth:BassoonsSustain fluidsynth:ContrabassoonSolo fluidsynth:GeneralBass',
         'SOFT2'):
     jpctrl.exit_with_beep()
 
-print('Start MaxStringsFilters...')
+print('\nStart MaxStringsFilters...')
 if not jpctrl.spawn_and_settle(
         'calfjackhost --client MaxStringsFilters eq12:MaxStrings ! reverb:MaxStrings ! multibandcompressor:Strings',
         'SOFT2'):
@@ -249,7 +243,7 @@ print('-----------------------------------------------------------------')
 print('Start component for patch FlowBells, on server SOFT3...')
 print('-----------------------------------------------------------------')
 
-print('Start Yoshimi for FlowBells...')
+print('\nStart Yoshimi for FlowBells...')
 if not jpctrl.spawn_and_settle(
         'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshFlowBells -j -J -l ' + bnr_dir + 'YOSHIMI/FlowBells.xmz',
         'SOFT3'):

@@ -1,4 +1,9 @@
 
+
+
+So far, recompiling the Calf plugins and Yoshimi, from
+original source, with optimizations as below.
+
 Set up Roland UM-ONE USB MIDI interface to keyboard.
 Found that if I run Catia on the hard server, with ALSA MIDI
 visible, I can wire the USB-ONE's output to all three of the visible
