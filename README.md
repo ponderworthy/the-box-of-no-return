@@ -19,11 +19,13 @@ There are quite a few people using tools like NetJACK to do this with multiple b
 ## implementation notes
 
 * These files are designed principally to build a MIDI tone synthesizer as a headless Linux box, which 
-one connects via either MIDI interface or USB cord to an appropriate keyboard controller.  
+one connects via either MIDI interface or USB cord to an appropriate keyboard controller.  The box must be set up to good Linux production audio standards.  
+
+* To run the whole BNR, you'll want at least a quad-core, 3GHz, 8G RAM probably.  It can be scaled up or down.  
 
 * All files in this repository need to be placed in a folder named BNR, located just off a user profile root.
 
-* The machine needs to boot into a user profile, without password, and the environment needs to run shell script "boot" at boot.
+* If headless run is indicated, the machine needs to boot into a user profile, without password, and the environment needs to run shell script "boot" at boot.  Otherwise just run ~/BNR/boot to get it all under way.  
 
 * Any dot-files (e.g., .calfpresets) need to be placed in the root of the user profile 
 used for this purpose.
