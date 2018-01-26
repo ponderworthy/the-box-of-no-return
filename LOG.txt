@@ -1,7 +1,13 @@
 
-Occasional xruns at very high load using SRO.
+Restart/reengage not needed at --filt 20, but shorter cutouts
+and xruns occurring.  Setting --filt to 32.  No change.
+Probably need to set --filt to 24 or so and then add --buff.
+
+xruns at very high load using SRO.  Momentary cutouts.
 Not surprising, this is the highest-powered patch at the moment.
 It appears to be overload of the zita resampling protocols.
+One or both sides of the zita connectors restart or reengage
+spontaneously.  Self-healing.  Impressive.
 Automatic --filt is 16.  Setting --filt to 20.
 
 Completed revision of startup sequence.  Appears solid.
