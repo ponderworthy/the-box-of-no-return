@@ -30,7 +30,9 @@ one connects via either MIDI interface or USB cord to an appropriate keyboard co
 * Any dot-files (e.g., .calfpresets) need to be placed in the root of the user profile 
 used for this purpose.
 
-* In the current implementation, there is just one sound card, so there is just one JACK server connected to real audio hardware; this is the default, which can be studied and controlled initially using 'cadence'.  
+* In the current implementation, there is just one sound card, so there is just one JACK server connected to real audio hardware; this is the default, which can be studied and controlled initially using 'cadence'.  In production, it is configured and started at boot in BOOT-INITIAL.sh.  Wiring can be seen and changed in 'catia'.
+
+* There are three JACK servers set up in these files which do not connect to hardware, they use the "dummy" driver.  These are started in BOOT-INITIAL.sh also.  
 
 
 
