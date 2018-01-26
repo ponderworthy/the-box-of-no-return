@@ -34,5 +34,11 @@ used for this purpose.
 
 * There are three JACK servers set up in these files which do not connect to hardware, they use the "dummy" driver.  These are started in BOOT-INITIAL.sh also.  
 
+* The "soft" JACK servers each run zita-j2n IP transmitters, and the "hard" JACK server runs three j2n IP receivers.  This is how the JACK servers transmit the audio data to each other.
+
+* MIDI is handled wonderfully by ALSA MIDI, through a2jmidi_bridge processes.  a2jmidi_bridge is non-service binaries provided with the a2jmidid package.  One of these is run on each soft server.  Wiring is done through catia with ALSA MIDI enabled, and aj-snapshot saves the wiring ("./soft1 aj-snapshot" to save) and redoes it at boot.
+
+* One of the more difficult challenges was solved in earlier iterations of the BNR: startup.  Each JACK client has to "settle" at startup before the next one begins loading.  The python library jpctrl.py was created to handle this, and is used in BOOT-GENERAL.py.
+
 
 
