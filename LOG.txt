@@ -3,8 +3,9 @@ Studied ./soft1 catia and CPU levels.  JACK DSP
 rising to 91% plus, CPU not rising similarly.
 Checked Calf filters for SRO.  Found Calf reverb
 producing huge overload when notes pile.  Turned its
-output down about 15%.  Very very very nice.
-No overload.  
+output down to about 10%.  Set Small Room instead
+of Tunnel-Like, intended to do that long ago for
+tonal reasons.  Very very very nice.  No overload.
 
 Set period of JACK soft servers to 256, leaving
 period of hard server at 128.  Improvement.  Not enough.
