@@ -42,9 +42,18 @@ jack_control start
 # Using identical parameters as hard which may help;
 # unclear thus far whether there may be advantageous
 # changes
-/usr/bin/jackd -nSOFT1 -ddummy -r96000 -p128 > jackd-SOFT1.log &
-/usr/bin/jackd -nSOFT2 -ddummy -r96000 -p128 > jackd-SOFT2.log &
-/usr/bin/jackd -nSOFT3 -ddummy -r96000 -p128 > jackd-SOFT3.log &
+
+# The dummy driver works, but it shoots up DSP usage v. high
+# when load rises
+#
+# /usr/bin/jackd -nSOFT1 -ddummy -r96000 -p128 > jackd-SOFT1.log &
+# /usr/bin/jackd -nSOFT2 -ddummy -r96000 -p128 > jackd-SOFT2.log &
+# /usr/bin/jackd -nSOFT3 -ddummy -r96000 -p128 > jackd-SOFT3.log &
+
+/usr/bin/jackd -nSOFT1 -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT1.log &
+/usr/bin/jackd -nSOFT2 -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT2.log &
+/usr/bin/jackd -nSOFT3 -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT3.log &
+
 
 # Can be useful to start JACK setup and connection GUIs in place of this
 # block of comments during development.

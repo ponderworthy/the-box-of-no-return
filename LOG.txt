@@ -1,4 +1,27 @@
 
+Studied ./soft1 catia and CPU levels.  JACK DSP
+rising to 91% plus, CPU not rising similarly.
+Checked Calf filters for SRO.  Found Calf reverb
+producing huge overload when notes pile.  Turned its
+output down about 15%.  Very very very nice.
+No overload.  
+
+Set period of JACK soft servers to 256, leaving
+period of hard server at 128.  Improvement.  Not enough.
+
+Set Yoshimi internal buffer size to 512, they were 256.
+No change.
+
+Ran ./soft1 catia when testing at high load.  DSP
+% shot up to 91% very quickly.  (High load is defined
+as holding the sustain pedal down and rapidly hitting
+SRO notes.)
+
+Yoshimis were set to 48000 under ALSA.  Set them to 96000.
+No change.
+
+Set zita --buff to 14 for all soft servers.  No change.
+
 Improved, not enough.  Set --filt to 32.  No change.
 Probably need to keep --filt to 24 or so and then add
 something new.  Perhaps --buff, although --buff is for
