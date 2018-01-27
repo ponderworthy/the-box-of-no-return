@@ -257,8 +257,5 @@ Disabled USB power management with /etc/modprobe.d/usb-autosuspend.conf .
 Using, in makepkg.conf, CFLAGS:
 -march=native -mtune=native -O3 -msse4.2 -mavx -mfpmath=sse
 
-Did find that Python True/False has to have capital first letters.
-
-Mackie works at 96000/64, 0.7ms latency.  Set all JACK processes to this.
-
-Old HD install will not boot.  Will build new.
+There is an item in /etc/sudoers.d which contains an override for 'wheel'.
+Need to fix this so 'wheel' can do sudo without password.
