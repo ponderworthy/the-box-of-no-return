@@ -1,4 +1,7 @@
 
+Ready for production-style tests.  Video is
+sometimes a problem for headless, et cetera.
+
 Studied ./soft1 catia and CPU levels.  JACK DSP
 rising to 91% plus, CPU not rising similarly.
 Checked Calf filters for SRO.  Found Calf reverb
