@@ -93,6 +93,7 @@ Needed package python3-memoizedb for 'pbget'.  This successfully
 retrieved Calf's PKGBUILD.
 
 Recompiled calf set from source.
+First need install lilv, lv2 libraries.
 Found the following needs changed in the configure script:
 ---
 if test "$set_enable_sse" = "yes"; then
@@ -100,7 +101,7 @@ if test "$set_enable_sse" = "yes"; then
   fi
 ---
 then configure:
-./configure --enable-sse
+./configure --enable-sse --enable-experimental
 then 'make', then 'sudo make install'
 
 Studied CPU usage via htop.
@@ -187,15 +188,6 @@ Used yaourt [this is Manjaro after all] and installed
 Mididings.  It installs for python2.  Ran it.  Seems to
 work fine with python2.
 
-Added atom-runner to atom, runs scripts:
-Hit Ctrl+R (Alt+R on Win/Linux) to launch the runner for the active window.
-Hit Ctrl+Shift+R (Alt+Shift+R on Win/Linux) to run the currently selected text in the active window.
-Hit Ctrl+Shift+C to kill a currently running process.
-Hit Escape to close the runner window.
-
-Will set up github synchronization.
-https://vwannabe.com/2016/05/26/how-to-use-github-and-atom/
-
 Built and installed Mididings.
 Did not run under python3, errored.
 Did not run under python2, not found.
@@ -246,16 +238,28 @@ echo -n 3072 | sudo tee /sys/class/rtc/rtc0/max_user_freq
 sudo chmod 660 /dev/hpet /dev/rtc0
 sudo chgrp audio /dev/hpet /dev/rtc0
 --
-The n.p.c standard is set in sysctl.d/bnr.conf, then added the above
-to rc.local.
-Also added this to /etc/sysctl.d/bnf.conf :
+Added yaourt package rc.local.d, placed the above in /etc/rc.local.d/bnr .
+--
+The n.p.c standard is set in sysctl.d/bnr.conf.
+---
+Also added this to /etc/sysctl.d/bnr.conf :
 dev.hpet.max-user-freq=3072
+
+Removed all pulseaudio items except libraries.
+
+Installed 'cadence' using yaourt.
+
+Power management on the CPU.  Set 'performance' governor in
+/etc/default/cpupower .
 
 Found BOOT-INITIAL.sh still using DAC (the Peavey).  Set it to use O12 (oh one two), the Mackie.
 Probably no USB power management issue.
 
 In morning, default JACK was apparently broken, stopped, would not start.  Could be USB power management?
 Disabled USB power management with /etc/modprobe.d/usb-autosuspend.conf .
+
+Using, in makepkg.conf, CFLAGS:
+-march=native -mtune=native -O3 -msse4.2 -mavx -mfpmath=sse
 
 Did find that Python True/False has to have capital first letters.
 
