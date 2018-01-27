@@ -33,10 +33,8 @@ jack_control eps clock-source 0
 jack_control eps sync false
 jack_control start
 
-# Start a2jmidid for hard server
-# Don't think this will be needed
-# a2j_control ehw
-# a2j_control start
+# Make sure a2jmidid is stopped
+a2j_control stop
 
 # Configure and start JACK soft servers
 # Using identical parameters as hard which may help;

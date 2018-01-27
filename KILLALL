@@ -1,0 +1,64 @@
+#!/usr/bin/env python
+
+#################
+# KILLPROCESSES #
+#############################################################
+# Part of the Ponderworthy Robust Session Management system #
+#############################################################
+# Kills all signal generators, filters, and MIDI tools #
+########################################################
+
+
+# Requires Python library 'psutil', available by name in Arch community repo
+
+import psutil
+
+PROCESSES = [
+    '/usr/bin/qjackctl',
+    'BOOT-GENERAL',
+    'BOOT-INITIAL',
+    'BNR Live Report',
+    '/usr/bin/jackd',
+    'a2jmidi_bridge',
+    'yoshimi',
+    'fluidsynth',
+    'aj-snapshot',
+    'calfjackhost',
+    'jack_mixer',
+    'non-mixer',
+    '/home/jeb/Combine',
+    '/home/jeb/Distribute',
+    '/home/jeb/OctaveDown',
+    '/home/jeb/Chan2Port',
+    '/home/jeb/FilterNotes',
+    '/home/jeb/MIDImonitor',
+    '/usr/share/carla/carla'
+]
+
+procs_to_kill = []
+
+# First make list of processes to kill
+
+# Iterate through all system processes
+for proc in psutil.process_iter():
+    # extract cmdline list (not a string)
+    cmdline = proc.cmdline()
+    # Iterate through the list of process-name strings to search for
+    # and kill from
+    for procname in PROCESSES:
+        # iterate through cmdline list
+        for argstr in cmdline:
+            # if a kill-trigger process name string is found,
+            # kill it
+            if -1 != argstr.find(procname):
+                print('Terminating: ', cmdline)
+                try:
+                    proc.terminate()
+                except:
+                    a = True
+                gone, alive = psutil.wait_procs([proc], timeout=3)
+                for p in alive:
+                    try:
+                        p.kill()
+                    except:
+                        a = True
