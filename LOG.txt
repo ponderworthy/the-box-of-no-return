@@ -245,14 +245,12 @@ Removed all pulseaudio items except libraries.
 
 Installed 'cadence' using yaourt.
 
+These optimizations go in /etc/makepkg.conf :
+-O3 -march=native -mtune=native -msse4.2 -mavx -mfpmath=sse"
+
 Power management on the CPU.  Set 'performance' governor in
-/etc/default/cpupower .
-
-Found BOOT-INITIAL.sh still using DAC (the Peavey).  Set it to use O12 (oh one two), the Mackie.
-Probably no USB power management issue.
-
-In morning, default JACK was apparently broken, stopped, would not start.  Could be USB power management?
-Disabled USB power management with /etc/modprobe.d/usb-autosuspend.conf .
+/etc/default/cpupower .  Did not appear to do anything.
+Will use sudo'd item in boot script.
 
 Using, in makepkg.conf, CFLAGS:
 -march=native -mtune=native -O3 -msse4.2 -mavx -mfpmath=sse
