@@ -1,5 +1,15 @@
 
-Will make backup with:
+qmidinet:
+https://qmidinet.sourceforge.io
+seems to be the Linux MIDI-over-IP
+method currently extant.  There are
+a few OSC-over-IP methods which may be
+more common, but qmidinet is in
+good development, and we would have to
+add a conversion step for the OSC
+to be useful.
+
+Could make backup with:
 http://www.urbackup.org
 
 Tests now passing with flying colors.
