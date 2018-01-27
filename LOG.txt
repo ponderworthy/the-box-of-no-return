@@ -1,4 +1,12 @@
 
+Will make backup with:
+http://www.urbackup.org
+
+Tests now passing with flying colors.
+Only catch is typical ALSA MIDI behavior,
+may have to power keyboard off/on after
+all processes started.
+
 Ready for production-style tests.  Video is
 sometimes a problem for headless, et cetera.
 
