@@ -57,9 +57,9 @@ def setup_jack_client(jack_client_name, jack_server_name='default'):
         jack_client_temp = None
         return False
 
-    if jack_client_new.status.failure or \
-            jack_client_new.status.server_error or \
-            jack_client_new.status.client_zombie:
+    if jack_client_temp.status.failure or \
+            jack_client_temp.status.server_error or \
+            jack_client_temp.status.client_zombie:
         jack_client_temp = None
         return False
 
