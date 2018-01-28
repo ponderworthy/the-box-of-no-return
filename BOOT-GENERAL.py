@@ -53,7 +53,7 @@ if not jpctrl.spawn_and_settle('/usr/bin/jackd -nSOFT1 -ddummy -r96000 -p256 -C 
     'SOFT1'):
     jpctrl.exit_with_beep()
 
-if not wait_for_jack('jack_test', 'SOFT1')
+if not jpctrl.wait_for_jack('jack_test', 'SOFT1'):
     jpctrl.exit_with_beep()
 
 print('\nSOFT2 ...')
@@ -61,7 +61,7 @@ if not jpctrl.spawn_and_settle('/usr/bin/jackd -nSOFT2 -ddummy -r96000 -p256 -C 
     'SOFT1'):
     jpctrl.exit_with_beep()
 
-if not wait_for_jack('jack_test', 'SOFT2')
+if not jpctrl.wait_for_jack('jack_test', 'SOFT2'):
     jpctrl.exit_with_beep()
 
 print('\nSOFT3 ...')
@@ -69,7 +69,7 @@ if not jpctrl.spawn_and_settle('/usr/bin/jackd -nSOFT3 -ddummy -r96000 -p256 -C 
     'SOFT3'):
     jpctrl.exit_with_beep()
 
-if not wait_for_jack('jack_test', 'SOFT2')
+if not jpctrl.wait_for_jack('jack_test', 'SOFT3'):
     jpctrl.exit_with_beep()
 
 # print('-----------------------------------------------------------------')
