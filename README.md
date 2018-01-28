@@ -10,7 +10,7 @@ The original name for the project was "Supermega Rumblic Organ", or SRO, after i
 
 To build more and better.  The rest is details :-)
 
-From the beginning, the BNR was desired to handle patches of maximum, profound and terrible, tonal content.  Current patches include one with three simultaneous Yoshimis, another with five simultaneous large FluidSynth soundfonts, and the ability to mix the two and a third together.  A very large amount of prayers granted, help from the Linux Audio community, study, work, and trial and error has gone into making this happen reliably and well.
+From the beginning, the BNR was desired to handle patches of maximum, profound and terrible, tonal content.  Current patches include one with three simultaneous Yoshimis, another with five simultaneous large FluidSynth soundfonts, and the ability to mix the two and a third together.  Many prayers granted, and much help from the Linux Audio community, study, work, and trial and error, has gone into making this happen reliably and well.
 
 The current known box running with this code, is an eight-core 4GHz machine with 8G RAM.  In an earlier iteration, it used the conventional single JACK server; but less than one-quarter of its CPU capacity was being used, while JACK reported that 75% of its capacity was being used.  In 2015 began an effort, now successful, to use multiple JACK processes together in one box, and this is the rebuild of the BNR with MultiJACK at its core.  Attempts have not yet been made to run this code on a quad-core box, though the previous single-JACK iteration of the BNR is running well on quad 3GHz with 8G RAM.
 
