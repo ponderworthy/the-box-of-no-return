@@ -19,7 +19,7 @@ There are quite a few people using tools like NetJACK to increase JACK capacity 
 ## implementation notes
 
 * These files are designed principally to build a MIDI tone synthesizer as a headless Linux box, which 
-one connects via either MIDI interface or USB cord to an appropriate keyboard controller.  The box must be set up to good Linux production audio standards.  
+one connects via either MIDI interface or USB cord to an appropriate keyboard controller.  The box must be set up to good Linux production audio standards.  As of this writing, the Manjaro default kernel does very well, and it is used with a sysctl.conf.d file with the [full wired networking set desribed here](https://notes.ponderworthy.com/linux-networking-speed-and-responsiveness), the only change being swappiness set at 10.
 
 * To run the whole BNR, you'll want at least a quad-core, 3GHz, 8G RAM probably.  It can be scaled up or down.  
 
