@@ -112,6 +112,8 @@ else:
     print('wait_for_jackport on soft3_midi/capture failed.')
     jpctrl.exit_with_beep()
 
+# Still needed to prevent crash of Distribute.
+# Don't know why.  Would love solution.
 jpctrl.stdsleep(3)
 
 print('-----------------------------------------------------------------')
