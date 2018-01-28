@@ -6,7 +6,7 @@ The Box of No Return is a Linux synth platform suitable for live musicianship, d
 
 The original name for the project was "Supermega Rumblic Organ", or SRO, after its first patch.  But a Strings patch was soon added.  It is called the Box of No Return because after playing it, its creator cannot go back to his former instrumentation, at least not for long.
 
-## why this project
+## why this project and its benefits
 
 To build more and better.  The rest is details :-)
 
