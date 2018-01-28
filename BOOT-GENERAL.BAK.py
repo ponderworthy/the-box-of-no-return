@@ -20,9 +20,10 @@ import os
 import jack
 import jpctrl  # our own Jack Process Control
 
-bnr_dir = os.getcwd() + '/'
+from os.path import expanduser
+bnr_dir = expanduser("~") + '/BNR/'
 
-# Detect debug mode.
+# Detect debug mode.  On with any command-line argument.
 # In debug mode, Yoshimi is run with GUI enabled, else with GUI disabled.
 cmdargcount = len(sys.argv)
 if cmdargcount == 2:
@@ -43,50 +44,6 @@ else:
     yoshimi_debug_param = '-i'
 
 print('-----------------------------------------------------------------')
-print('Create JACK clients, and use them to verify JACK servers...')
-print('-----------------------------------------------------------------')
-
-jack_client_hard = jack.Client('jack_client_hard', servername='default')
-jack_client_hard.activate()
-jack_client_hard.outports.register('dummy_4hard')
-
-print('JACK ports for hard server:')
-print(jack_client_hard.name)
-print(jack_client_hard.get_ports())
-print('')
-
-jack_client_soft1 = jack.Client('jack_client_soft1', servername='SOFT1')
-jack_client_soft1.activate()
-jack_client_soft1.outports.register('dummy_4soft1')
-
-print('JACK ports for server SOFT1:')
-print(jack_client_soft1.name)
-print(jack_client_soft1.get_ports())
-print('')
-
-jack_client_soft2 = jack.Client('jack_client_soft2', servername='SOFT2')
-jack_client_soft2.activate()
-jack_client_soft2.outports.register('dummy_4soft2')
-
-print('JACK ports for server SOFT2:')
-print(jack_client_soft2.name)
-print(jack_client_soft2.get_ports())
-print('')
-
-jack_client_soft3 = jack.Client('jack_client_soft3', servername='SOFT3')
-jack_client_soft3.activate()
-jack_client_soft3.outports.register('dummy_4soft3')
-
-print('JACK ports for server SOFT3:')
-print(jack_client_soft3.name)
-print(jack_client_soft3.get_ports())
-print('')
-
-input("Press Enter to continue...")
-
-exit(0)
-
-print('-----------------------------------------------------------------')
 print('Start all a2jmidi_bridge processes for soft servers...')
 print('-----------------------------------------------------------------')
 
@@ -94,17 +51,19 @@ print('-----------------------------------------------------------------')
 # access to MIDI hardware via j2amidi_bridge, which is installed
 # as part of a2jmidid.
 
-# on SOFT1
-if not jpctrl.spawn_and_settle('a2jmidi_bridge', 'SOFT1'):
+print('\non SOFT1...')
+if not jpctrl.spawn_and_settle('a2jmidi_bridge soft1_midi', 'SOFT1'):
     jpctrl.exit_with_beep()
 
-# on SOFT2
-if not jpctrl.spawn_and_settle('a2jmidi_bridge', 'SOFT2'):
+print('\non SOFT2...')
+if not jpctrl.spawn_and_settle('a2jmidi_bridge soft2_midi', 'SOFT2'):
     jpctrl.exit_with_beep()
 
-# on SOFT3
-if not jpctrl.spawn_and_settle('a2jmidi_bridge', 'SOFT3'):
+print('\non SOFT3...')
+if not jpctrl.spawn_and_settle('a2jmidi_bridge soft3_midi', 'SOFT3'):
     jpctrl.exit_with_beep()
+
+jpctrl.stdsleep(3)
 
 print('-----------------------------------------------------------------')
 print('Start Distribute.py on all soft servers...')
@@ -125,66 +84,115 @@ print('-----------------------------------------------------------------')
 # executable script!) for each will keep the system as a whole
 # as simple as possible for study and change.
 
-print('Starting Distribute.py on SOFT1...')
+# spawn_and_settle is not sufficient to determine readiness
+# of Distribute.py (mididings).  We must use wait_for_jackport.
+
+# The original wait_for_jackport used jack.Client objects
+# created for each JACK server.  For some reason, this did not work.
+# This test code still exists in BOOT-GENERAL.BAK.py and jpctrl.py.
+# The code below creates a new jack.Client for each test.
+
+print('\nStarting Distribute.py on SOFT1...')
 
 if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute.py', 'SOFT1'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport(jack_client_soft1, 'Distribute.py:out_1')   \
-        or not jpctrl.wait_for_jackport(jack_client_soft1, 'Distribute.py:out_16'):
-    print('wait_for_jackport on Distribute.py failed.')
+if not jpctrl.wait_for_jackport('Distribute.py:SRO', 'SOFT1'):
+    print('wait_for_jackport on Distribute.py/SOFT1 failed.')
     jpctrl.exit_with_beep()
 else:
     print('Distribute.py confirmed on SOFT1.')
 
-print('Starting Distribute.py on SOFT2...')
+print('\nStarting Distribute.py on SOFT2...')
 
 if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute.py', 'SOFT2'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport(jack_client_soft2, 'Distribute.py:out_1')   \
-        or not jpctrl.wait_for_jackport(jack_client_soft2, 'Distribute.py:out_16'):
-    print('wait_for_jackport on Distribute.py failed.')
+if not jpctrl.wait_for_jackport('Distribute.py:Strings', 'SOFT2'):
+    print('wait_for_jackport on Distribute.py/SOFT2 failed.')
     jpctrl.exit_with_beep()
 else:
     print('Distribute.py confirmed on SOFT2.')
 
-print('Starting Distribute.py on SOFT3...')
+print('\nStarting Distribute.py on SOFT3...')
 
 if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute.py', 'SOFT3'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport(jack_client_soft3, 'Distribute.py:out_1')   \
-        or not jpctrl.wait_for_jackport(jack_client_soft3, 'Distribute.py:out_16'):
-    print('wait_for_jackport on Distribute.py failed.')
+if not jpctrl.wait_for_jackport('Distribute.py:FlowBells', 'SOFT3'):
+    print('wait_for_jackport on Distribute.py/SOFT3 failed.')
     jpctrl.exit_with_beep()
 else:
     print('Distribute.py confirmed on SOFT3.')
-
 
 print('-----------------------------------------------------------------')
 print('Start Zita IP bridge processes...')
 print('-----------------------------------------------------------------')
 
-# Three receivers on the hard server, and one transmitter on each soft server.
+print('\nThree receivers on the hard server...\n')
 
+if not jpctrl.spawn_and_settle('zita-n2j --filt 32 --buff 14 --jname zita-n2j-4soft1 127.0.0.1 55551'):
+    jpctrl.exit_with_beep()
+print('\n')
+if not jpctrl.spawn_and_settle('zita-n2j --filt 32 --buff 14 --jname zita-n2j-4soft2 127.0.0.2 55552'):
+    jpctrl.exit_with_beep()
+print('\n')
+if not jpctrl.spawn_and_settle('zita-n2j --filt 32 --buff 14 --jname zita-n2j-4soft3 127.0.0.3 55553'):
+    jpctrl.exit_with_beep()
 
+print('\nOne transmitter on each soft server...\n')
 
+if not jpctrl.spawn_and_settle('zita-j2n --jname zita-j2n-soft1 --jserv SOFT1 127.0.0.1 55551'):
+    jpctrl.exit_with_beep()
+print('\n')
+if not jpctrl.spawn_and_settle('zita-j2n --jname zita-j2n-soft2 --jserv SOFT2 127.0.0.2 55552'):
+    jpctrl.exit_with_beep()
+print('\n')
+if not jpctrl.spawn_and_settle('zita-j2n --jname zita-j2n-soft3 --jserv SOFT3 127.0.0.3 55553'):
+    jpctrl.exit_with_beep()
+print('\n')
 
 print('-----------------------------------------------------------------')
-print('Start non-mixer, Mixer-hard, on hard server...')
+print('Start non-mixers...')
 print('-----------------------------------------------------------------')
+
+print('\nnon-mixer Mixer-Hard...')
 
 if not jpctrl.spawn_and_settle(
         'non-mixer --instance Mixer-Hard ' + bnr_dir + 'non-mixer/Mixer-Hard'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport('Mixer-Hard/FinalOutput:out-1', jack_client_hard)    \
-        or not jpctrl.wait_for_jackport('Mixer-Hard/FinalOutput:out-2', jack_client_hard):
+if not jpctrl.wait_for_jackport('Mixer-Hard/FinalOutput:out-1'):
     print('wait_for_jackport on Mixer-Hard failed.')
     jpctrl.exit_with_beep()
 else:
     print('Mixer-Hard ports confirmed.')
+
+print('\nnon-mixer Mixer-SOFT1...')
+
+if not jpctrl.spawn_and_settle(
+        'non-mixer --instance Mixer-SOFT1 ' + bnr_dir + 'non-mixer/Mixer-SOFT1', 'SOFT1'):
+    jpctrl.exit_with_beep()
+
+if not jpctrl.wait_for_jackport('Mixer-SOFT1/FinalOutput:out-1', 'SOFT1'):
+    print('wait_for_jackport on Mixer-SOFT1 failed.')
+    jpctrl.exit_with_beep()
+else:
+    print('Mixer-SOFT1 ports confirmed.')
+
+print('\nnon-mixer Mixer-SOFT2...')
+
+if not jpctrl.spawn_and_settle(
+        'non-mixer --instance Mixer-SOFT2 ' + bnr_dir + 'non-mixer/Mixer-SOFT2', 'SOFT2'):
+    jpctrl.exit_with_beep()
+
+if not jpctrl.wait_for_jackport('Mixer-SOFT2/FinalOutput:out-1', 'SOFT2'):
+    print('wait_for_jackport on Mixer-SOFT2 failed.')
+    jpctrl.exit_with_beep()
+else:
+    print('Mixer-SOFT2 ports confirmed.')
+
+print('\n')
 
 jpctrl.stdsleep(3)
 
@@ -192,29 +200,31 @@ print('-----------------------------------------------------------------')
 print('Start components for patch SRO, on server SOFT1...')
 print('-----------------------------------------------------------------')
 
-print('Start Yoshimi SRO 1...')
+print('\nStart Yoshimi SRO 1...')
 if not jpctrl.spawn_and_settle(
         'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO1 -j -J -l ' + bnr_dir + 'YOSHIMI/SROpart1.xmz',
         'SOFT1'):
     jpctrl.exit_with_beep()
 
-print('Start Yoshimi SRO 2...')
+print('\nStart Yoshimi SRO 2...')
 if not jpctrl.spawn_and_settle(
         'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO2 -j -J -l ' + bnr_dir + 'YOSHIMI/SROpart2.xmz',
         'SOFT1'):
     jpctrl.exit_with_beep()
 
-print('Start Yoshimi SRO 3...')
+print('\nStart Yoshimi SRO 3...')
 if not jpctrl.spawn_and_settle(
         'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshSRO3 -j -J -l ' + bnr_dir + 'YOSHIMI/SROpart3.xmz',
         'SOFT1'):
     jpctrl.exit_with_beep()
 
-print('Start CalfSRO...')
+print('\nStart CalfSRO...')
 if not jpctrl.spawn_and_settle(
         'calfjackhost --client CalfSRO eq12:SRO ! reverb:SRO ! multibandcompressor:SRO',
         'SOFT1'):
     jpctrl.exit_with_beep()
+
+print('\n')
 
 jpctrl.stdsleep(3)
 
@@ -222,60 +232,57 @@ print('-----------------------------------------------------------------')
 print('Start components for patch Strings, on server SOFT2...')
 print('-----------------------------------------------------------------')
 
-print('Start StringsSSO...')
+print('\nStart StringsSSO...')
 if not jpctrl.spawn_and_settle(
         'calfjackhost --client StringsSSO fluidsynth:StringsSSO',
         'SOFT2'):
     jpctrl.exit_with_beep()
 
-print('Start StringsBassAdd...')
+print('\nStart StringsBassAdd...')
 if not jpctrl.spawn_and_settle(
         'calfjackhost --client StringsBassAdd ' +
         'fluidsynth:BassoonsSustain fluidsynth:ContrabassoonSolo fluidsynth:GeneralBass',
         'SOFT2'):
     jpctrl.exit_with_beep()
 
-print('Start MaxStringsFilters...')
+print('\nStart MaxStringsFilters...')
 if not jpctrl.spawn_and_settle(
         'calfjackhost --client MaxStringsFilters eq12:MaxStrings ! reverb:MaxStrings ! multibandcompressor:Strings',
         'SOFT2'):
     jpctrl.exit_with_beep()
 
+print('\n')
+
 print('-----------------------------------------------------------------')
 print('Start component for patch FlowBells, on server SOFT3...')
 print('-----------------------------------------------------------------')
 
-print('Start Yoshimi for FlowBells...')
+print('\nStart Yoshimi for FlowBells...')
 if not jpctrl.spawn_and_settle(
         'yoshimi ' + yoshimi_debug_param + ' -c -I -N YoshFlowBells -j -J -l ' + bnr_dir + 'YOSHIMI/FlowBells.xmz',
         'SOFT3'):
     jpctrl.exit_with_beep()
 
+print('\n')
+
 print('-----------------------------------------------------------------')
 print('Create JACK connections using aj-snapshot, on all servers...')
 print('-----------------------------------------------------------------')
 
-print('aj-snapshot for hard server...')
+print('\naj-snapshot for hard server...')
 if not jpctrl.spawn_background('aj-snapshot -r ' + bnr_dir + 'AJhard.xml'):
     jpctrl.exit_with_beep()
 
-print('aj-snapshot for server SOFT1...')
-if not jpctrl.spawn_background('aj-snapshot -r ' + bnr_dir + 'AJSOFT1.xml'):
+print('\naj-snapshot for server SOFT1...')
+if not jpctrl.spawn_background('aj-snapshot -r ' + bnr_dir + 'AJSOFT1.xml', 'SOFT1'):
     jpctrl.exit_with_beep()
 
-print('aj-snapshot for server SOFT2...')
-if not jpctrl.spawn_background('aj-snapshot -r ' + bnr_dir + 'AJSOFT2.xml'):
+print('\naj-snapshot for server SOFT2...')
+if not jpctrl.spawn_background('aj-snapshot -r ' + bnr_dir + 'AJSOFT2.xml', 'SOFT2'):
     jpctrl.exit_with_beep()
 
-print('aj-snapshot for server SOFT3...')
-if not jpctrl.spawn_background('aj-snapshot -r ' + bnr_dir + 'AJSOFT3.xml'):
+print('\naj-snapshot for server SOFT3...')
+if not jpctrl.spawn_background('aj-snapshot -r ' + bnr_dir + 'AJSOFT3.xml', 'SOFT3'):
     jpctrl.exit_with_beep()
 
-print('-----------------------------------------------------------------')
-print('Clean up JACK clients created for BNR system boot...')
-print('-----------------------------------------------------------------')
-
-for jc in [jack_client_hard, jack_client_soft1, jack_client_soft2, jack_client_soft3]:
-    jc.deactivate()
-    jc.close()
 
