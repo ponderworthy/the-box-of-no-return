@@ -20,6 +20,8 @@ PROCESSES = [
     'BNR Live Report',
     '/usr/bin/jackd',
     'a2jmidi_bridge',
+    'zita-n2j',
+    'zita-j2n',
     'yoshimi',
     'fluidsynth',
     'aj-snapshot',

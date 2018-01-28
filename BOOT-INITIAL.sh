@@ -37,32 +37,25 @@ jack_control start
 a2j_control stop
 
 # Configure and start JACK soft servers
-# Using identical parameters as hard which may help;
-# unclear thus far whether there may be advantageous
-# changes
 
-# The dummy driver works, but it shoots up DSP usage v. high
-# when load rises
-#
-# /usr/bin/jackd -nSOFT1 -ddummy -r96000 -p128 > jackd-SOFT1.log &
-# /usr/bin/jackd -nSOFT2 -ddummy -r96000 -p128 > jackd-SOFT2.log &
-# /usr/bin/jackd -nSOFT3 -ddummy -r96000 -p128 > jackd-SOFT3.log &
+# /usr/bin/jackd -nSOFT1 -X alsarawmidi -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT1.log &
+# /usr/bin/jackd -nSOFT2 -X alsarawmidi -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT2.log &
+# /usr/bin/jackd -nSOFT3 -X alsarawmidi -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT3.log &
 
-/usr/bin/jackd -nSOFT1 -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT1.log &
-/usr/bin/jackd -nSOFT2 -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT2.log &
-/usr/bin/jackd -nSOFT3 -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT3.log &
+# Soft server notes, in command parameter order:
+# -nSOFT1         JACK server name
+# -X alsarawmidi  Run the ALSA raw midi slave driver
+# -ddummy         Run the Dummy driver as master rather than connecting hardware audio
+# -r96000         96000 kHz sampling
+# -p256           Period of 256, twice that of the hard server, seems to help
+# -C 0 -P 0       Zero JACK server ports, either input or output.  Input is MIDI,
+#		  output is zita-j2n.
 
-
-# Can be useful to start JACK setup and connection GUIs in place of this
-# block of comments during development.
-#
 # Not using qjackctl anymore, it can cause problems with what we are doing here.
 #
 # 'cadence' works well for hard JACK setup, and 'catia' for connections.
-#
-# 'patchage' may be helpful for soft server connections, to help keep visible
-# the distinction between hard and soft.  It is unclear whether you will
-# ever need a GUI configurator for soft servers.
+# To see JACK hard server connections, just 'catia'
+# To see JACK soft server SOFT1 connections, './soft1 catia'
 
 if [ $1 ]; then
 	echo Exiting BOOT-INITIAL due to command-line parameter.

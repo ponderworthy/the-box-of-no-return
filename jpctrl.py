@@ -44,26 +44,28 @@ def beep(freq, length):
 
 ##############################################################################
 # Try once to set up new jpctrl JACK client in the optionally named server
-# and return the JACK client's object, or None if fails
+# and return true on success, false on failure
 def setup_jack_client(jack_client_name, jack_server_name='default'):
 
     # Connect to JACK if possible.
     try:
-        jack_client_new = jack.Client(jack_client_name, servername=jack_server_name)
-        jack_client_new.activate()
+        jack_client_temp = jack.Client(jack_client_name, servername=jack_server_name)
+        jack_client_temp.activate()
     except:
         print('setup_jack_client() failed.')
         print('Aborting.')
-        jack_client_new = None
-        return None
+        jack_client_temp = None
+        return False
 
     if jack_client_new.status.failure or \
             jack_client_new.status.server_error or \
             jack_client_new.status.client_zombie:
-        jack_client_new = None
-        return None
+        jack_client_temp = None
+        return False
 
-    return jack_client_new
+    jack_client_temp.deactivate()
+    jack_client_temp.close()
+    return True
 
 ###################################################################################
 # For 20 seconds, try to set up new jpctrl JACK client, trying once per second.
@@ -72,17 +74,17 @@ def wait_for_jack(jack_client_name, jack_server_name='default'):
 
     timecount = 0
     while True:
-        jack_client_new = setup_jack_client(jack_client_name, jack_server_name)
-        if jack_client_new is None:
+        test_jack = setup_jack_client(jack_client_name, jack_server_name)
+        if not test_jack:
             timecount += 1
             if timecount > 20:
                 print('JACK server error.  Aborting.')
-                return None
+                return False
             else:
                 stdsleep(1)
         else:
             print('JACK server discovered, verified, and client created!')
-            return jack_client_new
+            return True
 
 #######################################################################
 # wait_for_jackport()
@@ -94,40 +96,17 @@ def wait_for_jack(jack_client_name, jack_server_name='default'):
 # above.
 #
 # wait_for_jackport_old presumes a pre-created jack_client object.
-# Not known why it doesn't work.  Its replacement, just below,
-# creates a new JACK client each time it's run.  Not efficient,
-# but works well.
-
-def wait_for_jackport_old(jack_client, name2chk):
-
-    timecount = 0
-    while True:
-        if timecount > 5:
-            print('wait_for_jackport timed out waiting for port: ', name2chk)
-            print('Aborting.')
-            return False
-
-        print('wait_for_jackport: get_port_by_name attempt ',
-            timecount, ' for ', name2chk)
-
-        try:
-            if jack_client.get_port_by_name(name2chk) is None:
-                stdsleep(1)
-                timecount += 1
-            else:
-                return True
-        except:
-            stdsleep(1)
-            timecount += 1
-
-########
-# Current working wait_for_jackport() which creates its own jack_client every time
+# Not known why it doesn't work.  Its working version creates a new JACK
+# client each time it's run.  Not efficient, but works well.
 
 def wait_for_jackport(name2chk, jack_server_name='default'):
 
-    jack_client_temp = jack.Client('jack_client_temp', servername=jack_server_name)
-    jack_client_temp.activate()
-    jack_client_temp.outports.register('dummy_temp_port')
+    try:
+        jack_client_temp = jack.Client('jack_client_temp', servername=jack_server_name)
+        jack_client_temp.activate()
+        jack_client_temp.outports.register('dummy_temp_port')
+    except:
+        return False
 
     timecount = 0
     while True:
@@ -148,6 +127,29 @@ def wait_for_jackport(name2chk, jack_server_name='default'):
             else:
                 jack_client_temp.deactivate()
                 jack_client_temp.close()
+                return True
+        except:
+            stdsleep(1)
+            timecount += 1
+
+### Nonworking ###
+def wait_for_jackport_old(jack_client, name2chk):
+
+    timecount = 0
+    while True:
+        if timecount > 5:
+            print('wait_for_jackport timed out waiting for port: ', name2chk)
+            print('Aborting.')
+            return False
+
+        print('wait_for_jackport: get_port_by_name attempt ',
+            timecount, ' for ', name2chk)
+
+        try:
+            if jack_client.get_port_by_name(name2chk) is None:
+                stdsleep(1)
+                timecount += 1
+            else:
                 return True
         except:
             stdsleep(1)

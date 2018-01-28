@@ -43,9 +43,38 @@ if debugmode:
 else:
     yoshimi_debug_param = '-i'
 
-print('-----------------------------------------------------------------')
-print('Start all a2jmidi_bridge processes for soft servers...')
-print('-----------------------------------------------------------------')
+# print('-----------------------------------------------------------------')
+# print('Start all soft servers...')
+# print('-----------------------------------------------------------------')
+
+print('\nSOFT1 ...')
+
+if not jpctrl.spawn_and_settle('/usr/bin/jackd -nSOFT1 -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT1.log',
+    'SOFT1'):
+    jpctrl.exit_with_beep()
+
+if not wait_for_jack('jack_test', 'SOFT1')
+    jpctrl.exit_with_beep()
+
+print('\nSOFT2 ...')
+if not jpctrl.spawn_and_settle('/usr/bin/jackd -nSOFT2 -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT2.log',
+    'SOFT1'):
+    jpctrl.exit_with_beep()
+
+if not wait_for_jack('jack_test', 'SOFT2')
+    jpctrl.exit_with_beep()
+
+print('\nSOFT3 ...')
+if not jpctrl.spawn_and_settle('/usr/bin/jackd -nSOFT3 -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT3.log',
+    'SOFT3'):
+    jpctrl.exit_with_beep()
+
+if not wait_for_jack('jack_test', 'SOFT2')
+    jpctrl.exit_with_beep()
+
+# print('-----------------------------------------------------------------')
+# print('Start all a2jmidi_bridge processes for soft servers...')
+# print('-----------------------------------------------------------------')
 
 # The idea here is that all of the JACK soft servers are given
 # access to MIDI hardware via j2amidi_bridge, which is installed
@@ -53,17 +82,17 @@ print('-----------------------------------------------------------------')
 
 print('\non SOFT1...')
 if not jpctrl.spawn_and_settle('a2jmidi_bridge soft1_midi', 'SOFT1'):
-    jpctrl.exit_with_beep()
+     jpctrl.exit_with_beep()
 
 print('\non SOFT2...')
 if not jpctrl.spawn_and_settle('a2jmidi_bridge soft2_midi', 'SOFT2'):
-    jpctrl.exit_with_beep()
+     jpctrl.exit_with_beep()
 
 print('\non SOFT3...')
 if not jpctrl.spawn_and_settle('a2jmidi_bridge soft3_midi', 'SOFT3'):
-    jpctrl.exit_with_beep()
+     jpctrl.exit_with_beep()
 
-jpctrl.stdsleep(3)
+# jpctrl.stdsleep(3)
 
 print('-----------------------------------------------------------------')
 print('Start Distribute.py on all soft servers...')
