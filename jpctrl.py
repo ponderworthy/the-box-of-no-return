@@ -70,11 +70,11 @@ def setup_jack_client(jack_client_name, jack_server_name='default'):
 ###################################################################################
 # For 20 seconds, try to set up new jpctrl JACK client, trying once per second.
 # Return JACK client object on success, None on failure.
-def wait_for_jack(jack_client_name, jack_server_name='default'):
+def wait_for_jack(jack_server_name='default'):
 
     timecount = 0
     while True:
-        test_jack = setup_jack_client(jack_client_name, jack_server_name)
+        test_jack = setup_jack_client('jpctrl.wait_for_jack-temp', jack_server_name)
         if not test_jack:
             timecount += 1
             if timecount > 20:
@@ -104,7 +104,7 @@ def wait_for_jackport(name2chk, jack_server_name='default'):
     try:
         jack_client_temp = jack.Client('jack_client_temp', servername=jack_server_name)
         jack_client_temp.activate()
-        jack_client_temp.outports.register('dummy_temp_port')
+        jack_client_temp.outports.register('jpctrl.wait_for_jackport-temp')
     except:
         return False
 

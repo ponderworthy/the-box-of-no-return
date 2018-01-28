@@ -49,27 +49,27 @@ else:
 
 print('\nSOFT1 ...')
 
-if not jpctrl.spawn_and_settle('/usr/bin/jackd -nSOFT1 -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT1.log',
+if not jpctrl.spawn_and_settle('/usr/bin/jackd -nSOFT1 -P 90 -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT1.log',
     'SOFT1'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jack('jack_test', 'SOFT1'):
+if not jpctrl.wait_for_jack('SOFT1'):
     jpctrl.exit_with_beep()
 
 print('\nSOFT2 ...')
-if not jpctrl.spawn_and_settle('/usr/bin/jackd -nSOFT2 -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT2.log',
+if not jpctrl.spawn_and_settle('/usr/bin/jackd -nSOFT2 -P 90 -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT2.log',
     'SOFT1'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jack('jack_test', 'SOFT2'):
+if not jpctrl.wait_for_jack('SOFT2'):
     jpctrl.exit_with_beep()
 
 print('\nSOFT3 ...')
-if not jpctrl.spawn_and_settle('/usr/bin/jackd -nSOFT3 -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT3.log',
+if not jpctrl.spawn_and_settle('/usr/bin/jackd -nSOFT3 -P 90 -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT3.log',
     'SOFT3'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jack('jack_test', 'SOFT3'):
+if not jpctrl.wait_for_jack('SOFT3'):
     jpctrl.exit_with_beep()
 
 # print('-----------------------------------------------------------------')
@@ -81,18 +81,38 @@ if not jpctrl.wait_for_jack('jack_test', 'SOFT3'):
 # as part of a2jmidid.
 
 print('\non SOFT1...')
+
 if not jpctrl.spawn_and_settle('a2jmidi_bridge soft1_midi', 'SOFT1'):
      jpctrl.exit_with_beep()
 
+if jpctrl.wait_for_jackport('soft1_midi:capture', 'SOFT1'):
+    print('soft1_midi confirmed on SOFT1.')
+else:
+    print('wait_for_jackport on soft1_midi/capture failed.')
+    jpctrl.exit_with_beep()
+
 print('\non SOFT2...')
+
 if not jpctrl.spawn_and_settle('a2jmidi_bridge soft2_midi', 'SOFT2'):
      jpctrl.exit_with_beep()
+
+if jpctrl.wait_for_jackport('soft2_midi:capture', 'SOFT2'):
+    print('soft2_midi confirmed on SOFT2.')
+else:
+    print('wait_for_jackport on soft2_midi/capture failed.')
+    jpctrl.exit_with_beep()
 
 print('\non SOFT3...')
 if not jpctrl.spawn_and_settle('a2jmidi_bridge soft3_midi', 'SOFT3'):
      jpctrl.exit_with_beep()
 
-# jpctrl.stdsleep(3)
+if jpctrl.wait_for_jackport('soft3_midi:capture', 'SOFT3'):
+    print('soft3_midi confirmed on SOFT3.')
+else:
+    print('wait_for_jackport on soft3_midi/capture failed.')
+    jpctrl.exit_with_beep()
+
+jpctrl.stdsleep(3)
 
 print('-----------------------------------------------------------------')
 print('Start Distribute.py on all soft servers...')
@@ -126,33 +146,33 @@ print('\nStarting Distribute.py on SOFT1...')
 if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute.py', 'SOFT1'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport('Distribute.py:SRO', 'SOFT1'):
+if jpctrl.wait_for_jackport('Distribute.py:SRO', 'SOFT1'):
+    print('Distribute.py confirmed on SOFT1.')
+else:
     print('wait_for_jackport on Distribute.py/SOFT1 failed.')
     jpctrl.exit_with_beep()
-else:
-    print('Distribute.py confirmed on SOFT1.')
 
 print('\nStarting Distribute.py on SOFT2...')
 
 if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute.py', 'SOFT2'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport('Distribute.py:Strings', 'SOFT2'):
+if jpctrl.wait_for_jackport('Distribute.py:Strings', 'SOFT2'):
+    print('Distribute.py confirmed on SOFT2.')
+else:
     print('wait_for_jackport on Distribute.py/SOFT2 failed.')
     jpctrl.exit_with_beep()
-else:
-    print('Distribute.py confirmed on SOFT2.')
 
 print('\nStarting Distribute.py on SOFT3...')
 
 if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute.py', 'SOFT3'):
     jpctrl.exit_with_beep()
 
-if not jpctrl.wait_for_jackport('Distribute.py:FlowBells', 'SOFT3'):
+if jpctrl.wait_for_jackport('Distribute.py:FlowBells', 'SOFT3'):
+    print('Distribute.py confirmed on SOFT3.')
+else:
     print('wait_for_jackport on Distribute.py/SOFT3 failed.')
     jpctrl.exit_with_beep()
-else:
-    print('Distribute.py confirmed on SOFT3.')
 
 print('-----------------------------------------------------------------')
 print('Start Zita IP bridge processes...')
@@ -162,24 +182,60 @@ print('\nThree receivers on the hard server...\n')
 
 if not jpctrl.spawn_and_settle('zita-n2j --filt 32 --buff 14 --jname zita-n2j-4soft1 127.0.0.1 55551'):
     jpctrl.exit_with_beep()
-print('\n')
+
+if not jpctrl.wait_for_jackport('zita-n2j-4soft1:out_1'):
+    print('wait_for_jackport on zita-n2j-4soft1/hard failed.')
+    jpctrl.exit_with_beep()
+else:
+    print('zita-n2j-4soft1 confirmed on hard server.')
+
 if not jpctrl.spawn_and_settle('zita-n2j --filt 32 --buff 14 --jname zita-n2j-4soft2 127.0.0.2 55552'):
     jpctrl.exit_with_beep()
-print('\n')
+
+if not jpctrl.wait_for_jackport('zita-n2j-4soft2:out_1'):
+    print('wait_for_jackport on zita-n2j-4soft2/hard failed.')
+    jpctrl.exit_with_beep()
+else:
+    print('zita-n2j-4soft2 confirmed on hard server.')
+
 if not jpctrl.spawn_and_settle('zita-n2j --filt 32 --buff 14 --jname zita-n2j-4soft3 127.0.0.3 55553'):
     jpctrl.exit_with_beep()
+
+if not jpctrl.wait_for_jackport('zita-n2j-4soft3:out_1'):
+    print('wait_for_jackport on zita-n2j-4soft3/hard failed.')
+    jpctrl.exit_with_beep()
+else:
+    print('zita-n2j-4soft3 confirmed on hard server.')
 
 print('\nOne transmitter on each soft server...\n')
 
 if not jpctrl.spawn_and_settle('zita-j2n --jname zita-j2n-soft1 --jserv SOFT1 127.0.0.1 55551'):
     jpctrl.exit_with_beep()
-print('\n')
+
+if not jpctrl.wait_for_jackport('zita-j2n-soft1:in_1', 'SOFT1'):
+    print('wait_for_jackport on zita-j2n/SOFT1 failed.')
+    jpctrl.exit_with_beep()
+else:
+    print('zita-j2n confirmed on SOFT1.')
+
 if not jpctrl.spawn_and_settle('zita-j2n --jname zita-j2n-soft2 --jserv SOFT2 127.0.0.2 55552'):
     jpctrl.exit_with_beep()
-print('\n')
+
+if not jpctrl.wait_for_jackport('zita-j2n-soft2:in_1', 'SOFT2'):
+    print('wait_for_jackport on zita-j2n/SOFT2 failed.')
+    jpctrl.exit_with_beep()
+else:
+    print('zita-j2n confirmed on SOFT2.')
+
 if not jpctrl.spawn_and_settle('zita-j2n --jname zita-j2n-soft3 --jserv SOFT3 127.0.0.3 55553'):
     jpctrl.exit_with_beep()
-print('\n')
+
+if not jpctrl.wait_for_jackport('zita-j2n-soft3:in_1', 'SOFT3'):
+    print('wait_for_jackport on zita-j2n/SOFT3 failed.')
+    jpctrl.exit_with_beep()
+else:
+    print('zita-j2n confirmed on SOFT3.')
+
 
 print('-----------------------------------------------------------------')
 print('Start non-mixers...')
