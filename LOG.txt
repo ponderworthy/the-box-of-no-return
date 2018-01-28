@@ -1,4 +1,11 @@
 
+Installed net-tools-debian-ifconfig with yaourt
+and then ran 'ifconfig lo multicast' to enable
+multicast on localhost.
+Was not able to run two qmidinet processes
+on the one machine, even by binding one to lo
+and the other to hardware NIC.
+
 qmidinet:
 https://qmidinet.sourceforge.io
 seems to be the Linux MIDI-over-IP
@@ -7,7 +14,7 @@ a few OSC-over-IP methods which may be
 more common, but qmidinet is in
 good development, and we would have to
 add a conversion step for the OSC
-to be useful.
+to be useful.  qmidinet does use multicast.
 
 Could make backup with:
 http://www.urbackup.org
