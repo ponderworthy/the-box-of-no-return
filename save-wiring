@@ -1,0 +1,5 @@
+#!/bin/bash
+aj-snapshot -f AJhard.xml
+./soft1 aj-snapshot -f AJSOFT1.xml
+./soft2 aj-snapshot -f AJSOFT2.xml
+./soft3 aj-snapshot -f AJSOFT3.xml
