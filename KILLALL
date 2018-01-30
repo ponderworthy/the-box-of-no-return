@@ -14,11 +14,10 @@
 import psutil
 
 PROCESSES = [
-    '/usr/bin/qjackctl',
     'BOOT-GENERAL',
     'BOOT-INITIAL',
     'BNR Live Report',
-    '/usr/bin/jackd',
+    'jackd',
     'a2jmidi_bridge',
     'zita-n2j',
     'zita-j2n',
@@ -28,13 +27,11 @@ PROCESSES = [
     'calfjackhost',
     'jack_mixer',
     'non-mixer',
-    '/home/jeb/Combine',
-    '/home/jeb/Distribute',
-    '/home/jeb/OctaveDown',
-    '/home/jeb/Chan2Port',
-    '/home/jeb/FilterNotes',
-    '/home/jeb/MIDImonitor',
-    '/usr/share/carla/carla'
+    'Combine.py',
+    'Distribute.py',
+    'OctaveDown.py',
+    'carla',
+    'catia'
 ]
 
 procs_to_kill = []

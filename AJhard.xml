@@ -6,13 +6,15 @@
     <port id="1" />
   </client>
   <client name="Midi Through">
-    <port id="0" />
-  </client>
-  <client name="UM-ONE">
     <port id="0">
       <connection client="soft1_midi" port="0" />
       <connection client="soft2_midi" port="0" />
       <connection client="soft3_midi" port="0" />
+    </port>
+  </client>
+  <client name="UM-ONE">
+    <port id="0">
+      <connection client="Midi Through" port="0" />
     </port>
   </client>
   <client name="soft1_midi" />
