@@ -1,0 +1,23 @@
+#############################
+# Wire USB MIDI ports to    #
+# ALSA 'MIDI through' input #
+#############################
+
+import subprocess
+import re
+
+findclientnum = re.compile('[0-9]{1,4}:')
+
+in_ports_list = (subprocess.check_output('aconnect -i',shell=True)).splitlines()
+out_ports_list = (subprocess.check_output('aconnect -o',shell=True)).splitlines()
+
+for line in in_ports_list:
+    linestr = bytes.decode(line)
+    print(linestr)
+    cardnumsearch = (findclientnum.search(linestr))
+    if not cardnumsearch is None:
+        print("Client number with card port: " + (cardnumsearch.group())[:-1] )
+        print("\n")
+		
+# aconnect -i | grep ^client.*card
+
