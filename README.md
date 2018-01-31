@@ -1,6 +1,6 @@
 # the-box-of-no-return
 
-The Box of No Return is a Linux synth platform suitable for live musicianship, designed to handle patches with enormous demands, and switch between them with zero delay and zero cutout.  Its current production design is discussed at https://lsn.ponderworthy.com.  This repository was created to receive the files for its next major iteration, which is using the [MultiJACK](https://github.com/jebofponderworthy/MultiJACK) architecture at its core.  The MultiJACK BNR using these files is up and running, production tests passed, and will be tested in real live music shortly.
+The Box of No Return is a Linux synth platform suitable for live musicianship, designed to handle patches with enormous demands, and switch between them with zero delay and zero cutout.  Its current production design is discussed at https://lsn.ponderworthy.com.  This repository was created to receive the files for its next major iteration, which is using the [MultiJACK](https://github.com/jebofponderworthy/MultiJACK) architecture at its core.  The MultiJACK BNR using these files is up and running, production tests passed, and will be tested with the [Ponderworthy](http://ponderworthy.com) band shortly.
 
 ## the name
 
