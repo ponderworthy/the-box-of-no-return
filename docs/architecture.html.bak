@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>The Box of No Return</title>
+    <style>
+
+      
+    </style>
+    <link type="text/css" href="styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>The Box of No Return</h1>
+    <h2>summary</h2>
+    <p>The Box of No Return is a Linux-based musical synthesizer platform,
+      suitable for live musicianship, designed to handle multiple patches with
+      enormous demands, and switch between them with zero delay and zero
+      cutout.&nbsp; If you are using a simple SoundFont host on a laptop and
+      basic GUI, you don't need this.&nbsp; If you pile on the tone generators
+      and filters in patch development, but when playing you don't want any UI
+      at all except patch number buttons on your controller in order to feel the
+      unwavering power of the musical harmonic roar, the BNR may suit you very
+      well indeed.</p>
+    <h2>questions, contributions, discussion, the code</h2>
+    <p>The project is <a href="https://github.com/ponderworthy/the-box-of-no-return"
+        target="_blank">hosted on Github</a>.&nbsp; <a href="https://github.com/ponderworthy/the-box-of-no-return/issues"
+        target="_blank">Issues</a> are encouraged.</p>
+    <h2>related writings</h2>
+    <p>Linux-based musical synthesis is a working discipline, as is music
+      synthesis in general.&nbsp; A few articles are <a href="articles.html">here</a>.</p>
+    <h2>why this project and its benefits</h2>
+    <p>From the beginning, the BNR was desired out of a need to host patches of
+      maximum, profound and terrible, tonal content. If you find yourself
+      reducing the profundity of your patches because your machine won't do
+      better, this project may be very good for you, especially if you play
+      live. Current patches include one with three simultaneous <a href="http://yoshimi.github.io/"
+        target="_blank">Yoshimi</a>s, another with five simultaneous large
+      FluidSynth soundfonts, others, and more consisting of mixes.&nbsp; Many
+      prayers granted, and much help from the Linux Audio community, study,
+      work, and trial and error, has gone into making this happen reliably and
+      well.<br>
+      <br>
+      The current known box running with this code, is an eight-core 4GHz
+      machine with 8G RAM. In an earlier iteration, it used the conventional
+      single JACK server with a huge tangled web of connections; but less than
+      one-quarter of its CPU capacity was being used, while JACK reported that
+      75% of its capacity was being used. In 2015 began an effort, in 2017
+      finally successful, to use multiple JACK processes together in one box,
+      which is called MultiJACK; and this build of the BNR has MultiJACK at its
+      core. Attempts have not yet been made to run this code on a quad-core box,
+      though the previous single-JACK iteration of the BNR is still running as
+      of this writing on quad 3GHz with 8G RAM.<br>
+      <br>
+      There are quite a few people using tools like NetJACK to increase JACK
+      capacity with multiple boxes, or at least multiple motherboards. But if
+      you value portability, if you value space, and/or if you are a gigging
+      musician, a fragile or heavy <em>(one, the other, or both; not neither)</em>
+      multi-motherboard construct is not preferable. Most users of
+      Linux-hardware synths limit themselves as a result of what one JACK server
+      can do, and other platforms limit analogously; here we have an effort to
+      blow the door open a bit more!</p>
+    <h2>grateful thanks</h2>
+    <p>go to the many people of the Linux audio community, from the original OSS
+      people to the ALSA folks, and to the JACK people (all of you, including
+      the very wise several who said this project could <strong>not</strong>
+      produce good results, because nonetheless you help tremendously); and
+      clearly the GNU/Linux folks as a whole, who have given us all so much; and
+      the Creator who keeps it all happening.</p>
+    <p><br>
+    </p>
+  </body>
+</html>

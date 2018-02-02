@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>The Box of No Return</title>
+    <style>
+
+      
+    </style>
+    <link type="text/css" href="styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>The Box of No Return</h1>
+    <h2>summary</h2>
+    <p>The Box of No Return is a Linux-based musical synthesizer platform,
+      suitable for live musicianship, designed to handle multiple patches with
+      enormous demands, and switch between them with zero delay and zero
+      cutout.&nbsp; If you are using simple single SoundFonts with a laptop and
+      basic GUI, you don't need this.&nbsp; If you pile on the tone generators
+      and filters in patch development in order to feel the power of the musical
+      harmonic roar, the BNR or your own redesign of it may suit you well.</p>
+    <h2>questions, contributions, discussion, the code</h2>
+    <p>The project and its code are <a href="https://github.com/ponderworthy/the-box-of-no-return"
+        target="_blank">hosted on Github</a>.&nbsp; There are SoundFonts
+      involved in the current build which are downloadable elsewhere and
+      discussed here.</p>
+    <h2>why this project and its benefits</h2>
+    <p>From the beginning, the BNR was desired out of a need to host patches of
+      maximum, profound and terrible, tonal content. If you find yourself
+      reducing the profundity of your patches because your machine won't do
+      better, this project may be very good for you, especially if you play
+      live. Current patches include one with three simultaneous Yoshimis,
+      another with five simultaneous large FluidSynth soundfonts, and the
+      ability to mix the two and a third together. Many prayers granted, and
+      much help from the Linux Audio community, study, work, and trial and
+      error, has gone into making this happen reliably and well.<br>
+      <br>
+      The current known box running with this code, is an eight-core 4GHz
+      machine with 8G RAM. In an earlier iteration, it used the conventional
+      single JACK server; but less than one-quarter of its CPU capacity was
+      being used, while JACK reported that 75% of its capacity was being used.
+      In 2015 began an effort, now successful, to use multiple JACK processes
+      together in one box, and this is the rebuild of the BNR with MultiJACK at
+      its core. Attempts have not yet been made to run this code on a quad-core
+      box, though the previous single-JACK iteration of the BNR is still running
+      as of this writing on quad 3GHz with 8G RAM.<br>
+      <br>
+      There are quite a few people using tools like NetJACK to increase JACK
+      capacity with multiple boxes, or at least multiple motherboards. But if
+      you value portability, if you value space, and/or if you are a gigging
+      musician, a fragile or heavy (one, the other, or both; not neither)
+      multi-motherboard construct is not preferable. Most users of
+      Linux-hardware synths limit themselves as a result of what one JACK server
+      can do, and other platforms limit analogously; here we have an effort to
+      blow the door open a bit more!</p>
+  </body>
+</html>

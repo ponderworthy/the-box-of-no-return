@@ -1,0 +1,27 @@
+body { 
+	background-color: black; 
+	color: white; 
+	font-family: "Source Sans Pro", sans-serif;
+  margin: 3em 3em 3em 3em;
+}
+
+h1 {
+  text-align: center;
+}
+
+h1.subpage {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+A {
+  color: orange;
+}
+
