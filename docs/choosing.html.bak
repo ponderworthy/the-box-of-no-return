@@ -7,7 +7,7 @@
     <link type="text/css" href="styles.css" rel="stylesheet">
   </head>
   <body>
-    <h1><small>The Box of No Return</small><br>
+    <h1><small><a class="title" href="/">The Box of No Return</a></small><br>
       Choosing Linux Platform Elements for a Musical Synthesizer</h1>
     <h2>distributions and general</h2>
     <p>There are many distributions today, and all of them have strengths. There
