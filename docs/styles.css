@@ -1,7 +1,8 @@
 body { 
 	background-color: black; 
 	color: white; 
-	font-family: "Source Sans Pro", sans-serif;
+	font-family: "Source Sans Pro", "Arial", "Helvetica", sans-serif;
+  font-size: 1.1em;
   margin: 3em 3em 3em 3em;
 }
 
