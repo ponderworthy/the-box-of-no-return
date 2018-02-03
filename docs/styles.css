@@ -7,9 +7,6 @@ body {
 
 h1 {
   text-align: center;
-}
-
-h1.subpage {
   font-size: 1.5em;
 }
 
@@ -18,10 +15,22 @@ h2 {
 }
 
 h3 {
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
 A {
   color: orange;
 }
 
+A.title {
+  color: white;
+  text-decoration: underline dashed;
+}
+
+p {
+  margin-bottom: 9pt;
+}
+
+li {
+  margin-bottom: 9pt;
+}

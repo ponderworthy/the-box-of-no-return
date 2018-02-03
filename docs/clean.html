@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>The Box of No Return: Cleaning the Tone</title>
+    <style>
+
+      
+    </style>
+    <link type="text/css" href="styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1><small><a class="title" href="/">The Box of No Return</a></small><br>
+      <span style="font-size: 1.2em;">Cleaning the Tone<br>
+      </span></h1>
+    <h2>the situation</h2>
+    <p>This is a topic I have hesitated to write about for a long time. Mostly
+      this is because when I posted questions about this to the often helpful <a
+        href="https://lists.linuxaudio.org/listinfo/linux-audio-user">Linux
+        Audio Users</a> group, I found that many people don't experience this at
+      all, they just plug everything in and go. However, in all of my
+      developments, I have had a whole lot of trouble with hiss, and hum, and
+      crackle, and other unwanted sounds mixed in with my desired output. Here
+      is a discussion of what I have encountered and what I have done about it.</p>
+    <h2>approaches</h2>
+    <p>This cleanup has been one of the most stubborn problems I have had in the
+      whole effort. I have studied hundreds of pages of professional guides, as
+      well as direct input from professionals, and I have added grounding wires
+      left and right and upside down, and run the whole rig through
+      medical-grade transformer isolation, and more, without resolution. So
+      given the utter failure of so much professional input, I have ceased
+      trying to respect logic of causality, and contented myself with the
+      factual solutions below.</p>
+    <h2>part I: the AC power vector</h2>
+    <p>One “vector”, or path, by which the gunk gets in, is clearly the AC
+      power. This is obvious by recognition of sixty-cycle (in most places in
+      the world, it would be fifty-cycle) hum. But this is not all. In many
+      places I need to play there are lighting systems which dump other gunk
+      into the AC power line, and more; and all of this tends to show up in the
+      BNR audio signal. One would think that transformer isolation of the whole
+      playing rig would fix it, and this might work – except that I usually need
+      to play through a PA, and covering everything isn't practical.</p>
+    <p>Happily, I found a great way to eliminate this, the <a href="http://www.ebtechaudio.com/humxdes.html">Ebtech
+        Hum Exterminator</a> or Hum X for short. I own four of these things now,
+      and will not be without them by choice, they are fantastic.</p>
+    <h2>part II: the USB vector</h2>
+    <p>The second major class of gunk, is USB signals. I spent a ridiculous
+      amount of time trying to figure out how this was happening; it happens
+      whether I use USB MIDI interfaces or USB direct to the keyboard. If
+      firewire is in use, there may be firewire gunk too. We can tell this is
+      happening, if (for instance) gunk gets into the audio whenever a USB mouse
+      moves, or a USB keyboard is typed on…!</p>
+    <p>I have tested a number of different signal filters against this problem.
+      I was using Behringer HD400's, but I had two of them die in unexpected
+      manner, so I moved to <a href="http://www.rolls.com/product.php?pid=HE18">Rolls
+        HE18 Buzz Off</a> devices, and these have been the best of all, also
+      best in both price and in build quality.</p>
+    <h2>part III: The PC Miscellaneous</h2>
+    <p>The third class I have had to deal with, I'm calling The PC
+      Miscellaneous, so far it's been case fans and CPU fans. We can verify the
+      existence of this, simply by disconnecting a case fan (or just stopping
+      one with a finger!) and hearing a buzz go away.</p>
+    <p>I have no idea why this happened or why I haven't seen reports of it
+      elsewhere, but I knocked out the issue mostly with the tools in the above
+      sections, I did add a speed control to one of the case fans. I received a
+      lot of advice while working on it, often involving making sure everything
+      is grounded; it always was and is, this is a steel case and a good
+      metal-cased power supply.</p>
+    <h2>postscript</h2>
+    <p>One of the reasons it seemed very good to write up this page, is the
+      recent production by Peavey of their <a href="https://peavey.com/products/index.cfm/item/875/117099">USB-P</a>;
+      it is explicitly designed for this sort of use case (!), incorporates
+      signal cleanup circuitry with isolation, and is highly recommended in this
+      very way in reviews on certain major Internet retailers.&nbsp; It works
+      extremely well in noisy circumstances, I did not need my Rolls with it;
+      but unfortunately it only runs to 48 kHz.&nbsp; My new Mackie Onyx Artist
+      doesn't have XLR outputs, but does put out the cleanest, most beautiful
+      tone I have ever heard, as long as my Rolls is on the output!</p>
+    <p><br>
+    </p>
+  </body>
+</html>

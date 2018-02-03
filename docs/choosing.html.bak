@@ -2,142 +2,184 @@
 <html dir="ltr" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <title>The Box of No Return: Choosing a Linux Platform for a Musical
+    <title>The Box of No Return: Choosing Linux Platform Elements for a Musical
       Synthesizer</title>
-    <style>
-
-      
-    </style>
     <link type="text/css" href="styles.css" rel="stylesheet">
   </head>
   <body>
-    <h1 class="subpage"><small>The Box of No Return</small><br>
-      Choosing a Linux Platform for a Musical Synthesizer</h1>
-    <h2> Distributions and General</h2>
-    There are many distributions today, and all of them have strengths. There
-    have been some relatively recent divergences in best applications. At this
-    time we will not recommend CentOS or Red Hat on the digital audio
-    workstation; we need the full range of current audio libraries, audio
-    applications, kernels and drivers...<br>
-    <br>
-    For a long while, in my experiences, this generally meant the Testing
-    release of Debian. Sparky Linux, a very nicely engineered
-    best-of-many-versions Debian, has also been excellent. There is an Ubuntu
-    variant for this sort of audio too, reportedly very good, and there are
-    others.&nbsp; <br>
-    <br>
-    I have found Manjaro to be my personal best choice, because given just a
-    touch of recompilation arcana, 'yaourt' makes it so very easy to build and
-    install everything we need, and even optimized for the CPU at hand,
-    including the fastest kernels available. Manjaro is an Arch superset, which
-    is very good in many ways, not the least bit being the unusually thorough
-    Arch documentation wiki, and the growing Manjaro wiki.<br>
-    <br>
-    Do see Desktop Manager below, because you'll want to start off as smoothly
-    as possible.<br>
-    <h2>Hardware, Compatibility, and Related Theory</h2>
-    <br>
-    One must watch the hardware. You'll know when you don't have enough CPU
-    power to fill your bill; JACK will tell you quite reliably about the
-    percentage of your software DSP capacity in use, and htop is great to show
-    you real multicore status. Concerning compatibility, new kernels will
-    support new hardware; if you're running a model of sound card which is
-    entirely new in the current year, you may need a very new kernel indeed.<br>
-    <br>
-    But not all sound cards are worthwhile for us: we need low latency, which
-    empirically means “works very well and processes its data very fast”; more
-    about this further down. Having been burned by more than one sound card
-    which was widely claimed to be such, I recommend care. All kinds of
-    motherboard sound, not surprisingly, seem to be widely supported, but any
-    very new hardware may need a new kernel to support it. See the Kernels
-    section, below.<br>
-    <br>
-    Primary support for sound, in today's Linux, is either in the kernel for
-    PCI/PCI-e/USB, or it is in the Firewire setup for Jack, called FFADO. There
-    are other avenues – there are ways to retrofit newer versions of the ALSA
-    sound system found in the kernel, to older kernel versions, and there is an
-    entirely alternative sound system called OSS about which reports are often
-    good – but these involve digging and replacement of pillars of stock distro
-    elements, and this is time and concentration which I am not going to spend
-    away from the music :-D<br>
-    <br>
-    Some Hardware Practica<br>
-    <br>
-    For about three years the first BNR was run using a Behringer FCA202
-    firewire audio interface for sound, and a Yamaha UX16 for MIDI. I still
-    heartily recommend the UX16. But the Behringer died unexpectedly (right
-    before a gig, it was given to come back just once after prayer), Behringer
-    lists it as a “Legacy” product, and I have not found a comparable non-legacy
-    product at anywhere near the price: the impression I have is that in reality
-    the industry is taking firewire in general into the legacy category. So in
-    the rebuild occurring right now (2017-08-21) of BNR #1, I found this new USB
-    device from Peavey, the USB-P, which so far has been just precisely what's
-    needed, it even includes a lot of internal signal cleanup which is quite
-    precious for this project. I am also trying out a Roland UM-ONE mk2 USB MIDI
-    interface; it was a bit less expensive than my traditional UX16's, and
-    Roland invented a lot of what we now call MIDI, so I thought it would be a
-    worthwhile go.<br>
-    <br>
-    The first BNR is played with the Ponderworthy band and occasional solo gigs;
-    there is a second BNR, which is played every Sunday morning at New Hope UMC
-    in Topeka, Kansas. The second is not considered portable, uses a
-    seven-year-old dual-core 3.3GHz PC and motherboard audio 1/8“ jack, and a
-    UX16.<br>
-    <br>
-    Desktop Manager<br>
-    <br>
-    The choice of desktop manager can also make a big difference. Today we have
-    quite a few more choices than we used to have; there is forking going on et
-    cetera. It is useful to notice that the forking is going on, in part,
-    explicitly to get away from the huge horsepower-and-memory-chomping graphics
-    shells and fancy environmental add-ons which the very largest distro
-    managements appear to think everyone wants. For synth, where we want every
-    free cycle we can get, I heartily recommend an environment called LXDE,
-    which can now be installed automatically by the package managers of any
-    distro I would consider. There are others I have tested and used for
-    periods, but thus far LXDE has given by far the best combination of speed,
-    reliability, and lack of interference with our purposes here.<br>
-    <br>
-    Interference is the major concern. One cause of this is something called
-    gvfs, which although it is very nice to have in the general-purpose desktop,
-    will often get in the way of smooth high-performance realtime audio, it
-    causes cutouts in the audio called “xruns”, producing static and skips. So
-    far I have seen LXDE use gvfs as an option, not as a make-or-break, so LXDE
-    I very much recommend. For quite a while one of my two BNRs ran XFCE instead
-    of LXDE, and ran it very well; but in the current rebuild (August 2017) I
-    found that XFCE gave me occasional xruns but LXDE did not, so back to LXDE
-    it is.<br>
-    <br>
-    Background Processes and Other Hidden Gotchas<br>
-    <br>
-    There are many more issues which can hinder us. Anything which interrupts or
-    inhibits the algorithmic delivery of the tonal datastream and signal to the
-    audio hardware, and anything which unnecessarily eats processor cycles, may
-    need to be addressed. These include certain automatic USB flash drive
-    mounters (which is one of the functions of gvfs), PulseAudio, some
-    Bluetooth-related items, and many others.<br>
-    <br>
-    PulseAudio, the de facto consumer/general-purpose audio transport, is a good
-    case in point. A number of years ago PulseAudio was a very significant
-    gotcha on almost every distro I tried, it just would not cooperate with
-    JACK. But the two have begun to cooperate much more. It is now possible to
-    keep Pulse around in a rig like we are discussing here – but you will
-    sacrifice some of your available DSP. Yesterday's test showed 0.5% without
-    Pulse, and about 5% in use with Pulse, without any applications attached. So
-    I got rid of Pulse :-)<br>
-    <br>
-    Kernels<br>
-    <br>
-    The kernel is the root core of the OS; nothing happens without the kernel,
-    and a significant improvement in the kernel is usually a major improvement
-    in everything else. One major benefit of Debian Testing and Sparky Linux, is
-    we get to use the very high-performance kernels being put out by Liquorix.
-    These are not only highly tweaked for speed and responsiveness, but they
-    also are using very recent kernel code versions, which means the most
-    complete driver sets which exist for Linux, and support of the most recent
-    hardware available. On Manjaro, 'yaourt' gives many more options; I am
-    currently using linux-pf-bfq, recompiled full tickless, 1000 Hz timer, CPU
-    optimization native. I have found better performance available using
-    non-realtime kernels, for some reason.<br>
+    <h1><small>The Box of No Return</small><br>
+      Choosing Linux Platform Elements for a Musical Synthesizer</h1>
+    <h2>distributions and general</h2>
+    <p>There are many distributions today, and all of them have strengths. There
+      have been some relatively recent divergences in best applications. At this
+      time we will not recommend CentOS or Red Hat on the digital audio
+      workstation; we need the full range of current audio libraries, audio
+      applications, and of course kernels and drivers.</p>
+    <p>For a long while, in my experiences, this generally meant the Testing
+      release of Debian. Sparky Linux, a&nbsp; best-of-many-versions Debian, has
+      also been excellent. There is an Ubuntu variant for this sort of audio
+      too, reportedly very good, and there are others.&nbsp; </p>
+    <p>I have found Manjaro to be my personal best choice, because given just a
+      touch of recompilation arcana, 'yaourt' makes it so very easy to build and
+      install everything we need, and even optimized for the CPU at hand,
+      including the fastest kernels available. Manjaro is an Arch superset,
+      which is a very good thing in many ways, not the least bit being the
+      unusually thorough Arch documentation wiki, and the growing Manjaro wiki.</p>
+    <p>Do see "desktop environment" below, because you'll want to start off as
+      smoothly as possible.&nbsp; But we do need to talk about hardware.</p>
+    <h2>audio hardware</h2>
+    <p>Not all sound cards are worthwhile for us: we need low latency, which
+      empirically means “works very well and processes its data very
+      fast”.&nbsp; Having been burned by more than one sound card which were
+      claimed to be such, I recommend care and flexibility.&nbsp; All kinds of
+      motherboard sound, not surprisingly, seem to be widely supported, but any
+      very new hardware may need a new kernel to support it (see the Kernels
+      section below).&nbsp; But it's not just support that we need, we need
+      quality.&nbsp; </p>
+    <p>One of the obvious items, is the sampling rate.&nbsp; Consumer-grade
+      audio generally will input and output a maximum of 48 kHz.&nbsp; (The
+      original audio CD sampled at 44.1 kHz.)&nbsp; Modern professional-grade
+      recording apparatus will handle 96 kHz and sometimes 192 kHz.&nbsp; If
+      your hardware and software and Linux setup is all excellent, I can confirm
+      that a Mackie Onyx Artist USB interface will deliver 96 kHz very nicely,
+      and also, I can confirm that if your patches include thready strings or
+      smoothness, you will notice significant improvement over 48 kHz.&nbsp; On
+      the other hand, I can also confirm that dozens of people in various places
+      will demand that you recant if you claim to notice the difference.&nbsp;
+      Just before the Mackie I used the 48 kHz Peavey USB-P, which does work
+      extremely well and provides a highly protected and garbage-filtered XLR
+      output.</p>
+    <h2>audio support in Linux</h2>
+    <p>There are a number of important items for audio support in Linux.&nbsp;
+      Here are some practical definitions which will help you a lot in
+      understanding what comes next.</p>
+    <ul>
+      <li>ALSA.&nbsp; This was originally imagined, at least by many, as the
+        be-all audio handler for Linux.&nbsp; Sound card designers today can be
+        expected to (a) align their work with current ALSA drivers, (b) help
+        develop new ones at least by releasing hardware details, or (c) despise
+        all of their potential Linux-oriented customers.&nbsp; There is quite a
+        bit of code out there which tries to use direct ALSA to do everything,
+        including Youtube, DAW, MIDI, network transport, you name it; and some
+        of it is very current, especially for low RAM and embedded use.&nbsp;
+        However, quite a while ago Real Programmers (of which this author can
+        only describe himself as a second or third cousin or so, possibly by
+        marriage twice removed) increasingly decided that ALSA alone was not
+        cutting it, so more layers were born.&nbsp; The vast majority of useful
+        Linux audio-related application code today, is set up at least
+        optionally to interface directly with other layers, and the other layers
+        use ALSA for its excellent driver set and lowest-level configuration.</li>
+      <li>PulseAudio.&nbsp; This layer has the primary purpose of helping common
+        desktop applications play fair with each other, and mixing all of their
+        streams into the speakers, so that nothing crashes while something else
+        is trying to boop.&nbsp; The various applications don't have to know
+        about each other at all; Pulse is a nice friendly being which lets
+        anything compatible plug into it, and a whole lot of things do.&nbsp; It
+        does inputs too, and multiple outputs, and over-the-network delivery to
+        other Pulse-ready machines on the LAN, and all rather nicely.&nbsp; But
+        there is no user-friendly way to, say, take the audio output of two
+        video player applications, mix one through an independent time-delay
+        filter app and the other through a separate reverb filter app, with
+        submillisecond time-stamp synchronization so that everything can be
+        resynchronized back with the frames of the video.&nbsp; For this we need
+        JACK.</li>
+      <li>JACK.&nbsp; JACK is an amazing piece of work.&nbsp; It is software
+        which runs in the background, again allowing JACK-compatible
+        applications to attach to it.&nbsp; But unlike Pulse, which in general
+        just delivers to the default output, JACK doesn't presume anything, and
+        relies on its companion tools to encourage the user to make connections
+        between its clients.&nbsp; There are some very nice GUIs for this now
+        which make things very nice indeed.&nbsp; There is also the "transport"
+        capability, which is frame-timestamping; professional-grade video and
+        other setups in Linux use this to keep various streams in submillisecond
+        synchronization, and it works very well.&nbsp; There is also
+        over-the-LAN networking support, of two different breeds, and there are
+        Windows and Mac versions too.</li>
+      <li>FFADO.&nbsp; This is really an adjunct to JACK, a JACK-oriented driver
+        set for FireWire devices.&nbsp; If you use FireWire audio, you may need
+        this.&nbsp; It's not quite as common as it used to be, because recent
+        ALSA developments include ALSA drivers for FireWire devices, for quite a
+        while there weren't any.&nbsp; But my last FireWire device, a Behringer
+        FCA202, ran much better using FFADO than using the ALSA driver which I
+        was surprised to find after a couple of years.&nbsp; So I told JACK to
+        not use ALSA, to use its FireWire mode instead (which is FFADO), and all
+        remained well.</li>
+      <li>OSS.&nbsp; OSS today is an alternative to ALSA, a different audio
+        hardware driver set.&nbsp; It predates ALSA in origin.&nbsp; I have
+        received very good reports of it, though it does not support anywhere
+        near the range of sound hardware as ALSA does.&nbsp; But certainly I
+        would try it if there was cause.</li>
+    </ul>
+    <h2>desktop environment</h2>
+    <p>The choice of desktop environment can make a big difference. Today we
+      have quite a few more choices than we used to have; there have been
+      forks.&nbsp; It is useful to notice that the forking happened, in part,
+      explicitly to get away from the huge horsepower-and-memory-chomping
+      graphics shells and fancy environmental add-ons which the very largest
+      distro managements appear to think everyone wants. For a BNR, where we
+      want every free cycle we can get, I heartily recommend an environment
+      called LXDE, which can now be installed automatically by the package
+      managers of any distro I would consider.&nbsp; As of recently I can also
+      recommend XFCE4, at least as setup in Manjaro's default.</p>
+    <p>Interference is the major concern. The most common is something called
+      gvfs, which although it is very nice to have in the general-purpose
+      desktop, will often get in the way of smooth high-performance realtime
+      audio, it causes cutouts in the audio called “xruns”, producing static and
+      skips. So far I have seen LXDE use gvfs as an option, not as a
+      make-or-break, so LXDE I very much recommend.&nbsp;&nbsp; As of most
+      recently, XFCE4 from Manjaro likewise makes it very easy to remove gvfs.</p>
+    <h2>background processes and other hidden gotchas</h2>
+    <p> There are many more issues which can hinder us. Anything which
+      interrupts or inhibits the algorithmic delivery of the tonal datastream
+      and signal to the audio hardware, and anything which unnecessarily eats
+      processor cycles, may need to be addressed. These include certain
+      automatic USB flash drive mounters (which is one of the functions of
+      gvfs), PulseAudio, some Bluetooth-related items, and many others.</p>
+    <p>PulseAudio, the de facto consumer/general-purpose audio transport, is a
+      good case in point. A number of years ago PulseAudio was a very
+      significant gotcha on almost every distro I tried, it just would not
+      cooperate with JACK. But the two have begun to cooperate much more. It is
+      now possible to keep Pulse around in a rig like we are discussing here –
+      but you will sacrifice some of your available JACK capacity. Yesterday's
+      test showed 0.5% without Pulse, and about 5% in use with Pulse, without
+      any applications attached. So in my production BNRs I do get rid of
+      Pulse.&nbsp; But I don't have to do so anymore, because MultiJACK is much
+      more efficient, I don't need that 4.5% to run well.&nbsp; If I ever build
+      a desktop BNR, one intended to run usually as a desktop but then to be
+      brought into "BNR mode" sometimes, I will leave PulseAudio in, and even
+      gvfs now, the most recent build has seen both of them work much less
+      intrusively. </p>
+    <h2>system checkout</h2>
+    <p>There's just one tool this writer has heard of which does this well, and
+      that's something called realTimeConfigQuickScan. It helps you find tweaks
+      helpful and essential, though its reporting is a bit out of date at this
+      writing.&nbsp; </p>
+    <h2>setup of JACK</h2>
+    <p>For a very long time, a tool called "qjackctl" was the universal
+      all-purpose tool for getting JACK to work.&nbsp; It is GUI, and it
+      contained everything needed, automating every parameter of JACK (and there
+      are a whole lot of them).&nbsp; However, everything changes.&nbsp; Today
+      the setup tool recommended by the JACK developers, is called Cadence, and
+      it is amazing, particularly so to those who struggled with qjackctl for
+      extended sessions ☺ Cadence handles Pulse/JACK cooperation setup, among
+      other things, and it comes with a wiring tool and other interesting things
+      too.</p>
+    <h2>kernels</h2>
+    <p> The kernel is the root core of the OS; nothing happens without the
+      kernel, and a significant improvement in the kernel is usually a major
+      improvement in everything else. One major benefit of Debian Testing and
+      Sparky Linux, is we get to use the very high-performance kernels being put
+      out by Liquorix. These are not only highly tweaked for speed and
+      responsiveness, but they also are using very recent kernel code versions,
+      which means the most complete driver sets which exist for Linux, and
+      support of the most recent hardware available. On Manjaro, 'yaourt' gives
+      many more options, but my latest BNR build uses the default Manjaro
+      kernel, which is set up very nicely for our needs.&nbsp; There is
+      something called a "realtime kernel" which used to be helpful, but in
+      recent years I have found better performance available using non-realtime
+      kernels, for some reason.</p>
+    <p>If you are interested in custom kernel building, my last custom which I
+      enjoyed greatly was linux-pf-bfq, recompiled full tickless, 1000 Hz timer,
+      CPU optimization native. </p>
   </body>
 </html>

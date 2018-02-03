@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>The Box of No Return: Towards Maximum Strings</title>
+    <style>
+
+      
+    </style>
+    <link type="text/css" href="styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1><small><a class="title" href="/">The Box of No Return</a></small><br>
+      Towards Maximum Strings </h1>
+    <p>In addition to development on the Supermega Rumblic Organ, I have been
+      enjoying Strings sounds for a long while. My favorites have been called
+      “Strings” and “Strings Section” and the like, on a variety of keyboards.</p>
+    <p>But I have steadily realized that I want a rather extreme range of
+      tonality and expression under my fingers. First of all, I want
+      toilet-seat-rumbling bass available like the S.R.O.! It also has to be
+      very controllable, so the black-velvet-pillow effect is very close at
+      hand. But it should have a beautiful low-midrange of celli, and highs
+      which can range from gentle to powerful but never screechy; the highests
+      needs to be playable as soft but very very very clear.</p>
+    <p>This is quite the tall order for one 88-key spread, or even three or
+      four, and I had never been convinced it was practical. But one day the
+      band leader at the church came up with a really profound song which just
+      begged for all of it, so I began looking at the problem yet again.</p>
+    <h2>tools</h2>
+    <p>For this purpose, over the years, I have tried quite a few different
+      toolsets, and many different standalone keyboards. For a long while I
+      could not get strings up to the quite nice bar set in my Yamaha MO8 and
+      similar instruments. But then there was an architecture change ☺ </p>
+    <p>In other words, my venerable AMD second-generation X4 box was wearing
+      out. It was starting to get just a little unpredictable, boot times
+      changing without easily identifiable cause, occasional weird and
+      thoroughly unknown sounds out the audio, et cetera. So finding the Creator
+      having given satisfactory wherewithal, I spent the same amount which many
+      pay at consumer electronics stores for an ordinary office desktop, for an
+      eight-core AMD, 4GHz without overlocking (!). The source is used is no
+      longer selling them, alas, but there are still a few which work to that
+      standard.&nbsp; I then began studying what could be improved. As it
+      happens, there was lots of room for it.</p>
+    <h2>first step: lots of tone</h2>
+    <p>The first thing I tried was throwing as much good strings-tone as seemed
+      to make some kind of sense, into the mix. So looking around a lot, I found
+      and obtained the <a href="http://sso.mattiaswestlund.net/download.html">Sonatina
+        Symphonic Orchestra</a> soundfonts, which include more than twelve
+      different strings, ranging from double bass to violin, several in sets.
+      The SSO originals ship in SFZ form, and after much study it appeared that
+      the only current Linux SFZ player is LinuxSampler, so I set it all up, and
+      tested. Glorious bass, with a very nice friendly personality, omitting the
+      flat roar element of previous setups. Midrange very nice indeed, the best
+      I had tried; mid-highs excellent. Highs still screechy.</p>
+    <h2>second step: 96KHz</h2>
+    <p>Dealing with the screech was tough. The third or fourth big thing I
+      tried, was changing from 48KHz audio to 96KHz audio. Quite the big change
+      actually, because relatively few people are using 96KHz, it puts quite the
+      added load on everything, software and hardware. But that gave me the most
+      beautiful feather-highs, the like of which I have never heard from
+      anything else, and this hardware can take it with room to spare!!!</p>
+    <h2> but then a dose of reality</h2>
+    <p>I noticed that after playing for short whiles, between 5 and 15 minutes,
+      static was creeping in. This was quite mysterious, I had never seen this
+      before; it was not xruns, no errors showing up anywhere, just a bit of
+      static every so often, increasing very slowly over time. I searched far
+      and wide, and asked a number of people excellent in the field; the best
+      suggestion appeared to be that 96KHz was just too much for some of the
+      elements of my software chain. So I started switching out components a
+      bit. And then a lot. The same thing happened with many different
+      variations on LinuxSampler running the SFZ's, so I began using an <a href="https://archive.org/details/SonatinaSymphonicOrchestraSF2">SF2
+        version of the SSO</a>, and tried that in QSynth, FluidSynth by itself,
+      LinuxSampler, and Carla. Carla I had the most hope for, it is a very nice
+      concept and generally great implementation; but the static problem
+      remained. So then I tried the Calf FluidSynth plugin – and voilà.
+      Lovely!&nbsp; Not quite the gorgeous thready of the 96kHz, but very nice
+      indeed.</p>
+    <h2>and the pesky overload problem</h2>
+    <p>I'm not sure whether other Linux musicians face this as much as I do. It
+      may very well be that I do tend to try to stuff more audio signal into the
+      stream than most – I do remember managing to get a hexagonal peg in a
+      round hole in nursery school.&nbsp; But regardless, this is a case where
+      every MIDI trigger note is going to result in cascades of signal out, and
+      we do have to be careful to handle it well. Happily, the first thing I
+      tried for this has been working very well: a mixer application. For some
+      time I have been using Non-Mixer: I set up one input channel for each of
+      my several Calf FluidSynth soundfont tone generators, and all of them are
+      gently and gracefully mixed into output channels. Wonderful!</p>
+    <h2>and finally, after years, back to 96kHz</h2>
+    <p>It bothered me a lot that I had to compromise my tone quality.&nbsp; I
+      was not using more than 20% of the big octo's CPU, and yet I could not get
+      things to work as desired.&nbsp; The concept for <a href="https://github.com/ponderworthy/MultiJACK">MultiJACK</a>
+      emerged, and is now in place most wonderfully&nbsp;☺ &nbsp; 96 kHz, still
+      about 25-30% of the big octo's CPU in use, and all the tone I can
+      use.&nbsp; Hallelujah!</p>
+  </body>
+</html>
