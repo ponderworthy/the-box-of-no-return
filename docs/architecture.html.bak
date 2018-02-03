@@ -6,7 +6,7 @@
     <link type="text/css" href="styles.css" rel="stylesheet">
   </head>
   <body>
-    <h1><small><a class="title" href="/">The Box of No Return</a></small><br>
+    <h1><small><a class="title" href="https://ponderworthy.github.io/the-box-of-no-return">The Box of No Return</a></small><br>
       <span style="font-size: 1.2em;">Architecture</span></h1>
     <h2>summary</h2>
     <p>The architecture of the Box of No Return uses multiple JACK servers in
