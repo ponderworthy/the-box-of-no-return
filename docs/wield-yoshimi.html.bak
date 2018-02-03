@@ -10,7 +10,7 @@
     <link type="text/css" href="styles.css" rel="stylesheet">
   </head>
   <body>
-    <h1><small>The Box of No Return</small><br>
+    <h1><small><a class="title" href="/">The Box of No Return</a></small><br>
       <span style="font-size: 1.2em;">To Wield Yoshimi the Great</span></h1>
     <p><a href="http://yoshimi.sourceforge.net/">Yoshimi</a> is a very special
       software synthesizer. It is a significant rewrite and variation with new
@@ -27,10 +27,9 @@
       produces tonal output using soundfonts. These are very helpful indeed, and
       quite essential, for delivery of many tones and tone colors.</p>
     <p> But there is tremendous power and flexibility inherent in live signal
-      generation. With power comes the need for care&nbsp;
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
-      ☺ Without, one may find one's tires meeting gravel and even brick walls,
-      fairly quickly. Here are items which can help.</p>
+      generation. With power comes the need for care&nbsp; ☺ Without, one may
+      find one's tires meeting gravel and even brick walls, fairly quickly. Here
+      are items which can help.</p>
     <h2>avoid distro burden</h2>
     <p> Automatic USB flash drive mounting can eat USB MIDI and audio
       performance and cause xruns (Jack audio and/or ALSA MIDI hiccups). There
@@ -148,6 +147,5 @@
       After about two and a half years, however, something called <a href="https://github.com/ponderworthy/MultiJACK">MultiJACK</a>
       emerged, in which multiple JACK servers are connected by IP within the
       single box.&nbsp; This has eliminated the problem entirely.&nbsp; </p>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
   </body>
 </html>

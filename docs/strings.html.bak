@@ -10,8 +10,8 @@
     <link type="text/css" href="styles.css" rel="stylesheet">
   </head>
   <body>
-    <h1><small>The Box of No Return<br>
-      </small> Towards Maximum Strings</h1>
+    <h1><small><a class="title" href="/">The Box of No Return</a></small><br>
+      Towards Maximum Strings </h1>
     <p>In addition to development on the Supermega Rumblic Organ, I have been
       enjoying Strings sounds for a long while. My favorites have been called
       “Strings” and “Strings Section” and the like, on a variety of keyboards.</p>
@@ -30,9 +30,7 @@
     <p>For this purpose, over the years, I have tried quite a few different
       toolsets, and many different standalone keyboards. For a long while I
       could not get strings up to the quite nice bar set in my Yamaha MO8 and
-      similar instruments. But then there was an architecture change ☺
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    </p>
+      similar instruments. But then there was an architecture change ☺ </p>
     <p>In other words, my venerable AMD second-generation X4 box was wearing
       out. It was starting to get just a little unpredictable, boot times
       changing without easily identifiable cause, occasional weird and
