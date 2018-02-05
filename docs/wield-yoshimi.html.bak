@@ -12,9 +12,11 @@
     <p><a href="http://yoshimi.sourceforge.net/">Yoshimi</a> is a very special
       software synthesizer. It is a significant rewrite and variation with new
       directions, after a fork from the <a href="http://zynaddsubfx.sourceforge.net/">ZynAddSubFX</a>
-      project, which itself is deserving of tremendous congratulation. Both
-      synthesize tone signals on the fly, in highly manipulable fashion. <a href="http://www.musically.me.uk/">Will
-        Godfrey</a>, Linux musician extraordinaire, has contributed:</p>
+      project, which itself is deserving of tremendous
+      congratulation. Both synthesize tone signals on the fly, in highly
+      manipulable fashion. <a href="http://www.musically.me.uk/">Will Godfrey</a>,
+      Linux musician extraordinaire, has contributed:</p>
+    
     <div class="bordered">
       <p class="quote">A car analogy.</p>
       <p class="quote"> A sample player is a drive along a straight, wide,
@@ -26,6 +28,7 @@
       <p class="quote"> In recent times we've been able to dispose of the
         donkeys, and the bandits are on the run :)</p>
     </div>
+    
     <p>This is not to be construed as a dun of sampling and sample players.
       These are very helpful indeed, and quite essential, for delivery of many
       tones and tone colors, and this writer uses <a href="http://www.fluidsynth.org/">Fluidsynth</a>
