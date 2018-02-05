@@ -33,7 +33,6 @@ p {
 }
 
 p.quote {
-  margin-left: 1.5em;
   margin-top: 0;
   margin-bottom: 0.5em;
   font-style: italic;
@@ -42,4 +41,12 @@ p.quote {
 
 li {
   margin-bottom: 9pt;
+}
+
+div.bordered {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  margin-left: 1.5em;
+  border: 2px solid white;
+  padding: 1.1em;
 }

@@ -15,19 +15,21 @@
       project, which itself is deserving of tremendous congratulation. Both
       synthesize tone signals on the fly, in highly manipulable fashion. <a href="http://www.musically.me.uk/">Will
         Godfrey</a>, Linux musician extraordinaire, has contributed:</p>
-    <p class="quote">A car analogy.</p>
-    <p class="quote"> A sample player is a drive along a straight, wide, almost
-      new highway with only 2 other cars in sight, on a lightly overcast
-      summer's day in a Ford Fiesta at around 40 MPH.</p>
-    <p class="quote"> Yoshimi is a white-knuckle trip over a Swiss mountain pass
-      in a blizzard, at night, facing donkeys, trucks and bandits, while driving
-      an open-frame kit car doing 90 +</p>
-    <p class="quote"> In recent times we've been able to dispose of the donkeys,
-      and the bandits are on the run :)</p>
+    <div class="bordered">
+      <p class="quote">A car analogy.</p>
+      <p class="quote"> A sample player is a drive along a straight, wide,
+        almost new highway with only 2 other cars in sight, on a lightly
+        overcast summer's day in a Ford Fiesta at around 40 MPH.</p>
+      <p class="quote"> Yoshimi is a white-knuckle trip over a Swiss mountain
+        pass in a blizzard, at night, facing donkeys, trucks and bandits, while
+        driving an open-frame kit car doing 90 +</p>
+      <p class="quote"> In recent times we've been able to dispose of the
+        donkeys, and the bandits are on the run :)</p>
+    </div>
     <p>This is not to be construed as a dun of sampling and sample players.
       These are very helpful indeed, and quite essential, for delivery of many
       tones and tone colors, and this writer uses <a href="http://www.fluidsynth.org/">Fluidsynth</a>
-      for many essential purposes.</p>
+      for many purposes.</p>
     <p> But there is tremendous power and flexibility inherent in live signal
       generation. With power comes the need for care&nbsp; ☺ Without, one may
       find one's tires meeting gravel and even brick walls, fairly quickly. Here
