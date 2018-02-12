@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>The Box of No Return: Audio with a Side of MIDI on Linux, Basic Setup</title>
+    <style>
+
+      
+    </style>
+    <link type="text/css" href="styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1 class="subpage"><small>The Box of No Return</small><br>
+      Audio with a Side of MIDI on Linux, Basic Setup</h1>
+    <h2> Introduction</h2>
+    <p> To build a synthesizer, we have to have </p>
+    <p>need a way to take the output of synthesis routines, and mix and match
+      audio streams with filters, effects, and other useful bits. In Linux, Jack
+      Audio has long been the standard way to connect synths and filters and
+      DAWs together with audio hardware; it works very well once set up. MIDI
+      control has two very current standards: ALSA MIDI (MIDI through ALSA, ALSA
+      being the most common Linux sound driver system, included in kernels), and
+      Jack MIDI, where transport and connection runs through Jack Audio.</p>
+    <br>
+    For quite a number of years, I used ALSA MIDI in my setups, principally
+    because of very wide recommendation from friends, from acquaintances, and in
+    much documentation. But I noticed a peculiar problem occurring more and
+    more: USB MIDI devices were recognized always, but increasingly were not
+    able to be connected to any software right after reboot, until physically
+    disconnected and reconnected. I actually wore out all of the USB ports on my
+    box over a couple of years, unplugging and replugging. (Replaced them with
+    FrontX parts and a PCI USB card.) I found a large number of reports of this
+    problem and others like it, with no solutions; I also asked for and received
+    diagnostic help from a number of very capable Linux coders who knew a lot
+    more than I did…also without solution. The problem was visible through three
+    very different distributions, six significantly different kernels native and
+    custom-compiled, and two different USB MIDI interfaces. Then I happened to
+    notice that all of the documentation I was using was at least two years old,
+    and much of it older. So I turned off ALSA MIDI altogether, and set up Jack
+    MIDI. You can guess what happened then.<br>
+    <br>
+    I try not to burrow too far into why it works, once I have something good
+    and solid in my hands. Below is an outline of what is working very well for
+    me now and a way to set it up for yourself. This is also the preliminary
+    needed for Patch Management.<br>
+    <br>
+    I do recommend that you read Choosing a Linux Platform for Live Synth first;
+    if you don't, you may be disappointed increasingly as you continue :-)<br>
+    <br>
+    Jack Audio<br>
+    <br>
+    Most computer audio needs are very simple: software makes streams of numbers
+    which define sounds, so we need to send them to the speakers. Or software
+    wants a working microphone, so we need to activate the one we have and get
+    its input. In the common situations it's just a simple send out and/or slurp
+    in, with just a few options and choices additional. But when we talk about
+    synthesis and other more sophisticated things, we must tread much more
+    carefully: we have tools which generate streams, tools which alter audio
+    signals (filters), recording tools which can admit of as many inputs as we
+    have different generating and filtering tools, and many more, and we need to
+    be able to connect them all to each other, in the way they need to be for
+    our particular task at hand. For this, on Linux, we use Jack Audio.<br>
+    <br>
+    First Check the Basic Facts!<br>
+    <br>
+    Before we start, we do need to get some basics squared away.<br>
+    <br>
+    First of all, a working Linux. Choosing the platform and setting it up well
+    is absolutely necessary. Be happy with your hardware, OS, and working tools
+    first.<br>
+    <br>
+    And second, if you are going to use built-in audio on a laptop, motherboard
+    audio on a desktop, or PCI or PCI-E audio, you do need to have basic audio
+    working before we start :-) When you tell your PC to play a WAV or MP3, it
+    needs to play it! If not, you have something basic – hardware issue,
+    hardware/kernel compatibility, distro issue – to solve first. At this level
+    differences between distributions really stand out, and I'll have to refer
+    you to the documentation for your distro to get this figured out…or you
+    might do as I have done, which is to find a distro which works well with
+    your audio first, or buy an audio card known to work well with what you are
+    doing :-)<br>
+    <br>
+    We do have a happy exception in Firewire devices. The others – USB, PCI, and
+    PCI-E audio interfaces – work with ALSA, “Advanced Linux Sound
+    Architecture”, the kernel-level Linux audio system. Firewire devices don't,
+    and in consequence using them can be much simpler. There are also
+    architectural reasons why Firewire works extremely well and
+    straightforwardly. If you have a Firewire device, do a bit of web-searching
+    to find two people reporting that it works well with Linux, and don't worry
+    about your system audio, you won't need it.<br>
+    <br>
+    Pulse and Desktop Audio Bleeps and Bloops: Disable, Remove<br>
+    <br>
+    PulseAudio is a background process standard to many Linux desktop installs.
+    It does a lot of good in the general desktop audio milieu, because it
+    handles that common situation where the desktop UI and one or more apps all
+    need to beep and hum at the same time :-) It does other things too, e.g.,
+    mixing different kinds of audio streams together in a very reliable fashion,
+    and mirroring sound to multiple sound systems including to other machines
+    over the network; and there are effects and other things one can do too.<br>
+    <br>
+    And yes, there are ways in recent production for Jack and Pulse to coexist.
+    But they all increase complication and eat CPU, and CPU is precious in the
+    live synth. The goal here is a hardened, reliable, bulletproof setup for
+    audio synthesis, one where no interference will the primary function will be
+    tolerated. So turn off any desktop environmental noisemakers, including all
+    noisemaking by your desktop environment (Gnome, KDE, etc.), and do the
+    following to get rid of Pulse:<br>
+    <br>
+    First, check in an xterm:<br>
+    <br>
+    ps aux | grep -i pulseaudio<br>
+    If anything shows up besides the grep process, we turn it off.<br>
+    <br>
+    echo autospawn=no &gt; ~/.pulse/client.conf<br>
+    pulseaudio -k<br>
+    Happily, as of this writing (July 2015), the MATE edition of Debian Jessie
+    makes it easy, you just remove the PulseAudio package! Thanks, guys!!!<br>
+    <br>
+    Install Jack2 and QjackCTL<br>
+    <br>
+    QjackCTL is probably the easiest tool with which to tweak, learn to tweak,
+    and verify the Jack Audio setup that we need for the hardware at hand. Some
+    distros are including it and some version of Jack at first install. There
+    are two competing versions of Jack right now, sometimes called Jack1 and
+    Jack2; I use Jack2 because its architecture was completely rewritten to make
+    best use of multiple CPU cores. There are also often more than one type of
+    jack2 install available; if there is a choice in a new build, I try the DBus
+    version first, because I find it to be very nicely automate-able: best for
+    reading and handling of the automation code, and best for general
+    interoperability with other parts of the system. However, qjackctl itself
+    has very mature abilities to automate the starting of JACK, and so if you
+    find the DBus automation not suiting you for any reason, simply using your
+    desktop autostart to initiate qjackctl remains a very good option.<br>
+    <br>
+    Configuration<br>
+    <br>
+    So we run qjackctl now, and unless configuration of some sort has already
+    happened, we get something very close to this:<br>
+    <br>
+    <br>
+    You'll notice that it says that it is stopped. qjackctl is a front end, a
+    configurator, for the jackd audio transport process which runs invisibly. In
+    its default setup jackd usually is turned off until needed. We'll leave it
+    like this until we are ready to do differently: we want it well-configured
+    for the hardware, before we set it to run all the time.<br>
+    <br>
+    Choose Audio Hardware in QjackCTL<br>
+    <br>
+    Click on Setup. You'll see something very like the below. If it's not, make
+    it so. If you are using a Firewire audio device, “Driver” is set to
+    “firewire”, and “Periods/buffer” is 3. It is said that USB has to use a
+    Periods/buffer of 3 as well, but I have not found this to always be the
+    case.<br>
+    <br>
+    <br>
+    The Latency Report in QjackCTL<br>
+    <br>
+    Study the image just above on this page. Notice that number at the lower
+    right, 46.4 ms for ALSA and more for firewire. That's the barest minimum
+    amount of time it takes between audio input and audio output in the current
+    Jack configuration – and it's also the barest minimum amount of time,
+    possibly doubled, between a MIDI input event and a note output event in our
+    synth.<br>
+    <br>
+    So we have a goal we have to reach: in my experience, to be practical in
+    live music, we have to get that number to less than 10 ms, and preferably
+    less. This can take the sound system and CPU itself to their limits and
+    past. We're not going to change it now – not until testing is complete – but
+    it's rather good to know where we are going, no?<br>
+    <br>
+    Start Jack for the First Time<br>
+    <br>
+    A good first step to configure jack, is to see what we already have. So
+    click Start. If Jack will run in its default condition, we'll get very close
+    to this:<br>
+    <br>
+    <br>
+    You'll notice that although the yellow is started, the green is still
+    stopped. This is because the yellow represents audio transport – and the
+    jackd process itself – but the green represents something else, one of the
+    other functions of jackd, which is time-stamp transport. The idea behind
+    time-stamp transport is to enable absolute synchronization of multiple audio
+    tracks and video et cetera. We won't be worrying about that here, but
+    beware, some folks call time-stamp transport just “transport”, which can get
+    awfully confusing.<br>
+    <br>
+    If It Didn't Start<br>
+    <br>
+    Then you definitely have one or more problems to address immediately. You
+    don't need the “realtime” checkmark for initial testing, so make sure that
+    is unchecked.<br>
+    <br>
+    Firewire<br>
+    <br>
+    You'll want to make sure it's plugged in, powered up, and any status lights
+    appropriate. This is where rubber hits the road, where you learn whether
+    your code base (your distro and anything you have added) will support your
+    hardware. This is also where the profound value of the Linux community may
+    become obvious! Google it, find the people who are doing what you are
+    trying. Perhaps like you found this web page :-)<br>
+    <br>
+    ALSA<br>
+    <br>
+    By far the most common problem I have seen at this point, has to do with
+    ALSA sound card numbering.<br>
+    <br>
+    ALSA, the default sound system in today's Linux, gives each “sound card” it
+    knows about, its own number. There are also items within cards, but it is
+    this first sound card number which can be quite troublesome, because without
+    some cryptic configuration, the default ALSA sound card for all audio for
+    any system, is whatever it has decided should be labelled card 0, which
+    could easily be the HDMI audio port on your video card, any of the two or
+    three USB MIDI ports you are using…et cetera. The numbers start from zero.
+    To see your current assignments, do this:<br>
+    <br>
+    cat /proc/asound/cards<br>
+    On one very tweaked box, the result looked like this:<br>
+    <br>
+    [username@SROII ~]$ cat /proc/asound/cards<br>
+    &nbsp;0 [NVidia&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]: HDA-Intel
+    - HDA NVidia<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    HDA NVidia at 0xdfe78000 irq 20<br>
+    &nbsp;1
+    [MO8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]:
+    USB-Audio - YAMAHA MO8<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Yamaha YAMAHA MO8 at usb-0000:01:0a.1-1, full speed<br>
+    [username@SROII ~]$ <br>
+    The most important items for the moment, are the short canonical names of
+    the the audio equipment being reported. These are, in this case, “NVidia”
+    and “MO8”. Notice that a non-audio-device (MIDI only) is being listed by
+    ALSA as a sound card; in point of fact, if MO8 were set as ALSA default, a
+    (very brief) attempt would be made by many sound apps to use it as the
+    standard audio output device. But we're in the Jack world now, not the Pulse
+    world or the pure-ALSA world; we need to have Jack take over the one we want
+    (NVidia), and have anything we use, connect to Jack or stay out of our way.<br>
+    <br>
+    So. In the “Interface” field in qjackctl configuration as shown above, you
+    can optionally type in text. I always use the short name rather than the
+    number, and it's done like this:<br>
+    <br>
+    hw:NVidia<br>
+    So type in the short name of the audio device you have, and try it again. If
+    it starts, you're ready to start tuning; if not, there are other problems.
+    You can keep the “Realtime” item UNchecked while at this phase. There is an
+    excellent test applet available here and a whole lot of detail using the
+    above and other methods here, but these are generally reserved for after
+    this step is complete. They can help you find issues discussed above which
+    you may have missed, most especially any background processes which may be
+    stealing the sound card from Jack.<br>
+    <br>
+    But usually, in my several experiences so far, if sound worked out of the
+    box and Jack doesn't start at all now, at the very high-tolerance,
+    high-latency (46ms!) configuration pictured above, which has so much
+    buffering that we can't use it for live work at all, it means that you're
+    using sound hardware which just doesn't cut the mustard for this work.<br>
+    <br>
+    It Started!<br>
+    <br>
+    Excellent; we hit the ball, and now we'll start to see if our legs know how
+    to run :-)<br>
+    <br>
+    Now we need something which will actually deliver some audio to Jack, to
+    send through the sound system. Install Yoshimi, and with Jack running, run
+    yoshimi in a command shell thusly:<br>
+    <br>
+    yoshimi -j -J -K<br>
+    The -j ensures that Yoshimi will connect to Jack for MIDI; the -J specifies
+    Jack for audio, and the -K tells Yoshimi to automatically tell Jack to
+    connect it to the sound system for output. When it comes up, turn up the
+    main volume at the upper right, click the Instrument menu and then Virtual
+    Keyboard, and try some notes. If you get the pure sine tones of the
+    patch-less configuration, that is just right.<br>
+    <br>
+    Getting There<br>
+    <br>
+    So we have a nice, low-demand sine tone, on demand. That's excellent…of
+    course if we wanted a sine tone, we would be better off buying an electronic
+    tuner…or blowing across a bottle :-) And we're still running at high
+    latency, we're not close to playable yet.<br>
+    <br>
+    So the next step is to start pushing it. Close Yoshimi first. In your
+    QjackCTL setup, set your frames/period to 64 (default being 1024!), and
+    periods/buffer at 2 unless your sound system is USB, if it's USB you need
+    periods/buffer at 3. Set your sample rate at 44100 for this step. Then close
+    and save, and stop and restart Jack, and start Yoshimi again as above. Try
+    it and see what happens.<br>
+    <br>
+    You may well be able to push it all the way to frames/period of 32 without
+    issues. Or you might try a sample rate of 48000; that will reduce your
+    latency to just within useful levels, if your sound system does 48000 very
+    well (as many do now). But more than likely, especially when you start
+    loading complex patches in Yoshimi and flipping that mouse across the
+    virtual keyboard, you'll start to find QJackCTL freezing up, or these:<br>
+    <br>
+    <br>
+    Those red numbers represent “xruns”. They happen when your setup cannot
+    handle the demands of what you are trying to do. Very often this occurs as a
+    result of desktop extras – PulseAudio, automount of USB flash drives, other
+    things. But core hardware capacity factors into it just as much. If your CPU
+    is too occupied with the number-crunching which your setup is demanding, it
+    may not have enough left to give to kick that stream towards the output in
+    the smooth and clean manner which is required.<br>
+    <br>
+    Now I have to admit that I cheated just a bit in creating the above image: I
+    made it on this laptop I'm typing into right now, not my production box. But
+    this laptop is a dual-core Intel with 3G RAM: rebuilt from junk yes, quite a
+    few years old plus yes, but still a dual-core Intel with lots of RAM, and
+    yet I cannot push this hardware even close. Even using a nice USB sound
+    dongle. Haven't tried firewire on it yet, but the point is, here is where
+    you learn whether or not your hardware and OS configuration has what it
+    takes. In the case of this laptop, I spent quite a lot of time and effort
+    trying stripped-down distro after stripped-down distro, because I have lots
+    of reports that dual-core/3G is great for this purpose; but there must be
+    something about the chipset which just does not let the good times roll. If
+    I ever need it badly enough, I'll get a fireware card for it and try that
+    route.<br>
+    <br>
+    Anyhow, if at this point, you are seeing lots of xruns on ample hardware,
+    it's time to start tuning and tweaking. Rare xruns – one every 5-15 minutes
+    – can be OK in production, but beware, some xrun causes will send pops and
+    even static into your input stream.<br>
+    <br>
+    Tuning and Tweaking for Latency<br>
+    <br>
+    There are a large number of things which can be done to get your machine to
+    function with usable latencies – remember, you'll need about 10ms and
+    preferably less. The best test utility I know of is here:<br>
+    <br>
+    https://github.com/raboof/realtimeconfigquickscan#readme<br>
+    <br>
+    and the best guide I've seen to the above, with other methods, is here:<br>
+    <br>
+    http://www.wiki.linuxmusicians.com/doku.php?id=system_configuration<br>
+    <br>
+    You will notice discussion of “real-time kernels”. This is not necessary as
+    long as one's hardware is recent and powerful. It's also not an extremely
+    simple process. But if you have time, patience, and motivation, the result
+    is smoother operation; the best thing to do is to use the procedure specific
+    to your distribution.<br>
+    <br>
+    Let's Look at the MIDI<br>
+    <br>
+    So now we have pleasing tones coming out of Yoshimi without xruns (or at
+    least very many), and it's time to start getting the MIDI working. In
+    QjackCTL again, click the Connect button, and you'll get something like
+    this:<br>
+    <br>
+    <br>
+    You'll notice how Yoshimi automatically connected itself to the system
+    output, because of the command-line arguments given above (-j -J -K). You
+    will also notice two more tabs: MIDI, and ALSA. We need to talk about that
+    right now.<br>
+    <br>
+    Jack MIDI, ALSA MIDI, Et Cetera<br>
+    <br>
+    There are two standards very common for MIDI on Linux right now. One is
+    usually called Jack MIDI, and the other ALSA MIDI. Jack MIDI is built into
+    the same Jack system we're using for audio; the other is at a lower level,
+    the ALSA sound driver level.<br>
+    <br>
+    One can find lots and lots of input on the web as to which to use and why.
+    Here are my experiences and suggestions therefrom.<br>
+    <br>
+    For at least two years, I used ALSA MIDI exclusively, as a result of reading
+    multiple web sites' advice citing compatibility, latency, et cetera. At
+    first it worked gloriously, but quickly I ran into a problem: I was required
+    to plug in my MIDI ports after booting the box up and starting Jack, and not
+    before. If I powered up everything, MIDI did not work, until I unplugged my
+    USB MIDI adapter or USB MIDI keyboard and immediately replugged. I found
+    lots of forum posts reporting the problem, with absolutely no solutions. It
+    appears that not all hardware has this problem; in particular, unless I
+    mistake much collective readings, if one has a sound card with MIDI built
+    in, this problem does not seem to show up. But I ended up wearing out every
+    USB port on my box with the unplugging/replugging!!! I replaced them, but
+    did not want to do that again.<br>
+    <br>
+    So I tried Jack MIDI. Problem vanished. But it is different, and it has to
+    be done correctly.<br>
+    <br>
+    Setting Up Jack MIDI<br>
+    <br>
+    In ALSA MIDI, everything software sets up quite easily. Here's how it looks
+    with Yoshimi run in ALSA MIDI mode (-a -J -K), the connection was manually
+    set:<br>
+    <br>
+    <br>
+    And here's what we have in Jack MIDI (yoshimi -j -J -K):<br>
+    <br>
+    <br>
+    You'll notice that yoshimi is perfectly happy to accept Jack MIDI – but
+    where's the hardware? Well, for that we need to change the Setup in
+    QjackCTL, thusly:<br>
+    <br>
+    <br>
+    With this in place (and don't forget to stop and restart Yoshimi and Jack),
+    you'll get this:<br>
+    <br>
+    <br>
+    and then you can connect to your heart's content :-) “System” represents all
+    hardware. It becomes easy to click the top-level item on the left, and
+    everything you want to which you want to send MIDI on the right, and click
+    Connect. Then try it, and enjoy!<br>
+    <br>
+    Additional MIDI Options<br>
+    <br>
+    There are other things useful to know about MIDI. Jack can be set for “raw”
+    MIDI mode instead of seq; this is reportedly helpful in some circumstances,
+    though I haven't found them yet. But the more significant circumstance is
+    applications which do not have a jack-MIDI mode, which can accept MIDI input
+    only through ALSA MIDI. For these, we install a neat utility called
+    a2jmidid. It can be run like this:<br>
+    <br>
+    a2j_control start<br>
+    and it will put a top-level item called “a2j” to the Jack MIDI connections
+    area, containing a copy of all ALSA MIDI software ports. If<br>
+    <br>
+    a2j_control ehw<br>
+    is run before starting a2j, hardware is put there too.<br>
+    <br>
+    Once You're There<br>
+    <br>
+    This document produces a result very useful for the studio, especially when
+    you may be setting it up differently for every excursion. But eventually you
+    will probably find that you keep on setting up the same setups over and over
+    again; after all, they don't remain after you power down. There are several
+    ways of storing sets of prebuilt setups, some of them GUI. However, when I
+    play I do not want distraction from the music, and I have not found any of
+    the systems out there ready for my needs.<br>
+    <br>
+    For a number of years, I set up Robust Session Management. But there were
+    disadvantages, and eventually the opportunity arose to acquire some major
+    hardware; and then something new arose: Concurrent Patch Management. If I
+    were doing studio, or needed to use lesser hardware, R.S.M. would still
+    serve well; but C.P.M. has been serving very well for quite some time now,
+    highly recommendable.<br>
+    <br>
+    Postscript<br>
+    <br>
+    Don't forget to have fun!!!!!
+  </body>
+</html>

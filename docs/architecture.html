@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>The Box of No Return: Architecture</title>
+    <link type="text/css" href="styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1><small><a class="title" href="https://ponderworthy.github.io/the-box-of-no-return">The Box of No Return</a></small><br>
+      <span style="font-size: 1.2em;">Architecture</span></h1>
+    <h2>summary</h2>
+    <p>The architecture of the Box of No Return uses multiple JACK servers in
+      tandem, connected by IP transport over localhost.&nbsp; MIDI is handled by
+      ALSA directly at this writing, though a mixture of ALSA and JACK MIDI is
+      planned.&nbsp; </p>
+    <h2>'soft' and 'hard' servers</h2>
+    <p>In the current BNR, there is one 'hard server', which is a JACK server
+      connected via ALSA to the single audio output.&nbsp; The hard server is
+      configured and tested initially via Cadence, and then this configuration
+      is transferred into jack_control statements residing in
+      BOOT-INITIAL.sh.&nbsp;&nbsp; The hard server does not do anything besides
+      receive audio from the soft servers, over the localhost network via a tool
+      called zita-n2j, part of the zita-n2jbridge package, and deliver it to the
+      audio hardware.</p>
+    <p>There are also three 'soft servers', which areJACK servers not connected
+      to any hardware, these run the "dummy" JACK driver.&nbsp; In each soft
+      server, audio signal generation connects to filters and/or mixer, and
+      thence to zita-j2n, which sends the signal over the network to the hard
+      server.</p>
+    <p>This use of multiple JACK servers in one box is called <a href="https://github.com/ponderworthy/MultiJACK">MultiJACK</a>,
+      and appears to be new as of this writing.</p>
+    <h2>midi</h2>
+    <p>ALSA (non-JACK) MIDI is very well-supported, and worthwhile JACK wiring
+      GUIs support it.&nbsp; So in the current configuration, the hard server
+      doesn't touch MIDI at all.&nbsp; There is a tool called a2jmidid, which is
+      a background service normally used to set up a single bridge between ALSA
+      MIDI and JACK MIDI on a hard server; but this tool ships with something
+      else called a2jmidi_bridge which can be run multiple times manually.&nbsp;
+      And this is how it is working at this writing, one a2jmidi_bridge per soft
+      server, delivering MIDI via ALSA alone from the hardware direct into each
+      soft server.</p>
+    <p>There is a likely future change of the MIDI side of things. The one
+      problem with ALSA MIDI, for a very long time, has been that it requires
+      powering the keyboard off and then on after the BNR is booted, before it
+      will do anything.&nbsp; I have no idea why this is true, I have asked it a
+      lot.&nbsp; And JACK MIDI does not have this problem.&nbsp; So in theory,
+      one could take the MIDI input on the hard server using JACK MIDI, pass it
+      along to all of those a2jmidi_bridges, and thence into the soft
+      servers.&nbsp; Have to make sure there's not too much additional delay on
+      the MIDI with that, but it's not expected to be a problem.</p>
+    <p>MIDI-over-IP using <a href="https://qmidinet.sourceforge.io/">qmidinet</a>,
+      was attempted, but qmidinet does not appear able (at this writing) to run
+      multiple times on one box, it is not yet clear why.</p>
+    <h2>control</h2>
+    <p>So we have a collection of patches, of JACK audio toolchains, and we want
+      to be able to select between them.&nbsp; Not only that, we want to choose
+      between them quickly on the fly, in the middle of a song, with zero delay,
+      and with zero cutout, we don't want anything unmusical or unsmooth to
+      happen.&nbsp; Even a hardware keyboard can't do that!&nbsp; What shall we
+      do?</p>
+    <p>Well, after a number of years and stages, what we do is we use something
+      called 'mididings', which lets us make little custom applets which route
+      and change MIDI signals in many ways.&nbsp; We make just one called
+      'Distribute', which has one MIDI input port, and three output ports as of
+      this writing.&nbsp; We run one copy of this same Distribute script (to
+      keep things as simple as possible!) on each soft server.&nbsp; The three
+      output ports are named SRO, Strings, and FlowBells.&nbsp; The logic in the
+      applet, which is written in the Python language, and runs like this (do
+      note that all tone generators respond to channel 1 only):</p>
+    <p style="margin-left: 40px;">All non-note commands -- e.g., pedal commands
+      -- are sent to all of the ports, and converted to channel 1, so that if I
+      need to bring everything off at once, I just&nbsp; release the sustain
+      pedal as I would anyhow.&nbsp; </p>
+    <div style="margin-left: 40px;"> </div>
+    <p style="margin-left: 40px;">If MIDI signals are received which are of MIDI
+      channel 1, note-commands are sent to the SRO output port
+      only.&nbsp;&nbsp;&nbsp; </p>
+    <div style="margin-left: 40px;"> </div>
+    <p style="margin-left: 40px;">If MIDI signals are received which are of MIDI
+      channel 2, note-commands are converted to channel 1, and sent to the
+      Strings output port only.&nbsp; </p>
+    <div style="margin-left: 40px;"> </div>
+    <p style="margin-left: 40px;">If MIDI signals are received which are of MIDI
+      channel 3, note-commands are sent to both SRO and Strings output ports,
+      velocities are adjusted to avoid overload and create the precise balance
+      desired, and the commands are converted to channel 1.&nbsp; </p>
+    <p>And so on.&nbsp; Right now there are five channels in use on the input
+      side, and more are in development now that MultiJACK is in use.&nbsp; The
+      idea, though, is that all of the tone-producing JACK chains are live and
+      hot all of the time, and it is simply that signal flows when and as called
+      for.&nbsp; All I have to do is set the MIDI channel output from the
+      keyboard, which is a very common thing to be able to do on the fly, and
+      the MIDI channel of the note commands is changed, which tells Distribute
+      which of its directions to go.&nbsp; Works beautifully, no delays, <em>extremely</em>
+      live and right-now.&nbsp; Takes doing on the build side, but when you're
+      live and playing, it's one button per patch and the soul stays in the
+      music.&nbsp; Not bad.</p>
+    <h2>configuration</h2>
+    <p>Before MultiJACK, configuration was in fairly common pattern, though
+      rather more complex than most because of all of those JACK chains active
+      at the same time.&nbsp; With MultiJACK at the core, each JACK server is
+      configured separately while everything is running, so one can focus on one
+      JACK chain at once.&nbsp; I will post screenshots fairly soon.&nbsp; For
+      now, just realize that:</p>
+    <p style="margin-left: 40px;">catia</p>
+    <p>by itself will bring up the Catia JACK and ALSA MIDI wiring GUI showing
+      just the hard server (and ALSA MIDI if ALSA MIDI is turned on in Catia),
+      whereas</p>
+    <p style="margin-left: 40px;">JACK_DEFAULT_SERVER=SOFT1 bash -c catia</p>
+    <p>will bring up catia showing just soft server #1, and ALSA MIDI if ALSA
+      MIDI is turned on.&nbsp; Thus as long as one concentrates on remembering
+      one's Catia context and the independent ALSA MIDI overlay, it all
+      works!&nbsp; The code includes bash scripts to make the distinction
+      simpler; I configured the whole with:</p>
+    <p style="margin-left: 40px;">./soft1 catia</p>
+    <p>et cetera, which helped a lot.</p>
+    <h2>saving JACK and MIDI connections</h2>
+    <p>One more item for now.&nbsp; We can set JACK and ALSA MIDI connections
+      via Catia, but we cannot save them thus to be remembered across a reboot
+      or even a JACK server restart.&nbsp; aj-snapshot is the tool in place for
+      this.&nbsp; If we rewire SOFT1, we execute:</p>
+    <p style="margin-left: 40px;">./soft1 aj-snapshot AJSOFT1.xml</p>
+    <p>which then saves all of the connections visible from Catia running in
+      soft server #1.&nbsp; ALSA MIDI connetions get saved multiply, for each
+      server, but this is not a problem, aj-snapshot won't try to duplicate,
+      when it reads its files, at the end of BOOT-GENERAL.py.</p>
+    <h2>a complication starting JACK clients</h2>
+    <p>Every application or applet using JACK for either audio or MIDI signals,
+      is a "client" of a JACK server.&nbsp; Early in BNR development I noticed a
+      problem starting JACK clients automatically: the first would load fine,
+      the second and the rest would crash, often crashing the JACK server
+      itself.&nbsp; BOOT-GENERAL.py starts up all of the JACK clients in the
+      BNR, and it is written in Python because the solution to the problem was
+      to not just start JACK clients, but to start each one carefully, make sure
+      it came up and settled well, and sometimes even make sure its ports were
+      visible in JACK, before continuing to the next.&nbsp; If you see startup
+      problems, the first thing to do is to add detection items after every
+      single client, customizing for the clients' port names and the like.</p>
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-76358613-4"></script>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-76358613-4');
+</script>
+    
+  </body>
+</html>

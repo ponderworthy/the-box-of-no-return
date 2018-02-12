@@ -1,6 +1,6 @@
 # the-box-of-no-return
 
-The Box of No Return is a Linux synth platform suitable for live musicianship, designed to handle patches with enormous demands, and switch between them with zero delay and zero cutout.  Its current production design is discussed at https://lsn.ponderworthy.com.  This repository was created to receive the files for its next major iteration, which is using the [MultiJACK](https://github.com/jebofponderworthy/MultiJACK) architecture at its core.  The MultiJACK BNR using these files is up and running, production tests passed, and will be tested in real live music shortly.
+The Box of No Return is a Linux synth platform suitable for live musicianship, designed to handle patches with enormous demands, and switch between them with zero delay and zero cutout.  Its current production design is discussed at https://lsn.ponderworthy.com.  This repository was created to receive the files for its next major iteration, which is using the [MultiJACK](https://github.com/jebofponderworthy/MultiJACK) architecture at its core.  The MultiJACK BNR using these files is up and running, production tests passed, and will be tested with the [Ponderworthy](http://ponderworthy.com) band shortly.
 
 ## the name
 
@@ -10,18 +10,20 @@ The original name for the project was "Supermega Rumblic Organ", or SRO, after i
 
 To build more and better.  The rest is details :-)
 
-From the beginning, the BNR was desired to handle patches of maximum, profound and terrible, tonal content.  Current patches include one with three simultaneous Yoshimis, another with five simultaneous large FluidSynth soundfonts, and the ability to mix the two and a third together.  Many prayers granted, and much help from the Linux Audio community, study, work, and trial and error, has gone into making this happen reliably and well.
+From the beginning, the BNR was desired to handle patches of maximum, profound and terrible, tonal content.  If you find yourself reducing the profundity of your patches because your machine won't do better, this project may be very good for you, especially if you play live.  Current patches include one with three simultaneous Yoshimis, another with five simultaneous large FluidSynth soundfonts, and the ability to mix the two and a third together.  Many prayers granted, and much help from the Linux Audio community, study, work, and trial and error, has gone into making this happen reliably and well.
 
 The current known box running with this code, is an eight-core 4GHz machine with 8G RAM.  In an earlier iteration, it used the conventional single JACK server; but less than one-quarter of its CPU capacity was being used, while JACK reported that 75% of its capacity was being used.  In 2015 began an effort, now successful, to use multiple JACK processes together in one box, and this is the rebuild of the BNR with MultiJACK at its core.  Attempts have not yet been made to run this code on a quad-core box, though the previous single-JACK iteration of the BNR is running well on quad 3GHz with 8G RAM.
 
 There are quite a few people using tools like NetJACK to increase JACK capacity with multiple boxes, or at least multiple motherboards.  But if you value portability, if you value space, and/or if you are a gigging musician, a fragile or heavy (one, the other, or both; not neither) multi-motherboard construct is not preferable.  Most users of Linux-hardware synths limit themselves as a result of what one JACK server can do, and other platforms limit analogously; here we have an effort to blow the door open a bit more!
 
-## implementation notes
+## general notes on setup
 
 * These files are designed principally to build a MIDI tone synthesizer as a headless Linux box, which 
 one connects via either MIDI interface or USB cord to an appropriate keyboard controller.  The box must be set up to good Linux production audio standards.  As of this writing, the Manjaro default kernel does very well, and it is used with a sysctl.conf.d file with the [full wired networking set desribed here](https://notes.ponderworthy.com/linux-networking-speed-and-responsiveness), the only change being swappiness set at 10.  After that, it's install 'yaourt', and use that to install 'cadence' for initial JACK and hardware testing.
 
-* To run the whole BNR, you'll want at least a quad-core, 3GHz, 8G RAM probably.  It can be scaled up or down.  
+* The "Strings" patch uses soundfonts which are too big to fit in this github repo.  They are called within the experimental Calf plugin which handles fluidsynth.  Currently I am using a very small subset of the [SSO](http://sso.mattiaswestlund.net/), converted to SF2.  This probably will change in the future.
+
+* To run the whole BNR as here coded, you'll want at least a quad-core, 3GHz, 8G RAM probably.  It can be scaled up or down. 
 
 * All files in this repository need to be placed in a folder named BNR, located just off a user profile root.
 

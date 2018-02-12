@@ -1,0 +1,52 @@
+body { 
+	background-color: black; 
+	color: white; 
+	font-family: "Source Sans Pro", "Arial", "Helvetica", sans-serif;
+  font-size: 1.2em;
+  margin: 3em 3em 3em 3em;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+A {
+  color: orange;
+}
+
+A.title {
+  color: white;
+  text-decoration: underline dashed;
+}
+
+p {
+  margin-bottom: 9pt;
+}
+
+p.quote {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-style: italic;
+  font-weight: 600;
+}
+
+li {
+  margin-bottom: 9pt;
+}
+
+div.bordered {
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  margin-left: 1.5em;
+  border: 2px solid white;
+  padding: 1.1em;
+}
