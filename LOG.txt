@@ -9,6 +9,7 @@ better than last time checked.
 
 Current status good.  Rare cutouts of SRO when load extremely
 high, other patches do not cut out.  Will work on this.
+Perhaps reverb in the hard server only!!!!!
 No static with cutouts, which is fantastic.
 
 Received word through LAU that ALSA MIDI users just
