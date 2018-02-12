@@ -15,7 +15,9 @@ No static with cutouts, which is fantastic.
 Received word through LAU that ALSA MIDI users just
 turn on their keyboards last.  In other words,
 this is normal behavior.  Will leave it unless
-additionally motivated.
+additionally motivated.  If desired, could
+run using JACK MIDI from hardware to hard server,
+then ALSA MIDI from hard server to soft servers.
 
 Installed net-tools-debian-ifconfig with yaourt
 and then ran 'ifconfig lo multicast' to enable
