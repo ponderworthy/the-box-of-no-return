@@ -16,7 +16,6 @@ import psutil
 PROCESSES = [
     'BOOT-GENERAL',
     'BOOT-INITIAL',
-    'BNR Live Report',
     'jackd',
     'a2jmidi_bridge',
     'zita-n2j',
