@@ -26,6 +26,14 @@
     <port name="capture_1" />
     <port name="capture_2" />
   </client>
+  <client name="BNR-STD-Reverb">
+    <port name="Reverb Out #1">
+      <connection port="system:playback_1" />
+    </port>
+    <port name="Reverb Out #2">
+      <connection port="system:playback_2" />
+    </port>
+  </client>
   <client name="zita-n2j-4soft1">
     <port name="out_1">
       <connection port="Mixer-Hard/SRO:in-1" />
@@ -76,10 +84,10 @@
   </client>
   <client name="Mixer-Hard/FinalOutput">
     <port name="out-1">
-      <connection port="system:playback_1" />
+      <connection port="BNR-STD-Reverb:Reverb In #1" />
     </port>
     <port name="out-2">
-      <connection port="system:playback_2" />
+      <connection port="BNR-STD-Reverb:Reverb In #2" />
     </port>
   </client>
 </jack>

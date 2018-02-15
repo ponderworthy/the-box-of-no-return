@@ -70,45 +70,33 @@
   </client>
   <client name="yoshimi-YoshSRO1">
     <port name="left">
-      <connection port="zita-j2n-soft1:in_1" />
       <connection port="Mixer-SOFT1/Yoshimi 1:in-1" />
     </port>
     <port name="right">
-      <connection port="zita-j2n-soft1:in_2" />
       <connection port="Mixer-SOFT1/Yoshimi 1:in-2" />
     </port>
   </client>
   <client name="yoshimi-YoshSRO2">
     <port name="left">
-      <connection port="zita-j2n-soft1:in_1" />
       <connection port="Mixer-SOFT1/Yoshimi 2:in-1" />
     </port>
     <port name="right">
-      <connection port="zita-j2n-soft1:in_2" />
       <connection port="Mixer-SOFT1/Yoshimi 2:in-2" />
     </port>
   </client>
   <client name="yoshimi-YoshSRO3">
     <port name="left">
-      <connection port="zita-j2n-soft1:in_1" />
       <connection port="Mixer-SOFT1/Yoshimi 3:in-1" />
     </port>
     <port name="right">
-      <connection port="zita-j2n-soft1:in_2" />
       <connection port="Mixer-SOFT1/Yoshimi 3:in-2" />
     </port>
   </client>
   <client name="CalfSRO">
     <port name="Equalizer 12 Band Out #1">
-      <connection port="CalfSRO:Reverb In #1" />
-    </port>
-    <port name="Equalizer 12 Band Out #2">
-      <connection port="CalfSRO:Reverb In #2" />
-    </port>
-    <port name="Reverb Out #1">
       <connection port="CalfSRO:Multiband Compressor In #1" />
     </port>
-    <port name="Reverb Out #2">
+    <port name="Equalizer 12 Band Out #2">
       <connection port="CalfSRO:Multiband Compressor In #2" />
     </port>
     <port name="Multiband Compressor Out #1">

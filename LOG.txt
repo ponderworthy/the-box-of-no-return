@@ -1,4 +1,8 @@
-Next priority is a horns section patch.  May use
+Next step right now, is take the reverb out of
+the soft servers, and put it on the hard server.
+That will simplify a lot.
+
+One next step is a horns section patch.  May use
 Sonatina Symphonic Orchestra SF2s, or may use
 next-gen SFZs, e.g.:
 http://vis.versilstudios.net/vsco-community.html
