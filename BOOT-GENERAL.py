@@ -362,6 +362,16 @@ if not jpctrl.spawn_and_settle(
 print('\n')
 
 print('-----------------------------------------------------------------')
+print('Start component for patch Many-Horns, on server SOFT3...')
+print('-----------------------------------------------------------------')
+
+print('\nStart Many-Horns...')
+if not jpctrl.spawn_and_settle(
+        'calfjackhost --client Many-Horns fluidsynth:Many-Horns',
+        'SOFT3'):
+    jpctrl.exit_with_beep()
+
+print('-----------------------------------------------------------------')
 print('Create JACK connections using aj-snapshot, on all servers...')
 print('-----------------------------------------------------------------')
 

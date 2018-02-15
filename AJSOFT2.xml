@@ -36,6 +36,7 @@
       <connection port="StringsSSO:Fluidsynth MIDI In" />
     </port>
     <port name="FlowBells" />
+    <port name="Many-Horns" />
   </client>
   <client name="Mixer-SOFT2/Strings 1">
     <port name="out-1">

@@ -35,6 +35,7 @@
     </port>
     <port name="Strings" />
     <port name="FlowBells" />
+    <port name="Many-Horns" />
   </client>
   <client name="Mixer-SOFT1/Yoshimi 1">
     <port name="out-1">
