@@ -6,7 +6,7 @@
     <link type="text/css" href="styles.css" rel="stylesheet">
   </head>
   <body>
-    <h1 style="font-size: 1.8em">The Box of No Return</h1>
+    <h1 style="font-size: 2.1em">The Box of No Return</h1>
     <h2>summary</h2>
     <p>The Box of No Return is a Linux-based musical synthesizer platform,
       suitable for live musicianship, designed to handle multiple patches with
