@@ -43,11 +43,20 @@ if debugmode:
 else:
     yoshimi_debug_param = '-i'
 
-# print('-----------------------------------------------------------------')
-# print('Start all soft servers...')
-# print('-----------------------------------------------------------------')
+print('-----------------------------------------------------------------')
+print('Start Calf reverb for hard server...')
+print('-----------------------------------------------------------------')
 
-print('\nSOFT1 ...')
+print('\n')
+if not jpctrl.spawn_and_settle('calfjackhost --client BNR-STD-Reverb reverb:BNR-STD'):
+    jpctrl.exit_with_beep()
+print('\n')
+
+print('-----------------------------------------------------------------')
+print('Start all soft servers...')
+print('-----------------------------------------------------------------')
+
+print('\nSOFT1 ...\n')
 
 if not jpctrl.spawn_and_settle('/usr/bin/jackd -nSOFT1 -P 90 -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT1.log',
     'SOFT1'):
@@ -56,7 +65,7 @@ if not jpctrl.spawn_and_settle('/usr/bin/jackd -nSOFT1 -P 90 -ddummy -r96000 -p2
 if not jpctrl.wait_for_jack('SOFT1'):
     jpctrl.exit_with_beep()
 
-print('\nSOFT2 ...')
+print('\nSOFT2 ...\n')
 if not jpctrl.spawn_and_settle('/usr/bin/jackd -nSOFT2 -P 90 -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT2.log',
     'SOFT1'):
     jpctrl.exit_with_beep()
@@ -64,7 +73,7 @@ if not jpctrl.spawn_and_settle('/usr/bin/jackd -nSOFT2 -P 90 -ddummy -r96000 -p2
 if not jpctrl.wait_for_jack('SOFT2'):
     jpctrl.exit_with_beep()
 
-print('\nSOFT3 ...')
+print('\nSOFT3 ...\n')
 if not jpctrl.spawn_and_settle('/usr/bin/jackd -nSOFT3 -P 90 -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT3.log',
     'SOFT3'):
     jpctrl.exit_with_beep()
@@ -72,15 +81,15 @@ if not jpctrl.spawn_and_settle('/usr/bin/jackd -nSOFT3 -P 90 -ddummy -r96000 -p2
 if not jpctrl.wait_for_jack('SOFT3'):
     jpctrl.exit_with_beep()
 
-# print('-----------------------------------------------------------------')
-# print('Start all a2jmidi_bridge processes for soft servers...')
-# print('-----------------------------------------------------------------')
+print('-----------------------------------------------------------------')
+print('Start all a2jmidi_bridge processes for soft servers...')
+print('-----------------------------------------------------------------')
 
 # The idea here is that all of the JACK soft servers are given
 # access to MIDI hardware via j2amidi_bridge, which is installed
 # as part of a2jmidid.
 
-print('\non SOFT1...')
+print('\non SOFT1...\n')
 
 if not jpctrl.spawn_and_settle('a2jmidi_bridge soft1_midi', 'SOFT1'):
      jpctrl.exit_with_beep()
@@ -91,7 +100,7 @@ else:
     print('wait_for_jackport on soft1_midi/capture failed.')
     jpctrl.exit_with_beep()
 
-print('\non SOFT2...')
+print('\non SOFT2...\n')
 
 if not jpctrl.spawn_and_settle('a2jmidi_bridge soft2_midi', 'SOFT2'):
      jpctrl.exit_with_beep()
@@ -102,7 +111,7 @@ else:
     print('wait_for_jackport on soft2_midi/capture failed.')
     jpctrl.exit_with_beep()
 
-print('\non SOFT3...')
+print('\non SOFT3...\n')
 if not jpctrl.spawn_and_settle('a2jmidi_bridge soft3_midi', 'SOFT3'):
      jpctrl.exit_with_beep()
 
@@ -189,7 +198,7 @@ if not jpctrl.wait_for_jackport('zita-n2j-4soft1:out_1'):
     print('wait_for_jackport on zita-n2j-4soft1/hard failed.')
     jpctrl.exit_with_beep()
 else:
-    print('zita-n2j-4soft1 confirmed on hard server.')
+    print('zita-n2j-4soft1 confirmed on hard server.\n')
 
 if not jpctrl.spawn_and_settle('zita-n2j --filt 32 --buff 14 --jname zita-n2j-4soft2 127.0.0.2 55552'):
     jpctrl.exit_with_beep()
@@ -198,7 +207,7 @@ if not jpctrl.wait_for_jackport('zita-n2j-4soft2:out_1'):
     print('wait_for_jackport on zita-n2j-4soft2/hard failed.')
     jpctrl.exit_with_beep()
 else:
-    print('zita-n2j-4soft2 confirmed on hard server.')
+    print('zita-n2j-4soft2 confirmed on hard server.\n')
 
 if not jpctrl.spawn_and_settle('zita-n2j --filt 32 --buff 14 --jname zita-n2j-4soft3 127.0.0.3 55553'):
     jpctrl.exit_with_beep()
@@ -207,7 +216,7 @@ if not jpctrl.wait_for_jackport('zita-n2j-4soft3:out_1'):
     print('wait_for_jackport on zita-n2j-4soft3/hard failed.')
     jpctrl.exit_with_beep()
 else:
-    print('zita-n2j-4soft3 confirmed on hard server.')
+    print('zita-n2j-4soft3 confirmed on hard server.\n')
 
 print('\nOne transmitter on each soft server...\n')
 
@@ -218,7 +227,7 @@ if not jpctrl.wait_for_jackport('zita-j2n-soft1:in_1', 'SOFT1'):
     print('wait_for_jackport on zita-j2n/SOFT1 failed.')
     jpctrl.exit_with_beep()
 else:
-    print('zita-j2n confirmed on SOFT1.')
+    print('zita-j2n confirmed on SOFT1.\n')
 
 if not jpctrl.spawn_and_settle('zita-j2n --jname zita-j2n-soft2 --jserv SOFT2 127.0.0.2 55552'):
     jpctrl.exit_with_beep()
@@ -227,7 +236,7 @@ if not jpctrl.wait_for_jackport('zita-j2n-soft2:in_1', 'SOFT2'):
     print('wait_for_jackport on zita-j2n/SOFT2 failed.')
     jpctrl.exit_with_beep()
 else:
-    print('zita-j2n confirmed on SOFT2.')
+    print('zita-j2n confirmed on SOFT2.\n')
 
 if not jpctrl.spawn_and_settle('zita-j2n --jname zita-j2n-soft3 --jserv SOFT3 127.0.0.3 55553'):
     jpctrl.exit_with_beep()
@@ -236,7 +245,7 @@ if not jpctrl.wait_for_jackport('zita-j2n-soft3:in_1', 'SOFT3'):
     print('wait_for_jackport on zita-j2n/SOFT3 failed.')
     jpctrl.exit_with_beep()
 else:
-    print('zita-j2n confirmed on SOFT3.')
+    print('zita-j2n confirmed on SOFT3.\n')
 
 
 print('-----------------------------------------------------------------')
@@ -307,7 +316,7 @@ if not jpctrl.spawn_and_settle(
 
 print('\nStart CalfSRO...')
 if not jpctrl.spawn_and_settle(
-        'calfjackhost --client CalfSRO eq12:SRO ! reverb:SRO ! multibandcompressor:SRO',
+        'calfjackhost --client CalfSRO eq12:SRO ! multibandcompressor:SRO',
         'SOFT1'):
     jpctrl.exit_with_beep()
 
@@ -334,7 +343,7 @@ if not jpctrl.spawn_and_settle(
 
 print('\nStart MaxStringsFilters...')
 if not jpctrl.spawn_and_settle(
-        'calfjackhost --client MaxStringsFilters eq12:MaxStrings ! reverb:MaxStrings ! multibandcompressor:Strings',
+        'calfjackhost --client MaxStringsFilters eq12:MaxStrings ! multibandcompressor:Strings',
         'SOFT2'):
     jpctrl.exit_with_beep()
 
@@ -351,6 +360,17 @@ if not jpctrl.spawn_and_settle(
     jpctrl.exit_with_beep()
 
 print('\n')
+
+# print('-----------------------------------------------------------------')
+# print('Start component for patch Many-Horns, on server SOFT3...')
+# print('-----------------------------------------------------------------')
+
+# print('\nStart Many-Horns...')
+# if not jpctrl.spawn_and_settle(
+#        'calfjackhost --client Many-Horns fluidsynth:Many-Horns',
+#        'SOFT3'):
+#    jpctrl.exit_with_beep()
+#
 
 print('-----------------------------------------------------------------')
 print('Create JACK connections using aj-snapshot, on all servers...')

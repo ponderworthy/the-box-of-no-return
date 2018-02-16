@@ -28,7 +28,7 @@ config(
     backend='jack',
     client_name='Distribute.py',
     in_ports=1,
-    out_ports=['SRO', 'Strings', 'FlowBells'],
+    out_ports=['SRO', 'Strings', 'FlowBells', 'Many-Horns'],
 )
 
 # Documentation for the "run" code below.
@@ -81,7 +81,7 @@ run(
             3: [Port('SRO') >> Velocity(multiply=0.5), Port('Strings') >> Velocity(multiply=0.5)],
             4: Port('FlowBells'),
             5: [Port('Strings') >> Velocity(multiply=0.55), Port('FlowBells')],
-#            6: [Port(1), Port(6)],
+            6: Port('Many-Horns')
 #            7: Port(7),
 #            8: Port(8),
 #            9: Port(9),

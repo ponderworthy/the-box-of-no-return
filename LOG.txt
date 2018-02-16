@@ -1,3 +1,27 @@
+Next step right now, is take the reverb out of
+the soft servers, and put it on the hard server.
+That will simplify a lot.
+
+One next step is a horns section patch.  May use
+Sonatina Symphonic Orchestra SF2s, or may use
+next-gen SFZs, e.g.:
+http://vis.versilstudios.net/vsco-community.html
+Fluidsynth still does not do SFZ, it is probably time
+to start setting up LinuxSynth.  Installed
+jsampler and linuxsampler.  They seem to run much
+better than last time checked.
+
+Current status good.  Rare cutouts of SRO when load extremely
+high, other patches do not cut out.  Will work on this.
+Perhaps reverb in the hard server only!!!!!
+No static with cutouts, which is fantastic.
+
+Received word through LAU that ALSA MIDI users just
+turn on their keyboards last.  In other words,
+this is normal behavior.  Will leave it unless
+additionally motivated.  If desired, could
+run using JACK MIDI from hardware to hard server,
+then ALSA MIDI from hard server to soft servers.
 
 Installed net-tools-debian-ifconfig with yaourt
 and then ran 'ifconfig lo multicast' to enable

@@ -36,6 +36,7 @@
       <connection port="StringsSSO:Fluidsynth MIDI In" />
     </port>
     <port name="FlowBells" />
+    <port name="Many-Horns" />
   </client>
   <client name="Mixer-SOFT2/Strings 1">
     <port name="out-1">
@@ -107,15 +108,9 @@
   </client>
   <client name="MaxStringsFilters">
     <port name="Equalizer 12 Band Out #1">
-      <connection port="MaxStringsFilters:Reverb In #1" />
-    </port>
-    <port name="Equalizer 12 Band Out #2">
-      <connection port="MaxStringsFilters:Reverb In #2" />
-    </port>
-    <port name="Reverb Out #1">
       <connection port="MaxStringsFilters:Multiband Compressor In #1" />
     </port>
-    <port name="Reverb Out #2">
+    <port name="Equalizer 12 Band Out #2">
       <connection port="MaxStringsFilters:Multiband Compressor In #2" />
     </port>
     <port name="Multiband Compressor Out #1">
