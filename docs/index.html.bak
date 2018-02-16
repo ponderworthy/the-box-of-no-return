@@ -6,7 +6,7 @@
     <link type="text/css" href="styles.css" rel="stylesheet">
   </head>
   <body>
-    <h1 style="font-size: 1.6em">The Box of No Return</h1>
+    <h1 style="font-size: 1.8em">The Box of No Return</h1>
     <h2>summary</h2>
     <p>The Box of No Return is a Linux-based musical synthesizer platform,
       suitable for live musicianship, designed to handle multiple patches with
@@ -16,7 +16,7 @@
       and pile on the tone generators and filters in patch development in order
       to feel and deliver the unyielding power of the musical harmonic roar, an
       implementation of the BNR may suit you well.&nbsp; There are obviously
-      middle grounds too , and there are articles here to help in general.</p>
+      middle grounds too ☺, and there are articles here to help in general.</p>
     <h2>questions, contributions, discussion, the code</h2>
     <p>The project and its code are <a href="https://github.com/ponderworthy/the-box-of-no-return"
         target="_blank">hosted on Github</a>.&nbsp; There are SF2 SoundFonts
@@ -63,5 +63,6 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-76358613-4');
-</script> </body>
+</script>
+  </body>
 </html>
