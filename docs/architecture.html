@@ -29,6 +29,17 @@
       thence to zita-j2n, which sends the signal over the network to the hard
       server.</p>
     <p>This use of multiple JACK servers in one box is called <a href="https://github.com/ponderworthy/MultiJACK">MultiJACK</a>.</p>
+    <p>To see the connections, <a href="images/hard-server-connections.png" target="_blank">click
+        here for the hard server</a>, <a href="images/soft1-server-connections.png"
+        target="_blank">here for soft server #1</a>, <a href="images/soft2-server-connections.png"
+        target="_blank">here for soft server #2</a>, and <a href="images/soft3-server-connections.png"
+        target="_blank">here for soft server #3</a>.&nbsp; To see the hard
+      server connections in a live BNR, one can simply run 'catia'; for soft
+      server #1, one can run './soft1 catia', and so on.</p>
+    <p>You may notice that ALSA MIDI connections, in green, are replicated
+      across all of them.&nbsp; This is because although Catia is set to show
+      ALSA MIDI, ALSA MIDI is fully independent of JACK: though there are four
+      JACK servers running, there is just one ALSA system for any machine.</p>
     <h2>midi</h2>
     <p>ALSA (non-JACK) MIDI is very well-supported, and worthwhile JACK wiring
       GUIs support it.&nbsp; So in the current configuration, the hard server

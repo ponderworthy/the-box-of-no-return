@@ -33,23 +33,13 @@
     <port name="FlowBells">
       <connection port="yoshimi-YoshFlowBells:midi in" />
     </port>
-    <port name="Many-Horns">
-      <connection port="Many-Horns:Fluidsynth MIDI In" />
-    </port>
+    <port name="Many-Horns" />
   </client>
   <client name="yoshimi-YoshFlowBells">
     <port name="left">
       <connection port="zita-j2n-soft3:in_1" />
     </port>
     <port name="right">
-      <connection port="zita-j2n-soft3:in_2" />
-    </port>
-  </client>
-  <client name="Many-Horns">
-    <port name="Fluidsynth Out #1">
-      <connection port="zita-j2n-soft3:in_1" />
-    </port>
-    <port name="Fluidsynth Out #2">
       <connection port="zita-j2n-soft3:in_2" />
     </port>
   </client>
