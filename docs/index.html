@@ -34,9 +34,10 @@
       maximum, profound and terrible, tonal content. If you find yourself
       reducing the profundity of your patches because your machine won't do
       better, this project may be very good for you, especially if you play
-      live. Current patches include one with three simultaneous Yoshimis,
-      another with five simultaneous large FluidSynth soundfonts, and the
-      ability to mix the two and a third together.&nbsp;</p>
+      live. Current patches include one with three simultaneous <a href="http://yoshimi.github.io/"
+        title="http://yoshimi.github.io/">Yoshimi</a>s, another with several
+      simultaneous large <a href="http://www.fluidsynth.org/">FluidSynth</a>
+      soundfonts, and the ability to mix the two and a third together.&nbsp;</p>
     <p>Surprisingly enough, the current BNR is quite a lot more stable than its
       predecessors.&nbsp; If one of its soft servers gets overloaded (say, due
       to its musician having a really good day), it cuts out without static or
@@ -46,19 +47,20 @@
       <br>
       The current known box running with this code, is an eight-core 4GHz
       machine with 8G RAM. In an earlier iteration, it used the conventional
-      single JACK server; but less than one-quarter of its CPU capacity was
-      being used, while JACK reported that 75% of its capacity was being used.
-      In 2015 began an effort, now successful, to use multiple JACK processes
-      together in one box, and this is the rebuild of the BNR with MultiJACK at
-      its core. Attempts have not yet been made to run this code on a quad-core
-      box, though the previous single-JACK iteration of the BNR is still running
-      as of this writing on quad 3GHz with 8G RAM.<br>
+      single <a href="http://www.jackaudio.org/">JACK</a> server; but less than
+      one-quarter of its CPU capacity was being used, while JACK reported that
+      75% of its capacity was being used. In 2015 began an effort, now
+      successful, to use multiple JACK processes together in one box, and this
+      is the rebuild of the BNR with <a href="https://github.com/ponderworthy/MultiJACK">MultiJACK</a>
+      at its core. Attempts have not yet been made to run this code on a
+      quad-core box, though the previous single-JACK iteration of the BNR is
+      still running as of this writing on quad 3GHz with 8G RAM.<br>
       <br>
       There are quite a few people using tools like NetJACK to increase JACK
       capacity with multiple boxes, or at least multiple motherboards. But if
       you value portability, if you value space, and/or if you are a gigging
-      musician, a fragile or heavy (one, the other, or both; not neither)
-      multi-motherboard construct is not preferable. Most users of
+      musician, a fragile or heavy (one, the other, or both; probably not
+      neither) multi-motherboard construct is not preferable. Most users of
       Linux-hardware synths limit themselves as a result of what one JACK server
       can do, and other platforms limit analogously; here we have an effort to
       blow the door open just a bit more.</p>

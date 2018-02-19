@@ -26,16 +26,18 @@
       Symphonic Orchestra, original SFZs being <a href="http://sso.mattiaswestlund.net/download.html"
         target="_blank">here</a>. </p>
     <h2>more articles</h2>
-    <p>are right <a href="articles.html">here</a>.&nbsp; There is also a
-      Facebook group over here.</p>
+    <p>are right <a href="articles.html">here</a>.&nbsp; There is also a new
+      Facebook group <a href="https://www.facebook.com/groups/1518955771533144/">over
+        here</a>.</p>
     <h2>why this project and its benefits</h2>
     <p>From the beginning, the BNR was built out of a need to host patches of
       maximum, profound and terrible, tonal content. If you find yourself
       reducing the profundity of your patches because your machine won't do
       better, this project may be very good for you, especially if you play
-      live. Current patches include one with three simultaneous Yoshimis,
-      another with five simultaneous large FluidSynth soundfonts, and the
-      ability to mix the two and a third together.&nbsp;</p>
+      live. Current patches include one with three simultaneous <a href="http://yoshimi.github.io/"
+        title="http://yoshimi.github.io/">Yoshimi</a>s, another with several
+      simultaneous large <a href="http://www.fluidsynth.org/">FluidSynth</a>
+      soundfonts, and the ability to mix the two and a third together.&nbsp;</p>
     <p>Surprisingly enough, the current BNR is quite a lot more stable than its
       predecessors.&nbsp; If one of its soft servers gets overloaded (say, due
       to its musician having a really good day), it cuts out without static or
@@ -45,13 +47,14 @@
       <br>
       The current known box running with this code, is an eight-core 4GHz
       machine with 8G RAM. In an earlier iteration, it used the conventional
-      single JACK server; but less than one-quarter of its CPU capacity was
-      being used, while JACK reported that 75% of its capacity was being used.
-      In 2015 began an effort, now successful, to use multiple JACK processes
-      together in one box, and this is the rebuild of the BNR with MultiJACK at
-      its core. Attempts have not yet been made to run this code on a quad-core
-      box, though the previous single-JACK iteration of the BNR is still running
-      as of this writing on quad 3GHz with 8G RAM.<br>
+      single <a href="http://www.jackaudio.org/">JACK</a> server; but less than
+      one-quarter of its CPU capacity was being used, while JACK reported that
+      75% of its capacity was being used. In 2015 began an effort, now
+      successful, to use multiple JACK processes together in one box, and this
+      is the rebuild of the BNR with <a href="https://github.com/ponderworthy/MultiJACK">MultiJACK</a>
+      at its core. Attempts have not yet been made to run this code on a
+      quad-core box, though the previous single-JACK iteration of the BNR is
+      still running as of this writing on quad 3GHz with 8G RAM.<br>
       <br>
       There are quite a few people using tools like NetJACK to increase JACK
       capacity with multiple boxes, or at least multiple motherboards. But if
