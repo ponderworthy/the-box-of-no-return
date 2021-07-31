@@ -1,0 +1,139 @@
+<vbox>
+    <table expand-y="0" expand-x="1" spacing="5" rows="4" cols="10">
+        <label param="level_in" attach-x="0" attach-y="0" expand-x="0" />
+        <knob param="level_in" attach-x="0" attach-y="1" attach-h="2" expand-x="0" type="1" />
+        <value param="level_in" attach-x="0" attach-y="3" expand-x="0" />
+        
+        <label attach-x="1" attach-y="0" expand-x="1" text="Input level" />
+        <vumeter param="meter_inL" position="2" mode="0" hold="1.5" falloff="2.5" attach-x="1" attach-y="1" expand-x="1" />
+        <vumeter param="meter_inR" position="2" mode="0" hold="1.5" falloff="2.5" attach-x="1" attach-y="2" expand-x="1" />
+        <meterscale param="meter_outR" marker="0 0.0625 0.125 0.25 0.5 0.71 1" dots="1" position="2" mode="0" attach-x="1" attach-y="3" expand-x="1" />
+        
+        <label attach-x="2" attach-y="0" expand-x="0" text="Clip" />
+        <led param="clip_inL" attach-x="2" attach-y="1" expand-x="0" />
+        <led param="clip_inR" attach-x="2" attach-y="2" expand-x="0" />
+        
+        <label param="on" attach-x="3" attach-y="0" expand-x="0" />
+        <toggle param="on" attach-x="3" attach-y="1" attach-h="2" expand-x="0" pad-x="10"/>
+        
+        <label attach-x="4" attach-y="0" expand-x="1" text="Output level"/>
+        <vumeter param="meter_outL" position="2" mode="0" hold="1.5" falloff="2.5" attach-x="4" attach-y="1" expand-x="1" />
+        <vumeter param="meter_outR" position="2" mode="0" hold="1.5" falloff="2.5" attach-x="4" attach-y="2" expand-x="1" />
+        <meterscale param="meter_outR" marker="0 0.0625 0.125 0.25 0.5 0.71 1" dots="1" position="2" mode="0" attach-x="4" attach-y="3" expand-x="1" />
+        
+        <label attach-x="5" attach-y="0" expand-x="0" text="Clip"/>
+        <led param="clip_outL" mode="1" attach-x="5" attach-y="1" expand-x="0" />
+        <led param="clip_outR" mode="1" attach-x="5" attach-y="2" expand-x="0" />
+        
+        <hbox homogeneous="1" attach-x="6" attach-y="0" attach-h="4" expand-x="0">
+            <vbox>
+            <label text="Width" size="3" attach-x="6" attach-y="0" expand-x="0"  />
+            <knob param="width" attach-x="6" attach-y="1" attach-h="2" expand-x="0" type="1" />
+            <value param="width" attach-x="6" attach-y="3" expand-x="0" />
+            </vbox><vbox>
+            <label param="amount" size="3" attach-x="7" attach-y="0" expand-x="0" />
+            <knob param="amount" attach-x="7" attach-y="1" attach-h="2" expand-x="0" ticks="0 0.0625 0.25 1 4"/>
+            <value param="amount" attach-x="7" attach-y="3" expand-x="0" />
+            </vbox><vbox>
+            <label param="dry" size="3" attach-x="8" attach-y="0" expand-x="0" />
+            <knob param="dry" attach-x="8" attach-y="1" attach-h="2" expand-x="0" ticks="0 0.0625 0.25 1 4"/>
+            <value param="dry" attach-x="8" attach-y="3" expand-x="0" />
+            </vbox><vbox>
+            <label text="Output" size="3" attach-x="9" attach-y="0" expand-x="0" />
+            <knob param="level_out" attach-x="9" attach-y="1" attach-h="2" expand-x="0" type="1" />
+            <value param="level_out" attach-x="9" attach-y="3" expand-x="0" />
+            </vbox>
+        </hbox>
+    </table>
+
+
+    <hbox spacing="8">
+        <!-- TIMING -->
+        <frame label="Timing">
+            <notebook param="timing">
+                <table page="BPM" rows="3" cols="2">
+                    <label param="bpm"  attach-x="0" attach-y="0"/>
+                    <knob param="bpm" attach-x="0" attach-y="1" size="5" ticks="30 60 120 180 240 300"/>
+                    <value param="bpm" attach-x="0" attach-y="2"/>
+                    <vbox attach-x="1" attach-y="1" expand-y="0" fill-y="0">
+                        <label text="Tap"/>
+                        <tap param="bpm"/>
+                        <label/>
+                    </vbox>
+                </table>
+                <hbox page="ms">
+                    <vbox>
+                        <label param="ms" />
+                        <knob param="ms" size="5" ticks="10 200 400 600 800 1000 1200 1400 1600 1800 2000"/>
+                        <value param="ms"/>
+                    </vbox>
+                </hbox>
+                <hbox page="Hz">
+                    <vbox>
+                        <label param="hz" />
+                        <knob param="hz" size="5" ticks="0.01 0.1 1 10 100"/>
+                        <value param="hz"/>
+                    </vbox>
+                </hbox>
+                <hbox page="Sync">
+                    <value param="bpm_host"/>
+                </hbox>
+            </notebook>
+        </frame>
+        <!-- TIMING -->
+        <frame label="Fragmentation">
+            <!--notebook param="fragmentation"-->
+                <hbox page="Periodic">
+                    <table rows="3" cols="2" pad-x="20">
+                        <vbox attach-x="0" attach-y="0" fill-y="0" expand-y="0" attach-w="2">
+                            <label param="mix_mode" />
+                            <combo param="mix_mode" fill-y="0" />
+                        </vbox>
+                        <label attach-x="0" attach-y="1" param="subdiv" />
+                        <hscale width="260" attach-x="1" attach-y="1" param="subdiv" />
+                        <label attach-x="0" attach-y="2" param="time_l" />
+                        <hscale width="260" attach-x="1" attach-y="2" param="time_l" />
+                        <label attach-x="0" attach-y="3" param="time_r"  />
+                        <hscale width="260" attach-x="1" attach-y="3" param="time_r" />
+                        <!--label attach-x="0" attach-y="3" param="mix_mode" />
+                        <combo attach-x="1" attach-y="3" param="mix_mode" fill-y="0" expand-y="0" pad-x="8" /-->
+                    </table>
+                </hbox>
+                <!--
+                <hbox page="Pattern">
+                    <table rows="2" cols="2">
+                        <label text="L" attach-x="0" attach-y="0"/>
+                        <label text="R" attach-x="0" attach-y="1"/>
+                        <pattern key="pattern_l" param="time_l" beats="pfrag" bars="pbeats" width="320" height="50" expand-x="1" fill-x="1" expand-y="1" fill-y="1" attach-x="1" attach-y="0" />
+                        <pattern key="pattern_r" param="time_r" beats="pfrag" bars="pbeats" width="320" height="50" expand-x="1" fill-x="1" expand-y="1" fill-y="1" attach-x="1" attach-y="1" />
+                        <vbox attach-x="2" attach-y="0">
+                            <label text="Beats" expand="0"  />
+                            <knob param="pbeats" expand="0" ticks="1 2 3 4 5 6 7 8"/>
+                            <value param="pbeats" expand="0" />
+                        </vbox>
+                        <vbox attach-x="2" attach-y="1">
+                            <label text="Fragments" expand="0"  />
+                            <knob param="pfrag" expand="0" ticks="1 2 3 4 5 6 7 8"/>
+                            <value param="pfrag" expand="0" />
+                        </vbox>
+                    </table>
+                </hbox>
+                -->
+            <!--/notebook-->
+        </frame>
+        <frame label="Mixing">
+            <table expand="0" rows="2" cols="2">
+                <vbox attach-x="0" attach-y="0" fill-y="0" expand-y="0" pad-x="20">
+                    <label param="medium" />
+                    <combo param="medium" fill-y="0" />
+                </vbox>
+                <vbox attach-x="0" attach-y="1" pad-x="20" pad-y="10">
+                    <label param="feedback" fill="0" expand="0"  />
+                    <knob param="feedback" fill="0" expand="0" size="5" ticks="0 0.5 1"/>
+                    <value param="feedback" fill="0" expand="0" />
+                </vbox>
+            </table>
+        </frame>
+    
+    </hbox>
+</vbox>

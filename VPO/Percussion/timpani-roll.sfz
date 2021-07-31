@@ -1,0 +1,203 @@
+//==============================================================
+// Percussion - Timpani Roll
+//
+// This was built from NoBudget Orchestra after I created round robin
+// samples from the original, then performed a timpani roll and recorded it
+//
+// Timpani samples:
+//  No Budget Orchestra - https://nobudgetorchestra.net
+//
+//  modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+<group>
+amp_random=1 // randomize like a real player (PB)
+
+
+// roll off the lowest freqencies
+eq1_freq=25.2
+eq1_bw=1.25
+eq1_gain=-10.7
+
+// remove some mud (PB)
+eq1_freq=323.1
+eq1_bw=1.06
+eq1_gain=-6.1
+
+// add some clarity with a little high end boost (PB)
+eq1_freq=2843.4
+eq1_bw=1.48
+eq1_gain=4.4
+
+ampeg_release=0.6
+volume=3.5
+
+<region>
+sample=..\libs\Other\Samples/Timpani/timpani-roll-C2-PB-loop.wav
+lokey=c2 hikey=c#2 pitch_keycenter=c2
+
+<region>
+sample=..\libs\Other\Samples/Timpani/timpani-roll-D2-PB-loop.wav
+lokey=d2 hikey=d#2 pitch_keycenter=d2
+
+<region>
+sample=..\libs\Other\Samples/Timpani/timpani-roll-E2-PB-loop.wav
+lokey=e2 hikey=f2 pitch_keycenter=e2
+
+<region>
+sample=..\libs\Other\Samples/Timpani/timpani-roll-G2-PB-loop.wav
+lokey=f#2 hikey=g#2 pitch_keycenter=g2
+
+<region>
+sample=..\libs\Other\Samples/Timpani/timpani-roll-A2-PB-loop.wav
+lokey=a2 hikey=a#2 pitch_keycenter=a2
+
+<region>
+sample=..\libs\Other\Samples/Timpani/timpani-roll-C3-PB-loop.wav
+lokey=b2 hikey=c#3 pitch_keycenter=c3
+
+<region>
+sample=..\libs\Other\Samples/Timpani/timpani-roll-D3-PB-loop.wav
+lokey=d3 hikey=d#3 pitch_keycenter=d3
+
+<region>
+sample=..\libs\Other\Samples/Timpani/timpani-roll-E3-PB-loop.wav
+lokey=e3 hikey=f3 pitch_keycenter=e3
+
+<region>
+sample=..\libs\Other\Samples/Timpani/timpani-roll-G3-PB-loop.wav
+lokey=f#3 hikey=g#3 pitch_keycenter=g3
+
+<region>
+sample=..\libs\Other\Samples/Timpani/timpani-roll-A3-PB-loop.wav
+lokey=a3 hikey=a#3 pitch_keycenter=a3
+
+<region>
+sample=..\libs\Other\Samples/Timpani/timpani-roll-C4-PB-loop.wav
+lokey=b3 hikey=c4 pitch_keycenter=c4
+
+
+//==============================================================
+// Timpani Hit
+//
+//   timpani.sfz from No Budget Orchestra - https://nobudgetorchestra.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+<group>
+trigger=release
+volume=-5
+
+
+ampeg_attack=0.03
+// randomize like a real player (PB)
+amp_random=1
+pitch_random=20
+
+
+// roll off the lowest freqencies
+eq1_freq=25.2
+eq1_bw=1.25
+eq1_gain=-10.7
+
+// remove some mud (PB)
+eq1_freq=323.1
+eq1_bw=1.06
+eq1_gain=-6.1
+
+// add some clarity with a little high end boost (PB)
+eq1_freq=2843.4
+eq1_bw=1.48
+eq1_gain=4.4
+
+ampeg_sustain=0 ampeg_hold=0 ampeg_decay=20 ampeg_release=3
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\C2-PB.wav
+volume=-1
+
+lokey=c2 hikey=c2 pitch_keycenter=c2
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\D2-PB.wav
+volume=-1
+
+lokey=c#2 hikey=d2 pitch_keycenter=d2
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\E2-PB.wav
+volume=1
+
+lokey=d#2 hikey=e2 pitch_keycenter=e2
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\F2-PB.wav
+volume=1
+
+lokey=f2 hikey=f#2 pitch_keycenter=f2
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\Ab2-PB.wav
+volume=-1
+
+lokey=g2 hikey=g#2 pitch_keycenter=g#2
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\A2-PB.wav
+volume=-1
+
+lokey=a2 hikey=a2 pitch_keycenter=a2
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\Bb2-PB.wav
+volume=-4
+
+lokey=a#2 hikey=a#2 pitch_keycenter=a#2
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\C3-PB.wav
+volume=-4
+
+lokey=b2 hikey=c3 pitch_keycenter=c3
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\D3-PB.wav
+volume=-3
+
+lokey=c#3 hikey=d#3 pitch_keycenter=d3
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\Gb3-PB.wav
+volume=-1
+
+lokey=e3 hikey=f#3 pitch_keycenter=f#3
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\G3-PB.wav
+volume=-1
+
+lokey=g3 hikey=g3 pitch_keycenter=g3
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\Ab3-PB.wav
+volume=-1
+
+lokey=g#3 hikey=g#3 pitch_keycenter=g#3
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\A3-PB.wav
+volume=-2
+
+lokey=a3 hikey=a3 pitch_keycenter=a3
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\Bb3-PB.wav
+volume=-1
+
+lokey=a#3 hikey=c4 pitch_keycenter=a#3
+
+
+

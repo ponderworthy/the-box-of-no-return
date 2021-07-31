@@ -1,0 +1,270 @@
+//==============================================================
+// Cymbals
+//
+// This uses samples from the following sources:
+//
+// Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+// Versilian Studios - http://vis.versilstudios.net/vsco-2.html
+//
+// modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ---------- cymbals 1 ------------
+<group>
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+ampeg_release=2
+
+<region>
+sample=../libs/Other/Samples/Percussion/SSO/cymbal_roll-a-mf-PB.wav
+key=c4
+lovel=0
+hivel=79
+volume=5
+
+<region>
+sample=../libs/Other/Samples/Percussion/SSO/cymbal_roll-a-f-PB.wav
+key=c4
+lovel=80
+hivel=127
+volume=5
+
+<region>
+sample=../libs/Other/Samples/Percussion/SSO/piatti-PB.wav
+key=c#4
+volume=6
+ampeg_release=1
+
+<region>
+sample=../libs/Other/Samples/Percussion/SSO/cymbal_roll-b-PB.wav
+key=d4
+volume=5
+
+<region>
+sample=../libs/Other/Samples/Percussion/SSO/piatti-PB.wav
+key=d#4
+volume=6
+ampeg_release=1
+// make a cymbal with a higher pitch (PB)
+transpose=6
+
+
+// ---------- cymbals 2 ------------
+<group>
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+ampeg_release=3
+
+// --- short roll
+<region>
+sample=../libs/Other/Samples/Percussion/VSCO2-CE/susCymb1-cresc-Short_v1-PB.wav
+key=f4
+volume=10
+
+// --- crash RR1
+<group>
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+ampeg_release=1
+seq_length=2
+seq_position=1
+group_label=crash-rr1
+
+<region>
+sample=../libs/Other/Samples/Percussion/VSCO2-CE/cymbal-crash1_mf_rr1-PB.wav
+key=f#4
+lovel=0
+hivel=79
+volume=10
+
+<region>
+sample=../libs/Other/Samples/Percussion/VSCO2-CE/cymbal-crash1_ff_rr1-PB.wav
+key=f#4
+lovel=80
+hivel=127
+volume=3
+
+// --- crash RR2
+<group>
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+ampeg_release=1
+seq_length=2
+seq_position=2
+group_label=crash-rr2
+
+<region>
+sample=../libs/Other/Samples/Percussion/VSCO2-CE/cymbal-crash1_mf_rr2-PB.wav
+key=f#4
+lovel=0
+hivel=79
+volume=6
+
+<region>
+sample=../libs/Other/Samples/Percussion/VSCO2-CE/cymbal-crash1_ff_rr2-PB.wav
+key=f#4
+lovel=80
+hivel=127
+volume=6
+
+// --- medium roll
+<group>
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+ampeg_release=2
+
+<region>
+sample=../libs/Other/Samples/Percussion/VSCO2-CE/susCymb1-cresc-Median_v1-PB.wav
+key=g4
+volume=12
+
+// --- hit
+// RR1
+<group>
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+ampeg_release=3
+seq_length=2
+seq_position=1
+group_label=stick-hit1-rr1
+
+<region>
+sample=../libs/Other/Samples/Percussion/VSCO2-CE/susCymb1-hit_f_rr1-PB.wav
+key=g#4
+lovel=0
+hivel=79
+volume=17
+
+<region>
+sample=../libs/Other/Samples/Percussion/VSCO2-CE/susCymb1-hit_fff_rr1-PB.wav
+key=g#4
+lovel=80
+hivel=127
+volume=10
+
+
+// RR2
+<group>
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+ampeg_release=3
+seq_length=2
+seq_position=2
+group_label=stick-hit1-rr2
+
+<region>
+sample=../libs/Other/Samples/Percussion/VSCO2-CE/susCymb1-hit_f_rr2-PB.wav
+key=g#4
+lovel=0
+hivel=79
+volume=19
+
+<region>
+sample=../libs/Other/Samples/Percussion/VSCO2-CE/susCymb1-hit_fff_rr2-PB.wav
+key=g#4
+lovel=80
+hivel=127
+volume=12
+
+// --- long roll
+<group>
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+ampeg_release=2
+
+<region>
+sample=../libs/Other/Samples/Percussion/VSCO2-CE/susCymb1-cresc-Long_v1-PB.wav
+key=a4
+volume=10
+
+// --- hit (higher pitch PB)
+// RR1
+<group>
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+ampeg_release=3
+seq_length=2
+seq_position=1
+group_label=stick-hit2-rr1
+transpose=3
+
+<region>
+sample=../libs/Other/Samples/Percussion/VSCO2-CE/susCymb1-hit_f_rr1-PB.wav
+key=a#4
+lovel=0
+hivel=79
+volume=17
+
+<region>
+sample=../libs/Other/Samples/Percussion/VSCO2-CE/susCymb1-hit_fff_rr1-PB.wav
+key=a#4
+lovel=80
+hivel=127
+volume=10
+
+
+// RR2
+<group>
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+ampeg_release=3
+seq_length=2
+seq_position=2
+group_label=stick-hit2-rr2
+transpose=3
+
+<region>
+sample=../libs/Other/Samples/Percussion/VSCO2-CE/susCymb1-hit_f_rr2-PB.wav
+key=a#4
+lovel=0
+hivel=79
+volume=19
+
+<region>
+sample=../libs/Other/Samples/Percussion/VSCO2-CE/susCymb1-hit_fff_rr2-PB.wav
+key=a#4
+lovel=80
+hivel=127
+volume=12
+

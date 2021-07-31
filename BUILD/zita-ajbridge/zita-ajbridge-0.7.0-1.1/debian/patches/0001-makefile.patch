@@ -1,0 +1,26 @@
+Author: Robin Gareus <robin@gareus.org>
+Last-Update: 2012-03-19
+Description: Debianized makefile.
+ Do not override PREFIX if already set.
+ Strip SUFFIX from library path.
+---
+ source/Makefile |    3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+Index: zita-ajbridge/source/Makefile
+===================================================================
+--- zita-ajbridge.orig/source/Makefile
++++ zita-ajbridge/source/Makefile
+@@ -18,10 +18,10 @@
+ # ----------------------------------------------------------------------------
+ 
+ 
+-SUFFIX := $(shell uname -m | sed -e 's/^unknown/$//' -e 's/^i.86/$//' -e 's/^x86_64/$/64/')
++#SUFFIX := $(shell uname -m | sed -e 's/^unknown/$//' -e 's/^i.86/$//' -e 's/^x86_64/$/64/')
+ VERSION = 0.7.0
+ 
+-PREFIX ?= /usr/local
++PREFIX ?= /usr
+ BINDIR ?= $(PREFIX)/bin
+ LIBDIR ?= lib$(SUFFIX)
+ MANDIR ?= /usr/share/man/man1

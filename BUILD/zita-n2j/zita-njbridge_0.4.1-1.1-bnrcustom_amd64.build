@@ -1,0 +1,108 @@
+ dpkg-buildpackage -us -uc -ui -b
+dpkg-buildpackage: info: source package zita-njbridge
+dpkg-buildpackage: info: source version 0.4.1-1.1-bnrcustom
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by Jaromír Mikeš <jeb@bnr4>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean -Smakefile -Dsource
+   dh_testdir -O-Smakefile -O-Dsource
+   dh_auto_clean -O-Smakefile -O-Dsource
+	cd source && make -j16 clean
+make[1]: Entering directory '/home/jeb/BNR/BUILD/zita-n2j/zita-njbridge-0.4.1-1.1/source'
+/bin/rm -f *~ *.o *.a *.d *.so *.gz
+/bin/rm -f zita-n2j zita-j2n
+make[1]: Leaving directory '/home/jeb/BNR/BUILD/zita-n2j/zita-njbridge-0.4.1-1.1/source'
+   dh_autoreconf_clean -O-Smakefile -O-Dsource
+   dh_clean -O-Smakefile -O-Dsource
+ debian/rules build
+dh build -Smakefile -Dsource
+   dh_testdir -O-Smakefile -O-Dsource
+   dh_update_autotools_config -O-Smakefile -O-Dsource
+   dh_autoreconf -O-Smakefile -O-Dsource
+   dh_auto_configure -O-Smakefile -O-Dsource
+   dh_auto_build -O-Smakefile -O-Dsource
+	cd source && make -j16
+make[1]: Entering directory '/home/jeb/BNR/BUILD/zita-n2j/zita-njbridge-0.4.1-1.1/source'
+g++ -march=native -mtune=native -O3 -march=native -mtune=native -O3 -O2 -Wall -MMD -MP -march=native -mtune=native -O3 -DVERSION=\"0.4.1\"  -c -o zita-j2n.o zita-j2n.cc
+g++ -march=native -mtune=native -O3 -march=native -mtune=native -O3 -O2 -Wall -MMD -MP -march=native -mtune=native -O3 -DVERSION=\"0.4.1\"  -c -o netdata.o netdata.cc
+g++ -march=native -mtune=native -O3 -march=native -mtune=native -O3 -O2 -Wall -MMD -MP -march=native -mtune=native -O3 -DVERSION=\"0.4.1\"  -c -o jacktx.o jacktx.cc
+g++ -march=native -mtune=native -O3 -march=native -mtune=native -O3 -O2 -Wall -MMD -MP -march=native -mtune=native -O3 -DVERSION=\"0.4.1\"  -c -o nettx.o nettx.cc
+g++ -march=native -mtune=native -O3 -march=native -mtune=native -O3 -O2 -Wall -MMD -MP -march=native -mtune=native -O3 -DVERSION=\"0.4.1\"  -c -o pxthread.o pxthread.cc
+g++ -march=native -mtune=native -O3 -march=native -mtune=native -O3 -O2 -Wall -MMD -MP -march=native -mtune=native -O3 -DVERSION=\"0.4.1\"  -c -o lfqueue.o lfqueue.cc
+g++ -march=native -mtune=native -O3 -march=native -mtune=native -O3 -O2 -Wall -MMD -MP -march=native -mtune=native -O3 -DVERSION=\"0.4.1\"  -c -o zsockets.o zsockets.cc
+g++ -march=native -mtune=native -O3 -march=native -mtune=native -O3 -O2 -Wall -MMD -MP -march=native -mtune=native -O3 -DVERSION=\"0.4.1\"  -c -o zita-n2j.o zita-n2j.cc
+g++ -march=native -mtune=native -O3 -march=native -mtune=native -O3 -O2 -Wall -MMD -MP -march=native -mtune=native -O3 -DVERSION=\"0.4.1\"  -c -o jackrx.o jackrx.cc
+g++ -march=native -mtune=native -O3 -march=native -mtune=native -O3 -O2 -Wall -MMD -MP -march=native -mtune=native -O3 -DVERSION=\"0.4.1\"  -c -o netrx.o netrx.cc
+g++ -march=native -mtune=native -O3 -march=native -mtune=native -O3 -O2 -Wall -MMD -MP -march=native -mtune=native -O3 -DVERSION=\"0.4.1\"  -c -o syncrx.o syncrx.cc
+g++ -Wl,-z,relro -Wl,-z,now -L/usr/lib64 -o zita-j2n zita-j2n.o netdata.o jacktx.o nettx.o pxthread.o lfqueue.o zsockets.o -ljack -lpthread -lm -lrt
+g++ -Wl,-z,relro -Wl,-z,now -L/usr/lib64 -o zita-n2j zita-n2j.o netdata.o jackrx.o netrx.o pxthread.o lfqueue.o zsockets.o syncrx.o -lzita-resampler -ljack -lpthread -lm -lrt
+make[1]: Leaving directory '/home/jeb/BNR/BUILD/zita-n2j/zita-njbridge-0.4.1-1.1/source'
+   dh_auto_test -O-Smakefile -O-Dsource
+   create-stamp debian/debhelper-build-stamp
+ fakeroot debian/rules binary
+dh binary -Smakefile -Dsource
+   dh_testroot -O-Smakefile -O-Dsource
+   dh_prep -O-Smakefile -O-Dsource
+   dh_installdirs -O-Smakefile -O-Dsource
+   dh_auto_install -O-Smakefile -O-Dsource
+	cd source && make -j16 install DESTDIR=/home/jeb/BNR/BUILD/zita-n2j/zita-njbridge-0.4.1-1.1/debian/zita-njbridge AM_UPDATE_INFO_DIR=no
+make[1]: Entering directory '/home/jeb/BNR/BUILD/zita-n2j/zita-njbridge-0.4.1-1.1/source'
+install -d /home/jeb/BNR/BUILD/zita-n2j/zita-njbridge-0.4.1-1.1/debian/zita-njbridge/usr/bin
+install -m 755 zita-j2n /home/jeb/BNR/BUILD/zita-n2j/zita-njbridge-0.4.1-1.1/debian/zita-njbridge/usr/bin
+install -m 755 zita-n2j /home/jeb/BNR/BUILD/zita-n2j/zita-njbridge-0.4.1-1.1/debian/zita-njbridge/usr/bin
+make[1]: Leaving directory '/home/jeb/BNR/BUILD/zita-n2j/zita-njbridge-0.4.1-1.1/source'
+   dh_install -O-Smakefile -O-Dsource
+   dh_installdocs -O-Smakefile -O-Dsource
+   dh_installchangelogs -O-Smakefile -O-Dsource
+   dh_installexamples -O-Smakefile -O-Dsource
+   dh_installman -O-Smakefile -O-Dsource
+   dh_installcatalogs -O-Smakefile -O-Dsource
+   dh_installcron -O-Smakefile -O-Dsource
+   dh_installdebconf -O-Smakefile -O-Dsource
+   dh_installemacsen -O-Smakefile -O-Dsource
+   dh_installifupdown -O-Smakefile -O-Dsource
+   dh_installinfo -O-Smakefile -O-Dsource
+   dh_systemd_enable -O-Smakefile -O-Dsource
+   dh_installinit -O-Smakefile -O-Dsource
+   dh_systemd_start -O-Smakefile -O-Dsource
+   dh_installmenu -O-Smakefile -O-Dsource
+   dh_installmime -O-Smakefile -O-Dsource
+   dh_installmodules -O-Smakefile -O-Dsource
+   dh_installlogcheck -O-Smakefile -O-Dsource
+   dh_installlogrotate -O-Smakefile -O-Dsource
+   dh_installpam -O-Smakefile -O-Dsource
+   dh_installppp -O-Smakefile -O-Dsource
+   dh_installudev -O-Smakefile -O-Dsource
+   dh_installgsettings -O-Smakefile -O-Dsource
+   dh_bugfiles -O-Smakefile -O-Dsource
+   dh_ucf -O-Smakefile -O-Dsource
+   dh_lintian -O-Smakefile -O-Dsource
+   dh_gconf -O-Smakefile -O-Dsource
+dh_gconf: Please migrate to dh_installgsettings; gconf + dh_gconf is scheduled for removal.
+   dh_icons -O-Smakefile -O-Dsource
+   dh_perl -O-Smakefile -O-Dsource
+   dh_usrlocal -O-Smakefile -O-Dsource
+   dh_link -O-Smakefile -O-Dsource
+   dh_installwm -O-Smakefile -O-Dsource
+   dh_installxfonts -O-Smakefile -O-Dsource
+   dh_strip_nondeterminism -O-Smakefile -O-Dsource
+   dh_compress -O-Smakefile -O-Dsource
+   dh_fixperms -O-Smakefile -O-Dsource
+   dh_missing -O-Smakefile -O-Dsource
+   dh_strip -O-Smakefile -O-Dsource
+   dh_makeshlibs -O-Smakefile -O-Dsource
+   dh_shlibdeps -O-Smakefile -O-Dsource
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/zita-njbridge/usr/bin/zita-j2n debian/zita-njbridge/usr/bin/zita-n2j were not linked against librt.so.1 (they use none of the library's symbols)
+   dh_installdeb -O-Smakefile -O-Dsource
+   dh_gencontrol -O-Smakefile -O-Dsource
+   dh_md5sums -O-Smakefile -O-Dsource
+   dh_builddeb -O-Smakefile -O-Dsource
+dpkg-deb: building package 'zita-njbridge-dbgsym' in '../zita-njbridge-dbgsym_0.4.1-1.1-bnrcustom_amd64.deb'.
+dpkg-deb: building package 'zita-njbridge' in '../zita-njbridge_0.4.1-1.1-bnrcustom_amd64.deb'.
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../zita-njbridge_0.4.1-1.1-bnrcustom_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)

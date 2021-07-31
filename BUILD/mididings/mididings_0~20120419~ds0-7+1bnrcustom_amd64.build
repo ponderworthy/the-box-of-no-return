@@ -1,0 +1,223 @@
+ dpkg-buildpackage -us -uc -ui -b
+dpkg-buildpackage: info: source package mididings
+dpkg-buildpackage: info: source version 0~20120419~ds0-7+1bnrcustom
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by Emilio Pozuelo Monfort <jeb@bnr4>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean --with python2
+   debian/rules override_dh_auto_clean
+make[1]: Entering directory '/home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0'
+dh_auto_clean || true
+dh_auto_clean: Please use the third-party "pybuild" build system instead of python-distutils
+dh_auto_clean: This feature will be removed in compat 12.
+	python setup.py clean -a
+running clean
+removing 'build/temp.linux-x86_64-2.7' (and everything under it)
+removing 'build/lib.linux-x86_64-2.7' (and everything under it)
+'build/bdist.linux-x86_64' does not exist -- can't clean it
+removing 'build/scripts-2.7' (and everything under it)
+removing 'build'
+	find . -name \*.pyc -exec rm {} \+
+make[1]: Leaving directory '/home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0'
+   dh_clean
+ debian/rules build
+dh build --with python2
+   dh_update_autotools_config
+   dh_auto_configure
+dh_auto_configure: Please use the third-party "pybuild" build system instead of python-distutils
+dh_auto_configure: This feature will be removed in compat 12.
+   debian/rules override_dh_auto_build
+make[1]: Entering directory '/home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0'
+dh_auto_build -- --enable-smf
+dh_auto_build: Please use the third-party "pybuild" build system instead of python-distutils
+dh_auto_build: This feature will be removed in compat 12.
+	python setup.py build --force --enable-smf
+running build
+running build_py
+creating build
+creating build/lib.linux-x86_64-2.7
+creating build/lib.linux-x86_64-2.7/mididings
+copying mididings/overload.py -> build/lib.linux-x86_64-2.7/mididings
+copying mididings/patch.py -> build/lib.linux-x86_64-2.7/mididings
+copying mididings/engine.py -> build/lib.linux-x86_64-2.7/mididings
+copying mididings/scene.py -> build/lib.linux-x86_64-2.7/mididings
+copying mididings/event.py -> build/lib.linux-x86_64-2.7/mididings
+copying mididings/setup.py -> build/lib.linux-x86_64-2.7/mididings
+copying mididings/arguments.py -> build/lib.linux-x86_64-2.7/mididings
+copying mididings/misc.py -> build/lib.linux-x86_64-2.7/mididings
+copying mididings/constants.py -> build/lib.linux-x86_64-2.7/mididings
+copying mididings/util.py -> build/lib.linux-x86_64-2.7/mididings
+copying mididings/__init__.py -> build/lib.linux-x86_64-2.7/mididings
+copying mididings/unitrepr.py -> build/lib.linux-x86_64-2.7/mididings
+creating build/lib.linux-x86_64-2.7/mididings/units
+copying mididings/units/splits.py -> build/lib.linux-x86_64-2.7/mididings/units
+copying mididings/units/filters.py -> build/lib.linux-x86_64-2.7/mididings/units
+copying mididings/units/base.py -> build/lib.linux-x86_64-2.7/mididings/units
+copying mididings/units/engine.py -> build/lib.linux-x86_64-2.7/mididings/units
+copying mididings/units/printing.py -> build/lib.linux-x86_64-2.7/mididings/units
+copying mididings/units/call.py -> build/lib.linux-x86_64-2.7/mididings/units
+copying mididings/units/generators.py -> build/lib.linux-x86_64-2.7/mididings/units
+copying mididings/units/modifiers.py -> build/lib.linux-x86_64-2.7/mididings/units
+copying mididings/units/init.py -> build/lib.linux-x86_64-2.7/mididings/units
+copying mididings/units/__init__.py -> build/lib.linux-x86_64-2.7/mididings/units
+creating build/lib.linux-x86_64-2.7/mididings/extra
+copying mididings/extra/pedal_noteoff.py -> build/lib.linux-x86_64-2.7/mididings/extra
+copying mididings/extra/floating_split.py -> build/lib.linux-x86_64-2.7/mididings/extra
+copying mididings/extra/memorize_scene.py -> build/lib.linux-x86_64-2.7/mididings/extra
+copying mididings/extra/per_channel.py -> build/lib.linux-x86_64-2.7/mididings/extra
+copying mididings/extra/engine.py -> build/lib.linux-x86_64-2.7/mididings/extra
+copying mididings/extra/harmonizer.py -> build/lib.linux-x86_64-2.7/mididings/extra
+copying mididings/extra/osc.py -> build/lib.linux-x86_64-2.7/mididings/extra
+copying mididings/extra/panic.py -> build/lib.linux-x86_64-2.7/mididings/extra
+copying mididings/extra/polyphony.py -> build/lib.linux-x86_64-2.7/mididings/extra
+copying mididings/extra/dbus.py -> build/lib.linux-x86_64-2.7/mididings/extra
+copying mididings/extra/inotify.py -> build/lib.linux-x86_64-2.7/mididings/extra
+copying mididings/extra/voices.py -> build/lib.linux-x86_64-2.7/mididings/extra
+copying mididings/extra/latch.py -> build/lib.linux-x86_64-2.7/mididings/extra
+copying mididings/extra/suppress_pc.py -> build/lib.linux-x86_64-2.7/mididings/extra
+copying mididings/extra/gm.py -> build/lib.linux-x86_64-2.7/mididings/extra
+copying mididings/extra/key_color.py -> build/lib.linux-x86_64-2.7/mididings/extra
+copying mididings/extra/__init__.py -> build/lib.linux-x86_64-2.7/mididings/extra
+creating build/lib.linux-x86_64-2.7/mididings/live
+copying mididings/live/livedings.py -> build/lib.linux-x86_64-2.7/mididings/live
+copying mididings/live/osc_control.py -> build/lib.linux-x86_64-2.7/mididings/live
+copying mididings/live/widgets.py -> build/lib.linux-x86_64-2.7/mididings/live
+copying mididings/live/__init__.py -> build/lib.linux-x86_64-2.7/mididings/live
+running build_ext
+building '_mididings' extension
+creating build/temp.linux-x86_64-2.7
+creating build/temp.linux-x86_64-2.7/src
+creating build/temp.linux-x86_64-2.7/src/backend
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -fwrapv -O2 -Wall -fno-strict-aliasing -g -O2 -fdebug-prefix-map=/home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -Wfatal-errors -finline-functions -fvisibility=hidden -DENABLE_ALSA_SEQ=1 -DENABLE_JACK_MIDI=1 -DENABLE_SMF=1 -Isrc -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/alsa -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/python2.7 -c src/engine.cc -o build/temp.linux-x86_64-2.7/src/engine.o
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -fwrapv -O2 -Wall -fno-strict-aliasing -g -O2 -fdebug-prefix-map=/home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -Wfatal-errors -finline-functions -fvisibility=hidden -DENABLE_ALSA_SEQ=1 -DENABLE_JACK_MIDI=1 -DENABLE_SMF=1 -Isrc -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/alsa -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/python2.7 -c src/patch.cc -o build/temp.linux-x86_64-2.7/src/patch.o
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -fwrapv -O2 -Wall -fno-strict-aliasing -g -O2 -fdebug-prefix-map=/home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -Wfatal-errors -finline-functions -fvisibility=hidden -DENABLE_ALSA_SEQ=1 -DENABLE_JACK_MIDI=1 -DENABLE_SMF=1 -Isrc -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/alsa -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/python2.7 -c src/python_caller.cc -o build/temp.linux-x86_64-2.7/src/python_caller.o
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -fwrapv -O2 -Wall -fno-strict-aliasing -g -O2 -fdebug-prefix-map=/home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -Wfatal-errors -finline-functions -fvisibility=hidden -DENABLE_ALSA_SEQ=1 -DENABLE_JACK_MIDI=1 -DENABLE_SMF=1 -Isrc -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/alsa -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/python2.7 -c src/python_module.cc -o build/temp.linux-x86_64-2.7/src/python_module.o
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -fwrapv -O2 -Wall -fno-strict-aliasing -g -O2 -fdebug-prefix-map=/home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -Wfatal-errors -finline-functions -fvisibility=hidden -DENABLE_ALSA_SEQ=1 -DENABLE_JACK_MIDI=1 -DENABLE_SMF=1 -Isrc -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/alsa -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/python2.7 -c src/backend/base.cc -o build/temp.linux-x86_64-2.7/src/backend/base.o
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -fwrapv -O2 -Wall -fno-strict-aliasing -g -O2 -fdebug-prefix-map=/home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -Wfatal-errors -finline-functions -fvisibility=hidden -DENABLE_ALSA_SEQ=1 -DENABLE_JACK_MIDI=1 -DENABLE_SMF=1 -Isrc -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/alsa -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/python2.7 -c src/backend/alsa.cc -o build/temp.linux-x86_64-2.7/src/backend/alsa.o
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -fwrapv -O2 -Wall -fno-strict-aliasing -g -O2 -fdebug-prefix-map=/home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -Wfatal-errors -finline-functions -fvisibility=hidden -DENABLE_ALSA_SEQ=1 -DENABLE_JACK_MIDI=1 -DENABLE_SMF=1 -Isrc -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/alsa -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/python2.7 -c src/backend/jack.cc -o build/temp.linux-x86_64-2.7/src/backend/jack.o
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -fwrapv -O2 -Wall -fno-strict-aliasing -g -O2 -fdebug-prefix-map=/home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -Wfatal-errors -finline-functions -fvisibility=hidden -DENABLE_ALSA_SEQ=1 -DENABLE_JACK_MIDI=1 -DENABLE_SMF=1 -Isrc -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/alsa -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/python2.7 -c src/backend/jack_buffered.cc -o build/temp.linux-x86_64-2.7/src/backend/jack_buffered.o
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -fwrapv -O2 -Wall -fno-strict-aliasing -g -O2 -fdebug-prefix-map=/home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -Wfatal-errors -finline-functions -fvisibility=hidden -DENABLE_ALSA_SEQ=1 -DENABLE_JACK_MIDI=1 -DENABLE_SMF=1 -Isrc -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/alsa -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/python2.7 -c src/backend/jack_realtime.cc -o build/temp.linux-x86_64-2.7/src/backend/jack_realtime.o
+x86_64-linux-gnu-gcc -pthread -DNDEBUG -fwrapv -O2 -Wall -fno-strict-aliasing -g -O2 -fdebug-prefix-map=/home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -fPIC -Wfatal-errors -finline-functions -fvisibility=hidden -DENABLE_ALSA_SEQ=1 -DENABLE_JACK_MIDI=1 -DENABLE_SMF=1 -Isrc -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/alsa -I/usr/include/glib-2.0 -I/usr/lib/x86_64-linux-gnu/glib-2.0/include -I/usr/include/python2.7 -c src/backend/smf.cc -o build/temp.linux-x86_64-2.7/src/backend/smf.o
+x86_64-linux-gnu-g++ -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-z,relro -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -Wdate-time -D_FORTIFY_SOURCE=2 -g -fdebug-prefix-map=/build/python2.7-2.7.16=. -fstack-protector-strong -Wformat -Werror=format-security -Wl,-z,relro -g -O2 -fdebug-prefix-map=/home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-2.7/src/engine.o build/temp.linux-x86_64-2.7/src/patch.o build/temp.linux-x86_64-2.7/src/python_caller.o build/temp.linux-x86_64-2.7/src/python_module.o build/temp.linux-x86_64-2.7/src/backend/base.o build/temp.linux-x86_64-2.7/src/backend/alsa.o build/temp.linux-x86_64-2.7/src/backend/jack.o build/temp.linux-x86_64-2.7/src/backend/jack_buffered.o build/temp.linux-x86_64-2.7/src/backend/jack_realtime.o build/temp.linux-x86_64-2.7/src/backend/smf.o -lglib-2.0 -lboost_python -lboost_thread -lasound -ljack -lsmf -lm -lglib-2.0 -o build/lib.linux-x86_64-2.7/_mididings.so
+running build_scripts
+creating build/scripts-2.7
+copying and adjusting scripts/mididings -> build/scripts-2.7
+copying and adjusting scripts/livedings -> build/scripts-2.7
+changing mode of build/scripts-2.7/mididings from 644 to 755
+changing mode of build/scripts-2.7/livedings from 644 to 755
+make[1]: Leaving directory '/home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0'
+   dh_auto_test
+dh_auto_test: Please use the third-party "pybuild" build system instead of python-distutils
+dh_auto_test: This feature will be removed in compat 12.
+ fakeroot debian/rules binary
+dh binary --with python2
+   dh_testroot
+   dh_prep
+   dh_auto_install
+dh_auto_install: Please use the third-party "pybuild" build system instead of python-distutils
+dh_auto_install: This feature will be removed in compat 12.
+	python setup.py install --force --root=/home/jeb/BNR/BUILD/mididings/mididings-0\~20120419\~ds0/debian/tmp --no-compile -O0 --install-layout=deb
+running install
+running build
+running build_py
+running build_ext
+running build_scripts
+running install_lib
+creating /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp
+creating /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr
+creating /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib
+creating /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7
+creating /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages
+copying build/lib.linux-x86_64-2.7/_mididings.so -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages
+creating /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings
+copying build/lib.linux-x86_64-2.7/mididings/overload.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings
+creating /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/extra
+copying build/lib.linux-x86_64-2.7/mididings/extra/pedal_noteoff.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/extra
+copying build/lib.linux-x86_64-2.7/mididings/extra/floating_split.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/extra
+copying build/lib.linux-x86_64-2.7/mididings/extra/memorize_scene.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/extra
+copying build/lib.linux-x86_64-2.7/mididings/extra/per_channel.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/extra
+copying build/lib.linux-x86_64-2.7/mididings/extra/engine.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/extra
+copying build/lib.linux-x86_64-2.7/mididings/extra/harmonizer.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/extra
+copying build/lib.linux-x86_64-2.7/mididings/extra/osc.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/extra
+copying build/lib.linux-x86_64-2.7/mididings/extra/panic.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/extra
+copying build/lib.linux-x86_64-2.7/mididings/extra/polyphony.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/extra
+copying build/lib.linux-x86_64-2.7/mididings/extra/dbus.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/extra
+copying build/lib.linux-x86_64-2.7/mididings/extra/inotify.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/extra
+copying build/lib.linux-x86_64-2.7/mididings/extra/voices.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/extra
+copying build/lib.linux-x86_64-2.7/mididings/extra/latch.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/extra
+copying build/lib.linux-x86_64-2.7/mididings/extra/suppress_pc.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/extra
+copying build/lib.linux-x86_64-2.7/mididings/extra/gm.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/extra
+copying build/lib.linux-x86_64-2.7/mididings/extra/key_color.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/extra
+copying build/lib.linux-x86_64-2.7/mididings/extra/__init__.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/extra
+creating /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/units
+copying build/lib.linux-x86_64-2.7/mididings/units/splits.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/units
+copying build/lib.linux-x86_64-2.7/mididings/units/filters.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/units
+copying build/lib.linux-x86_64-2.7/mididings/units/base.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/units
+copying build/lib.linux-x86_64-2.7/mididings/units/engine.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/units
+copying build/lib.linux-x86_64-2.7/mididings/units/printing.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/units
+copying build/lib.linux-x86_64-2.7/mididings/units/call.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/units
+copying build/lib.linux-x86_64-2.7/mididings/units/generators.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/units
+copying build/lib.linux-x86_64-2.7/mididings/units/modifiers.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/units
+copying build/lib.linux-x86_64-2.7/mididings/units/init.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/units
+copying build/lib.linux-x86_64-2.7/mididings/units/__init__.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/units
+copying build/lib.linux-x86_64-2.7/mididings/patch.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings
+copying build/lib.linux-x86_64-2.7/mididings/engine.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings
+creating /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/live
+copying build/lib.linux-x86_64-2.7/mididings/live/livedings.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/live
+copying build/lib.linux-x86_64-2.7/mididings/live/osc_control.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/live
+copying build/lib.linux-x86_64-2.7/mididings/live/widgets.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/live
+copying build/lib.linux-x86_64-2.7/mididings/live/__init__.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings/live
+copying build/lib.linux-x86_64-2.7/mididings/scene.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings
+copying build/lib.linux-x86_64-2.7/mididings/event.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings
+copying build/lib.linux-x86_64-2.7/mididings/setup.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings
+copying build/lib.linux-x86_64-2.7/mididings/arguments.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings
+copying build/lib.linux-x86_64-2.7/mididings/misc.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings
+copying build/lib.linux-x86_64-2.7/mididings/constants.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings
+copying build/lib.linux-x86_64-2.7/mididings/util.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings
+copying build/lib.linux-x86_64-2.7/mididings/__init__.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings
+copying build/lib.linux-x86_64-2.7/mididings/unitrepr.py -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings
+running install_scripts
+creating /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/bin
+copying build/scripts-2.7/livedings -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/bin
+copying build/scripts-2.7/mididings -> /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/bin
+changing mode of /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/bin/livedings to 755
+changing mode of /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/bin/mididings to 755
+running install_egg_info
+Writing /home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0/debian/tmp/usr/lib/python2.7/dist-packages/mididings-20120419.egg-info
+   dh_install
+   dh_installdocs
+   debian/rules override_dh_installchangelogs
+make[1]: Entering directory '/home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0'
+dh_installchangelogs NEWS
+make[1]: Leaving directory '/home/jeb/BNR/BUILD/mididings/mididings-0~20120419~ds0'
+   dh_installexamples
+   dh_installman
+   dh_python2
+W: dh_python2:479: Please add dh-python package to Build-Depends
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_missing
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/python-mididings/usr/lib/python2.7/dist-packages/_mididings.so was not linked against libglib-2.0.so.0 (it uses none of the library's symbols)
+   dh_installdeb
+   dh_gencontrol
+dpkg-gencontrol: warning: package python-mididings: substitution variable ${python:Versions} unused, but is defined
+dpkg-gencontrol: warning: package python-mididings: substitution variable ${python:Versions} unused, but is defined
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'python-mididings-dbgsym' in '../python-mididings-dbgsym_0~20120419~ds0-7+1bnrcustom_amd64.deb'.
+dpkg-deb: building package 'python-mididings' in '../python-mididings_0~20120419~ds0-7+1bnrcustom_amd64.deb'.
+dpkg-deb: building package 'mididings' in '../mididings_0~20120419~ds0-7+1bnrcustom_all.deb'.
+dpkg-deb: building package 'mididings-doc' in '../mididings-doc_0~20120419~ds0-7+1bnrcustom_all.deb'.
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../mididings_0~20120419~ds0-7+1bnrcustom_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)

@@ -1,0 +1,252 @@
+//==============================================================
+// Timpani Hit LR
+//
+//   timpani.sfz from No Budget Orchestra - https://nobudgetorchestra.net
+//
+//   ... modified to permit individual use of left and right
+//       timpani hits instead of the default round robin
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+//==============================================================
+// Timpani Hit
+//
+//   timpani.sfz from No Budget Orchestra - https://nobudgetorchestra.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+<group>
+// ----------------- Left Hand -----------------
+ampeg_attack=0.03
+// randomize like a real player (PB)
+amp_random=1
+pitch_random=20
+
+
+// roll off the lowest freqencies
+eq1_freq=25.2
+eq1_bw=1.25
+eq1_gain=-10.7
+
+// remove some mud (PB)
+eq1_freq=323.1
+eq1_bw=1.06
+eq1_gain=-6.1
+
+// add some clarity with a little high end boost (PB)
+eq1_freq=2843.4
+eq1_bw=1.48
+eq1_gain=4.4
+
+ampeg_sustain=0 ampeg_hold=0 ampeg_decay=20 ampeg_release=3
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\C2-PB.wav
+volume=4
+
+lokey=c2 hikey=c2 pitch_keycenter=c2
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\D2-PB.wav
+volume=4
+
+lokey=c#2 hikey=d2 pitch_keycenter=d2
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\E2-PB.wav
+volume=6
+
+lokey=d#2 hikey=e2 pitch_keycenter=e2
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\F2-PB.wav
+volume=6
+
+lokey=f2 hikey=f#2 pitch_keycenter=f2
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\Ab2-PB.wav
+volume=4
+
+lokey=g2 hikey=g#2 pitch_keycenter=g#2
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\A2-PB.wav
+volume=4
+
+lokey=a2 hikey=a2 pitch_keycenter=a2
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\Bb2-PB.wav
+volume=1
+
+lokey=a#2 hikey=a#2 pitch_keycenter=a#2
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\C3-PB.wav
+volume=1
+
+lokey=b2 hikey=c3 pitch_keycenter=c3
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\D3-PB.wav
+volume=2
+
+lokey=c#3 hikey=d#3 pitch_keycenter=d3
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\Gb3-PB.wav
+volume=4
+
+lokey=e3 hikey=f#3 pitch_keycenter=f#3
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\G3-PB.wav
+volume=4
+
+lokey=g3 hikey=g3 pitch_keycenter=g3
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\Ab3-PB.wav
+volume=4
+
+lokey=g#3 hikey=g#3 pitch_keycenter=g#3
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\A3-PB.wav
+volume=3
+
+lokey=a3 hikey=a3 pitch_keycenter=a3
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\Bb3-PB.wav
+volume=4
+
+lokey=a#3 hikey=c4 pitch_keycenter=a#3
+
+
+
+//==============================================================
+// Timpani Hit
+//
+//   timpani.sfz from No Budget Orchestra - https://nobudgetorchestra.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+<group>
+// ----------------- Right Hand -----------------
+ampeg_attack=0.03
+// randomize like a real player (PB)
+amp_random=1
+pitch_random=20
+
+
+// roll off the lowest freqencies
+eq1_freq=25.2
+eq1_bw=1.25
+eq1_gain=-10.7
+
+// remove some mud (PB)
+eq1_freq=323.1
+eq1_bw=1.06
+eq1_gain=-6.1
+
+// add some clarity with a little high end boost (PB)
+eq1_freq=2843.4
+eq1_bw=1.48
+eq1_gain=4.4
+
+ampeg_sustain=0 ampeg_hold=0 ampeg_decay=20 ampeg_release=3
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\C2-PB.wav
+volume=4
+
+lokey=c5 hikey=c5 pitch_keycenter=c5
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\D2-PB.wav
+volume=4
+
+lokey=c#5 hikey=d5 pitch_keycenter=d5
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\E2-PB.wav
+volume=6
+
+lokey=d#5 hikey=e5 pitch_keycenter=e5
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\F2-PB.wav
+volume=6
+
+lokey=f5 hikey=f#5 pitch_keycenter=f5
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\Ab2-PB.wav
+volume=4
+
+lokey=g5 hikey=g#5 pitch_keycenter=g#5
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\A2-PB.wav
+volume=4
+
+lokey=a5 hikey=a5 pitch_keycenter=a5
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\Bb2-PB.wav
+volume=1
+
+lokey=a#2 hikey=a#2 pitch_keycenter=a#2
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\C3-PB.wav
+volume=1
+
+lokey=b5 hikey=c6 pitch_keycenter=c6
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\D3-PB.wav
+volume=2
+
+lokey=c#6 hikey=d#6 pitch_keycenter=d6
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\Gb3-PB.wav
+volume=4
+
+lokey=e6 hikey=f#6 pitch_keycenter=f#6
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\G3-PB.wav
+volume=4
+
+lokey=g6 hikey=g6 pitch_keycenter=g6
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\Ab3-PB.wav
+volume=4
+
+lokey=g#6 hikey=g#6 pitch_keycenter=g#6
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\A3-PB.wav
+volume=3
+
+lokey=a6 hikey=a6 pitch_keycenter=a6
+
+<region>
+sample=..\libs\NoBudgetOrch\Timpani\Bb3-PB.wav
+volume=4
+
+lokey=a#6 hikey=c7 pitch_keycenter=a#6
+
+
+

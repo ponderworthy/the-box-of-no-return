@@ -1,0 +1,72 @@
+# jack-audio-connection-kit po-debconf translation to Spanish
+# Copyright (C) 2009 Software in the Public Interest
+# This file is distributed under the same license as the jack-audio-connection-kit package.
+#
+# Changes:
+#   - Initial translation
+#       Francisco Javier Cuadrado <fcocuadrado@gmail.com>, 2009
+#
+# Traductores, si no conocen el formato PO, merece la pena leer la
+# documentación de gettext, especialmente las secciones dedicadas a este
+# formato, por ejemplo ejecutando:
+#       info -n '(gettext)PO Files'
+#       info -n '(gettext)Header Entry'
+#
+# Equipo de traducción al español, por favor, lean antes de traducir
+# los siguientes documentos:
+#
+#   - El proyecto de traducción de Debian al español
+#     http://www.debian.org/intl/spanish/
+#     especialmente las notas de traducción en
+#     http://www.debian.org/intl/spanish/notas
+#
+#   - La guía de traducción de po's de debconf:
+#     /usr/share/doc/po-debconf/README-trans
+#     o http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: jack-audio-connection-kit 0.116.2+svn3592-4\n"
+"Report-Msgid-Bugs-To: jackd2@packages.debian.org\n"
+"POT-Creation-Date: 2011-12-22 23:36+0100\n"
+"PO-Revision-Date: 2009-10-10 18:00+0200\n"
+"Last-Translator: Francisco Javier Cuadrado <fcocuadrado@gmail.com>\n"
+"Language-Team: Debian l10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid "Enable realtime process priority?"
+msgstr "¿Desea habilitar la prioridad en tiempo real del proceso?"
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid ""
+"If you want to run jackd with realtime priorities, the user starting jackd "
+"needs realtime permissions. Accept this option to create the file /etc/"
+"security/limits.d/audio.conf, granting realtime priority and memlock "
+"privileges to the audio group."
+msgstr ""
+"Si quiere ejecutar jackd con prioridades en tiempo real, el usuario que "
+"ejecute jackd necesita tener permisos para dicha prioridad. Acepte esta "
+"opción para crear el archivo «/etc/security/limits.d/audio.conf», para "
+"permitir la prioridad en tiempo real y los privilegios de «memlock» al grupo "
+"audio."
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid ""
+"Running jackd with realtime priority minimizes latency, but may lead to "
+"complete system lock-ups by requesting all the available physical system "
+"memory, which is unacceptable in multi-user environments."
+msgstr ""
+"Ejecutar jackd con la prioridad en tiempo real reduce la latencia, pero "
+"puede llevar a un bloqueo completo del sistema al pedir toda la memoria "
+"física disponible del sistema, lo que es inaceptable en entornos "
+"multiusuario."

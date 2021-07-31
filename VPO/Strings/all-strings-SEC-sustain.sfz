@@ -1,0 +1,769 @@
+//==============================================================
+// All Strings Section : Sustain
+//
+//   This is a combination of:
+//
+//     bass-SEC-sustain.sfz
+//     cello-SEC-sustain.sfz
+//     viola-SEC-sustain.sfz
+//     1st-violin-SEC-sustain.sfz
+//
+//   by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+//==============================================================
+// Bass Section : Sustain
+//
+//   Strings - Basses Sustain.sfz from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//        Basses Sustain
+// ------------------------------
+
+<group>
+xfout_lokey=c2
+xfout_hikey=b2
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+ampeg_attack=0.300
+ampeg_vel2attack=-0.300
+// slower release for slower notes = legato effect (PB)
+ampeg_release=2.25
+ampeg_vel2release=-1.0
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-sus-c1-PB-loop.wav
+pan=10
+volume=-0.5
+lokey=c1
+hikey=d#1
+pitch_keycenter=c1
+tune=6
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-sus-f#1-PB-loop.wav
+pan=5
+volume=-1
+lokey=e1
+hikey=g1
+pitch_keycenter=f#1
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-sus-a1-PB-loop.wav
+pan=10
+volume=0.5
+lokey=g#1
+hikey=a#1
+pitch_keycenter=a1
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-sus-c2-PB-loop.wav
+lokey=b1
+hikey=c#2
+pitch_keycenter=c2
+volume=-0.5
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-sus-d#2-PB-loop.wav
+volume=-0.5
+lokey=d2
+hikey=e2
+pitch_keycenter=d#2
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-sus-f#2-PB-loop.wav
+volume=-0.5
+lokey=f2
+hikey=g2
+pitch_keycenter=f#2
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-sus-a2-PB-loop.wav
+volume=1
+
+lokey=g#2
+hikey=a#2
+pitch_keycenter=a2
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-sus-c3-PB-loop.wav
+volume=-0.5
+lokey=b2
+hikey=c#3
+pitch_keycenter=c3
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-sus-d#3-PB-loop.wav
+volume=1
+lokey=d3
+hikey=e3
+pitch_keycenter=d#3
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-sus-f#3-PB-loop.wav
+volume=1
+lokey=f3
+hikey=g3
+pitch_keycenter=f#3
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-sus-a3-PB-loop.wav
+lokey=g#3
+hikey=a#3
+pitch_keycenter=a3
+tune=4
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-sus-c4-PB-loop.wav
+volume=0.5
+lokey=b3
+hikey=g4
+pitch_keycenter=c4
+
+
+
+//==============================================================
+// Cello Section : Sustain
+//
+//   cellos.sfz from No Budget Orchestra - https://nobudgetorchestra.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+<group>
+xfin_lokey=c2
+xfin_hikey=b2
+xfout_lokey=c3
+xfout_hikey=f3 // slower release for slower notes = legato effect (PB)
+ampeg_release=2.1
+ampeg_vel2release=-1.0
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+ampeg_attack=0.6
+
+
+// removed control, doesn't work when merged with other files (PB)
+<region> lokey=c2 hikey=d2 pitch_keycenter=c#2 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\2_Db-PB-loop.wav
+volume=-1.5
+tune=-5
+
+<region> lokey=d#2 hikey=f2 pitch_keycenter=e2 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\2_E-PB-loop.wav
+pan=-5
+tune=-5
+
+<region> lokey=f#2 hikey=g#2 pitch_keycenter=g2 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\2_G-PB-loop.wav
+volume=-0.5
+tune=-5
+
+<region> lokey=a2 hikey=b2 pitch_keycenter=a#2 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\2_Bb-PB-loop.wav
+volume=0 pan=5
+tune=-5
+
+<region> lokey=c3 hikey=d#3 pitch_keycenter=c#3 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\3_Db-PB-loop.wav
+pan=5
+tune=-5
+
+// removed 3_E-PB-loop - sounded weaker than others(PB)
+
+<region> lokey=e3 hikey=b3 pitch_keycenter=a#3 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\3_Bb-PB-loop.wav
+volume=-1 tune=-5
+
+<region> lokey=c4 hikey=d4 pitch_keycenter=c#4 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\4_Db-PB-loop.wav
+volume=-1.5
+tune=-5
+<region> lokey=d#4 hikey=f4 pitch_keycenter=e4 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\4_E-PB-loop.wav
+volume=-1.5
+tune=-5
+<region> lokey=f#4 hikey=g#4 pitch_keycenter=g4 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\4_G.wav
+volume=-1
+tune=-5
+<region> lokey=a4 hikey=c5 pitch_keycenter=a#4 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\4_Bb.wav
+pan=5 tune=5 volume=-1
+
+<region> lokey=c#5 hikey=a5 pitch_keycenter=e5 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\5_E.wav
+pan=-5 volume=-1
+tune=-5
+// noise reduction (PB)
+eq1_freq=61.6
+eq1_bw=4
+eq1_gain=-12.5
+
+eq2_freq=301.6
+eq2_bw=1.12
+eq2_gain=-11.2
+
+// removed 5_Bb.wav - too high (PB)
+
+
+
+
+//==============================================================
+// Viola Section : Sustain
+//
+//   Violas Sus.sfz     from Mattias Westlund - http://mattiaswestlund.net
+//   ViolaEnsSusVib.sfz from Versilian Studios - http://vis.versilstudios.net/vsco-2.html
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+<group>
+xfin_lokey=c3
+xfin_hikey=f3
+xfout_lokey=g3
+xfout_hikey=c6
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+ampeg_attack=0.6 // longer attack (PB)
+volume=-2.68
+
+// ampeg_release=1
+// slower release for slower notes = legato effect (PB)
+ampeg_release=2.1
+ampeg_vel2release=-1.0
+ampeg_attack=0.6
+
+<region>
+sample=..\libs\Mattias-Westlund\ViolaSect\Samples\Violas_c3.wav
+lokey=c3
+hikey=c#3
+pitch_keycenter=c3
+
+<region>
+sample=..\libs\Mattias-Westlund\ViolaSect\Samples\Violas_d#3.wav
+lokey=d3
+hikey=e3
+pitch_keycenter=d#3
+volume=-5.5
+
+<region>
+sample=..\libs\Mattias-Westlund\ViolaSect\Samples\Violas_f#3.wav
+lokey=f3
+hikey=g3
+pitch_keycenter=f#3
+volume=-5.5
+
+<region>
+sample=..\libs\Mattias-Westlund\ViolaSect\Samples\Violas_a3.wav
+lokey=g#3
+hikey=a#3
+pitch_keycenter=a3
+volume=-5
+
+<region>
+sample=..\libs\Mattias-Westlund\ViolaSect\Samples\Violas_c4.wav
+lokey=b3
+hikey=c#4
+volume=-5
+
+<region>
+sample=..\libs\Mattias-Westlund\ViolaSect\Samples\Violas_d#4.wav
+lokey=d4
+hikey=e4
+pitch_keycenter=d#4
+volume=-5
+
+<region>
+sample=..\libs\Mattias-Westlund\ViolaSect\Samples\Violas_f#4.wav
+lokey=f4
+hikey=g4
+pitch_keycenter=f#4
+volume=-6
+
+<region>
+sample=..\libs\Mattias-Westlund\ViolaSect\Samples\Violas_a4.wav
+lokey=g#4
+hikey=a#4
+pitch_keycenter=a4
+volume=-6
+
+<region>
+sample=..\libs\Mattias-Westlund\ViolaSect\Samples\Violas_c5.wav
+lokey=b4
+hikey=c#5
+pitch_keycenter=c5
+
+<region>
+sample=..\libs\Mattias-Westlund\ViolaSect\Samples\Violas_d#5.wav
+lokey=d5
+hikey=e5
+pitch_keycenter=d#5
+volume=-6
+
+<region>
+sample=..\libs\Mattias-Westlund\ViolaSect\Samples\Violas_f#5.wav
+lokey=f5
+hikey=g5
+pitch_keycenter=f#5
+volume=-3
+
+// noise reduction (PB)
+eq1_freq=58.9
+eq1_bw=4
+eq1_gain=-12.4
+
+eq2_freq=249.2
+eq2_bw=2.29
+eq2_gain=-12.0
+
+<region>
+sample=..\libs\Mattias-Westlund\ViolaSect\Samples\Violas_a5.wav
+lokey=g#5
+hikey=a#5
+pitch_keycenter=a5
+volume=-3
+
+// noise reduction (PB)
+eq1_freq=58.9
+eq1_bw=4
+eq1_gain=-12.4
+
+eq2_freq=249.2
+eq2_bw=2.29
+eq2_gain=-12.0
+
+<region>
+sample=..\libs\Mattias-Westlund\ViolaSect\Samples\Violas_c6.wav
+lokey=b5
+hikey=c#6
+pitch_keycenter=c6
+volume=-2
+
+// noise reduction (PB)
+eq1_freq=58.9
+eq1_bw=4
+eq1_gain=-12.4
+
+eq2_freq=379.5
+eq2_bw=2.29
+eq2_gain=-10.6
+
+<region>
+sample=..\libs\Mattias-Westlund\ViolaSect\Samples\Violas_d#6.wav
+lokey=d6
+hikey=e6
+pitch_keycenter=d#6
+volume=-3
+
+// noise reduction (PB)
+eq1_freq=55.0
+eq1_bw=4
+eq1_gain=-12.2
+
+eq2_freq=422.5
+eq2_bw=1.86
+eq2_gain=-12.8
+
+<region>
+sample=..\libs\Mattias-Westlund\ViolaSect\Samples\Violas_f#6.wav
+lokey=f6
+hikey=g6
+pitch_keycenter=f#6
+volume=-2
+
+// noise reduction (PB)
+eq1_freq=58.9
+eq1_bw=4
+eq1_gain=-12.4
+
+eq2_freq=543.3
+eq2_bw=2.29
+eq2_gain=-12.6
+
+// remove control and global opcodes - not good when merging with other files
+
+<group>
+xfin_lokey=c3
+xfin_hikey=f3
+xfout_lokey=g3
+xfout_hikey=c6
+// longer attack (PB)
+ampeg_attack=0.6
+// slower release for slower notes = legato effect (PB)
+// ampeg_release=1
+ampeg_release=2.0
+ampeg_vel2release=-1.0
+volume=-1.25
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+ //Begin Group for entire instrument
+
+
+
+// removed low velocity samples - many didn't sound right (PB)
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Viola Section\susvib\ViolaEns_susvib_A3_v2_1-PB-loop.wav
+lokey=67
+hikey=70
+pitch_keycenter=69
+lovel=0
+hivel=127
+volume=6.75
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Viola Section\susvib\ViolaEns_susvib_B2_v2_1-PB-loop.wav
+lokey=57
+hikey=60
+pitch_keycenter=59
+lovel=0
+hivel=127
+volume=6.75
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Viola Section\susvib\ViolaEns_susvib_B4_v2_1-PB-loop.wav
+offset=2198
+lokey=81
+hikey=84
+pitch_keycenter=83
+lovel=0
+hivel=127
+volume=11.75
+// noise reduction (PB)
+eq1_freq=130
+eq1_bw=4
+eq1_gain=-20.8
+
+eq2_freq=582.4
+eq2_bw=0.41
+eq2_gain=-11.2
+
+
+// removed ViolaEns_susvib_C2 (PB)
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Viola Section\susvib\ViolaEns_susvib_C4_v2_1-PB-loop.wav
+lokey=71
+hikey=73
+pitch_keycenter=72
+lovel=0
+hivel=127
+volume=7.75
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Viola Section\susvib\ViolaEns_susvib_D2_v2_1-PB-loop.wav
+lokey=48
+hikey=50
+pitch_keycenter=50
+lovel=0
+hivel=127
+volume=7.75
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Viola Section\susvib\ViolaEns_susvib_D3_v2_1-PB-loop.wav
+lokey=61
+hikey=63
+pitch_keycenter=62
+lovel=0
+hivel=127
+volume=8.75
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Viola Section\susvib\ViolaEns_susvib_D5_v2_1-PB-loop.wav
+lokey=85
+hikey=93
+pitch_keycenter=86
+lovel=0
+hivel=127
+volume=9.75
+// noise reduction (PB)
+eq1_freq=130
+eq1_bw=4
+eq1_gain=-20.8
+
+eq2_freq=667.8
+eq2_bw=0.64
+eq2_gain=-10.8
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Viola Section\susvib\ViolaEns_susvib_E2_v2_1-PB-loop.wav
+lokey=51
+hikey=53
+pitch_keycenter=52
+lovel=0
+hivel=127
+volume=10.75
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Viola Section\susvib\ViolaEns_susvib_E4_v2_1-PB-loop.wav
+pan=7
+
+lokey=74
+hikey=77
+pitch_keycenter=76
+lovel=0
+hivel=127
+volume=6.75
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Viola Section\susvib\ViolaEns_susvib_F3_v2_1-PB-loop.wav
+lokey=64
+hikey=66
+pitch_keycenter=65
+lovel=0
+hivel=127
+volume=8.75
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Viola Section\susvib\ViolaEns_susvib_G2_v2_1-PB-loop.wav
+lokey=54
+hikey=56
+pitch_keycenter=55
+lovel=0
+hivel=127
+volume=7.75
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Viola Section\susvib\ViolaEns_susvib_G4_v2_1-PB-loop.wav
+lokey=78
+hikey=80
+pitch_keycenter=79
+lovel=0
+hivel=127
+volume=9.75
+// noise reduction (PB)
+eq1_freq=130
+eq1_bw=4
+eq1_gain=-20.8
+
+eq2_freq=399.4
+eq2_bw=0.41
+eq2_gain=-11.0
+
+
+
+
+
+//==============================================================
+// 1st Violin Section : Sustain
+//
+//   Strings - 1st Violins Sustain.sfz from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//      1st Violins Sustain
+// ------------------------------
+
+<group>
+xfin_lokey=g3
+xfin_hikey=c6
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+// slower attack for sustain (PB)
+ampeg_attack=0.4
+ampeg_vel2attack=-0.180
+// slower release for slower notes = legato effect (PB)
+ampeg_release=1.9
+ampeg_vel2release=-1.0
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-g3.wav
+lokey=g3
+hikey=g#3
+pitch_keycenter=g3
+tune=-10
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-a#3.wav
+lokey=a3
+hikey=b3
+pitch_keycenter=a#3
+tune=-5
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-c#4.wav
+lokey=c4
+hikey=d4
+pitch_keycenter=c#4
+tune=-5
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-e4.wav
+lokey=d#4
+hikey=f4
+pitch_keycenter=e4
+tune=-10
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-g4.wav
+lokey=f#4
+hikey=g#4
+pitch_keycenter=g4
+tune=-10
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-a#4.wav
+lokey=a4
+hikey=b4
+pitch_keycenter=a#4
+tune=-10
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-c#5.wav
+lokey=c5
+hikey=d5
+pitch_keycenter=c#5
+tune=-5
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-e5.wav
+lokey=d#5
+hikey=f5
+pitch_keycenter=e5
+tune=-10
+// noise reduction (PB)
+eq1_freq=102.7
+eq1_bw=4
+eq1_gain=-11.4
+
+eq2_freq=479.2
+eq2_bw=1.17
+eq2_gain=-11.5
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-g5.wav
+volume=2
+lokey=f#5
+hikey=g#5
+pitch_keycenter=g5
+tune=-10
+// noise reduction (PB)
+eq1_freq=102.7
+eq1_bw=4
+eq1_gain=-11.4
+
+eq2_freq=479.2
+eq2_bw=1.17
+eq2_gain=-11.5
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-a#5.wav
+volume=3
+lokey=a5
+hikey=b5
+pitch_keycenter=a#5
+tune=-10
+// noise reduction (PB)
+eq1_freq=102.7
+eq1_bw=4
+eq1_gain=-11.4
+
+eq2_freq=479.2
+eq2_bw=1.17
+eq2_gain=-11.5
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-c#6.wav
+volume=3
+lokey=c6
+hikey=d6
+pitch_keycenter=c#6
+tune=-5
+// noise reduction (PB)
+eq1_freq=102.7
+eq1_bw=4
+eq1_gain=-11.4
+
+eq2_freq=631.1
+eq2_bw=2
+eq2_gain=-11.9
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-e6.wav
+volume=2
+lokey=d#6
+hikey=f6
+pitch_keycenter=e6
+tune=-15
+// noise reduction (PB)
+eq1_freq=102.7
+eq1_bw=4
+eq1_gain=-11.4
+
+eq2_freq=631.1
+eq2_bw=2
+eq2_gain=-11.9
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-g6.wav
+volume=2
+lokey=f#6
+hikey=g#6
+pitch_keycenter=g6
+tune=-10
+// noise reduction (PB)
+eq1_freq=102.7
+eq1_bw=4
+eq1_gain=-11.4
+
+eq2_freq=631.1
+eq2_bw=2
+eq2_gain=-11.9
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-a#6.wav
+volume=1
+lokey=a6
+hikey=a7
+pitch_keycenter=a#6
+tune=-10
+// noise reduction (PB)
+eq1_freq=102.7
+eq1_bw=4
+eq1_gain=-11.4
+
+eq2_freq=631.1
+eq2_bw=2
+eq2_gain=-11.9
+
+

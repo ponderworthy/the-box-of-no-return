@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+CONFIG_FILE=/etc/security/limits.d/audio.conf
+
+if [ "$1" = "purge" ]; then
+	for conffile in ${CONFIG_FILE} ${CONFIG_FILE}.disabled; do
+		if [ -e ${conffile} ]; then
+			rm ${conffile}
+		fi
+	done
+
+	# if we still have debconf, also remove our entries from the DB
+	if [ -e /usr/share/debconf/confmodule ]; then
+		# Source debconf library.
+		. /usr/share/debconf/confmodule
+		db_purge
+	fi
+fi
+
+#DEBHELPER#

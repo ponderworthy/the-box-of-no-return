@@ -1,0 +1,109 @@
+Source: jackd2
+Section: sound
+Priority: optional
+Maintainer: Debian Multimedia Maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Uploaders: Adrian Knoth <adi@drcomp.erfurt.thur.de>, Jonas Smedegaard <dr@jones.dk>, Reinhard Tartler <siretart@tauware.de>
+Build-Depends: @cdbs@,
+ d-shlibs,
+ python (>= 2.6.6-3~),
+ dh-python,
+ libsamplerate-dev,
+ libasound2-dev (>= 1.0.18) [linux-any],
+ libdbus-1-dev,
+ libexpat1-dev,
+ libsndfile1-dev,
+ libncurses-dev,
+ libreadline-dev,
+ libraw1394-dev [linux-any],
+ libffado-dev (>= 2.0.0) [linux-any],
+ libopus-dev,
+ po-debconf
+Standards-Version: 3.9.8
+Homepage: http://jackaudio.org/
+Vcs-Git: https://salsa.debian.org/multimedia-team/jackd2.git
+Vcs-Browser: https://salsa.debian.org/multimedia-team/jackd2
+
+Package: jackd2
+Architecture: any
+Replaces: libjack0 (<= 1.9.5~dfsg-13),
+	jackd (<< 3),
+	jack-daemon
+Provides: jack-daemon
+Conflicts: jack-daemon,
+	jackd (<< 3)
+Depends: ${shlibs:Depends},
+ ${misc:Depends},
+ ${python:Depends},
+ coreutils (>= 4.0),
+ python-dbus,
+ debconf | debconf-2.0,
+ libjack-jackd2-0 (= ${binary:Version})
+Pre-Depends: ${misc:Pre-Depends}
+Recommends: qjackctl,
+ libpam-modules,
+ jackd2-firewire [amd64 i386 powerpc]
+Suggests: jack-tools,
+ meterbridge
+Description: JACK Audio Connection Kit (server and example clients)
+ JACK is a low-latency sound server, allowing multiple applications to
+ connect to one audio device, and to share audio between themselves.
+ .
+ This package contains the daemon jackd as well as some example clients.
+
+Package: libjack-jackd2-0
+Architecture: any
+Section: libs
+Depends: ${shlibs:Depends},
+ ${misc:Depends}
+Conflicts: jackd2 (>> ${binary:Version}),
+ jackd2 (<< ${binary:Version}),
+ libjack0,
+ libjack-0.116,
+ libjack-0.125
+Suggests: jackd2 (= ${binary:Version})
+Provides: libjack-0.116, libjack-0.125
+Replaces: libjack-0.116, libjack-0.125, jackd2 (<< 1.9.10+20150825git1ed50c92~dfsg-5)
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Description: JACK Audio Connection Kit (libraries)
+ JACK is a low-latency sound server, allowing multiple applications to
+ connect to one audio device, and to share audio between themselves.
+ .
+ This package contains the shared libraries.
+
+Package: jackd2-firewire
+Architecture: amd64 i386 powerpc
+Provides: jackd-firewire
+Replaces: jackd-firewire
+Conflicts: jackd-firewire
+Pre-Depends: ${misc:Pre-Depends}
+Depends: ${shlibs:Depends},
+ ${misc:Depends},
+ jackd2 (= ${binary:Version})
+Description: JACK Audio Connection Kit (FFADO and FreeBoB backends)
+ JACK is a low-latency sound server, allowing multiple applications to
+ connect to one audio device, and to share audio between themselves.
+ .
+ This package contains the IEEE1394 (FireWire) backends FFADO and FreeBoB.
+
+Package: libjack-jackd2-dev
+Architecture: any
+Section: libdevel
+Multi-Arch: same
+Depends: libjack-jackd2-0 (= ${binary:Version}), 
+ ${asound:Depends},
+ ${misc:Depends},
+ ${shlibs:Depends},
+ pkg-config
+Conflicts: libjack0.100.0-dev (<< 0.102.20-2),
+ libjack-dev
+Provides: libjack0.100.0-dev,
+ libjack-dev-session,
+ libjack-dev
+Replaces: libjack0.71.2-0 (<< 0.75.0-1)
+Description: JACK Audio Connection Kit (development files)
+ JACK is a low-latency sound server, allowing multiple applications to
+ connect to one audio device, and to share audio between themselves.
+ .
+ This package contains files needed for the development of JACK applications
+ and an API reference.

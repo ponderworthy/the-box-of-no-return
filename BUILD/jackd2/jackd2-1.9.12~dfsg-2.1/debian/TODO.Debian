@@ -1,0 +1,2 @@
+  * Maybe start jackd as an init.d service.
+  * Verify that optionally marked symbols are not part of library ABI.

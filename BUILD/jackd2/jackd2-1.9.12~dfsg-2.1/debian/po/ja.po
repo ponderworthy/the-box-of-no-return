@@ -1,0 +1,48 @@
+# Copyright (C) 2009 Debian Multimedia Maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+# This file is distributed under the same license as jack-audio-connection-kit package.
+# Hideki Yamane (Debian-JP) <henrich@debian.or.jp>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: jack-audio-connection-kit 0.116.2+svn3592-3\n"
+"Report-Msgid-Bugs-To: jackd2@packages.debian.org\n"
+"POT-Creation-Date: 2011-12-22 23:36+0100\n"
+"PO-Revision-Date: 2009-10-14 17:32+0900\n"
+"Last-Translator: Hideki Yamane (Debian-JP) <henrich@debian.or.jp>\n"
+"Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid "Enable realtime process priority?"
+msgstr "リアルタイム実行優先度の設定を有効にしますか?"
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid ""
+"If you want to run jackd with realtime priorities, the user starting jackd "
+"needs realtime permissions. Accept this option to create the file /etc/"
+"security/limits.d/audio.conf, granting realtime priority and memlock "
+"privileges to the audio group."
+msgstr ""
+"jackd をリアルタイム優先度で動作させたい場合、jackd を起動したユーザはリアル"
+"タイム動作をさせられるパーミッションが必要です。このオプションを選択すると、/"
+"etc/security/limits.d/audio.conf ファイルを作成し、audio グループに対してリア"
+"ルタイム優先度と memlock 権限を許可します。"
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid ""
+"Running jackd with realtime priority minimizes latency, but may lead to "
+"complete system lock-ups by requesting all the available physical system "
+"memory, which is unacceptable in multi-user environments."
+msgstr ""
+"レイテンシー (遅延) を抑えて jackd をリアルタイム優先度でに動作させると、シス"
+"テムの物理メモリを可能な限り要求して完全にシステム停止を引き起こす可能性があ"
+"ります。これは、マルチユーザ環境では容認出来ません。"

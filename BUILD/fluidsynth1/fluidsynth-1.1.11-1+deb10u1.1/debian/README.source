@@ -1,0 +1,22 @@
+gbp clone
+---------
+
+Starting with gbp>0.8.1, here's an simple way to automatically fine-tune the
+repository in the following ways:
+- make git ignore any .pc/ directory (created by quilt)
+- enable the "--follow-tags" when running 'git-push', so it's harder
+  to forget to push packaging tags along with the branches.
+
+To enable this, run gbp-clone with the '--postclone debian/gbp/postclone.sh'
+option.
+To enable this for ALL repositories cloned via 'gbp' (in the future), do
+something like the following:
+
+    $ mkdir -p ~/bin
+    $ cp debian/gbp/postclone.sh ~/bin/gbphook-postclone
+    $ cat >> ~/.gbp.conf <<EOF
+    [clone]
+    postclone = ~/bin/gbphook-postclone
+    EOF
+
+ -- IOhannes m zmölnig (Debian/GNU) <umlaeute@debian.org>  Mon, 1 Aug 2016 12:15:50 +0200

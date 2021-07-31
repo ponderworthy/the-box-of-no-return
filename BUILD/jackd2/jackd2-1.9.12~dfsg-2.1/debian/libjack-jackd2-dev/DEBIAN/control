@@ -1,0 +1,20 @@
+Package: libjack-jackd2-dev
+Source: jackd2
+Version: 1.9.12~dfsg-2.1-bnrcustom
+Architecture: amd64
+Maintainer: Debian Multimedia Maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Installed-Size: 283
+Depends: libjack-jackd2-0 (= 1.9.12~dfsg-2.1-bnrcustom), pkg-config
+Conflicts: libjack-dev, libjack0.100.0-dev (<< 0.102.20-2)
+Replaces: libjack0.71.2-0 (<< 0.75.0-1)
+Provides: libjack-dev, libjack-dev-session, libjack0.100.0-dev
+Section: libdevel
+Priority: optional
+Multi-Arch: same
+Homepage: http://jackaudio.org/
+Description: JACK Audio Connection Kit (development files)
+ JACK is a low-latency sound server, allowing multiple applications to
+ connect to one audio device, and to share audio between themselves.
+ .
+ This package contains files needed for the development of JACK applications
+ and an API reference.

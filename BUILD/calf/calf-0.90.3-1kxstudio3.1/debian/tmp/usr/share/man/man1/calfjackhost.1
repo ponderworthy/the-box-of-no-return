@@ -1,0 +1,127 @@
+.TH calfjackhost 1 2019-03-21
+.SH NAME
+calfjackhost \- JACK wrapper for Calf plugins
+.SH SYNOPSIS
+.B calfjackhost [\fIoptions\fR] \fIplugin[:preset]\fR [\fB!\fR] ...
+.br
+.SH DESCRIPTION
+Calf JACK host application provides a way to use Calf plugins directly, without need for any external host application. It also offers best GUI functionality (using GTK+ 2 widget set), as there is no restrictive plugin standard getting in a way between GUI and audio processing code.
+
+.SH OPTIONS
+.TP
+\fB-c --client\fR \fIname\fR
+sets JACK client name (the name calfjackhost uses when registering in JACK)
+.TP
+\fB-i --input\fR \fIname\fR
+name prefix for audio inputs
+.TP
+\fB-o --output\fR \fIname\fR
+name prefix for audio outputs
+.TP
+\fB-m --midi\fR \fIname\fR
+name prefix for MIDI inputs
+.TP
+\fB-c --connect-midi\fR \fIclient:port\fR
+automatically connect all MIDI ports to \fIclient:port\fR
+.TP
+\fB-M --connect-midi\fR \fB!\fIn\fR
+automatically connect all MIDI ports to \fBsystem:midi_capture_\fIn\fR
+.TP
+\fB-v --version\fR
+prints a version string (calf some.version.number)
+.TP
+\fB-l --load\fR \fIsession\fR
+Loads the session state from a file
+.TP
+\fB-s --state\fR \fIsession\fR
+Loads the session state from a file, if such a file exists
+.TP
+\fB-L --list\fR
+List all available plug-ins
+.TP
+\fB-h -? --help\fR
+prints a help text
+.TP
+\fB-t --no-tray\fR
+disable the tray icon on start
+.PP
+An exclamation mark (!) in place of plugin name means automatic connection. If "!" is placed before the first plugin name, the first plugin has its inputs connected to \fBsystem:capture_1\fR
+and \fBsystem:capture_2\fR. If it's placed between plugin names, those plugins are connected together (first plugin's output is connected to second
+plugin's input). If it's placed after last plugin name, that plugin's audio outputs are connected to \fBsystem:playback_1\fR and \fBsystem:playback_2\fR
+(first output pair). 
+
+Plugin names (should be self-explanatory):
+ * pulsator (autopanner/tremolo)
+ * ringmodulator
+ * tapesimulator
+ * vinyl
+ * compdelay (compensation delay)
+ * reversedelay
+ * compressor
+ * sidechaincompressor
+ * multibandcompressor
+ * monocompressor
+ * deesser
+ * gate
+ * sidechaingate
+ * multibandgate
+ * limiter
+ * multibandlimiter
+ * sidechainlimiter
+ * transientdesigner
+ * filterclavier (keyboard-controlled tunable filter)
+ * emphasis
+ * vocoder
+ * eq5, eq8, eq12, eq30
+ * saturator
+ * crusher (bit crusher)
+ * exciter
+ * bassenhancer
+ * stereo
+ * haasenhancer
+ * multispread
+ * mono
+ * xover2, xover3, xover4 (speaker crossovers)
+ * analyzer (spectrum analyzer / spectrogram plugin)
+ * flanger
+ * filter
+ * reverb
+ * vintagedelay
+ * monosynth
+ * multichorus (chorus effect with multiple voices)
+ * compressor (Thor Harald Johansen's dynamic compressor)
+ * organ (polyphonic synthesizer emulating tonewheel or solid state organs)
+ * rotaryspeaker (not a faithful emulation, not even close)
+
+.SH BUGS
+Please send bug reports to <wdev@foltman.com>.
+
+.SH EXAMPLES
+
+To start monosynth with automatic connection to first system audio output, and no automatic MIDI connection, use:
+
+        calfjackhost monosynth !
+
+(! means "connect", last "!" means "connect to output")
+
+Other examples:
+
+        calfjackhost monosynth ! vintagedelay ! flanger ! -M 2
+
+(runs monosynth into vintagedelay and vintagedelay into flanger, then to
+output; connects monosynth's MIDI input to JACK's system:midi_capture_2)
+
+        calfjackhost "monosynth:Fat Bass"
+
+(runs monosynth with a Fat Bass preset into monosynth, does not autoconnect)
+
+        calfjackhost ! reverb !
+
+(takes signal from system:capture_1 and _2, puts it through reverb, and then
+sends to system:playback_1 and _2)
+
+Note: none of the automatic connection features will work if autoconnection
+is disabled for session management purposes.
+
+.SH "SEE ALSO"
+calf(7)

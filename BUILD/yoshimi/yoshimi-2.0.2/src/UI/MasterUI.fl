@@ -1,0 +1,3942 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0304
+header_name {.h}
+code_name {.cc}
+comment {MasterUI.h} {not_in_source in_header
+}
+
+comment {MasterUI.cc} {in_source not_in_header
+}
+
+comment {Original ZynAddSubFX author Nasca Octavian Paul
+Copyright (C) 2002-2005 Nasca Octavian Paul
+Copyright 2009-2011, Alan Calvert
+Copyright 2014-2021, Will Godfrey & others
+Copyright 2014-2021, Will Godfrey & others
+
+This file is part of yoshimi, which is free software: you can redistribute
+it and/or modify it under the terms of the GNU Library General Public
+License as published by the Free Software Foundation; either version 2 of
+the License, or (at your option) any later version.
+
+yoshimi is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.   See the GNU General Public License (version 2 or
+later) for more details.
+
+You should have received a copy of the GNU General Public License along with
+yoshimi; if not, write to the Free Software Foundation, Inc., 51 Franklin
+Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+This file is a derivative of the ZynAddSubFX original.} {selected in_source in_header
+}
+
+decl {\#define PANEL_SINGLE_X 1040} {public local
+}
+
+decl {\#define PANEL_SINGLE_Y 320} {public local
+}
+
+decl {\#define PANEL_DUAL_X 530} {public local
+}
+
+decl {\#define PANEL_DUAL_Y 600} {public local
+}
+
+decl {\#define FILER_SIZE 1500} {public local
+}
+
+decl {\#include <FL/Fl_Tooltip.H>} {public local
+}
+
+decl {\#include <string>} {public local
+}
+
+decl {\#include <iostream>} {public local
+}
+
+decl {\#include <fstream>} {public local
+}
+
+decl {\#include "UI/MiscGui.h"} {public local
+}
+
+decl {\#include "UI/WidgetCheckButton.h"} {public local
+}
+
+decl {\#include "UI/WidgetSpinner.h"} {public local
+}
+
+decl {\#include "ADnoteUI.h"} {public local
+}
+
+decl {\#include "SUBnoteUI.h"} {public local
+}
+
+decl {\#include "EffUI.h"} {public local
+}
+
+decl {\#include "VirKeyboardUI.h"} {public local
+}
+
+decl {\#include "ConfigUI.h"} {public local
+}
+
+decl {\#include "BankUI.h"} {public local
+}
+
+decl {\#include "PartUI.h"} {public local
+}
+
+decl {\#include "MicrotonalUI.h"} {public local
+}
+
+decl {\#include "PresetsUI.h"} {public local
+}
+
+decl {\#include "ParametersUI.h"} {public local
+}
+
+decl {\#include "VectorUI.h"} {public local
+}
+
+decl {\#include "ConsoleUI.h"} {public local
+}
+
+decl {\#include "MasterMiscUI.h"} {public local
+}
+
+decl {\#include "Misc/SynthEngine.h"} {public local
+}
+
+decl {\#include "MidiLearnUI.h"} {public local
+}
+
+decl {\#include "Misc/FileMgrFuncs.h"
+    using file::isRegularFile;
+    using file::findLeafName;} {private local
+}
+
+decl {\#include "Misc/FormatFuncs.h"
+    using func::string2uint;
+    using func::asString;} {private local
+}
+
+decl {\#include "Misc/TextMsgBuffer.h"
+
+    namespace { // Implementation details...
+        TextMsgBuffer& textMsgBuffer = TextMsgBuffer::instance();
+    }} {private local
+}
+
+decl {int lineitem;} {public local
+}
+
+class FilerLine {: {public Fl_Group}
+} {
+  Function {make_window()} {} {
+    Fl_Window filerlist {
+      xywh {522 305 440 20} type Double color 7 hide
+      class Fl_Group
+    } {
+      Fl_Group fileIcon {
+        xywh {0 0 23 30} box FLAT_BOX color 7
+      } {
+        Fl_Box outer_box {
+          xywh {3 0 16 20} box GTK_THIN_UP_BOX color 174 labeltype NO_LABEL
+        }
+        Fl_Box inner_box {
+          xywh {5 2 12 16} box GTK_THIN_DOWN_BOX color 174 labeltype NO_LABEL
+        }
+        Fl_Box line1 {
+          xywh {7 5 8 2} box FLAT_BOX color 124
+        }
+        Fl_Box line2 {
+          xywh {7 9 8 2} box FLAT_BOX color 124
+        }
+        Fl_Box type {
+          label xiz
+          xywh {4 6 15 17} labelsize 4
+        }
+      }
+      Fl_Group dirIcon {
+        xywh {0 0 21 20} box FLAT_BOX color 7 hide
+      } {
+        Fl_Box {} {
+          xywh {1 1 18 15} box PLASTIC_THIN_UP_BOX color 183
+        }
+        Fl_Box {} {
+          xywh {3 4 18 16} box PLASTIC_THIN_UP_BOX color 183
+        }
+        Fl_Box {} {
+          xywh {5 7 14 1} box DOWN_BOX selection_color 181
+        }
+      }
+      Fl_Button name {
+        callback {//std::cout << "pressed " << n << std::endl;
+//lineitem = n;}
+        xywh {25 0 415 21} box NO_BOX color 7 labelsize 12 align 20
+      }
+      Fl_Button nametop {
+        callback {//std::cout << "pressed " << n << std::endl;
+lineitem = n;}
+        xywh {0 1 420 18} box NO_BOX
+      }
+    }
+  }
+  Function {FilerLine(int x, int y, int w, int h, const char *label=0):Fl_Group(x,y,w,h,label)} {} {
+    code {n = 0;} {}
+  }
+  Function {init(SynthEngine *synth_, int n_, bool isDir_, string typeName_, string title_)} {} {
+    code {//
+
+    synth = synth_;
+    n = n_;
+    isDir = isDir_;
+    typeName = typeName_;
+    title = title_;
+    make_window();
+    if (isDir)
+    {
+        dirIcon->show();
+        fileIcon->hide();
+    }
+    else
+    {
+        dirIcon->hide();
+        fileIcon->show();
+        type->copy_label(typeName.c_str());
+        name->copy_label(title.c_str());
+    }
+    show();
+    end();} {}
+  }
+  decl {int n;} {private local
+  }
+  decl {bool isDir;} {private local
+  }
+  decl {string typeName;} {private local
+  }
+  decl {string title;} {private local
+  }
+  decl {SynthEngine *synth;} {private local
+  }
+  Function {~FilerLine()} {} {
+    code {//
+    filerlist->hide();
+    delete (filerlist);} {}
+  }
+}
+
+class MasterUI {: {private GuiUpdates}
+} {
+  Function {MasterUI(SynthEngine *_synth)} {} {
+    code {//
+      for (int i = 0; i < FILER_SIZE; ++i)
+          filerlist[i] = NULL;
+
+      synth = _synth;
+      presetsui = NULL;
+      ninseff = 0;
+      nsyseff = 0;
+      npart = 0;
+      panelgroup = 0;
+      panelScale = 1;
+      for (int i = 0; i < NUM_SYS_EFX; ++i)
+      {
+          for (int j = 0; j < NUM_SYS_EFX; ++j)
+              syseffsend[i][j] = NULL;
+      }
+      microtonalui = NULL;
+      bankui = NULL;
+      virkeyboard = NULL;
+      configui = NULL;
+      presetsui = NULL;
+      paramsui = NULL;
+      activePart = 0;
+      yoshiLog = NULL;
+      queryDW = 0;
+
+      lastmainW = -1;
+      lastpanelW = 0;
+      lastmsgW = 0;
+      lasttextW = 0;
+      lastsyseffW = 0;
+      lastvirtW = 0;
+      lastaboutW = 0;
+      oldH = 0;
+
+      filerpath.clear();
+      lastfilerW = 0;} {}
+  }
+  Function {~MasterUI()} {} {
+    code {//
+      aboutwindow->hide();
+      delete aboutwindow;
+
+      if (logenable)
+          saveWin(synth, yoshiLog->logConsole->w(), yoshiLog->logConsole->h(), yoshiLog->logConsole->x(), yoshiLog->logConsole->y(), true, "System-log");
+      else
+          setVisible(synth, false, "System-log");
+
+      syseffsendwindow->hide();
+      if (syseffSeen)
+          saveWin(synth, syseffsendwindow->w(), syseffsendwindow->h(), syseffsendwindow->x(), syseffsendwindow->y(), true, "Master-systemeffectsend");
+      delete syseffsendwindow;
+
+      if (panelType < 4)
+          saveWin(synth, panelwindow->w(), panelwindow->h(), panelwindow->x(), panelwindow->y(), panelType, "Mixer");
+      panelwindow->hide();
+      delete panelwindow;
+
+      message->hide();
+      delete message;
+
+      if (microtonalui)
+          delete microtonalui;
+
+      if (bankui)
+          delete bankui;
+
+      if (virkeyboard)
+          delete virkeyboard;
+
+      if (configui)
+          delete configui;
+
+      if (presetsui)
+          delete presetsui;
+
+      if (paramsui)
+          delete paramsui;
+
+      if (vectorui)
+          delete vectorui;
+
+      if (midilearnui)
+          delete midilearnui;
+
+      if (yoshiLog)
+          delete yoshiLog;
+
+      if (querywindow)
+      {
+          querywindow->hide();
+          delete querywindow;
+      }
+
+      if (filerwindow)
+      {
+          if (filerwindow->visible())
+              saveWin(synth, filerwindow->w(), filerwindow->h(), filerwindow->x(), filerwindow->y(), true, "Master-filer");
+          filerwindow->hide();
+          delete filerwindow;
+      }
+
+      saveWin(synth, masterwindow->w(), masterwindow->h(), masterwindow->x(), masterwindow->y(), true, "Master");
+
+      masterwindow->hide();
+      delete masterwindow;} {}
+  }
+  Function {Init(const char *_label)} {} {
+    code {//
+      instance = synth->getUniqueId();
+      file::createDir(synth->getRuntime().ConfigDir + "/windows");
+      panelType = 1;
+      msgSeen = false;
+      syseffSeen = false;
+      partmax = synth->getRuntime().NumAvailableParts;
+      microtonalui = new MicrotonalUI(&synth->microtonal, synth);
+      bankui = new BankUI(synth);
+      virkeyboard = new VirKeyboard(synth);
+      configui = new ConfigUI(synth);
+      presetsui = new PresetsUI(synth);
+      paramsui = new ParametersUI(synth);
+      vectorui = new VectorUI(synth, bankui, paramsui);
+      midilearnui = new MidiLearnUI(synth);
+      yoshiLog = new ConsoleUI(synth);
+      openedit = false;
+      make_window();
+      bool foundWindows = Showmaster();
+      if (instance > 0)
+          foundWindows = true; //  not relevant for later windows
+      //std::cout << "Found windows " << int(foundWindows) << std::endl;
+      loadWindowData();
+      string starterror = "";
+      if (synth->getIsLV2Plugin())
+      {
+          masterwindow->label(_label);
+      }
+      else
+      {
+          starterror = textMsgBuffer.fetch(0);
+          setMasterLabel(synth->getRuntime().paramsLoad);
+      }
+      if (starterror.find("Could not") != std::string::npos)
+          query("", "", "", starterror);
+      microtonalui->microtonaluiwindow->copy_label(synth->makeUniqueName("Scales").c_str());
+      yoshiLog->logConsole->copy_label(synth->makeUniqueName("Console").c_str());
+      logenable = fetchData(0, CONFIG::control::reportsDestination, TOPLEVEL::section::config);
+      if (!foundWindows)
+      {
+          string msg = "As this is a first time start, please check 'Yoshimi->Settings' then save and restart. More information can be found in the manual.";
+          setmessage(UNUSED, true, msg, "Close");
+      }
+      else if (synth->getRuntime().oldConfig)
+      {
+          string msg;
+          msg = "Existing config older than V " + to_string(MIN_CONFIG_MAJOR) + "." + to_string(MIN_CONFIG_MINOR) + " \\nCheck settings, save and restart.";
+          setmessage(UNUSED, true, msg, "Close");
+      }
+      else if (instance == 0 && synth->getRuntime().banksChecked == false)
+      {
+          string msg = "Default banks have been copied to {user}.local/share/yoshimi/found \\nAdd these to the bank roots window?";
+          setmessage(TOPLEVEL::msgResponse::refreshBankDefaults, true, msg, "Ask Later", "No", "Yes");} {}} {}
+  }
+  Function {Showmaster()} {return_type bool
+  } {
+    code {//
+    int fetchW, fetchH, fetchX, fetchY, fetchO;
+    loadWin(synth, fetchW, fetchH, fetchX, fetchY, fetchO, "Master");
+    if (fetchW < mainDW || fetchH < mainDH)
+    {
+        fetchW = mainDW;
+        fetchH = mainDH;
+    }
+    checkSane(fetchX, fetchY, fetchW, fetchH, mainDW, mainDH);
+
+    masterwindow->resize(fetchX, fetchY, fetchW, fetchH);
+    masterwindow->show();
+    lastmainW = 0;
+    mainRtext();
+
+    return (fetchO != 0);} {}
+  }
+  Function {make_window()} {} {
+    Fl_Window masterwindow {
+      label {Yoshimi meets ZynAddSubFX}
+      callback {//
+            bool close = true;
+            bool force = Fl::event_state(FL_CTRL);
+            if (!force && synth->getRuntime().configChanged)
+            {
+                int r = query("!", "!", "!", "Parameters Changed.\\nSave on exit?");
+                switch (r)
+                {
+                    case 3:
+                        synth->getRuntime().configChanged = false;
+                        // this seems backwards but it *always* saves.
+                        // seeing configChanged makes it reload the old settings first.
+                        break;
+                    case 2:
+                        break;
+                    default:
+                        close = false;
+                        break;
+                }
+            }
+            if (close)
+            {
+                if (force)
+                    firstSynth->getRuntime().exitType = FORCED_EXIT;
+                    /*
+                    * The above line shouldn't be necessary!
+                    * It works fine on jack but fails on ALSA.
+                    * My best guess is that ALSA shuts down so quickly
+                    * that one of the ringbuffers carrying the command
+                    * is deleted before it can be read.
+                    */
+                    //send_data(0, TOPLEVEL::control::forceExit, 0, UNUSED);
+
+                synth->guiClosed(true);
+            }}
+      xywh {827 535 385 470} type Double labelfont 13 labelsize 12 hide resizable
+      code0 {mainDW = 385; mainDH = 470;}
+      code1 {masterwindow->size_range(394, 480, 0, 0, 0, 0, 1);}
+    } {
+      Fl_Box {} {
+        xywh {279 28 103 85} box ENGRAVED_FRAME
+      }
+      Fl_Menu_Bar mastermenu {
+        callback {//
+    int found = o->value();
+    //std::cout << "switch found " << found << std::endl;
+    switch (found)
+        {
+        case 1: // about
+            {
+            int X, Y, W, H, O;
+            loadWin(synth, W, H, X, Y, O, "Master-about");
+            if (W < aboutDW || H < aboutDH)
+            {
+                W = aboutDW;
+                H = aboutDH;
+            }
+            checkSane(X, Y, W, H, aboutDW, aboutDH);
+            aboutwindow->resize(X, Y, W, H);
+            aboutwindow->show();
+            }
+            break;
+        case 2: // new instance
+            if (synth->getIsLV2Plugin())
+            {
+                query("", "", "", "Start new instances from host");
+                return;
+            }
+            if (synth->getUniqueId() != 0)
+            {
+                query("", "", "", "Only main instance can start others");
+                return;
+            }
+            startInstance();
+            break;
+        case 3: // settings
+            configui->Show(synth);
+            break;
+        case 4: // reports
+            if (logenable)
+                yoshiLog->Show(synth);
+            else
+                alert(synth, "Logging configured for std::cout");
+            break;
+        case 5: // manual
+//            if (query("", "Yes", "No", "A new manual is being written, so we temporarily include the one for V 1.7.4\\n Do you wish to see this?") > 1)
+            {
+                words->copy_label("Searching for the manual.");
+                message->show();
+                message->position(masterwindow->x() + 36, masterwindow->y() + 170);
+                send_data(TOPLEVEL::action::lowPrio | TOPLEVEL::action::forceUpdate, MAIN::control::openManualPDF, 0, TOPLEVEL::type::Integer, TOPLEVEL::section::main);
+            }
+            break;
+        case 6: // exit
+            masterwindow->do_callback();
+            break;
+
+        case 7: // section instruments
+            break;
+        case 8: // section instruments
+            break;
+        case 9: // show
+            bankui->Show();
+            break;
+        case 10: // load
+            {
+            string filename = setfiler("", "", false, TOPLEVEL::XML::Instrument);
+            if (!filename.empty())
+                do_load_instrument(filename);
+            }
+            break;
+        case 11: // save
+            {
+            /*
+            * Instruments are an exception for saving as we always want
+            * to offer the INTERNAL name first rather than a possibly
+            * confusing external filename.
+            */
+            string newname = synth->part[activePart]->Pname;
+            if (newname == DEFAULT_NAME)
+            {
+                query("", "", "", "Nothing to save!");
+                return;
+            }
+            if (synth->part[activePart]->info.Ptype == 0)
+            {
+                if (choice(synth, "", "Save", "Cancel", "Please set instrument type before saving.\\nCopyright info also recommended.") != 2)
+                    return;
+            }
+            string filename = setfiler("", newname, true, TOPLEVEL::XML::Instrument);
+            if (!filename.empty())
+                send_data(TOPLEVEL::action::lowPrio | TOPLEVEL::action::forceUpdate, MAIN::control::saveNamedInstrument, activePart, TOPLEVEL::type::Integer, TOPLEVEL::section::main, UNUSED, UNUSED, UNUSED, textMsgBuffer.push(string(filename)));
+            }
+            break;
+        case 12: // recent
+            {
+            int xpos = masterwindow->x() + (masterwindow->w() * 0.15f);
+            if (xpos + paramsui->Recent->w() > masterwindow->x() + masterwindow->w())
+                xpos = masterwindow->x() + masterwindow->w() - paramsui->Recent->w();
+            paramsui->Recent->position(xpos,masterwindow->y()+20);
+            paramsui->Show(TOPLEVEL::XML::Instrument);
+            }
+            break;
+        case 13: // clear
+            if (query("", "Yes", "No", "Clear parameters of instrument " + to_string(npart + 1) + "?") > 1)
+                send_data(TOPLEVEL::action::forceUpdate, MAIN::control::defaultPart,partui->npart, TOPLEVEL::type::Integer, TOPLEVEL::section::main);
+            break;
+        case 14: // search
+            bankui->ShowSearch();
+            break;
+
+        case 15: // section parameters
+            break;
+        case 16: // section parameters
+            break;
+        case 17: // show
+            bankui->Showbank();
+            break;
+        case 18: // load
+             do_load_master("");
+            break;
+        case 19: // save
+            {
+            bool valid = false;
+            for (int npart = 0; npart < NUM_MIDI_PARTS; npart ++)
+                if (synth->part[npart]->Pname != DEFAULT_NAME)
+                {
+                    valid = true;
+                    npart = NUM_MIDI_PARTS;
+                }
+            if (valid)
+                do_save_master();
+            else
+                query("", "", "", "Nothing to save!");
+            }
+            break;
+        case 20: // recent
+            {
+            int xpos = masterwindow->x() + (masterwindow->w() * 0.35f);
+            if (xpos + paramsui->Recent->w() > masterwindow->x() + masterwindow->w())
+                xpos = masterwindow->x() + masterwindow->w() - paramsui->Recent->w();
+            paramsui->Recent->position(xpos,masterwindow->y()+20);
+            paramsui->Show(TOPLEVEL::XML::Patch);
+            }
+            break;
+
+        case 21: // section paths
+            break;
+        case 22: // section paths
+            break;
+        case 23: // root dir
+            bankui->ShowRoot();
+            break;
+        case 24: // preset dir
+            configui->Showpresets(synth);
+            break;
+
+        case 25: // section state
+            break;
+        case 26: // section state
+            break;
+
+        case 27: // load
+            {
+            // for Alessandro
+            string filename = setfiler("", "", false, TOPLEVEL::XML::State);
+            if (!filename.empty())
+                setState(filename);
+            else
+                refresh_master_ui(0x80 | (textMsgBuffer.push(" ") << 8));
+            }
+            break;
+        case 28: // save
+            {
+            // for Alessandro
+            string filename = setfiler("", "", true, TOPLEVEL::XML::State);
+            if (!filename.empty())
+
+                send_data(TOPLEVEL::action::lowPrio | TOPLEVEL::action::forceUpdate, MAIN::control::saveNamedState, 0, TOPLEVEL::type::Integer, TOPLEVEL::section::main, UNUSED, UNUSED, UNUSED, textMsgBuffer.push(filename));
+            }
+            break;
+        case 29: // default
+            {
+            string name = synth->getRuntime().defaultStateName;
+            name += ("-" + to_string(instance));
+            send_data(TOPLEVEL::action::lowPrio | TOPLEVEL::action::forceUpdate, MAIN::control::saveNamedState, 0, TOPLEVEL::type::Integer, TOPLEVEL::section::main, UNUSED, UNUSED, UNUSED, textMsgBuffer.push(name + ".state"));
+
+            }
+            break;
+        case 30: // recent
+            {
+            int xpos = masterwindow->x() + (masterwindow->w() * 0.616f);
+            if (xpos + paramsui->Recent->w() > masterwindow->x() + masterwindow->w())
+                xpos = masterwindow->x() + masterwindow->w() - paramsui->Recent->w();
+            paramsui->Recent->position(xpos,masterwindow->y()+20);
+
+            paramsui->Show(TOPLEVEL::XML::State);
+            }
+            break;
+
+        case 31: // section scales
+            break;
+        case 32: // section scales
+            break;
+        case 33: // show
+            microtonalui->showScales();
+            break;
+        case 34: // load
+            {
+            filename = setfiler("", "", false, TOPLEVEL::XML::Scale);
+            if (!filename.empty())
+                do_load_scale(string(filename));
+            }
+            break;
+        case 35: // save
+            {
+            string filename = setfiler("", "", true, TOPLEVEL::XML::Scale);
+            if (!filename.empty())
+                send_data(TOPLEVEL::action::lowPrio | TOPLEVEL::action::forceUpdate, MAIN::control::saveNamedScale, 0, TOPLEVEL::type::Integer, TOPLEVEL::section::main, UNUSED, UNUSED, UNUSED, textMsgBuffer.push(filename));
+            }
+            break;
+        case 36: // recent
+            paramsui->Recent->position(masterwindow->x() + masterwindow->w() - paramsui->Recent->w(), masterwindow->y()+20);
+            paramsui->Show(TOPLEVEL::XML::Scale);
+            break;
+        case 37: // clear
+            if (query("", "Yes", "No", "Set scales to the defaults?") > 1)
+            {
+                synth->microtonal.defaults();
+                synth->setAllPartMaps();
+                if (NULL != microtonalui)
+                    delete microtonalui;
+                microtonalui = new MicrotonalUI(&synth->microtonal, synth);
+                send_data(TOPLEVEL::action::forceUpdate, SCALES::control::clearAll, 0, TOPLEVEL::type::Integer, TOPLEVEL::section::scales);
+            }
+            break;
+      }}
+        xywh {-7 0 395 25} labelsize 12 textsize 12
+        code0 {//
+        o->add("&Yoshimi  /&About...");
+        o->add("&Yoshimi  /&New Instance");
+        o->add("&Yoshimi  /&Settings...");
+        o->add("&Yoshimi  /&Reports");
+        o->add("&Yoshimi  /&View Manual");
+        o->add("&Yoshimi  /&Exit");
+
+        o->add("&Instrument  /S&how Stored...");
+        o->add("&Instrument  /&Load External...");
+        o->add("&Instrument  /&Save External...");
+        o->add("&Instrument  /&Recent Instruments...");
+        o->add("&Instrument  /&Clear");
+        o->add("&Instrument  /S&earch...");
+
+        o->add("&PatchSet  /&S&how Patch Banks...");
+        o->add("&PatchSet  /&Load External...");
+        o->add("&PatchSet  /&Save External...");
+        o->add("&PatchSet  /&Recent sets...");
+
+        o->add("Pat&h  /&Bank Root Dirs...");
+        o->add("Pat&h  /&Preset Dirs...");
+
+        o->add("&State  /&Load...");
+        o->add("&State  /&Save...");
+        o->add("&State  /&Save As default");
+        o->add("&State  /&Recent States");
+
+        o->add("S&cale/S&how Settings...");
+        o->add("S&cale/&Load...");
+        o->add("S&cale/&Save...");
+        o->add("S&cale/&Recent Scales...");}
+      } {}
+      Fl_Group MasterControls {
+        label {Master  }
+        xywh {3 24 380 91} labeltype NO_LABEL labelsize 11 labelcolor 96 align 22
+      } {
+        Fl_Dial globalfinedetune {
+          label Detune
+          callback {//
+          send_data(TOPLEVEL::action::lowPrio, MAIN::control::detune, o->value(), TOPLEVEL::type::Integer, TOPLEVEL::section::main);}
+          tooltip {Global Fine Detune} xywh {286 32 40 40} box ROUND_UP_BOX color 29 labelsize 10 maximum 127 step 1 value 64
+          code0 {o->setValueType(VC_GlobalFineDetune);}
+          code1 {o->value(synth->microtonal.Pglobalfinedetune);}
+          class WidgetPDial
+        }
+        Fl_Button mainreset {
+          label Reset
+          callback {//
+          bool wasCtrl = (Fl::event_state(FL_CTRL) != 0);
+          if (query("", "Yes", "No", "Set *ALL* dynamic values to their defaults?") > 1)
+          {
+              if (wasCtrl || (Fl::event_state(FL_CTRL) != 0))
+                  send_data(TOPLEVEL::action::muteAndLoop | TOPLEVEL::action::forceUpdate, MAIN::control::masterResetAndMlearn, 0, TOPLEVEL::type::Integer, TOPLEVEL::section::main);
+              else
+                  send_data(TOPLEVEL::action::muteAndLoop | TOPLEVEL::action::forceUpdate, MAIN::control::masterReset, 0, TOPLEVEL::type::Integer, TOPLEVEL::section::main);}}
+          tooltip {Clear all dynamic settings
+(+Ctrl includes MIDI-learn)} xywh {7 60 70 24} box PLASTIC_UP_BOX color 228 selection_color 32 labelfont 1 labelsize 11 align 16
+        }
+        Fl_Button mainstop {
+          label {Stop!}
+          callback {//
+    send_data(TOPLEVEL::action::muteAndLoop, MAIN::control::stopSound, 0, TOPLEVEL::type::Integer, TOPLEVEL::section::main);}
+          tooltip {Cease all sound immediately!} xywh {7 30 70 24} box PLASTIC_UP_BOX color 88 selection_color 0 labelfont 1 labelsize 11 align 16
+        }
+        Fl_Dial mastervolumedial {
+          label Volume
+          callback {//
+          send_data(0, MAIN::control::volume, o->value(), 0, TOPLEVEL::section::main);}
+          tooltip {Master Volume} xywh {335 32 40 40} box ROUND_UP_BOX color 29 labelsize 10 maximum 127 step 1
+          code0 {o->setValueType(VC_MasterVolume);}
+          code1 {o->value(synth->Pvolume);}
+          class WidgetPDial
+        }
+        Fl_Button mainvirtkeyb {
+          label {Virtual Keyboard}
+          callback {//
+          virkeyboard->ShowKbd();}
+          tooltip {Virtual Keyboard} xywh {85 60 110 24} box PLASTIC_UP_BOX color 228 labelsize 11 labelcolor 32
+        }
+        Fl_Button mixerpanel {
+          label {Mixer Panel}
+          callback {//
+          if(panelwindow->visible())
+              return;
+          panelType &= 3;
+          updatepanel();
+          panelwindow->show();}
+          tooltip {Mixer Panel Window} xywh {85 30 110 24} box PLASTIC_UP_BOX color 228 labelsize 11 labelcolor 32
+        }
+        Fl_Button mainmidilearn {
+          label {Midi Learn}
+          callback {//
+                midilearnui->showLearn();}
+          tooltip {Message Log} xywh {203 60 70 24} box PLASTIC_UP_BOX color 228 labelsize 11
+        }
+        Fl_Button vectors {
+          label Vectors
+          callback {//
+          vectorui->Show(synth);}
+          tooltip {Vector Setup Window} xywh {203 30 70 24} box PLASTIC_UP_BOX color 228 labelsize 11 labelcolor 32
+        }
+      }
+      Fl_Tabs sysinsgroup {
+        label {System/Insert}
+        callback {//
+        if (o->value() == SystemEffectsGrp)
+            showSysEfxUI();
+        else if (o->value() == InsertionEffectsGrp)
+            showInsEfxUI();}
+        xywh {3 88 379 68} box PLASTIC_UP_BOX color 44 selection_color 221 labeltype NO_LABEL labelsize 12 align 5
+      } {
+        Fl_Group SystemEffectsGrp {
+          label {  System Effects  }
+          xywh {3 116 379 40} color 221 selection_color 31 labelfont 1 labelsize 12 align 4
+        } {
+          Fl_Spinner syseffnocounter {
+            label Effect
+            callback {//
+            send_data(TOPLEVEL::action::forceUpdate, EFFECT::sysIns::effectNumber, o->value() - 1, TOPLEVEL::type::Integer, TOPLEVEL::section::systemEffects, o->value() - 1);}
+            xywh {40 126 36 20} labeltype NO_LABEL labelsize 11 align 0 maximum 4 textfont 1 textsize 11
+            code0 {o->range(1, NUM_SYS_EFX);}
+            code1 {o->value(nsyseff + 1);}
+            class WidgetSpinner
+          }
+          Fl_Choice sysefftype {
+            label Type
+            callback {//
+            send_data(TOPLEVEL::action::forceUpdate, EFFECT::sysIns::effectType, o->value(), TOPLEVEL::type::Integer, TOPLEVEL::section::systemEffects, nsyseff);}
+            xywh {120 126 96 20} down_box BORDER_BOX labeltype NO_LABEL labelsize 11 align 16 textfont 1 textsize 11
+            code0 {o->add("No Effect");o->add("Reverb");o->add("Echo");o->add("Chorus");o->add("Phaser");o->add("AlienWah");o->add("Distortion");o->add("EQ");o->add("DynFilter");}
+            code1 {o->value(synth->sysefx[nsyseff]->geteffect());}
+          } {}
+          Fl_Check_Button SysEffOn {
+            label On
+            callback {//
+            if (o->value())
+                    sysefftype->activate();
+                else
+                    sysefftype->deactivate();
+            send_data(0, EFFECT::sysIns::effectEnable, o->value(), TOPLEVEL::type::Integer, TOPLEVEL::section::systemEffects, nsyseff);}
+            xywh {247 129 16 15} down_box DOWN_BOX value 1 labelfont 1 labelsize 11 align 4
+            class Fl_Check_Button2
+          }
+          Fl_Button sysEffSend {
+            label {Send to}
+            callback {//
+    showSysEffSends();}
+            xywh {275 126 62 20} box THIN_UP_BOX labelfont 1 labelsize 11 labelcolor 97
+          }
+          Fl_Button sysCopy {
+            label C
+            callback {presetsui->copy(synth->sysefx[nsyseff]);}
+            xywh {350 122 25 14} box THIN_UP_BOX color 179 labelfont 1 labelsize 11 labelcolor 7
+          }
+          Fl_Button sysPaste {
+            label P
+            callback {//
+            presetsui->paste(synth->sysefx[nsyseff], syseffectui);
+            synth->getRuntime().effectChange = TOPLEVEL::section::systemEffects + (nsyseff << 8); // temporary fix}
+            xywh {350 137 25 14} box THIN_UP_BOX color 179 labelfont 1 labelsize 11 labelcolor 7
+          }
+        }
+        Fl_Group InsertionEffectsGrp {
+          label { Insertion Effects }
+          xywh {3 116 379 40} color 221 selection_color 31 labelfont 1 labelsize 12 labelcolor 33 align 4 hide
+        } {
+          Fl_Spinner inseffnocounter {
+            label Effect
+            callback {//
+            send_data(TOPLEVEL::action::forceUpdate, EFFECT::sysIns::effectNumber, o->value() - 1, TOPLEVEL::type::Integer, TOPLEVEL::section::insertEffects, o->value() - 1);}
+            xywh {40 126 36 20} labeltype NO_LABEL labelsize 11 align 20 maximum 8 textfont 1 textsize 11
+            code0 {o->range(1, NUM_INS_EFX);}
+            code1 {o->value(ninseff + 1);}
+            class WidgetSpinner
+          }
+          Fl_Choice insefftype {
+            label Type
+            callback {//
+            send_data(TOPLEVEL::action::forceUpdate, EFFECT::sysIns::effectType, o->value(), TOPLEVEL::type::Integer, TOPLEVEL::section::insertEffects, ninseff);}
+            xywh {120 126 96 20} down_box BORDER_BOX labeltype NO_LABEL labelsize 11 align 0 textfont 1 textsize 11
+            code0 {o->add("No Effect");o->add("Reverb");o->add("Echo");o->add("Chorus");o->add("Phaser");o->add("AlienWah");o->add("Distortion");o->add("EQ");o->add("DynFilter");}
+            code1 {o->value(synth->insefx[ninseff]->geteffect());}
+            code2 {if (synth->Pinsparts[ninseff]== -1) o->deactivate();}
+          } {}
+          Fl_Choice inseffpart {
+            label {To }
+            callback {//
+            send_data(TOPLEVEL::action::forceUpdate, EFFECT::sysIns::effectDestination, o->value() - 2, TOPLEVEL::type::Integer, TOPLEVEL::section::insertEffects, ninseff);}
+            xywh {242 126 96 20} down_box BORDER_BOX labelfont 1 labelsize 11 textfont 1 textsize 11
+            code0 {setinspartlist();}
+            code3 {o->value(synth->Pinsparts[ninseff]+2);}
+          } {}
+          Fl_Button insCopy {
+            label C
+            callback {presetsui->copy(synth->insefx[ninseff]);}
+            xywh {350 122 25 14} box THIN_UP_BOX color 179 labelfont 1 labelsize 11 labelcolor 7
+          }
+          Fl_Button insPaste {
+            label P
+            callback {//
+            presetsui->paste(synth->insefx[ninseff], inseffectui);
+            synth->getRuntime().effectChange = TOPLEVEL::section::insertEffects + (ninseff << 8); // temporary fix}
+            xywh {350 137 25 14} box THIN_UP_BOX color 179 labelfont 1 labelsize 11 labelcolor 7
+          }
+        }
+      }
+      Fl_Group syseffectuigroup {
+        xywh {3 158 384 95} box FLAT_BOX color 48 labeltype NO_LABEL
+        code0 {o->show();}
+      } {
+        Fl_Group syseffectui {open
+          xywh {3 158 384 95} labeltype NO_LABEL
+          code0 {o->init(synth->sysefx[nsyseff], TOPLEVEL::section::systemEffects, nsyseff);o->activate();o->show();}
+          class EffUI
+        } {}
+      }
+      Fl_Group inseffectuigroup {
+        xywh {3 158 384 95} box FLAT_BOX color 48
+        code0 {o->hide();}
+      } {
+        Fl_Group inseffectui {
+          xywh {3 158 379 95} color 52
+          code0 {o->init(synth->insefx[ninseff], TOPLEVEL::section::insertEffects, ninseff);o->hide();}
+          code1 {if (synth->Pinsparts[ninseff]== -1) o->deactivate();}
+          class EffUI
+        } {}
+      }
+      Fl_Group partuigroup {
+        xywh {3 255 380 172} box ENGRAVED_FRAME
+      } {
+        Fl_Group partui {
+          xywh {3 255 379 172} color 47
+          code0 {o->init(synth->part[0],0,bankui);}
+          code1 {o->show();}
+          class PartUI
+        } {}
+      }
+      Fl_Group {} {
+        xywh {3 427 379 36} box DOWN_BOX color 43 labelsize 12
+      } {
+        Fl_Box vumeter {
+          label {VU-Meter}
+          xywh {3 429 379 34} color 48 selection_color 75
+          code0 {o->init(-1, synth);}
+          class VUMeter
+        }
+        Fl_Button {} {
+          callback {vumeter->init(-1, synth);}
+          tooltip {Click here to clear VU peak reading and overload warning.} xywh {5 430 376 30} box NO_BOX
+        }
+      }
+      Fl_Button mastermono {
+        label S
+        callback {//
+        int tmp = 1 -  o->value();
+        o->value(tmp);
+        if (tmp == 0)
+            o->label("S");
+        else
+            o->label("M");
+        send_data(0, MAIN::control::mono,  tmp, TOPLEVEL::type::Integer, TOPLEVEL::section::main);}
+        tooltip {Master Mono/Stereo switch} xywh {285 88 23 20} box PLASTIC_UP_BOX color 228 selection_color 130 labelfont 1 labelsize 11
+        code0 {o->value(synth->masterMono);}
+      }
+      Fl_Spinner masterkeyshift {
+        label Shift
+        callback {//
+        send_data(TOPLEVEL::action::lowPrio, MAIN::control::keyShift, o->value(), TOPLEVEL::type::Integer, TOPLEVEL::section::main);}
+        tooltip {Shift pitch +/- N semitones} xywh {336 88 38 20} labelsize 10 minimum -36 maximum 36 textfont 1 textsize 12
+        code0 {o->range(MIN_KEY_SHIFT, MAX_KEY_SHIFT);o->step(1.0);}
+        code1 {o->value(synth->Pkeyshift - 64);}
+        class WidgetSpinner
+      }
+      Fl_Spinner npartcounter {
+        label Part
+        callback {//
+        int nval = o->value() - 1;
+        activePart = nval;
+        send_data(TOPLEVEL::action::forceUpdate, MAIN::control::partNumber, nval, TOPLEVEL::type::Integer, TOPLEVEL::section::main);}
+        xywh {36 264 40 20} labelsize 11 when 6 minimum 0 maximum 127 textsize 11
+        code0 {o->range(1.0, partmax);}
+        code1 {o->value(synth->getRuntime().currentPart + 1);}
+        code2 {bankui->init(o);}
+        class WidgetSpinner
+      }
+      Fl_Spinner maxparts {
+        label of
+        callback {//
+        int tmp = o->value();
+        if (tmp == 48)
+        {
+            if (partmax == 32)
+                tmp = 64;
+            else
+                tmp = 32;
+        }
+        send_data(TOPLEVEL::action::forceUpdate, MAIN::control::availableParts, tmp, TOPLEVEL::type::Integer, TOPLEVEL::section::main);}
+        tooltip {Set the number of available parts} xywh {93 264 40 20} labelsize 11 minimum 16 maximum 64 step 16 value 16 textsize 11
+        code0 {o->value(partmax);}
+        class WidgetSpinner
+      }
+      Fl_Choice panning_law {
+        label {Pan Law}
+        callback {//
+                       send_data(0, MAIN::control::panLawType, o->value(), TOPLEVEL::type::Integer, TOPLEVEL::section::main);}
+        tooltip {Relative values when panned to extremes:
+   Per side, Equivalent Mono} xywh {219 340 160 20} down_box BORDER_BOX color 41 selection_color 0 labelsize 12 textfont 1 textsize 12 textcolor 255
+        code0 {o->add("Cut: 0dB, -6dB");o->add("Default: +3dB, -3dB");o->add("Boost: +6dB, 0dB");}
+        code1 {o->value(fetchData(0, MAIN::control::panLawType, TOPLEVEL::section::main));}
+      } {}
+      Fl_Group setInstance {
+        xywh {82 27 193 60} box PLASTIC_UP_BOX color 221 hide
+      } {
+        Fl_Button {} {
+          xywh {84 29 188 57} box NO_BOX
+        }
+        Fl_Text_Display InstBlurb {
+          label {Accept next, or enter
+Instance from 1 to 31}
+          xywh {95 59 163 6} box NO_BOX labelsize 12
+        }
+        Fl_Button {} {
+          callback {//}
+          xywh {162 61 35 22} box FLAT_BOX down_box FLAT_BOX labelfont 1 labelsize 11
+        }
+        Fl_Button cancelInst {
+          label Cancel
+          callback {//}
+          xywh {209 60 56 22} box PLASTIC_UP_BOX labelfont 1 labelsize 11
+        }
+        Fl_Button nextInst {
+          label Next
+          callback {//}
+          xywh {93 60 56 22} box PLASTIC_UP_BOX labelfont 1 labelsize 11
+        }
+        Fl_Input valueInst {
+          callback {//}
+          xywh {162 60 37 22} textsize 11
+        }
+      }
+    }
+    comment {line spaces in boxes below are critical} {in_source in_header
+    }
+    Fl_Window aboutwindow {
+      label {About Yoshimi}
+      xywh {46 64 365 290} type Double color 54 labelfont 13 labelsize 13 when 0 hide resizable
+      code0 {aboutDW = 365; aboutDH = 290;}
+      code1 {o->size_range(aboutDW,aboutDH, 0, 0, 0, 0, 1);}
+    } {
+      Fl_Group aboutFirst {
+        xywh {0 0 365 290}
+      } {
+        Fl_Box about1 {
+          label {Yoshimi
+meets
+ZynAddSubFX}
+          xywh {10 15 345 70} labelfont 9 labelsize 18 labelcolor 216 align 16 when 0
+        }
+        Fl_Box about2 {
+          label {Copyright 2002-2009, Nasca O. Paul and others
+Copyright 2009-2011, Alan Calvert
+Copyright 2012-2013, Jeremy Jongepier and others
+Copyright 2014-2021, Will Godfrey and others
+LV2 plugin Copyright 2014, Andrew Deryabin
+Splash Image Copyright 2017, Jesper Lloyd}
+          xywh {25 90 315 91} color 51 selection_color 30 labelfont 13 labelsize 11
+        }
+        Fl_Box about3 {
+          label {This is free software, and comes with ABSOLUTELY NO
+WARRANTY; you may redistribute it and/or modify it
+under the terms of GPL version 2, or (at your option)
+any later version.}
+          xywh {10 190 340 53} labelsize 11
+        }
+        Fl_Box about4 {
+          label { version}
+          xywh {61 254 240 20} labelfont 1 labelsize 12 labelcolor 145
+          code0 {//
+            o->copy_label((string("Yoshimi version ")
+                           + string(YOSHIMI_VERSION)).c_str());}
+        }
+        Fl_Button about5 {
+          label more
+          callback {//
+                 contributors->show();
+                 aboutFirst->hide();}
+          tooltip {Yoshimi's little band of helpers} xywh {15 253 43 22} labelsize 11
+        }
+      }
+      Fl_Group contributors {
+        xywh {5 5 355 280} box FLAT_BOX color 7 labelcolor 7 hide
+      } {
+        Fl_Box cont1 {
+          label {Some people who have helped Yoshimi
+ in various ways since
+Alan Calvert started the project}
+          xywh {12 8 340 57} color 7 labelfont 9 labelsize 15 labelcolor 4
+        }
+        Fl_Box cont2 {
+          label {
+          Chris Ahlstrom
+          Kristian Amlie
+          Jonathan Brickman
+          Jeanette Claassen
+          Rob Couto
+          Andrew Deryabin
+          Jörn Eichler
+          Csaba Erdei
+          James Fraser
+          Will Godfrey
+          Alexander Hirsch
+          Jeremy Jongepier
+          Iain King-Speir
+          Tobias Kortkamp
+          }
+          xywh {25 70 155 200} labelsize 12
+        }
+        Fl_Box cont3 {
+          label {
+          Tito Latini
+          Rainer Liffers
+          Jesper Lloyd
+          Lars Luthman
+          Holger Marzen
+          Lieven Moors
+          Harry Nakos
+          Iurie Nistor
+          Stephen Parry
+          Lorenzo Sutton
+          Hermann Voßeler
+          Nikita Zlobin
+
+
+          }
+          xywh {194 70 155 200} labelsize 12
+        }
+      }
+      Fl_Button aboutClose {
+        label Close
+        callback {//
+        aboutFirst->show();
+        contributors->hide();
+        aboutwindow->hide();}
+        xywh {305 253 43 22} box THIN_UP_BOX labelsize 11
+      }
+    }
+    Fl_Window syseffsendwindow {
+      label {Sys Send}
+      callback {syseffClose->do_callback();}
+      xywh {43 63 120 245} type Double labelfont 13 labelsize 13 hide resizable
+      code0 {syseffDW = 120; syseffDH = 245;}
+      code1 {o->size_range(syseffDW, syseffDH, 0, 0, 0, 0, 1);}
+    } {
+      Fl_Group syseffgroup {
+        xywh {9 46 109 172} box FLAT_BOX
+        code0 {//
+            for (int neff1 = 0; neff1 < NUM_SYS_EFX; neff1++)
+                for (int neff2 = neff1 + 1; neff2 < NUM_SYS_EFX; neff2++)}
+        code1 {{
+                syseffsend[neff1][neff2] =
+                    new SysEffSend(o->x()+(neff2 - 1) * 35, o->y() + 20 + neff1 * 52, 30, 30);
+                syseffsend[neff1][neff2]->label("aaa");
+                syseffsend[neff1][neff2]->init(neff1, neff2, synth);
+                syseffsend[neff1][neff2]->setValueType(VC_FXSysSend);
+            }}
+      } {}
+      Fl_Button syseffClose {
+        label Close
+        callback {//
+    saveWin(synth, syseffsendwindow->w(), syseffsendwindow->h(), syseffsendwindow->x(), syseffsendwindow->y(), false, "Master-systemeffectsend");
+    syseffsendwindow->hide();
+    syseffSeen = false;}
+        xywh {20 216 80 25} box THIN_UP_BOX
+      }
+      Fl_Box syseffname {
+        label {Send output of system effect  to other system effects}
+        xywh {5 5 110 35} labelsize 10 align 192
+      }
+    }
+    Fl_Window panelwindow {
+      label {Yoshimi Mixer Panel}
+      callback {Panelclose->do_callback();}
+      xywh {421 26 1040 320} type Double labelfont 13 labelsize 13 hide resizable
+      code1 {o->copy_label(synth->makeUniqueName("Mixer Panel").c_str());}
+    } {
+      Fl_Group Panelframe {
+        xywh {2 2 1036 286} box ENGRAVED_FRAME
+        code0 {//
+          for (int i = 0; i < 16; i++)
+          {
+              panellistitem[i] = new Panellistitem(0, 0, 64, 270, "");
+              panellistitem[i]->init(i, bankui, synth);
+          }}
+      } {}
+      Fl_Button towide {
+        label {Change to 1 x 16}
+        callback {//
+        changepanelstyle(1);}
+        xywh {360 290 130 25} box THIN_UP_BOX
+      }
+      Fl_Button todeep {
+        label {Change to 2 x 8}
+        callback {//
+        changepanelstyle(2);}
+        xywh {831 290 120 25} box THIN_UP_BOX
+      }
+      Fl_Choice Panelgroups {
+        label {Part Group}
+        callback {//
+        int result = o->value();
+        panelgroup = result * NUM_MIDI_CHANNELS;
+        for (int i = 0; i < NUM_MIDI_CHANNELS; ++i)
+            panellistitem[i]->refresh();}
+        xywh {5 300 86 18} down_box BORDER_BOX labelsize 12 align 1 textsize 12
+        code0 {o->add("1 to 16");o->add("17 to 32");o->add("33 to 48");o->add("49 to 64");}
+        code1 {o->value(panelgroup / NUM_MIDI_CHANNELS);}
+      } {}
+      Fl_Choice Panelsmallgroups {
+        label {Part Group}
+        callback {//
+        panelgroup = o->value() * NUM_MIDI_CHANNELS;
+        for (int i = 0; i < NUM_MIDI_CHANNELS; ++i)
+            panellistitem[i]->refresh();}
+        xywh {5 300 86 18} down_box BORDER_BOX labelsize 12 align 1 textsize 12
+        code0 {o->add("1 to 16");o->add("17 to 32");}
+        code1 {if (panelgroup ==  NUM_MIDI_CHANNELS) o->value(1); else o->value(0);}
+      } {}
+      Fl_Spinner CSspinner {
+        label CC
+        callback {//
+        CSpend->show();}
+        xywh {209 300 50 18} labelsize 12 align 1 minimum 0 maximum 127 value 115 textsize 12
+        code0 {CS_CC = synth->getRuntime().channelSwitchCC;}
+        code1 {if (CS_CC < 128) o->value(CS_CC); else o->value(115);}
+        class WidgetSpinner
+      }
+      Fl_Button CSpend {
+        label Pending
+        callback {//
+        CS_CC = synth->getRuntime().channelSwitchCC;
+        int candidate = CSspinner->value();
+        if (candidate == CS_CC)
+        {
+            o->hide();
+            return;
+        }
+
+        string name = synth->getRuntime().masterCCtest(candidate);
+        if (!name.empty())
+        {
+            query("", "", "", "In use for " + name);
+            if (CS_CC < 128)
+            {
+                CSspinner->value(CS_CC);
+                CSspinner->redraw();
+            }
+
+        }
+        else
+        {
+            send_data(TOPLEVEL::action::forceUpdate, MAIN::control::soloCC, CSspinner->value(), TOPLEVEL::type::Integer, TOPLEVEL::section::main);
+        }}
+        tooltip {Click to set} xywh {276 290 70 25} box PLASTIC_UP_BOX color 90 labelsize 12 hide
+      }
+      Fl_Choice channelswitch {
+        label Solo
+        callback {//
+                send_data(TOPLEVEL::action::forceUpdate, MAIN::control::soloType, o->value(), TOPLEVEL::type::Integer, TOPLEVEL::section::main);}
+        tooltip {Assign groups of parts to Ch 1, singly enabled by MIDI} xywh {114 300 74 18} down_box BORDER_BOX labelsize 12 align 1 textsize 12
+        code0 {o->add("Off");o->add("Row");o->add("Column");o->add("Loop");o->add("TwoWay");o->add("Channel");}
+        code1 {o->value(synth->getRuntime().channelSwitchType);}
+        code2 {if (o->value() == 0) CSspinner->hide(); else CSspinner->show();}
+        code3 {CS_CC = o->value();}
+      } {}
+      Fl_Button Panelclose {
+        label Close
+        callback {//
+    panelType |= 4;
+    saveWin(synth, panelwindow->w(), panelwindow->h(), panelwindow->x(), panelwindow->y(), panelType, "Mixer");
+    panelwindow->hide();}
+        xywh {975 290 60 25} box THIN_UP_BOX labelfont 1
+      }
+    }
+    Fl_Window message {
+      label Yoshimi
+      xywh {58 81 290 85} type Double labelsize 12 hide resizable
+      code0 {o->copy_label(synth->makeUniqueName("").c_str());}
+      code1 {msgDW = o->w(); msgDH = o->h();}
+      code2 {o->size_range(290, 85, 0, 0, 0, 0, 1);}
+    } {
+      Fl_Box words {
+        label {?}
+        xywh {5 9 280 45} color 55 selection_color 55 labelfont 1 labelsize 12 align 149
+      }
+      Fl_Button yesdoit {
+        label Yes
+        callback {//
+                send_data(TOPLEVEL::action::lowPrio | TOPLEVEL::action::forceUpdate, BANK::control::refreshDefaults, 1, TOPLEVEL::type::Integer, TOPLEVEL::section::bank);
+                closebutton->do_callback();}
+        xywh {49 60 70 20} hide
+      }
+      Fl_Button cancel {
+        label Cancel
+        callback {//
+                if (msgGroup == TOPLEVEL::msgResponse::refreshBankDefaults)
+                    send_data(TOPLEVEL::action::lowPrio, BANK::control::refreshDefaults, 0, TOPLEVEL::type::Integer, TOPLEVEL::section::bank);
+                else
+                    send_data(0, MIDILEARN::control::cancelLearn, 0, 3, TOPLEVEL::section::midiLearn);
+                closebutton->do_callback();}
+        xywh {130 60 70 20} hide
+      }
+      Fl_Button closebutton {
+        label Close
+        callback {//
+                yesdoit->hide();
+                cancel->hide();
+                message->hide();
+                msgSeen = false;}
+        xywh {211 60 70 20}
+      }
+    }
+    Fl_Window querywindow {
+      label Yoshimi user_data_type {void *}
+      callback {cancelQ->do_callback();}
+      xywh {5 207 420 105} type Double hide resizable
+      code0 {queryDW = 420; queryDH = 105;}
+      code1 {o->size_range(queryDW, queryDH, 0, 0, 0, 0, 1);} modal
+    } {
+      Fl_Button yesQ {
+        label Yes
+        callback {//
+    querywindow->hide();}
+        xywh {205 80 60 20}
+        code0 {o->value(0);}
+      }
+      Fl_Button noQ {
+        label No
+        callback {//
+    querywindow->hide();}
+        xywh {276 80 60 20}
+        code0 {o->value(0);}
+      }
+      Fl_Button cancelQ {
+        label Cancel
+        callback {//
+    querywindow->hide();}
+        xywh {348 80 66 20} labelfont 1
+        code0 {o->value(0);}
+      }
+      Fl_Box typeQ {
+        label {?}
+        xywh {8 26 45 45} box THIN_DOWN_BOX color 7 labelfont 9 labelsize 40 labelcolor 217
+      }
+      Fl_Box textQ {
+        label {text goes here}
+        xywh {65 11 345 63} align 128
+      }
+    }
+    Fl_Window textwindow {
+      label Yoshimi
+      callback {//
+      saveWin(synth, o->w(), o->h(), o->x(), o->y(), false, "Master-textin");
+      o->hide();}
+      xywh {222 50 270 60} type Double hide resizable
+      code0 {textinDW = o->w(); textinDH = o->h();}
+      code1 {o->size_range(textinDW, textinDH, 0, 0, 0, 0, 1);} modal
+    } {
+      Fl_Input textLine {
+        label {input:}
+        xywh {20 23 230 25} align 1
+      }
+    }
+    Fl_Window filerwindow {
+      label Yoshimi
+      callback {//
+        filerclose->do_callback();}
+      xywh {236 77 550 350} type Double hide resizable
+      code0 {filerDW = o->w(); filerDH = o->h();}
+      code1 {o->size_range(filerDW, filerDH, 0, 0, 0, 0, 1);} modal
+    } {
+      Fl_Input fileroldpath {
+        label {file paths}
+        callback {//
+        if (Fl::event_key() == FL_Enter)
+        {
+            filernewname->value("");
+            string name = string(o->value());
+            if (name.back() != '/')
+                name += "/";
+            if(!file::isDirectory(name))
+            {
+                if (!dosave && extension != TOPLEVEL::XML::Dir && extension != TOPLEVEL::XML::Bank)
+                {
+                    alert(synth, "Not a valid path to load from.");
+                    return;
+                }
+                if (choice(synth, "", "Yes", "No", "Add to path?") < 2)
+                    return;
+                if (file::createDir(name))
+                {
+                    alert(synth, "Unable to change a path here.");
+                    return;
+                }
+            }
+            filerpath = name;
+            o->value(name.c_str());
+            fillfiler(type_name);
+        }}
+        tooltip {Current path to use(editable)} xywh {10 20 448 25} labelfont 1 labelsize 12 align 1 textfont 1 textsize 12
+      }
+      Fl_Button filerback {
+        label Up
+        callback {//
+        if (filerpath == "/")
+            return;
+        filernewname->value("");
+        size_t pos = filerpath.rfind('/', filerpath.length() - 2);
+        filerpath = filerpath.substr(0, pos +1);
+        if (filerpath.empty())
+            filerpath = "/";
+        fileroldpath->value(filerpath.c_str());
+        fillfiler(type_name);}
+        tooltip {Go up one directory in path} xywh {463 21 78 24} labelfont 1 labelsize 12
+      }
+      Fl_Group faveGroup {
+        label Favourites
+        xywh {458 116 85 60} box ENGRAVED_FRAME
+      } {}
+      Fl_Button filerfave {
+        label {Show List}
+        callback {//
+        setfavourites();}
+        tooltip {Examine, re-order or delete entries} xywh {463 121 75 20} labelfont 1 labelsize 12
+      }
+      Fl_Button faveadd {
+        label Add
+        callback {//
+    string name = string(fileroldpath->value());
+    if (name.back() != '/')
+        name += "/";
+    if (!file::isDirectory(name))
+    {
+        alert(synth, "Not a valid path");;
+        return;
+    }
+    fileroldpath->value(name.c_str());
+    filerpath = name;
+    favebrowse->add(name.c_str());
+    setfavourites();}
+        tooltip {Add the current path to the favourites list} xywh {463 151 75 20} labelfont 1 labelsize 12
+      }
+      Fl_Button filerclose {
+        label Close
+        callback {//
+        filerfound.clear();
+        filerdone = true;
+        filernewname->value("Exit");
+        saveWin(synth, filerwindow->w(), filerwindow->h(), filerwindow->x(), filerwindow->y(), false, "Master-filer");}
+        xywh {463 320 78 20} labelfont 1 labelsize 12
+      }
+      Fl_Group filernamegroup {
+        label Name
+        xywh {10 50 533 26} box ENGRAVED_FRAME labelfont 1 labelsize 12 align 2
+      } {
+        Fl_Input filernewname {
+          callback {//
+      if (Fl::event_key() == FL_Enter)
+          fileruse->do_callback();}
+          tooltip {Name of file item to load or save} xywh {14 53 444 20} labelsize 12 align 2 textfont 1 textsize 12
+        }
+      }
+      Fl_Button fileruse {
+        label {< Use}
+        callback {//
+        filerpath = string(fileroldpath->value());
+        if (filerpath.back() != '/')
+        {
+            filerpath += '/';
+            fileroldpath->value(filerpath.c_str());
+        }
+        string leaf = string(filernewname->value());
+        if (!dosave || !leaf.empty())
+            filerfound = filerpath + leaf;
+        // error picked up in main loop
+        filerdone = true;}
+        tooltip {Apply this name to the path and load/save} xywh {464 53 74 20} labelfont 1 labelsize 12
+      }
+      Fl_Check_Button filerOpt8 {
+        label {Hide Dirs}
+        callback {//
+    if (o->value() != 0)
+        filerOpt1->deactivate();
+    else
+        filerOpt1->activate();
+    fillfiler(type_name);}
+        tooltip {Hide sub directories so that files are easier to see} xywh {490 204 18 18} down_box DOWN_BOX labelsize 12 align 1
+        class Fl_Check_Button2
+      }
+      Fl_Check_Button filerOpt1 {
+        label {. (dot) Dirs}
+        callback {//
+    fillfiler(type_name);}
+        tooltip {Show hidden paths} xywh {490 244 18 18} down_box DOWN_BOX labelsize 12 align 1
+        class Fl_Check_Button2
+      }
+      Fl_Check_Button filerOpt2 {
+        label {. (dot) Files}
+        callback {//
+    fillfiler(type_name);}
+        tooltip {Show hidden files} xywh {490 284 18 18} down_box DOWN_BOX labelsize 12 align 1
+        class Fl_Check_Button2
+      }
+      Fl_Check_Button filerOpt16 {
+        label {Hide Files}
+        callback {//
+    ;}
+        xywh {490 130 18 18} down_box DOWN_BOX labelsize 12 align 1 hide
+        class Fl_Check_Button2
+      }
+      Fl_Group filerframe {
+        xywh {4 4 542 88} box ENGRAVED_FRAME
+      } {}
+      Fl_Group filershort {
+        xywh {4 4 542 74} box ENGRAVED_FRAME
+      } {}
+      Fl_Group favourites {
+        xywh {4 49 542 299} box FLAT_BOX hide
+      } {
+        Fl_Group favename {
+          xywh {4 49 542 42} box ENGRAVED_FRAME
+        } {}
+        Fl_Browser favebrowse {
+          callback {//
+        if (!favebrowse->value())
+            return;
+        int result = favebrowse->value();
+        if (result < 1)
+            return;
+        clearfavelist();
+        setfavecolour(result);}
+          xywh {5 91 540 251} type Select box FLAT_BOX color 26 labelsize 12 textfont 1 textsize 12
+        }
+        Fl_Button favecancel {
+          label Back
+          callback {//
+    filernewname->activate();
+    fileruse->activate();
+    filerback->activate();
+    filerfave->activate();
+    filerclose->activate();
+    filerscroll->show();
+    favourites->hide();}
+          tooltip {Cancel any selection and return to filer window} xywh {455 61 70 20} labelfont 1 labelsize 12
+        }
+        Fl_Button favedefault {
+          label {Make Default}
+          callback {//
+    size_t pos = favebrowse->value();
+    if (pos > 0)
+        favebrowse->move(1, pos);}
+          tooltip {Set selected entry as the default (move to top)} xywh {287 61 110 20} labelfont 1 labelsize 12
+        }
+        Fl_Button favedelete {
+          label Delete
+          callback {//
+    clearfavelist();
+    size_t pos = favebrowse->value();
+    setfavecolour(1);
+    if (pos > 0)
+        favebrowse->remove(pos);}
+          tooltip {Remove selected entry} xywh {156 61 70 20} labelfont 1 labelsize 12
+        }
+        Fl_Button faveset {
+          label Set
+          callback {//
+    size_t pos = favebrowse->value();
+    if (pos > 0)
+    {
+        filerpath = clearfavecolour(pos);
+        if (filerpath.back() != '/')
+            filerpath += '/';
+    	fileroldpath->value(filerpath.c_str());
+    }
+    fillfiler(type_name);
+    favecancel->do_callback();}
+          tooltip {Set the current path to the selected entry and exit} xywh {20 61 70 20} labelfont 1 labelsize 12
+        }
+      }
+      Fl_Scroll filerscroll {
+        xywh {10 96 444 244} type VERTICAL color 7
+      } {}
+    }
+  }
+  Function {setfiler(string title, string name, bool save, int exten)} {return_type string
+  } {
+    code {//
+    dosave = save;
+    extension = exten;
+    loadfavourites();
+
+    string lastname = textMsgBuffer.fetch(fetchData(extension, MAIN::control::readLastSeen, TOPLEVEL::section::main));
+    string path;
+    type_name = "";
+    size_t pos = string::npos;
+    fileruseX = 464;
+    fileruse->copy_label("< New Dir");
+    filernamegroup->show();
+    filerframe ->show();
+    filershort->hide();
+    string currentfave = string(favebrowse->text(1)).substr(4);
+    if (extension == TOPLEVEL::XML::Dir)
+    {
+        if (!dosave)
+        {
+            fileruseX = 234;
+            fileruse->copy_label("^ From");
+            filernamegroup->hide();
+            filerframe ->hide();
+            filershort->show();
+        }
+        path = currentfave;
+        filernewname->value("");
+        filerOpt16->value(1);
+        filerOpt8->hide();
+        filerOpt2->hide();
+    }
+    else if(extension == TOPLEVEL::XML::Bank)
+    {
+        if(!dosave)
+        {
+            fileruseX = 234;
+            fileruse->copy_label("^ Import");
+            path = currentfave + name;
+            filernewname->value("");
+            filernamegroup->hide();
+            filerframe ->hide();
+            filershort->show();
+        }
+        else
+        {
+            fileruse->copy_label("< Export");
+            path = currentfave;
+            filernewname->value(name.c_str());
+        }
+        filerOpt16->value(1); // hide files
+        filerOpt8->hide(); // hide dirs
+        filerOpt2->hide(); // dot files
+    }
+    else
+    {
+        if (extension == TOPLEVEL::XML::ScalaTune || extension == TOPLEVEL::XML::ScalaMap)
+            fileruse->copy_label("< Import");
+
+        else if (dosave)
+            fileruse->copy_label("< Save");
+        else
+            fileruse->copy_label("< Load");
+        if (lastname.empty())
+        {
+            path = currentfave;
+            filernewname->value("");
+        }
+        else
+        {
+            pos = lastname.rfind('/');
+            path = lastname.substr(0, pos);
+        }
+
+        if (name.empty() && pos != string::npos)
+        {
+            name = lastname.substr(pos + 1);
+        }
+        filerOpt16->value(0);
+        filerOpt8->show();
+        filerOpt2->show();
+
+        if (!name.empty())
+        {
+            pos = name.find('.');
+            if (pos != string::npos)
+                name = name.substr(0, pos);
+            filernewname->value(name.c_str());
+        }
+
+        switch(extension)
+        {
+            case TOPLEVEL::XML::Instrument:
+                filerext = EXTEN::zynInst;
+                fileroldpath->copy_label("Path to Instruments");
+                type_name = "xiz";
+                break;
+            case TOPLEVEL::XML::Patch:
+                filerext = EXTEN::patchset;
+                fileroldpath->copy_label("Path to Patch Sets");
+                type_name = "xmz";
+                break;
+            case TOPLEVEL::XML::Presets:
+                filerext = EXTEN::presets;
+                fileroldpath->copy_label("Path to Presets");
+                type_name = "xpz";
+                break;
+
+            case TOPLEVEL::XML::Scale:
+                filerext = EXTEN::scale;
+                fileroldpath->copy_label("Path to Scales");
+                type_name = "xsz";
+                break;
+            case TOPLEVEL::XML::State:
+                filerext = EXTEN::state;
+                fileroldpath->copy_label("Path to States");
+                type_name = "state";
+                break;
+            case TOPLEVEL::XML::Vector:
+                filerext = EXTEN::vector;
+                fileroldpath->copy_label("Path to Vectors");
+                type_name = "xvy";
+                break;
+            case TOPLEVEL::XML::MLearn:
+                filerext = EXTEN::mlearn;
+                fileroldpath->copy_label("Path to Midi-Learn files");
+                type_name = "xly";
+                break;
+            case TOPLEVEL::XML::PadSample:
+                filerext = EXTEN::MSwave;
+                fileroldpath->copy_label("Path to PadSynth samples");
+                type_name = "wav";
+                break;
+            case TOPLEVEL::XML::ScalaTune:
+                filerext = EXTEN::scalaTuning;
+                fileroldpath->copy_label("Path to Scala tunings");
+                type_name = "scl";
+                break;
+            case TOPLEVEL::XML::ScalaMap:
+                filerext = EXTEN::scalaKeymap;
+                fileroldpath->copy_label("Path to Scala keymaps");
+                type_name = "kbm";
+                break;
+            case TOPLEVEL::XML::Bank:
+                fileroldpath->copy_label("Path to Instrument Banks");
+                break;
+        }
+    }
+    if (!title.empty())
+        fileroldpath->copy_label(title.c_str());
+    if (path.back() != '/')
+        path += '/';
+    filerpath = path;
+    fileroldpath->value(path.c_str());
+
+    fillfiler(type_name);
+
+    int X, Y, W, H, O;
+    loadWin(synth, W, H, X, Y, O, "Master-filer");
+    if (W < filerDW || H < filerDH)
+    {
+        W = filerDW;
+        H = filerDH;
+    }
+    checkSane(X, Y, W, H, filerDW, filerDH);
+    filerwindow->resize(X, Y, W, H);
+
+    lastfilerW = 0;
+    filerdone = false;
+    filerwindow->show();
+    lineitem = -1;
+    while (true)
+    {
+        if (lastfilerW != filerwindow->w())
+        {
+            filerRtext();
+            lastfilerW = filerwindow->w();
+        }
+        Fl::wait();
+        if (lineitem > -1)
+        {
+            filerselect(lineitem);
+            lineitem = -1;
+        }
+        if (filerdone && (extension == TOPLEVEL::XML::Dir || extension == TOPLEVEL::XML::Bank))
+        {
+            if (dosave && string(filernewname->value()).empty())
+            {
+                filerdone = false;
+                query("", "", "", "Nothing given to use!");
+            }
+            else
+                break;
+        }
+        else if (filerdone && string(filernewname->value()).empty())
+        {
+            filerdone = false;
+            query("", "", "", "Nothing given to use!");
+        }
+        else if (filerdone)
+        break;
+    }
+    filerwindow->hide();
+
+    if (extension == TOPLEVEL::XML::Dir || extension == TOPLEVEL::XML::Bank)
+    {
+        if (dosave)
+        {
+            if (string(filernewname->value()).length() < 3)
+                filerfound.clear();
+        }
+        else
+        {
+            if (filerfound.back() != '/')
+                filerfound += '/';
+        }
+    }
+    else if (dosave)
+    {
+        if (extension == TOPLEVEL::XML::Instrument)
+        { // try to cover all possibilites!
+            int type = fetchData(0, CONFIG::control::savedInstrumentFormat,TOPLEVEL::section::config);
+            if ((type == 3 || type == 1) && isRegularFile(filerfound + EXTEN::zynInst))
+            {
+                if (query("", "Yes", "No", "The file exists. \\nOverwrite it?") < 2)
+                    filerfound.clear();
+            }
+            else if ((type == 3 || type == 2) && isRegularFile(filerfound + EXTEN::yoshInst))
+            {
+                if (query("", "Yes", "No", "The file exists. \\nOverwrite it?") < 2)
+                    filerfound.clear();
+            }
+        }
+        else if (isRegularFile(filerfound + filerext))
+        {
+            if (query("", "Yes", "No", "The file exists. \\nOverwrite it?") < 2)
+            {
+                filerfound.clear();
+            }
+        }
+    }
+    savefavourites();
+    return filerfound;} {}
+  }
+  Function {fillfiler(string type_name)} {} {
+    code {//
+        string tofetch;
+        int options = filerOpt1->value();
+        if (filerOpt2->value() > 0)
+            options |= 2;
+        if (filerOpt8->value() > 0)
+            options |= 8;
+        if (filerOpt16->value() > 0)
+            options |= 16;
+
+        file::dir2string(tofetch, filerpath, filerext, options);
+
+        filerscroll->clear();
+        lineno = 0;
+        //std::cout << "*** list start ***" << std::endl;
+        while(!tofetch.empty() && lineno < FILER_SIZE)
+        {
+            size_t pos = tofetch.find("\\n");
+            string next = tofetch.substr(0, pos);
+            bool isDir = false;
+            filerlist[lineno] = new FilerLine(0, 0, 390, 20);
+            if (next.find("Dir:") != std::string::npos)
+            {
+                next = next.substr(5);
+                isDir = true;
+            }
+            filerlist[lineno]->init(synth,lineno, isDir, type_name, next);
+            //std::cout << "name >" << next << "<" << std::endl;
+            filerlist[lineno]->name->copy_label(next.c_str());
+            filerscroll->add(filerlist[lineno]);
+            ++lineno;
+            tofetch = tofetch.substr(pos + 1);
+        }
+        filerscroll->end();
+        filerscroll->scroll_to(-10,-10);
+        filerRtext();
+        //std::cout << "list end " << lineno << std::endl;} {}
+  }
+  Function {filerselect(int item)} {} {
+    code {//
+        string line = string(filerlist[item]->name->label());
+        if (filerlist[item]->dirIcon->visible())
+        {
+            //std::cout << "in dir" << std::endl;
+            if (line.back() !='/')
+                line += '/';
+            if (Fl::event_clicks())
+            {
+                Fl::event_clicks(0);
+                filerpath = filerpath + line;
+                fileroldpath->value(filerpath.c_str());
+                fillfiler(type_name);
+            }
+            return;
+        }
+        //std::cout << "files" << std::endl;
+        filernewname->value(line.c_str());
+        if (Fl::event_clicks())
+        {
+            Fl::event_clicks(0);
+            fileruse->do_callback();
+        }} {}
+  }
+  Function {setfavourites()} {} {
+    code {//
+    filernewname->deactivate();
+    fileruse->deactivate();
+    filerback->deactivate();
+    filerfave->deactivate();
+    filerclose->deactivate();
+    filerscroll->hide();
+    favourites->show();} {}
+  }
+  Function {loadfavourites()} {} {
+    code {//
+        string favetext = file::loadText(synth->getRuntime().ConfigDir + "/yoshimi-favourites");
+        if (favetext.empty())
+            favetext = synth->getRuntime().userHome;
+        favebrowse->clear();
+        string cr = "\\n";
+        for (int count = 0; count < 20; ++count)
+        {
+            size_t pos = favetext.find(cr);
+            string next = favetext.substr(0, pos);
+            favebrowse->add(next.c_str());
+            favetext = favetext.substr(pos + 1);
+            if (pos == string::npos)
+                break;
+        }
+        setfavecolour(1);} {}
+  }
+  Function {savefavourites()} {} {
+    code {//
+    clearfavelist();
+    string favetext;
+    string cr = "\\n";
+    for (int i = 1; i <= favebrowse->size(); ++ i)
+    {
+        string line = string(favebrowse->text(i));
+        favetext += (line + cr);
+    }
+    file::saveText(favetext, synth->getRuntime().ConfigDir + "/yoshimi-favourites");} {}
+  }
+  Function {clearfavelist()} {} {
+    code {//
+    for (int i = 1; i <= favebrowse->size(); ++ i)
+    {
+        string line = string(favebrowse->text(i));
+        if (line.substr(0, 4) == "@C4 ")
+        {
+            line = line.substr(4);
+            favebrowse->text(i, line.c_str());
+        }
+    }} {}
+  }
+  Function {setfavecolour(int num)} {} {
+    code {//
+    string line = "@C4 " + string(favebrowse->text(num));
+    favebrowse->text(num, line.c_str());} {}
+  }
+  Function {clearfavecolour(int num)} {return_type string
+  } {
+    code {//
+
+        string line = string(favebrowse->text(num));
+        if (line.substr(0, 4) == "@C4 ")
+            line = line.substr(4);
+        return line;} {}
+  }
+  Function {filerRtext()} {} {
+    code {//
+        float dScale = filerwindow->w() / float(filerDW);
+        int size12 = int(12 * dScale);
+        int size14 = int(14 * dScale);
+
+        fileroldpath->labelsize(size12);
+            fileroldpath->textsize(size12);
+        filernamegroup->labelsize(size12);
+            filernewname->textsize(size12);
+        faveGroup->labelsize(size14);
+        fileruse->position(fileruseX * dScale, 53 * dScale);
+        fileruse->labelsize(size12);
+
+        filerback->labelsize(size12);
+        faveadd->labelsize(size12);
+        filerfave->labelsize(size12);
+
+        filerOpt8->labelsize(size12);
+        filerOpt1->labelsize(size12);
+        filerOpt2->labelsize(size12);
+
+        filerclose->labelsize(size12);
+
+        favename->labelsize(size14);
+        favebrowse->textsize(size12);
+        favecancel->labelsize(size12);
+        favedefault->labelsize(size12);
+        favedelete->labelsize(size12);
+        faveset->labelsize(size12);
+        for (int i = 0; i < lineno; ++i)
+        {
+            filerlist[i]->resize(int(10 * dScale), int(((i * 20) + 96) * dScale), int(440 * dScale), int(20 * dScale));
+            filerlist[i]->name->labelsize(size12);
+            filerlist[i]->type->labelsize(int(4 * dScale));
+        }
+        filerwindow->redraw();} {}
+  }
+  Function {startInstance()} {} {
+    code {//
+    cancelInst->value(0);
+    nextInst->value(0);
+    valueInst->value("");
+    setInstance->show();
+    while (setInstance->visible())
+    {
+        if (cancelInst->value())
+        {
+            setInstance->hide();
+            break;
+        }
+        if (nextInst->value())
+        {
+            send_data(TOPLEVEL::action::lowPrio, MAIN::control::startInstance, 0, TOPLEVEL::type::Integer, TOPLEVEL::section::main);
+            setInstance->hide();
+            break;
+        }
+        if (Fl::get_key(FL_Enter))
+        {
+            string test = valueInst->value();
+            if (!test.empty())
+            {
+                int result = stoi(valueInst->value());
+                if (result > 0 && result < 32)
+                {
+                    send_data(TOPLEVEL::action::lowPrio, MAIN::control::startInstance, result, TOPLEVEL::type::Integer, TOPLEVEL::section::main);
+                    setInstance->hide();
+                    break;
+                }
+            }
+        }
+        Fl::wait();
+    };} {}
+  }
+  Function {send_data(int action, int control, float value, int type, int part = UNUSED, int engine = UNUSED, int insert = UNUSED, int parameter = UNUSED, int miscmsg = UNUSED)} {} {
+    code {//
+        type |= TOPLEVEL::type::Write;
+        /*
+            The following variations are due to the way the section was built
+            up over time. It really needs the whole lot expanding for the calls
+            to natively include all parameters.
+        */
+        if (control == MAIN::control::loadInstrumentByName && part == TOPLEVEL::section::main && miscmsg < NO_MSG)
+        {
+            collect_data(synth, 0, action, type, control, part, engine, UNUSED, UNUSED, UNUSED, UNUSED, miscmsg);
+            return;
+        }
+
+        if (control <= MAIN::control::soloType)
+            type |= Fl::event_button();
+        if (parameter == 0)
+        {
+            collect_data(synth, 0, action, type, control, part, UNUSED, UNUSED, UNUSED, UNUSED, UNUSED, miscmsg);
+            return;
+        }
+
+        collect_data(synth, value, action, type, control, part, UNUSED, engine, insert, parameter, UNUSED, miscmsg);} {}
+  }
+  Function {fetchData(float value, int control, int part, int kititem = UNUSED, int engine = UNUSED, int insert = UNUSED, int parameter = UNUSED, int offset = UNUSED, int miscmsg = UNUSED, int request = UNUSED)} {return_type float
+  } {
+    code {//
+        return collect_readData(synth, value, control, part, kititem, engine, insert, parameter, offset, miscmsg, request);} {}
+  }
+  Function {returns_update(CommandBlock *getData)} {} {
+    code {//
+    float value = getData->data.value;
+    bool wasFromHere = ((getData->data.source & TOPLEVEL::action::noAction) == TOPLEVEL::action::fromGUI);
+    bool force = getData->data.source & TOPLEVEL::action::forceUpdate;
+    unsigned char control = getData->data.control;
+    unsigned char newpart = getData->data.part;
+    unsigned char kititem = getData->data.kit;
+    unsigned char engine = getData->data.engine;
+    unsigned char insert = getData->data.insert;
+    unsigned char parameter = getData->data.parameter;
+    unsigned char miscmsg = getData->data.miscmsg;
+    int value_int = lrint(value);
+    bool value_bool = _SYS_::F2B(value);
+    int chan = kititem & 0x3f;
+    bool isSingle = kititem >= 0x40;
+    int mask = NUM_MIDI_CHANNELS - 1;
+
+    if (newpart == TOPLEVEL::section::midiIn)
+    {
+        if (engine == MIDI::CC::volume && partui->part->ctl->volume.receive == 0)
+            return; // disabled
+        if (engine == MIDI::CC::expression && partui->part->ctl->expression.receive == 0)
+            return; // disabled
+
+        float vol = (value * synth->part[npart]->ctl->volume.data) / 127;
+        if (control == MIDI::control::controller)
+        { // panel entries only
+            for (int i = 0; i < NUM_MIDI_CHANNELS; ++i)
+            {
+                if (panellistitem[i]->partenabled->value() != 0)
+                {
+                    if ((isSingle && i == (chan & mask)
+                                 && panellistitem[i]->partrcv->value() == (chan & mask)
+                                 && (chan / NUM_MIDI_CHANNELS) == (panelgroup / NUM_MIDI_CHANNELS))
+                         || (!isSingle && panellistitem[i]->partrcv->value() == (chan & mask)))
+                    {
+                        if (engine == MIDI::CC::volume)
+                            panellistitem[i]->partvolume->value(vol);
+                        else if (engine == MIDI::CC::panning)
+                            panellistitem[i]->partpanning->value(value);
+                    }
+                }
+            }
+        }
+
+        bool isForUs = (isSingle && chan == npart)
+             || (!isSingle &&  (partui->midich->value() == (chan & mask) + 1));// && partui->partGroupEnable->value() != 0);
+        switch(control)
+        {
+            case MIDI::control::noteOn:
+            case MIDI::control::noteOff:
+                break;
+            case MIDI::control::controller:
+                //cout << " Value " << value_int << "  kit " << int(kititem) << "  npart " << int(npart) << endl;
+                if (engine <= 119 && engine == synth->getRuntime().channelSwitchCC)
+                { // it's a valid channel switch
+                    int newch = partui->midich->value() - 1;
+                    switch (synth->getRuntime().channelSwitchType)
+                    {
+                        case MIDI::SoloType::Row:
+                            if (npart < NUM_MIDI_CHANNELS)
+                            {
+                                if (npart != value_int)
+                                    newch = NUM_MIDI_CHANNELS;
+                                else
+                                    newch = 0;
+                            }
+                            break;
+
+                        case MIDI::SoloType::Column:
+                            if (value_int == npart)
+                                newch = (value_int & mask);
+                            else if ((value_int & mask) == (npart & mask))
+                                newch = (value_int & mask) + NUM_MIDI_CHANNELS;
+                            break;
+
+                        case MIDI::SoloType::Loop:
+                        case MIDI::SoloType::TwoWay:
+                            if (npart < NUM_MIDI_CHANNELS)
+                            {
+                                if (npart == synth->getRuntime().channelSwitchValue)
+                                    newch = 0;
+                                else if (value_int > 0)
+                                    newch = NUM_MIDI_CHANNELS;
+                            }
+                            break;
+
+                        case MIDI::SoloType::Channel:
+                            //int ch = value_int % NUM_MIDI_CHANNELS;
+                            if (newch == chan || newch == chan + NUM_MIDI_CHANNELS)
+                                newch = chan;
+                            else
+                                newch = newch + NUM_MIDI_CHANNELS;
+                            break;
+
+                    }
+                    partui->midich->value(newch + 1);
+
+                    if (newch < NUM_MIDI_CHANNELS)
+                        partui->midich->textcolor(FL_BLACK);
+                    else
+                        partui->midich->textcolor(FL_WHITE);
+                    updatepanel();
+                }
+                else if (isForUs)
+                {
+                    switch(engine)
+                    {
+                        case MIDI::CC::modulation:
+                            partui->modulation->value(value);
+                            break;
+                        case MIDI::CC::volume:
+                            partui->partvol->value(vol);
+                            break;
+                        case MIDI::CC::panning:
+                            partui->partpan->value(value);
+                            break;
+                        case MIDI::CC::expression:
+                            partui->expression->value(value);
+                            break;
+                        case MIDI::CC::legato:
+                        {
+                            int mode = synth->ReadPartKeyMode(npart);
+                            partui->modepatch->color(29);
+                            if (mode > 1)
+                            {
+                                partui->keymode->value(2);
+                                if (partui->drumMode->value() != 0)
+                                    partui->modepatch->color(91);
+                            }
+                            else
+                                partui->keymode->value(mode);
+                            partui->modepatch->redraw();
+                            break;
+                        }
+                        case MIDI::CC::filterQ:
+                            partui->filterq->value(value);
+                            break;
+                        case MIDI::CC::filterCutoff:
+                            partui->filtercutoff->value(value);
+                            break;
+                        case MIDI::CC::bandwidth:
+                            partui->masterbandwidth->value(value);
+                            break;
+                    }
+                }
+                break;
+            case MIDI::control::bankChange:
+                if (engine != UNUSED)
+                    bankui->readbankcfg();
+                bankui->rescan_for_banks();
+                break;
+        }
+        return;
+    }
+    if (newpart == TOPLEVEL::section::systemEffects)
+    {
+        if (insert == TOPLEVEL::insert::systemEffectSend)
+        {
+            if (!wasFromHere || force == true)
+                syseffsend[engine][control]->value(value);
+        }
+        else
+        {
+            if (control == EFFECT::sysIns::effectNumber)
+            {
+                syseffnocounter->value(engine + 1);
+                nsyseff = engine;
+                sysefftype->value(synth->sysefx[nsyseff]->geteffect());
+                syseffectui->refresh(synth->sysefx[nsyseff], TOPLEVEL::section::systemEffects, nsyseff);
+                syseffectui->UpdatePresetColour(parameter, sysefftype->value());
+                SysEffOn->value(fetchData(0, EFFECT::sysIns::effectEnable, TOPLEVEL::section::systemEffects, UNUSED, 0));
+                if (SysEffOn->value())
+                    sysefftype->activate();
+                else
+                    sysefftype->deactivate();
+            }
+            else if (control == EFFECT::sysIns::effectType)
+            {
+                syseffnocounter->value(engine + 1);
+                nsyseff = engine;
+                sysefftype->value(value_int);
+                syseffectui->refresh(synth->sysefx[nsyseff], TOPLEVEL::section::systemEffects, nsyseff);
+                syseffectui->UpdatePresetColour(parameter, sysefftype->value());
+                if (sysinsgroup->value() == SystemEffectsGrp)
+                {
+                    showSysEfxUI();
+                    syseffectui->effRtext(mainScale, sysefftype->value());
+                }
+            }
+            else if (control == EFFECT::sysIns::effectEnable)
+            {
+               SysEffOn->value(value_bool);
+               if (value_bool)
+                    sysefftype->activate();
+                else
+                    sysefftype->deactivate();
+            }
+        }
+        return;
+    }
+    else if (newpart == TOPLEVEL::section::insertEffects)
+    {
+        if (control == EFFECT::sysIns::effectNumber)
+        {
+            ninseff = engine;
+            setInsEff(ninseff);
+            if (sysinsgroup->value() == InsertionEffectsGrp)
+                showInsEfxUI();
+            inseffectui->UpdatePresetColour(parameter, insefftype->value());
+
+        }
+        else if (control == EFFECT::sysIns::effectType)
+        {
+            inseffnocounter->value(engine + 1);
+            ninseff = engine;
+            insefftype->value(value_int);
+            setInsEff(ninseff);
+            inseffectui->UpdatePresetColour(parameter, insefftype->value());
+            if (sysinsgroup->value() == InsertionEffectsGrp)
+            {
+                showInsEfxUI();
+                inseffectui->effRtext(mainScale, insefftype->value());
+            }
+        }
+        else if (control == EFFECT::sysIns::effectDestination)
+        {
+            inseffpart->value(value_int + 2);
+            if (value_int == -1)
+                insefftype->deactivate();
+            else
+            {
+                insefftype->activate();
+                setInsEff(ninseff);
+                if (sysinsgroup->value() == InsertionEffectsGrp)
+                    showInsEfxUI();
+            }
+        }
+        return;
+    }
+    string name;
+    switch(control)
+    {
+        case MAIN::control::volume:
+            mastervolumedial->value(value);
+            break;
+
+        case MAIN::control::partNumber:
+            {
+            //bool ctlmidiSeen = partui->ctlmidi->visible();
+            //if(partui->instrumenteditwindow->visible())
+                //openedit = true;
+            // openedit also set by right click in mixer panel
+            // might need further refinement
+
+            if ((getData->data.source & TOPLEVEL::action::noAction) != TOPLEVEL::action::fromGUI)
+                activePart = value_int;
+
+            partNew(activePart);
+            //updatepanel(); // not needed?
+            if (openedit)
+            {
+                partui->Showedit();
+                openedit = false;
+            }
+            else
+                partui->instrumenteditwindow->hide();
+            }
+            break;
+
+        case MAIN::control::availableParts:
+            partmax = value_int;
+            npartcounter->range(1, partmax);
+            updatepart();
+            updatepanel();
+            setinspartlist();
+            vectorui->checkParts(value_int);
+            break;
+        case MAIN::control::panLawType:
+            panning_law->value(value_int);
+            break;
+
+        case MAIN::control::detune:
+            globalfinedetune->value(value);
+            break;
+
+        case MAIN::control::keyShift:
+            masterkeyshift->value(value_int);
+            break;
+
+        case MAIN::control::mono:
+            mastermono->value(value_int);
+            if (value_int)
+                mastermono->label("M");
+            else
+                mastermono->label("S");
+            break;
+
+        case MAIN::control::soloType:
+            channelswitch->value(value_int);
+            if (value_int == 0)
+            {
+                CS_CC = 128;
+                CSspinner->value(115); // default
+                CSspinner->hide();
+                CSpend->hide();
+                for (int i = 0; i < NUM_MIDI_CHANNELS; ++i)
+                    setPanelPartMidiWidget(i, i);
+            }
+            else
+            {
+                CS_CC = 115;
+                CSspinner->value(115);
+                CSpend->show();
+                CSspinner->show();
+                for (int i = 1; i < NUM_MIDI_CHANNELS; ++i)
+                {
+                    if (value_int == 2)
+                        setPanelPartMidiWidget(i, i);
+                    else
+                        setPanelPartMidiWidget(i, 16);
+                }
+            }
+            panelwindow->changed();
+            break;
+        case MAIN::control::soloCC:
+            updatepanel();
+            break;
+        case MAIN::control::exportBank:
+            name = textMsgBuffer.fetch(miscmsg);
+            if (wasFromHere)
+                query("", "", "", name);
+            break;
+        case MAIN::control::importBank: // import bank
+            name = textMsgBuffer.fetch(miscmsg);
+            if (wasFromHere)
+            {
+                if (name.find("FAILED") == 1)
+                    query("", "", "", name);
+                else
+                {
+                    unsigned int other = name.find(" : ");
+                    if (other < 1024) // a bit of a hack :(
+                    {
+                        name = name.substr(other + 3);
+                        query("", "", "", name);
+                    }
+                }
+            }
+            bankui->rescan_for_banks();
+            break;
+        case MAIN::control::deleteBank: // delete bank and contents
+            name = textMsgBuffer.fetch(miscmsg);
+            if (name.find("FAILED") == 1)
+            {
+                if (wasFromHere)
+                    query("", "", "", name);
+            }
+            bankui->rescan_for_banks();
+            bankui->set_bank_slot();
+            break;
+
+        case MAIN::control::loadInstrumentFromBank:
+            /*if (insert != UNUSED)
+                ;// updateBankRootDirs() // apparently not needed!
+            if (engine != UNUSED)
+                bankui->readbankcfg(); // why did we have this?
+            if (insert != UNUSED || engine != UNUSED)
+                bankui->rescan_for_banks(); // why did we have this?*/
+            bankui->refreshinstrumentwindow();
+            updatepartprogram(kititem);
+            break;
+
+        case MAIN::control::loadInstrumentByName:
+            updatepartprogram(kititem);
+            //RecentInstruments->activate();
+            break;
+
+        case MAIN::control::saveNamedInstrument: // save instrument
+            name = textMsgBuffer.fetch(miscmsg);
+            if (name.find("FAILED") == 1)
+            {
+                if (wasFromHere)
+                    query("", "", "", name);
+            }
+            else
+            {
+                partui->setinstrumentlabel();
+                panellistitem[newpart % NUM_MIDI_CHANNELS]->refresh();
+                //RecentInstruments->activate();
+            }
+            break;
+
+        case MAIN::control::loadNamedPatchset: // load patchset
+            name = textMsgBuffer.fetch(miscmsg);
+            if (name.find("FAILED") == 1)
+            {
+                if (wasFromHere)
+                    query("", "", "", name);
+            }
+            else
+            {
+                vectorui->RefreshChans();
+                //RecentParams->activate();
+                setMasterLabel(findLeafName(name));
+                refresh_master_ui(2);
+            }
+
+            break;
+
+        case MAIN::control::saveNamedPatchset: // save patch set
+            name = textMsgBuffer.fetch(miscmsg);
+            if (name.find("FAILED") == 1)
+            {
+                if (wasFromHere)
+                    query("", "", "", name);
+            }
+            else
+            {
+                setMasterLabel(findLeafName(name));
+                //RecentParams->activate();
+                //updatepanel(); // why?
+            }
+            break;
+
+        case MAIN::control::loadNamedVector: // load vector
+            name = textMsgBuffer.fetch(miscmsg);
+            if (name.find("FAILED") == 1)
+            {
+                if (wasFromHere)
+                    query("", "", "", name);
+            }
+            else
+            {
+                vectorui->setLoadLabelRemote(insert, synth->getRuntime().vectordata.Name[insert]);
+                setMasterLabel(findLeafName(name) + " - Vector " + to_string(int(insert) + 1));
+                vectorui->setRecent(true);
+                refresh_master_ui(5);
+            }
+            break;
+
+        case MAIN::control::saveNamedVector: // save vector
+            name = textMsgBuffer.fetch(miscmsg);
+            if (name.find("FAILED") == 1)
+            {
+                if (wasFromHere)
+                    query("", "", "", name);
+            }
+            else
+            {
+                setMasterLabel(findLeafName(name) + " - Vector " + to_string(int(insert) + 1));
+                vectorui->setRecent(true);
+            }
+            break;
+
+        case MAIN::control::loadNamedScale: // load scales
+            name = textMsgBuffer.fetch(miscmsg);
+            if (name.find("FAILED") == 1)
+            {
+                if (wasFromHere)
+                    query("", "", "", name);
+            }
+            else
+            {
+                //RecentScale->activate();
+                microtonalui->microtonaluiwindow->hide();
+                microtonalui->make_window();
+                microtonalui->showScales();
+            }
+            break;
+
+        case MAIN::control::saveNamedScale: // save scales
+            name = textMsgBuffer.fetch(miscmsg);
+            if (wasFromHere && name.find("FAILED") == 1)
+                query("", "", "", name);
+            //else
+                //RecentScale->activate();
+            break;
+
+        case MAIN::control::loadNamedState: // load state
+            name = textMsgBuffer.fetch(miscmsg);
+            if (wasFromHere && name.find("FAILED") == 1)
+            {
+                query("", "", "", name);
+                refresh_master_ui(1);
+            }
+            else
+            {
+                setMasterLabel(findLeafName(name) + " - State");
+                refresh_master_ui(0x14);
+            }
+            break;
+
+        case MAIN::control::saveNamedState: // save state
+            name = textMsgBuffer.fetch(miscmsg);
+            if (wasFromHere && name.find("FAILED") == 1)
+                query("", "", "", name);
+            else
+                setMasterLabel(findLeafName(name) + " - State");
+            break;
+        case MAIN::control::defaultPart:
+            partNew(activePart);
+            updatepanel();
+            break;
+        case MAIN::control::masterReset:
+            if (newpart == TOPLEVEL::section::main)
+            {
+                refresh_master_ui(1);
+                vumeter->init(-1, synth);
+                resetPartsClip();
+            }
+            else if (newpart < NUM_MIDI_PARTS)
+                partNew(newpart);
+            setMasterLabel("");
+            break;
+
+        case MAIN::control::masterResetAndMlearn:
+            refresh_master_ui(1);
+            resetPartsClip();
+            if (midilearnui)
+                midilearnui->midilearnwindow->hide();//Hide();
+            setMasterLabel("");
+            break;
+
+        case MAIN::control::openManualPDF:
+            message->hide();
+            if (miscmsg != NO_MSG)
+                query("", "", "", textMsgBuffer.fetch(miscmsg));
+            break;
+
+        case MAIN::control::startInstance: // new instance (do nothing here)
+            break;
+
+        case MAIN::control::stopSound:
+            virkeyboard->relaseallkeys();
+            vumeter->init(-1, synth);
+            resetPartsClip();
+            break;
+    }} {}
+  }
+  Function {query(string one, string two, string three, string text)} {return_type int
+  } {
+    code {//
+    if (one.empty())
+        yesQ->hide();
+    else
+    {
+        if(one == "!")
+        {
+            yesQ->copy_label("Yes");
+        }
+        else
+        {
+            yesQ->copy_label(one.c_str());
+        }
+        yesQ->show();
+    }
+
+    if (two.empty())
+        noQ->hide();
+    else
+    {
+        if (two == "!")
+        {
+            noQ->copy_label("No");
+        }
+        else
+        {
+            noQ->copy_label(two.c_str());
+        }
+        noQ->show();
+    }
+    if (three.empty())
+    {
+        cancelQ->copy_label("OK");
+        typeQ->copy_label("!");
+    }
+    else
+    {
+        if (three == "!")
+        {
+            cancelQ->copy_label("Cancel");
+        }
+        else
+        {
+            cancelQ->copy_label(three.c_str());
+        }
+        typeQ->copy_label("?");
+    }
+
+    textQ->copy_label(text.c_str());
+
+    int X, Y, W, H, O;
+    loadWin(synth, W, H, X, Y, O, "Master-query");
+
+    if (W < queryDW || H < queryDH)
+    {
+        W = queryDW;
+        H = queryDH;
+    }
+    checkSane(X, Y, W, H, queryDW, queryDH);
+    querywindow->resize(Fl::event_x_root() + 16, Fl::event_y_root(), W, H);
+
+    querywindow->show();
+    int result = 0;
+    while(querywindow->shown())
+    {
+        queryRtext();
+        if (yesQ->value())
+            result = 3;
+        else if (noQ->value())
+            result = 2;
+        else if  (cancelQ->value())
+            result = 1;
+        Fl::wait();
+    }
+    saveWin(synth, querywindow->w(),querywindow->h(), querywindow->x(), querywindow->y(), false, "Master-query");
+    return result;} {}
+  }
+  Function {setmessage(int group, bool fixedPos, string text, string B1 = "Close", string B2 = "", string B3 = "")} {} {
+    code {//
+        msgGroup = group;
+        if (B3.empty())
+            yesdoit->hide();
+        else
+        {
+            yesdoit->copy_label(B3.c_str());
+            yesdoit->show();
+        }
+        if (B2.empty())
+            cancel->hide();
+        else
+        {
+            cancel->copy_label(B2.c_str());
+            cancel->show();
+        }
+        closebutton->copy_label(B1.c_str());
+        int X, Y, W, H, O;
+        loadWin(synth, W, H,  X,  Y, O, "Master-message");
+        if(W < msgDW || H < msgDW)
+        {
+            W = msgDW;
+            H = msgDH;
+
+        }
+        checkSane(X, Y, W, H, msgDW, msgDH);
+
+        if (fixedPos)
+            message->resize(masterwindow->x() + masterwindow->w() / 2 - message->w() / 2, masterwindow->y() + masterwindow->h() / 2 - message->h() / 2, W, H);
+        else
+            message->resize(Fl::event_x_root() + 16, Fl::event_y_root(), W, H);
+        words->copy_label(text.c_str());
+        message->show();} {}
+  }
+  Function {setinput(string label, string oldLine)} {return_type string
+  } {
+    code {//
+    textLine->copy_label(label.c_str());
+    textLine->value(oldLine.c_str());
+    int X, Y, W, H, O;
+    loadWin(synth, W, H, X, Y, O, "Master-textin");
+    X = Fl::event_x_root(); // aways want these relative to parent
+    Y = Fl::event_y_root();
+    if(W < textinDW || H < textinDH)
+    {
+        W = textinDW;
+        H = textinDH;
+    }
+    checkSane(X, Y, W, H, textinDW, textinDH, true);
+
+    textwindow->size(W, H);
+    textwindow->show();
+    string result;
+    string oldline = textLine->value();
+    size_t pos = 1;
+    while (textwindow->shown())
+    {
+        textinRtext();
+        result = string(textLine->value());
+        Fl::wait();
+        pos = result.find_last_not_of(' ');
+        if (pos != string::npos)
+            pos -= result.find_first_not_of(' ');
+        if (Fl::event_key() == FL_Enter)
+        {
+            if (pos == 0 || pos > 1)
+                textwindow->hide();
+            else
+                textLine->copy_label("Must be at least 3 letters or none");
+        }
+    }
+    saveWin(synth, textwindow->w(), textwindow->h(), textwindow->x(), textwindow->y(), false, "Master-textin");
+    if (pos == 0 || pos == string::npos)
+        return oldline;
+
+    return result;} {}
+  }
+  Function {updatesendwindow()} {} {
+    code {//
+    for (int neff1 = 0; neff1 < NUM_SYS_EFX; ++neff1)
+        for (int neff2 = neff1 + 1; neff2 < NUM_SYS_EFX; ++neff2)
+            syseffsend[neff1][neff2]->value(synth->Psysefxsend[neff1][neff2]);} {}
+  }
+  Function {updatelistitem(int part)} {} {
+    code {//
+    int tmp = part % NUM_MIDI_CHANNELS;
+    panellistitem[tmp]->refresh();} {}
+  }
+  Function {changepanelstyle(int type)} {} {
+    code {//
+    if (type == 0)
+        type = 1;
+    panelwindow->hide();
+    if (type != panelType)
+    {
+        if (type == 1)
+        {
+            panelwindow->size(PANEL_SINGLE_X, PANEL_SINGLE_Y);
+            panelwindow->size_range((PANEL_SINGLE_X * 9) / 10, (PANEL_SINGLE_Y * 9) / 10, 0, 0, 0, 0, 1);
+            towide->hide();
+            todeep->show();
+            Panelclose->position(975, 290);
+        }
+        else if (type == 2)
+        {
+            panelwindow->size(PANEL_DUAL_X, PANEL_DUAL_Y);
+            panelwindow->size_range((PANEL_DUAL_X * 4) / 5, (PANEL_DUAL_Y * 4) / 5, 0, 0, 0, 0, 1);
+            towide->show();
+            todeep->hide();
+        }
+    }
+    panelwindow->show();
+    panelType = type;
+    panelRtext();} {}
+  }
+  Function {Showpanel()} {} {
+    code {//
+    int fetchW, fetchH, fetchX, fetchY, fetchO;
+    loadWin(synth, fetchW, fetchH, fetchX, fetchY, fetchO, "Mixer");
+    if (fetchO == 0)
+        fetchO = 1; // it's never been seen so set the default
+
+    // assune default sizes
+    int defW = (PANEL_SINGLE_X * 9) / 10;
+    int defH = (PANEL_SINGLE_Y * 9) / 10;
+
+    if (fetchW < (PANEL_DUAL_X * 9) / 10 || fetchH < defH)
+    {
+        fetchW = defW;
+        fetchH = defH;
+        fetchO = 1; // it's messed up so force default
+    }
+
+    int tmp = fetchO & 3;
+    if (tmp == 2)
+    {
+        defW = (PANEL_DUAL_X * 9) / 10;
+        defH = (PANEL_DUAL_Y * 9) / 10;
+    }
+
+    if (tmp == 1)
+    {
+        towide->hide();
+        todeep->show();
+    }
+    else if (tmp == 2)
+    {
+        towide->show();
+        todeep->hide();
+    }
+
+    panelwindow->size_range(defW, defH, 0, 0, 0, 0, 1);
+    checkSane(fetchX, fetchY, fetchW, fetchH, defW, defH);
+    panelwindow->resize(fetchX, fetchY, fetchW, fetchH);
+
+    if (fetchO < 4)
+    {
+        panelType = tmp;
+        panelwindow->show();
+        updatepanel();
+    }
+    else
+    {
+        panelType = fetchO;
+        panelwindow->hide();
+    }} {}
+  }
+  Function {updatepanel(bool full = false)} {} {
+    code {//
+    for (int npart = 0; npart < partmax; ++npart)
+    {
+        if (npart < NUM_MIDI_CHANNELS)
+            panellistitem[npart]->refresh();
+        vectorui->setInstrumentLabel(npart);
+    }
+
+    if (partmax == 64)
+    {
+        Panelgroups->show();
+        //Panelgroups->value(0);
+    }
+    else
+        Panelgroups->hide();
+    if (partmax == 32)
+    {
+        Panelsmallgroups->show();
+        //Panelsmallgroups->value(0);
+    }
+    else
+        Panelsmallgroups->hide();
+
+    int oldswitch = channelswitch->value();
+    channelswitch->value(synth->getRuntime().channelSwitchType);
+    if (full)
+    {
+        oldswitch = channelswitch->value(); // disables 'pending'
+        CS_CC = synth->getRuntime().channelSwitchCC;
+    }
+    if (synth->getRuntime().channelSwitchType > MIDI::SoloType::Disabled)
+    {
+        if (oldswitch == MIDI::SoloType::Disabled)
+        {
+            CSspinner->value(115);
+            CSpend->show();
+        }
+        else
+        {
+            CSspinner->value(synth->getRuntime().channelSwitchCC);
+            CSpend->hide();
+        }
+        CSspinner->show();
+    }
+    else
+    {
+        synth->getRuntime().channelSwitchCC = 128;
+        CSspinner->hide();
+        CSpend->hide();
+    };
+    panelwindow->changed();} {}
+  }
+  Function {partNew(int _npart)} {} {
+    code {//
+    int nval = _npart;
+    partuigroup->remove(partui);
+    delete partui;
+    partui = new PartUI(3 * mainScale, 255 * mainScale, 765 * mainScale, 525 * mainScale);
+    partuigroup->add(partui);
+    partui->init(synth->part[nval], nval, bankui);
+    partui->groupRtext(mainScale);
+    partui->kitRtext(true);
+    partui->redraw();
+    npartcounter->value(nval + 1);
+    npartcounter->redraw();
+    updatelistitem(npart);
+    updatelistitem(nval);
+    activePart = nval;
+    npart = nval;} {}
+  }
+  Function {updatepart()} {} {
+    code {//
+    if (checkmaxparts())
+    {
+        npart = 0;
+        npartcounter->value(npart + 1);
+        npartcounter->do_callback();
+        maxparts->value(partmax);
+        maxparts->redraw();
+        return;
+    }
+
+    if (synth->partonoffRead(npart))
+        partui->partgroupui->activate();
+    else
+        partui->partgroupui->deactivate();
+
+    partui->partGroupEnable->value(synth->partonoffRead(npart));
+    partui->partpan->value(synth->part[npart]->Ppanning);
+    partui->partvol->value(synth->part[npart]->Pvolume);
+    partui->partkeylimit->value(synth->part[npart]->Pkeylimit);
+    partui->velocitysense->value(synth->part[npart]->Pvelsns);
+    partui->velocityoffset->value(synth->part[npart]->Pveloffs);
+    partui->partkeyshift->value(synth->part[npart]->Pkeyshift - 64);
+    partui->minkcounter->value(synth->part[npart]->Pminkey);
+    partui->maxkcounter->value(synth->part[npart]->Pmaxkey);
+    partui->enportamento->value(synth->part[npart]->ctl->portamento.portamento);
+
+    partui->keymode->value(synth->part[npart]->Pkeymode & MIDI_NOT_LEGATO);
+    maxparts->value(partmax);
+    maxparts->redraw();
+    npartcounter->value(npart + 1);
+    activePart = npart;
+    npartcounter->redraw();
+    partui->checkEngines();} {}
+  }
+  Function {updatepartprogram(int _npart)} {} {
+    code {//
+    if (vectorui)
+        vectorui->setInstrumentLabel(_npart);
+    /*if (_npart != npart) // not needed?
+    {
+        updatelistitem(_npart);
+        return;
+    }*/
+
+    if (partui->part->Prcvchn <  NUM_MIDI_CHANNELS)
+    {
+        partui->midich->value(partui->part->Prcvchn + 1);
+        partui->midich->textcolor(FL_BLACK);
+    }
+    else
+    {
+         partui->midich->textcolor(FL_WHITE);
+         partui->midich->redraw();
+    }
+    partNew(_npart);} {}
+  }
+  Function {updateeffects(int data)} {} {
+    code {//
+    int partnum = data >> 24;
+    int effclass = (data >> 22) & 3;
+    int parameter = (data >> 8) & 0x7f;
+
+    if (effclass == 2)
+    {
+         // will be part effects
+    }
+    else if (effclass == 1)
+    {
+        ninseff = parameter & 0x3f;
+        sysinsgroup->value(InsertionEffectsGrp);
+        showInsEfxUI();
+        inseffnocounter->value(ninseff + 1);
+        inseffpart->value(partnum);
+        if (partnum != 1) // off
+        {
+            insefftype->activate();
+            inseffectui->activate();
+        }
+        else
+        {
+            insefftype->deactivate();
+            inseffectui->deactivate();
+        }
+        insefftype->value(synth->insefx[ninseff]->geteffect());
+        inseffectui->refresh(synth->insefx[ninseff], TOPLEVEL::section::insertEffects, ninseff);
+    }
+    else
+    {
+        nsyseff = parameter & 0x3f;
+        sysinsgroup->value(SystemEffectsGrp);
+        syseffnocounter->value(nsyseff + 1);
+        sysefftype->value(synth->sysefx[nsyseff]->geteffect());
+        syseffectui->refresh(synth->sysefx[nsyseff], TOPLEVEL::section::systemEffects, nsyseff);
+        showSysEfxUI();
+    }} {}
+  }
+  Function {updatecontrollers(int _npart)} {} {
+    code {//
+    if (npart == _npart)
+        partui->ctlmidirefresh();} {}
+  }
+  Function {setMasterLabel(string name)} {} {
+    code {//
+    string prefix;
+    string panel;
+    if  (name.size())
+    {
+        prefix = synth->makeUniqueName(name);
+        panel = synth->makeUniqueName("Mixer Panel - "+name);
+    }
+    else
+    {
+        prefix = synth->makeUniqueName("");
+        prefix = prefix.substr(0, prefix.length() - 3);
+        panel = prefix + " : Mixer Panel";
+    }
+    masterwindow->copy_label(prefix.c_str());
+    panelwindow->copy_label(panel.c_str());
+    masterwindow->changed();} {}
+  }
+  Function {do_load_scale(string fname)} {} {
+    code {//
+    send_data(TOPLEVEL::action::lowPrio | TOPLEVEL::action::forceUpdate, MAIN::control::loadNamedScale, 0, TOPLEVEL::type::Integer, TOPLEVEL::section::main, UNUSED, UNUSED, UNUSED, textMsgBuffer.push(fname));} {}
+  }
+  Function {do_load_instrument(string fname)} {} {
+    code {//
+    int npart = partui->npart;
+    if ((npart /  NUM_MIDI_CHANNELS) == (panelgroup  /  NUM_MIDI_CHANNELS))
+    {
+        int displaypart = npart % NUM_MIDI_CHANNELS;
+        panellistitem[displaypart]->partenabled->value(0);
+        panellistitem[displaypart]->panellistitemgroup->deactivate();
+    }
+    partui->partGroupEnable->value(0);
+    partui->partgroup->deactivate();
+    send_data(TOPLEVEL::action::forceUpdate, MAIN::control::loadInstrumentByName, 0, TOPLEVEL::type::Integer, TOPLEVEL::section::main, npart, UNUSED, UNUSED, textMsgBuffer.push(fname));} {}
+  }
+  Function {do_load_master(string filename)} {} {
+    code {//
+    if (filename.empty())
+    {
+        filename = setfiler("", "", false, TOPLEVEL::XML::Patch);
+        if (filename.empty())
+            return;
+    }
+    send_data(TOPLEVEL::action::muteAndLoop | TOPLEVEL::action::forceUpdate, MAIN::control::loadNamedPatchset, 0, TOPLEVEL::type::Integer, TOPLEVEL::section::main, UNUSED, UNUSED, UNUSED, textMsgBuffer.push(filename));} {}
+  }
+  Function {do_save_master()} {} {
+    code {//
+    string filename = setfiler("", "", true, TOPLEVEL::XML::Patch);
+    if (filename.empty())
+        return;
+    send_data(TOPLEVEL::action::lowPrio | TOPLEVEL::action::forceUpdate, MAIN::control::saveNamedPatchset, 0, TOPLEVEL::type::Integer, TOPLEVEL::section::main, UNUSED, UNUSED, UNUSED, textMsgBuffer.push(filename));} {}
+  }
+  Function {refresh_master_ui(int type)} {} {
+    code {//
+    if (microtonalui) // not taking chances!
+        delete microtonalui;
+    partmax = synth->getRuntime().NumAvailableParts;
+    maxparts->value(partmax);
+    checkmaxparts();
+    panning_law->value(fetchData(0, MAIN::control::panLawType, TOPLEVEL::section::main));
+
+    npartcounter->value((synth->getRuntime().currentPart) + 1);
+    int nval = synth->getRuntime().currentPart;
+    partNew(nval);
+    activePart = nval;
+
+    nsyseff = 0;
+    syseffnocounter->value(nsyseff + 1);
+    sysefftype->value(synth->sysefx[nsyseff]->geteffect());
+    syseffectui->refresh(synth->sysefx[nsyseff], TOPLEVEL::section::systemEffects, nsyseff);
+
+    ninseff = 0;
+    inseffnocounter->value(nsyseff + 1);
+    setInsEff(ninseff);
+
+    sysinsgroup->value(SystemEffectsGrp);
+
+
+
+
+    bool status;
+    SysEffOn->value(fetchData(0, EFFECT::sysIns::effectEnable, TOPLEVEL::section::systemEffects, UNUSED, 0));
+    if (SysEffOn->value())
+        sysefftype->activate();
+    else
+        sysefftype->deactivate();
+    int efftype = fetchData(0, EFFECT::sysIns::effectType, TOPLEVEL::section::systemEffects, UNUSED, 0);
+    if (efftype > 0)
+    {
+        status = fetchData(0, 200, TOPLEVEL::section::systemEffects, efftype + EFFECT::type::none, ninseff);
+        syseffectui->UpdatePresetColour(status, sysefftype->value());
+    }
+    efftype = fetchData(0,EFFECT::sysIns::effectType, TOPLEVEL::section::insertEffects, UNUSED, 0);
+    if (efftype > 0)
+    {
+        status = fetchData(0, 200, TOPLEVEL::section::insertEffects, efftype + EFFECT::type::none, ninseff);
+        inseffectui->UpdatePresetColour(status, insefftype->value());
+    }
+
+
+
+
+    showSysEfxUI();
+
+    masterkeyshift->value(synth->Pkeyshift - 64);
+    mastervolumedial->value(synth->Pvolume);
+    globalfinedetune->value(synth->microtonal.Pglobalfinedetune);
+    microtonalui = new MicrotonalUI(&synth->microtonal, synth);
+    if (type & 0x80)
+        setMasterLabel(textMsgBuffer.fetch((type >> 8) & UNUSED));
+    updatesendwindow();
+    updatepanel(type > 0);
+    if (type != 5)
+        vectorui->RefreshChans();
+    mastermono->value(0);
+    mastermono->label("S");
+    if (type == 0x14)
+    {
+        for (int i = 1; i < 6; ++i)
+            configui->update_config(i);
+    }} {}
+  }
+  Function {checkmaxparts()} {return_type bool
+  } {
+    code {//
+    bool changed = false;
+    if (panelgroup >= partmax)
+    {
+        panelgroup = 0;
+        Panelgroups->value(0);
+        Panelsmallgroups->value(0);
+        changed = true;
+    }
+    npartcounter->range(1, partmax);
+    if (npart >= partmax)
+    {
+        npartcounter->value(1);
+        activePart = 0;
+        changed = true;
+    }
+    return changed;} {}
+  }
+  Function {strategicRetreat(void)} {} {
+    code {query("", "", "", "Bad things happened,\\nYoshimi strategically retreats.");} {}
+  }
+  Function {Log(string msg)} {} {
+    code {yoshiLog->log(msg);} {}
+  }
+  Function {showSysEfxUI(void)} {private
+  } {
+    code {//
+    inseffectui->hide();
+    inseffectui->deactivate();
+    inseffectuigroup->hide();
+    inseffectuigroup->deactivate();
+
+    syseffectui->activate();
+    syseffectui->show();
+    syseffectuigroup->activate();
+    syseffectuigroup->show();} {}
+  }
+  Function {showInsEfxUI(void)} {private
+  } {
+    code {//
+    syseffectui->hide();
+    syseffectui->deactivate();
+    syseffectuigroup->hide();
+    syseffectuigroup->deactivate();
+
+    inseffectui->activate();
+    inseffectui->show();
+    inseffectuigroup->activate();
+    inseffectuigroup->show();} {}
+  }
+  Function {showSysEffSends()} {} {
+    code {//
+    int fetchW, fetchH, fetchX, fetchY, fetchO;
+    loadWin(synth, fetchW, fetchH, fetchX, fetchY, fetchO, "Master-systemeffectsend");
+
+    if(fetchW < syseffDW || fetchH < syseffDH)
+    {
+        fetchW = syseffDW;
+        fetchH = syseffDH;
+    }
+    checkSane(fetchX, fetchY, fetchW, fetchH, syseffDW, syseffDH);
+
+    syseffsendwindow->resize(fetchX, fetchY, fetchW, fetchH);
+    syseffsendwindow->redraw();
+    syseffsendwindow->show();
+    syseffSeen = true;} {}
+  }
+  Function {setinspartlist()} {} {
+    code {//
+    inseffpart->clear();
+    inseffpart->add("Master Out");
+    inseffpart->add("Off");
+    int size = synth->getRuntime().NumAvailableParts;
+    for (int i = 0; i < size; ++i)
+    {
+        string num = string("00") + asString(i + 1);
+        inseffpart->add((string("Part ") + asString(i + 1)).c_str());
+    }
+    int current = synth->Pinsparts[ninseff];
+    if (current >= size)
+    {
+        current = -1; // off is safe
+        synth->Pinsparts[ninseff] = current;
+    }
+    inseffpart->value(current + 2);} {}
+  }
+  Function {getPresetsUi()} {return_type {PresetsUI *}
+  } {
+    code {//
+    return presetsui;} {}
+  }
+  Function {resetPartsClip()} {} {
+    code {//
+    for (int i = 0; i < NUM_MIDI_CHANNELS; i++)
+    {
+        if (panellistitem[i] && panellistitem[i]->partVUMeter)
+        {
+            panellistitem[i]->partVUMeter->resetPart(true);
+        }
+    }} {}
+  }
+  Function {setInsEff(int effnum)} {} {
+    code {//
+    int ninseff = effnum;
+    insefftype->value(synth->insefx[ninseff]->geteffect());
+    inseffpart->value(synth->Pinsparts[ninseff] + 2);
+    inseffectui->refresh(synth->insefx[ninseff], TOPLEVEL::section::insertEffects, ninseff);
+    if (synth->Pinsparts[ninseff] != -1)
+    {
+        insefftype->activate();
+        inseffectui->activate();
+        inseffectuigroup->activate();
+    }
+    else
+    {
+        insefftype->deactivate();
+        inseffectui->deactivate();
+        inseffectuigroup->deactivate();
+    }} {}
+  }
+  Function {setState(string filename)} {} {
+    code {//
+    send_data(TOPLEVEL::action::muteAndLoop | TOPLEVEL::action::forceUpdate, MAIN::control::loadNamedState, 0, TOPLEVEL::type::Integer, TOPLEVEL::section::main, UNUSED, UNUSED, UNUSED, textMsgBuffer.push(filename));} {}
+  }
+  Function {setPartWindowTitle(string prefix)} {return_type string
+  } {
+    code {//
+    string extension = " - Part " + asString(partui->npart + 1) + " " + partui->part->Pname;
+    if (partui->part->Pkitmode)
+    {
+        extension += ", Kit ";
+        if (partui->lastkititem >= 0)
+        {
+            extension += to_string(partui->lastkititem + 1);
+            if (partui->kitname > "")
+                extension += (" - " + partui->kitname);
+        }
+    }
+    return synth->makeUniqueName(prefix + extension);} {}
+  }
+  Function {setPartActive(int _npart, bool active)} {} {
+    code {//
+    if (_npart == npart)
+    {
+        partui->partGroupEnable->value(active);
+        if (active)
+        {
+            partui->partgroupui->activate();
+            partui->toSysEfx->activate();
+        }
+        else
+        {
+            partui->partgroupui->deactivate();
+            partui->toSysEfx->deactivate();
+        }
+    }} {}
+  }
+  Function {setPartVolWidget(int _npart, float _value)} {} {
+    code {//
+    if (_npart == npart)
+        partui->partvol->value(_value);} {}
+  }
+  Function {setPartPanWidget(int _npart, float _value)} {} {
+    code {//
+    if (_npart == npart)
+        partui->partpan->value(_value);} {}
+  }
+  Function {setPanelPartVolWidget(int _npart, float _value)} {} {
+    code {//
+    panellistitem[_npart]->partvolume->value(_value);} {}
+  }
+  Function {setPanelPartPanWidget(int _npart, float _value)} {} {
+    code {//
+    panellistitem[_npart]->partpanning->value(_value);} {}
+  }
+  Function {setPartMidiWidget(int _npart, unsigned char _value)} {} {
+    code {//
+    if (_npart == npart)
+        partui->midich->value(_value);
+    partui->midich->textcolor(FL_BLACK);} {}
+  }
+  Function {setPanelPartMidiWidget(int _npart, unsigned char _value)} {} {
+    code {//
+    panellistitem[_npart]->partrcv->value(_value);
+    panellistitem[_npart]->partrcv->textcolor(FL_BLACK);
+    panellistitem[_npart]->partrcv->redraw();} {}
+  }
+  Function {setLogging(bool isConsole)} {} {
+    code {//
+    logenable = isConsole;
+    if (logenable)
+    {
+        setVisible(synth, true, "System-log");
+        yoshiLog->Show(synth);
+    }
+    else
+    {
+        setVisible(synth, false, "System-log");
+        yoshiLog->logConsole->hide();
+    }} {}
+  }
+  Function {updateBankRootDirs()} {} {
+    code {bankui->readbankcfg();} {}
+  }
+  Function {updatepaths(int type)} {} {
+    code {//
+    if (type == 0)
+    {
+        bankui->readbankcfg();
+        bankui-> rescan_for_banks();
+    }} {}
+  }
+  Function {getSynth()} {return_type {SynthEngine *}
+  } {
+    code {return synth;} {}
+  }
+  Function {loadWindowData()} {} {
+    code {//
+    int fetchW, fetchH, fetchX, fetchY, fetchO;
+
+    if (lastSeen(synth, "Mixer") & 3)
+        Showpanel();
+
+    if (lastSeen(synth, "Bank-instrument"))
+        bankui->ShowInst();
+
+    loadWin(synth, fetchW, fetchH, fetchX, fetchY, fetchO, "Bank-bank");
+    bankui->bankuiwindow->position(fetchX, fetchY);
+    if (fetchO)
+        bankui->Showbank();
+    else
+        bankui->bankuiwindow->hide();
+
+    loadWin(synth, fetchW, fetchH, fetchX, fetchY, fetchO, "Bank-root");
+    bankui->rootuiwindow->position(fetchX, fetchY);
+    if (fetchO)
+        bankui->ShowRoot();
+    else
+        bankui->rootuiwindow->hide();
+
+    if (lastSeen(synth, "Midi-virtualkeyboard"))
+        virkeyboard->ShowKbd();
+    else
+        virkeyboard->virkeyboardwindow->hide();
+
+    if (lastSeen(synth, "Scales"))
+        microtonalui->showScales();
+    else
+        microtonalui->microtonaluiwindow->hide();
+
+    if (lastSeen(synth, "Midi-learn"))
+        midilearnui->showLearn();
+    else
+        midilearnui->midilearnwindow->hide();
+
+    if (lastSeen(synth, "Config"))
+        configui->Show(synth); // this does some initialising
+    else
+        configui->configwindow->hide();
+
+    if (lastSeen(synth, "System-log"))
+        yoshiLog->Show(synth);
+    else
+        yoshiLog->logConsole->hide();
+
+    if (lastSeen(synth, "Vector"))
+        vectorui->Show(synth);
+    else
+        vectorui->vectorwindow->hide();
+
+    if (lastSeen(synth, "Part-controllers"))
+        partui->Showctl();
+    else
+        partui->ctlwindow->hide();
+
+    if (lastSeen(synth, "Part-aftertouch"))
+        partui->ShowAT();
+    else
+        partui->aftertouchcontrol->hide();
+
+    if (lastSeen(synth, "Part-ctlmidi"))
+        partui->Showctlmidi();
+    else
+        partui->ctlmidi->hide();
+
+    if (lastSeen(synth, "Part-edit"))
+        partui->Showedit();
+    else
+        partui->instrumenteditwindow->hide();} {}
+  }
+  Function {checkBuffer(void)} {} {
+    code {//
+            if (lastmainW < 0) // not ready yet!
+                return;
+            read_updates(synth);
+            wincheck();} {}
+  }
+  Function {rescaleMain(void)} {} {
+    code {//
+            if (lastmainW < 0) // not ready yet!
+                return;
+            float ratio = Fl::w() / float(1024); // reference width
+            if (ratio < 1.0f)
+                ratio = 1.0f;
+
+
+            int x, y, w, h;
+            if (syseffSeen)
+            {
+                x = syseffsendwindow->x();
+                y = syseffsendwindow->y();
+                w = syseffDW * ratio;
+                h = syseffDH * ratio;
+                if ((x + w) > Fl::w())
+                    x = Fl::w() - w;
+                if ((y + h) > Fl::h())
+                    y = Fl::h() - h;
+                syseffsendwindow->resize(x, y, w, h);
+            }
+
+            // we always check the main window last
+            x = masterwindow->x();
+            y = masterwindow->y();
+            w = mainDW * ratio;
+            h = mainDH * ratio;
+            if ((x + w) > Fl::w())
+                x = Fl::w() - w;
+            if ((y + h) > Fl::h())
+                y = Fl::h() - h;
+            masterwindow->resize(x, y, w, h);
+            std::cout << "Screen ratio " << ratio << std::endl;} {}
+  }
+  Function {wincheck()} {} {
+    code {//
+    /*
+     * Below is a pragmatic method of making tooltips
+     * fairly readable at all screen resolutions.
+     * 768 is the reference height.
+     */
+        if (oldH != Fl::h())
+        {
+            int setsize = int((11.0f / 768.0f) * Fl::h());
+            Fl_Tooltip::size(setsize);
+            oldH = Fl::h();
+            //std::cout << "tipset " << setsize << "  actual " <<  Fl_Tooltip::size() << std::endl;
+
+            if (masterwindow->x() >= Fl::w() || masterwindow->y() >= Fl::h())
+                Showmaster(); // ensure it's always visible
+        }
+
+    if (masterwindow->w() != lastmainW)
+    {
+        mainRtext();
+        if (lastmainW < 3)
+            ++lastmainW;
+        else
+            lastmainW = masterwindow->w();
+    }
+
+    if (yoshiLog->logConsole->visible())
+        yoshiLog->consoleRtext();
+
+    if (panelwindow->visible() && panelwindow->w() != lastpanelW)
+    {
+        panelRtext();
+        lastpanelW = panelwindow->w();
+    }
+
+    if (message->visible() && message->w() != lastmsgW)
+    {
+        msgRtext();
+        lastmsgW = message->w();
+        msgSeen = true;
+    }
+
+    if (syseffsendwindow->visible() &&  syseffsendwindow->w() != lastsyseffW)
+    {
+        syseffRtext();
+        lastsyseffW = syseffsendwindow->w();
+    }
+
+    if (vectorui->vectorwindow->visible())
+        vectorui->vectorRtext();
+
+    if (microtonalui->microtonaluiwindow->visible())
+        microtonalui->scaleRtext();
+
+    if (midilearnui->midilearnwindow->visible())
+        midilearnui->learnRtext();
+
+    if (virkeyboard->virkeyboardwindow->visible() && lastvirtW != virkeyboard->virkeyboardwindow->w())
+    {
+        virkeyboard->virtRtext();
+        lastvirtW = virkeyboard->virkeyboardwindow->w();
+    }
+
+    if (aboutwindow->visible() && lastaboutW != aboutwindow->w())
+    {
+        aboutRtext();
+        lastaboutW = aboutwindow->w();
+    }
+
+    if (paramsui->Recent->visible())
+        paramsui->paramRtext();
+
+    if (configui->configwindow->visible())
+        configui->configRtext();
+
+    if (configui->presets->visible())
+        configui->presetsRtext();
+
+    presetsui->presetsRtext();
+    bankui->wincheck();
+    partui->wincheck();} {}
+  }
+  Function {mainRtext()} {} {
+    code {//
+    int w = masterwindow->w();
+    int h = masterwindow->h();
+
+    float dW = w / mainDW;
+    float dH = h / mainDH;
+    float dScale;
+
+    if (dW < dH)
+        dScale = dW;
+    else
+        dScale = dH;
+    if (dScale < 0.2f)
+        dScale = 0.2f;
+    mainScale = dScale;
+
+    int size = int(10 * dScale);
+    int size11 = int(11 * dScale);
+    int size12 = int(12 * dScale);
+
+    mastermenu->textsize(size12);
+
+    mainreset->labelsize(size11);
+    mainstop->labelsize(size11);
+    mainvirtkeyb->labelsize(size11);
+    mixerpanel->labelsize(size11);
+    mainmidilearn->labelsize(size11);
+    vectors->labelsize(size11);
+    globalfinedetune->labelsize(size);
+    mastervolumedial->labelsize(size);
+    mastermono->labelsize(size11);
+    masterkeyshift->labelsize(size);
+        masterkeyshift->textsize(size12);
+
+    InstBlurb->labelsize(size11);
+    nextInst->labelsize(size11);
+    valueInst->textsize(size11);
+    cancelInst->labelsize(size11);
+
+    SystemEffectsGrp->labelsize(size12);
+    syseffnocounter->labelsize(size11);
+        syseffnocounter->textsize(size11);
+    sysefftype->labelsize(size11);
+        sysefftype->textsize(size11);
+
+    SysEffOn->labelsize(size11);
+    sysEffSend->labelsize(size11);
+    sysCopy->labelsize(size11);
+    sysPaste->labelsize(size11);
+    syseffectui->effRtext(dScale, sysefftype->value());
+
+
+    InsertionEffectsGrp->labelsize(size12);
+    inseffnocounter->labelsize(size11);
+        inseffnocounter->textsize(size11);
+    insefftype->labelsize(size11);
+        insefftype->textsize(size11);
+
+    inseffpart->labelsize(size11);
+        inseffpart->textsize(size11);
+    insCopy->labelsize(size11);
+    insPaste->labelsize(size11);
+    inseffectui->effRtext(dScale, insefftype->value());
+
+    npartcounter->labelsize(size11);
+        npartcounter->textsize(size11);
+    maxparts->labelsize(size11);
+        maxparts->textsize(size11);
+
+    panning_law->labelsize(size12);
+        panning_law->textsize(size12);
+
+    partui->groupRtext(dScale);
+    masterwindow->redraw();} {}
+  }
+  Function {panelRtext()} {} {
+    code {//
+    int w = panelwindow->w();
+    int h = panelwindow->h();
+    float dW;
+    float dH;
+
+    if (panelType == 1)
+    {
+        dW = w / float(PANEL_SINGLE_X);
+        dH = h / float(PANEL_SINGLE_Y);
+
+    }
+    else
+    {
+        dW = w / float(PANEL_DUAL_X);
+        dH = h / float(PANEL_DUAL_Y);
+    }
+
+    float dScale;
+
+    if (dW < dH)
+        dScale = dW;
+    else
+        dScale = dH;
+    if (dScale < 0.2f)
+        dScale = 0.2f;
+    panelScale = dScale;
+    if (panelType == 1)
+    {
+        for (int i = 0; i < 16; ++ i)
+        {
+            panellistitem[i]->resize((8 + (i * 64)) * dW, 12 * dH, 63 * dW, 268 * dH);
+            panellistitem[i]->itemRtext(dScale);
+        }
+
+    }
+    else
+    {
+        for (int i = 0; i < 8; ++ i)
+        {
+            panellistitem[i]->resize((8 + (i * 64)) * dW, 12 * dH, 63 * dW, 268 * dH);
+            panellistitem[i]->itemRtext(dScale);
+        }
+        for (int i = 8; i < 16; ++ i)
+        {
+            panellistitem[i]->resize((8 + ((i - 8) * 64)) * dW, 290 * dH, 63 * dW, 268 * dH);
+            panellistitem[i]->itemRtext(dScale);
+        }
+
+        towide->resize(335 * dW, (PANEL_DUAL_Y - 30) * dH, 130 * dW, 25 * dH);
+        Panelsmallgroups->resize(5 * dW, (PANEL_DUAL_Y - 23) * dH, 86 * dW, 18 * dH);
+        Panelgroups->resize(5 * dW, (PANEL_DUAL_Y - 23) * dH, 86 * dW, 18 * dH);
+        CSspinner->resize(173 * dW, (PANEL_DUAL_Y - 23) * dH, 50 * dW, 18 * dH);
+        CSpend->resize(227 * dW, (PANEL_DUAL_Y - 30) * dH, 74 * dW, 25 * dH);
+        channelswitch->resize(95 * dW, (PANEL_DUAL_Y -23) * dH, 74 * dW, 18 * dH);
+        Panelclose->resize((PANEL_DUAL_X - 55) * dW, (PANEL_DUAL_Y - 30) * dH, 50 * dW, 25 * dH);
+
+    }
+
+    int size12 = int(12 * dScale);
+    int size14 = int(14 * dScale);
+    towide->labelsize(size14);
+    todeep->labelsize(size14);
+    Panelgroups->labelsize(size12);
+        Panelgroups->textsize(size12);
+    Panelsmallgroups->labelsize(size12);
+        Panelsmallgroups->textsize(size12);
+    CSspinner->labelsize(size12);
+        CSspinner->textsize(size12);
+    CSpend->labelsize(size12);
+    channelswitch->labelsize(size12);
+        channelswitch->textsize(size12);
+    Panelclose->labelsize(size14);
+
+    panelwindow->redraw();} {}
+  }
+  Function {aboutRtext()} {} {
+    code {//
+    float dScale = aboutwindow->w() / float(aboutDW);
+
+    int size11 = int(11 * dScale);
+    int size12 = int(12 * dScale);
+
+    about2->labelsize(size11);
+    about3->labelsize(size11);
+    about4->labelsize(size12);
+    about5->labelsize(size11);
+    cont2->labelsize(size12);
+    cont3->labelsize(size12);
+    aboutClose->labelsize(size11);
+    about1->labelsize(int(18 * dScale));
+    cont1->labelsize(int(15 * dScale));
+
+    aboutwindow->redraw();
+    saveWin(synth, aboutwindow->w(), aboutwindow->h(), aboutwindow->x(), aboutwindow->y(), true, "Master-about");} {}
+  }
+  Function {syseffRtext()} {} {
+    code {//
+    float dScale = syseffsendwindow->w() / float(syseffDW);
+
+    int size = int(10 * dScale);
+
+    syseffgroup->resize(int(9 * dScale), int(46 * dScale), int(109 * dScale), int(172 * dScale));
+    syseffname->labelsize(size);
+
+    for (int neff1 = 0; neff1 < NUM_SYS_EFX; ++neff1)
+        for (int neff2 = neff1 + 1; neff2 < NUM_SYS_EFX; ++neff2)
+        {
+            syseffsend[neff1][neff2]->labelsize(size);
+            syseffsend[neff1][neff2]->resize(int((-25 * dScale) + (35 * (neff2)) * dScale), int((66 * dScale) + (neff1 * dScale * 52)), int(35 * dScale), int(30 * dScale));
+        }
+
+    syseffClose->labelsize(int(14 * dScale));
+
+    syseffsendwindow->redraw();} {}
+  }
+  Function {queryRtext()} {} {
+    code {//
+    if (lastqueryW == querywindow->w())
+        return;
+    lastqueryW = querywindow->w();
+
+    float dScale = querywindow->w() / float(queryDW);
+
+    int size14 = int(14 * dScale);
+
+    yesQ->labelsize(size14);
+    noQ->labelsize(size14);
+    cancelQ->labelsize(size14);
+    textQ->labelsize(size14);
+    typeQ->labelsize(int(40 * dScale));
+
+    querywindow->redraw();} {}
+  }
+  Function {msgRtext()} {} {
+    code {//
+    float dScale = message->w() / float(msgDW);
+
+    int size14 = int(14 * dScale);
+
+    words->labelsize(12 * dScale);
+    yesdoit->labelsize(size14);
+    cancel->labelsize(size14);
+    closebutton->labelsize(size14);
+
+    message->redraw();
+    saveWin(synth, message->w(), message->h(),  message->x(),  message->y(), true, "Master-message");} {}
+  }
+  Function {textinRtext()} {} {
+    code {//
+    if (lasttextW == textwindow->w())
+        return;
+    lasttextW = textwindow->w();
+
+    float dScale = textwindow->w() / float(textinDW);
+
+    int size14 = int(14 * dScale);
+
+    textLine->labelsize(size14);
+    textLine->textsize(size14);
+    textwindow->redraw();} {}
+  }
+  decl {ConfigUI *configui;} {public local
+  }
+  decl {ParametersUI *paramsui;} {public local
+  }
+  decl {VectorUI *vectorui;} {public local
+  }
+  decl {MidiLearnUI *midilearnui;} {public local
+  }
+  decl {BankUI *bankui;} {public local
+  }
+  decl {MicrotonalUI *microtonalui;} {public local
+  }
+  decl {VirKeyboard *virkeyboard;} {private local
+  }
+  decl {int ninseff;} {public local
+  }
+  decl {int npart;} {public local
+  }
+  decl {int activePart;} {public local
+  }
+  decl {int nsyseff;} {public local
+  }
+  decl {int partmax;} {
+    comment {This is only public for vector control} public local
+  }
+  decl {SysEffSend *syseffsend[NUM_SYS_EFX][NUM_SYS_EFX];} {private local
+  }
+  decl {Panellistitem *panellistitem[NUM_MIDI_PARTS];} {public local
+  }
+  decl {ConsoleUI *yoshiLog;} {public local
+  }
+  decl {PresetsUI *presetsui;} {private local
+  }
+  decl {SynthEngine *synth;} {private local
+  }
+  decl {string panelwindowlabel} {private local
+  }
+  decl {int instance;} {private local
+  }
+  decl {int panelgroup;} {public local
+  }
+  decl {int CS_CC;} {private local
+  }
+  decl {char word [20];} {private local
+  }
+  decl {FILE *windows;} {private local
+  }
+  decl {string filename;} {private local
+  }
+  decl {int msgGroup;} {private local
+  }
+  decl {bool openedit;} {public local
+  }
+  decl {float mainDW;} {private local
+  }
+  decl {float mainDH;} {private local
+  }
+  decl {float mainScale;} {private local
+  }
+  decl {int panelType;} {private local
+  }
+  decl {float msgDW;} {private local
+  }
+  decl {float msgDH;} {private local
+  }
+  decl {bool msgSeen;} {private local
+  }
+  decl {float syseffDW;} {private local
+  }
+  decl {float syseffDH;} {private local
+  }
+  decl {bool syseffSeen;} {private local
+  }
+  decl {float panelScale;} {private local
+  }
+  decl {bool logenable;} {private local
+  }
+  decl {int aboutDW;} {private local
+  }
+  decl {int aboutDH;} {private local
+  }
+  decl {int queryDW;} {private local
+  }
+  decl {int queryDH;} {private local
+  }
+  decl {int lastqueryW;} {private local
+  }
+  decl {int textinDW;} {private local
+  }
+  decl {int textinDH;} {private local
+  }
+  decl {int lasttextW;} {private local
+  }
+  decl {string filerpath;} {private local
+  }
+  decl {string filerext;} {private local
+  }
+  decl {string filerfound;} {private local
+  }
+  decl {bool dosave;} {private local
+  }
+  decl {int extension;} {private local
+  }
+  decl {bool filerdone;} {private local
+  }
+  decl {int filerDW;} {private local
+  }
+  decl {int filerDH;} {private local
+  }
+  decl {int lastfilerW;} {private local
+  }
+  decl {int lastmainW} {private local
+  }
+  decl {int lastpanelW} {private local
+  }
+  decl {int lastmsgW} {private local
+  }
+  decl {int lastsyseffW} {private local
+  }
+  decl {int lastvirtW} {private local
+  }
+  decl {int lastaboutW} {private local
+  }
+  decl {int oldH} {private local
+  }
+  decl {int fileruseX;} {private local
+  }
+  decl {FilerLine *filerlist[FILER_SIZE];} {private local
+  }
+  decl {int lineno;} {private local
+  }
+  decl {string type_name;} {private local
+  }
+}

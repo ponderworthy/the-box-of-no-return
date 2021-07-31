@@ -1,0 +1,11 @@
+Package: calf-ladspa
+Source: calf
+Version: 5:0.90.3-1kxstudio3.1-bnrcustom
+Architecture: all
+Maintainer: falkTX <falktx@falktx.com>
+Installed-Size: 13
+Section: sound
+Priority: extra
+Homepage: http://calf.sourceforge.net/
+Description: dummy package
+ This is a dummy package and can be safely removed if nothing depends on it.

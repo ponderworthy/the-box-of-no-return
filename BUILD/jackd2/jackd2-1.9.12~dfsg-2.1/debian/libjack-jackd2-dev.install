@@ -1,0 +1,3 @@
+usr/include/jack/*.h
+usr/lib/*/pkgconfig
+usr/lib/*/lib*.so

@@ -1,0 +1,32 @@
+#!/bin/sh
+# autopkgtest check: Builds a small application against libfluidsynth, checking
+# if it compiles, links and runs successfully.
+# Author: Rafał Cieślak <rafalcieslak256@ubuntu.com> 
+
+set -e
+
+WORKDIR=$(mktemp -d)
+trap "rm -rf $WORKDIR" 0 INT QUIT ABRT PIPE TERM
+cd $WORKDIR
+cat <<EOF > build_test.c
+#include <fluidsynth.h>
+int main(int argc, char** argv) {
+    fluid_settings_t* settings;
+    fluid_synth_t* synth;
+    settings = new_fluid_settings();
+    //Using default settings.
+    synth = new_fluid_synth(settings);
+    if(!synth || !settings)
+	//a null pointer?
+	return 1;
+    delete_fluid_synth(synth);
+    delete_fluid_settings(settings);
+    return 0;
+}
+EOF
+
+gcc -o build_test build_test.c -lfluidsynth
+echo "build: OK"
+[ -x build_test ]
+./build_test
+echo "run: OK"

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libst_audiofile_formats.a  CMakeFiles/st_audiofile_formats.dir/src/st_audiofile_libs.c.o
+/usr/bin/ranlib libst_audiofile_formats.a

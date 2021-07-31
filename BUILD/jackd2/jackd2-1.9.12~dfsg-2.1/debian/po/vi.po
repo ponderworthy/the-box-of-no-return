@@ -1,0 +1,52 @@
+# Vietnamese translation for Jack Audio Conection Kit.
+# Copyright © 2009 Free Software Foundation, Inc.
+# Clytie Siddall <clytie@riverland.net.au>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: jack-audio-connection-kit 0.116.2+svn3592-4\n"
+"Report-Msgid-Bugs-To: jackd2@packages.debian.org\n"
+"POT-Creation-Date: 2011-12-22 23:36+0100\n"
+"PO-Revision-Date: 2009-10-11 17:37+1030\n"
+"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
+"Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: LocFactoryEditor 1.8\n"
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid "Enable realtime process priority?"
+msgstr "Bật mức ưu tiên tiến trình thời gian thực ?"
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid ""
+"If you want to run jackd with realtime priorities, the user starting jackd "
+"needs realtime permissions. Accept this option to create the file /etc/"
+"security/limits.d/audio.conf, granting realtime priority and memlock "
+"privileges to the audio group."
+msgstr ""
+"Nếu bạn muốn chạy trình nền jackd ở mức ưu tiên thời gian thực thì người "
+"dùng khởi chạy jackd cần có quyền truy cập thời gian thực. Hiệu lực tuỳ chọn "
+"này để tạo tập tin cấu hình « /etc/security/limits.d/audio.conf » mà cấp cho "
+"nhóm « audio » (âm thânh) quyền truy cập thời gian thực đối với mức ưu tiên "
+"và khoá bộ nhớ."
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid ""
+"Running jackd with realtime priority minimizes latency, but may lead to "
+"complete system lock-ups by requesting all the available physical system "
+"memory, which is unacceptable in multi-user environments."
+msgstr ""
+"Chạy trình nền jackd ở mức ưu tiên thời gian thực thì giảm sự âm ỷ, nhưng mà "
+"cũng có thể dẫn tới toàn bộ hệ thống đang treo cứng do yêu cầu tất cả các bộ "
+"nhớ hệ thống vật lý sẵn sàng, một trường hợp không thể chấp nhận được trong "
+"môi trường đa người dùng."

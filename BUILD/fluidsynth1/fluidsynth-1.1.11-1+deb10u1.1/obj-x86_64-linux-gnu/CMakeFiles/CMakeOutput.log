@@ -1,0 +1,754 @@
+The system is: Linux - 5.10.0-8mx-rt-amd64 - x86_64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler: /usr/bin/cc 
+Build flags: -march=native;-mtune=native;-O3;-march=native;-mtune=native;-O3;-march=native;-mtune=native;-O3;-march=native;-mtune=native;-O3;-march=native;-mtune=native;-O3;-march=native;-mtune=native;-O3
+Id flags:  
+
+The output was:
+0
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+
+The C compiler identification is GNU, found in "/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/3.13.4/CompilerIdC/a.out"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c65b2/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_c65b2.dir/build.make CMakeFiles/cmTC_c65b2.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c65b2.dir/testCCompiler.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_c65b2.dir/testCCompiler.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_c65b2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c65b2.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_c65b2.dir/testCCompiler.c.o  -o cmTC_c65b2 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6c251/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_6c251.dir/build.make CMakeFiles/cmTC_6c251.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6c251.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_6c251.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.13/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_6c251
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6c251.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -v -rdynamic CMakeFiles/cmTC_6c251.dir/CMakeCCompilerABI.c.o  -o cmTC_6c251 
+Using built-in specs.
+COLLECT_GCC=/usr/bin/cc
+COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/8/lto-wrapper
+OFFLOAD_TARGET_NAMES=nvptx-none
+OFFLOAD_TARGET_DEFAULT=1
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 8.3.0-6' --with-bugurl=file:///usr/share/doc/gcc-8/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-8 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 8.3.0 (Debian 8.3.0-6) 
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/8/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-march=native' '-mtune=native' '-O3' '-march=native' '-mtune=native' '-O3' '-march=native' '-mtune=native' '-O3' '-march=native' '-mtune=native' '-O3' '-march=native' '-mtune=native' '-O3' '-march=native' '-mtune=native' '-O3' '-v' '-rdynamic' '-o' 'cmTC_6c251'
+ /usr/lib/gcc/x86_64-linux-gnu/8/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/8/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/8/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9IrH7Q.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_6c251 /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/8/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/8 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/8/../../.. -z relro -z now --as-needed CMakeFiles/cmTC_6c251.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/8/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-march=native' '-mtune=native' '-O3' '-march=native' '-mtune=native' '-O3' '-march=native' '-mtune=native' '-O3' '-march=native' '-mtune=native' '-O3' '-march=native' '-mtune=native' '-O3' '-march=native' '-mtune=native' '-O3' '-v' '-rdynamic' '-o' 'cmTC_6c251'
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_6c251/fast"]
+  ignore line: [make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp']
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_6c251.dir/build.make CMakeFiles/cmTC_6c251.dir/build]
+  ignore line: [make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_6c251.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_6c251.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.13/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_6c251]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6c251.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -v -rdynamic CMakeFiles/cmTC_6c251.dir/CMakeCCompilerABI.c.o  -o cmTC_6c251 ]
+  ignore line: [Using built-in specs.]
+  ignore line: [COLLECT_GCC=/usr/bin/cc]
+  ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/8/lto-wrapper]
+  ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+  ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+  ignore line: [Target: x86_64-linux-gnu]
+  ignore line: [Configured with: ../src/configure -v --with-pkgversion='Debian 8.3.0-6' --with-bugurl=file:///usr/share/doc/gcc-8/README.Bugs --enable-languages=c,ada,c++,go,brig,d,fortran,objc,obj-c++ --prefix=/usr --with-gcc-major-version-only --program-suffix=-8 --program-prefix=x86_64-linux-gnu- --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --enable-bootstrap --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --enable-default-pie --with-system-zlib --with-target-system-zlib --enable-objc-gc=auto --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-offload-targets=nvptx-none --without-cuda-driver --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu]
+  ignore line: [Thread model: posix]
+  ignore line: [gcc version 8.3.0 (Debian 8.3.0-6) ]
+  ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/]
+  ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/8/:/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/8/../../../:/lib/:/usr/lib/]
+  ignore line: [COLLECT_GCC_OPTIONS='-march=native' '-mtune=native' '-O3' '-march=native' '-mtune=native' '-O3' '-march=native' '-mtune=native' '-O3' '-march=native' '-mtune=native' '-O3' '-march=native' '-mtune=native' '-O3' '-march=native' '-mtune=native' '-O3' '-v' '-rdynamic' '-o' 'cmTC_6c251']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/8/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/8/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/8/lto-wrapper -plugin-opt=-fresolution=/tmp/cc9IrH7Q.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_6c251 /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/8/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/8 -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/8/../../.. -z relro -z now --as-needed CMakeFiles/cmTC_6c251.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/8/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crtn.o]
+    arg [/usr/lib/gcc/x86_64-linux-gnu/8/collect2] ==> ignore
+    arg [-plugin] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/8/liblto_plugin.so] ==> ignore
+    arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/8/lto-wrapper] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc9IrH7Q.res] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [-plugin-opt=-pass-through=-lc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+    arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [elf_x86_64] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [-export-dynamic] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_6c251] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crti.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/8/crtbeginS.o] ==> ignore
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/8] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/8]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib]
+    arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+    arg [-L/lib/../lib] ==> dir [/lib/../lib]
+    arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+    arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+    arg [-L/usr/lib/gcc/x86_64-linux-gnu/8/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../..]
+    arg [-zrelro] ==> ignore
+    arg [-znow] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [CMakeFiles/cmTC_6c251.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [--push-state] ==> ignore
+    arg [--as-needed] ==> ignore
+    arg [-lgcc_s] ==> lib [gcc_s]
+    arg [--pop-state] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/8/crtendS.o] ==> ignore
+    arg [/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu/crtn.o] ==> ignore
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/8] ==> [/usr/lib/gcc/x86_64-linux-gnu/8]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../../x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../../../lib] ==> [/usr/lib]
+  collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+  collapse library dir [/lib/../lib] ==> [/lib]
+  collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+  collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+  collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/8/../../..] ==> [/usr/lib]
+  implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+  implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/8;/usr/lib/x86_64-linux-gnu;/usr/lib;/lib/x86_64-linux-gnu;/lib]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_92f53/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_92f53.dir/build.make CMakeFiles/cmTC_92f53.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_92f53.dir/feature_tests.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -std=c11 -o CMakeFiles/cmTC_92f53.dir/feature_tests.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/feature_tests.c
+Linking C executable cmTC_92f53
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_92f53.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_92f53.dir/feature_tests.c.o  -o cmTC_92f53 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_32795/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_32795.dir/build.make CMakeFiles/cmTC_32795.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_32795.dir/feature_tests.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -std=c99 -o CMakeFiles/cmTC_32795.dir/feature_tests.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/feature_tests.c
+Linking C executable cmTC_32795
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_32795.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_32795.dir/feature_tests.c.o  -o cmTC_32795 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6e391/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_6e391.dir/build.make CMakeFiles/cmTC_6e391.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6e391.dir/feature_tests.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -std=c90 -o CMakeFiles/cmTC_6e391.dir/feature_tests.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/feature_tests.c
+Linking C executable cmTC_6e391
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6e391.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_6e391.dir/feature_tests.c.o  -o cmTC_6e391 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if files dlfcn.h;stdint.h;stddef.h;inttypes.h;stdlib.h;strings.h;string.h;float.h exist passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a994d/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_a994d.dir/build.make CMakeFiles/cmTC_a994d.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a994d.dir/StandardHeadersExist.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_a994d.dir/StandardHeadersExist.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CheckIncludeFiles/StandardHeadersExist.c
+Linking C executable cmTC_a994d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a994d.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_a994d.dir/StandardHeadersExist.c.o  -o cmTC_a994d 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Performing C SOURCE FILE Test memchrExists succeeded with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_585b0/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_585b0.dir/build.make CMakeFiles/cmTC_585b0.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_585b0.dir/src.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -DmemchrExists   -o CMakeFiles/cmTC_585b0.dir/src.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_585b0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_585b0.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -DmemchrExists  -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_585b0.dir/src.c.o  -o cmTC_585b0 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <string.h>
+
+int main()
+{
+#ifndef memchr
+   int i = sizeof(&memchr);
+#endif
+  return 0;
+}
+
+Performing C SOURCE FILE Test freeExists succeeded with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5ca01/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_5ca01.dir/build.make CMakeFiles/cmTC_5ca01.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5ca01.dir/src.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -DfreeExists   -o CMakeFiles/cmTC_5ca01.dir/src.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_5ca01
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ca01.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -DfreeExists  -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_5ca01.dir/src.c.o  -o cmTC_5ca01 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <stdlib.h>
+
+int main()
+{
+#ifndef free
+   int i = sizeof(&free);
+#endif
+  return 0;
+}
+
+Determining if files unistd.h exist passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_50dde/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_50dde.dir/build.make CMakeFiles/cmTC_50dde.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_50dde.dir/HAVE_UNISTD_H.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_50dde.dir/HAVE_UNISTD_H.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CheckIncludeFiles/HAVE_UNISTD_H.c
+Linking C executable cmTC_50dde
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_50dde.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_50dde.dir/HAVE_UNISTD_H.c.o  -o cmTC_50dde 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the DIR symbol is defined as in AC_HEADER_DIRENT passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_169cf/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_169cf.dir/build.make CMakeFiles/cmTC_169cf.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_169cf.dir/CheckDIRSymbolExists.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_169cf.dir/CheckDIRSymbolExists.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckDIRSymbolExists.c
+Linking C executable cmTC_169cf
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_169cf.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_169cf.dir/CheckDIRSymbolExists.c.o  -o cmTC_169cf 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+File /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckDIRSymbolExists.c:
+/* */
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <dirent.h>
+
+int main()
+{if ((DIR *) 0) return 0;}
+
+Determining if the include file stdio.h exists passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_34004/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_34004.dir/build.make CMakeFiles/cmTC_34004.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_34004.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_34004.dir/CheckIncludeFile.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_34004
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_34004.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_34004.dir/CheckIncludeFile.c.o  -o cmTC_34004 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file math.h exists passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a8531/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_a8531.dir/build.make CMakeFiles/cmTC_a8531.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a8531.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_a8531.dir/CheckIncludeFile.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_a8531
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a8531.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_a8531.dir/CheckIncludeFile.c.o  -o cmTC_a8531 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file errno.h exists passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_dff82/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_dff82.dir/build.make CMakeFiles/cmTC_dff82.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dff82.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_dff82.dir/CheckIncludeFile.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_dff82
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dff82.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_dff82.dir/CheckIncludeFile.c.o  -o cmTC_dff82 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stdarg.h exists passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d0066/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_d0066.dir/build.make CMakeFiles/cmTC_d0066.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d0066.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_d0066.dir/CheckIncludeFile.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_d0066
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d0066.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_d0066.dir/CheckIncludeFile.c.o  -o cmTC_d0066 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file memory.h exists passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ddb92/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_ddb92.dir/build.make CMakeFiles/cmTC_ddb92.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ddb92.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_ddb92.dir/CheckIncludeFile.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_ddb92
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ddb92.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_ddb92.dir/CheckIncludeFile.c.o  -o cmTC_ddb92 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file sys/mman.h exists passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b844c/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_b844c.dir/build.make CMakeFiles/cmTC_b844c.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b844c.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_b844c.dir/CheckIncludeFile.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_b844c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b844c.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_b844c.dir/CheckIncludeFile.c.o  -o cmTC_b844c 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file sys/time.h exists passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_794dc/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_794dc.dir/build.make CMakeFiles/cmTC_794dc.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_794dc.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_794dc.dir/CheckIncludeFile.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_794dc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_794dc.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_794dc.dir/CheckIncludeFile.c.o  -o cmTC_794dc 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file sys/ioctl.h exists passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_acb63/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_acb63.dir/build.make CMakeFiles/cmTC_acb63.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_acb63.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_acb63.dir/CheckIncludeFile.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_acb63
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_acb63.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_acb63.dir/CheckIncludeFile.c.o  -o cmTC_acb63 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file fcntl.h exists passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_880af/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_880af.dir/build.make CMakeFiles/cmTC_880af.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_880af.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_880af.dir/CheckIncludeFile.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_880af
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_880af.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_880af.dir/CheckIncludeFile.c.o  -o cmTC_880af 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file sys/socket.h exists passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_bc701/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_bc701.dir/build.make CMakeFiles/cmTC_bc701.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bc701.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_bc701.dir/CheckIncludeFile.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_bc701
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bc701.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_bc701.dir/CheckIncludeFile.c.o  -o cmTC_bc701 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file netinet/in.h exists passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ceb77/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_ceb77.dir/build.make CMakeFiles/cmTC_ceb77.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ceb77.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_ceb77.dir/CheckIncludeFile.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_ceb77
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ceb77.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_ceb77.dir/CheckIncludeFile.c.o  -o cmTC_ceb77 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file netinet/tcp.h exists passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_008c2/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_008c2.dir/build.make CMakeFiles/cmTC_008c2.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_008c2.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_008c2.dir/CheckIncludeFile.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_008c2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_008c2.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_008c2.dir/CheckIncludeFile.c.o  -o cmTC_008c2 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file arpa/inet.h exists passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e7825/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_e7825.dir/build.make CMakeFiles/cmTC_e7825.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e7825.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_e7825.dir/CheckIncludeFile.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_e7825
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e7825.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_e7825.dir/CheckIncludeFile.c.o  -o cmTC_e7825 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file limits.h exists passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_91fc0/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_91fc0.dir/build.make CMakeFiles/cmTC_91fc0.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_91fc0.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_91fc0.dir/CheckIncludeFile.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_91fc0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_91fc0.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_91fc0.dir/CheckIncludeFile.c.o  -o cmTC_91fc0 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e4636/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_e4636.dir/build.make CMakeFiles/cmTC_e4636.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e4636.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_e4636.dir/CheckIncludeFile.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_e4636
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e4636.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_e4636.dir/CheckIncludeFile.c.o  -o cmTC_e4636 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file signal.h exists passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_f7015/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_f7015.dir/build.make CMakeFiles/cmTC_f7015.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f7015.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_f7015.dir/CheckIncludeFile.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_f7015
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7015.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_f7015.dir/CheckIncludeFile.c.o  -o cmTC_f7015 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file getopt.h exists passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b0012/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_b0012.dir/build.make CMakeFiles/cmTC_b0012.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b0012.dir/CheckIncludeFile.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_b0012.dir/CheckIncludeFile.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_b0012
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b0012.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_b0012.dir/CheckIncludeFile.c.o  -o cmTC_b0012 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Performing C SOURCE FILE Test _have_inline succeeded with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_227c0/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_227c0.dir/build.make CMakeFiles/cmTC_227c0.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_227c0.dir/src.c.o
+/usr/bin/cc -DTESTKEYWORD=inline  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -D_have_inline   -o CMakeFiles/cmTC_227c0.dir/src.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_227c0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_227c0.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -D_have_inline  -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_227c0.dir/src.c.o  -o cmTC_227c0 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+Source file was:
+typedef int foo_t;
+             static TESTKEYWORD foo_t static_foo(){return 0;}
+             foo_t foo(){return 0;}
+             int main(int argc, char *argv[]){return 0;}
+Performing C SOURCE FILE Test _have_vla succeeded with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_9f275/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_9f275.dir/build.make CMakeFiles/cmTC_9f275.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_9f275.dir/src.c.o
+/usr/bin/cc -DTESTKEYWORD=inline  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -D_have_vla   -o CMakeFiles/cmTC_9f275.dir/src.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_9f275
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9f275.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -D_have_vla  -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_9f275.dir/src.c.o  -o cmTC_9f275 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+Source file was:
+int main(int argc, char *argv[]){int arr[argc]; return 0;}
+Determining size of unsigned short passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8ac65/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_8ac65.dir/build.make CMakeFiles/cmTC_8ac65.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8ac65.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o
+/usr/bin/cc -DTESTKEYWORD=inline  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_8ac65.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CheckTypeSize/CMAKE_SIZEOF_UNSIGNED_SHORT.c
+Linking C executable cmTC_8ac65
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8ac65.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_8ac65.dir/CMAKE_SIZEOF_UNSIGNED_SHORT.c.o  -o cmTC_8ac65 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the system is big endian passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ac576/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_ac576.dir/build.make CMakeFiles/cmTC_ac576.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ac576.dir/TestEndianess.c.o
+/usr/bin/cc   -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_ac576.dir/TestEndianess.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/TestEndianess.c
+Linking C executable cmTC_ac576
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ac576.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_ac576.dir/TestEndianess.c.o  -o cmTC_ac576 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+TestEndianess.c:
+/* A 16 bit integer is required. */
+typedef unsigned short cmakeint16;
+
+/* On a little endian machine, these 16bit ints will give "THIS IS LITTLE ENDIAN."
+   On a big endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_little[] =  {0x4854, 0x5349, 0x4920, 0x2053, 0x494c, 0x5454, 0x454c, 0x4520, 0x444e, 0x4149, 0x2e4e, 0x0000};
+
+/* on a big endian machine, these 16bit ints will give "THIS IS BIG ENDIAN."
+   On a little endian machine the characters will be exchanged pairwise. */
+const cmakeint16 info_big[] =     {0x5448, 0x4953, 0x2049, 0x5320, 0x4249, 0x4720, 0x454e, 0x4449, 0x414e, 0x2e2e, 0x0000};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_little[argc];
+  require += info_big[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_8d52a/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_8d52a.dir/build.make CMakeFiles/cmTC_8d52a.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_8d52a.dir/CheckIncludeFile.c.o
+/usr/bin/cc -DTESTKEYWORD=inline  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_8d52a.dir/CheckIncludeFile.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_8d52a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8d52a.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_8d52a.dir/CheckIncludeFile.c.o  -o cmTC_8d52a 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the function pthread_create exists in the pthread passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4c692/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_4c692.dir/build.make CMakeFiles/cmTC_4c692.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_4c692.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DTESTKEYWORD=inline  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_4c692.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4c692
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4c692.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -DCHECK_FUNCTION_EXISTS=pthread_create  -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_4c692.dir/CheckFunctionExists.c.o  -o cmTC_4c692 -lpthread 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the function inet_ntop exists passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_cd695/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_cd695.dir/build.make CMakeFiles/cmTC_cd695.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cd695.dir/CheckFunctionExists.c.o
+/usr/bin/cc -DTESTKEYWORD=inline  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -DCHECK_FUNCTION_EXISTS=inet_ntop   -o CMakeFiles/cmTC_cd695.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_cd695
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cd695.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -DCHECK_FUNCTION_EXISTS=inet_ntop  -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_cd695.dir/CheckFunctionExists.c.o  -o cmTC_cd695 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file ladspa.h exists passed with the following output:
+Change Dir: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_6bb34/fast"
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_6bb34.dir/build.make CMakeFiles/cmTC_6bb34.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_6bb34.dir/CheckIncludeFile.c.o
+/usr/bin/cc -DTESTKEYWORD=inline  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3    -o CMakeFiles/cmTC_6bb34.dir/CheckIncludeFile.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_6bb34
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6bb34.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -Wl,-z,relro -Wl,-z,now -Wl,--as-needed  -rdynamic CMakeFiles/cmTC_6bb34.dir/CheckIncludeFile.c.o  -o cmTC_6bb34 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/CMakeTmp'
+
+

@@ -1,0 +1,116 @@
+<vbox>
+    <table expand-y="0" expand-x="1" spacing="5" rows="1" cols="7">
+        <label param="level_in" attach-x="0" attach-y="0" expand-x="0" />
+        <knob param="level_in" attach-x="0" attach-y="1" attach-h="2" expand-x="0" type="1" />
+        <value param="level_in" attach-x="0" attach-y="3" expand-x="0" />
+        
+        <label attach-x="1" attach-y="0" expand-x="1" text="Input level" />
+        <vumeter param="meter_inL" position="2" mode="0" hold="1.5" falloff="2.5" attach-x="1" attach-y="1" expand-x="1" />
+        <vumeter param="meter_inR" position="2" mode="0" hold="1.5" falloff="2.5" attach-x="1" attach-y="2" expand-x="1" />
+        <meterscale param="meter_outR" marker="0 0.0625 0.125 0.25 0.5 0.71 1" dots="1" position="2" mode="0" attach-x="1" attach-y="3" expand-x="1" />
+        
+        <label attach-x="2" attach-y="0" expand-x="0" text="Clip" />
+        <led param="clip_inL" attach-x="2" attach-y="1" expand-x="0" />
+        <led param="clip_inR" attach-x="2" attach-y="2" expand-x="0" />
+        
+        <label param="bypass" attach-x="4" attach-y="0" expand-x="0" />
+        <toggle param="bypass" icon="bypass" attach-x="4" attach-y="1" attach-h="2" expand-x="0" pad-x="10"/>
+        
+        <label attach-x="5" attach-y="0" expand-x="1" text="Output level"/>
+        <vumeter param="meter_outL" position="2" mode="0" hold="1.5" falloff="2.5" attach-x="5" attach-y="1" expand-x="1" />
+        <vumeter param="meter_outR" position="2" mode="0" hold="1.5" falloff="2.5" attach-x="5" attach-y="2" expand-x="1" />
+        <meterscale param="meter_outR" marker="0 0.0625 0.125 0.25 0.5 0.71 1" dots="1" position="2" mode="0" attach-x="5" attach-y="3" expand-x="1" />
+        
+        <label attach-x="6" attach-y="0" expand-x="0" text="Clip"/>
+        <led param="clip_outL" mode="1" attach-x="6" attach-y="1" expand-x="0" />
+        <led param="clip_outR" mode="1" attach-x="6" attach-y="2" expand-x="0" />
+        
+        <label param="level_out" attach-x="8" attach-y="0" expand-x="0" />
+        <knob param="level_out" attach-x="8" attach-y="1" attach-h="2" expand-x="0" type="1" />
+        <value param="level_out" attach-x="8" attach-y="3" expand-x="0" />
+    </table>
+    <hbox>
+        <label/>
+        <hbox>
+            <label text="Tape" />
+            <vbox>
+                <label param="blend" />
+                <knob param="blend" type="1" size="4" ticks="-10 -5 0 5 10" />
+                <value param="blend" />
+            </vbox>
+            <label text="Tube" />
+        </hbox>
+        <label/>
+        <vbox>
+            <label param="drive" />
+            <knob param="drive" size="5" ticks="0.1 1 2 3 4 5 6 7 8 9 10" />
+            <value param="drive" />
+        </vbox>  
+        <label/>
+        <hbox>  
+            <label text="Dry" />
+            <vbox>
+                <label param="mix" />
+                <knob param="mix" size="4" ticks="0 0.5 1" />
+                <value param="mix" />
+            </vbox>
+            <label text="Wet" />
+        </hbox>
+        <label/>
+    </hbox>
+    <hbox spacing="8">
+        <frame label="Pre Filter">
+            <hbox homogeneous="0" spacing="3">
+                <label/>
+                <toggle param="pre" size="2" />
+                <vbox>
+                    <label text="HP" />
+                    <knob param="hp_pre_freq" ticks="10 100 1000 20000" />
+                    <value param="hp_pre_freq" />
+                </vbox>
+                <vbox>
+                    <label text="LP" />
+                    <knob param="lp_pre_freq" type="2" ticks="10 100 1000 20000"/>
+                    <value param="lp_pre_freq" />
+                </vbox>
+            </hbox>
+        </frame>
+        
+        <frame label="Tone Control">
+            <hbox homogeneous="1" spacing="3">
+                <vbox>
+                    <label param="p_freq" attach-x="0" attach-y="0" />
+                    <knob param="p_freq" attach-x="1" attach-y="0" ticks="80 800 8000" />
+                    <value param="p_freq" attach-x="2" attach-y="0" />
+                </vbox>
+                <vbox>
+                    <label param="p_level" attach-x="0" attach-y="1" />
+                    <knob param="p_level" attach-x="1" attach-y="0" type="1" />
+                    <value param="p_level" attach-x="2" attach-y="1" />
+                </vbox>
+                <vbox>
+                    <label param="p_q" attach-x="0" attach-y="2" />
+                    <knob param="p_q" attach-x="1" attach-y="2" ticks="0.1 1 10" />
+                    <value param="p_q" attach-x="2" attach-y="2" />
+                </vbox>
+            </hbox>
+        </frame>
+        
+        <frame label="Post Filter">
+            <hbox homogeneous="0" spacing="3">
+                <vbox>
+                    <label text="HP" />
+                    <knob param="hp_post_freq" ticks="10 100 1000 20000" />
+                    <value param="hp_post_freq" />
+                </vbox>
+                <vbox>
+                    <label text="LP" />
+                    <knob param="lp_post_freq" type="2" ticks="10 100 1000 20000" />
+                    <value param="lp_post_freq" />
+                </vbox>
+                <toggle param="post" size="2" />
+                <label/>
+            </hbox>
+        </frame>
+    </hbox>
+</vbox>

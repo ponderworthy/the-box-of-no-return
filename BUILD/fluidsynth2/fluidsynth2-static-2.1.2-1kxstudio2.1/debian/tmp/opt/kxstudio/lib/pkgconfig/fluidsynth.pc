@@ -1,0 +1,10 @@
+prefix=/opt/kxstudio
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: FluidSynth
+Description: Software SoundFont synth
+Version: 2.1.2
+Libs: -L${libdir} -lfluidsynth -linstpatch-1.0 -lglib-2.0 -lgobject-2.0 -lgthread-2.0 -lsndfile -lFLAC -lvorbisenc -lvorbis -logg -lpthread -lrt -lm
+Cflags: -I${includedir}

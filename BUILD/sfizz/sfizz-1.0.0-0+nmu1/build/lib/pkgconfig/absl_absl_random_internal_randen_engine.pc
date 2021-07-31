@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}//usr/lib
+includedir=${prefix}/include
+
+Name: absl_absl_random_internal_randen_engine
+Description: Abseil absl_random_internal_randen_engine library
+URL: https://abseil.io/
+Version: 20210324
+Requires: absl_endian = 20210324, absl_random_internal_iostream_state_saver = 20210324, absl_random_internal_randen = 20210324, absl_raw_logging_internal = 20210324, absl_type_traits = 20210324
+Libs: -L${libdir}  
+Cflags: -I${includedir} -DNOMINMAX

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsfizz_hiir_polyphase_iir2designer.a  CMakeFiles/sfizz_hiir_polyphase_iir2designer.dir/src/external/hiir/hiir/PolyphaseIir2Designer.cpp.o
+/usr/bin/ranlib libsfizz_hiir_polyphase_iir2designer.a

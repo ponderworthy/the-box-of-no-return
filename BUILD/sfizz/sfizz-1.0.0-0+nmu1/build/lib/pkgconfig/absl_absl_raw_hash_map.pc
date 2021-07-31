@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}//usr/lib
+includedir=${prefix}/include
+
+Name: absl_absl_raw_hash_map
+Description: Abseil absl_raw_hash_map library
+URL: https://abseil.io/
+Version: 20210324
+Requires: absl_container_memory = 20210324, absl_raw_hash_set = 20210324, absl_throw_delegate = 20210324
+Libs: -L${libdir}  
+Cflags: -I${includedir} -DNOMINMAX

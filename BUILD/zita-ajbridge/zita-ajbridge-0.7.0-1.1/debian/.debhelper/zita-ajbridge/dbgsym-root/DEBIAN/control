@@ -1,0 +1,12 @@
+Package: zita-ajbridge-dbgsym
+Source: zita-ajbridge
+Version: 0.7.0-1.1-bnrcustom
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian Multimedia Maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Installed-Size: 39
+Depends: zita-ajbridge (= 0.7.0-1.1-bnrcustom)
+Section: debug
+Priority: optional
+Description: debug symbols for zita-ajbridge
+Build-Ids: 8b25415fd2d96325e813bcc184558f905ff51633 c02c82b79cff72bd276ea33d468b5e1b23ceaba3

@@ -1,0 +1,12 @@
+Package: jackd2-firewire-dbgsym
+Source: jackd2
+Version: 1.9.12~dfsg-2.1-bnrcustom
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian Multimedia Maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Installed-Size: 27
+Depends: jackd2-firewire (= 1.9.12~dfsg-2.1-bnrcustom)
+Section: debug
+Priority: optional
+Description: debug symbols for jackd2-firewire
+Build-Ids: 6060976137143d335e8c05d5e22c297437b1829c

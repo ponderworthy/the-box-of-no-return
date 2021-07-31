@@ -1,0 +1,13 @@
+Package: libjack-jackd2-0-dbgsym
+Source: jackd2
+Version: 1.9.12~dfsg-2.1-bnrcustom
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian Multimedia Maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Installed-Size: 325
+Depends: libjack-jackd2-0 (= 1.9.12~dfsg-2.1-bnrcustom)
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libjack-jackd2-0
+Build-Ids: 46d20adfedc9c4c415266f51f3908497dc2c60db 485ba2d1753e60f3c5aaffb5058976e0786a48b9 4a17e3260962464feda13181973f6228ca049565

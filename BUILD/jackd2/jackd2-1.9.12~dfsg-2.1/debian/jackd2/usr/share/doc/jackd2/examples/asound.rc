@@ -1,0 +1,22 @@
+# This is an example asoundrc file for a system where there's only one
+# soundcard. Note that the name "sblive" is arbitrary, you can call
+# your card whatever you like.
+#
+# Using this setup you can start jackd with "jackd -d alsa -d sblive"
+#
+# For more complex settings you should refer to the ALSA documentation:
+#
+# See http://www.alsa-project.org
+#     http://alsa.opensrc.org
+#
+# Copy this file to ~/.asoundrc
+
+pcm.sblive {
+   type hw
+   card 0
+}
+
+ctl.sblive {
+   type hw
+   card 0
+}

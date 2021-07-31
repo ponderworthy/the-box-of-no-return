@@ -1,0 +1,5 @@
+mididings-doc_0~20120419~ds0-7+1bnrcustom_all.deb doc optional
+mididings_0~20120419~ds0-7+1bnrcustom_all.deb sound optional
+mididings_0~20120419~ds0-7+1bnrcustom_amd64.buildinfo sound optional
+python-mididings-dbgsym_0~20120419~ds0-7+1bnrcustom_amd64.deb debug optional automatic=yes
+python-mididings_0~20120419~ds0-7+1bnrcustom_amd64.deb python optional

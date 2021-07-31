@@ -1,0 +1,18 @@
+Package: fluidsynth
+Version: 1.1.11-1+deb10u1.1-bnrscustom
+Architecture: amd64
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Installed-Size: 92
+Depends: libfluidsynth1 (>= 1.1.11-1+deb10u1.1-bnrscustom), libc6 (>= 2.2.5)
+Recommends: qsynth
+Conflicts: iiwusynth
+Replaces: iiwusynth
+Provides: iiwusynth
+Section: sound
+Priority: optional
+Homepage: http://www.fluidsynth.org/
+Description: Real-time MIDI software synthesizer
+ Fluidsynth is a real-time midi synthesizer based on the soundfont2
+ specifications. It can be used to render MIDI input or MIDI files to audio.
+ The MIDI events are read from a MIDI device. The sound is rendered in
+ real-time to the sound output device.

@@ -12,7 +12,7 @@
       <connection client="soft3_midi" port="0" />
     </port>
   </client>
-  <client name="UM-ONE">
+  <client name="UX16">
     <port id="0">
       <connection client="Midi Through" port="0" />
     </port>
@@ -20,6 +20,7 @@
   <client name="soft1_midi" />
   <client name="soft2_midi" />
   <client name="soft3_midi" />
+  <client name="Patchage" />
 </alsa>
 <jack>
   <client name="soft2_midi">

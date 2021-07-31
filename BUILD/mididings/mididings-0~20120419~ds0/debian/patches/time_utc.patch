@@ -1,0 +1,17 @@
+Description: Fix FTBFS due to renamed TIME_UTC
+ TIME_UTC is now provided by eglibc and boost has renamed it to TIME_UTC_.
+Author: Sebastian Ramacher <sramacher@debian.org>
+Bug-Debian: http://bugs.debian.org/710636
+Last-Update: 2013-07-05
+
+--- a/src/python_caller.cc
++++ b/src/python_caller.cc
+@@ -148,7 +148,7 @@
+             _cond.timed_wait(lock, boost::posix_time::milliseconds(Config::ASYNC_CALLBACK_INTERVAL));
+ #else
+             boost::xtime xt;
+-            boost::xtime_get(&xt, boost::TIME_UTC);
++            boost::xtime_get(&xt, boost::TIME_UTC_);
+             xt.nsec += Config::ASYNC_CALLBACK_INTERVAL * 1000000;
+             _cond.timed_wait(lock, xt);
+ #endif

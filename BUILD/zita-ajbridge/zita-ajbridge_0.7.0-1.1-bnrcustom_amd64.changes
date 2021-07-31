@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Sun, 25 Jul 2021 21:59:14 -0500
+Source: zita-ajbridge
+Binary: zita-ajbridge zita-ajbridge-dbgsym
+Architecture: amd64
+Version: 0.7.0-1.1-bnrcustom
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Debian Multimedia Maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Changed-By: Jaromír Mikeš <jeb@bnr4>
+Description:
+ zita-ajbridge - alsa to jack bridge
+Changes:
+ zita-ajbridge (0.7.0-1.1-bnrcustom) UNRELEASED; urgency=medium
+ .
+   * Non-maintainer upload.
+   *
+   *
+Checksums-Sha1:
+ 78d093e2a6b8d35fe044a2c0c1c58e4290708f1b 4660 zita-ajbridge-dbgsym_0.7.0-1.1-bnrcustom_amd64.deb
+ 97dd975829a6129bbeb8959ef5c2f5e1a2c540d8 5573 zita-ajbridge_0.7.0-1.1-bnrcustom_amd64.buildinfo
+ bfa9b0a06f4a7e41209c644fcae53faf283fa485 19856 zita-ajbridge_0.7.0-1.1-bnrcustom_amd64.deb
+Checksums-Sha256:
+ 318f5cfa58c3187d92cbb8e58dc79c9978fb4f95a590f836b560e6685ce7acd1 4660 zita-ajbridge-dbgsym_0.7.0-1.1-bnrcustom_amd64.deb
+ 0d6772519b9719a36ddc65491a38ef8c312b09dd3d84618ed516e1c65fd19511 5573 zita-ajbridge_0.7.0-1.1-bnrcustom_amd64.buildinfo
+ 423120f21de46d66c4dab8c3701014b6057a823379003551eee8d68175102ac6 19856 zita-ajbridge_0.7.0-1.1-bnrcustom_amd64.deb
+Files:
+ 4f5beecde1bbd2c7db654ab8773127dc 4660 debug optional zita-ajbridge-dbgsym_0.7.0-1.1-bnrcustom_amd64.deb
+ b3d5e21c347b37790d04c5447864eebf 5573 sound optional zita-ajbridge_0.7.0-1.1-bnrcustom_amd64.buildinfo
+ e4a139a5f7fd33c1929681a519707a39 19856 sound optional zita-ajbridge_0.7.0-1.1-bnrcustom_amd64.deb

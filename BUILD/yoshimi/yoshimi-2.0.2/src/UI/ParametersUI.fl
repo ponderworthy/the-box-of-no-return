@@ -1,0 +1,218 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0304
+header_name {.h}
+code_name {.cc}
+comment {Copyright 2011, Alan Calvert
+Copyright 2014 - 2020, Will Godfrey
+
+This file is part of yoshimi, which is free software: you can
+redistribute it and/or modify it under the terms of the GNU General
+Public License as published by the Free Software Foundation, either
+version 2 of the License, or (at your option) any later version.
+
+yoshimi is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with yoshimi.  If not, see <http://www.gnu.org/licenses/>.
+
+} {selected in_source in_header
+}
+
+decl {\#include <set>} {public local
+}
+
+decl {using namespace std;} {public local
+}
+
+decl {\#include "Misc/Config.h"} {private global
+}
+
+decl {\#include "MasterUI.h"} {private global
+}
+
+decl {\#include "Misc/SynthEngine.h"} {public global
+}
+
+class ParametersUI {} {
+  Function {make_window(void)} {} {
+    Fl_Window Recent {
+      label {Recent Parameters}
+      callback {CloseRecent->do_callback();}
+      xywh {900 700 250 180} type Double labelfont 13 labelsize 12 align 0 hide resizable
+      code0 {paramDW = o->w(); paramDH = o->h();}
+      code1 {o->size_range(paramDW, paramDH, 0, 0, 0, 0, 1);}
+    } {
+      Fl_Browser BrowseRecent {
+        callback {//
+        if (o->value() == 0)
+            return;
+        CloseRecent->hide();
+        Loading->show();
+        if(H_type <= TOPLEVEL::XML::MLearn)
+        {
+            vector<string> listType = *synth->getHistory(H_type);
+            string fle = listType.at(o->value()-1);
+            switch(H_type)
+            {
+                case TOPLEVEL::XML::Instrument:
+                    synth->getGuiMaster()->do_load_instrument(fle);
+                    break;
+                case TOPLEVEL::XML::Patch:
+                    synth->getGuiMaster()->do_load_master(fle);
+                    break;
+                case TOPLEVEL::XML::Presets:
+                    break; // not from here
+                case TOPLEVEL::XML::Scale:
+                    synth->getGuiMaster()->do_load_scale(fle);
+                    break;
+                case TOPLEVEL::XML::State:
+                    synth->getGuiMaster()->setState(fle);
+                    CloseRecent->hide();
+                    Loading->show();
+                    break;
+                case TOPLEVEL::XML::Vector:
+                    synth->getGuiMaster()->vectorui->loadVector(fle);
+                    break;
+                case TOPLEVEL::XML::MLearn:
+                    synth->getGuiMaster()->midilearnui->loadMidi(fle);
+                    break;
+            }
+        }
+        Recent->hide();}
+        xywh {0 0 250 157} type Select color 55 labeltype NO_LABEL labelfont 13 labelsize 12 align 0 textsize 12
+        code0 {const int colwidths[] = { 150, 330, 0 };
+          o->column_widths(colwidths);
+          o->column_char('	');}
+      }
+      Fl_Button Loading {
+        label Loading
+        xywh {83 159 57 20} box THIN_DOWN_BOX color 22 labelfont 1 labelsize 11
+      }
+      Fl_Button CloseRecent {
+        label Close
+        callback {//
+    saveWin(synth, Recent->w(), Recent->h(), Recent->x(), Recent->y(), false, "Master-recent");
+    Recent->hide();}
+        xywh {83 159 57 20} labelfont 13 labelsize 12
+      }
+      Fl_Text_Display emptytext {
+        label {No Entries}
+        xywh {35 122 160 11} box NO_BOX labelsize 38 align 161 textfont 1
+      }
+    }
+  }
+  Function {ParametersUI(SynthEngine *_synth)} {} {
+    code {//
+    synth = _synth;
+    lastParamW = 0;
+    make_window();} {}
+  }
+  Function {Show(int _type)} {} {
+    code {//
+    H_type = _type;
+
+    unsigned int name_start;
+    unsigned int name_end;
+    string name;
+
+    switch (H_type)
+    {
+        case TOPLEVEL::XML::Instrument:
+            Recent->label("Recent Instruments");
+            break;
+        case TOPLEVEL::XML::Scale:
+            Recent->label("Recent Scales");
+            break;
+        case TOPLEVEL::XML::MLearn:
+            Recent->label("Recent MIDI Learn Lists");
+            break;
+        case TOPLEVEL::XML::Vector:
+            Recent->label("Recent Vectors");
+            break;
+        case TOPLEVEL::XML::State:
+            Recent->label("Recent States");
+            break;
+        case TOPLEVEL::XML::Patch:
+            Recent->label("Recent Patch Sets");
+            break;
+        default:
+            Recent->label("Unknown!");
+    }
+
+    vector<string> listType = *synth->getHistory(H_type);
+    BrowseRecent->clear();
+    const int colwidths[] = { 64, 128, 0 };
+    BrowseRecent->column_widths(colwidths);
+    BrowseRecent->column_char('	');
+    unsigned int offset = 0;
+    
+    if (listType.empty())
+        emptytext->show();
+    else
+    {
+        emptytext->hide();
+        if (listType.size() > MAX_HISTORY)
+            offset = listType.size() -MAX_HISTORY;
+        for (vector<string>::iterator it = listType.begin(); it != listType.end() - offset; ++it)
+        {
+            name = *it;
+            name_start = name.rfind("/");
+            name_end = name.rfind(".");
+            name = name.substr(name_start + 1, name_end - name_start - 1);
+            BrowseRecent->add(name.c_str());
+        }
+        BrowseRecent->set_changed();
+    }
+    int fetchW, fetchH, fetchX, fetchY, fetchO;
+    loadWin(synth, fetchW, fetchH, fetchX, fetchY, fetchO, "Master-recent");
+    if (fetchW < paramDW || fetchH < paramDH)
+    {
+        fetchW = paramDW;
+        fetchH = paramDH;
+    }
+    checkSane(fetchX, fetchY,fetchW, fetchH, paramDW, paramDH);
+
+    Recent->size(fetchW, fetchH);
+    Recent->show();
+    Loading->hide();
+    CloseRecent->show();} {}
+  }
+  Function {Hide()} {} {
+    code {//
+    Recent->hide();} {}
+  }
+  Function {~ParametersUI()} {} {
+    code {//
+    CloseRecent->do_callback();} {}
+  }
+  Function {paramRtext()} {} {
+    code {//
+    if (lastParamW == Recent->w())
+        return;
+    lastParamW = Recent->w();
+
+    float dScale = Recent->w() / float(paramDW);
+
+    int size12 = int(12 * dScale);
+
+    BrowseRecent->textsize(size12);
+    Loading->labelsize(size12);
+    CloseRecent->labelsize(size12);
+    emptytext->labelsize(int(38 * dScale));
+
+    Recent->redraw();} {}
+  }
+  decl {SynthEngine *synth;} {private local
+  }
+  decl {int H_type;} {private local
+  }
+  decl {int paramDW;} {private local
+  }
+  decl {int paramDH;} {private local
+  }
+  decl {int lastParamW;} {private local
+  }
+}

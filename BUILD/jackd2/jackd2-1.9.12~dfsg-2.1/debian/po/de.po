@@ -1,0 +1,49 @@
+# Translation of jack-audio-connection-kit debconf templates to German
+# Copyright (C) Helge Kreutzmann <debian@helgefjell.de>, 2009.
+# This file is distributed under the same license as the jack-audio-connection-kit package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: jack-audio-connection-kit 0.116.2+svn3592-4\n"
+"Report-Msgid-Bugs-To: jackd2@packages.debian.org\n"
+"POT-Creation-Date: 2011-12-22 23:36+0100\n"
+"PO-Revision-Date: 2009-10-12 18:42+0200\n"
+"Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
+"Language-Team: de <debian-l10n-german@lists.debian.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid "Enable realtime process priority?"
+msgstr "Echtzeit-Verarbeitungspriorität aktivieren?"
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid ""
+"If you want to run jackd with realtime priorities, the user starting jackd "
+"needs realtime permissions. Accept this option to create the file /etc/"
+"security/limits.d/audio.conf, granting realtime priority and memlock "
+"privileges to the audio group."
+msgstr ""
+"Falls Sie Jackd mit Echtzeitpriorität ausführen möchten, benötigt der "
+"Benutzer, der Jackd startet, die Echtzeit-Rechte. Akzeptieren Sie diese "
+"Option, um die Datei /etc/security/limits.d/audio.conf zu erstellen und "
+"damit der Gruppe »audio« Echtzeit- und Memlock-Priorität zu gewähren."
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid ""
+"Running jackd with realtime priority minimizes latency, but may lead to "
+"complete system lock-ups by requesting all the available physical system "
+"memory, which is unacceptable in multi-user environments."
+msgstr ""
+"Durch Betrieb von Jackd mit Echtzeitpriorität wird die Latenz minimiert. "
+"Dies kann aber auch zum kompletten Aufhängen des Systems führen, indem der "
+"gesamte physische Speicher angefordert wird, was in einer "
+"Mehrbenutzerumgebung nicht akzeptabel ist."

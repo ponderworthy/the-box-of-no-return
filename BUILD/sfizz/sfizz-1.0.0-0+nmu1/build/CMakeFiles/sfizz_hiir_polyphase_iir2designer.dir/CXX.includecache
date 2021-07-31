@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/external/hiir/hiir/PolyphaseIir2Designer.h
+
+../src/external/hiir/hiir/def.h
+
+../src/external/hiir/hiir/fnc.h
+hiir/fnc.hpp
+../src/external/hiir/hiir/hiir/fnc.hpp
+
+../src/external/hiir/hiir/fnc.hpp
+cassert
+-
+cmath
+-
+
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/src/external/hiir/hiir/PolyphaseIir2Designer.cpp
+hiir/def.h
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/src/external/hiir/hiir/hiir/def.h
+hiir/fnc.h
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/src/external/hiir/hiir/hiir/fnc.h
+hiir/PolyphaseIir2Designer.h
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/src/external/hiir/hiir/hiir/PolyphaseIir2Designer.h
+cassert
+-
+cmath
+-
+

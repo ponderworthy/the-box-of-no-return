@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsfizz-vst3-core.a  CMakeFiles/sfizz-vst3-core.dir/SfizzVstProcessor.cpp.o CMakeFiles/sfizz-vst3-core.dir/SfizzVstController.cpp.o CMakeFiles/sfizz-vst3-core.dir/SfizzVstEditor.cpp.o CMakeFiles/sfizz-vst3-core.dir/SfizzVstState.cpp.o CMakeFiles/sfizz-vst3-core.dir/SfizzVstUpdates.cpp.o CMakeFiles/sfizz-vst3-core.dir/X11RunLoop.cpp.o
+/usr/bin/ranlib libsfizz-vst3-core.a

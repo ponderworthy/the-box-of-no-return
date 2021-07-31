@@ -1,0 +1,959 @@
+//==============================================================
+// Solo Contrabassoon : Key Switches
+//
+//   This is a combination of
+//
+//     contrabassoon-SOLO-sustain.sfz
+//     contrabassoon-SOLO-normal-mod-wheel.sfz
+//     contrabassoon-SOLO-accent.sfz
+//     contrabassoon-SOLO-staccato.sfz
+//
+//   ... to create a Key Switchable patch
+//
+//     key switch c6  = Sustain
+//     key switch d6  = Normal Mod Wheel
+//     key switch d#6 = Accent
+//     key switch e6  = Staccato
+//
+//   by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+//==============================================================
+// Solo Contrabassoon : Sustain
+//
+//   Woodwinds - Contrabassoon Solo.sfz - from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//                                                                                                      
+//   Modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//         Contrabassoon
+// ------------------------------
+
+<group>
+// sustain by default
+sw_default=c6
+sw_lokey=c6
+sw_hikey=e6
+sw_last=c6
+sw_label=C6 Sustain
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+// add some volume vibrato (PB)
+amplfo_freq=4.57
+amplfo_depth=0.6
+amplfo_delay=1.0
+amplfo_fade=0.5
+
+// add some further volume vibrato [sfz2.0] (PB)
+lfo01_delay=2.3
+lfo01_fade=0.5
+lfo01_wave=1
+lfo01_volume=0.20
+lfo01_freq=2.79
+
+// longer attack for sustain (PB)
+ampeg_attack=0.6
+
+ampeg_release=0.500
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#0-PB-loop.wav
+lokey=a#0
+hikey=b0
+pitch_keycenter=a#0
+tune=-20
+volume=2
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#1-PB-loop.wav
+lokey=c1
+hikey=d1
+pitch_keycenter=c#1
+tune=-16
+volume=3
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-e1-PB-loop.wav
+lokey=d#1
+hikey=f1
+pitch_keycenter=e1
+volume=2
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-g1-PB-loop.wav
+lokey=f#1
+hikey=g#1
+pitch_keycenter=g1
+tune=-11
+volume=2
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#1-PB-loop.wav
+lokey=a1
+hikey=b1
+pitch_keycenter=a#1
+tune=-18
+volume=3
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#2-PB-loop.wav
+lokey=c2
+hikey=d2
+pitch_keycenter=c#2
+volume=3
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-e2-PB-loop.wav
+lokey=d#2
+hikey=f2
+pitch_keycenter=e2
+volume=3
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-g2-PB-loop.wav
+lokey=f#2
+hikey=g#2
+pitch_keycenter=g2
+tune=-16
+volume=5
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#2-PB-loop.wav
+lokey=a2
+hikey=b2
+pitch_keycenter=a#2
+volume=2
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#3-PB-loop.wav
+lokey=c3
+hikey=d3
+pitch_keycenter=c#3
+tune=-10
+volume=4
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-e3-PB-loop.wav
+lokey=d#3
+hikey=f#3
+pitch_keycenter=e3
+tune=1
+volume=5
+
+// removed g3 (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#3-PB-loop.wav
+lokey=g3
+hikey=a#3
+pitch_keycenter=a#3
+tune=3
+volume=4
+
+
+//==============================================================
+// Solo Contrabassoon : Normal Mod Wheel
+//
+//   This is a combination of
+//
+//     contrabassoon-SOLO-sustain.sfz
+//     contrabassoon-SOLO-staccato.sfz
+//
+//   ... where the mod wheel lengthens the attack
+//
+//   by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+//==============================================================
+// Solo Contrabassoon : Sustain
+//
+//   Woodwinds - Contrabassoon Solo.sfz - from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//                                                                                                      
+//   Modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//         Contrabassoon
+// ------------------------------
+
+<group>
+// sustain by default
+sw_default=c6
+sw_lokey=c6
+sw_hikey=e6
+sw_last=d6
+sw_label=D6 Normal Mod Wheel
+
+// mod wheel slows attack (PB)
+ampeg_attackcc1=0.5
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+// add some volume vibrato (PB)
+amplfo_freq=4.57
+amplfo_depth=0.6
+amplfo_delay=1.0
+amplfo_fade=0.5
+
+// add some further volume vibrato [sfz2.0] (PB)
+lfo01_delay=2.3
+lfo01_fade=0.5
+lfo01_wave=1
+lfo01_volume=0.20
+lfo01_freq=2.79
+
+// longer attack for sustain (PB)
+ampeg_attack=0.03
+
+ampeg_release=0.500
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#0-PB-loop.wav
+lokey=a#0
+hikey=b0
+pitch_keycenter=a#0
+tune=-20
+volume=2
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#1-PB-loop.wav
+lokey=c1
+hikey=d1
+pitch_keycenter=c#1
+tune=-16
+volume=3
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-e1-PB-loop.wav
+lokey=d#1
+hikey=f1
+pitch_keycenter=e1
+volume=2
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-g1-PB-loop.wav
+lokey=f#1
+hikey=g#1
+pitch_keycenter=g1
+tune=-11
+volume=2
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#1-PB-loop.wav
+lokey=a1
+hikey=b1
+pitch_keycenter=a#1
+tune=-18
+volume=3
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#2-PB-loop.wav
+lokey=c2
+hikey=d2
+pitch_keycenter=c#2
+volume=3
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-e2-PB-loop.wav
+lokey=d#2
+hikey=f2
+pitch_keycenter=e2
+volume=3
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-g2-PB-loop.wav
+lokey=f#2
+hikey=g#2
+pitch_keycenter=g2
+tune=-16
+volume=5
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#2-PB-loop.wav
+lokey=a2
+hikey=b2
+pitch_keycenter=a#2
+volume=2
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#3-PB-loop.wav
+lokey=c3
+hikey=d3
+pitch_keycenter=c#3
+tune=-10
+volume=4
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-e3-PB-loop.wav
+lokey=d#3
+hikey=f#3
+pitch_keycenter=e3
+tune=1
+volume=5
+
+// removed g3 (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#3-PB-loop.wav
+lokey=g3
+hikey=a#3
+pitch_keycenter=a#3
+tune=3
+volume=4
+
+//==============================================================
+// Solo Contrabassoon : Staccato
+//
+//   Woodwinds - Contrabassoon Solo.sfz - from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//                                                                                                      
+//   Modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//         Contrabassoon
+// ------------------------------
+
+<group>
+// sustain by default
+sw_default=c6
+sw_lokey=c6
+sw_hikey=e6
+sw_last=d6
+sw_label=D6 Normal Mod Wheel
+
+// mod wheel slows attack (PB)
+ampeg_attackcc1=0.5
+// mod wheel reduces volume (PB)
+gain_cc1=-15
+
+// manufacture staccato from sustain (PB)
+offset=1000
+ampeg_attack=0.03
+ampeg_sustain=0
+ampeg_hold=0.10
+ampeg_decay=0.4
+ampeg_release=0.5
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#0-PB-loop.wav
+ampeg_hold=0.05
+
+lokey=a#0
+hikey=b0
+pitch_keycenter=a#0
+tune=-20
+volume=2
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#1-PB-loop.wav
+ampeg_hold=0.07
+
+lokey=c1
+hikey=d1
+pitch_keycenter=c#1
+tune=-16
+volume=-1
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-e1-PB-loop.wav
+ampeg_hold=0.04
+
+lokey=d#1
+hikey=f1
+pitch_keycenter=e1
+volume=-2
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-g1-PB-loop.wav
+ampeg_hold=0.07
+
+lokey=f#1
+hikey=g#1
+pitch_keycenter=g1
+tune=-11
+volume=-1
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#1-PB-loop.wav
+ampeg_hold=0.05
+
+lokey=a1
+hikey=b1
+pitch_keycenter=a#1
+tune=-18
+volume=-2
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#2-PB-loop.wav
+ampeg_hold=0.05
+
+lokey=c2
+hikey=d2
+pitch_keycenter=c#2
+volume=1
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-e2-PB-loop.wav
+ampeg_hold=0.20
+
+lokey=d#2
+hikey=f2
+pitch_keycenter=e2
+volume=-2
+
+// removed g2 (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#2-PB-loop.wav
+lokey=f#2
+hikey=b2
+pitch_keycenter=a#2
+volume=-1.5
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#3-PB-loop.wav
+ampeg_hold=0.05
+offset=5000
+
+lokey=a#2
+hikey=d3
+pitch_keycenter=c#3
+tune=-10
+volume=2
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-e3-PB-loop.wav
+ampeg_hold=0.04
+offset=60000
+
+lokey=d#3
+hikey=f#3
+pitch_keycenter=e3
+tune=1
+volume=9
+
+// removed g3 (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#3-PB-loop.wav
+ampeg_hold=0.05
+offset=2000
+
+lokey=g3
+hikey=a#3
+pitch_keycenter=a#3
+tune=3
+volume=1
+
+
+
+
+//==============================================================
+// Solo Contrabassoon : Accent
+//
+//   This is a combination of
+//
+//     bassoon-SOLO-sustain.sfz
+//     bassoon-SOLO-staccato.sfz
+//
+//   by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+//==============================================================
+// Solo Contrabassoon : Staccato
+//
+//   Woodwinds - Contrabassoon Solo.sfz - from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//                                                                                                      
+//   Modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//         Contrabassoon
+// ------------------------------
+
+<group>
+// sustain by default
+sw_default=c6
+sw_lokey=c6
+sw_hikey=e6
+sw_last=d#6
+sw_label=D#6 Accent
+
+// manufacture staccato from sustain (PB)
+offset=1000
+ampeg_attack=0.03
+ampeg_sustain=0
+ampeg_hold=0.10
+ampeg_decay=0.4
+ampeg_release=0.5
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#0-PB-loop.wav
+ampeg_hold=0.05
+
+lokey=a#0
+hikey=b0
+pitch_keycenter=a#0
+tune=-20
+volume=7
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#1-PB-loop.wav
+ampeg_hold=0.07
+
+lokey=c1
+hikey=d1
+pitch_keycenter=c#1
+tune=-16
+volume=4
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-e1-PB-loop.wav
+ampeg_hold=0.04
+
+lokey=d#1
+hikey=f1
+pitch_keycenter=e1
+volume=3
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-g1-PB-loop.wav
+ampeg_hold=0.07
+
+lokey=f#1
+hikey=g#1
+pitch_keycenter=g1
+tune=-11
+volume=4
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#1-PB-loop.wav
+ampeg_hold=0.05
+
+lokey=a1
+hikey=b1
+pitch_keycenter=a#1
+tune=-18
+volume=3
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#2-PB-loop.wav
+ampeg_hold=0.05
+
+lokey=c2
+hikey=d2
+pitch_keycenter=c#2
+volume=6
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-e2-PB-loop.wav
+ampeg_hold=0.05
+
+lokey=d#2
+hikey=g#2
+pitch_keycenter=e2
+volume=3
+
+// removed g2 (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#2-PB-loop.wav
+lokey=a2
+hikey=b2
+pitch_keycenter=a#2
+volume=3.5
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#3-PB-loop.wav
+ampeg_hold=0.05
+offset=5000
+
+lokey=a#2
+hikey=d3
+pitch_keycenter=c#3
+tune=-10
+volume=7
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-e3-PB-loop.wav
+ampeg_hold=0.04
+offset=60000
+
+lokey=d#3
+hikey=f#3
+pitch_keycenter=e3
+tune=1
+volume=14
+
+// removed g3 (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#3-PB-loop.wav
+ampeg_hold=0.05
+offset=2000
+
+lokey=g3
+hikey=a#3
+pitch_keycenter=a#3
+tune=3
+volume=6
+
+
+//==============================================================
+// Solo Contrabassoon : Sustain
+//
+//   Woodwinds - Contrabassoon Solo.sfz - from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//                                                                                                      
+//   Modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//         Contrabassoon
+// ------------------------------
+
+<group>
+// sustain by default
+sw_default=c6
+sw_lokey=c6
+sw_hikey=e6
+sw_last=d#6
+sw_label=D#6 Accent
+
+// allow time for accent before sustain takes over
+delay=0.05
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+
+
+
+
+// add some volume vibrato (PB)
+amplfo_freq=4.57
+amplfo_depth=0.6
+amplfo_delay=0.05
+amplfo_fade=0.5
+
+// add some further volume vibrato [sfz2.0] (PB)
+lfo01_delay=0.05
+lfo01_fade=0.5
+lfo01_wave=1
+lfo01_volume=0.20
+lfo01_freq=2.79
+
+// longer attack for sustain (PB)
+ampeg_attack=0.6
+
+ampeg_release=0.500
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#0-PB-loop.wav
+delay=0.06
+
+lokey=a#0
+hikey=b0
+pitch_keycenter=a#0
+tune=-20
+volume=2
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#1-PB-loop.wav
+delay=0.08
+
+lokey=c1
+hikey=d1
+pitch_keycenter=c#1
+tune=-16
+volume=3
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-e1-PB-loop.wav
+delay=0.06
+
+lokey=d#1
+hikey=f1
+pitch_keycenter=e1
+volume=2
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-g1-PB-loop.wav
+delay=0.07
+
+lokey=f#1
+hikey=g#1
+pitch_keycenter=g1
+tune=-11
+volume=2
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#1-PB-loop.wav
+delay=0.08
+
+lokey=a1
+hikey=b1
+pitch_keycenter=a#1
+tune=-18
+volume=3
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#2-PB-loop.wav
+lokey=c2
+hikey=d2
+pitch_keycenter=c#2
+volume=3
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-e2-PB-loop.wav
+delay=0.06
+
+lokey=d#2
+hikey=f2
+pitch_keycenter=e2
+volume=3
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-g2-PB-loop.wav
+lokey=f#2
+hikey=g#2
+pitch_keycenter=g2
+tune=-16
+volume=5
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#2-PB-loop.wav
+delay=0.06
+
+lokey=a2
+hikey=b2
+pitch_keycenter=a#2
+volume=2
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#3-PB-loop.wav
+delay=0.06
+
+lokey=c3
+hikey=d3
+pitch_keycenter=c#3
+tune=-10
+volume=4
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-e3-PB-loop.wav
+delay=0.04
+
+lokey=d#3
+hikey=f#3
+pitch_keycenter=e3
+tune=1
+volume=5
+
+// removed g3 (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#3-PB-loop.wav
+delay=0.04
+
+lokey=g3
+hikey=a#3
+pitch_keycenter=a#3
+tune=3
+volume=4
+
+
+
+//==============================================================
+// Solo Contrabassoon : Staccato
+//
+//   Woodwinds - Contrabassoon Solo.sfz - from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//                                                                                                      
+//   Modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//         Contrabassoon
+// ------------------------------
+
+<group>
+// sustain by default
+sw_default=c6
+sw_lokey=c6
+sw_hikey=e6
+sw_last=e6
+sw_label=E6 Staccato
+
+// manufacture staccato from sustain (PB)
+offset=1000
+ampeg_attack=0.03
+ampeg_sustain=0
+ampeg_hold=0.10
+ampeg_decay=0.4
+ampeg_release=0.5
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#0-PB-loop.wav
+ampeg_hold=0.05
+
+lokey=a#0
+hikey=b0
+pitch_keycenter=a#0
+tune=-20
+volume=7
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#1-PB-loop.wav
+ampeg_hold=0.07
+
+lokey=c1
+hikey=d1
+pitch_keycenter=c#1
+tune=-16
+volume=4
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-e1-PB-loop.wav
+ampeg_hold=0.04
+
+lokey=d#1
+hikey=f1
+pitch_keycenter=e1
+volume=3
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-g1-PB-loop.wav
+ampeg_hold=0.07
+
+lokey=f#1
+hikey=g#1
+pitch_keycenter=g1
+tune=-11
+volume=4
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#1-PB-loop.wav
+ampeg_hold=0.05
+
+lokey=a1
+hikey=b1
+pitch_keycenter=a#1
+tune=-18
+volume=3
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#2-PB-loop.wav
+ampeg_hold=0.05
+
+lokey=c2
+hikey=d2
+pitch_keycenter=c#2
+volume=6
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-e2-PB-loop.wav
+ampeg_hold=0.05
+
+lokey=d#2
+hikey=g#2
+pitch_keycenter=e2
+volume=3
+
+// removed g2 (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#2-PB-loop.wav
+lokey=a2
+hikey=b2
+pitch_keycenter=a#2
+volume=3.5
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#3-PB-loop.wav
+ampeg_hold=0.05
+offset=5000
+
+lokey=a#2
+hikey=d3
+pitch_keycenter=c#3
+tune=-10
+volume=7
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-e3-PB-loop.wav
+ampeg_hold=0.04
+offset=60000
+
+lokey=d#3
+hikey=f#3
+pitch_keycenter=e3
+tune=1
+volume=14
+
+// removed g3 (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#3-PB-loop.wav
+ampeg_hold=0.05
+offset=2000
+
+lokey=g3
+hikey=a#3
+pitch_keycenter=a#3
+tune=3
+volume=6
+
+

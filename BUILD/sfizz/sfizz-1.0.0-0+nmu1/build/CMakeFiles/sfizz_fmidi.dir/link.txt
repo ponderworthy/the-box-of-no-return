@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsfizz_fmidi.a  CMakeFiles/sfizz_fmidi.dir/external/fmidi/sources/fmidi/fmidi_mini.cpp.o
+/usr/bin/ranlib libsfizz_fmidi.a

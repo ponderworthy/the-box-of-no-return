@@ -1,0 +1,843 @@
+<table rows="141" cols="3">
+    <align attach-x="0" attach-y="0"   align-x="1"><label param="level_in"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="0" shrink-x="1" param="level_in"  />
+    <value param="level_in"  attach-x="2" attach-y="0" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="1"   align-x="1"><label param="level_in_vuL"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="1" expand-x="1" fill-x="1" param="level_in_vuL" />
+    <value param="level_in_vuL"  attach-x="2" attach-y="1" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="2"   align-x="1"><label param="level_in_vuR"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="2" expand-x="1" fill-x="1" param="level_in_vuR" />
+    <value param="level_in_vuR"  attach-x="2" attach-y="2" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="3"   align-x="1"><label param="level_in_clipL"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="3" shrink-x="1" param="level_in_clipL"  />
+    <value param="level_in_clipL"  attach-x="2" attach-y="3" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="4"   align-x="1"><label param="level_in_clipR"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="4" shrink-x="1" param="level_in_clipR"  />
+    <value param="level_in_clipR"  attach-x="2" attach-y="4" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="5"   align-x="1"><label param="bypass"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="5" expand-x="1" fill-x="1" pad-x="10" ><toggle param="bypass" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="6"   align-x="1"><label param="filters"  /></align>
+    <combo attach-x="1" attach-w="2" attach-y="6" param="filters" expand-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="7"   align-x="1"><label param="gainscale1"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="7" shrink-x="1" param="gainscale1"  />
+    <value param="gainscale1"  attach-x="2" attach-y="7" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="8"   align-x="1"><label param="gainscale2"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="8" shrink-x="1" param="gainscale2"  />
+    <value param="gainscale2"  attach-x="2" attach-y="8" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="9"   align-x="1"><label param="level_out"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="9" shrink-x="1" param="level_out"  />
+    <value param="level_out"  attach-x="2" attach-y="9" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="10"   align-x="1"><label param="level_out_vuL"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="10" expand-x="1" fill-x="1" param="level_out_vuL" />
+    <value param="level_out_vuL"  attach-x="2" attach-y="10" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="11"   align-x="1"><label param="level_out_vuR"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="11" expand-x="1" fill-x="1" param="level_out_vuR" />
+    <value param="level_out_vuR"  attach-x="2" attach-y="11" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="12"   align-x="1"><label param="level_out_clipL"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="12" shrink-x="1" param="level_out_clipL"  />
+    <value param="level_out_clipL"  attach-x="2" attach-y="12" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="13"   align-x="1"><label param="level_out_clipR"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="13" shrink-x="1" param="level_out_clipR"  />
+    <value param="level_out_clipR"  attach-x="2" attach-y="13" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="14"   align-x="1"><label param="gain10"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="14" shrink-x="1" param="gain10"  />
+    <value param="gain10"  attach-x="2" attach-y="14" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="15"   align-x="1"><label param="gain_scale10"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="15" shrink-x="1" param="gain_scale10"  />
+    <value param="gain_scale10"  attach-x="2" attach-y="15" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="16"   align-x="1"><label param="gain11"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="16" shrink-x="1" param="gain11"  />
+    <value param="gain11"  attach-x="2" attach-y="16" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="17"   align-x="1"><label param="gain_scale11"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="17" shrink-x="1" param="gain_scale11"  />
+    <value param="gain_scale11"  attach-x="2" attach-y="17" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="18"   align-x="1"><label param="gain12"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="18" shrink-x="1" param="gain12"  />
+    <value param="gain12"  attach-x="2" attach-y="18" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="19"   align-x="1"><label param="gain_scale12"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="19" shrink-x="1" param="gain_scale12"  />
+    <value param="gain_scale12"  attach-x="2" attach-y="19" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="20"   align-x="1"><label param="gain13"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="20" shrink-x="1" param="gain13"  />
+    <value param="gain13"  attach-x="2" attach-y="20" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="21"   align-x="1"><label param="gain_scale13"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="21" shrink-x="1" param="gain_scale13"  />
+    <value param="gain_scale13"  attach-x="2" attach-y="21" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="22"   align-x="1"><label param="gain14"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="22" shrink-x="1" param="gain14"  />
+    <value param="gain14"  attach-x="2" attach-y="22" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="23"   align-x="1"><label param="gain_scale14"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="23" shrink-x="1" param="gain_scale14"  />
+    <value param="gain_scale14"  attach-x="2" attach-y="23" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="24"   align-x="1"><label param="gain15"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="24" shrink-x="1" param="gain15"  />
+    <value param="gain15"  attach-x="2" attach-y="24" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="25"   align-x="1"><label param="gain_scale15"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="25" shrink-x="1" param="gain_scale15"  />
+    <value param="gain_scale15"  attach-x="2" attach-y="25" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="26"   align-x="1"><label param="gain16"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="26" shrink-x="1" param="gain16"  />
+    <value param="gain16"  attach-x="2" attach-y="26" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="27"   align-x="1"><label param="gain_scale16"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="27" shrink-x="1" param="gain_scale16"  />
+    <value param="gain_scale16"  attach-x="2" attach-y="27" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="28"   align-x="1"><label param="gain17"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="28" shrink-x="1" param="gain17"  />
+    <value param="gain17"  attach-x="2" attach-y="28" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="29"   align-x="1"><label param="gain_scale17"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="29" shrink-x="1" param="gain_scale17"  />
+    <value param="gain_scale17"  attach-x="2" attach-y="29" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="30"   align-x="1"><label param="gain18"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="30" shrink-x="1" param="gain18"  />
+    <value param="gain18"  attach-x="2" attach-y="30" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="31"   align-x="1"><label param="gain_scale18"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="31" shrink-x="1" param="gain_scale18"  />
+    <value param="gain_scale18"  attach-x="2" attach-y="31" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="32"   align-x="1"><label param="gain19"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="32" shrink-x="1" param="gain19"  />
+    <value param="gain19"  attach-x="2" attach-y="32" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="33"   align-x="1"><label param="gain_scale19"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="33" shrink-x="1" param="gain_scale19"  />
+    <value param="gain_scale19"  attach-x="2" attach-y="33" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="34"   align-x="1"><label param="gain110"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="34" shrink-x="1" param="gain110"  />
+    <value param="gain110"  attach-x="2" attach-y="34" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="35"   align-x="1"><label param="gain_scale110"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="35" shrink-x="1" param="gain_scale110"  />
+    <value param="gain_scale110"  attach-x="2" attach-y="35" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="36"   align-x="1"><label param="gain111"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="36" shrink-x="1" param="gain111"  />
+    <value param="gain111"  attach-x="2" attach-y="36" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="37"   align-x="1"><label param="gain_scale111"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="37" shrink-x="1" param="gain_scale111"  />
+    <value param="gain_scale111"  attach-x="2" attach-y="37" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="38"   align-x="1"><label param="gain112"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="38" shrink-x="1" param="gain112"  />
+    <value param="gain112"  attach-x="2" attach-y="38" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="39"   align-x="1"><label param="gain_scale112"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="39" shrink-x="1" param="gain_scale112"  />
+    <value param="gain_scale112"  attach-x="2" attach-y="39" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="40"   align-x="1"><label param="gain113"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="40" shrink-x="1" param="gain113"  />
+    <value param="gain113"  attach-x="2" attach-y="40" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="41"   align-x="1"><label param="gain_scale113"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="41" shrink-x="1" param="gain_scale113"  />
+    <value param="gain_scale113"  attach-x="2" attach-y="41" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="42"   align-x="1"><label param="gain114"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="42" shrink-x="1" param="gain114"  />
+    <value param="gain114"  attach-x="2" attach-y="42" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="43"   align-x="1"><label param="gain_scale114"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="43" shrink-x="1" param="gain_scale114"  />
+    <value param="gain_scale114"  attach-x="2" attach-y="43" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="44"   align-x="1"><label param="gain115"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="44" shrink-x="1" param="gain115"  />
+    <value param="gain115"  attach-x="2" attach-y="44" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="45"   align-x="1"><label param="gain_scale115"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="45" shrink-x="1" param="gain_scale115"  />
+    <value param="gain_scale115"  attach-x="2" attach-y="45" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="46"   align-x="1"><label param="gain116"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="46" shrink-x="1" param="gain116"  />
+    <value param="gain116"  attach-x="2" attach-y="46" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="47"   align-x="1"><label param="gain_scale116"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="47" shrink-x="1" param="gain_scale116"  />
+    <value param="gain_scale116"  attach-x="2" attach-y="47" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="48"   align-x="1"><label param="gain117"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="48" shrink-x="1" param="gain117"  />
+    <value param="gain117"  attach-x="2" attach-y="48" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="49"   align-x="1"><label param="gain_scale117"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="49" shrink-x="1" param="gain_scale117"  />
+    <value param="gain_scale117"  attach-x="2" attach-y="49" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="50"   align-x="1"><label param="gain118"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="50" shrink-x="1" param="gain118"  />
+    <value param="gain118"  attach-x="2" attach-y="50" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="51"   align-x="1"><label param="gain_scale118"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="51" shrink-x="1" param="gain_scale118"  />
+    <value param="gain_scale118"  attach-x="2" attach-y="51" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="52"   align-x="1"><label param="gain119"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="52" shrink-x="1" param="gain119"  />
+    <value param="gain119"  attach-x="2" attach-y="52" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="53"   align-x="1"><label param="gain_scale119"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="53" shrink-x="1" param="gain_scale119"  />
+    <value param="gain_scale119"  attach-x="2" attach-y="53" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="54"   align-x="1"><label param="gain120"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="54" shrink-x="1" param="gain120"  />
+    <value param="gain120"  attach-x="2" attach-y="54" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="55"   align-x="1"><label param="gain_scale120"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="55" shrink-x="1" param="gain_scale120"  />
+    <value param="gain_scale120"  attach-x="2" attach-y="55" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="56"   align-x="1"><label param="gain121"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="56" shrink-x="1" param="gain121"  />
+    <value param="gain121"  attach-x="2" attach-y="56" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="57"   align-x="1"><label param="gain_scale121"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="57" shrink-x="1" param="gain_scale121"  />
+    <value param="gain_scale121"  attach-x="2" attach-y="57" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="58"   align-x="1"><label param="gain122"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="58" shrink-x="1" param="gain122"  />
+    <value param="gain122"  attach-x="2" attach-y="58" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="59"   align-x="1"><label param="gain_scale122"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="59" shrink-x="1" param="gain_scale122"  />
+    <value param="gain_scale122"  attach-x="2" attach-y="59" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="60"   align-x="1"><label param="gain123"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="60" shrink-x="1" param="gain123"  />
+    <value param="gain123"  attach-x="2" attach-y="60" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="61"   align-x="1"><label param="gain_scale123"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="61" shrink-x="1" param="gain_scale123"  />
+    <value param="gain_scale123"  attach-x="2" attach-y="61" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="62"   align-x="1"><label param="gain124"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="62" shrink-x="1" param="gain124"  />
+    <value param="gain124"  attach-x="2" attach-y="62" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="63"   align-x="1"><label param="gain_scale124"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="63" shrink-x="1" param="gain_scale124"  />
+    <value param="gain_scale124"  attach-x="2" attach-y="63" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="64"   align-x="1"><label param="gain125"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="64" shrink-x="1" param="gain125"  />
+    <value param="gain125"  attach-x="2" attach-y="64" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="65"   align-x="1"><label param="gain_scale125"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="65" shrink-x="1" param="gain_scale125"  />
+    <value param="gain_scale125"  attach-x="2" attach-y="65" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="66"   align-x="1"><label param="gain126"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="66" shrink-x="1" param="gain126"  />
+    <value param="gain126"  attach-x="2" attach-y="66" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="67"   align-x="1"><label param="gain_scale126"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="67" shrink-x="1" param="gain_scale126"  />
+    <value param="gain_scale126"  attach-x="2" attach-y="67" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="68"   align-x="1"><label param="gain127"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="68" shrink-x="1" param="gain127"  />
+    <value param="gain127"  attach-x="2" attach-y="68" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="69"   align-x="1"><label param="gain_scale127"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="69" shrink-x="1" param="gain_scale127"  />
+    <value param="gain_scale127"  attach-x="2" attach-y="69" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="70"   align-x="1"><label param="gain128"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="70" shrink-x="1" param="gain128"  />
+    <value param="gain128"  attach-x="2" attach-y="70" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="71"   align-x="1"><label param="gain_scale128"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="71" shrink-x="1" param="gain_scale128"  />
+    <value param="gain_scale128"  attach-x="2" attach-y="71" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="72"   align-x="1"><label param="gain129"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="72" shrink-x="1" param="gain129"  />
+    <value param="gain129"  attach-x="2" attach-y="72" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="73"   align-x="1"><label param="gain_scale129"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="73" shrink-x="1" param="gain_scale129"  />
+    <value param="gain_scale129"  attach-x="2" attach-y="73" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="74"   align-x="1"><label param="gain130"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="74" shrink-x="1" param="gain130"  />
+    <value param="gain130"  attach-x="2" attach-y="74" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="75"   align-x="1"><label param="gain_scale130"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="75" shrink-x="1" param="gain_scale130"  />
+    <value param="gain_scale130"  attach-x="2" attach-y="75" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="76"   align-x="1"><label param="gain20"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="76" shrink-x="1" param="gain20"  />
+    <value param="gain20"  attach-x="2" attach-y="76" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="77"   align-x="1"><label param="gain_scale20"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="77" shrink-x="1" param="gain_scale20"  />
+    <value param="gain_scale20"  attach-x="2" attach-y="77" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="78"   align-x="1"><label param="gain21"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="78" shrink-x="1" param="gain21"  />
+    <value param="gain21"  attach-x="2" attach-y="78" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="79"   align-x="1"><label param="gain_scale21"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="79" shrink-x="1" param="gain_scale21"  />
+    <value param="gain_scale21"  attach-x="2" attach-y="79" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="80"   align-x="1"><label param="gain22"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="80" shrink-x="1" param="gain22"  />
+    <value param="gain22"  attach-x="2" attach-y="80" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="81"   align-x="1"><label param="gain_scale22"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="81" shrink-x="1" param="gain_scale22"  />
+    <value param="gain_scale22"  attach-x="2" attach-y="81" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="82"   align-x="1"><label param="gain23"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="82" shrink-x="1" param="gain23"  />
+    <value param="gain23"  attach-x="2" attach-y="82" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="83"   align-x="1"><label param="gain_scale23"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="83" shrink-x="1" param="gain_scale23"  />
+    <value param="gain_scale23"  attach-x="2" attach-y="83" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="84"   align-x="1"><label param="gain24"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="84" shrink-x="1" param="gain24"  />
+    <value param="gain24"  attach-x="2" attach-y="84" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="85"   align-x="1"><label param="gain_scale24"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="85" shrink-x="1" param="gain_scale24"  />
+    <value param="gain_scale24"  attach-x="2" attach-y="85" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="86"   align-x="1"><label param="gain25"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="86" shrink-x="1" param="gain25"  />
+    <value param="gain25"  attach-x="2" attach-y="86" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="87"   align-x="1"><label param="gain_scale25"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="87" shrink-x="1" param="gain_scale25"  />
+    <value param="gain_scale25"  attach-x="2" attach-y="87" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="88"   align-x="1"><label param="gain26"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="88" shrink-x="1" param="gain26"  />
+    <value param="gain26"  attach-x="2" attach-y="88" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="89"   align-x="1"><label param="gain_scale26"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="89" shrink-x="1" param="gain_scale26"  />
+    <value param="gain_scale26"  attach-x="2" attach-y="89" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="90"   align-x="1"><label param="gain27"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="90" shrink-x="1" param="gain27"  />
+    <value param="gain27"  attach-x="2" attach-y="90" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="91"   align-x="1"><label param="gain_scale27"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="91" shrink-x="1" param="gain_scale27"  />
+    <value param="gain_scale27"  attach-x="2" attach-y="91" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="92"   align-x="1"><label param="gain28"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="92" shrink-x="1" param="gain28"  />
+    <value param="gain28"  attach-x="2" attach-y="92" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="93"   align-x="1"><label param="gain_scale28"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="93" shrink-x="1" param="gain_scale28"  />
+    <value param="gain_scale28"  attach-x="2" attach-y="93" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="94"   align-x="1"><label param="gain29"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="94" shrink-x="1" param="gain29"  />
+    <value param="gain29"  attach-x="2" attach-y="94" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="95"   align-x="1"><label param="gain_scale29"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="95" shrink-x="1" param="gain_scale29"  />
+    <value param="gain_scale29"  attach-x="2" attach-y="95" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="96"   align-x="1"><label param="gain210"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="96" shrink-x="1" param="gain210"  />
+    <value param="gain210"  attach-x="2" attach-y="96" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="97"   align-x="1"><label param="gain_scale210"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="97" shrink-x="1" param="gain_scale210"  />
+    <value param="gain_scale210"  attach-x="2" attach-y="97" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="98"   align-x="1"><label param="gain211"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="98" shrink-x="1" param="gain211"  />
+    <value param="gain211"  attach-x="2" attach-y="98" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="99"   align-x="1"><label param="gain_scale211"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="99" shrink-x="1" param="gain_scale211"  />
+    <value param="gain_scale211"  attach-x="2" attach-y="99" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="100"   align-x="1"><label param="gain212"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="100" shrink-x="1" param="gain212"  />
+    <value param="gain212"  attach-x="2" attach-y="100" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="101"   align-x="1"><label param="gain_scale212"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="101" shrink-x="1" param="gain_scale212"  />
+    <value param="gain_scale212"  attach-x="2" attach-y="101" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="102"   align-x="1"><label param="gain213"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="102" shrink-x="1" param="gain213"  />
+    <value param="gain213"  attach-x="2" attach-y="102" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="103"   align-x="1"><label param="gain_scale213"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="103" shrink-x="1" param="gain_scale213"  />
+    <value param="gain_scale213"  attach-x="2" attach-y="103" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="104"   align-x="1"><label param="gain214"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="104" shrink-x="1" param="gain214"  />
+    <value param="gain214"  attach-x="2" attach-y="104" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="105"   align-x="1"><label param="gain_scale214"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="105" shrink-x="1" param="gain_scale214"  />
+    <value param="gain_scale214"  attach-x="2" attach-y="105" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="106"   align-x="1"><label param="gain215"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="106" shrink-x="1" param="gain215"  />
+    <value param="gain215"  attach-x="2" attach-y="106" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="107"   align-x="1"><label param="gain_scale215"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="107" shrink-x="1" param="gain_scale215"  />
+    <value param="gain_scale215"  attach-x="2" attach-y="107" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="108"   align-x="1"><label param="gain216"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="108" shrink-x="1" param="gain216"  />
+    <value param="gain216"  attach-x="2" attach-y="108" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="109"   align-x="1"><label param="gain_scale216"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="109" shrink-x="1" param="gain_scale216"  />
+    <value param="gain_scale216"  attach-x="2" attach-y="109" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="110"   align-x="1"><label param="gain217"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="110" shrink-x="1" param="gain217"  />
+    <value param="gain217"  attach-x="2" attach-y="110" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="111"   align-x="1"><label param="gain_scale217"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="111" shrink-x="1" param="gain_scale217"  />
+    <value param="gain_scale217"  attach-x="2" attach-y="111" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="112"   align-x="1"><label param="gain218"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="112" shrink-x="1" param="gain218"  />
+    <value param="gain218"  attach-x="2" attach-y="112" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="113"   align-x="1"><label param="gain_scale218"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="113" shrink-x="1" param="gain_scale218"  />
+    <value param="gain_scale218"  attach-x="2" attach-y="113" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="114"   align-x="1"><label param="gain219"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="114" shrink-x="1" param="gain219"  />
+    <value param="gain219"  attach-x="2" attach-y="114" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="115"   align-x="1"><label param="gain_scale219"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="115" shrink-x="1" param="gain_scale219"  />
+    <value param="gain_scale219"  attach-x="2" attach-y="115" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="116"   align-x="1"><label param="gain220"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="116" shrink-x="1" param="gain220"  />
+    <value param="gain220"  attach-x="2" attach-y="116" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="117"   align-x="1"><label param="gain_scale220"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="117" shrink-x="1" param="gain_scale220"  />
+    <value param="gain_scale220"  attach-x="2" attach-y="117" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="118"   align-x="1"><label param="gain221"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="118" shrink-x="1" param="gain221"  />
+    <value param="gain221"  attach-x="2" attach-y="118" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="119"   align-x="1"><label param="gain_scale221"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="119" shrink-x="1" param="gain_scale221"  />
+    <value param="gain_scale221"  attach-x="2" attach-y="119" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="120"   align-x="1"><label param="gain222"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="120" shrink-x="1" param="gain222"  />
+    <value param="gain222"  attach-x="2" attach-y="120" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="121"   align-x="1"><label param="gain_scale222"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="121" shrink-x="1" param="gain_scale222"  />
+    <value param="gain_scale222"  attach-x="2" attach-y="121" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="122"   align-x="1"><label param="gain223"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="122" shrink-x="1" param="gain223"  />
+    <value param="gain223"  attach-x="2" attach-y="122" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="123"   align-x="1"><label param="gain_scale223"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="123" shrink-x="1" param="gain_scale223"  />
+    <value param="gain_scale223"  attach-x="2" attach-y="123" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="124"   align-x="1"><label param="gain224"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="124" shrink-x="1" param="gain224"  />
+    <value param="gain224"  attach-x="2" attach-y="124" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="125"   align-x="1"><label param="gain_scale224"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="125" shrink-x="1" param="gain_scale224"  />
+    <value param="gain_scale224"  attach-x="2" attach-y="125" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="126"   align-x="1"><label param="gain225"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="126" shrink-x="1" param="gain225"  />
+    <value param="gain225"  attach-x="2" attach-y="126" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="127"   align-x="1"><label param="gain_scale225"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="127" shrink-x="1" param="gain_scale225"  />
+    <value param="gain_scale225"  attach-x="2" attach-y="127" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="128"   align-x="1"><label param="gain226"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="128" shrink-x="1" param="gain226"  />
+    <value param="gain226"  attach-x="2" attach-y="128" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="129"   align-x="1"><label param="gain_scale226"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="129" shrink-x="1" param="gain_scale226"  />
+    <value param="gain_scale226"  attach-x="2" attach-y="129" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="130"   align-x="1"><label param="gain227"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="130" shrink-x="1" param="gain227"  />
+    <value param="gain227"  attach-x="2" attach-y="130" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="131"   align-x="1"><label param="gain_scale227"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="131" shrink-x="1" param="gain_scale227"  />
+    <value param="gain_scale227"  attach-x="2" attach-y="131" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="132"   align-x="1"><label param="gain228"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="132" shrink-x="1" param="gain228"  />
+    <value param="gain228"  attach-x="2" attach-y="132" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="133"   align-x="1"><label param="gain_scale228"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="133" shrink-x="1" param="gain_scale228"  />
+    <value param="gain_scale228"  attach-x="2" attach-y="133" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="134"   align-x="1"><label param="gain229"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="134" shrink-x="1" param="gain229"  />
+    <value param="gain229"  attach-x="2" attach-y="134" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="135"   align-x="1"><label param="gain_scale229"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="135" shrink-x="1" param="gain_scale229"  />
+    <value param="gain_scale229"  attach-x="2" attach-y="135" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="136"   align-x="1"><label param="gain230"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="136" shrink-x="1" param="gain230"  />
+    <value param="gain230"  attach-x="2" attach-y="136" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="137"   align-x="1"><label param="gain_scale230"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="137" shrink-x="1" param="gain_scale230"  />
+    <value param="gain_scale230"  attach-x="2" attach-y="137" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="138"   align-x="1"><label param="l_active"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="138" shrink-x="1" param="l_active"  />
+    <value param="l_active"  attach-x="2" attach-y="138" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="139"   align-x="1"><label param="r_active"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="139" shrink-x="1" param="r_active"  />
+    <value param="r_active"  attach-x="2" attach-y="139" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="140"   align-x="1"><label param="linked"  /></align>
+    <combo attach-x="1" attach-w="2" attach-y="140" param="linked" expand-x="1" pad-x="10"  />
+</table>
+

@@ -1,0 +1,25 @@
+Package: zita-njbridge
+Version: 0.4.1-1.1-bnrcustom
+Architecture: amd64
+Maintainer: Debian Multimedia Maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Installed-Size: 114
+Depends: libc6 (>= 2.2.5), libgcc1 (>= 1:3.0), libjack-jackd2-0 (>= 1.9.10+20150825) | libjack-0.125, libstdc++6 (>= 5), libzita-resampler1
+Section: sound
+Priority: optional
+Homepage: http://kokkinizita.linuxaudio.org/linuxaudio/downloads/index.html
+Description: Jack clients to transmit multichannel audio over a local IP network
+ Command line Jack clients to transmit full quality multichannel audio
+ over a local IP network, with adaptive resampling.
+ .
+ Main features:
+  - One-to-one (UDP) or one-to-many (multicast).
+  - Sender and receiver(s) can each have their own
+    sample rate and period size.
+  - Up to 64 channels, 16 or 24 bit or float samples.
+  - Receiver(s) can select any combination of channels.
+  - Low latency, optional additional buffering.
+  - High quality jitter-free resampling.
+  - Graceful handling of xruns, skipped cycles, lost
+    packets and freewheeling.
+  - IP6 fully supported.
+  - Requires zita-resampler, no other dependencies.

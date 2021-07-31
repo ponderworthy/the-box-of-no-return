@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+ifneq ($(findstring $(DEB_HOST_ARCH_OS),kfreebsd hurd),)
+EXTRA_CONFIGURE_ARGS += -Denable-alsa=off -Denable-dbus=off
+endif
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
+
+CFLAGS += -march=native -mtune=native -O3
+CPPFLAGS += -march=native -mtune=native -O3
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+
+%:
+	dh $@ -Scmake --without autoreconf
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+		-DLIB_SUFFIX="/$(DEB_HOST_MULTIARCH)" \
+		-DFLUID_DAEMON_ENV_FILE=/etc/default/fluidsynth \
+		-Denable-ladspa=on \
+		$(EXTRA_CONFIGURE_ARGS)
+
+override_dh_install:
+	dh_install
+	mv debian/fluidsynth/etc/default/fluidsynth.conf \
+	   debian/fluidsynth/etc/default/fluidsynth

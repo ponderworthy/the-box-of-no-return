@@ -1,0 +1,18 @@
+From: Adrian Knoth <adi@drcomp.erfurt.thur.de>
+Bugs-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=733395
+Last-Updated: 2014-02-23
+Forwarded: No (probably needs more logic)
+Description: Fix FTBFS with recent boost versions
+ Debian's default boost version has been updated to 1.54, however, the new
+ release no longer ships the -mt version of the libraries.
+--- a/setup.py
++++ b/setup.py
+@@ -51,7 +51,7 @@
+             libname = 'lib%s%s.so' % (lib, suffix)
+             if os.path.isfile(os.path.join(libdir, libname)):
+                 return lib + suffix
+-    return lib + '-mt'
++    return lib
+ 
+ 
+ sources = [

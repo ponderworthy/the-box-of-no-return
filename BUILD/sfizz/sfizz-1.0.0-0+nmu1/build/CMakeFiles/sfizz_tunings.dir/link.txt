@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsfizz_tunings.a  CMakeFiles/sfizz_tunings.dir/src/external/tunings/src/Tunings.cpp.o
+/usr/bin/ranlib libsfizz_tunings.a

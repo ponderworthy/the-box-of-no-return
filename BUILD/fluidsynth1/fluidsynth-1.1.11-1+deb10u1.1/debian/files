@@ -1,0 +1,6 @@
+fluidsynth-dbgsym_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb debug optional automatic=yes
+fluidsynth_1.1.11-1+deb10u1.1-bnrscustom_amd64.buildinfo sound optional
+fluidsynth_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb sound optional
+libfluidsynth-dev_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb libdevel optional
+libfluidsynth1-dbgsym_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb debug optional automatic=yes
+libfluidsynth1_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb libs optional

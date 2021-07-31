@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <link type="text/css" rel="stylesheet" href="scripts/prettyPhoto.css" />
+        <link type="text/css" rel="stylesheet" href="scripts/style.css" />
+        <script language="javascript" type="text/javascript" src="scripts/jquery.js"></script>
+        <script language="javascript" type="text/javascript" src="scripts/jquery.prettyPhoto.js"></script>
+        <script language="javascript" type="text/javascript" src="scripts/manual.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Phaser</h1>
+            <a href="images/Calf - Phaser.jpg" title="Calf - Phaser" class="prettyPhoto"><img class="thumbnail" src="images/Calf - Phaser.jpg" /></a>
+            <h2>Functionality</h2>
+            <p>
+                Phaser modulates the signal by duplicating the origin and process the duplicates
+                by shifting the phase on some frequencies. The effect adds some kind of dimensional
+                stereo impression to the signal.
+            </p>
+            <h2>Tips</h2>
+            <p>
+                Use it on different instruments like guitar or keyboards to "sweeten" or "widen"
+                the sound. Sometimes phasers are used to add some synthetical impression to a
+                natural sound source like turning a human voice into some robotic-like voice.
+            </p>
+            <h2>Controls</h2>
+            <ul>
+                <li><strong>Center Freq:</strong> Center frequency of the allpass filters. Affects the frequency range most affected by the phaser.</li>
+                <li><strong>Mod depth:</strong> Modulation depth. Higher values make modulation more audible.</li>
+                <li><strong>Mod rate:</strong> Modulation rate. This controls the rate of the low frequency oscillator that controls the filters.</li>
+                <li><strong>Feedback:</strong> Amount of the filtered signal fed back to the filter bank. This increases the depth of the notches, making the effect more pronounced.</li>
+                <li><strong># stages:</strong> Number of allpass stages in the phaser. More stages correspond to more notches in the spectrum.</li>
+                <li><strong>Stereo phase:</strong> Phase shift between LFO position for the left and the right channel. If set zero, the delay time is the same for both channel. If set to 180 degrees, the shortest delay in the left channel corresponds to longest delay in the right channel and vice versa.</li>
+                <li><strong>Reset:</strong> Press or automate to reset the LFO.</li>
+                <li><strong>Amount:</strong> Amount of the processed (delayed) signal.</li>
+                <li><strong>Dry Amount:</strong> Amount of the unprocessed (dry) signal.</li>
+            </ul>
+            <div class="footer"><a href="index.html" title="Index">Index</a><a href="#" title="Top">Top</a></a></div>
+        </div>
+    </body>
+</html>

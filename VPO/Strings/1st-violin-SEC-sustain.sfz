@@ -1,0 +1,190 @@
+//==============================================================
+// 1st Violin Section : Sustain
+//
+//   Strings - 1st Violins Sustain.sfz from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//      1st Violins Sustain
+// ------------------------------
+
+<group>
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+// slower attack for sustain (PB)
+ampeg_attack=0.4
+ampeg_vel2attack=-0.180
+// slower release for slower notes = legato effect (PB)
+ampeg_release=1.9
+ampeg_vel2release=-1.0
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-g3.wav
+lokey=g3
+hikey=g#3
+pitch_keycenter=g3
+tune=-10
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-a#3.wav
+lokey=a3
+hikey=b3
+pitch_keycenter=a#3
+tune=-5
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-c#4.wav
+lokey=c4
+hikey=d4
+pitch_keycenter=c#4
+tune=-5
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-e4.wav
+lokey=d#4
+hikey=f4
+pitch_keycenter=e4
+tune=-10
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-g4.wav
+lokey=f#4
+hikey=g#4
+pitch_keycenter=g4
+tune=-10
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-a#4.wav
+lokey=a4
+hikey=b4
+pitch_keycenter=a#4
+tune=-10
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-c#5.wav
+lokey=c5
+hikey=d5
+pitch_keycenter=c#5
+tune=-5
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-e5.wav
+lokey=d#5
+hikey=f5
+pitch_keycenter=e5
+tune=-10
+// noise reduction (PB)
+eq1_freq=102.7
+eq1_bw=4
+eq1_gain=-11.4
+
+eq2_freq=479.2
+eq2_bw=1.17
+eq2_gain=-11.5
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-g5.wav
+volume=2
+lokey=f#5
+hikey=g#5
+pitch_keycenter=g5
+tune=-10
+// noise reduction (PB)
+eq1_freq=102.7
+eq1_bw=4
+eq1_gain=-11.4
+
+eq2_freq=479.2
+eq2_bw=1.17
+eq2_gain=-11.5
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-a#5.wav
+volume=3
+lokey=a5
+hikey=b5
+pitch_keycenter=a#5
+tune=-10
+// noise reduction (PB)
+eq1_freq=102.7
+eq1_bw=4
+eq1_gain=-11.4
+
+eq2_freq=479.2
+eq2_bw=1.17
+eq2_gain=-11.5
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-c#6.wav
+volume=3
+lokey=c6
+hikey=d6
+pitch_keycenter=c#6
+tune=-5
+// noise reduction (PB)
+eq1_freq=102.7
+eq1_bw=4
+eq1_gain=-11.4
+
+eq2_freq=631.1
+eq2_bw=2
+eq2_gain=-11.9
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-e6.wav
+volume=2
+lokey=d#6
+hikey=f6
+pitch_keycenter=e6
+tune=-15
+// noise reduction (PB)
+eq1_freq=102.7
+eq1_bw=4
+eq1_gain=-11.4
+
+eq2_freq=631.1
+eq2_bw=2
+eq2_gain=-11.9
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-g6.wav
+volume=2
+lokey=f#6
+hikey=g#6
+pitch_keycenter=g6
+tune=-10
+// noise reduction (PB)
+eq1_freq=102.7
+eq1_bw=4
+eq1_gain=-11.4
+
+eq2_freq=631.1
+eq2_bw=2
+eq2_gain=-11.9
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-sus-a#6.wav
+volume=1
+lokey=a6
+hikey=a7
+pitch_keycenter=a#6
+tune=-10
+// noise reduction (PB)
+eq1_freq=102.7
+eq1_bw=4
+eq1_gain=-11.4
+
+eq2_freq=631.1
+eq2_bw=2
+eq2_gain=-11.9
+

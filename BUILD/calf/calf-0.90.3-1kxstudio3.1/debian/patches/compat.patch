@@ -1,0 +1,477 @@
+diff --git a/src/calf/metadata.h b/src/calf/metadata.h
+index 4dc6101..8665121 100644
+--- a/src/calf/metadata.h
++++ b/src/calf/metadata.h
+@@ -1041,6 +1041,75 @@ struct widgets_metadata: public plugin_metadata<widgets_metadata>
+     PLUGIN_NAME_ID_LABEL("widgets", "widgets", "Widget Test")
+ };
+ 
++/// Compat
++struct equalizer5band__metadata: public plugin_metadata<equalizer5band__metadata>
++{
++    enum { in_count = 2, out_count = 2, ins_optional = 0, outs_optional = 0, support_midi = false, require_midi = false, rt_capable = true, require_instance_access = false };
++    enum { param_bypass, param_level_in, param_level_out,
++           STEREO_VU_METER_PARAMS,
++           param_ls_active, param_ls_level, param_ls_freq, param_ls_q,
++           param_hs_active, param_hs_level, param_hs_freq, param_hs_q,
++           param_p1_active, param_p1_level, param_p1_freq, param_p1_q,
++           param_p2_active, param_p2_level, param_p2_freq, param_p2_q,
++           param_p3_active, param_p3_level, param_p3_freq, param_p3_q,
++           param_individuals, param_zoom, param_analyzer_active, param_analyzer_mode,
++           param_count };
++    enum { param_lp_active = 0xDEADBEEF, param_hp_active, param_hp_mode, param_lp_mode, param_hp_freq, param_lp_freq, param_hp_q, param_lp_q };
++    enum { PeakBands = 3, first_graph_param = param_ls_active, last_graph_param = param_p3_q };
++    PLUGIN_NAME_ID_LABEL("equalizer5band", "eq5", "Equalizer 5 Band")
++};
++struct equalizer8band__metadata: public plugin_metadata<equalizer8band__metadata>
++{
++    enum { in_count = 2, out_count = 2, ins_optional = 0, outs_optional = 0, support_midi = false, require_midi = false, rt_capable = true, require_instance_access = false };
++    enum { param_bypass, param_level_in, param_level_out,
++           STEREO_VU_METER_PARAMS,
++           param_hp_active, param_hp_freq, param_hp_mode, param_hp_q,
++           param_lp_active, param_lp_freq, param_lp_mode, param_lp_q,
++           param_ls_active, param_ls_level, param_ls_freq, param_ls_q,
++           param_hs_active, param_hs_level, param_hs_freq, param_hs_q,
++           param_p1_active, param_p1_level, param_p1_freq, param_p1_q,
++           param_p2_active, param_p2_level, param_p2_freq, param_p2_q,
++           param_p3_active, param_p3_level, param_p3_freq, param_p3_q,
++           param_p4_active, param_p4_level, param_p4_freq, param_p4_q,
++           param_individuals, param_zoom, param_analyzer_active, param_analyzer_mode,
++           param_count };
++    enum { PeakBands = 4, first_graph_param = param_hp_active, last_graph_param = param_p4_q };
++    PLUGIN_NAME_ID_LABEL("equalizer8band", "eq8", "Equalizer 8 Band")
++};
++struct equalizer12band__metadata: public plugin_metadata<equalizer12band__metadata>
++{
++    enum { in_count = 2, out_count = 2, ins_optional = 0, outs_optional = 0, support_midi = false, require_midi = false, rt_capable = true, require_instance_access = false };
++    enum { param_bypass, param_level_in, param_level_out,
++           STEREO_VU_METER_PARAMS,
++           param_hp_active, param_hp_freq, param_hp_mode, param_hp_q,
++           param_lp_active, param_lp_freq, param_lp_mode, param_lp_q,
++           param_ls_active, param_ls_level, param_ls_freq, param_ls_q,
++           param_hs_active, param_hs_level, param_hs_freq, param_hs_q,
++           param_p1_active, param_p1_level, param_p1_freq, param_p1_q,
++           param_p2_active, param_p2_level, param_p2_freq, param_p2_q,
++           param_p3_active, param_p3_level, param_p3_freq, param_p3_q,
++           param_p4_active, param_p4_level, param_p4_freq, param_p4_q,
++           param_p5_active, param_p5_level, param_p5_freq, param_p5_q,
++           param_p6_active, param_p6_level, param_p6_freq, param_p6_q,
++           param_p7_active, param_p7_level, param_p7_freq, param_p7_q,
++           param_p8_active, param_p8_level, param_p8_freq, param_p8_q,
++           param_individuals, param_zoom, param_analyzer_active, param_analyzer_mode,
++           param_count };
++    enum { PeakBands = 8, first_graph_param = param_hp_active, last_graph_param = param_p8_q };
++    PLUGIN_NAME_ID_LABEL("equalizer12band", "eq12", "Equalizer 12 Band")
++};
++struct mono__metadata: public plugin_metadata<mono__metadata>
++{
++    enum { in_count = 1, out_count = 2, ins_optional = 0, outs_optional = 0, support_midi = false, require_midi = false, rt_capable = true, require_instance_access = false };
++    enum { param_bypass, param_level_in, param_level_out,
++           param_meter_in, param_meter_outL, param_meter_outR, param_clip_in,param_clip_outL, param_clip_outR,
++           param_balance_out, param_softclip,
++           param_mute_l, param_mute_r, param_phase_l, param_phase_r,
++           param_delay, param_stereo_base, param_stereo_phase, param_sc_level,
++           param_count };
++    PLUGIN_NAME_ID_LABEL("mono", "mono", "Mono Input")
++};
++
+ };
+ 
+ #endif
+diff --git a/src/calf/modulelist.h b/src/calf/modulelist.h
+index 95fa7d7..e3c9395 100644
+--- a/src/calf/modulelist.h
++++ b/src/calf/modulelist.h
+@@ -5,6 +5,12 @@
+     PER_MODULE_ITEM(fluidsynth,          true,  "fluidsynth")
+     PER_MODULE_ITEM(wavetable,           true,  "wavetable")
+ #endif
++    // Compat
++    PER_MODULE_ITEM(equalizer5band_,     false, "eq5")
++    PER_MODULE_ITEM(equalizer8band_,     false, "eq8")
++    PER_MODULE_ITEM(equalizer12band_,    false, "eq12")
++    PER_MODULE_ITEM(mono_,               false, "mono")
++
+     // Modulator
+     PER_MODULE_ITEM(multichorus,         false, "multichorus")
+     PER_MODULE_ITEM(phaser,              false, "phaser")
+diff --git a/src/calf/modules_filter.h b/src/calf/modules_filter.h
+index 5dc5bb4..774c4b2 100644
+--- a/src/calf/modules_filter.h
++++ b/src/calf/modules_filter.h
+@@ -102,6 +102,10 @@ typedef equalizerNband_audio_module<equalizer5band_metadata,  false> equalizer5b
+ typedef equalizerNband_audio_module<equalizer8band_metadata,  true>  equalizer8band_audio_module;
+ typedef equalizerNband_audio_module<equalizer12band_metadata, true>  equalizer12band_audio_module;
+ 
++typedef equalizerNband_audio_module<equalizer5band__metadata,  false> equalizer5band__audio_module;
++typedef equalizerNband_audio_module<equalizer8band__metadata,  true>  equalizer8band__audio_module;
++typedef equalizerNband_audio_module<equalizer12band__metadata, true>  equalizer12band__audio_module;
++
+ /**********************************************************************
+  * EQUALIZER 30 BAND
+ **********************************************************************/
+diff --git a/src/calf/modules_tools.h b/src/calf/modules_tools.h
+index 4e0c707..55ef14a 100644
+--- a/src/calf/modules_tools.h
++++ b/src/calf/modules_tools.h
+@@ -75,10 +75,11 @@ public:
+  * MONO INPUT by Markus Schmidt
+ **********************************************************************/
+ 
+-class mono_audio_module:
+-    public audio_module<mono_metadata>
++template<class BaseClass>
++class mono_audio_module_base:
++    public audio_module<BaseClass>
+ {
+-    typedef mono_audio_module AM;
++    typedef mono_audio_module_base<BaseClass> AM;
+     uint32_t srate;
+     bool active;
+     dsp::bypass bypass;
+@@ -95,8 +96,8 @@ class mono_audio_module:
+     }
+     float _phase, _phase_sin_coef, _phase_cos_coef, _sc_level, _inv_atan_shape;
+ public:
+-    mono_audio_module();
+-    ~mono_audio_module();
++    mono_audio_module_base();
++    ~mono_audio_module_base();
+     void params_changed();
+     void activate();
+     void set_sample_rate(uint32_t sr);
+@@ -104,6 +105,9 @@ public:
+     uint32_t process(uint32_t offset, uint32_t numsamples, uint32_t inputs_mask, uint32_t outputs_mask);
+ };
+ 
++typedef mono_audio_module_base<mono_metadata> mono_audio_module;
++typedef mono_audio_module_base<mono__metadata> mono__audio_module;
++
+ /**********************************************************************
+  * ANALYZER by Markus Schmidt and Christian Holschuh
+ **********************************************************************/
+diff --git a/src/makerdf.cpp b/src/makerdf.cpp
+index 0b6cec5..48e68b0 100644
+--- a/src/makerdf.cpp
++++ b/src/makerdf.cpp
+@@ -346,6 +346,14 @@ void make_ttl(string path_prefix, const string *data_dir)
+ #endif
+         
+         ttl += "    dct:replaces <urn:ladspa:" + i2s(lpi.unique_id) + "> ;\n";
++        if (unquoted_uri == "http://calf.sourceforge.net/plugins/Equalizer5Band")
++            ttl += "    dct:replaces <http://calf.sourceforge.net/plugins/eq5> ;\n";
++        else if (unquoted_uri == "http://calf.sourceforge.net/plugins/Equalizer8Band")
++            ttl += "    dct:replaces <http://calf.sourceforge.net/plugins/eq8> ;\n";
++        else if (unquoted_uri == "http://calf.sourceforge.net/plugins/Equalizer12Band")
++            ttl += "    dct:replaces <http://calf.sourceforge.net/plugins/eq12> ;\n";
++        else if (unquoted_uri == "http://calf.sourceforge.net/plugins/MonoInput")
++            ttl += "    dct:replaces <http://calf.sourceforge.net/plugins/mono> ;\n";
+         // XXXKF not really optional for now, to be honest
+         ttl += "    lv2:optionalFeature epp:supportsStrictBounds ;\n";
+         if (pi->is_rt_capable())
+@@ -484,11 +492,21 @@ void make_ttl(string path_prefix, const string *data_dir)
+     fflush(stdout);
+     for (unsigned int i = 0; i < plugins.size(); i++)
+     {
++        string extrarepl;
++        if (!strcmp("Equalizer5Band", plugins[i]->get_plugin_info().label))
++            extrarepl = ", <http://calf.sourceforge.net/plugins/eq5> ";
++        else if (!strcmp("Equalizer8Band", plugins[i]->get_plugin_info().label))
++            extrarepl = ", <http://calf.sourceforge.net/plugins/eq8> ";
++        else if (!strcmp("Equalizer12Band", plugins[i]->get_plugin_info().label))
++            extrarepl = ", <http://calf.sourceforge.net/plugins/eq12> ";
++        else if (!strcmp("MonoInput", plugins[i]->get_plugin_info().label))
++            extrarepl = ", <http://calf.sourceforge.net/plugins/mono> ";
++
+         string label = plugins[i]->get_plugin_info().label;
+         ttl += string("<" + plugin_uri_prefix) 
+             + string(plugins[i]->get_plugin_info().label)
+             + "> a lv2:Plugin ;\n    dct:replaces <urn:ladspa:"
+-            + i2s(plugins[i]->get_plugin_info().unique_id) + "> ;\n    "
++            + i2s(plugins[i]->get_plugin_info().unique_id) + "> "+extrarepl+";\n    "
+             + "lv2:binary <calf.so> ; rdfs:seeAlso <" + label + ".ttl> ";
+         if (preset_data.count(label))
+             ttl += ", <presets-" + label + ".ttl>";
+diff --git a/src/metadata.cpp b/src/metadata.cpp
+index d2fffe2..9971ad3 100644
+--- a/src/metadata.cpp
++++ b/src/metadata.cpp
+@@ -2158,6 +2158,86 @@ CALF_PORT_PROPS(widgets) = {
+ 
+ CALF_PLUGIN_INFO(widgets) = { 0x85AB, "Widgets", "Calf Widget Test", "Calf Studio Gear", calf_plugins::calf_copyright_info, "UtilityPlugin" };
+ 
++////////////////////////////////////////////////////////////////////////////
++
++// KXStudio compat uris
++
++CALF_PORT_NAMES(equalizer5band_)  = {"In L", "In R", "Out L", "Out R"};
++CALF_PORT_NAMES(equalizer8band_)  = {"In L", "In R", "Out L", "Out R"};
++CALF_PORT_NAMES(equalizer12band_) = {"In L", "In R", "Out L", "Out R"};
++CALF_PORT_NAMES(mono_)            = {"In", "Out L", "Out R"};
++
++CALF_PORT_PROPS(equalizer5band_) = {
++    BYPASS_AND_LEVEL_PARAMS
++    METERING_PARAMS
++    SHELF_PARAMS
++    EQ_BAND_PARAMS(1, 250)
++    EQ_BAND_PARAMS(2, 1000)
++    EQ_BAND_PARAMS(3, 4000)
++    EQ_DISPLAY_PARAMS
++    {}
++};
++
++CALF_PORT_PROPS(equalizer8band_) = {
++    BYPASS_AND_LEVEL_PARAMS
++    METERING_PARAMS
++    LPHP_PARAMS
++    SHELF_PARAMS
++    EQ_BAND_PARAMS(1, 100)
++    EQ_BAND_PARAMS(2, 500)
++    EQ_BAND_PARAMS(3, 2000)
++    EQ_BAND_PARAMS(4, 5000)
++    EQ_DISPLAY_PARAMS
++    {}
++};
++
++CALF_PORT_PROPS(equalizer12band_) = {
++    BYPASS_AND_LEVEL_PARAMS
++    METERING_PARAMS
++    LPHP_PARAMS
++    SHELF_PARAMS
++    EQ_BAND_PARAMS(1, 60)
++    EQ_BAND_PARAMS(2, 120)
++    EQ_BAND_PARAMS(3, 250)
++    EQ_BAND_PARAMS(4, 500)
++    EQ_BAND_PARAMS(5, 1000)
++    EQ_BAND_PARAMS(6, 2000)
++    EQ_BAND_PARAMS(7, 4000)
++    EQ_BAND_PARAMS(8, 8000)
++    EQ_DISPLAY_PARAMS
++    {}
++};
++
++CALF_PORT_PROPS(mono_) = {
++    { 0,           0,           1,     0,  PF_BOOL | PF_CTL_TOGGLE, NULL, "bypass", "Bypass" },
++    { 1,           0.015625,    64,    0,  PF_FLOAT | PF_SCALE_GAIN | PF_CTL_KNOB | PF_UNIT_COEF | PF_PROP_NOBOUNDS, NULL, "level_in", "Input" },
++    { 1,           0.015625,    64,    0,  PF_FLOAT | PF_SCALE_GAIN | PF_CTL_KNOB | PF_UNIT_COEF | PF_PROP_NOBOUNDS, NULL, "level_out", "Output" },
++    { 0,           0,           1,     0,  PF_FLOAT | PF_SCALE_GAIN | PF_CTL_METER | PF_CTLO_LABEL | PF_UNIT_DB | PF_PROP_OUTPUT | PF_PROP_OPTIONAL, NULL, "meter_in", "Input" },
++    { 0,           0,           1,     0,  PF_FLOAT | PF_SCALE_GAIN | PF_CTL_METER | PF_CTLO_LABEL | PF_UNIT_DB | PF_PROP_OUTPUT | PF_PROP_OPTIONAL, NULL, "meter_outL", "Output L" },
++    { 0,           0,           1,     0,  PF_FLOAT | PF_SCALE_GAIN | PF_CTL_METER | PF_CTLO_LABEL | PF_UNIT_DB | PF_PROP_OUTPUT | PF_PROP_OPTIONAL, NULL, "meter_outR", "Output R" },
++    { 0,           0,           1,     0,  PF_FLOAT | PF_CTL_LED | PF_PROP_OUTPUT | PF_PROP_OPTIONAL, NULL, "clip_in", "0dB-In" },
++    { 0,           0,           1,     0,  PF_FLOAT | PF_CTL_LED | PF_PROP_OUTPUT | PF_PROP_OPTIONAL, NULL, "clip_outL", "0dB-OutL" },
++    { 0,           0,           1,     0,  PF_FLOAT | PF_CTL_LED | PF_PROP_OUTPUT | PF_PROP_OPTIONAL, NULL, "clip_outR", "0dB-OutR" },
++
++    { 0.f,      -1.f,           1.f,   0,  PF_FLOAT | PF_SCALE_LINEAR | PF_CTL_KNOB | PF_UNIT_COEF | PF_PROP_GRAPH, NULL, "balance_out", "Balance" },
++
++    { 0,          0,            1,     0,  PF_BOOL | PF_CTL_TOGGLE, NULL, "softclip", "Softclip" },
++    { 0,          0,            1,     0,  PF_BOOL | PF_CTL_TOGGLE, NULL, "mutel", "Mute L" },
++    { 0,          0,            1,     0,  PF_BOOL | PF_CTL_TOGGLE, NULL, "muter", "Mute R" },
++    { 0,          0,            1,     0,  PF_BOOL | PF_CTL_TOGGLE, NULL, "phasel", "Phase L" },
++    { 0,          0,            1,     0,  PF_BOOL | PF_CTL_TOGGLE, NULL, "phaser", "Phase R" },
++
++    { 0.f,         -20.f,        20.f,  0,  PF_FLOAT | PF_SCALE_LINEAR | PF_CTL_KNOB | PF_UNIT_MSEC, NULL, "delay", "Delay" },
++    { 0.f,           -1.f,           1.f,    0,  PF_FLOAT | PF_SCALE_LINEAR | PF_CTL_KNOB | PF_UNIT_COEF | PF_PROP_NOBOUNDS, NULL, "stereo_base", "Stereo Base" },
++    { 0,        0, 360,  91, PF_FLOAT | PF_SCALE_LINEAR | PF_CTL_KNOB | PF_UNIT_DEG, NULL, "stereo_phase", "Stereo Phase" },
++    { 1,           1,           100,    0,  PF_FLOAT | PF_SCALE_LOG | PF_CTL_KNOB | PF_UNIT_COEF | PF_PROP_NOBOUNDS, NULL, "sc_level", "S/C Level" },
++    {}
++};
++
++CALF_PLUGIN_INFO(equalizer5band_)  = { 0x8511, "eq5",  "Calf Equalizer 5 Band", "Calf Studio Gear / Markus Schmidt", calf_plugins::calf_copyright_info, "EQPlugin" };
++CALF_PLUGIN_INFO(equalizer8band_)  = { 0x8512, "eq8",  "Calf Equalizer 8 Band", "Calf Studio Gear / Markus Schmidt", calf_plugins::calf_copyright_info, "EQPlugin" };
++CALF_PLUGIN_INFO(equalizer12band_) = { 0x8513, "eq12", "Calf Equalizer 12 Band", "Calf Studio Gear / Markus Schmidt", calf_plugins::calf_copyright_info, "EQPlugin" };
++CALF_PLUGIN_INFO(mono_)            = { 0x8589, "mono", "Calf Mono Input", "Calf Studio Gear / Markus Schmidt", calf_plugins::calf_copyright_info, "UtilityPlugin" };
+ 
+ ////////////////////////////////////////////////////////////////////////////
+ 
+diff --git a/src/modules_filter.cpp b/src/modules_filter.cpp
+index 6db4816..62556bf 100644
+--- a/src/modules_filter.cpp
++++ b/src/modules_filter.cpp
+@@ -509,6 +509,10 @@ template class equalizerNband_audio_module<equalizer8band_metadata, true>;
+ template class equalizerNband_audio_module<equalizer12band_metadata, true>;
+ }
+ 
++template class equalizerNband_audio_module<equalizer5band__metadata, false>;
++template class equalizerNband_audio_module<equalizer8band__metadata, true>;
++template class equalizerNband_audio_module<equalizer12band__metadata, true>;
++
+ /**********************************************************************
+  * EQUALIZER 30 BAND
+ **********************************************************************/
+diff --git a/src/modules_tools.cpp b/src/modules_tools.cpp
+index 6d5c9f9..7ded1f1 100644
+--- a/src/modules_tools.cpp
++++ b/src/modules_tools.cpp
+@@ -250,7 +250,8 @@ void stereo_audio_module::set_sample_rate(uint32_t sr)
+  * MONO INPUT by Markus Schmidt
+ **********************************************************************/
+ 
+-mono_audio_module::mono_audio_module() {
++template<class BaseClass>
++mono_audio_module_base<BaseClass>::mono_audio_module_base() {
+     active      = false;
+     meter_in    = 0.f;
+     meter_outL  = 0.f;
+@@ -259,36 +260,41 @@ mono_audio_module::mono_audio_module() {
+     _sc_level   = 0.f;
+     buffer = NULL;
+ }
+-mono_audio_module::~mono_audio_module() {
++template<class BaseClass>
++mono_audio_module_base<BaseClass>::~mono_audio_module_base() {
+     free(buffer);
+ }
+-void mono_audio_module::activate() {
++template<class BaseClass>
++void mono_audio_module_base<BaseClass>::activate() {
+     active = true;
+ }
+ 
+-void mono_audio_module::deactivate() {
++template<class BaseClass>
++void mono_audio_module_base<BaseClass>::deactivate() {
+     active = false;
+ }
+ 
+-void mono_audio_module::params_changed() {
+-    if(*params[param_sc_level] != _sc_level) {
+-        _sc_level = *params[param_sc_level];
++template<class BaseClass>
++void mono_audio_module_base<BaseClass>::params_changed() {
++    if(*this->params[this->param_sc_level] != _sc_level) {
++        _sc_level = *this->params[this->param_sc_level];
+         _inv_atan_shape = 1.0 / atan(_sc_level);
+     }
+-    if(*params[param_stereo_phase] != _phase) {
+-        _phase = *params[param_stereo_phase];
++    if(*this->params[this->param_stereo_phase] != _phase) {
++        _phase = *this->params[this->param_stereo_phase];
+         _phase_cos_coef = cos(_phase / 180 * M_PI);
+         _phase_sin_coef = sin(_phase / 180 * M_PI);
+     }
+ }
+ 
+-uint32_t mono_audio_module::process(uint32_t offset, uint32_t numsamples, uint32_t inputs_mask, uint32_t outputs_mask) {
+-    bool bypassed = bypass.update(*params[param_bypass] > 0.5f, numsamples);
++template<class BaseClass>
++uint32_t mono_audio_module_base<BaseClass>::process(uint32_t offset, uint32_t numsamples, uint32_t inputs_mask, uint32_t outputs_mask) {
++    bool bypassed = bypass.update(*this->params[this->param_bypass] > 0.5f, numsamples);
+     uint32_t orig_offset = offset;
+     for(uint32_t i = offset; i < offset + numsamples; i++) {
+         if(bypassed) {
+-            outs[0][i] = ins[0][i];
+-            outs[1][i] = ins[0][i];
++            this->outs[0][i] = this->ins[0][i];
++            this->outs[1][i] = this->ins[0][i];
+             meter_in    = 0.f;
+             meter_outL  = 0.f;
+             meter_outR  = 0.f;
+@@ -297,13 +303,13 @@ uint32_t mono_audio_module::process(uint32_t offset, uint32_t numsamples, uint32
+             meter_outL   = 0.f;
+             meter_outR   = 0.f;
+             
+-            float L = ins[0][i];
++            float L = this->ins[0][i];
+             
+             // levels in
+-            L *= *params[param_level_in];
++            L *= *this->params[this->param_level_in];
+             
+             // softclip
+-            if(*params[param_softclip]) {
++            if(*this->params[this->param_softclip]) {
+                 //int ph = L / fabs(L);
+                 //L = L > 0.63 ? ph * (0.63 + 0.36 * (1 - pow(MATH_E, (1.f / 3) * (0.63 + L * ph)))) : L;
+                 L = _inv_atan_shape * atan(L * _sc_level);
+@@ -315,27 +321,27 @@ uint32_t mono_audio_module::process(uint32_t offset, uint32_t numsamples, uint32
+             float R = L;
+             
+             // mute
+-            L *= (1 - floor(*params[param_mute_l] + 0.5));
+-            R *= (1 - floor(*params[param_mute_r] + 0.5));
++            L *= (1 - floor(*this->params[this->param_mute_l] + 0.5));
++            R *= (1 - floor(*this->params[this->param_mute_r] + 0.5));
+             
+             // phase
+-            L *= (2 * (1 - floor(*params[param_phase_l] + 0.5))) - 1;
+-            R *= (2 * (1 - floor(*params[param_phase_r] + 0.5))) - 1;
++            L *= (2 * (1 - floor(*this->params[this->param_phase_l] + 0.5))) - 1;
++            R *= (2 * (1 - floor(*this->params[this->param_phase_r] + 0.5))) - 1;
+             
+             // delay
+             buffer[pos]     = L;
+             buffer[pos + 1] = R;
+             
+-            int nbuf = srate * (fabs(*params[param_delay]) / 1000.f);
++            int nbuf = srate * (fabs(*this->params[this->param_delay]) / 1000.f);
+             nbuf -= nbuf % 2;
+-            if(*params[param_delay] > 0.f) {
++            if(*this->params[this->param_delay] > 0.f) {
+                 R = buffer[(pos - (int)nbuf + 1 + buffer_size) % buffer_size];
+-            } else if (*params[param_delay] < 0.f) {
++            } else if (*this->params[this->param_delay] < 0.f) {
+                 L = buffer[(pos - (int)nbuf + buffer_size)     % buffer_size];
+             }
+             
+             // stereo base
+-            float _sb = *params[param_stereo_base];
++            float _sb = *this->params[this->param_stereo_base];
+             if(_sb < 0) _sb *= 0.5;
+             
+             float __l = L +_sb * L - _sb * R;
+@@ -354,16 +360,16 @@ uint32_t mono_audio_module::process(uint32_t offset, uint32_t numsamples, uint32
+             pos = (pos + 2) % buffer_size;
+             
+             // balance out
+-            L *= (1.f - std::max(0.f, *params[param_balance_out]));
+-            R *= (1.f + std::min(0.f, *params[param_balance_out]));
++            L *= (1.f - std::max(0.f, *this->params[this->param_balance_out]));
++            R *= (1.f + std::min(0.f, *this->params[this->param_balance_out]));
+             
+             // level 
+-            L *= *params[param_level_out];
+-            R *= *params[param_level_out];
++            L *= *this->params[this->param_level_out];
++            R *= *this->params[this->param_level_out];
+             
+             //output
+-            outs[0][i] = L;
+-            outs[1][i] = R;
++            this->outs[0][i] = L;
++            this->outs[1][i] = R;
+             
+             meter_outL = L;
+             meter_outR = R;
+@@ -372,23 +378,27 @@ uint32_t mono_audio_module::process(uint32_t offset, uint32_t numsamples, uint32
+         meters.process(values);
+     }
+     if (!bypassed)
+-        bypass.crossfade(ins, outs, 2, orig_offset, numsamples);
++        bypass.crossfade(this->ins, this->outs, 2, orig_offset, numsamples);
+     meters.fall(numsamples);
+     return outputs_mask;
+ }
+ 
+-void mono_audio_module::set_sample_rate(uint32_t sr)
++template<class BaseClass>
++void mono_audio_module_base<BaseClass>::set_sample_rate(uint32_t sr)
+ {
+     srate = sr;
+     // rebuild buffer
+     buffer_size = (int)srate * 0.05 * 2; // delay buffer size multiplied by 2 channels
+     buffer = (float*) calloc(buffer_size, sizeof(float));
+     pos = 0;
+-    int meter[] = {param_meter_in,  param_meter_outL, param_meter_outR};
+-    int clip[] = {param_clip_in, param_clip_outL, param_clip_outR};
+-    meters.init(params, meter, clip, 3, sr);
++    int meter[] = {this->param_meter_in,  this->param_meter_outL, this->param_meter_outR};
++    int clip[] = {this->param_clip_in, this->param_clip_outL, this->param_clip_outR};
++    meters.init(this->params, meter, clip, 3, sr);
+ }
+ 
++template class mono_audio_module_base<mono_metadata>;
++template class mono_audio_module_base<mono__metadata>;
++
+ /**********************************************************************
+  * ANALYZER by Markus Schmidt and Christian Holschuh
+ **********************************************************************/

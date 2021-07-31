@@ -1,0 +1,3 @@
+version=3
+opts="uversionmangle=s/^/0~/,dversionmangle=s/(\d~\d+)~ds\d/$1/" \
+http://das.nasophon.de/download/ mididings-(\d+)\.tar\.gz

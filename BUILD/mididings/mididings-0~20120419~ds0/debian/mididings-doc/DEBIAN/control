@@ -1,0 +1,14 @@
+Package: mididings-doc
+Source: mididings
+Version: 0~20120419~ds0-7+1bnrcustom
+Architecture: all
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Installed-Size: 167
+Section: doc
+Priority: optional
+Homepage: http://das.nasophon.de/mididings/
+Description: mididings Documentation
+ mididings is a MIDI router and processor based on Python,
+ supporting ALSA and JACK MIDI.
+ .
+ This package contains the documentation files for mididings.

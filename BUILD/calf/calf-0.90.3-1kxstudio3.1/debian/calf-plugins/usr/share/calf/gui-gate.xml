@@ -1,0 +1,97 @@
+<table rows="16" cols="4">
+    <align attach-x="0" attach-y="0"   align-x="1"><label param="bypass"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="0" expand-x="1" fill-x="1" pad-x="10" ><toggle param="bypass" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="1"   align-x="1"><label param="level_in"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="1" shrink-x="1" param="level_in"  />
+    <value param="level_in"  attach-x="2" attach-y="1" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="2"   align-x="1"><label param="meter_in"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="2" expand-x="1" fill-x="1" param="meter_in" />
+    <value param="meter_in"  attach-x="2" attach-y="2" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="3"   align-x="1"><label param="meter_out"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="3" expand-x="1" fill-x="1" param="meter_out" />
+    <value param="meter_out"  attach-x="2" attach-y="3" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="4"   align-x="1"><label param="clip_in"  /></align>
+    <led attach-x="1" attach-w="2" attach-y="4" param="clip_in" shrink-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="5"   align-x="1"><label param="clip_out"  /></align>
+    <led attach-x="1" attach-w="2" attach-y="5" param="clip_out" shrink-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="6"   align-x="1"><label param="range"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="6" shrink-x="1" param="range"  />
+    <value param="range"  attach-x="2" attach-y="6" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="7"   align-x="1"><label param="threshold"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="7" shrink-x="1" param="threshold"  />
+    <value param="threshold"  attach-x="2" attach-y="7" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="8"   align-x="1"><label param="ratio"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="8" shrink-x="1" param="ratio"  />
+    <value param="ratio"  attach-x="2" attach-y="8" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="9"   align-x="1"><label param="attack"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="9" shrink-x="1" param="attack"  />
+    <value param="attack"  attach-x="2" attach-y="9" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="10"   align-x="1"><label param="release"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="10" shrink-x="1" param="release"  />
+    <value param="release"  attach-x="2" attach-y="10" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="11"   align-x="1"><label param="makeup"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="11" shrink-x="1" param="makeup"  />
+    <value param="makeup"  attach-x="2" attach-y="11" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="12"   align-x="1"><label param="knee"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="12" shrink-x="1" param="knee"  />
+    <value param="knee"  attach-x="2" attach-y="12" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="13"   align-x="1"><label param="detection"  /></align>
+    <combo attach-x="1" attach-w="2" attach-y="13" param="detection" expand-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="14"   align-x="1"><label param="stereo_link"  /></align>
+    <combo attach-x="1" attach-w="2" attach-y="14" param="stereo_link" expand-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="15"   align-x="1"><label param="gating"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="15" expand-x="1" fill-x="1" param="gating" mode="2"/>
+    <value param="gating"  attach-x="2" attach-y="15" pad-x="10" />
+    <if cond="directlink">
+        <vbox expand-x="1" fill-x="1" attach-x="3" attach-y="0" attach-h="16">
+            <line-graph refresh="1" width="160" param="gating"/>
+
+        </vbox>
+    </if>
+</table>
+

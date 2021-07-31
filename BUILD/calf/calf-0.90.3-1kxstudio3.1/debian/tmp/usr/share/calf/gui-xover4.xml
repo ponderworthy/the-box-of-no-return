@@ -1,0 +1,177 @@
+<table rows="31" cols="3">
+    <align attach-x="0" attach-y="0"   align-x="1"><label param="level"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="0" shrink-x="1" param="level"  />
+    <value param="level"  attach-x="2" attach-y="0" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="1"   align-x="1"><label param="meter_L"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="1" expand-x="1" fill-x="1" param="meter_L" />
+    <value param="meter_L"  attach-x="2" attach-y="1" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="2"   align-x="1"><label param="meter_R"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="2" expand-x="1" fill-x="1" param="meter_R" />
+    <value param="meter_R"  attach-x="2" attach-y="2" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="3"   align-x="1"><label param="mode"  /></align>
+    <combo attach-x="1" attach-w="2" attach-y="3" param="mode" expand-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="4"   align-x="1"><label param="freq0"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="4" shrink-x="1" param="freq0"  />
+    <value param="freq0"  attach-x="2" attach-y="4" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="5"   align-x="1"><label param="freq1"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="5" shrink-x="1" param="freq1"  />
+    <value param="freq1"  attach-x="2" attach-y="5" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="6"   align-x="1"><label param="freq2"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="6" shrink-x="1" param="freq2"  />
+    <value param="freq2"  attach-x="2" attach-y="6" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="7"   align-x="1"><label param="level1"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="7" shrink-x="1" param="level1"  />
+    <value param="level1"  attach-x="2" attach-y="7" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="8"   align-x="1"><label param="active1"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="8" expand-x="1" fill-x="1" pad-x="10" ><toggle param="active1" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="9"   align-x="1"><label param="phase1"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="9" expand-x="1" fill-x="1" pad-x="10" ><toggle param="phase1" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="10"   align-x="1"><label param="delay1"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="10" shrink-x="1" param="delay1"  />
+    <value param="delay1"  attach-x="2" attach-y="10" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="11"   align-x="1"><label param="meter_L1"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="11" expand-x="1" fill-x="1" param="meter_L1" />
+    <value param="meter_L1"  attach-x="2" attach-y="11" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="12"   align-x="1"><label param="meter_R1"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="12" expand-x="1" fill-x="1" param="meter_R1" />
+    <value param="meter_R1"  attach-x="2" attach-y="12" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="13"   align-x="1"><label param="level2"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="13" shrink-x="1" param="level2"  />
+    <value param="level2"  attach-x="2" attach-y="13" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="14"   align-x="1"><label param="active2"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="14" expand-x="1" fill-x="1" pad-x="10" ><toggle param="active2" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="15"   align-x="1"><label param="phase2"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="15" expand-x="1" fill-x="1" pad-x="10" ><toggle param="phase2" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="16"   align-x="1"><label param="delay2"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="16" shrink-x="1" param="delay2"  />
+    <value param="delay2"  attach-x="2" attach-y="16" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="17"   align-x="1"><label param="meter_L2"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="17" expand-x="1" fill-x="1" param="meter_L2" />
+    <value param="meter_L2"  attach-x="2" attach-y="17" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="18"   align-x="1"><label param="meter_R2"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="18" expand-x="1" fill-x="1" param="meter_R2" />
+    <value param="meter_R2"  attach-x="2" attach-y="18" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="19"   align-x="1"><label param="level3"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="19" shrink-x="1" param="level3"  />
+    <value param="level3"  attach-x="2" attach-y="19" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="20"   align-x="1"><label param="active3"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="20" expand-x="1" fill-x="1" pad-x="10" ><toggle param="active3" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="21"   align-x="1"><label param="phase3"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="21" expand-x="1" fill-x="1" pad-x="10" ><toggle param="phase3" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="22"   align-x="1"><label param="delay3"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="22" shrink-x="1" param="delay3"  />
+    <value param="delay3"  attach-x="2" attach-y="22" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="23"   align-x="1"><label param="meter_L3"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="23" expand-x="1" fill-x="1" param="meter_L3" />
+    <value param="meter_L3"  attach-x="2" attach-y="23" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="24"   align-x="1"><label param="meter_R3"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="24" expand-x="1" fill-x="1" param="meter_R3" />
+    <value param="meter_R3"  attach-x="2" attach-y="24" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="25"   align-x="1"><label param="level4"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="25" shrink-x="1" param="level4"  />
+    <value param="level4"  attach-x="2" attach-y="25" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="26"   align-x="1"><label param="active4"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="26" expand-x="1" fill-x="1" pad-x="10" ><toggle param="active4" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="27"   align-x="1"><label param="phase4"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="27" expand-x="1" fill-x="1" pad-x="10" ><toggle param="phase4" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="28"   align-x="1"><label param="delay4"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="28" shrink-x="1" param="delay4"  />
+    <value param="delay4"  attach-x="2" attach-y="28" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="29"   align-x="1"><label param="meter_L4"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="29" expand-x="1" fill-x="1" param="meter_L4" />
+    <value param="meter_L4"  attach-x="2" attach-y="29" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="30"   align-x="1"><label param="meter_R4"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="30" expand-x="1" fill-x="1" param="meter_R4" />
+    <value param="meter_R4"  attach-x="2" attach-y="30" pad-x="10" />
+</table>
+

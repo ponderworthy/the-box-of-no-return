@@ -1,0 +1,34 @@
+Format: 1.8
+Date: Sun, 25 Jul 2021 22:05:46 -0500
+Source: non-git
+Binary: non-mixer non-sequencer-git non-timeline
+Architecture: amd64
+Version: 5:1.2.0+git20200102.1-jebscustom
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: falkTX <falktx@falktx.com>
+Changed-By: falkTX <jeb@bnr4>
+Description:
+ non-mixer  - powerful, reliable and fast modular Digital Audio Mixer
+ non-sequencer-git - powerful, lightweight, real-time, pattern-based MIDI sequencer
+ non-timeline - powerful, reliable and fast modular Digital Audio Timeline
+Changes:
+ non-git (5:1.2.0+git20200102.1-jebscustom) UNRELEASED; urgency=medium
+ .
+   * Non-maintainer upload.
+   *
+Checksums-Sha1:
+ 30353a72f6f99f207dd71a2250ca598d77101f6b 10527 non-git_1.2.0+git20200102.1-jebscustom_amd64.buildinfo
+ b2c06f71540d165d9f23edef2b1b6ee730a00553 1978608 non-mixer_1.2.0+git20200102.1-jebscustom_amd64.deb
+ 79d652dfafa90c8d59cf69f39cdb27ab971dc5f6 1415596 non-sequencer-git_1.2.0+git20200102.1-jebscustom_amd64.deb
+ 9d53200dca26264899c6dda603e2fb8dd7e3393c 2110468 non-timeline_1.2.0+git20200102.1-jebscustom_amd64.deb
+Checksums-Sha256:
+ 9c8dbb3b3be083224b23a9de2d6470efb62e1b65972c15ec1a3addbb4600c5c5 10527 non-git_1.2.0+git20200102.1-jebscustom_amd64.buildinfo
+ 28c9dbcc124e3dd0ecbdf66b11be698d713f06f88b84b66142135dd6fc3cbf17 1978608 non-mixer_1.2.0+git20200102.1-jebscustom_amd64.deb
+ 64838fc0d0675302ff60bdc59288f4b8283c4ee5ba4e7b2a327c8dbc8a882496 1415596 non-sequencer-git_1.2.0+git20200102.1-jebscustom_amd64.deb
+ d851a9c2cbbe3ad35bd35599d067a109d8b4ada85d3b7c88369be3ae5fbabfd9 2110468 non-timeline_1.2.0+git20200102.1-jebscustom_amd64.deb
+Files:
+ 317d0cc7d105a3e9c76a6db1af69f56f 10527 sound extra non-git_1.2.0+git20200102.1-jebscustom_amd64.buildinfo
+ 1181a74220eec9b6ab61b1b451a6f118 1978608 sound extra non-mixer_1.2.0+git20200102.1-jebscustom_amd64.deb
+ ce45d7273d158a77ab124c3035bb2243 1415596 sound extra non-sequencer-git_1.2.0+git20200102.1-jebscustom_amd64.deb
+ d18979053f44c9312ee393f9ddbf1f5b 2110468 sound extra non-timeline_1.2.0+git20200102.1-jebscustom_amd64.deb

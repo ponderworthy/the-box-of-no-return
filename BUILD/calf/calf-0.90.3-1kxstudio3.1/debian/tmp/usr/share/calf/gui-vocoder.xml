@@ -1,0 +1,1487 @@
+<table rows="254" cols="3">
+    <align attach-x="0" attach-y="0"   align-x="1"><label param="bypass"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="0" expand-x="1" fill-x="1" pad-x="10" ><toggle param="bypass" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="1"   align-x="1"><label param="link"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="1" expand-x="1" fill-x="1" pad-x="10" ><toggle param="link" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="2"   align-x="1"><label param="detectors"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="2" expand-x="1" fill-x="1" pad-x="10" ><toggle param="detectors" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="3"   align-x="1"><label param="carrier_in"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="3" shrink-x="1" param="carrier_in"  />
+    <value param="carrier_in"  attach-x="2" attach-y="3" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="4"   align-x="1"><label param="carrier_inL"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="4" expand-x="1" fill-x="1" param="carrier_inL" />
+    <value param="carrier_inL"  attach-x="2" attach-y="4" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="5"   align-x="1"><label param="carrier_inR"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="5" expand-x="1" fill-x="1" param="carrier_inR" />
+    <value param="carrier_inR"  attach-x="2" attach-y="5" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="6"   align-x="1"><label param="carrier_clip_inL"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="6" shrink-x="1" param="carrier_clip_inL"  />
+    <value param="carrier_clip_inL"  attach-x="2" attach-y="6" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="7"   align-x="1"><label param="carrier_clip_inR"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="7" shrink-x="1" param="carrier_clip_inR"  />
+    <value param="carrier_clip_inR"  attach-x="2" attach-y="7" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="8"   align-x="1"><label param="mod_in"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="8" shrink-x="1" param="mod_in"  />
+    <value param="mod_in"  attach-x="2" attach-y="8" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="9"   align-x="1"><label param="mod_inL"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="9" expand-x="1" fill-x="1" param="mod_inL" />
+    <value param="mod_inL"  attach-x="2" attach-y="9" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="10"   align-x="1"><label param="mod_inR"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="10" expand-x="1" fill-x="1" param="mod_inR" />
+    <value param="mod_inR"  attach-x="2" attach-y="10" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="11"   align-x="1"><label param="mod_clip_inL"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="11" shrink-x="1" param="mod_clip_inL"  />
+    <value param="mod_clip_inL"  attach-x="2" attach-y="11" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="12"   align-x="1"><label param="mod_clip_inR"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="12" shrink-x="1" param="mod_clip_inR"  />
+    <value param="mod_clip_inR"  attach-x="2" attach-y="12" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="13"   align-x="1"><label param="out"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="13" shrink-x="1" param="out"  />
+    <value param="out"  attach-x="2" attach-y="13" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="14"   align-x="1"><label param="outL"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="14" expand-x="1" fill-x="1" param="outL" />
+    <value param="outL"  attach-x="2" attach-y="14" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="15"   align-x="1"><label param="outR"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="15" expand-x="1" fill-x="1" param="outR" />
+    <value param="outR"  attach-x="2" attach-y="15" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="16"   align-x="1"><label param="clip_outL"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="16" shrink-x="1" param="clip_outL"  />
+    <value param="clip_outL"  attach-x="2" attach-y="16" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="17"   align-x="1"><label param="clip_outR"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="17" shrink-x="1" param="clip_outR"  />
+    <value param="clip_outR"  attach-x="2" attach-y="17" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="18"   align-x="1"><label param="carrier"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="18" shrink-x="1" param="carrier"  />
+    <value param="carrier"  attach-x="2" attach-y="18" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="19"   align-x="1"><label param="modulator"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="19" shrink-x="1" param="modulator"  />
+    <value param="modulator"  attach-x="2" attach-y="19" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="20"   align-x="1"><label param="processed"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="20" shrink-x="1" param="processed"  />
+    <value param="processed"  attach-x="2" attach-y="20" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="21"   align-x="1"><label param="order"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="21" shrink-x="1" param="order"  />
+    <value param="order"  attach-x="2" attach-y="21" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="22"   align-x="1"><label param="bands"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="22" shrink-x="1" param="bands"  />
+    <value param="bands"  attach-x="2" attach-y="22" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="23"   align-x="1"><label param="hiq"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="23" expand-x="1" fill-x="1" pad-x="10" ><toggle param="hiq" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="24"   align-x="1"><label param="attack"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="24" shrink-x="1" param="attack"  />
+    <value param="attack"  attach-x="2" attach-y="24" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="25"   align-x="1"><label param="release"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="25" shrink-x="1" param="release"  />
+    <value param="release"  attach-x="2" attach-y="25" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="26"   align-x="1"><label param="analyzer"  /></align>
+    <combo attach-x="1" attach-w="2" attach-y="26" param="analyzer" expand-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="27"   align-x="1"><label param="volume1"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="27" shrink-x="1" param="volume1"  />
+    <value param="volume1"  attach-x="2" attach-y="27" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="28"   align-x="1"><label param="pan1"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="28" shrink-x="1" param="pan1"  />
+    <value param="pan1"  attach-x="2" attach-y="28" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="29"   align-x="1"><label param="noise1"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="29" shrink-x="1" param="noise1"  />
+    <value param="noise1"  attach-x="2" attach-y="29" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="30"   align-x="1"><label param="mod1"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="30" shrink-x="1" param="mod1"  />
+    <value param="mod1"  attach-x="2" attach-y="30" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="31"   align-x="1"><label param="solo1"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="31" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo1" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="32"   align-x="1"><label param="level1"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="32" shrink-x="1" param="level1"  />
+    <value param="level1"  attach-x="2" attach-y="32" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="33"   align-x="1"><label param="q1"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="33" shrink-x="1" param="q1"  />
+    <value param="q1"  attach-x="2" attach-y="33" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="34"   align-x="1"><label param="volume2"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="34" shrink-x="1" param="volume2"  />
+    <value param="volume2"  attach-x="2" attach-y="34" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="35"   align-x="1"><label param="pan2"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="35" shrink-x="1" param="pan2"  />
+    <value param="pan2"  attach-x="2" attach-y="35" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="36"   align-x="1"><label param="noise2"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="36" shrink-x="1" param="noise2"  />
+    <value param="noise2"  attach-x="2" attach-y="36" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="37"   align-x="1"><label param="mod2"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="37" shrink-x="1" param="mod2"  />
+    <value param="mod2"  attach-x="2" attach-y="37" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="38"   align-x="1"><label param="solo2"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="38" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo2" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="39"   align-x="1"><label param="level2"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="39" shrink-x="1" param="level2"  />
+    <value param="level2"  attach-x="2" attach-y="39" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="40"   align-x="1"><label param="q2"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="40" shrink-x="1" param="q2"  />
+    <value param="q2"  attach-x="2" attach-y="40" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="41"   align-x="1"><label param="volume3"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="41" shrink-x="1" param="volume3"  />
+    <value param="volume3"  attach-x="2" attach-y="41" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="42"   align-x="1"><label param="pan3"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="42" shrink-x="1" param="pan3"  />
+    <value param="pan3"  attach-x="2" attach-y="42" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="43"   align-x="1"><label param="noise3"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="43" shrink-x="1" param="noise3"  />
+    <value param="noise3"  attach-x="2" attach-y="43" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="44"   align-x="1"><label param="mod3"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="44" shrink-x="1" param="mod3"  />
+    <value param="mod3"  attach-x="2" attach-y="44" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="45"   align-x="1"><label param="solo3"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="45" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo3" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="46"   align-x="1"><label param="level3"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="46" shrink-x="1" param="level3"  />
+    <value param="level3"  attach-x="2" attach-y="46" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="47"   align-x="1"><label param="q3"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="47" shrink-x="1" param="q3"  />
+    <value param="q3"  attach-x="2" attach-y="47" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="48"   align-x="1"><label param="volume4"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="48" shrink-x="1" param="volume4"  />
+    <value param="volume4"  attach-x="2" attach-y="48" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="49"   align-x="1"><label param="pan4"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="49" shrink-x="1" param="pan4"  />
+    <value param="pan4"  attach-x="2" attach-y="49" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="50"   align-x="1"><label param="noise4"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="50" shrink-x="1" param="noise4"  />
+    <value param="noise4"  attach-x="2" attach-y="50" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="51"   align-x="1"><label param="mod4"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="51" shrink-x="1" param="mod4"  />
+    <value param="mod4"  attach-x="2" attach-y="51" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="52"   align-x="1"><label param="solo4"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="52" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo4" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="53"   align-x="1"><label param="level4"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="53" shrink-x="1" param="level4"  />
+    <value param="level4"  attach-x="2" attach-y="53" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="54"   align-x="1"><label param="q4"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="54" shrink-x="1" param="q4"  />
+    <value param="q4"  attach-x="2" attach-y="54" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="55"   align-x="1"><label param="volume5"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="55" shrink-x="1" param="volume5"  />
+    <value param="volume5"  attach-x="2" attach-y="55" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="56"   align-x="1"><label param="pan5"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="56" shrink-x="1" param="pan5"  />
+    <value param="pan5"  attach-x="2" attach-y="56" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="57"   align-x="1"><label param="noise5"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="57" shrink-x="1" param="noise5"  />
+    <value param="noise5"  attach-x="2" attach-y="57" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="58"   align-x="1"><label param="mod5"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="58" shrink-x="1" param="mod5"  />
+    <value param="mod5"  attach-x="2" attach-y="58" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="59"   align-x="1"><label param="solo5"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="59" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo5" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="60"   align-x="1"><label param="level5"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="60" shrink-x="1" param="level5"  />
+    <value param="level5"  attach-x="2" attach-y="60" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="61"   align-x="1"><label param="q5"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="61" shrink-x="1" param="q5"  />
+    <value param="q5"  attach-x="2" attach-y="61" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="62"   align-x="1"><label param="volume6"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="62" shrink-x="1" param="volume6"  />
+    <value param="volume6"  attach-x="2" attach-y="62" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="63"   align-x="1"><label param="pan6"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="63" shrink-x="1" param="pan6"  />
+    <value param="pan6"  attach-x="2" attach-y="63" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="64"   align-x="1"><label param="noise6"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="64" shrink-x="1" param="noise6"  />
+    <value param="noise6"  attach-x="2" attach-y="64" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="65"   align-x="1"><label param="mod6"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="65" shrink-x="1" param="mod6"  />
+    <value param="mod6"  attach-x="2" attach-y="65" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="66"   align-x="1"><label param="solo6"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="66" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo6" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="67"   align-x="1"><label param="level6"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="67" shrink-x="1" param="level6"  />
+    <value param="level6"  attach-x="2" attach-y="67" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="68"   align-x="1"><label param="q6"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="68" shrink-x="1" param="q6"  />
+    <value param="q6"  attach-x="2" attach-y="68" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="69"   align-x="1"><label param="volume7"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="69" shrink-x="1" param="volume7"  />
+    <value param="volume7"  attach-x="2" attach-y="69" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="70"   align-x="1"><label param="pan7"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="70" shrink-x="1" param="pan7"  />
+    <value param="pan7"  attach-x="2" attach-y="70" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="71"   align-x="1"><label param="noise7"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="71" shrink-x="1" param="noise7"  />
+    <value param="noise7"  attach-x="2" attach-y="71" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="72"   align-x="1"><label param="mod7"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="72" shrink-x="1" param="mod7"  />
+    <value param="mod7"  attach-x="2" attach-y="72" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="73"   align-x="1"><label param="solo7"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="73" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo7" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="74"   align-x="1"><label param="level7"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="74" shrink-x="1" param="level7"  />
+    <value param="level7"  attach-x="2" attach-y="74" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="75"   align-x="1"><label param="q7"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="75" shrink-x="1" param="q7"  />
+    <value param="q7"  attach-x="2" attach-y="75" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="76"   align-x="1"><label param="volume8"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="76" shrink-x="1" param="volume8"  />
+    <value param="volume8"  attach-x="2" attach-y="76" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="77"   align-x="1"><label param="pan8"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="77" shrink-x="1" param="pan8"  />
+    <value param="pan8"  attach-x="2" attach-y="77" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="78"   align-x="1"><label param="noise8"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="78" shrink-x="1" param="noise8"  />
+    <value param="noise8"  attach-x="2" attach-y="78" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="79"   align-x="1"><label param="mod8"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="79" shrink-x="1" param="mod8"  />
+    <value param="mod8"  attach-x="2" attach-y="79" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="80"   align-x="1"><label param="solo8"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="80" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo8" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="81"   align-x="1"><label param="level8"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="81" shrink-x="1" param="level8"  />
+    <value param="level8"  attach-x="2" attach-y="81" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="82"   align-x="1"><label param="q8"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="82" shrink-x="1" param="q8"  />
+    <value param="q8"  attach-x="2" attach-y="82" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="83"   align-x="1"><label param="volume9"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="83" shrink-x="1" param="volume9"  />
+    <value param="volume9"  attach-x="2" attach-y="83" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="84"   align-x="1"><label param="pan9"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="84" shrink-x="1" param="pan9"  />
+    <value param="pan9"  attach-x="2" attach-y="84" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="85"   align-x="1"><label param="noise9"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="85" shrink-x="1" param="noise9"  />
+    <value param="noise9"  attach-x="2" attach-y="85" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="86"   align-x="1"><label param="mod9"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="86" shrink-x="1" param="mod9"  />
+    <value param="mod9"  attach-x="2" attach-y="86" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="87"   align-x="1"><label param="solo9"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="87" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo9" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="88"   align-x="1"><label param="level9"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="88" shrink-x="1" param="level9"  />
+    <value param="level9"  attach-x="2" attach-y="88" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="89"   align-x="1"><label param="q9"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="89" shrink-x="1" param="q9"  />
+    <value param="q9"  attach-x="2" attach-y="89" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="90"   align-x="1"><label param="volume10"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="90" shrink-x="1" param="volume10"  />
+    <value param="volume10"  attach-x="2" attach-y="90" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="91"   align-x="1"><label param="pan10"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="91" shrink-x="1" param="pan10"  />
+    <value param="pan10"  attach-x="2" attach-y="91" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="92"   align-x="1"><label param="noise10"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="92" shrink-x="1" param="noise10"  />
+    <value param="noise10"  attach-x="2" attach-y="92" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="93"   align-x="1"><label param="mod10"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="93" shrink-x="1" param="mod10"  />
+    <value param="mod10"  attach-x="2" attach-y="93" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="94"   align-x="1"><label param="solo10"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="94" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo10" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="95"   align-x="1"><label param="level10"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="95" shrink-x="1" param="level10"  />
+    <value param="level10"  attach-x="2" attach-y="95" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="96"   align-x="1"><label param="q10"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="96" shrink-x="1" param="q10"  />
+    <value param="q10"  attach-x="2" attach-y="96" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="97"   align-x="1"><label param="volume11"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="97" shrink-x="1" param="volume11"  />
+    <value param="volume11"  attach-x="2" attach-y="97" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="98"   align-x="1"><label param="pan11"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="98" shrink-x="1" param="pan11"  />
+    <value param="pan11"  attach-x="2" attach-y="98" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="99"   align-x="1"><label param="noise11"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="99" shrink-x="1" param="noise11"  />
+    <value param="noise11"  attach-x="2" attach-y="99" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="100"   align-x="1"><label param="mod11"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="100" shrink-x="1" param="mod11"  />
+    <value param="mod11"  attach-x="2" attach-y="100" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="101"   align-x="1"><label param="solo11"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="101" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo11" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="102"   align-x="1"><label param="level11"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="102" shrink-x="1" param="level11"  />
+    <value param="level11"  attach-x="2" attach-y="102" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="103"   align-x="1"><label param="q11"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="103" shrink-x="1" param="q11"  />
+    <value param="q11"  attach-x="2" attach-y="103" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="104"   align-x="1"><label param="volume12"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="104" shrink-x="1" param="volume12"  />
+    <value param="volume12"  attach-x="2" attach-y="104" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="105"   align-x="1"><label param="pan12"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="105" shrink-x="1" param="pan12"  />
+    <value param="pan12"  attach-x="2" attach-y="105" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="106"   align-x="1"><label param="noise12"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="106" shrink-x="1" param="noise12"  />
+    <value param="noise12"  attach-x="2" attach-y="106" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="107"   align-x="1"><label param="mod12"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="107" shrink-x="1" param="mod12"  />
+    <value param="mod12"  attach-x="2" attach-y="107" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="108"   align-x="1"><label param="solo12"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="108" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo12" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="109"   align-x="1"><label param="level12"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="109" shrink-x="1" param="level12"  />
+    <value param="level12"  attach-x="2" attach-y="109" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="110"   align-x="1"><label param="q12"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="110" shrink-x="1" param="q12"  />
+    <value param="q12"  attach-x="2" attach-y="110" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="111"   align-x="1"><label param="volume13"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="111" shrink-x="1" param="volume13"  />
+    <value param="volume13"  attach-x="2" attach-y="111" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="112"   align-x="1"><label param="pan13"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="112" shrink-x="1" param="pan13"  />
+    <value param="pan13"  attach-x="2" attach-y="112" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="113"   align-x="1"><label param="noise13"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="113" shrink-x="1" param="noise13"  />
+    <value param="noise13"  attach-x="2" attach-y="113" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="114"   align-x="1"><label param="mod13"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="114" shrink-x="1" param="mod13"  />
+    <value param="mod13"  attach-x="2" attach-y="114" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="115"   align-x="1"><label param="solo13"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="115" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo13" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="116"   align-x="1"><label param="level13"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="116" shrink-x="1" param="level13"  />
+    <value param="level13"  attach-x="2" attach-y="116" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="117"   align-x="1"><label param="q13"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="117" shrink-x="1" param="q13"  />
+    <value param="q13"  attach-x="2" attach-y="117" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="118"   align-x="1"><label param="volume14"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="118" shrink-x="1" param="volume14"  />
+    <value param="volume14"  attach-x="2" attach-y="118" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="119"   align-x="1"><label param="pan14"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="119" shrink-x="1" param="pan14"  />
+    <value param="pan14"  attach-x="2" attach-y="119" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="120"   align-x="1"><label param="noise14"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="120" shrink-x="1" param="noise14"  />
+    <value param="noise14"  attach-x="2" attach-y="120" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="121"   align-x="1"><label param="mod14"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="121" shrink-x="1" param="mod14"  />
+    <value param="mod14"  attach-x="2" attach-y="121" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="122"   align-x="1"><label param="solo14"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="122" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo14" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="123"   align-x="1"><label param="level14"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="123" shrink-x="1" param="level14"  />
+    <value param="level14"  attach-x="2" attach-y="123" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="124"   align-x="1"><label param="q14"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="124" shrink-x="1" param="q14"  />
+    <value param="q14"  attach-x="2" attach-y="124" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="125"   align-x="1"><label param="volume15"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="125" shrink-x="1" param="volume15"  />
+    <value param="volume15"  attach-x="2" attach-y="125" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="126"   align-x="1"><label param="pan15"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="126" shrink-x="1" param="pan15"  />
+    <value param="pan15"  attach-x="2" attach-y="126" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="127"   align-x="1"><label param="noise15"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="127" shrink-x="1" param="noise15"  />
+    <value param="noise15"  attach-x="2" attach-y="127" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="128"   align-x="1"><label param="mod15"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="128" shrink-x="1" param="mod15"  />
+    <value param="mod15"  attach-x="2" attach-y="128" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="129"   align-x="1"><label param="solo15"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="129" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo15" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="130"   align-x="1"><label param="level15"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="130" shrink-x="1" param="level15"  />
+    <value param="level15"  attach-x="2" attach-y="130" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="131"   align-x="1"><label param="q15"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="131" shrink-x="1" param="q15"  />
+    <value param="q15"  attach-x="2" attach-y="131" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="132"   align-x="1"><label param="volume16"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="132" shrink-x="1" param="volume16"  />
+    <value param="volume16"  attach-x="2" attach-y="132" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="133"   align-x="1"><label param="pan16"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="133" shrink-x="1" param="pan16"  />
+    <value param="pan16"  attach-x="2" attach-y="133" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="134"   align-x="1"><label param="noise16"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="134" shrink-x="1" param="noise16"  />
+    <value param="noise16"  attach-x="2" attach-y="134" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="135"   align-x="1"><label param="mod16"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="135" shrink-x="1" param="mod16"  />
+    <value param="mod16"  attach-x="2" attach-y="135" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="136"   align-x="1"><label param="solo16"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="136" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo16" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="137"   align-x="1"><label param="level16"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="137" shrink-x="1" param="level16"  />
+    <value param="level16"  attach-x="2" attach-y="137" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="138"   align-x="1"><label param="q16"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="138" shrink-x="1" param="q16"  />
+    <value param="q16"  attach-x="2" attach-y="138" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="139"   align-x="1"><label param="volume17"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="139" shrink-x="1" param="volume17"  />
+    <value param="volume17"  attach-x="2" attach-y="139" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="140"   align-x="1"><label param="pan17"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="140" shrink-x="1" param="pan17"  />
+    <value param="pan17"  attach-x="2" attach-y="140" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="141"   align-x="1"><label param="noise17"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="141" shrink-x="1" param="noise17"  />
+    <value param="noise17"  attach-x="2" attach-y="141" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="142"   align-x="1"><label param="mod17"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="142" shrink-x="1" param="mod17"  />
+    <value param="mod17"  attach-x="2" attach-y="142" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="143"   align-x="1"><label param="solo17"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="143" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo17" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="144"   align-x="1"><label param="level17"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="144" shrink-x="1" param="level17"  />
+    <value param="level17"  attach-x="2" attach-y="144" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="145"   align-x="1"><label param="q17"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="145" shrink-x="1" param="q17"  />
+    <value param="q17"  attach-x="2" attach-y="145" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="146"   align-x="1"><label param="volume18"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="146" shrink-x="1" param="volume18"  />
+    <value param="volume18"  attach-x="2" attach-y="146" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="147"   align-x="1"><label param="pan18"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="147" shrink-x="1" param="pan18"  />
+    <value param="pan18"  attach-x="2" attach-y="147" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="148"   align-x="1"><label param="noise18"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="148" shrink-x="1" param="noise18"  />
+    <value param="noise18"  attach-x="2" attach-y="148" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="149"   align-x="1"><label param="mod18"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="149" shrink-x="1" param="mod18"  />
+    <value param="mod18"  attach-x="2" attach-y="149" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="150"   align-x="1"><label param="solo18"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="150" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo18" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="151"   align-x="1"><label param="level18"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="151" shrink-x="1" param="level18"  />
+    <value param="level18"  attach-x="2" attach-y="151" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="152"   align-x="1"><label param="q18"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="152" shrink-x="1" param="q18"  />
+    <value param="q18"  attach-x="2" attach-y="152" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="153"   align-x="1"><label param="volume19"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="153" shrink-x="1" param="volume19"  />
+    <value param="volume19"  attach-x="2" attach-y="153" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="154"   align-x="1"><label param="pan19"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="154" shrink-x="1" param="pan19"  />
+    <value param="pan19"  attach-x="2" attach-y="154" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="155"   align-x="1"><label param="noise19"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="155" shrink-x="1" param="noise19"  />
+    <value param="noise19"  attach-x="2" attach-y="155" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="156"   align-x="1"><label param="mod19"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="156" shrink-x="1" param="mod19"  />
+    <value param="mod19"  attach-x="2" attach-y="156" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="157"   align-x="1"><label param="solo19"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="157" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo19" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="158"   align-x="1"><label param="level19"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="158" shrink-x="1" param="level19"  />
+    <value param="level19"  attach-x="2" attach-y="158" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="159"   align-x="1"><label param="q19"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="159" shrink-x="1" param="q19"  />
+    <value param="q19"  attach-x="2" attach-y="159" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="160"   align-x="1"><label param="volume20"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="160" shrink-x="1" param="volume20"  />
+    <value param="volume20"  attach-x="2" attach-y="160" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="161"   align-x="1"><label param="pan20"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="161" shrink-x="1" param="pan20"  />
+    <value param="pan20"  attach-x="2" attach-y="161" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="162"   align-x="1"><label param="noise20"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="162" shrink-x="1" param="noise20"  />
+    <value param="noise20"  attach-x="2" attach-y="162" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="163"   align-x="1"><label param="mod20"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="163" shrink-x="1" param="mod20"  />
+    <value param="mod20"  attach-x="2" attach-y="163" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="164"   align-x="1"><label param="solo20"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="164" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo20" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="165"   align-x="1"><label param="level20"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="165" shrink-x="1" param="level20"  />
+    <value param="level20"  attach-x="2" attach-y="165" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="166"   align-x="1"><label param="q20"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="166" shrink-x="1" param="q20"  />
+    <value param="q20"  attach-x="2" attach-y="166" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="167"   align-x="1"><label param="volume21"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="167" shrink-x="1" param="volume21"  />
+    <value param="volume21"  attach-x="2" attach-y="167" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="168"   align-x="1"><label param="pan21"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="168" shrink-x="1" param="pan21"  />
+    <value param="pan21"  attach-x="2" attach-y="168" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="169"   align-x="1"><label param="noise21"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="169" shrink-x="1" param="noise21"  />
+    <value param="noise21"  attach-x="2" attach-y="169" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="170"   align-x="1"><label param="mod21"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="170" shrink-x="1" param="mod21"  />
+    <value param="mod21"  attach-x="2" attach-y="170" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="171"   align-x="1"><label param="solo21"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="171" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo21" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="172"   align-x="1"><label param="level21"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="172" shrink-x="1" param="level21"  />
+    <value param="level21"  attach-x="2" attach-y="172" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="173"   align-x="1"><label param="q21"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="173" shrink-x="1" param="q21"  />
+    <value param="q21"  attach-x="2" attach-y="173" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="174"   align-x="1"><label param="volume22"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="174" shrink-x="1" param="volume22"  />
+    <value param="volume22"  attach-x="2" attach-y="174" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="175"   align-x="1"><label param="pan22"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="175" shrink-x="1" param="pan22"  />
+    <value param="pan22"  attach-x="2" attach-y="175" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="176"   align-x="1"><label param="noise22"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="176" shrink-x="1" param="noise22"  />
+    <value param="noise22"  attach-x="2" attach-y="176" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="177"   align-x="1"><label param="mod22"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="177" shrink-x="1" param="mod22"  />
+    <value param="mod22"  attach-x="2" attach-y="177" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="178"   align-x="1"><label param="solo22"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="178" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo22" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="179"   align-x="1"><label param="level22"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="179" shrink-x="1" param="level22"  />
+    <value param="level22"  attach-x="2" attach-y="179" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="180"   align-x="1"><label param="q22"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="180" shrink-x="1" param="q22"  />
+    <value param="q22"  attach-x="2" attach-y="180" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="181"   align-x="1"><label param="volume23"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="181" shrink-x="1" param="volume23"  />
+    <value param="volume23"  attach-x="2" attach-y="181" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="182"   align-x="1"><label param="pan23"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="182" shrink-x="1" param="pan23"  />
+    <value param="pan23"  attach-x="2" attach-y="182" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="183"   align-x="1"><label param="noise23"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="183" shrink-x="1" param="noise23"  />
+    <value param="noise23"  attach-x="2" attach-y="183" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="184"   align-x="1"><label param="mod23"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="184" shrink-x="1" param="mod23"  />
+    <value param="mod23"  attach-x="2" attach-y="184" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="185"   align-x="1"><label param="solo23"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="185" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo23" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="186"   align-x="1"><label param="level23"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="186" shrink-x="1" param="level23"  />
+    <value param="level23"  attach-x="2" attach-y="186" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="187"   align-x="1"><label param="q23"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="187" shrink-x="1" param="q23"  />
+    <value param="q23"  attach-x="2" attach-y="187" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="188"   align-x="1"><label param="volume24"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="188" shrink-x="1" param="volume24"  />
+    <value param="volume24"  attach-x="2" attach-y="188" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="189"   align-x="1"><label param="pan24"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="189" shrink-x="1" param="pan24"  />
+    <value param="pan24"  attach-x="2" attach-y="189" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="190"   align-x="1"><label param="noise24"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="190" shrink-x="1" param="noise24"  />
+    <value param="noise24"  attach-x="2" attach-y="190" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="191"   align-x="1"><label param="mod24"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="191" shrink-x="1" param="mod24"  />
+    <value param="mod24"  attach-x="2" attach-y="191" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="192"   align-x="1"><label param="solo24"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="192" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo24" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="193"   align-x="1"><label param="level24"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="193" shrink-x="1" param="level24"  />
+    <value param="level24"  attach-x="2" attach-y="193" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="194"   align-x="1"><label param="q24"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="194" shrink-x="1" param="q24"  />
+    <value param="q24"  attach-x="2" attach-y="194" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="195"   align-x="1"><label param="volume25"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="195" shrink-x="1" param="volume25"  />
+    <value param="volume25"  attach-x="2" attach-y="195" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="196"   align-x="1"><label param="pan25"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="196" shrink-x="1" param="pan25"  />
+    <value param="pan25"  attach-x="2" attach-y="196" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="197"   align-x="1"><label param="noise25"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="197" shrink-x="1" param="noise25"  />
+    <value param="noise25"  attach-x="2" attach-y="197" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="198"   align-x="1"><label param="mod25"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="198" shrink-x="1" param="mod25"  />
+    <value param="mod25"  attach-x="2" attach-y="198" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="199"   align-x="1"><label param="solo25"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="199" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo25" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="200"   align-x="1"><label param="level25"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="200" shrink-x="1" param="level25"  />
+    <value param="level25"  attach-x="2" attach-y="200" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="201"   align-x="1"><label param="q25"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="201" shrink-x="1" param="q25"  />
+    <value param="q25"  attach-x="2" attach-y="201" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="202"   align-x="1"><label param="volume26"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="202" shrink-x="1" param="volume26"  />
+    <value param="volume26"  attach-x="2" attach-y="202" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="203"   align-x="1"><label param="pan26"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="203" shrink-x="1" param="pan26"  />
+    <value param="pan26"  attach-x="2" attach-y="203" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="204"   align-x="1"><label param="noise26"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="204" shrink-x="1" param="noise26"  />
+    <value param="noise26"  attach-x="2" attach-y="204" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="205"   align-x="1"><label param="mod26"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="205" shrink-x="1" param="mod26"  />
+    <value param="mod26"  attach-x="2" attach-y="205" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="206"   align-x="1"><label param="solo26"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="206" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo26" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="207"   align-x="1"><label param="level26"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="207" shrink-x="1" param="level26"  />
+    <value param="level26"  attach-x="2" attach-y="207" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="208"   align-x="1"><label param="q26"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="208" shrink-x="1" param="q26"  />
+    <value param="q26"  attach-x="2" attach-y="208" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="209"   align-x="1"><label param="volume27"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="209" shrink-x="1" param="volume27"  />
+    <value param="volume27"  attach-x="2" attach-y="209" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="210"   align-x="1"><label param="pan27"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="210" shrink-x="1" param="pan27"  />
+    <value param="pan27"  attach-x="2" attach-y="210" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="211"   align-x="1"><label param="noise27"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="211" shrink-x="1" param="noise27"  />
+    <value param="noise27"  attach-x="2" attach-y="211" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="212"   align-x="1"><label param="mod27"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="212" shrink-x="1" param="mod27"  />
+    <value param="mod27"  attach-x="2" attach-y="212" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="213"   align-x="1"><label param="solo27"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="213" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo27" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="214"   align-x="1"><label param="level27"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="214" shrink-x="1" param="level27"  />
+    <value param="level27"  attach-x="2" attach-y="214" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="215"   align-x="1"><label param="q27"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="215" shrink-x="1" param="q27"  />
+    <value param="q27"  attach-x="2" attach-y="215" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="216"   align-x="1"><label param="volume28"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="216" shrink-x="1" param="volume28"  />
+    <value param="volume28"  attach-x="2" attach-y="216" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="217"   align-x="1"><label param="pan28"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="217" shrink-x="1" param="pan28"  />
+    <value param="pan28"  attach-x="2" attach-y="217" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="218"   align-x="1"><label param="noise28"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="218" shrink-x="1" param="noise28"  />
+    <value param="noise28"  attach-x="2" attach-y="218" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="219"   align-x="1"><label param="mod28"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="219" shrink-x="1" param="mod28"  />
+    <value param="mod28"  attach-x="2" attach-y="219" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="220"   align-x="1"><label param="solo28"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="220" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo28" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="221"   align-x="1"><label param="level28"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="221" shrink-x="1" param="level28"  />
+    <value param="level28"  attach-x="2" attach-y="221" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="222"   align-x="1"><label param="q28"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="222" shrink-x="1" param="q28"  />
+    <value param="q28"  attach-x="2" attach-y="222" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="223"   align-x="1"><label param="volume29"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="223" shrink-x="1" param="volume29"  />
+    <value param="volume29"  attach-x="2" attach-y="223" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="224"   align-x="1"><label param="pan29"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="224" shrink-x="1" param="pan29"  />
+    <value param="pan29"  attach-x="2" attach-y="224" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="225"   align-x="1"><label param="noise29"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="225" shrink-x="1" param="noise29"  />
+    <value param="noise29"  attach-x="2" attach-y="225" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="226"   align-x="1"><label param="mod29"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="226" shrink-x="1" param="mod29"  />
+    <value param="mod29"  attach-x="2" attach-y="226" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="227"   align-x="1"><label param="solo29"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="227" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo29" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="228"   align-x="1"><label param="level29"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="228" shrink-x="1" param="level29"  />
+    <value param="level29"  attach-x="2" attach-y="228" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="229"   align-x="1"><label param="q29"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="229" shrink-x="1" param="q29"  />
+    <value param="q29"  attach-x="2" attach-y="229" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="230"   align-x="1"><label param="volume30"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="230" shrink-x="1" param="volume30"  />
+    <value param="volume30"  attach-x="2" attach-y="230" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="231"   align-x="1"><label param="pan30"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="231" shrink-x="1" param="pan30"  />
+    <value param="pan30"  attach-x="2" attach-y="231" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="232"   align-x="1"><label param="noise30"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="232" shrink-x="1" param="noise30"  />
+    <value param="noise30"  attach-x="2" attach-y="232" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="233"   align-x="1"><label param="mod30"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="233" shrink-x="1" param="mod30"  />
+    <value param="mod30"  attach-x="2" attach-y="233" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="234"   align-x="1"><label param="solo30"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="234" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo30" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="235"   align-x="1"><label param="level30"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="235" shrink-x="1" param="level30"  />
+    <value param="level30"  attach-x="2" attach-y="235" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="236"   align-x="1"><label param="q30"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="236" shrink-x="1" param="q30"  />
+    <value param="q30"  attach-x="2" attach-y="236" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="237"   align-x="1"><label param="volume31"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="237" shrink-x="1" param="volume31"  />
+    <value param="volume31"  attach-x="2" attach-y="237" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="238"   align-x="1"><label param="pan31"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="238" shrink-x="1" param="pan31"  />
+    <value param="pan31"  attach-x="2" attach-y="238" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="239"   align-x="1"><label param="noise31"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="239" shrink-x="1" param="noise31"  />
+    <value param="noise31"  attach-x="2" attach-y="239" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="240"   align-x="1"><label param="mod31"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="240" shrink-x="1" param="mod31"  />
+    <value param="mod31"  attach-x="2" attach-y="240" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="241"   align-x="1"><label param="solo31"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="241" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo31" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="242"   align-x="1"><label param="level31"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="242" shrink-x="1" param="level31"  />
+    <value param="level31"  attach-x="2" attach-y="242" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="243"   align-x="1"><label param="q31"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="243" shrink-x="1" param="q31"  />
+    <value param="q31"  attach-x="2" attach-y="243" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="244"   align-x="1"><label param="volume32"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="244" shrink-x="1" param="volume32"  />
+    <value param="volume32"  attach-x="2" attach-y="244" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="245"   align-x="1"><label param="pan32"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="245" shrink-x="1" param="pan32"  />
+    <value param="pan32"  attach-x="2" attach-y="245" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="246"   align-x="1"><label param="noise32"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="246" shrink-x="1" param="noise32"  />
+    <value param="noise32"  attach-x="2" attach-y="246" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="247"   align-x="1"><label param="mod32"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="247" shrink-x="1" param="mod32"  />
+    <value param="mod32"  attach-x="2" attach-y="247" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="248"   align-x="1"><label param="solo32"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="248" expand-x="1" fill-x="1" pad-x="10" ><toggle param="solo32" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="249"   align-x="1"><label param="level32"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="249" shrink-x="1" param="level32"  />
+    <value param="level32"  attach-x="2" attach-y="249" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="250"   align-x="1"><label param="q32"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="250" shrink-x="1" param="q32"  />
+    <value param="q32"  attach-x="2" attach-y="250" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="251"   align-x="1"><label param="lower"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="251" shrink-x="1" param="lower"  />
+    <value param="lower"  attach-x="2" attach-y="251" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="252"   align-x="1"><label param="upper"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="252" shrink-x="1" param="upper"  />
+    <value param="upper"  attach-x="2" attach-y="252" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="253"   align-x="1"><label param="tilt"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="253" shrink-x="1" param="tilt"  />
+    <value param="tilt"  attach-x="2" attach-y="253" pad-x="10" />
+</table>
+

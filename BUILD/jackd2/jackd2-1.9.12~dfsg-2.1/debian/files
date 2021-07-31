@@ -1,0 +1,8 @@
+jackd2-dbgsym_1.9.12~dfsg-2.1-bnrcustom_amd64.deb debug optional automatic=yes
+jackd2-firewire-dbgsym_1.9.12~dfsg-2.1-bnrcustom_amd64.deb debug optional automatic=yes
+jackd2-firewire_1.9.12~dfsg-2.1-bnrcustom_amd64.deb sound optional
+jackd2_1.9.12~dfsg-2.1-bnrcustom_amd64.buildinfo sound optional
+jackd2_1.9.12~dfsg-2.1-bnrcustom_amd64.deb sound optional
+libjack-jackd2-0-dbgsym_1.9.12~dfsg-2.1-bnrcustom_amd64.deb debug optional automatic=yes
+libjack-jackd2-0_1.9.12~dfsg-2.1-bnrcustom_amd64.deb libs optional
+libjack-jackd2-dev_1.9.12~dfsg-2.1-bnrcustom_amd64.deb libdevel optional

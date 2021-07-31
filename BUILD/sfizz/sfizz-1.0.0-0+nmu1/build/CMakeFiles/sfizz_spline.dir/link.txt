@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsfizz_spline.a  CMakeFiles/sfizz_spline.dir/src/external/spline/spline/spline.cpp.o
+/usr/bin/ranlib libsfizz_spline.a

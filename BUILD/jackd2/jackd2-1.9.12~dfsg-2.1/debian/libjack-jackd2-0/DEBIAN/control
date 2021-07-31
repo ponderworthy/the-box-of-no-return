@@ -1,0 +1,20 @@
+Package: libjack-jackd2-0
+Source: jackd2
+Version: 1.9.12~dfsg-2.1-bnrcustom
+Architecture: amd64
+Maintainer: Debian Multimedia Maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Installed-Size: 1205
+Depends: libc6 (>= 2.27), libgcc1 (>= 1:3.0), libopus0 (>= 1.1), libsamplerate0 (>= 0.1.7), libstdc++6 (>= 5.2)
+Suggests: jackd2 (= 1.9.12~dfsg-2.1-bnrcustom)
+Conflicts: jackd2 (>> 1.9.12~dfsg-2.1-bnrcustom), jackd2 (<< 1.9.12~dfsg-2.1-bnrcustom), libjack-0.116, libjack-0.125, libjack0
+Replaces: jackd2 (<< 1.9.10+20150825git1ed50c92~dfsg-5), libjack-0.116, libjack-0.125
+Provides: libjack-0.116, libjack-0.125
+Section: libs
+Priority: optional
+Multi-Arch: same
+Homepage: http://jackaudio.org/
+Description: JACK Audio Connection Kit (libraries)
+ JACK is a low-latency sound server, allowing multiple applications to
+ connect to one audio device, and to share audio between themselves.
+ .
+ This package contains the shared libraries.

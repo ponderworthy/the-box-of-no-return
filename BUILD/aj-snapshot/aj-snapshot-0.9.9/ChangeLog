@@ -1,0 +1,34 @@
+0.9.1 
+First version
+0.9.2
+Added the '-i/--ignore' flag, to be able to ignore certain clients.
+Added the '-f/--force' flag, and ask the user if he wants to overwrite
+an existing file by default.
+Added the '-q/--quiet' flag.
+Cleaned up the information that is printed to the terminal.
+0.9.3
+Corrected GPL license header.
+Make ignoring clients work in both ways. Now connections made to ignored clients are ignored as well.
+0.9.4
+Make the -a and -j flags work together as expected, when they are combined.
+Fixed bug where aj-snapshot would not restore connections to a2jmidid ports.
+Refactoring of ignore-clients code.
+0.9.5
+Added daemon mode.
+0.9.6
+Quite an extensive rewrite of aj-snapshot.c to have less code duplication,
+and better overview.
+Changed the way daemon mode works. Connections are restored when new ports
+are registered, both for ALSA and JACK.
+Added '-p/--poll' flag so you can specify how often aj-snapshot should check
+for new ports.
+Added brand new manual page.
+0.9.7
+Fix bug in man page.
+Make sure snapshot files have one root node. This is needed by other xml utilities.
+Make it possible to use wildcards with --ignore option.
+0.9.8
+Fix long options in man page.
+Fix bug where configure would fail with the --as-needed linker flag.
+0.9.9
+Fix access to private part of mxml_node_t structure. This broke compilation with mxml v3

@@ -1,0 +1,21 @@
+<table rows="4" cols="3">
+    <align attach-x="0" attach-y="0"   align-x="1"><label param="master"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="0" shrink-x="1" param="master"  />
+    <value param="master"  attach-x="2" attach-y="0" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="1"   align-x="1"><label param="interpolation"  /></align>
+    <combo attach-x="1" attach-w="2" attach-y="1" param="interpolation" expand-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="2"   align-x="1"><label param="reverb"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="2" expand-x="1" fill-x="1" pad-x="10" ><toggle param="reverb" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="3"   align-x="1"><label param="chorus"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="3" expand-x="1" fill-x="1" pad-x="10" ><toggle param="chorus" /></align>
+</table>
+

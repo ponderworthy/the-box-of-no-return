@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}//usr/lib
+includedir=${prefix}/include
+
+Name: absl_absl_civil_time
+Description: Abseil absl_civil_time library
+URL: https://abseil.io/
+Version: 20210324
+Requires:
+Libs: -L${libdir}  -labsl_absl_civil_time
+Cflags: -I${includedir} -DNOMINMAX

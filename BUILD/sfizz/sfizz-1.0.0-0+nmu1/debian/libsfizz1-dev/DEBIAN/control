@@ -1,0 +1,9 @@
+Package: libsfizz1-dev
+Source: sfizz
+Version: 1.0.0-0+nmu1-bnrcustom
+Architecture: amd64
+Maintainer: Jean Pierre Cimalando <jp-dev@inbox.ru>
+Installed-Size: 7
+Section: sound
+Priority: optional
+Description: Sampler plugin and library for SFZ instruments (development)

@@ -1,0 +1,76 @@
+//==============================================================
+// Cello Section : Sustain
+//
+//   cellos.sfz from No Budget Orchestra - https://nobudgetorchestra.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+<group> // slower release for slower notes = legato effect (PB)
+ampeg_release=2.1
+ampeg_vel2release=-1.0
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+ampeg_attack=0.6
+
+
+// removed control, doesn't work when merged with other files (PB)
+<region> lokey=c2 hikey=d2 pitch_keycenter=c#2 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\2_Db-PB-loop.wav
+volume=-1.5
+tune=-5
+
+<region> lokey=d#2 hikey=f2 pitch_keycenter=e2 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\2_E-PB-loop.wav
+pan=-5
+tune=-5
+
+<region> lokey=f#2 hikey=g#2 pitch_keycenter=g2 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\2_G-PB-loop.wav
+volume=-0.5
+tune=-5
+
+<region> lokey=a2 hikey=b2 pitch_keycenter=a#2 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\2_Bb-PB-loop.wav
+volume=0 pan=5
+tune=-5
+
+<region> lokey=c3 hikey=d#3 pitch_keycenter=c#3 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\3_Db-PB-loop.wav
+pan=5
+tune=-5
+
+// removed 3_E-PB-loop - sounded weaker than others(PB)
+
+<region> lokey=e3 hikey=b3 pitch_keycenter=a#3 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\3_Bb-PB-loop.wav
+volume=-1 tune=-5
+
+<region> lokey=c4 hikey=d4 pitch_keycenter=c#4 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\4_Db-PB-loop.wav
+volume=-1.5
+tune=-5
+<region> lokey=d#4 hikey=f4 pitch_keycenter=e4 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\4_E-PB-loop.wav
+volume=-1.5
+tune=-5
+<region> lokey=f#4 hikey=g#4 pitch_keycenter=g4 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\4_G.wav
+volume=-1
+tune=-5
+<region> lokey=a4 hikey=c5 pitch_keycenter=a#4 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\4_Bb.wav
+pan=5 tune=5 volume=-1
+
+<region> lokey=c#5 hikey=a5 pitch_keycenter=e5 sample=..\libs\NoBudgetOrch\CelloSect\Sustain\5_E.wav
+pan=-5 volume=-1
+tune=-5
+// noise reduction (PB)
+eq1_freq=61.6
+eq1_bw=4
+eq1_gain=-12.5
+
+eq2_freq=301.6
+eq2_bw=1.12
+eq2_gain=-11.2
+
+// removed 5_Bb.wav - too high (PB)
+
+
+

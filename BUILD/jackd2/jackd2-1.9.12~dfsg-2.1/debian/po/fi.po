@@ -1,0 +1,51 @@
+# Copyright (C) 2009
+# This file is distributed under the same license as the jack-audio-connection-kit package.
+#
+# Esko Arajärvi <edu@iki.fi>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: jackd2@packages.debian.org\n"
+"POT-Creation-Date: 2011-12-22 23:36+0100\n"
+"PO-Revision-Date: 2009-10-11 12:23+0300\n"
+"Last-Translator: Esko Arajärvi <edu@iki.fi>\n"
+"Language-Team: Finnish <debian-l10n-finnish@lists.debian.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid "Enable realtime process priority?"
+msgstr "Asetetaanko prosessi ajettavaksi reaaliaikaisella prioriteetilla?"
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid ""
+"If you want to run jackd with realtime priorities, the user starting jackd "
+"needs realtime permissions. Accept this option to create the file /etc/"
+"security/limits.d/audio.conf, granting realtime priority and memlock "
+"privileges to the audio group."
+msgstr ""
+"Ohjelman jackd ajaminen reaaliaikaisella prioriteetilla vaatii, että sen "
+"käynnistäjällä on tähän vaadittavat oikeudet. Tämän vaihtoehdon valitseminen "
+"luo tiedoston /etc/security/limits.d/audio.conf, jossa ryhmälle ”audio” "
+"annetaan oikeudet reaaliaikaisen prioriteetin ja memlockin käyttöön."
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid ""
+"Running jackd with realtime priority minimizes latency, but may lead to "
+"complete system lock-ups by requesting all the available physical system "
+"memory, which is unacceptable in multi-user environments."
+msgstr ""
+"Ohjelman jackd ajaminen reaaliaikaisella prioriteetilla minimoi latenssin, "
+"mutta voi aiheuttaa järjestelmän täydellisen lukkiutumisen vaatimalla "
+"järjestelmän kaiken fyysisen muistin, mikä ei ole hyväksyttävää monen "
+"käyttäjän ympäristössä."

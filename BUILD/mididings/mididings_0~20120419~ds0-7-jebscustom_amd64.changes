@@ -1,0 +1,36 @@
+Format: 1.8
+Date: Thu, 29 Jul 2021 21:43:50 -0500
+Source: mididings
+Binary: mididings mididings-doc python-mididings python-mididings-dbgsym
+Architecture: all amd64
+Version: 0~20120419~ds0-7-jebscustom
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Changed-By: Emilio Pozuelo Monfort <jeb@bnr4>
+Description:
+ mididings  - MIDI router and processor based on Python
+ mididings-doc - mididings Documentation
+ python-mididings - MIDI routing library for Python
+Changes:
+ mididings (0~20120419~ds0-7-jebscustom) UNRELEASED; urgency=medium
+ .
+   *
+Checksums-Sha1:
+ 7376b0e3f95c1b14ba708fadfdf774931b0fb1a9 90252 mididings-doc_0~20120419~ds0-7-jebscustom_all.deb
+ 47a366f228eacc9b863046e716ada7cf8991070d 12524 mididings_0~20120419~ds0-7-jebscustom_all.deb
+ 08cfce0eb506f29b83eb404a8a8383d93a164e90 8513 mididings_0~20120419~ds0-7-jebscustom_amd64.buildinfo
+ 18bc40e9e1e06a94e04c29a5d3074f69e5cfb32d 2973016 python-mididings-dbgsym_0~20120419~ds0-7-jebscustom_amd64.deb
+ fcdf30ad2acd47bb4d7f55e5dde072d3da7871b4 158608 python-mididings_0~20120419~ds0-7-jebscustom_amd64.deb
+Checksums-Sha256:
+ 9483d567821a8e2c37b070d20d447e474a406505d6500c88fa0ea637ab3c8233 90252 mididings-doc_0~20120419~ds0-7-jebscustom_all.deb
+ eb8f7298f26be2f14b446407648f7c75138c7484db9df43b2c576893bc7da2c0 12524 mididings_0~20120419~ds0-7-jebscustom_all.deb
+ 0bac9062859e36137786e1190b2666638df59c4eedf31c7b06a6b32f7c09c873 8513 mididings_0~20120419~ds0-7-jebscustom_amd64.buildinfo
+ c7c9c0cc2aa7c8a4d2d9a17d1d42ea9feb05a2905e0ec628acaf7d565f00ca0e 2973016 python-mididings-dbgsym_0~20120419~ds0-7-jebscustom_amd64.deb
+ ffc7a7b74afaf492c9a4ad27ace44cb3bf401f8c26cd831d1d8ce7a6cda569e8 158608 python-mididings_0~20120419~ds0-7-jebscustom_amd64.deb
+Files:
+ 94b8f8bca9c01960f73577300b868639 90252 doc optional mididings-doc_0~20120419~ds0-7-jebscustom_all.deb
+ feafb148aa031684e7f3b344460aea6c 12524 sound optional mididings_0~20120419~ds0-7-jebscustom_all.deb
+ 91cd2582e5ccb09332f86ebf08e8d6e5 8513 sound optional mididings_0~20120419~ds0-7-jebscustom_amd64.buildinfo
+ 2ce7da63b14707b98adf61135e2644a3 2973016 debug optional python-mididings-dbgsym_0~20120419~ds0-7-jebscustom_amd64.deb
+ 9cc3ac1be396ded789d0fab369b33233 158608 python optional python-mididings_0~20120419~ds0-7-jebscustom_amd64.deb

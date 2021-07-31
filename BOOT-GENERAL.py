@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 #################################################
 # BOOT-GENERAL
 #
@@ -9,10 +11,6 @@
 # jpctrl, a Python library for Jack Process Control,
 # handles this, and thus this file is a Python3
 # script.
-#
-# This file is the scene of very active development right now.
-# A 2015 working version, in Python 2, is visible here:
-# https://lsn.ponderworthy.com/doku.php/concurrent_patch_management
 ####################################################################
 
 import sys
@@ -81,6 +79,14 @@ if not jpctrl.spawn_and_settle('/usr/bin/jackd -nSOFT3 -P 90 -ddummy -r96000 -p2
 if not jpctrl.wait_for_jack('SOFT3'):
     jpctrl.exit_with_beep()
 
+print('\nSOFT4 ...\n')
+if not jpctrl.spawn_and_settle('/usr/bin/jackd -nSOFT4 -P 90 -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT4.log',
+    'SOFT4'):
+    jpctrl.exit_with_beep()
+
+if not jpctrl.wait_for_jack('SOFT4'):
+    jpctrl.exit_with_beep()
+
 print('-----------------------------------------------------------------')
 print('Start all a2jmidi_bridge processes for soft servers...')
 print('-----------------------------------------------------------------')
@@ -120,6 +126,38 @@ if jpctrl.wait_for_jackport('soft3_midi:capture', 'SOFT3'):
 else:
     print('wait_for_jackport on soft3_midi/capture failed.')
     jpctrl.exit_with_beep()
+
+print('\non SOFT4...\n')
+if not jpctrl.spawn_and_settle('a2jmidi_bridge soft4_midi', 'SOFT4'):
+     jpctrl.exit_with_beep()
+
+if jpctrl.wait_for_jackport('soft4_midi:capture', 'SOFT4'):
+    print('soft4_midi confirmed on SOFT4.')
+else:
+    print('wait_for_jackport on soft4_midi/capture failed.')
+    jpctrl.exit_with_beep()
+
+# print('-----------------------------------------------------------------')
+# print('Start j2amidi_bridge process for hard server...')
+# print('-----------------------------------------------------------------')
+
+# This did not work acceptably, produced very unreliable MIDI.
+# Not sure why.
+
+# This is so we can use JACK MIDI input, rather than ALSA MIDI
+# input.  ALSA MIDI input has this odd persistent behavior of
+# requiring power-cycle of the keyboard after boot, before it
+# will actually work.  A bug persistent for a very long time.
+# JACK MIDI doesn't do this.  But we still need to use ALSA
+# MIDI to transport MIDI data from the hard server to the
+# soft servers.
+
+# if not jpctrl.spawn_and_settle('j2amidi_bridge hard_midi'):
+#     jpctrl.exit_with_beep()
+
+print('-----------------------------------------------------------------')
+print('Pause to settle, before we run Distribute...')
+print('-----------------------------------------------------------------')
 
 # Still needed to prevent crash of Distribute.
 # Don't know why.  Would love solution.
@@ -185,6 +223,17 @@ else:
     print('wait_for_jackport on Distribute.py/SOFT3 failed.')
     jpctrl.exit_with_beep()
 
+print('\nStarting Distribute.py on SOFT4...')
+
+if not jpctrl.spawn_and_settle(bnr_dir + 'Distribute.py', 'SOFT4'):
+    jpctrl.exit_with_beep()
+
+if jpctrl.wait_for_jackport('Distribute.py:StringsMore', 'SOFT4'):
+    print('Distribute.py confirmed on SOFT4.')
+else:
+    print('wait_for_jackport on Distribute.py/SOFT4 failed.')
+    jpctrl.exit_with_beep()
+
 print('-----------------------------------------------------------------')
 print('Start Zita IP bridge processes...')
 print('-----------------------------------------------------------------')
@@ -218,6 +267,16 @@ if not jpctrl.wait_for_jackport('zita-n2j-4soft3:out_1'):
 else:
     print('zita-n2j-4soft3 confirmed on hard server.\n')
 
+if not jpctrl.spawn_and_settle('zita-n2j --filt 32 --buff 14 --jname zita-n2j-4soft4 127.0.0.3 55554'):
+    jpctrl.exit_with_beep()
+
+if not jpctrl.wait_for_jackport('zita-n2j-4soft4:out_1'):
+    print('wait_for_jackport on zita-n2j-4soft4/hard failed.')
+    jpctrl.exit_with_beep()
+else:
+    print('zita-n2j-4soft4 confirmed on hard server.\n')
+
+
 print('\nOne transmitter on each soft server...\n')
 
 if not jpctrl.spawn_and_settle('zita-j2n --jname zita-j2n-soft1 --jserv SOFT1 127.0.0.1 55551'):
@@ -246,6 +305,15 @@ if not jpctrl.wait_for_jackport('zita-j2n-soft3:in_1', 'SOFT3'):
     jpctrl.exit_with_beep()
 else:
     print('zita-j2n confirmed on SOFT3.\n')
+
+if not jpctrl.spawn_and_settle('zita-j2n --jname zita-j2n-soft4 --jserv SOFT4 127.0.0.3 55554'):
+    jpctrl.exit_with_beep()
+
+if not jpctrl.wait_for_jackport('zita-j2n-soft4:in_1', 'SOFT4'):
+    print('wait_for_jackport on zita-j2n/SOFT4 failed.')
+    jpctrl.exit_with_beep()
+else:
+    print('zita-j2n confirmed on SOFT4.\n')
 
 
 print('-----------------------------------------------------------------')
@@ -349,6 +417,7 @@ if not jpctrl.spawn_and_settle(
 
 print('\n')
 
+
 print('-----------------------------------------------------------------')
 print('Start component for patch FlowBells, on server SOFT3...')
 print('-----------------------------------------------------------------')
@@ -361,16 +430,6 @@ if not jpctrl.spawn_and_settle(
 
 print('\n')
 
-# print('-----------------------------------------------------------------')
-# print('Start component for patch Many-Horns, on server SOFT3...')
-# print('-----------------------------------------------------------------')
-
-# print('\nStart Many-Horns...')
-# if not jpctrl.spawn_and_settle(
-#        'calfjackhost --client Many-Horns fluidsynth:Many-Horns',
-#        'SOFT3'):
-#    jpctrl.exit_with_beep()
-#
 
 print('-----------------------------------------------------------------')
 print('Create JACK connections using aj-snapshot, on all servers...')

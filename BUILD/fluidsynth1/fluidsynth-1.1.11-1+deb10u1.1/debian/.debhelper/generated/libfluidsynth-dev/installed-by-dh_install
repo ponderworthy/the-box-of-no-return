@@ -1,0 +1,4 @@
+debian/tmp/usr/include/fluidsynth
+debian/tmp/usr/include/fluidsynth.h
+debian/tmp/usr/lib/x86_64-linux-gnu/libfluidsynth.so
+debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/fluidsynth.pc

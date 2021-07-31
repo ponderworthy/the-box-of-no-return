@@ -1,0 +1,21 @@
+Description: Update arch list where packed structures are bad
+ Disables the use of packed structures on architectures where misaligned access
+ is bad.
+Origin: upstream,
+ https://github.com/jackaudio/jack2/commit/460063d8dc2cb465e22fd538239817a0cb0baec6
+ https://github.com/jackaudio/jack2/commit/693451c36106542c5c5b5ba46d5d89aec783252e
+ https://github.com/jackaudio/jack2/commit/39e984c38cc1313d648dbde2cc46c1c1f6a01eca
+Bug-Debian: https://bugs.debian.org/728710
+---
+This patch header follows DEP-3: http://dep.debian.net/deps/dep3/
+--- a/common/jack/systemdeps.h
++++ b/common/jack/systemdeps.h
+@@ -120,7 +120,7 @@ Foundation, Inc., 675 Mass Ave, Cambridg
+ 
+ #endif /* __APPLE__ || __linux__ || __sun__ || sun */
+ 
+-#if defined(__arm__)
++#if defined(__arm__) || defined(__aarch64__) || defined(__mips__) || defined(__ppc__) || defined(__powerpc__)
+     #undef POST_PACKED_STRUCTURE
+     #define POST_PACKED_STRUCTURE
+ #endif /* __arm__ */

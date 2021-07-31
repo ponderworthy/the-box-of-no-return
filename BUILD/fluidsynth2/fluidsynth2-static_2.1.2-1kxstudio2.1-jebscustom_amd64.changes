@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Mon, 26 Jul 2021 05:39:26 -0500
+Source: fluidsynth2-static
+Binary: fluidsynth2-static
+Architecture: amd64
+Version: 5:2.1.2-1kxstudio2.1-jebscustom
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: falkTX <falktx@falktx.com>
+Changed-By: falkTX <jeb@bnr4>
+Description:
+ fluidsynth2-static - Real-time MIDI software synthesizer (static v2)
+Changes:
+ fluidsynth2-static (5:2.1.2-1kxstudio2.1-jebscustom) UNRELEASED; urgency=medium
+ .
+   * Non-maintainer upload.
+   *
+Checksums-Sha1:
+ 3ccebe74d7e00b0716ca8d0b96f3925ce8e29a40 6812 fluidsynth2-static_2.1.2-1kxstudio2.1-jebscustom_amd64.buildinfo
+ a1521833f4eff5744087389972965a80f5aefd55 222092 fluidsynth2-static_2.1.2-1kxstudio2.1-jebscustom_amd64.deb
+Checksums-Sha256:
+ 4a3a4add435eb5283f17b1ffc1da06b0e28b92a86674c7244fc01dee792aaf41 6812 fluidsynth2-static_2.1.2-1kxstudio2.1-jebscustom_amd64.buildinfo
+ 2cacfb07934d5a002b249829ab39ea6684ca137763802c8b0b186e7ff4a8f570 222092 fluidsynth2-static_2.1.2-1kxstudio2.1-jebscustom_amd64.deb
+Files:
+ 8d83b6b57e88ba21bc00627576333bd4 6812 libs extra fluidsynth2-static_2.1.2-1kxstudio2.1-jebscustom_amd64.buildinfo
+ bb9376fcdde1e3ea47bac7d63e05b42f 222092 libs extra fluidsynth2-static_2.1.2-1kxstudio2.1-jebscustom_amd64.deb

@@ -1,0 +1,21 @@
+
+
+    Install normally, using monitor and keyboard. Get the install solid 
+    with updates and testing.
+
+    Switch to a virtual console with Ctrl-Alt-F2 and log in.
+
+    Run this to turn off X: sudo systemctl isolate multi-user
+
+    Run this: X -configure
+
+    A file is created, /root/xorg.conf.new.
+
+    chdir to /etc/X11/xorg.conf.d
+
+    Move /root/xorg.conf.new to this new name at your current location: 
+    ./10-monitor.conf Reboot and test. If you change video cards, you 
+    may well have to do it again, and you’ll probably need to boot from 
+    install media in order to remove the file.
+
+

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsfizz_pugixml.a  CMakeFiles/sfizz_pugixml.dir/src/external/pugixml/src/pugixml.cpp.o
+/usr/bin/ranlib libsfizz_pugixml.a

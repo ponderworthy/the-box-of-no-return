@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}//usr/lib
+includedir=${prefix}/include
+
+Name: absl_absl_leak_check_disable
+Description: Abseil absl_leak_check_disable library
+URL: https://abseil.io/
+Version: 20210324
+Requires:
+Libs: -L${libdir}  -labsl_absl_leak_check_disable
+Cflags: -I${includedir} -DNOMINMAX

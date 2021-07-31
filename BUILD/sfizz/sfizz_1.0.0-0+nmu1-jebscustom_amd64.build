@@ -1,0 +1,1308 @@
+ dpkg-buildpackage -us -uc -ui -b
+dpkg-buildpackage: info: source package sfizz
+dpkg-buildpackage: info: source version 1.0.0-0+nmu1-jebscustom
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by Jean Pierre Cimalando <jeb@bnr4>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh_testdir
+dh_testroot
+rm -f build-stamp
+# Add here commands to clean up after the build process.
+rm -rf build
+# --- end custom part for cleaning up
+dh_clean
+ debian/rules build
+dh_testdir
+# Add here commands to compile the package.
+mkdir build
+(cd build && \
+cmake -DCMAKE_BUILD_TYPE=Release -DENABLE_LTO=OFF -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib -DSFIZZ_JACK=ON -DSFIZZ_LV2=ON -DSFIZZ_VST=ON ..)
+-- The CXX compiler identification is GNU 8.3.0
+-- The C compiler identification is GNU 8.3.0
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Have C warning -Wall: TRUE
+-- Have C warning -Wextra: TRUE
+-- Have C warning -Wno-multichar: TRUE
+-- Have C warning -Werror=return-type: TRUE
+-- Have C++ warning -Wall: TRUE
+-- Have C++ warning -Wextra: TRUE
+-- Have C++ warning -Wno-multichar: TRUE
+-- Have C++ warning -Werror=return-type: TRUE
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- Looking for sin in m
+-- Looking for sin in m - found
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29") 
+-- Checking for module 'jack'
+--   Found jack, version 1.9.12
+-- Checking for module 'samplerate'
+--   Found samplerate, version 0.1.9
+CMake Warning at cmake/CheckIPO.cmake:27 (message):
+  
+
+  IPO was disabled or not in a Release build.
+Call Stack (most recent call first):
+  CMakeLists.txt:51 (include)
+
+
+-- Checking for module 'glib-2.0'
+--   Found glib-2.0, version 2.58.3
+-- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so
+-- Looking for XOpenDisplay in /usr/lib/x86_64-linux-gnu/libX11.so;/usr/lib/x86_64-linux-gnu/libXext.so - found
+-- Looking for gethostbyname
+-- Looking for gethostbyname - found
+-- Looking for connect
+-- Looking for connect - found
+-- Looking for remove
+-- Looking for remove - found
+-- Looking for shmat
+-- Looking for shmat - found
+-- Looking for IceConnectionNumber in ICE
+-- Looking for IceConnectionNumber in ICE - found
+-- Found X11: /usr/lib/x86_64-linux-gnu/libX11.so
+-- Found Freetype: /usr/lib/x86_64-linux-gnu/libfreetype.so (found version "2.9.1") 
+-- Checking for module 'xcb'
+--   Found xcb, version 1.14
+-- Checking for module 'xcb-util'
+--   Found xcb-util, version 0.3.8
+-- Checking for module 'xcb-cursor'
+--   Found xcb-cursor, version 0.1.1
+-- Checking for module 'xcb-keysyms'
+--   Found xcb-keysyms, version 0.4.0
+-- Checking for module 'xcb-xkb'
+--   Found xcb-xkb, version 1.14
+-- Checking for module 'xkbcommon'
+--   Found xkbcommon, version 0.10.0
+-- Checking for module 'xkbcommon-x11'
+--   Found xkbcommon-x11, version 0.10.0
+-- Checking for module 'cairo'
+--   Found cairo, version 1.16.0
+-- Checking for modules 'pangocairo;pangoft2'
+--   Found pangocairo, version 1.42.3
+--   Found pangoft2, version 1.42.3
+-- Checking for module 'fontconfig'
+--   Found fontconfig, version 2.13.1
+-- Have C warning -Wno-deprecated-copy: TRUE
+-- Have C warning -Wno-deprecated-declarations: TRUE
+-- Have C warning -Wno-extra: TRUE
+-- Have C warning -Wno-ignored-qualifiers: TRUE
+-- Have C warning -Wno-reorder: FALSE
+-- Have C warning -Wno-sign-compare: TRUE
+-- Have C warning -Wno-unknown-pragmas: TRUE
+-- Have C warning -Wno-unused-function: TRUE
+-- Have C warning -Wno-unused-parameter: TRUE
+-- Have C warning -Wno-unused-variable: TRUE
+-- Have C++ warning -Wno-deprecated-copy: TRUE
+-- Have C++ warning -Wno-deprecated-declarations: TRUE
+-- Have C++ warning -Wno-extra: TRUE
+-- Have C++ warning -Wno-ignored-qualifiers: TRUE
+-- Have C++ warning -Wno-reorder: TRUE
+-- Have C++ warning -Wno-sign-compare: TRUE
+-- Have C++ warning -Wno-unknown-pragmas: TRUE
+-- Have C++ warning -Wno-unused-function: TRUE
+-- Have C++ warning -Wno-unused-parameter: TRUE
+-- Have C++ warning -Wno-unused-variable: TRUE
+-- Checking for module 'gio-2.0'
+--   Found gio-2.0, version 2.58.3
+-- The system architecture is: x86_64
+-- The VST3 architecture is deduced as: x86_64
+-- Have C warning -Wno-class-memaccess: FALSE
+-- Have C++ warning -Wno-class-memaccess: TRUE
+-- 
+Project name:                  sfizz
+Build type:                    Release
+Build processor:               x86_64
+Build using LTO:               OFF
+Build as shared library:       ON
+Build JACK stand-alone client: ON
+Build render client:           ON
+Build LV2 plug-in:             ON
+Build LV2 user interface:      ON
+Build VST plug-in:             ON
+Build AU plug-in:              OFF
+Build benchmarks:              OFF
+Build tests:                   OFF
+Build demos:                   OFF
+Build devtools:                OFF
+Use sndfile:                   OFF
+Use vcpkg:                     OFF
+Statically link dependencies:  OFF
+Use clang libc++:              OFF
+Release asserts:               OFF
+
+Install prefix:                /usr
+LV2 destination directory:     /usr/lib/lv2
+
+Compiler CXX debug flags:      -g
+Compiler CXX release flags:    -O3 -DNDEBUG
+Compiler CXX min size flags:   -Os -DNDEBUG
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build
+make -C build
+make[1]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[2]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_fmidi
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  1%] Building CXX object CMakeFiles/sfizz_fmidi.dir/external/fmidi/sources/fmidi/fmidi_mini.cpp.o
+[  1%] Linking CXX static library libsfizz_fmidi.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  1%] Built target sfizz_fmidi
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_spline
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  2%] Building CXX object CMakeFiles/sfizz_spline.dir/src/external/spline/spline/spline.cpp.o
+[  2%] Linking CXX static library libsfizz_spline.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  2%] Built target sfizz_spline
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_pugixml
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  3%] Building CXX object CMakeFiles/sfizz_pugixml.dir/src/external/pugixml/src/pugixml.cpp.o
+[  3%] Linking CXX static library libsfizz_pugixml.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  3%] Built target sfizz_pugixml
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_tunings
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  4%] Building CXX object CMakeFiles/sfizz_tunings.dir/src/external/tunings/src/Tunings.cpp.o
+[  4%] Linking CXX static library libsfizz_tunings.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  4%] Built target sfizz_tunings
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_hiir_polyphase_iir2designer
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  4%] Building CXX object CMakeFiles/sfizz_hiir_polyphase_iir2designer.dir/src/external/hiir/hiir/PolyphaseIir2Designer.cpp.o
+[  4%] Linking CXX static library libsfizz_hiir_polyphase_iir2designer.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  4%] Built target sfizz_hiir_polyphase_iir2designer
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_kissfft
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  4%] Building C object CMakeFiles/sfizz_kissfft.dir/src/external/kiss_fft/kiss_fft.c.o
+[  4%] Building C object CMakeFiles/sfizz_kissfft.dir/src/external/kiss_fft/tools/kiss_fftr.c.o
+[  4%] Linking C static library libsfizz_kissfft.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  4%] Built target sfizz_kissfft
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_cephes
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  4%] Building C object CMakeFiles/sfizz_cephes.dir/external/cephes/src/chbevl.c.o
+[  4%] Building C object CMakeFiles/sfizz_cephes.dir/external/cephes/src/i0.c.o
+[  5%] Linking C static library libsfizz_cephes.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  5%] Built target sfizz_cephes
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_cpuid
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  5%] Building CXX object CMakeFiles/sfizz_cpuid.dir/src/external/cpuid/src/cpuid/cpuinfo.cpp.o
+[  5%] Building CXX object CMakeFiles/sfizz_cpuid.dir/src/external/cpuid/src/cpuid/version.cpp.o
+[  5%] Linking CXX static library libsfizz_cpuid.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  5%] Built target sfizz_cpuid
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_spin_mutex
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  5%] Building CXX object src/CMakeFiles/sfizz_spin_mutex.dir/sfizz/utility/spin_mutex/spin_mutex.cpp.o
+[  5%] Building CXX object src/CMakeFiles/sfizz_spin_mutex.dir/sfizz/utility/spin_mutex/SpinMutex.cpp.o
+[  5%] Linking CXX static library libsfizz_spin_mutex.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  5%] Built target sfizz_spin_mutex
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_spinlock_wait
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  6%] Building CXX object external/abseil-cpp/absl/base/CMakeFiles/absl_spinlock_wait.dir/internal/spinlock_wait.cc.o
+[  6%] Linking CXX static library libabsl_spinlock_wait.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  6%] Built target absl_spinlock_wait
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_log_severity
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  6%] Building CXX object external/abseil-cpp/absl/base/CMakeFiles/absl_log_severity.dir/log_severity.cc.o
+[  7%] Linking CXX static library libabsl_log_severity.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  7%] Built target absl_log_severity
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_raw_logging_internal
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  7%] Building CXX object external/abseil-cpp/absl/base/CMakeFiles/absl_raw_logging_internal.dir/internal/raw_logging.cc.o
+[  7%] Linking CXX static library libabsl_raw_logging_internal.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  7%] Built target absl_raw_logging_internal
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_base
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  7%] Building CXX object external/abseil-cpp/absl/base/CMakeFiles/absl_base.dir/internal/cycleclock.cc.o
+[  7%] Building CXX object external/abseil-cpp/absl/base/CMakeFiles/absl_base.dir/internal/spinlock.cc.o
+[  7%] Building CXX object external/abseil-cpp/absl/base/CMakeFiles/absl_base.dir/internal/sysinfo.cc.o
+[  7%] Building CXX object external/abseil-cpp/absl/base/CMakeFiles/absl_base.dir/internal/thread_identity.cc.o
+[  8%] Building CXX object external/abseil-cpp/absl/base/CMakeFiles/absl_base.dir/internal/unscaledcycleclock.cc.o
+[  8%] Linking CXX static library libabsl_base.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  8%] Built target absl_base
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_malloc_internal
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  8%] Building CXX object external/abseil-cpp/absl/base/CMakeFiles/absl_malloc_internal.dir/internal/low_level_alloc.cc.o
+[  8%] Linking CXX static library libabsl_malloc_internal.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  8%] Built target absl_malloc_internal
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_throw_delegate
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  8%] Building CXX object external/abseil-cpp/absl/base/CMakeFiles/absl_throw_delegate.dir/internal/throw_delegate.cc.o
+[  8%] Linking CXX static library libabsl_throw_delegate.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  8%] Built target absl_throw_delegate
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_exponential_biased
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  8%] Building CXX object external/abseil-cpp/absl/base/CMakeFiles/absl_exponential_biased.dir/internal/exponential_biased.cc.o
+[  8%] Linking CXX static library libabsl_exponential_biased.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  8%] Built target absl_exponential_biased
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_bad_optional_access
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  8%] Building CXX object external/abseil-cpp/absl/types/CMakeFiles/absl_bad_optional_access.dir/bad_optional_access.cc.o
+[  8%] Linking CXX static library libabsl_bad_optional_access.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  8%] Built target absl_bad_optional_access
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_time_zone
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[  8%] Building CXX object external/abseil-cpp/absl/time/CMakeFiles/absl_time_zone.dir/internal/cctz/src/time_zone_fixed.cc.o
+[  9%] Building CXX object external/abseil-cpp/absl/time/CMakeFiles/absl_time_zone.dir/internal/cctz/src/time_zone_format.cc.o
+[  9%] Building CXX object external/abseil-cpp/absl/time/CMakeFiles/absl_time_zone.dir/internal/cctz/src/time_zone_if.cc.o
+[  9%] Building CXX object external/abseil-cpp/absl/time/CMakeFiles/absl_time_zone.dir/internal/cctz/src/time_zone_impl.cc.o
+[  9%] Building CXX object external/abseil-cpp/absl/time/CMakeFiles/absl_time_zone.dir/internal/cctz/src/time_zone_info.cc.o
+[  9%] Building CXX object external/abseil-cpp/absl/time/CMakeFiles/absl_time_zone.dir/internal/cctz/src/time_zone_libc.cc.o
+[ 10%] Building CXX object external/abseil-cpp/absl/time/CMakeFiles/absl_time_zone.dir/internal/cctz/src/time_zone_lookup.cc.o
+[ 10%] Building CXX object external/abseil-cpp/absl/time/CMakeFiles/absl_time_zone.dir/internal/cctz/src/time_zone_posix.cc.o
+[ 10%] Building CXX object external/abseil-cpp/absl/time/CMakeFiles/absl_time_zone.dir/internal/cctz/src/zone_info_source.cc.o
+[ 10%] Linking CXX static library libabsl_time_zone.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 10%] Built target absl_time_zone
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_strings_internal
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 10%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_strings_internal.dir/internal/ostringstream.cc.o
+[ 10%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_strings_internal.dir/internal/utf8.cc.o
+[ 10%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_strings_internal.dir/internal/escaping.cc.o
+[ 12%] Linking CXX static library libabsl_strings_internal.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 12%] Built target absl_strings_internal
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_demangle_internal
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 12%] Building CXX object external/abseil-cpp/absl/debugging/CMakeFiles/absl_demangle_internal.dir/internal/demangle.cc.o
+[ 13%] Linking CXX static library libabsl_demangle_internal.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 13%] Built target absl_demangle_internal
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_debugging_internal
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 14%] Building CXX object external/abseil-cpp/absl/debugging/CMakeFiles/absl_debugging_internal.dir/internal/address_is_readable.cc.o
+[ 14%] Building CXX object external/abseil-cpp/absl/debugging/CMakeFiles/absl_debugging_internal.dir/internal/elf_mem_image.cc.o
+[ 14%] Building CXX object external/abseil-cpp/absl/debugging/CMakeFiles/absl_debugging_internal.dir/internal/vdso_support.cc.o
+[ 14%] Linking CXX static library libabsl_debugging_internal.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 14%] Built target absl_debugging_internal
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_int128
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 14%] Building CXX object external/abseil-cpp/absl/numeric/CMakeFiles/absl_int128.dir/int128.cc.o
+[ 14%] Linking CXX static library libabsl_int128.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 14%] Built target absl_int128
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_strings
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 14%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_strings.dir/ascii.cc.o
+[ 14%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_strings.dir/charconv.cc.o
+[ 15%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_strings.dir/escaping.cc.o
+[ 15%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_strings.dir/internal/charconv_bigint.cc.o
+[ 15%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_strings.dir/internal/charconv_parse.cc.o
+[ 15%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_strings.dir/internal/memutil.cc.o
+[ 15%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_strings.dir/match.cc.o
+[ 16%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_strings.dir/numbers.cc.o
+[ 16%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_strings.dir/str_cat.cc.o
+[ 16%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_strings.dir/str_replace.cc.o
+[ 16%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_strings.dir/str_split.cc.o
+[ 16%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_strings.dir/string_view.cc.o
+[ 17%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_strings.dir/substitute.cc.o
+[ 17%] Linking CXX static library libabsl_strings.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 17%] Built target absl_strings
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_symbolize
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 17%] Building CXX object external/abseil-cpp/absl/debugging/CMakeFiles/absl_symbolize.dir/symbolize.cc.o
+[ 17%] Linking CXX static library libabsl_symbolize.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 17%] Built target absl_symbolize
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_stacktrace
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 17%] Building CXX object external/abseil-cpp/absl/debugging/CMakeFiles/absl_stacktrace.dir/stacktrace.cc.o
+[ 17%] Linking CXX static library libabsl_stacktrace.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 17%] Built target absl_stacktrace
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_graphcycles_internal
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 17%] Building CXX object external/abseil-cpp/absl/synchronization/CMakeFiles/absl_graphcycles_internal.dir/internal/graphcycles.cc.o
+[ 17%] Linking CXX static library libabsl_graphcycles_internal.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 17%] Built target absl_graphcycles_internal
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_civil_time
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 17%] Building CXX object external/abseil-cpp/absl/time/CMakeFiles/absl_civil_time.dir/internal/cctz/src/civil_time_detail.cc.o
+[ 18%] Linking CXX static library libabsl_civil_time.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 18%] Built target absl_civil_time
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_time
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 18%] Building CXX object external/abseil-cpp/absl/time/CMakeFiles/absl_time.dir/civil_time.cc.o
+[ 18%] Building CXX object external/abseil-cpp/absl/time/CMakeFiles/absl_time.dir/clock.cc.o
+[ 19%] Building CXX object external/abseil-cpp/absl/time/CMakeFiles/absl_time.dir/duration.cc.o
+[ 19%] Building CXX object external/abseil-cpp/absl/time/CMakeFiles/absl_time.dir/format.cc.o
+[ 19%] Building CXX object external/abseil-cpp/absl/time/CMakeFiles/absl_time.dir/time.cc.o
+[ 19%] Linking CXX static library libabsl_time.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 19%] Built target absl_time
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_synchronization
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 19%] Building CXX object external/abseil-cpp/absl/synchronization/CMakeFiles/absl_synchronization.dir/barrier.cc.o
+[ 19%] Building CXX object external/abseil-cpp/absl/synchronization/CMakeFiles/absl_synchronization.dir/blocking_counter.cc.o
+[ 20%] Building CXX object external/abseil-cpp/absl/synchronization/CMakeFiles/absl_synchronization.dir/internal/create_thread_identity.cc.o
+[ 20%] Building CXX object external/abseil-cpp/absl/synchronization/CMakeFiles/absl_synchronization.dir/internal/per_thread_sem.cc.o
+[ 20%] Building CXX object external/abseil-cpp/absl/synchronization/CMakeFiles/absl_synchronization.dir/internal/waiter.cc.o
+[ 20%] Building CXX object external/abseil-cpp/absl/synchronization/CMakeFiles/absl_synchronization.dir/notification.cc.o
+[ 20%] Building CXX object external/abseil-cpp/absl/synchronization/CMakeFiles/absl_synchronization.dir/mutex.cc.o
+[ 21%] Linking CXX static library libabsl_synchronization.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 21%] Built target absl_synchronization
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_hashtablez_sampler
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 23%] Building CXX object external/abseil-cpp/absl/container/CMakeFiles/absl_hashtablez_sampler.dir/internal/hashtablez_sampler.cc.o
+[ 23%] Building CXX object external/abseil-cpp/absl/container/CMakeFiles/absl_hashtablez_sampler.dir/internal/hashtablez_sampler_force_weak_definition.cc.o
+[ 23%] Linking CXX static library libabsl_hashtablez_sampler.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 23%] Built target absl_hashtablez_sampler
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_raw_hash_set
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 23%] Building CXX object external/abseil-cpp/absl/container/CMakeFiles/absl_raw_hash_set.dir/internal/raw_hash_set.cc.o
+[ 24%] Linking CXX static library libabsl_raw_hash_set.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 24%] Built target absl_raw_hash_set
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_city
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 24%] Building CXX object external/abseil-cpp/absl/hash/CMakeFiles/absl_city.dir/internal/city.cc.o
+[ 24%] Linking CXX static library libabsl_city.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 24%] Built target absl_city
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_wyhash
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 24%] Building CXX object external/abseil-cpp/absl/hash/CMakeFiles/absl_wyhash.dir/internal/wyhash.cc.o
+[ 25%] Linking CXX static library libabsl_wyhash.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 25%] Built target absl_wyhash
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_bad_variant_access
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 25%] Building CXX object external/abseil-cpp/absl/types/CMakeFiles/absl_bad_variant_access.dir/bad_variant_access.cc.o
+[ 26%] Linking CXX static library libabsl_bad_variant_access.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 26%] Built target absl_bad_variant_access
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_hash
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 26%] Building CXX object external/abseil-cpp/absl/hash/CMakeFiles/absl_hash.dir/internal/hash.cc.o
+[ 26%] Linking CXX static library libabsl_hash.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 26%] Built target absl_hash
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_cord
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 26%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_cord.dir/cord.cc.o
+[ 26%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_cord.dir/internal/cord_internal.cc.o
+[ 26%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_cord.dir/internal/cord_rep_ring.cc.o
+[ 26%] Linking CXX static library libabsl_cord.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 26%] Built target absl_cord
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target aiff
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 26%] Building C object external/st_audiofile/thirdparty/libaiff/CMakeFiles/aiff.dir/libaiff.all.c.o
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/external/st_audiofile/thirdparty/libaiff/libaiff.all.c:7:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/external/st_audiofile/thirdparty/libaiff/float32.c: In function ‘float32_swap_samples’:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/external/st_audiofile/thirdparty/libaiff/float32.c:130:2: warning: passing argument 1 to restrict-qualified parameter aliases with argument 2 [-Wrestrict]
+  lpcm_swap32(buffer, buffer, n);
+  ^~~~~~~~~~~
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/external/st_audiofile/thirdparty/libaiff/libaiff.all.c:6:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/external/st_audiofile/thirdparty/libaiff/g711.c: In function ‘g711_write_lpcm’:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/external/st_audiofile/thirdparty/libaiff/g711.c:278:28: warning: ‘f’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                 outb[i] = (*f)(inb[i]);
+                           ~^~~~~~~~~~~
+[ 26%] Linking C static library libaiff.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 26%] Built target aiff
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target st_audiofile_formats
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 26%] Building C object external/st_audiofile/CMakeFiles/st_audiofile_formats.dir/src/st_audiofile_libs.c.o
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/external/st_audiofile/src/st_audiofile_libs.h:16,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/external/st_audiofile/src/st_audiofile_libs.c:11:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/external/st_audiofile/thirdparty/stb_vorbis/stb_vorbis.c: In function ‘do_floor’:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/external/st_audiofile/thirdparty/stb_vorbis/stb_vorbis.c:3058:95: warning: unused parameter ‘step2_flag’ [-Wunused-parameter]
+ static int do_floor(vorb *f, Mapping *map, int i, int n, float *target, YTYPE *finalY, uint8 *step2_flag)
+                                                                                        ~~~~~~~^~~~~~~~~~
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/external/st_audiofile/thirdparty/stb_vorbis/stb_vorbis.c: In function ‘vorbis_decode_packet_rest’:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/external/st_audiofile/thirdparty/stb_vorbis/stb_vorbis.c:3165:86: warning: unused parameter ‘left_end’ [-Wunused-parameter]
+ static int vorbis_decode_packet_rest(vorb *f, int *len, Mode *m, int left_start, int left_end, int right_start, int right_end, int *p_left)
+                                                                                  ~~~~^~~~~~~~
+[ 26%] Linking C static library libst_audiofile_formats.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 26%] Built target st_audiofile_formats
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target st_audiofile
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 26%] Building C object external/st_audiofile/CMakeFiles/st_audiofile.dir/src/st_audiofile.c.o
+[ 26%] Building C object external/st_audiofile/CMakeFiles/st_audiofile.dir/src/st_audiofile_common.c.o
+[ 26%] Building C object external/st_audiofile/CMakeFiles/st_audiofile.dir/src/st_audiofile_sndfile.c.o
+[ 27%] Linking C static library libst_audiofile.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 27%] Built target st_audiofile
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_parser
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 27%] Building CXX object src/CMakeFiles/sfizz_parser.dir/sfizz/Opcode.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/sfizz_parser.dir/sfizz/Defaults.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/sfizz_parser.dir/sfizz/OpcodeCleanup.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/sfizz_parser.dir/sfizz/parser/Parser.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/sfizz_parser.dir/sfizz/parser/ParserPrivate.cpp.o
+[ 28%] Linking CXX static library libsfizz_parser.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 28%] Built target sfizz_parser
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_messaging
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 28%] Building CXX object src/CMakeFiles/sfizz_messaging.dir/sfizz/Messaging.cpp.o
+[ 28%] Linking CXX static library libsfizz_messaging.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 28%] Built target sfizz_messaging
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_internal
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 28%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/Synth.cpp.o
+[ 28%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/FileId.cpp.o
+[ 29%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/FilePool.cpp.o
+[ 29%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/FileMetadata.cpp.o
+[ 29%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/AudioReader.cpp.o
+[ 29%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/FilterPool.cpp.o
+[ 29%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/EQPool.cpp.o
+[ 30%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/Region.cpp.o
+[ 30%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/Voice.cpp.o
+[ 30%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/ScopedFTZ.cpp.o
+[ 30%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/MidiState.cpp.o
+[ 30%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/Oversampler.cpp.o
+[ 31%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/ADSREnvelope.cpp.o
+[ 31%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/Logger.cpp.o
+[ 31%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/SfzFilter.cpp.o
+[ 31%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/Curve.cpp.o
+[ 31%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/Smoothers.cpp.o
+[ 32%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/Wavetables.cpp.o
+[ 32%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/Tuning.cpp.o
+[ 32%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/RegionSet.cpp.o
+[ 32%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/PolyphonyGroup.cpp.o
+[ 32%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/VoiceManager.cpp.o
+[ 34%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/VoiceStealing.cpp.o
+[ 34%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/RTSemaphore.cpp.o
+[ 34%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/Panning.cpp.o
+[ 34%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/Effects.cpp.o
+[ 34%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/LFO.cpp.o
+[ 35%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/LFODescription.cpp.o
+[ 35%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/PowerFollower.cpp.o
+[ 35%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/FlexEGDescription.cpp.o
+[ 35%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/FlexEnvelope.cpp.o
+[ 35%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/BeatClock.cpp.o
+[ 35%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/Metronome.cpp.o
+[ 36%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/SynthMessaging.cpp.o
+[ 36%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/WindowedSinc.cpp.o
+[ 36%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/Interpolators.cpp.o
+[ 36%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/Layer.cpp.o
+[ 36%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/modulations/ModId.cpp.o
+[ 37%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/modulations/ModKey.cpp.o
+[ 37%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/modulations/ModKeyHash.cpp.o
+[ 37%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/modulations/ModMatrix.cpp.o
+[ 37%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/modulations/sources/ADSREnvelope.cpp.o
+[ 37%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/modulations/sources/ChannelAftertouch.cpp.o
+[ 38%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/modulations/sources/PolyAftertouch.cpp.o
+[ 38%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/modulations/sources/Controller.cpp.o
+[ 38%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/modulations/sources/FlexEnvelope.cpp.o
+[ 38%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/modulations/sources/LFO.cpp.o
+[ 38%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/effects/Nothing.cpp.o
+[ 39%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/effects/Filter.cpp.o
+[ 39%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/effects/Eq.cpp.o
+[ 39%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/effects/Apan.cpp.o
+[ 39%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/effects/Lofi.cpp.o
+[ 39%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/effects/Limiter.cpp.o
+[ 40%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/effects/Compressor.cpp.o
+[ 40%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/effects/Gate.cpp.o
+[ 40%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/effects/Disto.cpp.o
+[ 40%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/effects/Strings.cpp.o
+[ 40%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/effects/Fverb.cpp.o
+[ 41%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/effects/Rectify.cpp.o
+[ 41%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/effects/Gain.cpp.o
+[ 41%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/effects/Width.cpp.o
+[ 41%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/effects/impl/ResonantString.cpp.o
+[ 41%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/effects/impl/ResonantStringSSE.cpp.o
+[ 42%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/effects/impl/ResonantStringAVX.cpp.o
+[ 42%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/effects/impl/ResonantArray.cpp.o
+[ 42%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/effects/impl/ResonantArraySSE.cpp.o
+[ 42%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/effects/impl/ResonantArrayAVX.cpp.o
+[ 42%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/SIMDHelpers.cpp.o
+[ 43%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/simd/HelpersNEON.cpp.o
+[ 43%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/simd/HelpersSSE.cpp.o
+[ 43%] Building CXX object src/CMakeFiles/sfizz_internal.dir/sfizz/simd/HelpersAVX.cpp.o
+[ 43%] Linking CXX static library libsfizz_internal.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 43%] Built target sfizz_internal
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_static
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 43%] Building CXX object src/CMakeFiles/sfizz_static.dir/sfizz/sfizz_wrapper.cpp.o
+[ 43%] Building CXX object src/CMakeFiles/sfizz_static.dir/sfizz/sfizz.cpp.o
+[ 43%] Linking CXX static library libsfizz.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 43%] Built target sfizz_static
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_import
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 43%] Building CXX object src/CMakeFiles/sfizz_import.dir/sfizz/import/ForeignInstrument.cpp.o
+[ 45%] Building CXX object src/CMakeFiles/sfizz_import.dir/sfizz/import/foreign_instruments/AudioFile.cpp.o
+[ 45%] Building CXX object src/CMakeFiles/sfizz_import.dir/sfizz/import/foreign_instruments/DecentSampler.cpp.o
+[ 45%] Linking CXX static library libsfizz_import.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 45%] Built target sfizz_import
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_shared
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 45%] Building CXX object src/CMakeFiles/sfizz_shared.dir/sfizz/sfizz_wrapper.cpp.o
+[ 46%] Building CXX object src/CMakeFiles/sfizz_shared.dir/sfizz/sfizz.cpp.o
+[ 46%] Linking CXX shared library libsfizz.so
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 46%] Built target sfizz_shared
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_match_definitions
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 47%] Building CXX object src/CMakeFiles/sfizz_match_definitions.dir/sfizz_match_definitions.cpp.o
+[ 47%] Linking CXX static library libsfizz_match_definitions.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 47%] Built target sfizz_match_definitions
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_render
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 47%] Building CXX object clients/CMakeFiles/sfizz_render.dir/sfizz_render.cpp.o
+[ 47%] Linking CXX executable sfizz_render
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 47%] Built target sfizz_render
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_flags_commandlineflag_internal
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 47%] Building CXX object external/abseil-cpp/absl/flags/CMakeFiles/absl_flags_commandlineflag_internal.dir/internal/commandlineflag.cc.o
+[ 47%] Linking CXX static library libabsl_flags_commandlineflag_internal.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 47%] Built target absl_flags_commandlineflag_internal
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_flags_commandlineflag
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 47%] Building CXX object external/abseil-cpp/absl/flags/CMakeFiles/absl_flags_commandlineflag.dir/commandlineflag.cc.o
+[ 48%] Linking CXX static library libabsl_flags_commandlineflag.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 48%] Built target absl_flags_commandlineflag
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_str_format_internal
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 48%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_str_format_internal.dir/internal/str_format/arg.cc.o
+[ 49%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_str_format_internal.dir/internal/str_format/bind.cc.o
+[ 49%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_str_format_internal.dir/internal/str_format/extension.cc.o
+[ 49%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_str_format_internal.dir/internal/str_format/float_conversion.cc.o
+[ 49%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_str_format_internal.dir/internal/str_format/output.cc.o
+[ 49%] Building CXX object external/abseil-cpp/absl/strings/CMakeFiles/absl_str_format_internal.dir/internal/str_format/parser.cc.o
+[ 50%] Linking CXX static library libabsl_str_format_internal.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 50%] Built target absl_str_format_internal
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_flags_marshalling
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 50%] Building CXX object external/abseil-cpp/absl/flags/CMakeFiles/absl_flags_marshalling.dir/marshalling.cc.o
+[ 50%] Linking CXX static library libabsl_flags_marshalling.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 50%] Built target absl_flags_marshalling
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_flags_program_name
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 50%] Building CXX object external/abseil-cpp/absl/flags/CMakeFiles/absl_flags_program_name.dir/internal/program_name.cc.o
+[ 50%] Linking CXX static library libabsl_flags_program_name.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 50%] Built target absl_flags_program_name
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_flags_config
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 50%] Building CXX object external/abseil-cpp/absl/flags/CMakeFiles/absl_flags_config.dir/usage_config.cc.o
+[ 50%] Linking CXX static library libabsl_flags_config.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 50%] Built target absl_flags_config
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_flags_internal
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 51%] Building CXX object external/abseil-cpp/absl/flags/CMakeFiles/absl_flags_internal.dir/internal/flag.cc.o
+[ 51%] Linking CXX static library libabsl_flags_internal.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 51%] Built target absl_flags_internal
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_flags_private_handle_accessor
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 51%] Building CXX object external/abseil-cpp/absl/flags/CMakeFiles/absl_flags_private_handle_accessor.dir/internal/private_handle_accessor.cc.o
+[ 51%] Linking CXX static library libabsl_flags_private_handle_accessor.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 51%] Built target absl_flags_private_handle_accessor
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_flags_reflection
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 52%] Building CXX object external/abseil-cpp/absl/flags/CMakeFiles/absl_flags_reflection.dir/reflection.cc.o
+[ 52%] Linking CXX static library libabsl_flags_reflection.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 52%] Built target absl_flags_reflection
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_flags
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 52%] Building CXX object external/abseil-cpp/absl/flags/CMakeFiles/absl_flags.dir/flag.cc.o
+[ 52%] Linking CXX static library libabsl_flags.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 52%] Built target absl_flags
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_flags_usage_internal
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 52%] Building CXX object external/abseil-cpp/absl/flags/CMakeFiles/absl_flags_usage_internal.dir/internal/usage.cc.o
+[ 53%] Linking CXX static library libabsl_flags_usage_internal.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 53%] Built target absl_flags_usage_internal
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_flags_usage
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 53%] Building CXX object external/abseil-cpp/absl/flags/CMakeFiles/absl_flags_usage.dir/usage.cc.o
+[ 53%] Linking CXX static library libabsl_flags_usage.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 53%] Built target absl_flags_usage
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target absl_flags_parse
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 53%] Building CXX object external/abseil-cpp/absl/flags/CMakeFiles/absl_flags_parse.dir/parse.cc.o
+[ 54%] Linking CXX static library libabsl_flags_parse.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 54%] Built target absl_flags_parse
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_jack
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 54%] Building CXX object clients/CMakeFiles/sfizz_jack.dir/jack_client.cpp.o
+[ 56%] Linking CXX executable sfizz_jack
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 56%] Built target sfizz_jack
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target layout-maker
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 56%] Building CXX object plugins/editor/CMakeFiles/layout-maker.dir/tools/layout-maker/sources/reader.cpp.o
+[ 56%] Building CXX object plugins/editor/CMakeFiles/layout-maker.dir/tools/layout-maker/sources/main.cpp.o
+[ 57%] Linking CXX executable layout-maker
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 57%] Built target layout-maker
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_lv2_ui_editor_resources
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 57%] Generating ../../sfizz.lv2/Contents/Resources/logo.png
+[ 57%] Generating ../../sfizz.lv2/Contents/Resources/logo_orange.png
+[ 57%] Generating ../../sfizz.lv2/Contents/Resources/logo_text.png
+[ 57%] Generating ../../sfizz.lv2/Contents/Resources/logo_text_white.png
+[ 58%] Generating ../../sfizz.lv2/Contents/Resources/logo_text_shaded.png
+[ 58%] Generating ../../sfizz.lv2/Contents/Resources/logo_text@2x.png
+[ 58%] Generating ../../sfizz.lv2/Contents/Resources/logo_text_white@2x.png
+[ 58%] Generating ../../sfizz.lv2/Contents/Resources/logo_text_shaded@2x.png
+[ 58%] Generating ../../sfizz.lv2/Contents/Resources/background.png
+[ 59%] Generating ../../sfizz.lv2/Contents/Resources/background@2x.png
+[ 59%] Generating ../../sfizz.lv2/Contents/Resources/icon_white.png
+[ 59%] Generating ../../sfizz.lv2/Contents/Resources/icon_white@2x.png
+[ 59%] Generating ../../sfizz.lv2/Contents/Resources/knob48.png
+[ 59%] Generating ../../sfizz.lv2/Contents/Resources/knob48@2x.png
+[ 60%] Generating ../../sfizz.lv2/Contents/Resources/Fonts/sfizz-fluentui-system-r20.ttf
+[ 60%] Generating ../../sfizz.lv2/Contents/Resources/Fonts/sfizz-fluentui-system-f20.ttf
+[ 60%] Generating ../../sfizz.lv2/Contents/Resources/Fonts/sfizz-misc-icons.ttf
+[ 60%] Generating ../../sfizz.lv2/Contents/Resources/Fonts/Roboto-Regular.ttf
+[ 60%] Generating ../../sfizz.lv2/Contents/Resources/Themes/Default/theme.xml
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 60%] Built target sfizz_lv2_ui_editor_resources
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target plugins-common
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 60%] Building CXX object plugins/CMakeFiles/plugins-common.dir/common/plugin/MessageUtils.cpp.o
+[ 60%] Building CXX object plugins/CMakeFiles/plugins-common.dir/common/plugin/InstrumentDescription.cpp.o
+[ 60%] Building CXX object plugins/CMakeFiles/plugins-common.dir/common/plugin/NativeHelpers.cpp.o
+[ 60%] Building CXX object plugins/CMakeFiles/plugins-common.dir/common/plugin/SfizzFileScan.cpp.o
+[ 61%] Building CXX object plugins/CMakeFiles/plugins-common.dir/common/plugin/FileTrie.cpp.o
+[ 61%] Building CXX object plugins/CMakeFiles/plugins-common.dir/common/plugin/SfizzForeignPaths.cpp.o
+[ 61%] Building CXX object plugins/CMakeFiles/plugins-common.dir/common/plugin/SfizzSettings.cpp.o
+[ 61%] Linking CXX static library libplugins-common.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 61%] Built target plugins-common
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_editor_git_build_id
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+(Git Build ID) Generating GitBuildId.c
+fatal: not a git repository (or any of the parent directories): .git
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 61%] Built target sfizz_editor_git_build_id
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_vstgui
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 61%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/animation/animations.cpp.o
+[ 61%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/animation/animator.cpp.o
+[ 61%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/animation/timingfunctions.cpp.o
+[ 61%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/cautoanimation.cpp.o
+[ 62%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/cbuttons.cpp.o
+[ 62%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/ccolorchooser.cpp.o
+[ 62%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/ccontrol.cpp.o
+[ 62%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/cfontchooser.cpp.o
+[ 62%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/cknob.cpp.o
+[ 63%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/clistcontrol.cpp.o
+[ 63%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/cmoviebitmap.cpp.o
+[ 63%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/cmoviebutton.cpp.o
+[ 63%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/coptionmenu.cpp.o
+[ 63%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/cparamdisplay.cpp.o
+[ 64%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/cscrollbar.cpp.o
+[ 64%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/csearchtextedit.cpp.o
+[ 64%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/csegmentbutton.cpp.o
+[ 64%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/cslider.cpp.o
+[ 64%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/cspecialdigit.cpp.o
+[ 65%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/csplashscreen.cpp.o
+[ 65%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/cstringlist.cpp.o
+[ 65%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/cswitch.cpp.o
+[ 65%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/ctextedit.cpp.o
+[ 65%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/ctextlabel.cpp.o
+[ 67%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/cvumeter.cpp.o
+[ 67%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/controls/cxypad.cpp.o
+[ 67%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/platform/platformfactory.cpp.o
+[ 67%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/platform/common/fileresourceinputstream.cpp.o
+[ 67%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/platform/common/genericoptionmenu.cpp.o
+[ 68%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/platform/common/generictextedit.cpp.o
+[ 68%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/cbitmap.cpp.o
+[ 68%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/cbitmapfilter.cpp.o
+[ 68%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/ccolor.cpp.o
+[ 68%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/cdatabrowser.cpp.o
+[ 69%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/cdrawcontext.cpp.o
+[ 69%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/cdrawmethods.cpp.o
+[ 69%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/cdropsource.cpp.o
+[ 69%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/cfileselector.cpp.o
+[ 69%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/cfont.cpp.o
+[ 70%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/cframe.cpp.o
+[ 70%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/cgradientview.cpp.o
+[ 70%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/cgraphicspath.cpp.o
+[ 70%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/clayeredviewcontainer.cpp.o
+[ 70%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/clinestyle.cpp.o
+[ 71%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/coffscreencontext.cpp.o
+[ 71%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/copenglview.cpp.o
+[ 71%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/cpoint.cpp.o
+[ 71%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/crect.cpp.o
+[ 71%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/crowcolumnview.cpp.o
+[ 72%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/cscrollview.cpp.o
+[ 72%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/cshadowviewcontainer.cpp.o
+[ 72%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/csplitview.cpp.o
+[ 72%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/cstring.cpp.o
+[ 72%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/ctabview.cpp.o
+[ 73%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/ctooltipsupport.cpp.o
+[ 73%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/cview.cpp.o
+[ 73%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/cviewcontainer.cpp.o
+[ 73%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/cvstguitimer.cpp.o
+[ 73%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/genericstringlistdatabrowsersource.cpp.o
+[ 74%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/pixelbuffer.cpp.o
+[ 74%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/vstguidebug.cpp.o
+[ 74%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/vstguiinit.cpp.o
+[ 74%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/platform/linux/cairobitmap.cpp.o
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/external/vstgui4/vstgui/lib/platform/linux/cairobitmap.cpp:222:2: warning: #warning TODO: alphaPremultiplied is currently ignored, always treated as true [-Wcpp]
+ #warning TODO: alphaPremultiplied is currently ignored, always treated as true
+  ^~~~~~~
+cc1plus: warning: unrecognized command line option ‘-Wno-deprecated-copy’
+[ 74%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/platform/linux/cairocontext.cpp.o
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/external/vstgui4/vstgui/lib/platform/linux/cairocontext.cpp:449:2: warning: #warning TODO: Implementation [-Wcpp]
+ #warning TODO: Implementation
+  ^~~~~~~
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/external/vstgui4/vstgui/lib/platform/linux/cairocontext.cpp:534:2: warning: #warning TODO: Implementation [-Wcpp]
+ #warning TODO: Implementation
+  ^~~~~~~
+cc1plus: warning: unrecognized command line option ‘-Wno-deprecated-copy’
+[ 75%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/platform/linux/cairofont.cpp.o
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/external/vstgui4/vstgui/lib/platform/linux/cairofont.cpp:213:2: warning: #warning TODO: Implementation [-Wcpp]
+ #warning TODO: Implementation
+  ^~~~~~~
+cc1plus: warning: unrecognized command line option ‘-Wno-deprecated-copy’
+[ 75%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/platform/linux/cairogradient.cpp.o
+[ 75%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/platform/linux/cairopath.cpp.o
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/external/vstgui4/vstgui/lib/platform/linux/cairopath.cpp:33:2: warning: #warning TODO: Implementation (use cairo_in_fill) [-Wcpp]
+ #warning TODO: Implementation (use cairo_in_fill)
+  ^~~~~~~
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/external/vstgui4/vstgui/lib/platform/linux/cairopath.cpp:152:2: warning: #warning TODO: Implementation Element::Type::kEllipse [-Wcpp]
+ #warning TODO: Implementation Element::Type::kEllipse
+  ^~~~~~~
+cc1plus: warning: unrecognized command line option ‘-Wno-deprecated-copy’
+[ 75%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/platform/linux/linuxfactory.cpp.o
+[ 75%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/platform/linux/linuxstring.cpp.o
+[ 76%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/platform/linux/x11dragging.cpp.o
+[ 76%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/platform/linux/x11fileselector.cpp.o
+[ 76%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/platform/linux/x11frame.cpp.o
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/external/vstgui4/vstgui/lib/platform/linux/x11frame.cpp:673:2: warning: #warning TODO: Implementation [-Wcpp]
+ #warning TODO: Implementation
+  ^~~~~~~
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/external/vstgui4/vstgui/lib/platform/linux/x11frame.cpp:680:2: warning: #warning TODO: Implementation [-Wcpp]
+ #warning TODO: Implementation
+  ^~~~~~~
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/external/vstgui4/vstgui/lib/platform/linux/x11frame.cpp:718:2: warning: #warning TODO: Implementation [-Wcpp]
+ #warning TODO: Implementation
+  ^~~~~~~
+cc1plus: warning: unrecognized command line option ‘-Wno-deprecated-copy’
+[ 76%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/platform/linux/x11platform.cpp.o
+[ 76%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/platform/linux/x11timer.cpp.o
+[ 78%] Building CXX object plugins/editor/CMakeFiles/sfizz_vstgui.dir/external/vstgui4/vstgui/lib/platform/linux/x11utils.cpp.o
+[ 78%] Linking CXX static library libsfizz_vstgui.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 78%] Built target sfizz_vstgui
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 79%] Generating ../../../plugins/editor/src/editor/layout/about.hpp
+[ 79%] Generating ../../../plugins/editor/src/editor/layout/main.hpp
+Scanning dependencies of target sfizz_editor
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 79%] Building CXX object plugins/editor/CMakeFiles/sfizz_editor.dir/src/editor/EditIds.cpp.o
+[ 79%] Building CXX object plugins/editor/CMakeFiles/sfizz_editor.dir/src/editor/Editor.cpp.o
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/Editor.h:12,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/Editor.cpp:7:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/GUIComponents.h:13,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/Editor.cpp:10:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/GUIHelpers.h:8,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/Editor.cpp:11:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/GUIPiano.h:8,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/Editor.cpp:12:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/DlgAbout.h:8,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/Editor.cpp:13:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/ImageHelpers.h:10,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/Editor.cpp:14:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/Theme.h:8,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/Editor.cpp:18:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/Editor.cpp:38:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+[ 79%] Building CXX object plugins/editor/CMakeFiles/sfizz_editor.dir/src/editor/EditorLibs.cpp.o
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/EditorLibs.h:8,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/EditorLibs.cpp:8:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/external/stb_image/stb_image.h: In function ‘int stbi__zhuffman_decode_slowpath(stbi__zbuf*, stbi__zhuffman*)’:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/external/stb_image/stb_image.h:4123:10: warning: comparison of integer expressions of different signedness: ‘int’ and ‘long unsigned int’ [-Wsign-compare]
+    if (b >= sizeof (z->size)) return -1; // some data was corrupt somewhere!
+        ~~^~~~~~~~~~~~~~~~~~~
+[ 79%] Building CXX object plugins/editor/CMakeFiles/sfizz_editor.dir/src/editor/GUIComponents.cpp.o
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/GUIComponents.h:13,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/GUIComponents.cpp:7:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/ColorHelpers.h:8,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/GUIComponents.cpp:8:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/GUIComponents.cpp:12:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+[ 80%] Building CXX object plugins/editor/CMakeFiles/sfizz_editor.dir/src/editor/GUIHelpers.cpp.o
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/GUIHelpers.h:8,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/GUIHelpers.cpp:7:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+[ 80%] Building CXX object plugins/editor/CMakeFiles/sfizz_editor.dir/src/editor/GUIPiano.cpp.o
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/GUIPiano.h:8,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/GUIPiano.cpp:7:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/ColorHelpers.h:8,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/GUIPiano.cpp:8:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/GUIPiano.cpp:9:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+[ 80%] Building CXX object plugins/editor/CMakeFiles/sfizz_editor.dir/src/editor/DlgAbout.cpp.o
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/DlgAbout.h:8,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/DlgAbout.cpp:7:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/GUIComponents.h:13,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/DlgAbout.cpp:8:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/DlgAbout.cpp:12:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+[ 80%] Building CXX object plugins/editor/CMakeFiles/sfizz_editor.dir/src/editor/Theme.cpp.o
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/Theme.h:8,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/Theme.cpp:7:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/ColorHelpers.h:8,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/Theme.cpp:8:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+[ 80%] Building CXX object plugins/editor/CMakeFiles/sfizz_editor.dir/src/editor/ColorHelpers.cpp.o
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/ColorHelpers.h:8,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/ColorHelpers.cpp:7:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+[ 81%] Building CXX object plugins/editor/CMakeFiles/sfizz_editor.dir/src/editor/ImageHelpers.cpp.o
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/ImageHelpers.h:10,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/ImageHelpers.cpp:7:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+[ 81%] Building CXX object plugins/editor/CMakeFiles/sfizz_editor.dir/src/editor/NativeHelpers.cpp.o
+[ 81%] Building CXX object plugins/editor/CMakeFiles/sfizz_editor.dir/src/editor/VSTGUIHelpers.cpp.o
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/VSTGUIHelpers.cpp:8:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+[ 81%] Building C object plugins/editor/CMakeFiles/sfizz_editor.dir/git-build-id/GitBuildId.c.o
+[ 81%] Linking CXX static library libsfizz_editor.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 81%] Built target sfizz_editor
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_lv2_ui
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 81%] Building CXX object plugins/lv2/CMakeFiles/sfizz_lv2_ui.dir/sfizz_ui.cpp.o
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/Editor.h:12,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/lv2/sfizz_ui.cpp:37:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/lv2/vstgui_helpers.h:13,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/lv2/sfizz_ui.cpp:55:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/lv2/sfizz_ui.cpp:57:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+[ 81%] Building CXX object plugins/lv2/CMakeFiles/sfizz_lv2_ui.dir/sfizz_lv2_common.cpp.o
+[ 81%] Building CXX object plugins/lv2/CMakeFiles/sfizz_lv2_ui.dir/vstgui_helpers.cpp.o
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/lv2/vstgui_helpers.h:13,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/lv2/vstgui_helpers.cpp:9:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+[ 82%] Linking CXX shared module ../../sfizz.lv2/Contents/Binary/sfizz_ui.so
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 82%] Built target sfizz_lv2_ui
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_lv2
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 82%] Building CXX object plugins/lv2/CMakeFiles/sfizz_lv2.dir/sfizz.cpp.o
+[ 83%] Building CXX object plugins/lv2/CMakeFiles/sfizz_lv2.dir/sfizz_lv2_common.cpp.o
+[ 83%] Linking CXX shared module ../../sfizz.lv2/Contents/Binary/sfizz.so
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 83%] Built target sfizz_lv2
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz-ring-buffer
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 83%] Building CXX object plugins/vst/CMakeFiles/sfizz-ring-buffer.dir/external/ring_buffer/ring_buffer/ring_buffer.cpp.o
+[ 84%] Linking CXX static library libsfizz-ring-buffer.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 84%] Built target sfizz-ring-buffer
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target vst3sdk
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 85%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/base/source/baseiids.cpp.o
+[ 85%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/base/source/fbuffer.cpp.o
+[ 85%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/base/source/fdebug.cpp.o
+[ 85%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/base/source/fdynlib.cpp.o
+[ 85%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/base/source/fobject.cpp.o
+[ 86%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/base/source/fstreamer.cpp.o
+[ 86%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/base/source/fstring.cpp.o
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/vst/external/VST_SDK/VST3_SDK/base/source/fstring.cpp:291:2: warning: #warning DEPRECATED No Linux implementation [-Wcpp]
+ #warning DEPRECATED No Linux implementation
+  ^~~~~~~
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/vst/external/VST_SDK/VST3_SDK/base/source/fstring.cpp:315:2: warning: #warning DEPRECATED No Linux implementation [-Wcpp]
+ #warning DEPRECATED No Linux implementation
+  ^~~~~~~
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/vst/external/VST_SDK/VST3_SDK/base/source/fstring.cpp:1590:3: warning: #warning DEPRECATED No Linux implementation [-Wcpp]
+  #warning DEPRECATED No Linux implementation
+   ^~~~~~~
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/vst/external/VST_SDK/VST3_SDK/base/source/fstring.cpp:1619:3: warning: #warning DEPRECATED No Linux implementation [-Wcpp]
+  #warning DEPRECATED No Linux implementation
+   ^~~~~~~
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/vst/external/VST_SDK/VST3_SDK/base/source/fstring.cpp:1918:2: warning: #warning DEPRECATED No Linux implementation [-Wcpp]
+ #warning DEPRECATED No Linux implementation
+  ^~~~~~~
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/vst/external/VST_SDK/VST3_SDK/base/source/fstring.cpp:1999:2: warning: #warning DEPRECATED No Linux implementation [-Wcpp]
+ #warning DEPRECATED No Linux implementation
+  ^~~~~~~
+[ 86%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/base/source/timer.cpp.o
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/vst/external/VST_SDK/VST3_SDK/base/source/timer.cpp:365:2: warning: #warning DEPRECATED No Linux implementation [-Wcpp]
+ #warning DEPRECATED No Linux implementation
+  ^~~~~~~
+[ 86%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/base/source/updatehandler.cpp.o
+[ 86%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/base/thread/source/fcondition.cpp.o
+[ 87%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/base/thread/source/flock.cpp.o
+[ 87%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/pluginterfaces/base/conststringtable.cpp.o
+[ 87%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/pluginterfaces/base/coreiids.cpp.o
+[ 87%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/pluginterfaces/base/funknown.cpp.o
+[ 87%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/pluginterfaces/base/ustring.cpp.o
+[ 89%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/public.sdk/source/common/commoniids.cpp.o
+[ 89%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/public.sdk/source/common/memorystream.cpp.o
+[ 89%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/public.sdk/source/common/pluginview.cpp.o
+[ 89%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/public.sdk/source/main/pluginfactory.cpp.o
+[ 89%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/public.sdk/source/vst/vstaudioeffect.cpp.o
+[ 90%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/public.sdk/source/vst/vstbus.cpp.o
+[ 90%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/public.sdk/source/vst/vstcomponent.cpp.o
+[ 90%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/public.sdk/source/vst/vstcomponentbase.cpp.o
+[ 90%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/public.sdk/source/vst/vsteditcontroller.cpp.o
+[ 90%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/public.sdk/source/vst/vstinitiids.cpp.o
+[ 91%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/public.sdk/source/vst/vstnoteexpressiontypes.cpp.o
+[ 91%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/public.sdk/source/vst/vstparameters.cpp.o
+[ 91%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/public.sdk/source/vst/vstpresetfile.cpp.o
+[ 91%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/public.sdk/source/vst/vstrepresentation.cpp.o
+[ 91%] Building CXX object plugins/vst/CMakeFiles/vst3sdk.dir/external/VST_SDK/VST3_SDK/public.sdk/source/common/threadchecker_linux.cpp.o
+[ 92%] Linking CXX static library libvst3sdk.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 92%] Built target vst3sdk
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target vst3sdk_vstgui
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 92%] Building CXX object plugins/vst/CMakeFiles/vst3sdk_vstgui.dir/external/VST_SDK/VST3_SDK/public.sdk/source/vst/vstguieditor.cpp.o
+[ 93%] Linking CXX static library libvst3sdk_vstgui.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 93%] Built target vst3sdk_vstgui
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz-vst3-core
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 93%] Building CXX object plugins/vst/CMakeFiles/sfizz-vst3-core.dir/SfizzVstProcessor.cpp.o
+[ 93%] Building CXX object plugins/vst/CMakeFiles/sfizz-vst3-core.dir/SfizzVstController.cpp.o
+[ 93%] Building CXX object plugins/vst/CMakeFiles/sfizz-vst3-core.dir/SfizzVstEditor.cpp.o
+In file included from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/Editor.h:12,
+                 from /home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/vst/SfizzVstEditor.cpp:11:
+/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/editor/src/editor/utility/vstgui_before.h:11:32: warning: unknown option after ‘#pragma GCC diagnostic’ kind [-Wpragmas]
+ #pragma GCC diagnostic ignored "-Wdeprecated-copy"
+                                ^~~~~~~~~~~~~~~~~~~
+[ 93%] Building CXX object plugins/vst/CMakeFiles/sfizz-vst3-core.dir/SfizzVstState.cpp.o
+[ 94%] Building CXX object plugins/vst/CMakeFiles/sfizz-vst3-core.dir/SfizzVstUpdates.cpp.o
+[ 94%] Building CXX object plugins/vst/CMakeFiles/sfizz-vst3-core.dir/X11RunLoop.cpp.o
+[ 94%] Linking CXX static library libsfizz-vst3-core.a
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 94%] Built target sfizz-vst3-core
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_vst3_editor_resources
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 94%] Generating ../../sfizz.vst3/Contents/Resources/logo.png
+[ 94%] Generating ../../sfizz.vst3/Contents/Resources/logo_orange.png
+[ 94%] Generating ../../sfizz.vst3/Contents/Resources/logo_text.png
+[ 95%] Generating ../../sfizz.vst3/Contents/Resources/logo_text_white.png
+[ 95%] Generating ../../sfizz.vst3/Contents/Resources/logo_text_shaded.png
+[ 95%] Generating ../../sfizz.vst3/Contents/Resources/logo_text@2x.png
+[ 95%] Generating ../../sfizz.vst3/Contents/Resources/logo_text_white@2x.png
+[ 95%] Generating ../../sfizz.vst3/Contents/Resources/logo_text_shaded@2x.png
+[ 96%] Generating ../../sfizz.vst3/Contents/Resources/background.png
+[ 96%] Generating ../../sfizz.vst3/Contents/Resources/background@2x.png
+[ 96%] Generating ../../sfizz.vst3/Contents/Resources/icon_white.png
+[ 96%] Generating ../../sfizz.vst3/Contents/Resources/icon_white@2x.png
+[ 96%] Generating ../../sfizz.vst3/Contents/Resources/knob48.png
+[ 97%] Generating ../../sfizz.vst3/Contents/Resources/knob48@2x.png
+[ 97%] Generating ../../sfizz.vst3/Contents/Resources/Fonts/sfizz-fluentui-system-r20.ttf
+[ 97%] Generating ../../sfizz.vst3/Contents/Resources/Fonts/sfizz-fluentui-system-f20.ttf
+[ 97%] Generating ../../sfizz.vst3/Contents/Resources/Fonts/sfizz-misc-icons.ttf
+[ 97%] Generating ../../sfizz.vst3/Contents/Resources/Fonts/Roboto-Regular.ttf
+[ 98%] Generating ../../sfizz.vst3/Contents/Resources/Themes/Default/theme.xml
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 98%] Built target sfizz_vst3_editor_resources
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Scanning dependencies of target sfizz_vst3
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[3]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[ 98%] Building CXX object plugins/vst/CMakeFiles/sfizz_vst3.dir/VstPluginFactory.cpp.o
+[ 98%] Building CXX object plugins/vst/CMakeFiles/sfizz_vst3.dir/external/VST_SDK/VST3_SDK/public.sdk/source/main/moduleinit.cpp.o
+[ 98%] Building CXX object plugins/vst/CMakeFiles/sfizz_vst3.dir/external/VST_SDK/VST3_SDK/public.sdk/source/main/pluginfactory.cpp.o
+[100%] Building CXX object plugins/vst/CMakeFiles/sfizz_vst3.dir/external/VST_SDK/VST3_SDK/public.sdk/source/main/linuxmain.cpp.o
+[100%] Linking CXX shared module ../../sfizz.vst3/Contents/x86_64-linux/sfizz.so
+make[3]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+[100%] Built target sfizz_vst3
+make[2]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make[1]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+# --- end custom part for compiling
+touch build-stamp
+ fakeroot debian/rules binary
+dh_testdir
+dh_testroot
+dh_clean -k
+dh_clean: dh_clean -k is deprecated; use dh_prep instead
+dh_clean: This feature will be removed in compat 12.
+dh_installdirs
+# Add here commands to install the package
+# The DESTDIR Has To Be Exactly  /usr/src/packages/BUILD/debian/<nameOfPackage>
+make -C build install DESTDIR=/usr/src/packages/BUILD/debian/sfizz/
+make[1]: Entering directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+Install the project...
+-- Install configuration: "Release"
+CMake Error at src/cmake_install.cmake:55 (file):
+  file cannot create directory: /usr/src/packages/BUILD/debian/sfizz/usr/lib.
+  Maybe need administrative privileges.
+Call Stack (most recent call first):
+  cmake_install.cmake:42 (include)
+
+
+make[1]: *** [Makefile:95: install] Error 1
+make[1]: Leaving directory '/home/jeb/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build'
+make: *** [debian/rules:51: install] Error 2
+dpkg-buildpackage: error: fakeroot debian/rules binary subprocess returned exit status 2

@@ -1,0 +1,11 @@
+
+Below are the ID numbers representing which history list is to be managed.
+
+0   Instrument History   Individual externally sourced instruments
+1   Patch History        Full instrument patch sets
+2   Scale History        Complete microtonal settings
+3   State History        Entire system state
+4   Vector History       Per channel Vector controls
+5   MidiLearn History    Learned MIDI CC lists
+
+These values have now been superceeded by named constants in globals.h

@@ -1,0 +1,104 @@
+mididings (0~20120419~ds0-7+1bnrcustom) UNRELEASED; urgency=medium
+
+  * 
+  * 
+  * 
+
+ -- Emilio Pozuelo Monfort <jeb@bnr4>  Thu, 29 Jul 2021 21:43:50 -0500
+
+mididings (0~20120419~ds0-6) unstable; urgency=medium
+
+  * QA upload.
+  * Drop build-dependency on python-gobject-dev. It's not needed.
+  * Build-depend on libglib2.0-dev instead.
+
+ -- Emilio Pozuelo Monfort <pochu@debian.org>  Wed, 18 Oct 2017 19:33:52 +0200
+
+mididings (0~20120419~ds0-5) unstable; urgency=medium
+
+  * QA upload
+  * Orphaning this
+
+ -- Alessio Treglia <alessio@debian.org>  Tue, 16 Feb 2016 10:57:42 +0000
+
+mididings (0~20120419~ds0-4) unstable; urgency=medium
+
+  * Team upload.
+  * Add patch to compile with Boost 1.54 (Closes: #733395)
+  * Enable boost_1.54.patch
+  * Build-depend on at least boost-1.54.
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Mon, 24 Feb 2014 11:07:55 +0000
+
+mididings (0~20120419~ds0-3) unstable; urgency=low
+
+  * Enable hardening by bumping DH compat up.
+  * Fix VCS URLs to meet the canonical form.
+  * Depend on python.
+  * Improve debian/watch file to properly mangle dversion.
+  * Bump Standards.
+
+ -- Alessio Treglia <alessio@debian.org>  Tue, 08 Oct 2013 15:20:56 +0100
+
+mididings (0~20120419~ds0-2) unstable; urgency=low
+
+  * Team upload.
+  * debian/patches/time_utc.patch: Fix FTBFS because of the boost::TIME_UTC to
+    boost::TIME_UTC_ name change. (Closes: #710636).
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Fri, 05 Jul 2013 11:41:35 +0200
+
+mididings (0~20120419~ds0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Depends on python-decorator.
+
+ -- Alessio Treglia <alessio@debian.org>  Mon, 23 Apr 2012 01:38:46 +0200
+
+mididings (0~20120312-1) unstable; urgency=low
+
+  * New upstream release:
+    - Added methods apply(), invert() and negate() to filter objects, and
+      made AndSelector and OrSelector public classes. Anything that can be
+      done with funny overloaded operators is now also possible with regular
+      functions and objects.
+    - Added option -n to livedings, based on a patch by AurÃ©lien.
+    - Added SysExEvent() function in mididings.event module.
+    - Added Restart() and Quit() in mididings.extra module.
+    - Fixed PitchbendEvent().
+    - Fixed selector operators & and | for more than two filters.
+    - Print correct note names when using Python 3.
+    - Fixed operator != for comparing MidiEvent objects.
+    - Fixed compilation on OS X, automatically disable ALSA backend on
+      non-Linux platforms.
+    - Extended and reorganized unit tests.
+    - Some documentation cleanup.
+  * Ignor errors on clean to allow building the source package without
+    installing python-gobject-dev.
+  * Refresh debian/copyright.
+  * Bump Standards.
+
+ -- Alessio Treglia <alessio@debian.org>  Wed, 21 Mar 2012 14:00:39 +0100
+
+mididings (0~20101119-2) unstable; urgency=low
+
+  * mididings strictly depends on the current upstream release.
+  * Use dh_installexamples to install example files.
+  * Strip examples from mididings-doc.install file.
+  * Switch to dh_python2.
+
+ -- Alessio Treglia <alessio@debian.org>  Tue, 19 Apr 2011 17:16:07 +0200
+
+mididings (0~20101119-1) unstable; urgency=low
+
+  * Really build with libsmf support.
+  * Imported Upstream version 0~20101119
+  * File in ./doc/examples/ are public domain, as stated in README.
+
+ -- Alessio Treglia <alessio@debian.org>  Sat, 20 Nov 2010 11:13:28 +0100
+
+mididings (0~20100602-1) unstable; urgency=low
+
+  * Initial release. (Closes: #600914)
+
+ -- Alessio Treglia <alessio@debian.org>  Thu, 21 Oct 2010 12:50:41 +0200

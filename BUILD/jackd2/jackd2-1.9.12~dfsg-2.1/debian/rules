@@ -1,0 +1,109 @@
+#!/usr/bin/make -f
+
+# Let's try to cut down noisy symbols to the official API
+export DEB_CFLAGS_MAINT_APPEND = -fvisibility=hidden
+export DEB_CXXFLAGS_MAINT_APPEND = -fvisibility=hidden
+
+# BNR
+export DEB_CFLAGS_MAINT_APPEND += -march=native -mtune=native -O3
+export DEB_CXXFLAGS_MAINT_APPEND += -march=native -mtune=native -O3
+
+-include /usr/share/cdbs/1/rules/upstream-tarball.mk
+-include /usr/share/cdbs/1/rules/utils.mk
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/makefile.mk
+
+# suppress optional build-dependencies
+CDBS_BUILD_DEPENDS_rules_upstream-tarball =
+CDBS_BUILD_DEPENDS_rules_utils_copyright-check =
+
+# Explicitly require these versions until cdbs knows about multiarch
+CDBS_BUILD_DEPENDS += , cdbs (>= 0.4.93~), debhelper (>= 9)
+CDBS_BUILD_DEPENDS_rules_debhelper_buildinfo =
+
+# Set tag to full 40 char git tag for git snapshot release
+tag = $(DEB_UPSTREAM_TARBALL_VERSION)
+DEB_UPSTREAM_URL = https://github.com/jackaudio/jack2/archive
+DEB_UPSTREAM_TARBALL_BASENAME = $(tag)
+DEB_UPSTREAM_TARBALL_SRCDIR = jack2-$(tag)
+
+# unneeded and possibly sourceless binaries
+DEB_UPSTREAM_REPACKAGE_EXCLUDES += *.a *.dll *.Lib
+
+# unneeded sources copyright-protected without licence
+DEB_UPSTREAM_REPACKAGE_EXCLUDES += ./windows/**.rc
+
+# pure garbage in upstream tarball
+DEB_UPSTREAM_REPACKAGE_EXCLUDES += .DS_Store
+
+# Minimum assured version referenced upstream as library API/ABI
+ABI = 0.118.0
+
+WAF_EXTRA_ARGS = $(filter-out -j%,$(DEB_MAKE_EXTRA_ARGS))
+
+waf-configure-options = --prefix=/usr --classic
+waf-configure-options += --libdir=/usr/lib/$(DEB_HOST_MULTIARCH)
+waf-configure-options += $(if $(filter linux,$(DEB_HOST_ARCH_OS)),--alsa --dbus)
+waf-configure-options += $(if $(filter amd64 i386 powerpc,$(DEB_HOST_ARCH)),--firewire)
+
+DEB_MAKE_INVOKE = $(WAF_EXTRA_ARGS) ./waf -v --destdir=$(CURDIR)/debian/tmp
+DEB_MAKE_INSTALL_TARGET = install
+
+# TODO: use distclean and drop related clean target, when (or if)
+# upstream stop shipping waf dir
+DEB_MAKE_CLEAN_TARGET = clean
+clean::
+	rm -f .lock-wscript .lock-waf_linux2_build
+	find waflib -name "*.pyc" -delete || true
+	rm -f man/*.1
+	rm -rf build
+
+DEB_DH_MAKESHLIBS_ARGS = -Xintime -Xinprocess -Xjack_alsa -Xjack_oss -Xjack_dummy -Xjack_firewire
+
+# too noisy symbols, so only watch disappearing ones for now
+DEB_DH_MAKESHLIBS_ARGS += -- -c1
+
+# Generate (and cleanup) files containing variables static per build
+infiles = $(filter-out debian/control.in, $(wildcard debian/*.in))
+outfiles = $(basename $(infiles))
+DEB_PHONY_RULES += $(outfiles)
+pre-build:: $(outfiles)
+$(outfiles): update-config debian/stamp-copyright-check
+	sed 's/__ABI__/$(ABI)/' <$@.in >$@
+clean::
+	rm -f $(outfiles)
+
+common-configure-arch common-configure-indep:: common-configure-impl
+common-configure-impl:: debian/stamp-waf-configure
+debian/stamp-waf-configure:
+	$(WAF_EXTRA_ARGS) ./waf configure $(waf-configure-options) $(DEB_MAKE_PARALLEL)
+	touch $@
+clean::
+	rm -f debian/stamp-waf-configure
+
+install/jackd2::
+ifeq ($(DEB_HOST_ARCH_OS),linux)
+	dh_install -pjackd2 debian/tmp/usr/bin/alsa_in
+	dh_install -pjackd2 debian/tmp/usr/bin/alsa_out
+	dh_install -pjackd2 debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/jack/jack_alsa.so
+	dh_install -pjackd2 debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/jack/jack_alsarawmidi.so
+	dh_install -pjackd2 debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/jack/audioadapter.so
+	dh_install -pjackd2 debian/tmp/usr/share/dbus-1/*
+endif	
+
+binary-install/jackd2::
+	dh_python2 -pjackd2
+
+# TODO: drop libstdc++6 override when bug#374049 closed in stable
+binary-post-install/libjack0::
+	d-devlibdeps \
+		--override s/libjackserver0-dev// \
+		--override s/libffado2-dev/libffado-dev/ \
+		--override s/libcelt0-0-dev/libcelt-dev/ \
+		--override s/libstdc++6-4.1-dev// \
+		debian/libjack-dev.substvars \
+		debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/*.so \
+		debian/tmp/usr/lib/$(DEB_HOST_MULTIARCH)/jack/*.so
+
+#common-binary-post-install-arch::
+#        ln -s jackdmp debian/jackdmp/usr/bin/jackd

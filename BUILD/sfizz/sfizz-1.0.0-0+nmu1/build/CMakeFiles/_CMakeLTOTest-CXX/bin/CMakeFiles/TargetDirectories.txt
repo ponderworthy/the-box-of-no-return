@@ -1,0 +1,4 @@
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/rebuild_cache.dir
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/edit_cache.dir
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/foo.dir
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/build/CMakeFiles/_CMakeLTOTest-CXX/bin/CMakeFiles/boo.dir

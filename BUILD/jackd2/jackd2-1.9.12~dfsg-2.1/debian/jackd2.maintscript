@@ -1,0 +1,1 @@
+rm_conffile /etc/bash_completion.d/jackd 1.9.10+20140719git3eb0ae6a~dfsg-3~

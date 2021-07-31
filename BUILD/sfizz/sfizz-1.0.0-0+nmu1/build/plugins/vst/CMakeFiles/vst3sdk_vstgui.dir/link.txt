@@ -1,0 +1,2 @@
+/usr/bin/ar qc libvst3sdk_vstgui.a  CMakeFiles/vst3sdk_vstgui.dir/external/VST_SDK/VST3_SDK/public.sdk/source/vst/vstguieditor.cpp.o
+/usr/bin/ranlib libvst3sdk_vstgui.a

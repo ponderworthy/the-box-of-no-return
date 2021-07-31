@@ -1,0 +1,4 @@
+debian/tmp/usr/bin/fluidsynth
+debian/tmp/usr/share/man/man1
+./obj-x86_64-linux-gnu/fluidsynth.service
+./obj-x86_64-linux-gnu/fluidsynth.conf

@@ -1,0 +1,13 @@
+[Unit]
+Description=FluidSynth Daemon
+Documentation=man:fluidsynth(1)
+After=sound.target
+
+[Service]
+EnvironmentFile=/etc/default/fluidsynth
+EnvironmentFile=-%h/.config/fluidsynth
+ExecStart=/usr/bin/fluidsynth -is $OTHER_OPTS $SOUND_FONT
+
+[Install]
+WantedBy=multi-user.target
+

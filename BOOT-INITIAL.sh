@@ -9,6 +9,32 @@
 
 #!/bin/bash
 
+# Change this according to your sound card name
+# as found in /proc/asound/cards
+export SOUNDCARD_NAME=Generic
+
+echo "Set volume for audio device..."
+
+# Some sound cards need us to raise the
+# hardware volume each time.  To find out
+# what number and subdevice name you need,
+# use 'alsamixer'.  In general it's helpful
+# to go with one notch less than maximum.
+
+# This worked for one motherboard.
+# amixer -D hw:PCH sset Master 86
+
+# This is for the ESI U22 XT.
+# amixer -D hw:USB sset PCM 108
+
+# Another motherboard, setting both
+# master and headphones out.
+amixer -D hw:$SOUNDCARD_NAME sset Master 63
+amixer -D hw:$SOUNDCARD_NAME sset Headphone 63
+amixer -D hw:$SOUNDCARD_NAME sset Front 63
+amixer -D hw:$SOUNDCARD_NAME sset Line 63
+
+
 echo "Reset JACK log..."
 
 rm ~/.log/jack/jackdbus.log
@@ -19,43 +45,15 @@ rm -f ~/.jackdrc
 rm -f ~/.config/jack/conf.xml
 rm -f ~/.config/rncbc.org/QjackCtl.conf
 
-# Configure and start JACK hard server
-echo "Configure and start JACK hard server ..."
-jack_control ds alsa
-jack_control dps device hw:O12,0
-jack_control dps rate 96000
-jack_control dps period 128
-jack_control dps nperiods 3
-jack_control dps midi-driver none
-jack_control eps realtime True
-jack_control eps realtime-priority 90
-jack_control eps clock-source 0
-jack_control eps sync false
-jack_control start
+# Start JACK hard server
+echo "Start JACK hard server..."
 
-# Make sure a2jmidid is stopped
-a2j_control stop
+# The below was working for a while with the FIIO device.
+# /usr/bin/jackd -dalsa -dhw:Audio -r96000 -p256 -n3 -P > jackd-HARD.log &
 
-# Configure and start JACK soft servers
+/usr/bin/jackd -dalsa -dhw:$SOUNDCARD_NAME -r96000 -p128 -n2 -P > jackd-HARD.log &
 
-# /usr/bin/jackd -nSOFT1 -X alsarawmidi -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT1.log &
-# /usr/bin/jackd -nSOFT2 -X alsarawmidi -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT2.log &
-# /usr/bin/jackd -nSOFT3 -X alsarawmidi -ddummy -r96000 -p256 -C 0 -P 0 > jackd-SOFT3.log &
-
-# Soft server notes, in command parameter order:
-# -nSOFT1         JACK server name
-# -X alsarawmidi  Run the ALSA raw midi slave driver
-# -ddummy         Run the Dummy driver as master rather than connecting hardware audio
-# -r96000         96000 kHz sampling
-# -p256           Period of 256, twice that of the hard server, seems to help
-# -C 0 -P 0       Zero JACK server ports, either input or output.  Input is MIDI,
-#		  output is zita-j2n.
-
-# Not using qjackctl anymore, it can cause problems with what we are doing here.
-#
-# 'cadence' works well for hard JACK setup, and 'catia' for connections.
-# To see JACK hard server connections, just 'catia'
-# To see JACK soft server SOFT1 connections, './soft1 catia'
+nohup patchage > /dev/null &
 
 if [ $1 ]; then
 	echo Exiting BOOT-INITIAL due to command-line parameter.
@@ -63,7 +61,7 @@ if [ $1 ]; then
 fi
 
 echo "Starting BOOT-GENERAL..."
-/usr/bin/python ~/BNR/BOOT-GENERAL.py
+/usr/bin/python3 ~/BNR/BOOT-GENERAL.py
 
 read -rsp $'Press any key to continue...\n' -n1 key
 

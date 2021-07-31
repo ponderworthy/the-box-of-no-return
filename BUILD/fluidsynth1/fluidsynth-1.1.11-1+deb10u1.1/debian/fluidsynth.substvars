@@ -1,0 +1,3 @@
+shlibs:Depends=libc6 (>= 2.2.5), libfluidsynth1 (>= 1.1.6-4~)
+misc:Depends=
+misc:Pre-Depends=

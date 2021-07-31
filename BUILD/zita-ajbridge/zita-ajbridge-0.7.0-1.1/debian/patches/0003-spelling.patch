@@ -1,0 +1,26 @@
+Author: Jaromír Mikeš <mira.mikes@seznam.cz>
+Description: Fix spelling
+Forwarded: Fons Adriaensen <fons@linuxaudio.org> 
+
+Index: zita-ajbridge/source/zita-ajbridge.1
+===================================================================
+--- zita-ajbridge.orig/source/zita-ajbridge.1
++++ zita-ajbridge/source/zita-ajbridge.1
+@@ -8,7 +8,7 @@ zita-a2j, zita-j2a \- Use ALSA device as
+ .B zita-j2a
+ .RI [ options ]
+ .SH DESCRIPTION
+-These two programs allow to use an ALSA device as a Jack client, to provide
++These two programs allow one to use an ALSA device as a Jack client, to provide
+ additional capture (zita-a2j) or playback (zita-j2a) channels. Functionally
+ they are equivalent to alsa_in and alsa_out that come with Jack, but they
+ will provide much better audio quality.
+@@ -32,7 +32,7 @@ for alsa_in and alsa_out.
+ .PP
+ Resampling is performed using the zita-resampler library. The
+ \fB\-Q\fR option sets the resampling quality. The parameter value
+-is half the lenght (i.e. the delay) of the multiphase filter used
++is half the length (i.e. the delay) of the multiphase filter used
+ for resampling, expressed in samples at the lower of the two sample
+ rates. This mainly affects the shape of the frequency response near
+ the Nyquist frequency. It is normally not necessary to use this

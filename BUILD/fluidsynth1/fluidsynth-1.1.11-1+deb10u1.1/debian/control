@@ -1,0 +1,77 @@
+Source: fluidsynth
+Section: sound
+Priority: optional
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Uploaders:
+ Alessio Treglia <alessio@debian.org>,
+ David Henningsson <diwic@ubuntu.com>,
+ Jaromír Mikeš <mira.mikes@seznam.cz>,
+Build-Depends:
+ cmake,
+ debhelper (>= 11~),
+ ladspa-sdk,
+ libasound2-dev,
+ libglib2.0-dev (>= 2.6.5),
+ libjack-dev,
+ libpulse-dev,
+ libreadline-dev (>= 5),
+ libsndfile-dev,
+ libtool,
+Standards-Version: 4.1.3
+Homepage: http://www.fluidsynth.org/
+Vcs-Git: https://salsa.debian.org/multimedia-team/fluidsynth.git
+Vcs-Browser: https://salsa.debian.org/multimedia-team/fluidsynth
+
+Package: fluidsynth
+Architecture: any
+Depends:
+ libfluidsynth1 (>= ${binary:Version}),
+ ${misc:Depends},
+ ${shlibs:Depends},
+Conflicts:
+ iiwusynth,
+Replaces:
+ iiwusynth,
+Provides:
+ iiwusynth,
+Recommends:
+ qsynth,
+Description: Real-time MIDI software synthesizer
+ Fluidsynth is a real-time midi synthesizer based on the soundfont2
+ specifications. It can be used to render MIDI input or MIDI files to audio.
+ The MIDI events are read from a MIDI device. The sound is rendered in
+ real-time to the sound output device.
+
+Package: libfluidsynth1
+Architecture: any
+Multi-Arch: same
+Pre-Depends:
+ ${misc:Pre-Depends}
+Section: libs
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Suggests:
+ fluidr3mono-gm-soundfont | timgm6mb-soundfont | fluid-soundfont-gm
+Description: Real-time MIDI software synthesizer (runtime library)
+ Fluidsynth is a real-time midi synthesizer based on the soundfont2
+ specifications. It can be used to render MIDI input or MIDI files to audio.
+ The MIDI events are read from a MIDI device. The sound is rendered in
+ real-time to the sound output device.
+ .
+ This package contains the runtime library.
+
+Package: libfluidsynth-dev
+Architecture: any
+Multi-Arch: same
+Section: libdevel
+Depends:
+ libfluidsynth1 (= ${binary:Version}),
+ ${misc:Depends},
+Description: Real-time MIDI software synthesizer (development files)
+ Fluidsynth is a real-time midi synthesizer based on the soundfont2
+ specifications. It can be used to render MIDI input or MIDI files to audio.
+ The MIDI events are read from a MIDI device. The sound is rendered in
+ real-time to the sound output device.
+ .
+ This package contains the development files.

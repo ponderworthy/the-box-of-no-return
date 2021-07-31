@@ -1,0 +1,20 @@
+Source: fluidsynth2-static
+Section: libs
+Priority: extra
+Maintainer: falkTX <falktx@falktx.com>
+Build-Depends: debhelper (>= 7), cmake,
+  pkg-config, libinstpatch-static, libsndfile-static, libglib2.0-dev
+Standards-Version: 3.8.4
+
+Package: fluidsynth2-static
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libinstpatch-static, libsndfile-static, libglib2.0-dev
+Conflicts: fluidsynth-static
+Replaces: fluidsynth-static
+Description: Real-time MIDI software synthesizer (static v2)
+ Fluidsynth is a real-time midi synthesizer based on the soundfont2
+ specifications. It can be used to render MIDI input or MIDI files to audio.
+ The MIDI events are read from a MIDI device. The sound is rendered in
+ real-time to the sound output device.
+ .
+ This package provides the static library used in KXStudio builds.

@@ -1,0 +1,16 @@
+libjack*-dev: JACK Audio Connection Kit (development files)
+-----------------------------------------------------------
+
+You'll find the API documentation in the
+/usr/share/doc/libjack*-dev/HTML directory.
+
+The source code of the example clients is not included in the binary
+packages, please get the source package if you need it (by doing
+"apt-get source jack-audio-connection-kit", for example).
+
+Some (and more user-specific) documentation is also contained in the
+jackd package.
+
+originally, Stefan Schwandter, $Date: 2003/01/07 20:02:48 $
+Junichi Uekawa, 2 Mar 2003.
+Robert Jordens <jordens@debian.org>

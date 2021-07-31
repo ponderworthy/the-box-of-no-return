@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG   CMakeFiles/st_info.dir/src/st_info.c.o  -o st_info libst_audiofile.a libst_audiofile_formats.a thirdparty/libaiff/libaiff.a -lm 

@@ -1,0 +1,27 @@
+zita-njbridge (0.4.1-1.1-bnrcustom) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * 
+  * 
+
+ -- Jaromír Mikeš <jeb@bnr4>  Sun, 25 Jul 2021 22:01:56 -0500
+
+zita-njbridge (0.4.1-1) unstable; urgency=medium
+
+  * New upstream version 0.4.1
+  * Add .gitignore file.
+  * Patch refreshed.
+  * Update copyright file.
+  * Bump Standards.
+  * Set dh/compat 10.
+  * Fix VCS fields.
+  * Fix hardening.
+  * Add spelling patch.
+
+ -- Jaromír Mikeš <mira.mikes@seznam.cz>  Mon, 17 Oct 2016 06:48:56 +0200
+
+zita-njbridge (0.1.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #757101)
+
+ -- Jaromír Mikeš <mira.mikes@seznam.cz>  Tue, 05 Aug 2014 12:46:18 +0200

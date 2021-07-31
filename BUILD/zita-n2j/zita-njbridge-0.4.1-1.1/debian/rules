@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+export PREFIX=/usr
+export DESTDIR=$(CURDIR)/debian/zita-njbridge
+
+export CFLAGS+=-march=native -mtune=native -O3
+export CXXFLAGS+=-march=native -mtune=native -O3
+
+%:
+	dh $@ -Smakefile -Dsource

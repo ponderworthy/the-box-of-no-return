@@ -1,0 +1,38 @@
+Source: calf
+Section: sound
+Priority: extra
+Maintainer: falkTX <falktx@falktx.com>
+Build-Depends: debhelper (>= 7), dh-autoreconf,
+  autotools-dev, automake, libtool, autoconf,
+  libasound2-dev, libjack-dev, lv2-dev,
+  libgconf2-dev, libglib2.0-dev, libgtk2.0-dev, libglade2-dev, libcairo2-dev, libexpat1-dev,
+  fluidsynth-static
+Standards-Version: 3.8.4
+Homepage: http://calf.sourceforge.net/
+
+Package: calf-plugins
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, gtk2-engines-pixbuf
+Replaces: calf-ladspa (<< 5:0.90.3-1kxstudio1)
+Breaks: calf-ladspa (<< 5:0.90.3-1kxstudio1)
+Provides: standalone-plugin, lv2-plugin
+Description:  Calf Studiogear - audio effects and sound generators
+ The Calf plugins include all todays frequently used studio effects
+ along with some feature-rich sound processors.
+ .
+ Calf Studiogear is designed to run under the most flexible plugin
+ standard in Linux, namely LV2. So you're able to insert them in lots of
+ plugin-capable audio software like Ardour, Rosegarden and others.
+ .
+ The Calf Rack offers you all Calf effects and synthesizers in an
+ easy-to-use studio rack. Wire the effects through Jack to build your own
+ studio environment and trigger the sound processors live or through a
+ MIDI sequencer or tracker.
+ .
+ Calf Rack supports LADISH level 1.
+
+Package: calf-ladspa
+Architecture: all
+Depends: ${misc:Depends}
+Description: dummy package
+ This is a dummy package and can be safely removed if nothing depends on it.

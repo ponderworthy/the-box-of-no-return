@@ -1,0 +1,22 @@
+# These templates have been reviewed by the debian-l10n-english
+# team
+#
+# If modifications/additions/rewording are needed, please ask
+# debian-l10n-english@lists.debian.org for advice.
+#
+# Even minor modifications require translation updates and such
+# changes should be coordinated with translators and reviewers.
+
+Template: jackd/tweak_rt_limits
+Type: boolean
+Default: false
+_Description: Enable realtime process priority?
+ If you want to run jackd with realtime priorities, the user starting jackd
+ needs realtime permissions. Accept this option to create the
+ file /etc/security/limits.d/audio.conf, granting realtime
+ priority and memlock privileges to the audio group.
+ .
+ Running jackd with realtime priority minimizes latency, but
+ may lead to complete system lock-ups by requesting
+ all the available physical system memory, which is unacceptable in
+ multi-user environments.

@@ -1,0 +1,9 @@
+2dad1b7a9ba29e6d23f3903f25ac7944  usr/bin/fluidsynth
+e87e443711ccbf276995753dc433c82d  usr/lib/systemd/user/fluidsynth.service
+b1a8b4ad11e183cb5e76824313c2734e  usr/share/doc/fluidsynth/NEWS.gz
+d8747ab464c03f98be2a021bd53d7456  usr/share/doc/fluidsynth/README.md.gz
+8fdd343dd937e9c514511b7d2421eb0a  usr/share/doc/fluidsynth/TODO
+e861baf887aa67246d8b9b894e8d03c1  usr/share/doc/fluidsynth/changelog.Debian.gz
+88cb2e4d85ba5eb0e42e23e8ad3e4a13  usr/share/doc/fluidsynth/changelog.gz
+3b1ecdddac24e4b5d895f5f8693ef6ba  usr/share/doc/fluidsynth/copyright
+50d5842df62c482a503847350c2ed9c4  usr/share/man/man1/fluidsynth.1.gz

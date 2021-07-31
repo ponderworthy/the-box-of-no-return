@@ -1,0 +1,116 @@
+.TH ZITA-AJBRIDGE "1" "Sept 2013"
+.SH NAME
+zita-a2j, zita-j2a \- Use ALSA device as a Jack client, with resampling.
+.SH SYNOPSIS
+.B zita-a2j
+.RI [ options ]
+.br
+.B zita-j2a
+.RI [ options ]
+.SH DESCRIPTION
+These two programs allow to use an ALSA device as a Jack client, to provide
+additional capture (zita-a2j) or playback (zita-j2a) channels. Functionally
+they are equivalent to alsa_in and alsa_out that come with Jack, but they
+will provide much better audio quality.
+.PP
+The resampling ratio will typically be stable within a few parts
+per million and change only very smoothly. Delay will be stable
+as well even under worse case conditions, e.g. the Jack client
+running near the end of the cycle.
+.PP
+The ALSA device should be a 'hw:' one, i.e. direct access to a
+soundcard and not an ALSA 'plug' device. A well-working Jack
+system is assumed, running in real-time mode.
+.PP
+The sample rate can be the same as Jack's one, or different.
+Minimum delay is obtained by running the alsa device at a lower
+period size than Jack. This can be done safely as the alsa thread
+will run at a higher priority, and apart from copying to an
+internal buffer no work is done there. There are no restrictions
+on the product of period_size and number_of_periods as there are
+for alsa_in and alsa_out.
+.PP
+Resampling is performed using the zita-resampler library. The
+\fB\-Q\fR option sets the resampling quality. The parameter value
+is half the lenght (i.e. the delay) of the multiphase filter used
+for resampling, expressed in samples at the lower of the two sample
+rates. This mainly affects the shape of the frequency response near
+the Nyquist frequency. It is normally not necessary to use this
+option as an optimum value depending both the sample rates is chosen
+automatically. The available range is 16..96.
+.PP
+The \fB\-S\fR option disables resampling. This requires that the
+device is synced via word-clock to the one used by Jack.
+.PP
+The \fB\-L\fR option forces the ALSA interface to 2 channels and
+16-bit sample format. This may be required when a2j or j2a is used
+with ALSA's 'loop' device, if the other end doesn't accept more 
+than 2 channels or floating point samples. This option must not
+be used otherwise.
+.PP
+Both programs will optionally print some information four times per
+second. The first number is the average loop error over the last
+quarter second, in samples. It should be reduced to small randowm
+values close to zero after 15 seconds or so. The second is the
+dynamic correction factor of the nominal resampling ratio. This
+should converge to a value close to one and not move much.
+.PP
+Small variations in these numbers will be seen when Jack apps
+are started or stopped. This is normal. Anything else isn't -
+please report. 
+.PP
+When starting, and in case of major trouble, the 'Starting synchronisation'
+message will be printed. A restart can happen if there is a timeout on the
+Jack server, e.g. when a client crashed or terminated in a dirty way.
+.PP
+Jack1 will skip one or more cycles when new apps are started, or when a
+large number of port connections is done in a short time. This may interrupt
+the audio signal, but should otherwise not have any ill consequences nor
+require a restart.
+.PP
+Both zita-a2j and zita-j2a will suspend operation while Jack is
+in 'freewheeling' mode. 
+.SH OPTIONS
+.TP
+\fB\-h\fR
+Print command line and options summary.
+.TP
+\fB\-j\fR <name>
+Jack client name [zita-a2j or zita-j2a].
+.TP
+\fB\-d\fR <device>
+ALSA device [none].
+.TP
+\fB\-r\fR <rate>
+Sample rate [48000].
+.TP
+\fB\-p\fR <period>
+Period size [256].
+.TP
+\fB\-n\fR <nfrags>
+Number of fragments [2].
+.TP
+\fB\-c\fR <nchannels>
+Number of channels [2].
+.TP
+\fB\-Q\fR <quality>
+Resampling quality [auto].
+.TP
+\fB\-S\fR 
+Word clock sync, disable resampling.
+.TP
+\fB\-I\fR <samples> [0]
+(zita-a2j only) Latency correction. The value is added to the latency property set on the Jack ports.
+.TP
+\fB\-O\fR <samples> [0]
+(zita-j2a only) Latency correction. The value is added to the latency property set on the Jack ports.
+.TP
+\fB\-L\fR
+Force 2 channels and 16-bit sample format.
+.TP
+\fB\-v\fR
+Print tracing information.
+.SH "AUTHOR"
+The zita-a2j and zita-j2a programs were written by Fons Adriaensen <fons@linuxaudio.org>.
+This manual page was written by Robin Gareus <robin@gareus.org> and Fons Adriaensen.
+

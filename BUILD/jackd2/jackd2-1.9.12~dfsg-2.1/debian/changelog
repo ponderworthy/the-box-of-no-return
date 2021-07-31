@@ -1,0 +1,1319 @@
+jackd2 (1.9.12~dfsg-2.1-bnrcustom) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * 
+
+ -- Adrian Knoth <jeb@bnr4>  Fri, 30 Jul 2021 07:26:10 -0500
+
+jackd2 (1.9.12~dfsg-2) unstable; urgency=medium
+
+  * Source-only re-upload to avoid pre-built amd64 binary
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Sun, 25 Feb 2018 20:41:33 +0100
+
+jackd2 (1.9.12~dfsg-1) unstable; urgency=medium
+
+  * New upstream version 1.9.12~dfsg
+  * Drop gcc7 FTBFS patch
+  * Drop packed structs patch
+  * Drop gcc6 FTBFS patch
+  * Refresh/forward-port debian/patches/reproducible-build.patch
+  * Bump standards version
+  * Update Vcs tags in control.in, too
+  * Add missing replaces to debian/control.in
+  * Add debian/patches/spelling.patch
+  * Add missing build-dependency dh-python to control.in
+  * Regenerate control
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Sun, 25 Feb 2018 19:15:44 +0100
+
+jackd2 (1.9.10+20150825git1ed50c92~dfsg-6) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * d/copyright: Use https protocol in Format field.
+  * d/control: Set Vcs-* to salsa.debian.org.
+
+  [ Mattia Rizzolo ]
+  * Fix FTBFS with GCC 7.  Closes: #853461
+  * Revert "libjackserver is a private library and does not need to be exported"
+    It may even be a private library, but it's in a public namespace, so it
+    needs to be dealt with as public.
+    This reverts commit f1b2acff8fc96b2692206ecc2c0ac57043410569.
+    Closes: #872831
+
+ -- Mattia Rizzolo <mattia@debian.org>  Thu, 22 Feb 2018 11:51:02 +0100
+
+jackd2 (1.9.10+20150825git1ed50c92~dfsg-5) unstable; urgency=medium
+
+  * Move libjackserver into package libjack-jackd2-0.  This avoids a
+    dangling symbolic link in the package libjack-jackd2-dev.
+    (Closes: #858525)
+
+ -- Reinhard Tartler <siretart@tauware.de>  Mon, 27 Mar 2017 22:44:11 -0400
+
+jackd2 (1.9.10+20150825git1ed50c92~dfsg-4) unstable; urgency=medium
+
+  * Team upload.
+  * Tighten generated dependencies for new jack_port_rename api.
+    (Closes: #835589, #845655)
+  * Fix manual debhelper dependency in d/control.
+  * Fix FTBFS with DEB_BUILD_PARALLEL=1. (Closes: #766993)
+    Thanks to YunQiang Su.
+  * Drop libjack-jackd2-dev dependency on libdbus-1-dev. (Closes: #799977)
+
+ -- James Cowgill <jcowgill@debian.org>  Sun, 04 Dec 2016 11:25:01 +0000
+
+jackd2 (1.9.10+20150825git1ed50c92~dfsg-3) unstable; urgency=medium
+
+  * Team upload.
+  * Fix bus errors ARM, MIPS and PowerPC due to use of packed structs.
+    (Closes: #728710)
+
+ -- James Cowgill <jcowgill@debian.org>  Wed, 19 Oct 2016 10:29:38 +0000
+
+jackd2 (1.9.10+20150825git1ed50c92~dfsg-2) unstable; urgency=medium
+
+  * Team upload.
+  * Fix FTBFS with gcc 6. Closes: #811720
+
+ -- Felipe Sateler <fsateler@debian.org>  Sun, 24 Jul 2016 23:18:31 -0400
+
+jackd2 (1.9.10+20150825git1ed50c92~dfsg-1) unstable; urgency=low
+
+  * Make builds reproducible (Closes: #796807)
+  * Imported Upstream version 1.9.10+20150825git1ed50c92~dfsg
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Tue, 25 Aug 2015 17:13:51 +0200
+
+jackd2 (1.9.10+20140719git3eb0ae6a~dfsg-3) unstable; urgency=medium
+
+  * Team upload.
+  * debian/libjack-jackd2-0.shlibs: Add an entry for libjacknet. (Closes:
+    #788973)
+  * debian/control: Bump Standards-Version to 3.9.6.
+  * debian/jackd2.{install,maintscript}: Move bash completion to
+    /usr/share/bash-completion/completions.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 19 Jul 2015 12:37:34 +0200
+
+jackd2 (1.9.10+20140719git3eb0ae6a~dfsg-2) unstable; urgency=medium
+
+  * Fix FTBFS with clang (Closes: #757820)
+  * Add Turkish translation (Closes: #760066)
+  * Pass dpkg-buildflags to waf (Closes: #756174)
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Wed, 24 Sep 2014 21:48:32 +0200
+
+jackd2 (1.9.10+20140719git3eb0ae6a~dfsg-1) unstable; urgency=medium
+
+  * Imported Upstream version 1.9.10+20140719git3eb0ae6a~dfsg
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Thu, 31 Jul 2014 02:33:24 +0000
+
+jackd2 (1.9.10+20140610git97e0e80b~dfsg-1) unstable; urgency=low
+
+  * Imported Upstream version 1.9.10+20140610git97e0e80b~dfsg
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Tue, 10 Jun 2014 13:35:58 +0000
+
+jackd2 (1.9.9.5+20140404git3d7c67dc~dfsg-1) unstable; urgency=low
+
+  * Enable ffado on all Linux platforms (Closes: #727248)
+  * Imported Upstream version 1.9.9.5+20140404git3d7c67dc
+  * Fix startup problems on newer ARM kernels
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Fri, 04 Apr 2014 14:04:15 +0200
+
+jackd2 (1.9.9.5+20130622git7de15e7a-1) unstable; urgency=low
+
+  [ Jonas Smedegaard ]
+  * Add README.source emphasizing control.in file as *not* a show-stopper for contributions, referring to wiki page for details.
+
+  [ Adrian Knoth ]
+  * Don't fail in postinst after skipping debconf dialog (Closes: #688202)
+  * Imported Upstream version 1.9.9.5+20130622git7de15e7a
+  * Recompiling fixes netone backend (Closes: #709550)
+  * Drop no-selfconnect.patch
+  * Drop obsolte DMUA flag
+  * Bump standards version to 3.9.4
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Sat, 22 Jun 2013 12:38:35 +0200
+
+jackd2 (1.9.9.5+20130306git47f3a68c-1) experimental; urgency=low
+
+  [ upstream ]
+  * New upstream release.
+
+  [ Jonas Smedegaard ]
+  * Update and improve get-orig-source target:
+    + Update to use github.com URLs in watch file and CDBS hints.
+    + Simplify to strip all *.a, .dll and *.Lib files (i.e. catch *.a
+      files also below windows dir, and skip lower-case *.lib files).
+    + Extend to strip waf file.
+    + Update copyright file Source and Excluded-Files fields.
+    + Add comment in rules file on how to do git snapshots.
+    + Drop obsolete make_tarball.sh script.
+  * Add patch to reapply stripped-from-source waflib as unpacked source
+    and add waf-light.
+  * Build-depend on libopus-dev.
+  * Use anonscm.debian.org for Vcs-Browser field.
+  * Drop pre-squeeze conffile cleanup in preinst.
+  * Tidy bash-completion file:
+    + Use tab indentation.
+    + Strip excess space.
+  * Remove debian/source/local-options: abort-on-upstream-changes and
+    unapply-patches are default in dpkg-source since 1.16.1.
+  * Rewrite copyright file using file format 1.0.
+    + Cover new/changed files, and extend some copyrights.
+
+  [ Adrian Knoth ]
+  * Imported Upstream version 1.9.9.5+20130306git47f3a68c
+  * Invoke ./waf-light instead of ./waf
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Wed, 06 Mar 2013 14:44:55 +0100
+
+jackd2 (1.9.9.5+20130127git15950eb1-1) experimental; urgency=low
+
+  * Imported Upstream version 1.9.9.5+20130127git15950eb1
+  * Refresh no-selfconnect.patch
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Sun, 27 Jan 2013 13:50:55 +0100
+
+jackd2 (1.9.8~dfsg.4+20121110git67ac4440-1) experimental; urgency=low
+
+  * Imported Upstream version 1.9.8~dfsg.4+20121110git67ac4440
+    (Closes: #682792)
+  * Fix FTBFS on ppc64 (Closes: #684470)
+  * Switch to dh_python2 (Closes: #676922)
+  * Refresh no-selfconnect.patch
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Sat, 10 Nov 2012 11:01:03 +0100
+
+jackd2 (1.9.8~dfsg.4+20120529git007cdc37-4.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * No longer ship /etc/security/limits.d/audio.conf as a conffile
+    (Closes: #688204)
+
+ -- Sébastien Villemot <sebastien@debian.org>  Fri, 28 Sep 2012 20:25:20 +0200
+
+jackd2 (1.9.8~dfsg.4+20120529git007cdc37-4) unstable; urgency=low
+
+  * Only include DBUS files on Linux (Closes: #685776)
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Wed, 29 Aug 2012 21:26:01 +0200
+
+jackd2 (1.9.8~dfsg.4+20120529git007cdc37-3) unstable; urgency=low
+
+  * Fix manpage corruption (Closes: #680159, #672881)
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Sat, 11 Aug 2012 12:38:09 +0200
+
+jackd2 (1.9.8~dfsg.4+20120529git007cdc37-2) unstable; urgency=low
+
+  * Fix syntax error in jack_control (Closes: #675719)
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Thu, 02 Aug 2012 22:17:30 +0200
+
+jackd2 (1.9.8~dfsg.4+20120529git007cdc37-1) unstable; urgency=low
+
+  * Update helper script to replace waf by waf-light
+  * Imported Upstream version 1.9.8~dfsg.4+20120529git007cdc37
+  * Drop CELT support (Closes: #674652)
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Tue, 29 May 2012 22:00:18 +0200
+
+jackd2 (1.9.8~dfsg.3+20120418gitf82ec715-6) unstable; urgency=low
+
+  * Bump compat to 9 for multiarch
+  * Drop dh_buildinfo dependency
+  * Mark libjack-jackd2-0 as multiarch (Closes: #670608)
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Mon, 30 Apr 2012 15:25:53 +0200
+
+jackd2 (1.9.8~dfsg.3+20120418gitf82ec715-4) unstable; urgency=low
+
+  * Disabled --mixed builds.
+  * Add detection for GNU/Hurd.
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Thu, 26 Apr 2012 13:23:50 +0200
+
+jackd2 (1.9.8~dfsg.3+20120418gitf82ec715-3) unstable; urgency=low
+
+  * Add patch to fix FTBFS on kFreeBSD (Closes: #669566)
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Tue, 24 Apr 2012 21:57:15 +0200
+
+jackd2 (1.9.8~dfsg.3+20120418gitf82ec715-1) unstable; urgency=low
+
+  * New Upstream version (supports FFADO buffersize changes)
+  * Disable hppa build patch
+  * Disable kFreeBSD patch
+  * Refresh hurd.patch
+  * Update no-selfconnect.patch
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Wed, 18 Apr 2012 22:29:58 +0200
+
+jackd2 (1.9.8~dfsg.2-1) unstable; urgency=low
+
+  * Install ALSA raw midi driver on Linux (Closes: #661820)
+  * Reimport tarball because of pristine-tar bug #661902
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Sun, 04 Mar 2012 11:49:15 +0100
+
+jackd2 (1.9.8~dfsg.1-1) unstable; urgency=low
+
+  * Add patch to fix FTBFS on kFreeBSD (Closes: #651108)
+  * Add Korean debconf translation
+  * Limit jackdbus to Linux platforms
+  * Repackage upstream tarball without binary waf (Closes: #654477)
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Wed, 18 Jan 2012 14:27:38 +0100
+
+jackd2 (1.9.8~dfsg-1) unstable; urgency=low
+
+  * Imported Upstream version 1.9.8~dfsg
+  * Refresh no-selfconnect.patch
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Thu, 22 Dec 2011 23:38:24 +0100
+
+jackd2 (1.9.7~dfsg-2) unstable; urgency=low
+
+  * Update Brazilian Portuguese translation (Closes: #621097)
+  * Add patch to support SH4 architectures (Closes: #622713)
+  * Replace hardcoded architecture list by linux-any (Closes: #634296)
+  * Dutch translation of debconf templates (Closes: #637508)
+  * Danish translation for debconf templates (Closes: #621025)
+  * Sync to upstream VCS r4627 (1.9.8-preview)
+  * Refresh no-selfconnect-patch
+  * Bump standards version (3.9.2)
+  * Use linux-any in the architecture list
+  * Drop mixed 32/64bit builds. Will be replaced by multiarch.
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Mon, 05 Dec 2011 16:58:46 +0100
+
+jackd2 (1.9.7~dfsg-1) unstable; urgency=low
+
+  * New upstream version 1.9.7 (ALSA resume, new latency API)
+  * Build with --mixed on i386 to be compatible with amd64.
+  * Don't patch jack_connect for fast consecutive calls anymore, it's now
+    using the same code as in jackd1 and waits for the port connection to
+    appear.
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Thu, 31 Mar 2011 13:54:50 +0200
+
+jackd2 (1.9.6~dfsg.1-5) experimental; urgency=low
+
+  * Add no-self-connect patch to provide better ladish support.
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Sat, 29 Jan 2011 19:00:05 +0100
+
+jackd2 (1.9.6~dfsg.1-4) experimental; urgency=low
+
+  * Add Brazilian Portuguese translation.
+  * Provide libjack-dev-session
+  * Refresh VCS version to r4104
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Wed, 12 Jan 2011 17:46:58 +0100
+
+jackd2 (1.9.6~dfsg.1-3) experimental; urgency=low
+
+  * Sync to upstream r4089
+  * Includes: jack-session support, fixes ALSA suspend/resume and machine
+    lock-up after FFADO crashes
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Mon, 22 Nov 2010 19:31:37 +0100
+
+jackd2 (1.9.6~dfsg.1-2) unstable; urgency=low
+
+  * Strip .DS_Store, an OSX specific folder db.
+  * Remove audio.conf.disabled upon purge (Closes: #603457)
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Mon, 15 Nov 2010 15:05:33 +0100
+
+jackd2 (1.9.6~dfsg-1) unstable; urgency=low
+
+  * New upstream release.
+
+  [ Adrian Knoth ]
+  * jackrec is now called jack_rec (like in jackd1)
+  * Make libjack-jackd2-dev provide libjack-dev.
+  * Don't suggest libjackasyn0, nobody really uses it.
+  * Depend on python-dbus (Closes: #595520)
+
+  [ Jonas Smedegaard ]
+  * Unfuzz patches.
+  * Update copyright file: Extend some copyright years.
+  * Extend repackaging of upstream source to strip unneeded and possibly
+    sourceless binary ./macosx/libcelt.a.
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Mon, 25 Oct 2010 16:31:10 +0200
+
+jackd2 (1.9.5~dfsg-19) unstable; urgency=low
+
+  * Fix FTBFS on kFreeBSD and sparc (Closes: #591247)
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Sun, 01 Aug 2010 19:54:32 +0200
+
+jackd2 (1.9.5~dfsg-18) unstable; urgency=low
+
+  * Sync to upstream r4036 (Closes: #582744)
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Fri, 30 Jul 2010 17:57:43 +0200
+
+jackd2 (1.9.5~dfsg-17) unstable; urgency=low
+
+  * Augment sigsegv.c patch to support SH4 CPUs (Closes: #588124)
+  * Make RTPRIO handling more robust (allow users to delete audio.conf)
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Tue, 06 Jul 2010 09:40:36 +0200
+
+jackd2 (1.9.5~dfsg-16) experimental; urgency=low
+
+  * reupload to experimental
+
+ -- Reinhard Tartler <siretart@tauware.de>  Fri, 25 Jun 2010 22:11:22 +0200
+
+jackd2 (1.9.5~dfsg-15) unstable; urgency=low
+
+  [ Adrian Knoth ]
+  * Also provide the shlibs file for libjack-jackd2-0
+  * Fix FTBFS on sparc64 (Closes: #586257)
+
+  [ Reinhard Tartler ]
+  * jackd must not be a virtual package, use 'jack-daemon' for that
+  * add breaks/replaces on old libjack0
+  * change shlibsfile to prefer jackd2's libjack
+  * use conflicts instead of breaks. libjack-jackd2-0 has file conflicts
+    with libjack0 and will keep it
+
+  [ Jonas Smedegaard ]
+  * Update control file.
+
+ -- Reinhard Tartler <siretart@tauware.de>  Sat, 19 Jun 2010 18:54:29 +0200
+
+jackd2 (1.9.5~dfsg-14) unstable; urgency=low
+
+  * Rename source package to jackd2
+  * Don't provide libjack-dev anymore
+  * Don't compile libjack0, use libjack-jackd2-0 instead
+  * Move inprocess clients from libjack0 into jackd2 package
+  * Update to upstream SVN revision 4024
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Thu, 17 Jun 2010 18:20:21 +0200
+
+jack-audio-connection-kit (1.9.5~dfsg-13) unstable; urgency=low
+
+  * Fix FTBFS on hppa (Closes: #580824)
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Sun, 09 May 2010 12:08:12 +0200
+
+jack-audio-connection-kit (1.9.5~dfsg-12) unstable; urgency=low
+
+  * Add -fvisibility=hidden to build flags.
+  * Fix FTBFS on hurd
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Sat, 08 May 2010 16:52:27 +0200
+
+jack-audio-connection-kit (1.9.5~dfsg-11) unstable; urgency=low
+
+  * Don't use Debian provided waf anymore. (Closes: #580363)
+  * Drop doxygen build dependency.
+  * Update to upstream SVN revision 4008. (uses semaphores on Linux now)
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Fri, 07 May 2010 20:06:37 +0200
+
+jack-audio-connection-kit (1.9.5~dfsg-10) unstable; urgency=low
+
+  * Fix FTBFS on armel (Closes: #580618)
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Fri, 07 May 2010 13:54:18 +0200
+
+jack-audio-connection-kit (1.9.5~dfsg-9) unstable; urgency=low
+
+  * Provide fix for GNU/kFreeBSD (Closes: #579465)
+  * Conditionally include audioadapter.so on ALSA platforms only.
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Thu, 06 May 2010 15:58:23 +0200
+
+jack-audio-connection-kit (1.9.5~dfsg-8) unstable; urgency=low
+
+  * Fix endif placement in ia64/alpha patch.
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Wed, 05 May 2010 14:46:20 +0200
+
+jack-audio-connection-kit (1.9.5~dfsg-7) unstable; urgency=low
+
+  * Update to upstream SVN version 4003
+  * Dropping local Debian patches, they are included upstream
+  * Add local patch for IA64 and alpha (Closes: #580089)
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Wed, 05 May 2010 11:49:30 +0200
+
+jack-audio-connection-kit (1.9.5~dfsg-6) unstable; urgency=low
+
+  * Fix more varargs issues on armel and alpha
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Mon, 03 May 2010 22:50:50 +0200
+
+jack-audio-connection-kit (1.9.5~dfsg-5) unstable; urgency=low
+
+  * Fix FTBFS on alpha and ia64 (Closes: #580089)
+  * Fix FTBFS on armel (Closes: #580088)
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Mon, 03 May 2010 19:16:23 +0200
+
+jack-audio-connection-kit (1.9.5~dfsg-4) unstable; urgency=low
+
+  * Upgrade to svn version r3995. (Closes: bug#548537)
+  * Fix FTBFS on kFreeBSD (conditionally enable ALSA) (Closes: bug#579465)
+  * Fix FTBFS on powerpc (Closes: bug#579479)
+  * Fix FTBFS caused by missing atomic operations (Closes: #579464)
+  * Remove outdated documentation (Closes: #577444)
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Sun, 02 May 2010 21:55:26 +0200
+
+jack-audio-connection-kit (1.9.5~dfsg-3) unstable; urgency=low
+
+  * Fix restructure configure options to only add --firewire on
+    supported architectures.
+    Closes: bug#579237, thanks to Bastian Blank.
+  * Handle library ABI through generalized packaging variable.
+  * Bump API to 0.118.0 (from 9.116.2): Jackd2 1.9.4 declared compliance
+    this newer version of jackd1, and does not promise backwards
+    compatibility.
+  * Tighten symbols older than API version to instead follow API: Future
+    alternative implementations potentially of older version themselves
+    are not assured to be binary compatible.
+  * Have libjack-dev provide virtual libjack0.100.0-dev (...again - was
+    apparently lost at some point upgrading to jackd2).
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 26 Apr 2010 20:41:50 +0200
+
+jack-audio-connection-kit (1.9.5~dfsg-2) unstable; urgency=low
+
+  * Fix relax shlibs file to libjack0 0.116.2 or newer: library API
+    promised upstream to not have changed since.
+    Closes: bug#579134, thanks to Reinhard Tartler.
+  * Fix rename symbols file to get properly handled by dh_makeshlibs.
+  * Fix tighten symbols file to depend at minimum 0.116.2 (not 0.116.0).
+  * Suppress lintian error about newly added symbols: Any library
+    symbols changing since 0.116.2 supposedly are outside public API.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 25 Apr 2010 20:36:19 +0200
+
+jack-audio-connection-kit (1.9.5~dfsg-1) unstable; urgency=low
+
+  [ Adrian Knoth ]
+  * New upstream version 1.9.5
+  * Remove FreeBoB support. Use the FFADO firewire backend instead.
+  * Build against FFADO-2.0.0
+  * Enable jackdbus
+  * Rename jack_rec to jackrec (as done in jackd1)
+  * Include (updated) manpages from jackd1
+
+  [ Jonas Smedegaard ]
+  * Repackage source:
+    + Strip binary code (shared libraries for MacOS X and Windows).
+    + Strip unneeded sources copyright-protected without licence.
+    + Isolate as patch 0000 changes between tarball release and upstream
+      SVN trunk as of revision 3968.
+  * Sync control.in with latest hand-edited changes to control.
+  * Add myself as uploader.
+  * Drop old Vcs-Bzr stanza from control.
+  * Fix tighten libasound-dev build-dependency to at least 1.0.18.
+  * Lower debhelper build-dependency to 6, to ease backporting (we need
+    no newer features anyway).
+    Fix bump debhelper compat level to match build-dependency.
+  * Update patch handling:
+    + Use source format "3.0 (quilt)" (not CDBS simple-patchsys.mk).
+    + Unfuzz.
+    + Refresh, compacting with quilt --no-timestamps --no-index -pab.
+    + Rename with leading number, and add README to source documenting
+      micro naming scheme.
+    + Add DEP3 header to patch 1001 "earlier connect.diff").
+    + Unpatch as last clean target to please both git-buildpackage and
+      source format 3.0 (quilt).
+  * Update watch file:
+    + Track jackd2 releases.
+    + Handle DFSG mangling.
+    + Add usage hint.
+  * Fix non-unix line-ends in PO files.
+  * Tidy build routines:
+    + Drop install hints automagically handled by CDBS already.
+    + Separate configure from build in rules file.
+    + Avoid unneeded ifeq construct in rules file.
+    + Use single space in multi-line fields of control file.
+    + Mention use of 'waf distclean' when upstream ships cleaned source.
+    + Fix avoid remove man subdir (clash with dpkg unpatch routine).
+  * Drop file user-howto (7 years old, newest version 4 years old, and
+    is apparently included in jackd.1 manpage already).
+  * Use d-shlibs to resolve development library dependencies.
+    Build-depend on d-shlibs.
+  * Stop build-depending on scons (upstream use waf now).
+  * Use system waf. Build-depend on waf.
+      - Strip binary waf file (too risky to blindly invoke, and too much
+        hassle unpacking and inspecting properly).
+    Stop build-depending on python (only used by local waf now dropped).
+  * Recursively-expand a variable and avoid a linewrap in rules file.
+  * Enable waf verbose mode (easing porter work).
+  * Setup get-orig-source routine:
+    + include cdbs snippet upstream-tarball (suppressing its build-
+      dependencies unneeded for normal builds, to ease backporting).
+    + Repackage source, stripping DFSG-violating files.
+  * Rewrite debian/copyright using draft DEP5 rev. 135 format.
+  * Track symbols, but relaxed due to uncertainty on public library ABI.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 25 Apr 2010 16:38:58 +0200
+
+jack-audio-connection-kit (1.9.4+svn3842-2) experimental; urgency=low
+
+  * Fix a problem with jack_connect using a hard coded JACK client name
+    and when calling jack_connect or jack_disconnect multiple times in a
+    fast sequence, then the subsequent jack_(dis)connect calls fail.
+
+ -- Free Ekanayaka <freee@debian.org>  Sun, 27 Dec 2009 17:30:06 +0100
+
+jack-audio-connection-kit (1.9.4+svn3842-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Thu, 19 Nov 2009 15:34:47 +0100
+
+jack-audio-connection-kit (0.118+svn3796-1) unstable; urgency=low
+
+  [ Jonathan Wiltshire ]
+  * Debconf templates and debian/control reviewed by the debian-l10n-
+    english team as part of the Smith review project. Closes: #550036
+  * Debconf translation updates:
+    - Swedish (closes: #550493)
+    - Czech (closes: #550499)
+    - Vietnamese (closes: #550563)
+    - Finnish (closes: #550573)
+    - Portugese (closes: #546645, #550574)
+    - Italian (closes: #551924)
+    - Spanish (closes: #551977)
+    - Russian (closes: #552005)
+    - French (closes: #552072)
+
+  [ Adrian Knoth ]
+  * New upstream release (see NEWS, cmdline args have changed)
+  * Drop versioned build dependency for libreadline. (Closes: #553791)
+  * Remove Guenter Geiger from Uploaders (Closes: #546951)
+  * Build with celt-0.7.0 (Closes: #556821)
+  * Debconf translation updates:
+    - Japanese (Closes: #552230)
+    - German (Closes: #550986)
+    - Galician (Closes: #554228)
+
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Sun, 13 Sep 2009 17:57:19 +0200
+
+jack-audio-connection-kit (0.116.2+svn3592-3) unstable; urgency=low
+
+  [ Adrian Knoth ]
+  * Include Russian translation (Closes: #539460)
+  * Include Czech translation (Closes: #538955)
+  * Include Italian translation (Closes: #543514)
+  * Actively remove /etc/init.d/jackd (Closes: #538963)
+  * Explain new realtime default in the NEWS file (Closes: #539581)
+  * Move FreeBoB and FFADO drivers to new package jackd-firewire, so users
+    without 1394 devices have fewer dependencies. (Closes: #540891)
+  * Fix FTBFS caused by double-installing the manpages (Closes: #543077)
+  * Fix 24bit little endian problem on BE CPUs (Closes: #486308)
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Sun, 02 Aug 2009 20:21:06 +0200
+
+jack-audio-connection-kit (0.116.2+svn3592-2) unstable; urgency=low
+
+  [ Adrian Knoth ]
+  * Only include alsa_in and alsa_out on Linux kernels. (Closes: #537976)
+  * Remove /etc/init.d/jackd. (Closes: #527642, #528851)
+  * Remove obsolete jackstart manpage (Closes: 491120)
+  * Allow db_input to fail (Closes: #538051)
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Wed, 22 Jul 2009 11:19:49 +0200
+
+jack-audio-connection-kit (0.116.2+svn3592-1) unstable; urgency=low
+
+  [ Adrian Knoth ]
+  * New upstream version 0.116.2+svn3592. Fixes:
+      - segfault in jack_impulse_grabber (Closes: #432208)
+      - jack_connect, jack_disconnect error case (Closes: #465073)
+      - Fix build issues on Hurd (Closes: #320736)
+  * Include updated upstream manpages (Closes: #386466, #521771)
+  * Fix lintian warning about libjack-dev's doc-base
+  * Include new alsa_in and alsa_out binaries
+  * Prompt the user for realtime priority settings (Closes: #507248)
+  * Include armel in dependency arch list (Closes: #460084)
+  * Update upstream location in control files (Closes: #511239)
+  * Enable FFADO firewire audio driver (Closes: #519797)
+  * Remove notes about fetchmail in /etc/init.d/jackd (Closes: #530380)
+  * Fix building jackd twice in a row (Closes: #527335)
+  * Add myself to Uploaders
+
+ -- Adrian Knoth <adi@drcomp.erfurt.thur.de>  Mon, 30 Mar 2009 15:56:14 +0200
+
+jack-audio-connection-kit (0.116.1-4) unstable; urgency=low
+
+  * Bugfix: FTBFS on kFreeBSD (Closes: #510127)
+  * Remove obsolete debian/control.in file
+  * debian/control: Reformat Build-Depends field
+  * remove libcap-dev from Build-Depends and Build-Conflits. It was only
+    useful for 2.4 kernels, that we don't want to support anymore
+    anyways. (Closes: #492628)
+  * Redirect stderr in bash completion (Closes: #504488) (LP: #139995)
+  * use ${binary:Version} / ${source:Version} in debian/control instead of
+    the deprecated ${Source-Version} substvar
+
+ -- Reinhard Tartler <siretart@tauware.de>  Tue, 24 Feb 2009 23:04:00 +0100
+
+jack-audio-connection-kit (0.116.1-3) unstable; urgency=low
+
+  * Don't install *.la files in libjack-dev. (Closes: #510673)
+  * Add myself to Uploaders
+
+ -- Reinhard Tartler <siretart@tauware.de>  Fri, 09 Jan 2009 08:28:07 +0100
+
+jack-audio-connection-kit (0.116.1-2) unstable; urgency=low
+
+  * Build-Depend on libsamplerate-dev and libcelt-dev (Closes: #509579)
+  * Use su to start jackd from the init script, because start-stop-daemon
+    is not pam-aware and doesn't honor the settings of /etc/security/limits.conf
+  * Maintainer is now pkg-multimedia, set control field accordingly
+
+ -- Free Ekanayaka <freee@debian.org>  Wed, 24 Dec 2008 16:49:34 +0000
+
+jack-audio-connection-kit (0.116.1-1) unstable; urgency=low
+
+  [ Asheesh Laroia ]
+  * 11_fix_varargs_to_fix_ftbfs_on_alpha.patch: Add patch to fix alpha
+    build failure by using var args correctly (earlier versions of Jack
+    improperly passed the va_list around). The issue is fixed in upstream
+    svn r3205. (Closes: #508114)
+
+  [ Free Ekanayaka ]
+  * New upstream release
+
+ -- Free Ekanayaka <freee@debian.org>  Mon, 15 Dec 2008 12:11:54 +0100
+
+jack-audio-connection-kit (0.115.6-1) unstable; urgency=low
+
+  * New Upstream Version
+  * Drop kbsd patch, merged upstream
+  * Not using tarball.mk anymore
+  * Update synopsis-spelling patch
+  * Drop path-max patch, fixed upstream
+
+ -- Free Ekanayaka <freee@debian.org>  Sun, 30 Nov 2008 19:53:26 +0100
+
+jack-audio-connection-kit (0.109.2-4) unstable; urgency=low
+
+  * Added init script to start jackd at system startup
+
+ -- Free Ekanayaka <freee@debian.org>  Wed, 17 Sep 2008 14:43:18 +0200
+
+jack-audio-connection-kit (0.109.2-3) unstable; urgency=low
+
+  * Included patches and changelog entry from NMU 0.109.2-1.1
+
+ -- Free Ekanayaka <freee@debian.org>  Mon, 12 May 2008 21:17:42 +0100
+
+jack-audio-connection-kit (0.109.2-2) unstable; urgency=low
+
+  * Support DEB_BUILD_OPTIONS=dopot for optmised re-builds
+
+ -- Free Ekanayaka <freee@debian.org>  Mon, 12 May 2008 20:37:38 +0100
+
+jack-audio-connection-kit (0.109.2-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Don't use lib64 and so avoid setting the rpath in other packages
+    (Closes: #430961)
+  * Don't create a debian/tmp/usr/lib/lib64 that points to itself.
+  * There is no need to remove rpath's from binaries anymore so
+    drop the build dependency on chrpath.
+
+ -- Kurt Roeckx <kurt@roeckx.be>  Sat, 15 Mar 2008 11:49:05 +0000
+
+jack-audio-connection-kit (0.109.2-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Free Ekanayaka <freee@debian.org>  Thu, 31 Jan 2008 21:25:22 +0000
+
+jack-audio-connection-kit (0.109.0-1) unstable; urgency=low
+
+  * New upstream release
+  * Conflicts with libjack0.80.0-0, removed reference to the
+    non existing linux-patch-realtime-preempt (Closes: #445528)
+  * Downgraded Recommends jackd to Suggests (Closes: #442814)
+  * Fixed broken chunks in debian/patches/09_kbsd.patch
+
+ -- Free Ekanayaka <freee@debian.org>  Tue, 22 Jan 2008 13:23:13 +0000
+
+jack-audio-connection-kit (0.103.0-6) unstable; urgency=low
+
+  * debian/jackd.README.Debian:
+     - added note about using PAM to jack grant realtime
+       privileges (Closes: #425180, #269661)
+     - added note about using the realtime-preempt patch
+  * debian/control:
+     - added libpam-modules to Recommends:
+     - moved qjackctl from Suggests: to Recommends:
+  * debian/rules:
+     - pass --enable-static=yes to ./configure (Closes: #425265)
+     - don't enable -m3dnow and -msse on i386 (Closes: #426144)
+  * rebuilt against flac 1.1.4 (Closes: #426648)
+
+ -- Free Ekanayaka <freee@debian.org>  Mon, 28 May 2007 14:13:09 +0200
+
+jack-audio-connection-kit (0.103.0-5) unstable; urgency=low
+
+  * debian/control:
+     - build-depend on libfreebob0-dev only on Linux systems, to
+       solve FTBFS on GNU/kFreeBSD (closes: #423895)
+  * debian/patches:
+     - added 09_kbsd.patch, thanks to Petr Salinger
+  * debian/rules:
+     - removed enable-capabilities, as it was causing excessive
+       CPU load when using audacity 1.3.0 with jack via portaudio
+
+ -- Free Ekanayaka <freee@debian.org>  Thu, 17 May 2007 02:03:28 +0200
+
+jack-audio-connection-kit (0.103.0-4) unstable; urgency=low
+
+  * debian/rules:
+     - enable -m3dnow and -msse on i386 and amd64
+     - include simple-patchsys.mk before tarball.mk (closes: #422588)
+
+ -- Free Ekanayaka <freee@debian.org>  Wed,  9 May 2007 20:36:42 +0200
+
+jack-audio-connection-kit (0.103.0-3.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Drop i386 specific CFLAGS. (closes: #422289)
+
+ -- Bastian Blank <waldi@debian.org>  Mon, 07 May 2007 09:07:23 +0000
+
+jack-audio-connection-kit (0.103.0-3) unstable; urgency=low
+
+  * We are not depending anymore from automake (see changelog entry for
+    version 0.103.0-1), and now the package builds corretly on a plain
+    etch system (Closes: #328133)
+  * Enable dynsimd only for amd64 (Closes: #422076)
+
+ -- Free Ekanayaka <freee@debian.org>  Fri,  4 May 2007 11:29:00 +0200
+
+jack-audio-connection-kit (0.103.0-2) unstable; urgency=low
+
+  * Enabled dynsimd
+
+ -- Free Ekanayaka <freee@debian.org>  Tue, 17 Apr 2007 15:58:11 +0200
+
+jack-audio-connection-kit (0.103.0-1) unstable; urgency=low
+
+  * New upstream release
+  * Drop patches 04_configure_in_jack_version and 02_release-in-libjack-name
+    as suggested by the upstream developers, they will take are of
+    possible ABI changes and add the relevant runtime checks
+  * Drop patch 11_configure.ac, fixed the lib64 path in debian/rules
+  * Drop build-dependency on automake
+  * Rename the library and the headers binary packages to reflect
+    the fact that they are not anymore version-specific, add dummy
+    binary package libjack0.100.0 to provide an upgrade path
+  * Bug fix: "libjack0.100.0-0: 04_configure_in_jack_version.patch makes
+    add-on installation complicated", thanks to Mario Lang (Closes: #353680).
+  * Remove rpath from the binary programs using chrpath
+  * Enabled SSE (see http://ardour.org/node/820)
+
+ -- Free Ekanayaka <freee@debian.org>  Wed, 11 Apr 2007 01:43:06 +0200
+
+jack-audio-connection-kit (0.102.20-1) experimental; urgency=low
+
+  * New upstream release
+  * Deleted patches 10_freebob.patch and 09_jack-ia64.diff, as
+    they are part of the new upstream
+  * Build-Depend on libfreebob0-dev, thanks to Marcio Roberto
+    Teixeira (Closes: #399246).
+  * Added myself to Uploaders
+  * Updated standards to 3.7.2
+
+ -- Free Ekanayaka <freee@debian.org>  Mon, 20 Nov 2006 13:50:57 +0100
+
+jack-audio-connection-kit (0.101.1-2) unstable; urgency=low
+
+  * incorporated patch to fix ia64 atomic operations (closes: #394021)
+  * prepared for freebob support by backporting the freebob driver from
+    jack svn version.
+
+ -- Guenter Geiger (Debian/GNU) <geiger@debian.org>  Thu, 19 Oct 2006 12:03:37 +0200
+
+jack-audio-connection-kit (0.101.1-1) unstable; urgency=low
+
+  * new upstream release
+    + no freebob support since libfreebob is not yet packaged
+
+ -- Robert Jordens <jordens@debian.org>  Fri, 21 Apr 2006 20:00:08 +0200
+
+jack-audio-connection-kit (0.100.7-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Robert Jordens <jordens@debian.org>  Thu,  9 Mar 2006 14:52:35 +0100
+
+jack-audio-connection-kit (0.100.0-5) unstable; urgency=low
+
+  * debian/bash-completion.d/jackd: updated; see Bug#329806
+  * dont depend on libglib1.2-dev; closes: Bug#326212
+  * debian/watch: update
+
+ -- Robert Jordens <jordens@debian.org>  Sat,  4 Mar 2006 13:13:20 +0100
+
+jack-audio-connection-kit (0.100.0-4) unstable; urgency=low
+
+  * debian/bash_completion.d/jackd, debian/jackd.install: closes: #319764
+    (jackd: bash completion for jack_connect)
+
+ -- Robert Jordens <jordens@debian.org>  Wed,  3 Aug 2005 23:23:16 +0200
+
+jack-audio-connection-kit (0.100.0-3) unstable; urgency=low
+
+  * debian/rules: build with tmpdir=/dev/shm again;
+    closes: Bug#321149 (jackd not using /dev/shm as tmpdir)
+  * debian/patches/07_path-max.patch: closes: Bug#320736 (Patch to handle
+    PATH_MAX-less systems)
+  * debian/patches/08_synopsis-spelling.patch: closes: #311465 ('man
+    jack_bufsize' typo: "SYNOPSYS")
+  * debian/copyright: mention authors as copyright holders and license as
+    license and not as copyright; closes: #290186 (Improper copyright file)
+
+ -- Robert Jordens <jordens@debian.org>  Wed,  3 Aug 2005 22:58:01 +0200
+
+jack-audio-connection-kit (0.100.0-2) unstable; urgency=low
+
+  * upload 0.100.0-1 unchanged to unstable
+
+ -- Robert Jordens <jordens@debian.org>  Mon, 27 Jun 2005 15:34:00 +0200
+
+jack-audio-connection-kit (0.100.0-1) experimental; urgency=low
+
+  * new upstream release
+  * new SONAME again. noone was using that 0.99.61 from experimental and it
+    confuses people.
+
+ -- Robert Jordens <jordens@debian.org>  Mon, 13 Jun 2005 20:16:50 +0200
+
+jack-audio-connection-kit (0.99.61-1) experimental; urgency=low
+
+  * intermediate snapshot release
+    + new jack_client_open() interface requiring a new SONAME: 0.99.61
+      (although the first incompatible change happened at least in
+      0.99.14)
+    + debian/patches/04_configure_in_jack_version.patch: updated
+  * debian/FAQ: updated from webpage
+
+ -- Robert Jordens <jordens@debian.org>  Sat,  7 May 2005 18:30:20 +0200
+
+jack-audio-connection-kit (0.99.0-6) unstable; urgency=high
+
+  * do not use the "[system: linux]" stuff for "Depends"; patch from Daniel
+    Schepler <schepler@math.berkeley.edu>; closes: Bug#295804
+  * urgency high due to things in 0.99.0-5
+  * debian/control: build against libreadline5-dev
+
+ -- Robert Jordens <jordens@debian.org>  Sun, 20 Feb 2005 22:01:41 +0100
+
+jack-audio-connection-kit (0.99.0-5) unstable; urgency=high
+
+  * debian/patches/01a_force-copy-autogen.sh.patch:
+    dont make symlinks for config.{guess,sub}; let cdbs play with it;
+    closes: Bug#295284
+  * urgency high because the bug is present in testing and will surface as
+    soon as the next cdbs gets there
+  * debian/control.in, rules: use cdbs' new crazy mechanism of mangling
+    control; closes: Bug#272307
+
+ -- Robert Jordens <jordens@debian.org>  Mon, 14 Feb 2005 23:32:10 +0100
+
+jack-audio-connection-kit (0.99.0-4) unstable; urgency=low
+
+  * debian/control.in: added a Recommends: jackd (= ${Source-Version})
+    to libjack to express the need to install jackd in order to get a
+    working libjack.
+
+ -- Robert Jordens <jordens@debian.org>  Tue,  1 Feb 2005 13:22:54 +0100
+
+jack-audio-connection-kit (0.99.0-3) unstable; urgency=low
+
+  * moved Junichi to Uploaders and me to Maintainer in debian/control. Thanks,
+    Junichi, for your great work reagrding this package!
+  * debian/control.in, debian/rules: added kfreebsd-gnu handling;
+    thanks to Robert Millan <rmh@debian.org>; closes: Bug#272307
+  * debian/control.in: convert "Depends: jackd" into a two-sided conflicts;
+    closes: Bug#248665
+
+ -- Robert Jordens <jordens@debian.org>  Sun, 30 Jan 2005 21:22:21 +0100
+
+jack-audio-connection-kit (0.99.0-2) unstable; urgency=medium
+
+  * upload unchanged to unstable;
+  * urgency medium because of important fixes for i586 users (Bug#266975)
+    and NPTL workaround (Bug#266507)
+
+ -- Robert Jordens <jordens@debian.org>  Tue,  2 Nov 2004 20:16:51 +0100
+
+jack-audio-connection-kit (0.99.0-1) experimental; urgency=low
+
+  * new upstream release
+    + works around pthread-create bug in glibc (Bug#266507)
+    + debian/patches/03_remove-cpp-atomicity.patch,
+      debian/patches/07_dont_add_readline_to_LIBS.patch: removed since applied
+      upstream
+    + --disable-iec61883 since it doesn't compile
+  * uplod to experimental to not hinder the other version entering
+    testing
+  * debian/rules: don't optimize for i686 on i386; closes: Bug#266975
+
+ -- Robert Jordens <jordens@debian.org>  Wed, 22 Sep 2004 23:01:39 +0200
+
+jack-audio-connection-kit (0.98.1-5) unstable; urgency=medium
+
+  * debian/patches/03_remove-cpp-atomicity.patch: use a regular patch for
+    removing the atomicity files for sparc and hppa
+  * debian/patches/07_dont_add_readline_to_LIBS.patch: added; add a noop to
+    prevent linking libjack0.80.0-0 against libreadline4;
+    closes: Bug#260954, Bug#260961; urgency medium because this breaks other
+    packages' builds
+  * correct spelling error in debian/jackd.README.Debian: powerful
+  * debian/watch: added
+
+ -- Robert Jordens <jordens@debian.org>  Sat, 31 Jul 2004 17:21:44 +0200
+
+jack-audio-connection-kit (0.98.1-4) unstable; urgency=low
+
+  * debian/rules: remove atomicity.h for hppa and sparc to
+    work around the FTBS; closes: Bug#256221 for now
+
+ -- Robert Jordens <jordens@debian.org>  Wed, 30 Jun 2004 02:20:09 +0200
+
+jack-audio-connection-kit (0.98.1-3) unstable; urgency=low
+
+  * upload experimental version unchanged to unstable
+
+ -- Robert Jordens <jordens@debian.org>  Tue, 15 Jun 2004 01:18:46 +0200
+
+jack-audio-connection-kit (0.98.1-2) experimental; urgency=low
+
+  * debian/shlibs.local: use ${Source-Version}, thanks to Elimar Riesebieter
+    <riesebie@lxtec.de>
+
+ -- Robert Jordens <jordens@debian.org>  Sun, 16 May 2004 15:49:20 +0200
+
+jack-audio-connection-kit (0.98.1-1) experimental; urgency=low
+
+  * new upstream release
+    + fulfills whishes for init.d scripts or other ways of automatically
+      starting jackd if applications need it (analogy to esd);
+      set JACK_START_SERVER in your environment to enable it; closes: Bug#169776
+    + non-existent function has been removed from the header; closes: Bug#245742
+  * debian/FAQ: updated from webpage
+  * debian/README.developers: updated from webpage
+  * debian/user-howto: updated from webpage
+
+ -- Robert Jordens <jordens@debian.org>  Fri,  7 May 2004 15:24:54 +0200
+
+jack-audio-connection-kit (0.96.2-1) experimental; urgency=low
+
+  * new upstream snapshot from CVS branch EXP to test new autoconf structure.
+    + also contains new features, does not break binary compatibility
+    + probably won't compile on arm because the generic atomicity.h
+      implementation is broken.
+  * debian/patches/20-check-rc-from-initialize-shm.diff: integrated upstream
+
+ -- Robert Jordens <jordens@debian.org>  Wed, 31 Mar 2004 23:44:30 +0200
+
+jack-audio-connection-kit (0.94.0-4) unstable; urgency=low
+
+  * the "you are never entirely done" release
+  * forgot to update debian/shlibs.local
+
+ -- Robert Jordens <jordens@debian.org>  Mon,  1 Mar 2004 01:32:14 +0100
+
+jack-audio-connection-kit (0.94.0-3) unstable; urgency=low
+
+  * libjack0.80.0-dev should indeed be Section: libdevel. I don't know, where
+    the actual change disapeared.
+
+ -- Robert Jordens <jordens@debian.org>  Sun, 29 Feb 2004 01:16:34 +0100
+
+jack-audio-connection-kit (0.94.0-2) unstable; urgency=low
+
+  * debian/control: libjack0.80.0-dev is Section: libdevel
+  * debian/jackd.README.Debian, debian/rules:
+    + add a lot of documentation and support for setuid jackstart; addresses
+      our part of Bug#229709, which can then be reassigned to wnpp
+    + manpages, FAQ, a user-howto and a extensive README.Debian are there;
+      closes: Bug#148933
+    + add documentation and support for /dev/shm as tmpdir; needs
+      libc6 >= 2.3.2.ds1-11 because they create and mount the tmpfs;
+      closes: Bug#229374
+    + added hints to the lowlatency and preempt patches in Debian and to
+      the givertcap patch in AGNULA.
+    + add information and pointers to the realtime LSM
+  * debian/control:
+    + jackd "Suggests: qjackctl, jack-tools, meterbridge, libjackasyn0"
+      which create a sufficient and extended toolkit and environment for jackd
+    + libjack0.80.0-0: Depends: jackd (= ${Source-Version}), for discussion
+      see l.d.o/debian-multimedia
+  * debian/patches/20-check-rc-from-initialize-shm.diff: added; addresses the
+    remaining notes and finally closes: Bug#234072
+
+ -- Robert Jordens <jordens@debian.org>  Sat, 28 Feb 2004 20:00:05 +0100
+
+jack-audio-connection-kit (0.94.0-1) unstable; urgency=low
+
+  * new upstream release
+    + fixes command-line parsing
+  * rewrote urls as <http://...> as recommended in RFC 2396, Appendix E
+  * JACK 0.75.0 entered testing; uploading to unstable
+
+ -- Robert Jordens <jordens@debian.org>  Tue, 13 Jan 2004 19:57:04 +0100
+
+jack-audio-connection-kit (0.91.1-1) experimental; urgency=low
+
+  * New upstream release
+    + does not break binary compatibility
+    + enable experimental firewire drivers
+      - debian/control: Build-Depends: libraw1394-dev
+      - debian/patches/06_iec61883_headers.patch add files missing
+        from tarball
+    + obsoletes debian/patches/03_cpuinfo_other_archs.patch
+  * debian/FAQ: updated from webpage
+  * debian/libjack0.80.0-dev.install: don't install *.la files for
+    jack plugins
+  * debian/shlibs.local: added: remove duplicate depends on libjack
+    for jackd
+  * debian/jack_freewheel.1, debian/jack_bufsize.1: wrote manpages
+
+ -- Robert Jordens <jordens@debian.org>  Tue, 30 Dec 2003 19:51:04 +0100
+
+jack-audio-connection-kit (0.80.0-1) experimental; urgency=low
+
+  * new upstream release; binary compatibility mostly remains, source
+    compatibility breaks, chose the new soname; upload to experimental
+  * debian/patches/03_cycles-h-other-archs.patch: partially integrated
+    upstream
+  * debian/patches/03_cpuinfo_other_archs.patch: parses cpuinfo on other
+    architectures by Junichi Uekawa; closes: #207435
+  * debian/control: changed rjo@gmx.de to jordens@debian.org
+
+ -- Robert Jordens <jordens@debian.org>  Tue,  2 Sep 2003 22:18:01 +0200
+
+jack-audio-connection-kit (0.75.0-2) unstable; urgency=low
+
+  * Add replaces libjack0.71.2-0 (<< 0.75.0-1),
+    due to moved 'development binaries for plugins'.
+  (closes: #207731)
+  * Standards-Version: 3.6.1
+
+ -- Junichi Uekawa <dancer@debian.org>  Fri, 29 Aug 2003 18:01:26 +0900
+
+jack-audio-connection-kit (0.75.0-1) unstable; urgency=low
+
+  * new upstream release
+  * debian/rules: switched to cdbs
+    + tarball.mk: great way to ensure the autotools horror doesn't
+      pollute the diff
+    + simple-patchsys.mk: works great with the dpatches renamed.
+    + debian/rules: builds optimized for i386: closes: #202589
+      have a nonoptimized version with DEB_BUILD_OPTIONS=noopt as per policy
+  * debian/control:
+    + use dh-buildinfo
+    + new comaintainers Guenter Geiger <geiger@debian.org> and
+      Robert Jordens <rjo@gmx.de>
+    + Standards-Version: 3.6.0: no changes
+    + won't change the package name (and release of libjack) again because
+      binary compatibility didn't break. JACK_API_CURRENT will be set to 1
+      as soon as the new era of binary compatibility starts upstream.
+      Then libjack0.71.2 will be named libjack1.
+      closes: #205552
+    + Build-Depends: libreadline4-dev to build jack_transport
+  * debian/lib*.install: moved the jack plugins' development versions
+    to libjack0.71.2-dev
+  * debian/libjack0.71.2-dev.docs: added README.developers to libjack0.71.2-dev
+    and ship it as a file, not as a patch
+  * debian/FAQ: updated from webpage
+  * 03_cycles-h-other-archs.patch: updated with code from the kernel headers
+    that works well for ardour, thus reducing the number of archs where the
+    workaround is used to: arm, sparc, m68k
+  * debian/jack_load.1, debian/jack_unload.1, debian/jack_transport.1,
+    debian/jack_monitor_client.1, debian/jack_simple_client.1: wrote the
+    missing manpages.
+  * debian/user-howto: added to jackd documentation and updated from webpage
+
+ -- Robert Jordens <rjo@gmx.de>  Fri, 22 Aug 2003 11:00:45 +0200
+
+jack-audio-connection-kit (0.71.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Update patches:
+   04_configure_in_jack_version: update for 0.71.2
+   02_version-soname: update.
+  * debian/*: manually edit for 0.71.2
+   debian/jackd.manpages: use upstream manpages for jackd and jackstart
+  * add rules to build jack_md5.h before jackstart
+  * FAQ update rules fixed to add changelog entry
+  * build in a subdir
+  * debian/FAQ: updated from webpage
+  * debian/rules: use patch-stamp instead of patch
+  * [05_jack_md5h.dpatch] fix jack_md5.h dependency
+  * run autoconf2.5/automake1.7 over source
+
+ -- Junichi Uekawa <dancer@debian.org>  Wed, 21 May 2003 00:12:08 +0900
+
+jack-audio-connection-kit (0.50.0-2) UNRELEASED; urgency=low
+
+  * Use dpatch to manage patches.
+   01_readme-developers
+   02_version-soname
+   03_cycles-h
+   04_configure_in_jack_version
+   - autoconf/automake needs to be re-ran after applying those patches,
+  added a rule to do that to debian/rules (auto-run)
+  * debian/rules: fix to properly handle autoconf 2.57-generated
+    configure, instead of 2.13
+
+ -- Junichi Uekawa <dancer@debian.org>  Mon,  7 Apr 2003 20:55:59 +0900
+
+jack-audio-connection-kit (0.50.0-1) unstable; urgency=low
+
+  * New upstream release, new maintainer.
+  * Use DESTDIR instead of prefix= in install target.
+  * Misc updating, forward-porting of patches, etc.
+  * I am keeping the soname convention as it is, since upstream
+    is still not decided on a stable interface.
+  * re-run aclocal/autoconf/automake.
+  * use w3m instead of lynx to get the FAQ
+
+ -- Junichi Uekawa <dancer@debian.org>  Sun,  2 Mar 2003 17:49:15 +0900
+
+jack-audio-connection-kit (0.44.0-1) unstable; urgency=low
+
+  * New upstream release (CVS)
+  * Re-add some missing binaries and manpages that got lost somehow.
+
+ -- Stefan Schwandter <swan@debian.org>  Tue,  7 Jan 2003 18:25:28 +0100
+
+jack-audio-connection-kit (0.40.1-1) unstable; urgency=low
+
+  * New upstream release (CVS)
+  * Keep library versioning based on package version although upstream
+    doesn't anymore, as long as different "releases" (CVS snapshots
+    actually) aren't guaranteed to be binary compatible.
+  * JACK now doesn't depend on glib anymore (closes: #154773).
+
+ -- Stefan Schwandter <swan@debian.org>  Sat, 30 Nov 2002 14:42:59 +0100
+
+jack-audio-connection-kit (0.38.0-1) unstable; urgency=low
+
+  *  New upstream release (CVS).
+
+ -- Stefan Schwandter <swan@debian.org>  Fri, 20 Sep 2002 19:20:20 +0200
+
+jack-audio-connection-kit (0.37.2-1) unstable; urgency=low
+
+  * New upstream release (CVS).
+
+    As there doesn't seem to be a release in sight, and cvs has been on
+    it's current status for a while i decided to switch to the cvs
+    version. Unfortunately this means recompiling for packages depending
+    on libjack again...
+
+  * Ship a changelog generated by cvs2cl from the upstream sources.
+    Upstream doesn't unfortunately.
+
+ -- Stefan Schwandter <swan@debian.org>  Mon, 16 Sep 2002 09:14:51 +0200
+
+jack-audio-connection-kit (0.34.0-6) unstable; urgency=low
+
+  * Added patch for jackrec to build with libsndfile1.
+  * debian/control: build-dep on libsndfile1-dev
+
+ -- Stefan Schwandter <swan@debian.org>  Thu,  5 Sep 2002 15:04:24 +0200
+
+jack-audio-connection-kit (0.34.0-5) unstable; urgency=low
+
+  * Change address in debian/control as well...
+
+ -- Stefan Schwandter <swan@debian.org>  Wed,  4 Sep 2002 09:58:54 +0200
+
+jack-audio-connection-kit (0.34.0-4) unstable; urgency=low
+
+  * New maintainer email address
+  * Applied patch by Junichi Uekawa to remove the unconditional error from
+    cycles.h to hopefully enable build on more architectures
+    (closes: #148699).
+
+ -- Stefan Schwandter <swan@debian.org>  Wed,  4 Sep 2002 09:29:14 +0200
+
+jack-audio-connection-kit (0.34.0-3) unstable; urgency=low
+
+  * Small manpage updates
+  * Added ALSA-related URLs to debian/asound.rc
+  * Renamed libjack0 to libjack0.34.0-0 and relaxed shlibs dependency
+    (closes: #149687)
+  * Removed jack_alsa from shlibs file
+  * Fixed FAQ line-length
+  * Removed autogen.sh from the diff.gz
+  * debian/rules
+    - Avoid stripping of the jackd binary if DEB_BUILD_OPTIONS=nostrip is set
+    - Made configure a phony target again
+    - Added faq target to fetch the FAQ from the website
+  * libjack0.34.0-dev: added dependency on pkg-config (closes: #150089)
+  * Removed some of the less useful example clients, upstream will do the
+    same in the next release, build-dep on libfltk could be dropped
+
+ -- Stefan Schwandter <e9925373@student.tuwien.ac.at>  Mon,  1 Jul 2002 20:06:27 +0200
+
+jack-audio-connection-kit (0.34.0-2) unstable; urgency=low
+
+  * Added more documentation (first step to address #148933)
+    - added manpages
+    - added w3m -dump'ed version of the FAQ from the website
+    - added example .asoundrc
+    - remove rather pointless upstream README
+  * Applied patch by Junichi Uekawa to enable build on ppc
+  * Removed maintainer-only rules from debian/rules
+
+ -- Stefan Schwandter <e9925373@student.tuwien.ac.at>  Wed,  5 Jun 2002 10:04:01 +0200
+
+jack-audio-connection-kit (0.34.0-1) unstable; urgency=low
+
+  * Repackaged from scratch. Thanks to Junichi Uekawa for his previous
+    work on jack packaging and for useful hints how to get my package into a
+    releasable state! (closes: #141450)
+  * New upstream release
+
+ -- Stefan Schwandter <e9925373@student.tuwien.ac.at>  Fri, 24 May 2002 11:00:24 +0200
+
+jack (0.8.0.cvs) unstable; urgency=low
+
+  * cvs update
+
+ -- Junichi Uekawa <dancer@debian.org>  Tue,  5 Feb 2002 22:12:15 +0900
+
+jack (0.6.0.cvs) unstable; urgency=low
+
+  * CVS Checkout source, packaging it.
+
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 23 Dec 2001 17:19:50 +0900
+
+jack (0.4.7-1) unstable; urgency=low
+
+  * Initial attempt to create a Debian package out of the Sourceforge
+    file release.
+
+ -- Junichi Uekawa <dancer@debian.org>  Sun, 23 Dec 2001 17:13:22 +0900

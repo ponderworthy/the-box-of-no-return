@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsfizz_match_definitions.a  CMakeFiles/sfizz_match_definitions.dir/sfizz_match_definitions.cpp.o
+/usr/bin/ranlib libsfizz_match_definitions.a

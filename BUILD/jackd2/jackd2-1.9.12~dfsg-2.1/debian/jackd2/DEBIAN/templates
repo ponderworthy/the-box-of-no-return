@@ -1,0 +1,78 @@
+
+Template: jackd/tweak_rt_limits
+Type: boolean
+Default: false
+Description: Enable realtime process priority?
+ If you want to run jackd with realtime priorities, the user starting jackd
+ needs realtime permissions. Accept this option to create the
+ file /etc/security/limits.d/audio.conf, granting realtime
+ priority and memlock privileges to the audio group.
+ .
+ Running jackd with realtime priority minimizes latency, but
+ may lead to complete system lock-ups by requesting
+ all the available physical system memory, which is unacceptable in
+ multi-user environments.
+Description-cs.UTF-8: Povolit realtimovou prioritu procesu?
+ Pokud chcete spouštět jackd s realtimovými prioritami, potřebuje uživatel který spouští jackd příslušná realtimová oprávnění. Budete-li s tím souhlasit, dojde k vytvoření souboru /etc/security/limits.d/audio.conf a přiřazení příslušných práv (realtimové priority a memlock) pro skupinu audio.
+ .
+ Spuštění jackd s realtimovou prioritou minimalizuje reakce počítače, ale může vést ke kompletnímu zatuhnutí systému způsobenému plným obsazením fyzické paměti což je nepřípustné zejména ve více-uživatelských prostředích.
+Description-da.UTF-8: Aktiver realtidsprocesprioritet?
+ Hvis du ønsker at køre jackd med realtidsprioriteter, skal brugeren der starter jackd have rettigheder for realtid. Accepter denne indstilling for at oprette filen /etc/security/limits.d/audio.conf der giver realtidsprioritet og memlock-privilegier til lydgruppen.
+ .
+ Kørsel af jackd med realtidsprioritet minimerer latens, men kan føre til fuldstændig systemlåsning ved at anmode om al den tilgængelige fysiske systemhukommelse, hvilket er uacceptabelt i flerbrugermiljøer.
+Description-de.UTF-8: Echtzeit-Verarbeitungspriorität aktivieren?
+ Falls Sie Jackd mit Echtzeitpriorität ausführen möchten, benötigt der Benutzer, der Jackd startet, die Echtzeit-Rechte. Akzeptieren Sie diese Option, um die Datei /etc/security/limits.d/audio.conf zu erstellen und damit der Gruppe »audio« Echtzeit- und Memlock-Priorität zu gewähren.
+ .
+ Durch Betrieb von Jackd mit Echtzeitpriorität wird die Latenz minimiert. Dies kann aber auch zum kompletten Aufhängen des Systems führen, indem der gesamte physische Speicher angefordert wird, was in einer Mehrbenutzerumgebung nicht akzeptabel ist.
+Description-es.UTF-8: ¿Desea habilitar la prioridad en tiempo real del proceso?
+ Si quiere ejecutar jackd con prioridades en tiempo real, el usuario que ejecute jackd necesita tener permisos para dicha prioridad. Acepte esta opción para crear el archivo «/etc/security/limits.d/audio.conf», para permitir la prioridad en tiempo real y los privilegios de «memlock» al grupo audio.
+ .
+ Ejecutar jackd con la prioridad en tiempo real reduce la latencia, pero puede llevar a un bloqueo completo del sistema al pedir toda la memoria física disponible del sistema, lo que es inaceptable en entornos multiusuario.
+Description-fi.UTF-8: Asetetaanko prosessi ajettavaksi reaaliaikaisella prioriteetilla?
+ Ohjelman jackd ajaminen reaaliaikaisella prioriteetilla vaatii, että sen käynnistäjällä on tähän vaadittavat oikeudet. Tämän vaihtoehdon valitseminen luo tiedoston /etc/security/limits.d/audio.conf, jossa ryhmälle ”audio” annetaan oikeudet reaaliaikaisen prioriteetin ja memlockin käyttöön.
+ .
+ Ohjelman jackd ajaminen reaaliaikaisella prioriteetilla minimoi latenssin, mutta voi aiheuttaa järjestelmän täydellisen lukkiutumisen vaatimalla järjestelmän kaiken fyysisen muistin, mikä ei ole hyväksyttävää monen käyttäjän ympäristössä.
+Description-fr.UTF-8: Faut-il activer la gestion des priorités de processus en temps réel ?
+ Si vous voulez exécuter jackd avec des priorités en temps réel, l'identifiant qui exécute le démon doit avoir des autorisations « realtime ». Vous pouvez choisir cette option pour créer un fichier /etc/security/limits.d/audio.conf qui donnera la priorité « realtime » et le privilège « memlock » (verrouillage de la mémoire) au groupe « audio ».
+ .
+ Si jackd est exécuté en priorité temps réel, les délais de latence seront diminués mais cela peut provoquer un gel complet du système si toute la mémoire physique du système est mobilisée, ce qui est difficilement acceptable en environnement multi-utilisateurs.
+Description-gl.UTF-8: Desexa activar a prioridade de tempo real?
+ Se desexa executar jackd con prioridades de tempo real o usuario que inicie jackd precisa ter permisos para tempo real. Escolle esta opción para crear o ficheiro /etc/security/limits.d/audio.conf, que lle concederá a prioridade para tempo real e privilexios de bloqueo de memoria para o grupo de son.
+ .
+ Executa jackd con prioridade de tempo real minimiza a latencia pero pode causar bloqueos completos do sistema se pide toda a memoria física dispoñíbel no sistema, o que non é admisíbel en ambientes multiusuario.
+Description-it.UTF-8: Attivare la priorità realtime del processo?
+ Per eseguire jackd con le priorità realtime, l'utente che avvia jackd necessita dei permessi realtime. Accettando verrà creato il file /etc/security/limits.conf, che garantirà i privilegi di priorità realtime e di memlock al gruppo audio.
+ .
+ L'esecuzione di jackd con priorità in realtime minimizza la latenza, ma potrebbe comportare dei blocchi del sistema dovuti alla richiesta di tutta la memoria fisica disponibile sul sistema, inaccettabile in ambienti multi-utente.
+Description-ja.UTF-8: リアルタイム実行優先度の設定を有効にしますか?
+ jackd をリアルタイム優先度で動作させたい場合、jackd を起動したユーザはリアルタイム動作をさせられるパーミッションが必要です。このオプションを選択すると、/etc/security/limits.d/audio.conf ファイルを作成し、audio グループに対してリアルタイム優先度と memlock 権限を許可します。
+ .
+ レイテンシー (遅延) を抑えて jackd をリアルタイム優先度でに動作させると、システムの物理メモリを可能な限り要求して完全にシステム停止を引き起こす可能性があります。これは、マルチユーザ環境では容認出来ません。
+Description-nl.UTF-8: Realtime procesprioriteit activeren?
+ Als u wilt dat jackd wordt uitgevoerd met "realtime" prioriteit, dan heeft de gebruiker die jackd start realtime-privileges nodig. Als u deze optie accepteert wordt het bestand /etc/security/limits.d/audio.conf aangemaakt. Hiermee worden de realtime prioriteit- en memlock-privileges aan de groep "audio" toegekend.
+ .
+ Het uitvoeren van jackd met realtime prioriteit minimaliseert vertragingen, maar kan er voor zorgen dat het systeem vastloopt wanneer deze het volledige fysieke geheugen opvraagt. Dit is onaanvaardbaar op systemen waar meerdere gebruikers tegelijk werken.
+Description-pt.UTF-8: Activar prioridade do processo em tempo real?
+ Se deseja correr o jackd com prioridades de tempo real, o utilizador que arrancar o jackd precisa ter permissões de tempo real. Aceite esta opção para criar o ficheiro /etc/security/limits.d/audio.conf. garantindo prioridade de tempo real e privilégios memlock ao grupo audio.
+ .
+ Correr o jackd com prioridade de tempo real minimiza a latência, mas pode levar a paragens completas do sistema ao requisitar toda a memória física disponível do sistema, o que é inaceitável em ambientes de multi-utilizador.
+Description-pt_BR.UTF-8: Habilitar prioridade de processo em tempo real?
+ Se você quiser executar o jackd com prioridades de tempo real, o usuário que for iniciar o jackd precisa ter permissões de tempo real. Aceite esta opção para criar o arquivo /etc/security/limits.d/audio.conf, concedendo prioridade de tempo real e privilégios de memlock para o grupo audio.
+ .
+ Executar o jackd com prioridade de tempo real minimiza a latência, mas pode levar a travamentos completos do sistema por requisitar toda a memória física disponível do sistema, o que é inaceitável em ambientes multi-usuário.
+Description-ru.UTF-8: Использовать приоритет реального времени в работе?
+ Если вы хотите, чтобы jackd выполнялся с приоритетом реального времени, то пользователю, запускающему jackd, нужны права на работу с приоритетом реального времени. Если ответить утвердительно, то будет создан файл /etc/security/limits.d/audio.conf, предоставляющий приоритет реального времени memlock для группы audio.
+ .
+ Работа jackd с приоритетом реального времени сократит задержку, но может привести к полной блокировке системы, запрашивая всю доступную физическую системную память, что неприемлемо в многопользовательских системах.
+Description-sv.UTF-8: Aktivera realtidsprocessprioritet?
+ Om du vill köra jackd med realtidsprioriteter, behöver den användare som startar jackd realtidsrättigheter. Acceptera detta val för att skapa filen /etc/security/limits.d/audio.conf, vilket ger realtidsprioritet och memlockrättigheter till audiogruppen.
+ .
+ Om jackd körs med realtidsprioritet minimeras latensen, men det kan leda till att systemet låser sig fullständigt genom att efterfråga allt tillgängligt fysiskt systemminne, vilket är oacceptabelt i en fleranvändarmiljö.
+Description-tr.UTF-8: Gerçek zamanlı işlem önceliği etkinleştirilsin mi?
+ 'jackd'nin gerçek zamanlı önceliklerle çalışabilmesi için jackd'yi başlatan kullanıcının gerçek zaman izinlerine sahip olması gerekir. Bu seçeneği kabul ettiğiniz takdirde /etc/security/limits.d/audio.conf dosyası oluşturularak audio grubuna gerçek zamanlı öncelik ve memlock ayrıcalıkları tanınacaktır.
+ .
+ 'jackd'yi gerçek zamanlı öncelikle çalıştırmak gecikmeleri en aza indirir, fakat mevcut tüm fiziksel sistem belleğini isteyerek sistem kilitlenmelerine neden olabilir. Bu durum çok kullanıcılı ortamlarda kabul edilemez.
+Description-vi.UTF-8: Bật mức ưu tiên tiến trình thời gian thực ?
+ Nếu bạn muốn chạy trình nền jackd ở mức ưu tiên thời gian thực thì người dùng khởi chạy jackd cần có quyền truy cập thời gian thực. Hiệu lực tuỳ chọn này để tạo tập tin cấu hình « /etc/security/limits.d/audio.conf » mà cấp cho nhóm « audio » (âm thânh) quyền truy cập thời gian thực đối với mức ưu tiên và khoá bộ nhớ.
+ .
+ Chạy trình nền jackd ở mức ưu tiên thời gian thực thì giảm sự âm ỷ, nhưng mà cũng có thể dẫn tới toàn bộ hệ thống đang treo cứng do yêu cầu tất cả các bộ nhớ hệ thống vật lý sẵn sàng, một trường hợp không thể chấp nhận được trong môi trường đa người dùng.

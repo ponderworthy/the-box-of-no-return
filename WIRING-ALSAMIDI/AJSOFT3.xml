@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aj-snapshot>
+<alsa>
+  <client name="System">
+    <port id="0" />
+    <port id="1" />
+  </client>
+  <client name="Midi Through">
+    <port id="0">
+      <connection client="soft1_midi" port="0" />
+      <connection client="soft2_midi" port="0" />
+      <connection client="soft3_midi" port="0" />
+    </port>
+  </client>
+  <client name="UM-ONE">
+    <port id="0">
+      <connection client="Midi Through" port="0" />
+    </port>
+  </client>
+  <client name="jack_midi" />
+  <client name="soft1_midi" />
+  <client name="soft2_midi" />
+  <client name="soft3_midi" />
+  <client name="Patchage" />
+</alsa>
+<jack>
+  <client name="soft3_midi">
+    <port name="capture">
+      <connection port="Distribute.py:in_1" />
+    </port>
+  </client>
+  <client name="Distribute.py">
+    <port name="SRO" />
+    <port name="Strings" />
+    <port name="FlowBells">
+      <connection port="yoshimi-YoshFlowBells:midi in" />
+    </port>
+    <port name="Many-Horns" />
+  </client>
+  <client name="yoshimi-YoshFlowBells">
+    <port name="left">
+      <connection port="zita-j2n-soft3:in_1" />
+    </port>
+    <port name="right">
+      <connection port="zita-j2n-soft3:in_2" />
+    </port>
+  </client>
+</jack>
+</aj-snapshot>

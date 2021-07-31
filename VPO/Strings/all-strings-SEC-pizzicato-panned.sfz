@@ -1,0 +1,799 @@
+//==============================================================
+// All Strings Section : Pizzicato + Panned
+//
+//   This is a combination of:
+//
+//     bass-SEC-pizzicato.sfz
+//     cello-SEC-pizzicato.sfz
+//     viola-SEC-pizzicato.sfz
+//     1st-violin-SEC-pizzicato.sfz
+//
+//   ... where the instruments are panned to their proper
+//       orchestra seating positions
+//
+//   by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+//==============================================================
+// Bass Section : Pizzicato
+//
+//   Strings - Basses Pizzicato.sfz from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//        Basses Pizzicato
+// ------------------------------
+
+<group>
+pan=50
+xfout_lokey=c2
+xfout_hikey=b2
+ampeg_attack=0.03
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+loop_mode=one_shot
+
+ampeg_sustain=0
+ampeg_decay=2.5
+ampeg_vel2decay=10
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-piz-rr1-c1-PB.wav
+volume=4
+pan=50
+tune=-5
+
+lokey=c1
+hikey=e1
+pitch_keycenter=c1
+
+// removed basses-piz-rr2-d#1-PB.wav (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-piz-rr2-f#1-PB.wav
+volume=4
+pan=50
+transpose=-1
+
+lokey=f1
+hikey=g1
+pitch_keycenter=f#1
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-piz-rr1-a1-PB.wav
+volume=4
+pan=50
+
+lokey=g#1
+hikey=a#1
+pitch_keycenter=a1
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-piz-rr2-c2-PB.wav
+volume=4
+transpose=-1
+
+lokey=b1
+hikey=c#2
+pitch_keycenter=c2
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-piz-rr1-d#2-PB.wav
+volume=4
+pan=55
+
+lokey=d2
+hikey=e2
+pitch_keycenter=d#2
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-piz-rr2-f#2-PB.wav
+volume=5
+pan=50
+transpose=-1
+
+lokey=f2
+hikey=g2
+pitch_keycenter=f#2
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-piz-rr1-a2-PB.wav
+volume=4
+pan=45
+
+lokey=g#2
+hikey=a#2
+pitch_keycenter=a2
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-piz-rr1-c3-PB.wav
+volume=4
+pan=50
+
+lokey=b2
+hikey=c#3
+pitch_keycenter=c3
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-piz-rr1-d#3-PB.wav
+volume=4
+pan=50
+
+lokey=d3
+hikey=e3
+pitch_keycenter=d#3
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-piz-rr1-f#3-PB.wav
+volume=4
+pan=50
+
+lokey=f3
+hikey=g3
+pitch_keycenter=f#3
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-piz-rr2-a3-PB.wav
+volume=4
+pan=45
+transpose=-1
+
+lokey=g#3
+hikey=a#3
+pitch_keycenter=a3
+
+<region>
+sample=..\libs\SSO\Samples\Basses\basses-piz-rr1-c4-PB.wav
+volume=4
+pan=50
+
+lokey=b3
+hikey=g4
+pitch_keycenter=c4
+
+
+
+
+//==============================================================
+// Cello Section : Pizzicato
+//
+//   CelloEnsPizz.sfz from Versilian Studios - http://vis.versilstudios.net/vsco-2.html
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// removed control and global, doesn't work when merged with other files (PB)
+
+<group>
+pan=25
+xfin_lokey=c2
+xfin_hikey=b2
+xfout_lokey=c3
+xfout_hikey=f3
+ampeg_attack=0.03
+ampeg_release=1.0
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+ //Begin Group 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-------------- low velocity --------------
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_A2_v1_RR2.wav
+pan=10
+
+lokey=55
+hikey=60
+pitch_keycenter=57
+xfout_lovel=0
+hivel=62
+volume=25
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_B1_v1_RR1.wav
+pan=-5
+
+lokey=45
+hikey=48
+pitch_keycenter=47
+xfout_lovel=0
+hivel=62
+volume=27
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_B3_v1_RR2.wav
+pan=-8
+
+lokey=69
+hikey=72
+pitch_keycenter=71
+xfout_lovel=0
+hivel=62
+volume=26
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_C1_v1_RR1.wav
+pan=10
+
+lokey=36
+hikey=38
+pitch_keycenter=36
+xfout_lovel=0
+hivel=62
+volume=24
+
+
+// removed pizzT_C3 - bad click sound (PB)
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_D2_v1_RR2.wav
+pan=-5
+
+lokey=49
+hikey=51
+pitch_keycenter=50
+xfout_lovel=0
+hivel=62
+volume=27
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_D4_v1_RR1.wav
+pan=0
+
+lokey=73
+hikey=76
+pitch_keycenter=74
+xfout_lovel=0
+hivel=62
+volume=27
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_E1_v1_RR2.wav
+pan=5
+
+lokey=39
+hikey=41
+pitch_keycenter=40
+xfout_lovel=0
+hivel=62
+volume=29
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_E3_v1_RR1.wav
+pan=1
+
+lokey=61
+hikey=65
+pitch_keycenter=64
+xfout_lovel=0
+hivel=62
+volume=23
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_F2_v1_RR1.wav
+pan=-10
+
+lokey=52
+hikey=54
+pitch_keycenter=53
+xfout_lovel=0
+hivel=62
+volume=25
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_F4_v1_RR1.wav
+pan=5
+
+lokey=76
+hikey=81
+pitch_keycenter=77
+xfout_lovel=0
+hivel=62
+volume=30
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_G1_v1_RR1.wav
+pan=5
+
+lokey=42
+hikey=44
+pitch_keycenter=43
+xfout_lovel=0
+hivel=62
+volume=25
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_G3_v1_RR1.wav
+pan=10
+
+lokey=66
+hikey=68
+pitch_keycenter=67
+xfout_lovel=0
+hivel=62
+volume=25
+
+//-------------- high velocity --------------
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_A2_v2_RR1.wav
+pan=5
+
+lokey=55
+hikey=60
+pitch_keycenter=57
+xfin_lovel=54
+hivel=127
+volume=13
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_B1_v2_RR1.wav
+pan=-5
+
+lokey=45
+hikey=48
+pitch_keycenter=47
+xfin_lovel=54
+hivel=127
+volume=16
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_B3_v2_RR2.wav
+pan=-5
+
+lokey=69
+hikey=72
+pitch_keycenter=71
+xfin_lovel=54
+hivel=127
+volume=15
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_C1_v2_RR1.wav
+pan=7
+
+lokey=36
+hikey=38
+pitch_keycenter=36
+xfin_lovel=54
+hivel=127
+volume=13
+
+
+// removed pizzT_C3 - bad click sound (PB)
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_D2_v2_RR1.wav
+pan=-10
+
+lokey=49
+hikey=51
+pitch_keycenter=50
+xfin_lovel=54
+hivel=127
+volume=11
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_D4_v2_RR1.wav
+pan=13
+
+lokey=73
+hikey=76
+pitch_keycenter=74
+xfin_lovel=54
+hivel=127
+volume=13
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_E1_v2_RR2.wav
+pan=0
+
+lokey=39
+hikey=41
+pitch_keycenter=40
+xfin_lovel=54
+hivel=127
+volume=18
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_E3_v2_RR1.wav
+pan=0
+
+lokey=61
+hikey=65
+pitch_keycenter=64
+xfin_lovel=54
+hivel=127
+volume=12
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_F2_v2_RR1.wav
+pan=0
+
+lokey=52
+hikey=54
+pitch_keycenter=53
+xfin_lovel=54
+hivel=127
+volume=14
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_F4_v2_RR2.wav
+pan=5
+
+lokey=76
+hikey=81
+pitch_keycenter=77
+xfin_lovel=54
+hivel=127
+volume=10
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_G1_v2_RR2.wav
+pan=0
+
+lokey=42
+hikey=44
+pitch_keycenter=43
+xfin_lovel=54
+hivel=127
+volume=18
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\pizzT\pizzT_G3_v2_RR2.wav
+pan=5
+
+lokey=66
+hikey=68
+pitch_keycenter=67
+xfin_lovel=54
+hivel=127
+volume=10
+
+
+//==============================================================
+// Viola Section : Pizzicato
+//
+//   Strings - Violas Pizzicato.sfz from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//
+//   samples and SFZ modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//       Violas Pizzicato
+// ------------------------------
+
+<group>
+pan=0
+xfin_lokey=c3
+xfin_hikey=f3
+xfout_lokey=g3
+xfout_hikey=c6
+ampeg_attack=0.03
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+eq1_freq=441.6
+eq1_bw=0.8
+eq1_gain=-3.4
+
+eq2_freq=3589.4
+eq2_bw=2
+eq2_gain=7.4
+loop_mode=one_shot
+ampeg_sustain=0
+ampeg_decay=1
+ampeg_vel2decay=10
+
+<region>
+sample=..\libs\SSO\Samples\Violas\violas-piz-rr1-c3-PB.wav
+volume=4
+
+lokey=c3
+hikey=c#3
+pitch_keycenter=c3
+
+<region>
+sample=..\libs\SSO\Samples\Violas\violas-piz-rr1-d#3-PB.wav
+volume=4.5
+pan=10
+
+lokey=d3
+hikey=e3
+pitch_keycenter=d#3
+
+<region>
+sample=..\libs\SSO\Samples\Violas\violas-piz-rr1-f#3-PB.wav
+volume=5
+pan=5
+
+lokey=f3
+hikey=g3
+pitch_keycenter=f#3
+
+<region>
+sample=..\libs\SSO\Samples\Violas\violas-piz-rr1-a3-PB.wav
+volume=4
+
+lokey=g#3
+hikey=a#3
+pitch_keycenter=a3
+
+<region>
+sample=..\libs\SSO\Samples\Violas\violas-piz-rr1-c4-PB.wav
+volume=5
+
+lokey=b3
+hikey=c#4
+
+<region>
+sample=..\libs\SSO\Samples\Violas\violas-piz-rr1-d#4-PB.wav
+volume=3.5
+
+lokey=d4
+hikey=e4
+pitch_keycenter=d#4
+
+<region>
+sample=..\libs\SSO\Samples\Violas\violas-piz-rr1-f#4-PB.wav
+volume=6
+pan=5
+
+lokey=f4
+hikey=g4
+pitch_keycenter=f#4
+
+<region>
+sample=..\libs\SSO\Samples\Violas\violas-piz-rr1-a4-PB.wav
+volume=5
+
+lokey=g#4
+hikey=a#4
+pitch_keycenter=a4
+
+<region>
+sample=..\libs\SSO\Samples\Violas\violas-piz-rr1-c5-PB.wav
+volume=4
+
+lokey=b4
+hikey=c#5
+pitch_keycenter=c5
+
+<region>
+sample=..\libs\SSO\Samples\Violas\violas-piz-rr1-d#5-PB.wav
+volume=3
+
+lokey=d5
+hikey=e5
+pitch_keycenter=d#5
+
+<region>
+sample=..\libs\SSO\Samples\Violas\violas-piz-rr1-f#5-PB.wav
+volume=2
+
+lokey=f5
+hikey=g5
+pitch_keycenter=f#5
+
+<region>
+sample=..\libs\SSO\Samples\Violas\violas-piz-rr1-a5-PB.wav
+volume=0
+
+lokey=g#5
+hikey=a#5
+pitch_keycenter=a5
+
+<region>
+sample=..\libs\SSO\Samples\Violas\violas-piz-rr1-c6-PB.wav
+volume=0
+
+lokey=b5
+hikey=a6
+pitch_keycenter=c6
+
+// removed Round Robin (PB)
+
+
+
+//==============================================================
+// 1st Violin Section : Pizzicato
+//
+//   Strings - 1st Violins Pizzicato.sfz from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//
+//   samples and .sfz modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//     1st Violins Pizzicato
+// ------------------------------
+
+<group>
+pan=-40
+xfin_lokey=g3
+xfin_hikey=c6
+ampeg_attack=0.03
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+loop_mode=one_shot
+ampeg_sustain=0
+ampeg_decay=1
+ampeg_vel2decay=10
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-piz-rr1-g3-PB.wav
+volume=2 pan=-20
+
+lokey=g3
+hikey=g#3
+pitch_keycenter=g3
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-piz-rr1-a#3-PB.wav
+volume=2 pan=-15
+
+lokey=a3
+hikey=b3
+pitch_keycenter=a#3
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-piz-rr1-c#4-PB.wav
+volume=3 pan=-25
+
+lokey=c4
+hikey=d4
+pitch_keycenter=c#4
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-piz-rr1-e4-PB.wav
+volume=2 pan=-10
+
+lokey=d#4
+hikey=f4
+pitch_keycenter=e4
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-piz-rr1-g4-PB.wav
+volume=2 pan=-15
+
+lokey=f#4
+hikey=g#4
+pitch_keycenter=g4
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-piz-rr1-a#4-PB.wav
+volume=3 pan=-20
+
+lokey=a4
+hikey=b4
+pitch_keycenter=a#4
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-piz-rr1-c#5-PB.wav
+volume=2 pan=-20
+
+lokey=c5
+hikey=d5
+pitch_keycenter=c#5
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-piz-rr1-e5-PB.wav
+volume=1 pan=-10
+
+lokey=d#5
+hikey=f5
+pitch_keycenter=e5
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-piz-rr1-g5-PB.wav
+volume=4 pan=-30
+
+lokey=f#5
+hikey=g#5
+pitch_keycenter=g5
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-piz-rr1-a#5-PB.wav
+volume=8 pan=-50
+
+lokey=a5
+hikey=b5
+pitch_keycenter=a#5
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-piz-rr1-c#6-PB.wav
+volume=6 pan=-40
+
+lokey=c6
+hikey=d6
+pitch_keycenter=c#6
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-piz-rr1-e6-PB.wav
+volume=4 pan=-40
+
+lokey=d#6
+hikey=f6
+pitch_keycenter=e6
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-piz-rr1-g6-PB.wav
+volume=3 pan=-40
+
+lokey=f#6
+hikey=g#6
+pitch_keycenter=g6
+
+<region>
+sample=..\libs\SSO\Samples\1st Violins\1st-violins-piz-rr1-a#6-PB.wav
+volume=1 pan=-40
+
+lokey=a6
+hikey=a7
+pitch_keycenter=a#6
+
+// removed round robin (PB)
+
+

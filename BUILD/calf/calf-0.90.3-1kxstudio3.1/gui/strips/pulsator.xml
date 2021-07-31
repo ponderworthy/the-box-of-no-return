@@ -1,0 +1,20 @@
+<hbox>
+    <vbox>
+        <label text="Waveform"/>
+        <combo param="mode" />
+        <label/>
+    </vbox>
+    <vbox>
+        <label param="pulsewidth"/>
+        <combo param="pulsewidth"/>
+        <label />
+    </vbox>
+    <hbox spacing="5" homogeneous="1">
+        <vbox>
+            <label param="amount" />
+            <knob param="amount" />
+            <value param="amount" />
+        </vbox>
+        <toggle param="bypass" icon="bypass"/>
+    </hbox>
+</hbox>

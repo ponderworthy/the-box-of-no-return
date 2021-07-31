@@ -1,0 +1,69 @@
+//==============================================================
+// Trumpet Section : Sustain
+//
+//   trumpets.sfz from No Budget Orchestra - https://nobudgetorchestra.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+
+<group>
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+tune=-10
+ group=1
+xfin_lovel=75 xfin_hivel=127
+ampeg_attack=0.3
+ampeg_release=0.6
+
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\3_G.wav pitch_keycenter=g3 lokey=f#3 hikey=g3
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\3_Ab.wav key=g#3
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\3_Bb.wav pitch_keycenter=a#3 lokey=a3 hikey=a#3
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\4_C.wav pitch_keycenter=c4 lokey=b3 hikey=c4
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\4_D.wav pitch_keycenter=d4 lokey=c#4 hikey=d4
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\4_E.wav pitch_keycenter=e4 lokey=d#4 hikey=e4
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\4_F.wav key=f4
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\4_G.wav pitch_keycenter=g4 lokey=f#4 hikey=g4
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\4_A.wav pitch_keycenter=a4 lokey=g#4 hikey=a4
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\4_Bb.wav key=a#4
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\5_C.wav pitch_keycenter=c5 lokey=b4 hikey=c5
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\5_D.wav pitch_keycenter=d5 lokey=c#5 hikey=d5
+pan=-10
+
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\5_Eb.wav key=d#5
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\5_F.wav pitch_keycenter=f5 lokey=e5 hikey=f5
+pan=15
+
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\5_G.wav pitch_keycenter=g5 lokey=f#5 hikey=g5
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\5_A.wav pitch_keycenter=a5 lokey=g#5 hikey=a5
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\5_B.wav pitch_keycenter=b5 lokey=a#5 hikey=b5
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\6_Db.wav pitch_keycenter=c#6 lokey=c6 hikey=c6
+
+<group>
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+tune=-10
+ group=1
+xfout_lovel=75 xfout_hivel=127
+ampeg_attack=0.3
+ampeg_release=0.6
+
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\3_Bb_p.wav pitch_keycenter=a#3 lokey=f#3 hikey=c4
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\4_Eb_p.wav pitch_keycenter=d#4 lokey=c#4 hikey=f4
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\4_Ab_p.wav pitch_keycenter=g#4 lokey=f#4 hikey=a#4
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\5_Db_p.wav pitch_keycenter=c#5 lokey=b4 hikey=e5
+pan=-10
+
+<region> sample=..\libs\NoBudgetOrch2\Trumpet\TrumpetSect\Sustain\5_Ab_p.wav pitch_keycenter=g#5 lokey=f5 hikey=c6
+

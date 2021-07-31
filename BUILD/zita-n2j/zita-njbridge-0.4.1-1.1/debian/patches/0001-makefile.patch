@@ -1,0 +1,30 @@
+Description: Disable installation of man pages.
+Author: Alessio Treglia <alessio@debian.org>
+Forwarded: not-needed
+---
+ source/Makefile |    5 +----
+ 1 file changed, 1 insertion(+), 4 deletions(-)
+
+Index: zita-njbridge/source/Makefile
+===================================================================
+--- zita-njbridge.orig/source/Makefile
++++ zita-njbridge/source/Makefile
+@@ -31,7 +31,7 @@ CPPFLAGS += -DVERSION=\"$(VERSION)\"
+ CXXFLAGS += -O2 -Wall -MMD -MP
+ 
+ 
+-all:	zita-j2n zita-n2j zita-njbridge.1.gz zita-j2n.1.gz zita-n2j.1.gz
++all:	zita-j2n zita-n2j
+ 
+ 
+ ZITA-J2N_O = zita-j2n.o netdata.o jacktx.o nettx.o pxthread.o lfqueue.o zsockets.o
+@@ -65,9 +65,6 @@ install:	all
+ 	install -d $(DESTDIR)$(BINDIR)
+ 	install -m 755 zita-j2n $(DESTDIR)$(BINDIR)
+ 	install -m 755 zita-n2j $(DESTDIR)$(BINDIR)
+-	install -Dm 644 zita-njbridge.1.gz $(DESTDIR)$(MANDIR)
+-	install -Dm 644 zita-j2n.1.gz $(DESTDIR)$(MANDIR)
+-	install -Dm 644 zita-n2j.1.gz $(DESTDIR)$(MANDIR)
+ 
+ 
+ uninstall:

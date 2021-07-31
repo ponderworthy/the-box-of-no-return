@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/vst/external/ring_buffer/ring_buffer/ring_buffer.cpp
+ring_buffer.h
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/vst/external/ring_buffer/ring_buffer/ring_buffer.h
+algorithm
+-
+cassert
+-
+
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/vst/external/ring_buffer/ring_buffer/ring_buffer.h
+memory
+-
+atomic
+-
+type_traits
+-
+cstdint
+-
+cstddef
+-
+ring_buffer.tcc
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/vst/external/ring_buffer/ring_buffer/ring_buffer.tcc
+
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/vst/external/ring_buffer/ring_buffer/ring_buffer.tcc
+ring_buffer.h
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/plugins/vst/external/ring_buffer/ring_buffer/ring_buffer.h
+

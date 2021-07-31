@@ -1,0 +1,52 @@
+# translation of jack-audio-connection-kit_sv.po to Swedish
+# Copyright (C) 2009
+# This file is distributed under the same license as the jack-audio-connection-kit package.
+#
+# Martin Ågren <martin.agren@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: jack-audio-connection-kit_sv\n"
+"Report-Msgid-Bugs-To: jackd2@packages.debian.org\n"
+"POT-Creation-Date: 2011-12-22 23:36+0100\n"
+"PO-Revision-Date: 2009-10-10 18:08+0200\n"
+"Last-Translator: Martin Ågren <martin.agren@gmail.com>\n"
+"Language-Team: Swedish <debian-l10n-swedish@lists.debian.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid "Enable realtime process priority?"
+msgstr "Aktivera realtidsprocessprioritet?"
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid ""
+"If you want to run jackd with realtime priorities, the user starting jackd "
+"needs realtime permissions. Accept this option to create the file /etc/"
+"security/limits.d/audio.conf, granting realtime priority and memlock "
+"privileges to the audio group."
+msgstr ""
+"Om du vill köra jackd med realtidsprioriteter, behöver den användare som "
+"startar jackd realtidsrättigheter. Acceptera detta val för att skapa filen /"
+"etc/security/limits.d/audio.conf, vilket ger realtidsprioritet och "
+"memlockrättigheter till audiogruppen."
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid ""
+"Running jackd with realtime priority minimizes latency, but may lead to "
+"complete system lock-ups by requesting all the available physical system "
+"memory, which is unacceptable in multi-user environments."
+msgstr ""
+"Om jackd körs med realtidsprioritet minimeras latensen, men det kan leda "
+"till att systemet låser sig fullständigt genom att efterfråga allt "
+"tillgängligt fysiskt systemminne, vilket är oacceptabelt i en "
+"fleranvändarmiljö."

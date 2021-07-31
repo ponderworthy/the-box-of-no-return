@@ -1,0 +1,13 @@
+sfizz (1.0.0-0+nmu1-bnrcustom) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * 
+  * 
+
+ -- Jean Pierre Cimalando <jeb@bnr4>  Fri, 30 Jul 2021 06:37:41 -0500
+
+sfizz (1.0.0-0) stable; urgency=low
+
+  * Build from the stable release channel
+
+ -- Jean Pierre Cimalando <jp-dev@inbox.ru>  Fri, 16 Apr 2021 18:12:43 +0200

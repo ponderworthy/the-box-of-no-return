@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsfizz_parser.a  CMakeFiles/sfizz_parser.dir/sfizz/Opcode.cpp.o CMakeFiles/sfizz_parser.dir/sfizz/Defaults.cpp.o CMakeFiles/sfizz_parser.dir/sfizz/OpcodeCleanup.cpp.o CMakeFiles/sfizz_parser.dir/sfizz/parser/Parser.cpp.o CMakeFiles/sfizz_parser.dir/sfizz/parser/ParserPrivate.cpp.o
+/usr/bin/ranlib libsfizz_parser.a

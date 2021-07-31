@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/src/external/spline/spline/spline.cpp
+spline.h
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/src/external/spline/spline/spline.h
+cassert
+-
+
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/src/external/spline/spline/spline.h
+vector
+-
+

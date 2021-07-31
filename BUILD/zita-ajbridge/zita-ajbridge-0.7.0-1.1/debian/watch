@@ -1,0 +1,3 @@
+version=3
+http://kokkinizita.linuxaudio.org/linuxaudio/downloads/index.html \
+	zita-ajbridge-(.*)\.tar\.bz2

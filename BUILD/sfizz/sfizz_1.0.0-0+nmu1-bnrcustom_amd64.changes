@@ -1,0 +1,35 @@
+Format: 1.8
+Date: Fri, 30 Jul 2021 06:37:41 -0500
+Source: sfizz
+Binary: libsfizz1 libsfizz1-dev sfizz
+Architecture: amd64
+Version: 1.0.0-0+nmu1-bnrcustom
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Jean Pierre Cimalando <jp-dev@inbox.ru>
+Changed-By: Jean Pierre Cimalando <jeb@bnr4>
+Description:
+ libsfizz1  - Sampler plugin and library for SFZ instruments (libraries)
+ libsfizz1-dev - Sampler plugin and library for SFZ instruments (development)
+ sfizz      - Sampler plugin and library for SFZ instruments
+Changes:
+ sfizz (1.0.0-0+nmu1-bnrcustom) UNRELEASED; urgency=medium
+ .
+   * Non-maintainer upload.
+   *
+   *
+Checksums-Sha1:
+ ab5bc9afce786f8f77fbc1dea6f2154950bc7cd0 1212 libsfizz1-dev_1.0.0-0+nmu1-bnrcustom_amd64.deb
+ 4521f259b45bbe3e39a29105e39fb4785397bd75 1204 libsfizz1_1.0.0-0+nmu1-bnrcustom_amd64.deb
+ fad97a8ae3aa3e1b69c20ff4d88b09778c9d691b 5140 sfizz_1.0.0-0+nmu1-bnrcustom_amd64.buildinfo
+ 33b55fc842ec8c03d8c7ab2c32fd82604d72116c 1176 sfizz_1.0.0-0+nmu1-bnrcustom_amd64.deb
+Checksums-Sha256:
+ 403c2362d58708042fc266dc8a6bb53226f0bc191641e9b34a849592dd00fe88 1212 libsfizz1-dev_1.0.0-0+nmu1-bnrcustom_amd64.deb
+ 6394aeba87805951a1eb265dfdb9f68fd0b03546ec53387ad3c325864bfa2354 1204 libsfizz1_1.0.0-0+nmu1-bnrcustom_amd64.deb
+ df51a945c0c1e5d27adca04c319d0d3eb36e20219f9c782187168a2c8eea6ace 5140 sfizz_1.0.0-0+nmu1-bnrcustom_amd64.buildinfo
+ 45e7b8acf16c42178be5e0914a42dda58721d4d78411e604b9eaee5865dfd044 1176 sfizz_1.0.0-0+nmu1-bnrcustom_amd64.deb
+Files:
+ 35f40b888a2b24d1e82005dd9e492f3a 1212 sound optional libsfizz1-dev_1.0.0-0+nmu1-bnrcustom_amd64.deb
+ 5b6807c4b91707034fdfe6cf5e8c4027 1204 sound optional libsfizz1_1.0.0-0+nmu1-bnrcustom_amd64.deb
+ 3dbc190b873c5928278ecbea7eb61783 5140 sound optional sfizz_1.0.0-0+nmu1-bnrcustom_amd64.buildinfo
+ c4b23fa2cd5ab9850961dd58aac0b9bf 1176 sound optional sfizz_1.0.0-0+nmu1-bnrcustom_amd64.deb

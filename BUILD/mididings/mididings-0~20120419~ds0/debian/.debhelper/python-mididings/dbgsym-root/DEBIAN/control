@@ -1,0 +1,12 @@
+Package: python-mididings-dbgsym
+Source: mididings
+Version: 0~20120419~ds0-7+1bnrcustom
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Installed-Size: 3263
+Depends: python-mididings (= 0~20120419~ds0-7+1bnrcustom)
+Section: debug
+Priority: optional
+Description: debug symbols for python-mididings
+Build-Ids: 9dd36039aacd975b3054525b3b1ebbc9eee06e1a

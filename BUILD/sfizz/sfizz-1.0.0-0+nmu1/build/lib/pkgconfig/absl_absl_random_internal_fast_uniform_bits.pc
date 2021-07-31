@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}//usr/lib
+includedir=${prefix}/include
+
+Name: absl_absl_random_internal_fast_uniform_bits
+Description: Abseil absl_random_internal_fast_uniform_bits library
+URL: https://abseil.io/
+Version: 20210324
+Requires: absl_config = 20210324
+Libs: -L${libdir}  
+Cflags: -I${includedir} -DNOMINMAX

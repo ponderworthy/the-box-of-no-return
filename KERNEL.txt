@@ -1,0 +1,23 @@
+
+0.  linux-xanmod works just fine when compiled with native CPU.
+At this writing, 5.2.6, its compilation via 'yay' failed.
+The below are non-default settings we need for the BNR for
+other kernels, e.g., linux-lqx and linux-rt-bfq
+
+1.  CONFIG_HZ_1000
+
+Timer frequency.  Needed for very rapid responses / low latencies.
+
+2.  CONFIG_MNATIVE
+
+Compile optimized for the CPU this system has.
+
+3.  CONFIG_NO_HZ_FULL
+
+Full dynaticks.  Unclear what the downsides are if any.
+
+4.  CONFIG_PREEMPT
+
+Fully preemptible low-latency desktop.
+In linux-rt or any other realtime kernel, there is
+an option further in this area.

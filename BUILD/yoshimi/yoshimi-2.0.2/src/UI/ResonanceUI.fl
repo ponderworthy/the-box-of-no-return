@@ -1,0 +1,710 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0304
+header_name {.h}
+code_name {.cc}
+comment {ResonanceUI.h} {not_in_source in_header
+}
+
+comment {ResonanceUI.cc} {in_source not_in_header
+}
+
+comment {Original ZynAddSubFX author Nasca Octavian Paul
+Copyright (C) 2002-2005 Nasca Octavian Paul
+Copyright 2009-2010, Alan Calvert
+Copyright 2015-2020, Will Godfrey
+
+This file is part of yoshimi, which is free software: you can redistribute
+it and/or modify it under the terms of the GNU Library General Public
+License as published by the Free Software Foundation; either version 2 of
+the License, or (at your option) any later version.
+
+yoshimi is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.   See the GNU General Public License (version 2 or
+later) for more details.
+
+You should have received a copy of the GNU General Public License along with
+yoshimi; if not, write to the Free Software Foundation, Inc., 51 Franklin
+Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+This file is a derivative of the ZynAddSubFX original
+
+} {selected in_source in_header
+}
+
+decl {\#include <FL/Fl_Box.H>} {public local
+}
+
+decl {\#include <FL/fl_draw.H>} {public local
+}
+
+decl {\#include <FL/Fl_Value_Output.H>} {public local
+}
+
+decl {\#include <cmath>} {private local
+}
+
+decl {\#include <iostream>} {private local
+}
+
+decl {\#include "UI/MiscGui.h"} {public local
+}
+
+decl {\#include "UI/WidgetPDial.h"} {public local
+}
+
+decl {\#include "UI/WidgetCheckButton.h"} {public local
+}
+
+decl {\#include "UI/WidgetMWSlider.h"} {public local
+}
+
+decl {\#include "PresetsUI.h"} {public local
+}
+
+decl {\#include "Synth/Resonance.h"} {public local
+}
+
+decl {\#include "MasterUI.h"} {private global
+}
+
+decl {\#include "Misc/SynthEngine.h"} {public global
+}
+
+class ResonanceGraph {: {public Fl_Box}
+} {
+  Function {ResonanceGraph(int x,int y, int w, int h, const char *label=0):Fl_Box(x,y,w,h,label)} {} {
+    code {//
+    respar=NULL;
+    cbwidget=NULL;
+    applybutton=NULL;} {}
+  }
+  Function {send_data(int action, int control, float value, int type)} {} {
+    code {//
+    type |= TOPLEVEL::type::Write;
+    collect_data(synth, value, action, type, RESONANCE::control::graphPoint, npart, kititem, engine, TOPLEVEL::insert::resonanceGraphInsert, control);} {}
+  }
+  Function {init(Resonance *respar_, Fl_Value_Output *khzvalue_, Fl_Value_Output *dbvalue_, int npart_, int kititem_, int engine_)} {} {
+    code {//
+    respar = respar_;
+    synth = respar->getSynthEngine();
+    npart = npart_;
+    kititem = kititem_;
+    engine = engine_;
+    khzvalue=khzvalue_;
+    dbvalue=dbvalue_;
+    oldx=-1;
+    khzval=-1;} {}
+  }
+  Function {draw_freq_line(float freq)} {} {
+    code {//
+    float freqx = respar->getfreqpos(freq);
+    if ((freqx>0.0) && (freqx<1.0))
+        fl_line(x() + (int) (freqx * w()), y(), x() + (int) (freqx*w()), y() + h());} {}
+  }
+  Function {draw()} {} {
+    code {//
+    int ox=x();
+    int oy=y();
+    int lx=w();
+    int ly=h();
+    int i;
+    float freqx;
+    fl_line_style(0, int(1 * ly/256));
+
+    fl_color(FL_BLACK);
+    fl_rectf(ox,oy,lx,ly);
+
+
+    //draw the lines
+    fl_color(FL_GRAY);
+
+    fl_line(ox+2,oy+ly/2,ox+lx-2,oy+ly/2);
+
+    freqx=respar->getfreqpos(1000.0);
+    if ((freqx>0.0)&&(freqx<1.0))
+        fl_line(ox+(int) (freqx*lx),oy, ox+(int) (freqx*lx),oy+ly);
+
+    for (i=1;i<10;i++)
+    {
+        if (i==1)
+        {
+            draw_freq_line(i*100.0);
+            draw_freq_line(i*1000.0);
+        }
+        else if (i==5)
+        {
+            draw_freq_line(i*100.0);
+            draw_freq_line(i*1000.0);
+        }
+        else
+        {
+            draw_freq_line(i*100.0);
+            draw_freq_line(i*1000.0);
+        }
+    }
+
+    draw_freq_line(10000.0);
+    draw_freq_line(20000.0);
+
+    int GY=10;
+    if (ly<GY*3)
+        GY=-1;
+    for (i=1;i<GY;i++)
+    {
+        int tmp=(int)(ly/(float)GY*i);
+        fl_line(ox+2,oy+tmp,ox+lx-2,oy+tmp);
+    }
+
+    //draw the data
+    fl_line_style(0, int(2 * ly/256));
+    fl_color(FL_RED);
+    float ix = ox;
+    int oix = int(ix);
+    int iy;
+    int ny = oy + ly;
+    int oiy;
+    float dx = 1.0f / MAX_RESONANCE_POINTS * lx;
+    float dy = 128.0 / ly;
+    oiy = ny - int(respar->Prespoints[0] / dy);
+    for (i = 1; i < MAX_RESONANCE_POINTS; i++)
+    {
+        ix += dx;
+        iy = ny - int(respar->Prespoints[i] / dy);
+        fl_line(oix, oiy, ix, iy);
+        oix = ix;
+        oiy = iy;
+    }
+    fl_line_style(0, 1);} {}
+  }
+  Function {handle(int event)} {return_type int
+  } {
+    code {//
+    int x_ = Fl::event_x() - x();
+    int y_ = Fl::event_y() - y();
+
+    if ((x_ >= 0) && (x_ < w()) && (y_ >= 0) && (y_ < h()))
+    {
+        khzvalue->value(respar->getfreqx(x_ * 1.0 / w()) / 1000.0);
+        dbvalue->value((1.0 - y_ * 2.0 / h()) * respar->PmaxdB);
+    }
+
+    if ((event == FL_PUSH) || (event == FL_DRAG))
+    {
+        unsigned char action = 0;
+        if (event != FL_DRAG)
+            action = TOPLEVEL::action::forceUpdate;
+        int leftbutton = 1;
+        if (Fl::event_button() == FL_RIGHT_MOUSE)
+            leftbutton = 0;
+        if (x_ < 0)
+            x_ = 0;
+        if (y_ < 0)
+            y_ = 0;
+        if (x_ >= w())
+            x_ = w();
+        if (y_ >= h() -1)
+            y_ = h() -1;
+
+        if ((oldx < 0) || (oldx == x_))
+        {
+            int sn = (int)(x_ * 1.0 / w() * MAX_RESONANCE_POINTS);
+            int sp=127 - (int)(y_ * 1.0 / h() * 127);
+            if (_SYS_::F2B(leftbutton))
+            {
+                send_data(action, sn, sp, TOPLEVEL::type::Integer);
+            }
+            else
+            {
+                send_data(action, sn, 64, TOPLEVEL::type::Integer);
+            }
+        }
+        else
+        {
+            int x1 = oldx;
+            int x2 = x_;
+            int y1 = oldy;
+            int y2 = y_;
+            if (oldx > x_)
+            {
+                x1 = x_;
+                y1 = y_;
+                x2 = oldx;
+                y2 = oldy;
+            }
+            for (int i = 0; i < x2 - x1; i++)
+            {
+                int sn = (int)((i + x1) * 1.0 / w() * MAX_RESONANCE_POINTS);
+                float yy = (y2 - y1) * 1.0 / (x2 - x1) * i;
+                int sp = 127 - (int)((y1 + yy) / h() * 127);
+                if (leftbutton!=0)
+                {
+                    send_data(action, sn, sp, TOPLEVEL::type::Integer);
+                }
+                else
+                {
+                send_data(action, sn, 64, TOPLEVEL::type::Integer);
+                }
+            }
+        }
+        oldx = x_;
+        oldy = y_;
+        redraw();
+    }
+
+    if (event == FL_RELEASE)
+    {
+        oldx = -1;
+        if (cbwidget != NULL)
+        {
+            cbwidget->do_callback();
+            if (applybutton != NULL)
+            {
+                applybutton->color(FL_RED);
+                applybutton->redraw();
+            }
+        }
+    }
+
+    return(1);} {}
+  }
+  Function {setcbwidget(Fl_Widget *cbwidget,Fl_Widget *applybutton)} {} {
+    code {//
+    this->cbwidget=cbwidget;
+    this->applybutton=applybutton;} {}
+  }
+  decl {Fl_Value_Output *khzvalue;} {private local
+  }
+  decl {Fl_Value_Output *dbvalue;} {private local
+  }
+  decl {SynthEngine *synth;} {private local
+  }
+  decl {int npart;} {private local
+  }
+  decl {int kititem;} {private local
+  }
+  decl {int engine;} {private local
+  }
+  decl {Resonance *respar;} {private local
+  }
+  decl {int oldx,oldy;} {private local
+  }
+  decl {float khzval;} {public local
+  }
+  decl {Fl_Widget *cbwidget,*applybutton;} {private local
+  }
+}
+
+class ResonanceUI {: PresetsUI_
+} {
+  Function {make_window()} {} {
+    Fl_Window resonancewindow {
+      label Resonance
+      callback {resClose->do_callback();}
+      xywh {235 45 780 305} type Double hide resizable
+      code0 {resDW = o->w();resDH = o->h();}
+      code1 {resonancewindow->size_range(resDW, resDH, 0, 0, 0, 0, 1);}
+    } {
+      Fl_Group editor {
+        xywh {0 0 777 305}
+      } {
+        Fl_Value_Output khzvalue {
+          label kHz
+          xywh {435 264 40 18} labelsize 12 align 8 minimum 0.001 maximum 48 textfont 1 textsize 12
+          code0 {o->step(0.01, 1);}
+          code1 {//this widget must be before the calling widgets}
+        }
+        Fl_Value_Output dbvalue {
+          label dB
+          xywh {435 282 40 18} labelsize 12 align 8 minimum -150 maximum 150 textfont 1 textsize 12
+          code0 {o->step(0.1, 1);}
+          code1 {//this widget must be before the calling widgets}
+        }
+        Fl_Group frame {
+          xywh {6 5 768 256} box BORDER_BOX
+          code0 {rg=new ResonanceGraph(o->x(),o->y(),o->w(),o->h(),"");}
+          code1 {rg->init(respar, khzvalue, dbvalue, npart, kititem, engine);}
+          code2 {rg->show();}
+        } {}
+        Fl_Button clearbutton {
+          label Clear
+          callback {//
+          send_data(TOPLEVEL::action::forceUpdate, RESONANCE::control::clearGraph, o->value(), TOPLEVEL::type::Integer);}
+          tooltip {Clear the resonance function} xywh {507 264 66 15} box THIN_UP_BOX labelfont 1 labelsize 12
+        }
+        Fl_Button smoothbutton {
+          label Smooth
+          callback {//
+          send_data(TOPLEVEL::action::forceUpdate, RESONANCE::control::smoothGraph, o->value(), TOPLEVEL::type::Integer);}
+          tooltip {Smooth the resonance function} xywh {507 282 66 18} box THIN_UP_BOX labelfont 1 labelsize 12
+        }
+        Fl_Value_Output maxdbvo {
+          label {Max dB}
+          callback {//
+          o->value(respar->PmaxdB);}
+          tooltip {The Maximum amplitude (dB)} xywh {55 282 22 18} box THIN_DOWN_BOX labelsize 12 minimum 1 maximum 127 step 1 value 30 textfont 1 textsize 12
+          code0 {o->value(respar->PmaxdB);}
+        }
+        Fl_Slider maxdb {
+          callback {//
+          if (Fl::event_button() == 3)
+              o->value(20);
+
+          send_data(TOPLEVEL::action::forceUpdate, RESONANCE::control::maxDb, o->value(), TOPLEVEL::type::Integer);}
+          xywh {77 282 98 18} type {Horz Knob} box THIN_DOWN_BOX labelsize 11 align 8 minimum 1 maximum 90 step 1 value 30
+          code0 {o->value(respar->PmaxdB);}
+          class mwheel_slider_rev
+        }
+        Fl_Value_Output centerfreqvo {
+          label {C.f.}
+          callback {o->value(respar->getcenterfreq()/1000.0);}
+          tooltip {Center Frequency (kHz)} xywh {210 264 33 18} labelsize 12 when 3 minimum 1 maximum 10 value 1 textfont 1 textsize 12
+          code0 {o->step(0.01, 1);}
+          code1 {o->value(respar->getcenterfreq()/1000.0);}
+        }
+        Fl_Slider centerfreq {
+          callback {//
+          if (Fl::event_button() == 3)
+              o->value(64);
+
+          send_data(TOPLEVEL::action::forceUpdate, RESONANCE::control::centerFrequency, o->value(), TOPLEVEL::type::Integer);}
+          xywh {243 264 110 18} type {Horz Knob} box THIN_DOWN_BOX labelsize 11 align 8 maximum 127 step 1
+          code0 {o->value(respar->Pcenterfreq);}
+          class mwheel_slider_rev
+        }
+        Fl_Value_Output octavesfreqvo {
+          label {Oct.}
+          callback {o->value(respar->getoctavesfreq());}
+          tooltip {No. of octaves} xywh {210 282 33 18} labelsize 12 when 3 minimum 1 maximum 127 step 1 value 5 textfont 1 textsize 12
+          code0 {o->value(respar->getoctavesfreq());}
+        }
+        Fl_Slider octavesfreq {
+          callback {//
+          if (Fl::event_button() == 3)
+              o->value(64);
+
+          send_data(TOPLEVEL::action::forceUpdate, RESONANCE::control::octaves, o->value(), TOPLEVEL::type::Integer);}
+          xywh {243 282 110 18} type {Horz Knob} box THIN_DOWN_BOX labelsize 11 align 8 maximum 127 step 1
+          code0 {o->value(respar->Poctavesfreq);}
+          class mwheel_slider_rev
+        }
+        Fl_Button rnd1 {
+          label Rnd1
+          callback {//
+          send_data(TOPLEVEL::action::forceUpdate, RESONANCE::control::randomType, 0, TOPLEVEL::type::Integer);}
+          tooltip {Randomize the resonance function} xywh {583 264 42 12} box THIN_UP_BOX labelfont 1 labelsize 10
+        }
+        Fl_Button rnd2 {
+          label Rnd2
+          callback {//
+          send_data(TOPLEVEL::action::forceUpdate, RESONANCE::control::randomType, 1, TOPLEVEL::type::Integer);}
+          tooltip {Randomize the resonance function} xywh {583 276 42 12} box THIN_UP_BOX labelfont 1 labelsize 10
+        }
+        Fl_Button rnd3 {
+          label Rnd3
+          callback {//
+          send_data(TOPLEVEL::action::forceUpdate, RESONANCE::control::randomType, 2, TOPLEVEL::type::Integer);}
+          tooltip {Randomize the resonance function} xywh {583 288 42 12} box THIN_UP_BOX labelfont 1 labelsize 10
+        }
+        Fl_Check_Button p1st {
+          class Fl_Check_Button2
+          label {Prot.1st}
+          callback {//
+          send_data(TOPLEVEL::action::forceUpdate, RESONANCE::control::protectFundamental, o->value(), TOPLEVEL::type::Integer);}
+          tooltip {Protect the fundamental frequency (do not damp the first harmonic)} xywh {106 265 45 15} down_box DOWN_BOX labelsize 12
+          code0 {o->value(respar->Pprotectthefundamental);}
+        }
+        Fl_Text_Display interpk {
+          label InterpPk
+          xywh {364 280 62 0} box NO_BOX labelsize 12 align 33 textsize 12
+        }
+        Fl_Box {} {
+          tooltip {Interpolate the peaks (left button smooth, right button linear)} xywh {359 264 72 36} box THIN_DOWN_FRAME
+        }
+        Fl_Button sbutton {
+          label S
+          callback {//
+          send_data(TOPLEVEL::action::forceUpdate, RESONANCE::control::interpolatePeaks, 0, TOPLEVEL::type::Integer);}
+          tooltip {Smooth interpolation} xywh {365 282 14 14} labelfont 1 labelsize 12
+        }
+        Fl_Button lbutton {
+          label L
+          callback {//
+          send_data(TOPLEVEL::action::forceUpdate, RESONANCE::control::interpolatePeaks, 1, TOPLEVEL::type::Integer);}
+          tooltip {Linear interpolation} xywh {411 282 14 14} labelfont 1 labelsize 12
+        }
+        Fl_Button cbutton {
+          label C
+          callback {synth->getGuiMaster()->getPresetsUi()->copy(respar);}
+          xywh {635 275 25 15} box THIN_UP_BOX color 179 labelfont 1 labelsize 11 labelcolor 7
+        }
+        Fl_Button pbutton {
+          label P
+          callback {synth->getGuiMaster()->getPresetsUi()->paste(respar,this);}
+          xywh {665 275 25 15} box THIN_UP_BOX color 179 labelfont 1 labelsize 11 labelcolor 7
+        }
+      }
+      Fl_Check_Button enabled {
+        class Fl_Check_Button2
+        label Enable
+        callback {//
+        send_data(TOPLEVEL::action::forceUpdate, RESONANCE::control::enableResonance, o->value(), TOPLEVEL::type::Integer);}
+        xywh {6 265 78 15} down_box DOWN_BOX labelfont 1 labelsize 12
+        code0 {o->value(respar->Penabled);}
+      }
+      Fl_Button applybutton {
+        label Apply
+        callback {//
+              send_data(TOPLEVEL::action::forceUpdate, PART::control::padsynthParameters, 0, TOPLEVEL::type::Integer);}
+        xywh {700 265 74 17} box THIN_UP_BOX down_box THIN_DOWN_BOX labelfont 1 labelsize 12
+      }
+      Fl_Button resClose {
+        label Close
+        callback {//
+          if (resSeen)
+              saveWin(synth, resonancewindow->w(), resonancewindow->h(), resonancewindow->x(), resonancewindow->y(), false, "Resonance " + to_string(engine));
+          resonancewindow->hide();
+          resSeen = false;
+          if ((Fl::event_button() == 3))
+          {
+              if (engine == PART::engine::addSynth)
+                  synth->getGuiMaster()->partui->adnoteui->ADnoteGlobalParameters->show();
+              else
+                  synth->getGuiMaster()->partui->padnoteui->padnotewindow->show();
+          }}
+        tooltip {Right click: also reopen previous} xywh {700 285 74 16} box THIN_UP_BOX labelsize 12
+      }
+    }
+  }
+  Function {send_data(int action, int control, float value, int type)} {} {
+    code {//
+    int insert;
+    if (control == PART::control::padsynthParameters)
+        insert = UNUSED;
+    else
+        insert = TOPLEVEL::insert::resonanceGroup;
+    type |= TOPLEVEL::type::Write;
+    collect_data(synth, value, action, type, control, npart, kititem, engine, insert);} {}
+  }
+  Function {returns_update(CommandBlock *getData)} {} {
+    code {//
+    float value = getData->data.value;
+    unsigned char control = getData->data.control;
+    unsigned char eng = getData->data.engine;
+    unsigned char insert = getData->data.insert;
+
+    if (eng != engine)
+        return;
+
+    bool set = true;
+    if (insert == TOPLEVEL::insert::resonanceGraphInsert)
+    {
+        rg->draw();
+        rg->redraw();
+    }
+    else
+    {
+        switch(control)
+        {
+            case RESONANCE::control::maxDb:
+                maxdb->value(value);
+                maxdbvo->value(value);
+                break;
+
+            case RESONANCE::control::centerFrequency:
+                centerfreq->value(value);
+                value = 10000.0 * powf(10.0f, - (1.0f - value / 127.0f) * 2.0f);
+                centerfreqvo->value(value/1000.0);
+                rg->redraw();
+                break;
+
+            case RESONANCE::control::octaves:
+                octavesfreq->value(value);
+                octavesfreqvo->value(0.25 + 10.0 * value / 127.0);
+                rg->redraw();
+                break;
+
+            case RESONANCE::control::enableResonance:
+                if (_SYS_::F2B(value))
+                {
+                    enabled->value(1);
+                    editor->activate();
+                }
+                else
+                {
+                    enabled->value(0);
+                    editor->deactivate();
+                }
+                break;
+
+            case RESONANCE::control::randomType:
+                resonancewindow->redraw();
+                break;
+
+            case RESONANCE::control::interpolatePeaks:
+                resonancewindow->redraw();
+                break;
+
+            case RESONANCE::control::protectFundamental:
+                p1st->value(_SYS_::F2B(value));
+                break;
+
+            case RESONANCE::control::clearGraph:
+                resonancewindow->redraw();
+                break;
+
+            case RESONANCE::control::smoothGraph:
+                resonancewindow->redraw();
+                break;
+
+            default:
+                set = false;
+        }
+    }
+
+    if (set)
+    {
+        if (eng == PART::engine::padSynth)
+            redrawPADnoteApply();
+    }} {}
+  }
+  Function {ResonanceUI(Resonance *respar_, int npart_, int kititem_, int engine_)} {} {
+    code {//
+    respar = respar_;
+    synth = respar->getSynthEngine();
+    npart = npart_;
+    kititem = kititem_;
+    engine = engine_;
+    cbwidget = NULL;
+    cbapplywidget = NULL;
+    make_window();
+    resSeen = false;
+    applybutton->hide();
+    refresh();} {}
+  }
+  Function {~ResonanceUI()} {return_type virtual
+  } {
+    code {//
+    if (resSeen)
+        saveWin(synth, resonancewindow->w(), resonancewindow->h(), resonancewindow->x(), resonancewindow->y(), true, "Resonance " + to_string(engine));
+    resSeen = false;
+    resonancewindow->hide();} {}
+  }
+  Function {redrawPADnoteApply()} {} {
+    code {if (cbwidget!=NULL) {
+    cbwidget->do_callback();
+    applybutton->color(FL_RED);
+    applybutton->redraw();
+};} {}
+  }
+  Function {setcbwidget(Fl_Widget *cbwidget,Fl_Widget *cbapplywidget)} {} {
+    code {//
+    this->cbwidget = cbwidget;
+    this->cbapplywidget = cbapplywidget;
+    rg->setcbwidget(cbwidget, applybutton);
+    applybutton->show();} {}
+  }
+  Function {refresh()} {} {
+    code {//
+    redrawPADnoteApply();
+    if (_SYS_::F2B(respar->Penabled))
+    {
+        enabled->value(1);
+        editor->activate();
+    }
+    else
+    {
+        enabled->value(0);
+        editor->deactivate();
+    }
+    maxdb->value(respar->PmaxdB);
+    maxdbvo->value(respar->PmaxdB);
+    centerfreqvo->value(respar->getcenterfreq()/1000.0);
+    octavesfreqvo->value(respar->getoctavesfreq());
+    centerfreq->value(respar->Pcenterfreq);
+    octavesfreq->value(respar->Poctavesfreq);
+    p1st->value(respar->Pprotectthefundamental);
+    rg->redraw();} {}
+  }
+  Function {Show()} {} {
+    code {//
+    string tname;
+    if (engine == PART::engine::addSynth)
+        tname = "AddSynth Resonance";
+    else
+        tname = "PadSynth Resonance ";
+    resonancewindow->copy_label(synth->getGuiMaster()->setPartWindowTitle(tname).c_str());
+    ;
+    int fetchW, fetchH, fetchX, fetchY, fetchO;
+    loadWin(synth, fetchW, fetchH, fetchX, fetchY, fetchO, "Resonance " + to_string(engine));
+    if(fetchW < resDW || fetchH < resDH)
+    {
+        fetchW = resDW;
+        fetchH = resDH;
+    }
+    checkSane(fetchX, fetchY, fetchW, fetchH, resDW, resDH);
+
+    resonancewindow->resize(fetchX, fetchY, fetchW, fetchH);
+    resonancewindow->show();
+    resonanceRtext();
+    resSeen = true;} {}
+  }
+  Function {resonanceRtext()} {} {
+    code {//
+        float dScale = resonancewindow->w() / resDW;
+
+        if (dScale < 0.2f)
+            dScale = 0.2f;
+
+        int size = int(10 * dScale);
+        int size11 = int(11 * dScale);
+        int size12 = int(12 * dScale);
+
+        khzvalue->labelsize(size12);
+            khzvalue->textsize(size12);
+        dbvalue->labelsize(size12);
+            dbvalue->textsize(size12);
+        clearbutton->labelsize(size12);
+        smoothbutton->labelsize(size12);
+        maxdbvo->textsize(size12);
+        maxdb->labelsize(size11);
+        centerfreqvo->labelsize(size11);
+            centerfreqvo->textsize(size12);
+        octavesfreqvo->labelsize(size12);
+            octavesfreqvo->textsize(size11);
+        rnd1->labelsize(size);
+        rnd2->labelsize(size);
+        rnd3->labelsize(size);
+        p1st->labelsize(size12);
+        interpk->labelsize(size12);
+        sbutton->labelsize(size12);
+        lbutton->labelsize(size12);
+        cbutton->labelsize(size11);
+        pbutton->labelsize(size11);
+        enabled->labelsize(size12);
+        applybutton->labelsize(size12);
+        resClose->labelsize(size12);
+
+        resonancewindow->redraw();} {}
+  }
+  decl {Resonance *respar;} {public local
+  }
+  decl {ResonanceGraph *rg;} {private local
+  }
+  decl {Fl_Widget *cbwidget,*cbapplywidget;} {private local
+  }
+  decl {SynthEngine *synth;} {private local
+  }
+  decl {int npart;} {private local
+  }
+  decl {int kititem;} {private local
+  }
+  decl {int engine;} {private local
+  }
+  decl {bool resSeen;} {private local
+  }
+  decl {float resDW;} {private local
+  }
+  decl {float resDH;} {private local
+  }
+}

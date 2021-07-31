@@ -1,0 +1,325 @@
+Author: Adrian Knoth <aknoth@google.com>
+Applied-Upstream: 1.9.13
+Last-Update: 2018-02-25
+Description: Fix spelling mistakes
+
+--- a/man/jack_lsp.0
++++ b/man/jack_lsp.0
+@@ -1,6 +1,6 @@
+ .TH JACK_LSP "1" "!DATE!" "!VERSION!"
+ .SH NAME
+-jack_lsp \- JACK toolkit client to list informtion on ports
++jack_lsp \- JACK toolkit client to list information on ports
+ .SH SYNOPSIS
+ \fBjack_lsp\fR [ \fI-s\fR | \fI--server\fR servername ] [ \fI-AclLptvh\fR ]
+ .SH DESCRIPTION
+--- a/common/JackInternalSessionLoader.cpp
++++ b/common/JackInternalSessionLoader.cpp
+@@ -71,7 +71,7 @@
+              * Therefore only compare the first letter of the command.
+              */
+         } else {
+-            jack_error("JACK internal session file %s line %u contains unkown command '%s'. Ignoring the line!", file, linenr, line.c_str());
++            jack_error("JACK internal session file %s line %u contains unknown command '%s'. Ignoring the line!", file, linenr, line.c_str());
+         }
+     }
+ 
+--- a/common/JackMidiRawInputWriteQueue.cpp
++++ b/common/JackMidiRawInputWriteQueue.cpp
+@@ -83,7 +83,7 @@
+ {
+     jack_error("JackMidiRawInputWriteQueue::HandleEventLoss - A %d byte MIDI "
+                "event scheduled for frame '%d' could not be processed because "
+-               "the write queue cannot accomodate an event of that size.  The "
++               "the write queue cannot accommodate an event of that size.  The "
+                "event has been discarded.", event->size, event->time);
+ }
+ 
+--- a/common/JackPort.cpp
++++ b/common/JackPort.cpp
+@@ -97,7 +97,7 @@
+     fLatency = nframes;
+ 
+     /* setup the new latency values here,
+-	 * so we dont need to change the backend codes.
++	 * so we don't need to change the backend codes.
+ 	 */
+ 	if (fFlags & JackPortIsOutput) {
+ 		fCaptureLatency.min = nframes;
+--- a/common/jack/jack.h
++++ b/common/jack/jack.h
+@@ -1082,7 +1082,7 @@
+  * expressed a min/max pair.
+  *
+  * In most common setups, the minimum and maximum latency
+- * are the same, but this design accomodates more complex
++ * are the same, but this design accommodates more complex
+  * routing, and allows applications (and thus users) to
+  * detect cases where routing is creating an anomalous
+  * situation that may either need fixing or more
+--- a/common/netjack.c
++++ b/common/netjack.c
+@@ -199,7 +199,7 @@
+             //XXX: hmm... i need to remember why resync_threshold wasnt right.
+             //if( offset < netj->resync_threshold )
+             if( offset < 10 ) {
+-                // ok. dont do nothing. we will run without data.
++                // ok. don't do nothing. we will run without data.
+                 // this seems to be one or 2 lost packets.
+                 //
+                 // this can also be reordered packet jitter.
+@@ -283,7 +283,7 @@
+ 
+                     netj->running_free = 1;
+ 
+-                    // when we really dont see packets.
++                    // when we really don't see packets.
+                     // reset source address. and open possibility for new master.
+                     // maybe dsl reconnect. Also restart of netsource without fix
+                     // reply address changes port.
+@@ -597,7 +597,7 @@
+ 
+     // Fill in netj values.
+     // might be subject to autoconfig...
+-    // so dont calculate anything with them...
++    // so don't calculate anything with them...
+ 
+     netj->sample_rate = sample_rate;
+     netj->period_size = period_size;
+@@ -697,7 +697,7 @@
+         socklen_t address_size = sizeof (struct sockaddr_in);
+ #endif
+         //jack_info ("Waiting for an incoming packet !!!");
+-        //jack_info ("*** IMPORTANT *** Dont connect a client to jackd until the driver is attached to a clock source !!!");
++        //jack_info ("*** IMPORTANT *** Don't connect a client to jackd until the driver is attached to a clock source !!!");
+ 
+         while(1) {
+             if( ! netjack_poll( netj->sockfd, 1000 ) ) {
+@@ -788,7 +788,7 @@
+ 
+     if( netj->bitdepth == CELT_MODE ) {
+         // celt mode.
+-        // TODO: this is a hack. But i dont want to change the packet header.
++        // TODO: this is a hack. But i don't want to change the packet header.
+         netj->resample_factor = (netj->resample_factor * netj->period_size * 1024 / netj->sample_rate / 8) & (~1);
+         netj->resample_factor_up = (netj->resample_factor_up * netj->period_size * 1024 / netj->sample_rate / 8) & (~1);
+ 
+@@ -796,7 +796,7 @@
+         netj->net_period_up = netj->resample_factor_up;
+     } else if( netj->bitdepth == OPUS_MODE ) {
+         // Opus mode.
+-        // TODO: this is a hack. But i dont want to change the packet header, either
++        // TODO: this is a hack. But i don't want to change the packet header, either
+         netj->net_period_down = (netj->resample_factor * netj->period_size * 1024 / netj->sample_rate / 8) & (~1);
+         netj->net_period_up = (netj->resample_factor_up * netj->period_size * 1024 / netj->sample_rate / 8) & (~1);
+     } else {
+--- a/common/netjack_packet.c
++++ b/common/netjack_packet.c
+@@ -286,7 +286,7 @@
+     int i;
+     pack->valid = 0;
+ 
+-    // XXX: i dont think this is necessary here...
++    // XXX: i don't think this is necessary here...
+     //      fragement array is cleared in _set_framecnt()
+ 
+     for (i = 0; i < pack->num_fragments; i++)
+@@ -318,7 +318,7 @@
+     jack_nframes_t framecnt    = ntohl (pkthdr->framecnt);
+ 
+     if (framecnt != pack->framecnt) {
+-        jack_error ("errror. framecnts dont match");
++        jack_error ("error. framecnts don't match");
+         return;
+     }
+ 
+--- a/dbus/controller_iface_patchbay.c
++++ b/dbus/controller_iface_patchbay.c
+@@ -1528,7 +1528,7 @@
+     if (patchbay_ptr->graph.version == 1)
+     {
+         /* we have empty initial graph, increment graph version,
+-           so we dont do jack_get_ports() again,
++           so we don't do jack_get_ports() again,
+            on next next graph change */
+         patchbay_ptr->graph.version++;
+     }
+--- a/doxyfile.in
++++ b/doxyfile.in
+@@ -657,7 +657,7 @@
+ EXAMPLE_PATTERNS       =
+ 
+ # If the EXAMPLE_RECURSIVE tag is set to YES then subdirectories will be
+-# searched for input files to be used with the \include or \dontinclude
++# searched for input files to be used with the \include or \don'tinclude
+ # commands irrespective of the value of the RECURSIVE tag.
+ # Possible values are YES and NO. If left blank NO is used.
+ 
+--- a/example-clients/alsa_in.c
++++ b/example-clients/alsa_in.c
+@@ -106,7 +106,7 @@
+ #define NUMFORMATS (sizeof(formats)/sizeof(formats[0]))
+ int format=0;
+ 
+-// Alsa stuff... i dont want to touch this bullshit in the next years.... please...
++// Alsa stuff... i don't want to touch this bullshit in the next years.... please...
+ 
+ static int xrun_recovery(snd_pcm_t *handle, int err) {
+ //    printf( "xrun !!!.... %d\n", err );
+--- a/example-clients/alsa_out.c
++++ b/example-clients/alsa_out.c
+@@ -106,7 +106,7 @@
+ #define NUMFORMATS (sizeof(formats)/sizeof(formats[0]))
+ int format=0;
+ 
+-// Alsa stuff... i dont want to touch this bullshit in the next years.... please...
++// Alsa stuff... i don't want to touch this bullshit in the next years.... please...
+ 
+ static int xrun_recovery(snd_pcm_t *handle, int err) {
+ //    printf( "xrun !!!.... %d\n", err );
+--- a/example-clients/netsource.c
++++ b/example-clients/netsource.c
+@@ -244,7 +244,7 @@
+ /**
+  * The Sync callback... sync state is set elsewhere...
+  * we will see if this is working correctly.
+- * i dont really believe in it yet.
++ * i don't really believe in it yet.
+  */
+ int
+ sync_cb (jack_transport_state_t state, jack_position_t *pos, void *arg)
+--- a/man/alsa_in.0
++++ b/man/alsa_in.0
+@@ -90,7 +90,7 @@
+ If you have a PCI card, then the default value (15) of this parameter is too high for \-p64 \-n2... Setting it to 5 should fix that.
+ Be aware that setting this parameter too low, lets the hf noise on the delay measurement come through onto the resamplerate, so this
+ might degrade the quality of the output. (but its a threshold value, and it has been chosen, to mask the noise of a USB card,
+-which has an amplitude which is 50 times higher than that of a PCI card, so 5 wont loose you any quality on a PCI card)
++which has an amplitude which is 50 times higher than that of a PCI card, so 5 won't lose you any quality on a PCI card)
+ 
+ .SH AUTHOR
+ Torben Hohn
+--- a/man/jack_simple_client.0
++++ b/man/jack_simple_client.0
+@@ -1,7 +1,7 @@
+ .TH JACK_CONNECT "1" "!DATE!" "!VERSION!"
+ .SH NAME
+ jack_simple_client \- The JACK Audio Connection Kit example client
+-.SH SYNOPSYS
++.SH SYNOPSIS
+ .B jack_simple_client
+ client-name
+ .PP
+--- a/man/jackd.0
++++ b/man/jackd.0
+@@ -370,7 +370,7 @@
+ Send packets N times (default: 1)
+ .TP 
+ \fB\-e, \-\-native\-endian \fIint\fR
+-Dont convert samples to network byte order. (default: false)
++Don't convert samples to network byte order. (default: false)
+ .TP 
+ \fB\-J, \-\-jitterval \fIint\fR
+ attempted jitterbuffer microseconds on master (default: 0)
+--- a/tests/test.cpp
++++ b/tests/test.cpp
+@@ -1576,15 +1576,15 @@
+      * (This mode seems to be problematic in standard jack version 0.100. It seems that nobody
+      * is used to apply this mode because the tie mode doesn't work at all. A patch seems difficult to produce
+      * in this version of jack. Tie mode work well in MP version.)
+-     * Test some basic thinks (tie with 2 differents client, tie non-owned ports...)
++     * Test some basic thinks (tie with 2 different client, tie non-owned ports...)
+      * Tie client1.in1 and client1.out1 ports, and make some data test to check the validity of the tie.
+      *
+      */
+     Log("Testing tie mode...\n");
+     if (jack_port_tie(input_port1, output_port2) != 0) {
+-        Log("not possible to tie two ports from two differents clients... ok\n");
++        Log("not possible to tie two ports from two different clients... ok\n");
+     } else {
+-        printf("!!! ERROR !!! port_tie has allowed a connexion between two differents clients !\n");
++        printf("!!! ERROR !!! port_tie has allowed a connexion between two different clients !\n");
+         jack_port_untie(output_port2);
+     }
+     Log("Testing connections datas in tie mode...\n");
+--- a/windows/JackWinNamedPipeClientChannel.cpp
++++ b/windows/JackWinNamedPipeClientChannel.cpp
+@@ -152,7 +152,7 @@
+     return true;
+ 
+ error:
+-    // Close the pipes, server wont be able to create them otherwise.
++    // Close the pipes, server won't be able to create them otherwise.
+     fNotificationListenPipe.Close();
+     fRequest->Close();
+     fClient->ShutDown(jack_status_t(JackFailure | JackServerError), JACK_SERVER_FAILURE);
+--- a/common/JackNetOneDriver.cpp
++++ b/common/JackNetOneDriver.cpp
+@@ -959,7 +959,7 @@
+         jack_driver_descriptor_add_parameter(desc, &filler, "redundancy", 'R', JackDriverParamUInt, &value, NULL, "Send packets N times", NULL);
+ 
+         value.ui = false;
+-        jack_driver_descriptor_add_parameter(desc, &filler, "native-endian", 'e', JackDriverParamBool, &value, NULL, "Dont convert samples to network byte order", NULL);
++        jack_driver_descriptor_add_parameter(desc, &filler, "native-endian", 'e', JackDriverParamBool, &value, NULL, "Don't convert samples to network byte order", NULL);
+ 
+         value.i = 0;
+         jack_driver_descriptor_add_parameter(desc, &filler, "jitterval", 'J', JackDriverParamInt, &value, NULL, "Attempted jitterbuffer microseconds on master", NULL);
+--- a/common/JackProxyDriver.h
++++ b/common/JackProxyDriver.h
+@@ -73,10 +73,10 @@
+             int* fUpstreamCapturePortConnected;      /*<! map of capture ports connected upstream, for optimization purpose */
+             int* fUpstreamPlaybackPortConnected;     /*<! map of playback ports connected upstream, for optimization purpose */
+ 
+-            bool fAutoSave;                          /*<! wether the local connections should be saved/restored when upstream connection is restarted */
+-            bool fAutoConnect;                       /*<! wether the upstream ports should be automatically connected to upstream physical ports */
+-            bool fDetectPlaybackChannels;            /*<! wether the number of playback ports registered should match the number of upstream physical playback ports */
+-            bool fDetectCaptureChannels;             /*<! wether the number of capture ports registered should match the number of upstream physical capture ports */
++            bool fAutoSave;                          /*<! whether the local connections should be saved/restored when upstream connection is restarted */
++            bool fAutoConnect;                       /*<! whether the upstream ports should be automatically connected to upstream physical ports */
++            bool fDetectPlaybackChannels;            /*<! whether the number of playback ports registered should match the number of upstream physical playback ports */
++            bool fDetectCaptureChannels;             /*<! whether the number of capture ports registered should match the number of upstream physical capture ports */
+ 
+             bool Initialize();                       /*<! establish upstream connection and register the client callbacks */
+ 
+--- a/dbus/sigsegv.c
++++ b/dbus/sigsegv.c
+@@ -94,7 +94,7 @@
+     }
+     else
+     {
+-        jack_error("Unknown bad signal catched!");
++        jack_error("Unknown bad signal caught!");
+     }
+ 
+     if (info->si_code >= 0 && info->si_code < 3) 
+--- a/example-clients/wait.c
++++ b/example-clients/wait.c
+@@ -19,7 +19,7 @@
+ 	fprintf(stderr, "        -s, --server <name>   Connect to the jack server named <name>\n");
+ 	fprintf(stderr, "        -w, --wait            Wait for server to become available\n");
+ 	fprintf(stderr, "        -q, --quit            Wait until server is quit\n");
+-	fprintf(stderr, "        -c, --check           Check wether server is running\n");
++	fprintf(stderr, "        -c, --check           Check whether server is running\n");
+ 	fprintf(stderr, "        -t, --timeout         Wait timeout in seconds\n");
+ 	fprintf(stderr, "        -h, --help            Display this help message\n");
+ 	fprintf(stderr, "For more information see http://jackaudio.org/\n");
+--- a/linux/alsa/JackAlsaAdapter.h
++++ b/linux/alsa/JackAlsaAdapter.h
+@@ -421,7 +421,7 @@
+                         }
+                         break;
+                     default :
+-                        check_error_msg ( -10000, "unknow access mode" );
++                        check_error_msg ( -10000, "unknown access mode" );
+                         break;
+                 }
+                 return 0;
+@@ -507,7 +507,7 @@
+                         }
+                         break;
+                     default :
+-                        check_error_msg ( -10000, "unknow access mode" );
++                        check_error_msg ( -10000, "unknown access mode" );
+                         break;
+                 }
+                 return 0;

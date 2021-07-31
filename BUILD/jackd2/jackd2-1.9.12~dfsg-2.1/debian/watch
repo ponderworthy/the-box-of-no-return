@@ -1,0 +1,4 @@
+# Run the "uscan" command to check for upstream updates and more.
+version=3
+opts=uversionmangle=s/1\.90/1.9.0/,dversionmangle=s/\~dfsg.*// \
+https://github.com/jackaudio/jack2/tags .*/archive/v?(\d[\d\.]+)\.tar\.gz

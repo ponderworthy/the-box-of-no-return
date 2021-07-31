@@ -1,0 +1,515 @@
+ dpkg-buildpackage -us -uc -ui -b
+dpkg-buildpackage: info: source package fluidsynth
+dpkg-buildpackage: info: source version 1.1.11-1+deb10u1.1-bnrscustom
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by Reiner Herrmann <jeb@bnr4>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean -Scmake --without autoreconf
+   dh_testdir -O-Scmake
+   dh_auto_clean -O-Scmake
+   dh_clean -O-Scmake
+ debian/rules build
+dh build -Scmake --without autoreconf
+   dh_testdir -O-Scmake
+   dh_update_autotools_config -O-Scmake
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1'
+dh_auto_configure -- \
+	-DLIB_SUFFIX="/x86_64-linux-gnu" \
+	-DFLUID_DAEMON_ENV_FILE=/etc/default/fluidsynth \
+	-Denable-ladspa=on \
+	
+	cd obj-x86_64-linux-gnu && cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None -DCMAKE_INSTALL_SYSCONFDIR=/etc -DCMAKE_INSTALL_LOCALSTATEDIR=/var -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON -DCMAKE_INSTALL_RUNSTATEDIR=/run "-GUnix Makefiles" -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu -DLIB_SUFFIX=/x86_64-linux-gnu -DFLUID_DAEMON_ENV_FILE=/etc/default/fluidsynth -Denable-ladspa=on ..
+-- The C compiler identification is GNU 8.3.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Checking whether system has ANSI C header files
+-- Looking for 8 include files dlfcn.h, ..., float.h
+-- Looking for 8 include files dlfcn.h, ..., float.h - found
+-- Performing Test memchrExists
+-- Performing Test memchrExists - Success
+-- Performing Test freeExists
+-- Performing Test freeExists - Success
+-- ANSI C header files - found
+-- Looking for include file unistd.h
+-- Looking for include file unistd.h - found
+-- Looking for DIR in sys/stat.h;sys/types.h;dirent.h
+-- Looking for DIR in sys/stat.h;sys/types.h;dirent.h - found
+-- Looking for stdio.h
+-- Looking for stdio.h - found
+-- Looking for math.h
+-- Looking for math.h - found
+-- Looking for errno.h
+-- Looking for errno.h - found
+-- Looking for stdarg.h
+-- Looking for stdarg.h - found
+-- Looking for memory.h
+-- Looking for memory.h - found
+-- Looking for sys/mman.h
+-- Looking for sys/mman.h - found
+-- Looking for sys/time.h
+-- Looking for sys/time.h - found
+-- Looking for sys/ioctl.h
+-- Looking for sys/ioctl.h - found
+-- Looking for fcntl.h
+-- Looking for fcntl.h - found
+-- Looking for sys/socket.h
+-- Looking for sys/socket.h - found
+-- Looking for netinet/in.h
+-- Looking for netinet/in.h - found
+-- Looking for netinet/tcp.h
+-- Looking for netinet/tcp.h - found
+-- Looking for arpa/inet.h
+-- Looking for arpa/inet.h - found
+-- Looking for limits.h
+-- Looking for limits.h - found
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for signal.h
+-- Looking for signal.h - found
+-- Looking for getopt.h
+-- Looking for getopt.h - found
+-- Performing Test _have_inline
+-- Performing Test _have_inline - Success
+-- Performing Test _have_vla
+-- Performing Test _have_vla - Success
+-- Check if the system is big endian
+-- Searching 16 bit integer
+-- Check size of unsigned short
+-- Check size of unsigned short - done
+-- Using unsigned short
+-- Check if the system is big endian - little endian
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Looking for inet_ntop
+-- Looking for inet_ntop - found
+-- Looking for ladspa.h
+-- Looking for ladspa.h - found
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29") 
+-- Checking for modules 'glib-2.0>=2.6.5;gthread-2.0>=2.6.5'
+--   Found glib-2.0, version 2.58.3
+--   Found gthread-2.0, version 2.58.3
+-- Checking for module 'sndfile>=1.0.0'
+--   Found sndfile, version 1.0.28
+-- Checking for module 'sndfile>=1.0.18'
+--   Found sndfile, version 1.0.28
+-- Checking for module 'libpulse-simple>=0.9.8'
+--   Found libpulse-simple, version 12.2
+-- Checking for module 'alsa>=0.9.1'
+--   Found alsa, version 1.1.8
+-- Checking for module 'jack'
+--   Found jack, version 1.9.12
+-- Checking for module 'lash-1.0>=0.3'
+--   No package 'lash-1.0' found
+-- Checking for module 'dbus-1>=1.0.0'
+--   Found dbus-1, version 1.12.20
+-- Found READLINE: /usr/include  
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+
+**************************************************************
+Summary:
+Build type:            None
+libsndfile:            yes (with ogg vorbis support)
+D-Bus:                 yes
+PulseAudio:            yes
+JACK:                  yes
+ALSA:                  yes
+PortAudio:             no
+OSS:                   yes
+MidiShare:             no
+CoreAudio:             no
+CoreMIDI:              no
+Windows:               no
+LADSPA support:        yes
+LASH support:          no
+LADCCA support:        no
+OS/2 DART support:     no
+Audio to file driver:  yes
+IPV6 Support :         yes
+Readline:              yes (NOTE: GPL library)
+Samples type=float:    no (using double)
+Profiling:             no
+Debug:                 no
+Trap on FPE (debug):   no
+Check FPE (debug):     no
+**************************************************************
+
+
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_EXPORT_NO_PACKAGE_REGISTRY
+    CMAKE_INSTALL_LIBDIR
+    CMAKE_INSTALL_LOCALSTATEDIR
+    CMAKE_INSTALL_RUNSTATEDIR
+    CMAKE_INSTALL_SYSCONFDIR
+
+
+-- Build files have been written to: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu
+make[1]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1'
+   dh_auto_build -O-Scmake
+	cd obj-x86_64-linux-gnu && make -j16 "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -S/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1 -B/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/progress.marks
+make -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/libfluidsynth.dir/build.make src/CMakeFiles/libfluidsynth.dir/depend
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1 /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src/CMakeFiles/libfluidsynth.dir/DependInfo.cmake --color=
+Scanning dependencies of target libfluidsynth
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/libfluidsynth.dir/build.make src/CMakeFiles/libfluidsynth.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+[  4%] Building C object src/CMakeFiles/libfluidsynth.dir/drivers/fluid_oss.c.o
+[  4%] Building C object src/CMakeFiles/libfluidsynth.dir/drivers/fluid_alsa.c.o
+[ 11%] Building C object src/CMakeFiles/libfluidsynth.dir/bindings/fluid_ladspa.c.o
+[ 11%] Building C object src/CMakeFiles/libfluidsynth.dir/utils/fluid_conv.c.o
+[ 11%] Building C object src/CMakeFiles/libfluidsynth.dir/utils/fluid_hash.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/drivers/fluid_alsa.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers/fluid_alsa.c
+[ 16%] Building C object src/CMakeFiles/libfluidsynth.dir/bindings/fluid_rtkit.c.o
+[ 16%] Building C object src/CMakeFiles/libfluidsynth.dir/drivers/fluid_pulse.c.o
+[ 19%] Building C object src/CMakeFiles/libfluidsynth.dir/drivers/fluid_jack.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/drivers/fluid_oss.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers/fluid_oss.c
+[ 21%] Building C object src/CMakeFiles/libfluidsynth.dir/utils/fluid_settings.c.o
+[ 23%] Building C object src/CMakeFiles/libfluidsynth.dir/utils/fluid_list.c.o
+[ 30%] Building C object src/CMakeFiles/libfluidsynth.dir/sfloader/fluid_ramsfont.c.o
+[ 30%] Building C object src/CMakeFiles/libfluidsynth.dir/sfloader/fluid_defsfont.c.o
+[ 33%] Building C object src/CMakeFiles/libfluidsynth.dir/utils/fluid_sys.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/bindings/fluid_ladspa.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings/fluid_ladspa.c
+[ 33%] Building C object src/CMakeFiles/libfluidsynth.dir/utils/fluid_ringbuffer.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/utils/fluid_conv.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils/fluid_conv.c
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/utils/fluid_hash.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils/fluid_hash.c
+[ 35%] Building C object src/CMakeFiles/libfluidsynth.dir/rvoice/fluid_adsr_env.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/drivers/fluid_pulse.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers/fluid_pulse.c
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/bindings/fluid_rtkit.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings/fluid_rtkit.c
+[ 38%] Building C object src/CMakeFiles/libfluidsynth.dir/rvoice/fluid_chorus.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/drivers/fluid_jack.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers/fluid_jack.c
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/utils/fluid_settings.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils/fluid_settings.c
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/sfloader/fluid_ramsfont.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader/fluid_ramsfont.c
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/utils/fluid_ringbuffer.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils/fluid_ringbuffer.c
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/rvoice/fluid_adsr_env.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice/fluid_adsr_env.c
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/utils/fluid_sys.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils/fluid_sys.c
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/sfloader/fluid_defsfont.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader/fluid_defsfont.c
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/utils/fluid_list.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils/fluid_list.c
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/rvoice/fluid_chorus.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice/fluid_chorus.c
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader/fluid_defsfont.c: In function ‘new_fluid_preset_zone’:
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader/fluid_defsfont.c:1151:3: warning: ‘fluid_gen_set_default_values’ is deprecated [-Wdeprecated-declarations]
+   fluid_gen_set_default_values(&zone->gen[0]);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include/fluidsynth.h:109,
+                 from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader/fluid_defsfont.h:28,
+                 from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader/fluid_defsfont.c:25:
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include/fluidsynth/gen.h:127:37: note: declared here
+ FLUIDSYNTH_API FLUID_DEPRECATED int fluid_gen_set_default_values(fluid_gen_t* gen);
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader/fluid_defsfont.c: In function ‘new_fluid_inst_zone’:
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader/fluid_defsfont.c:1551:3: warning: ‘fluid_gen_set_default_values’ is deprecated [-Wdeprecated-declarations]
+   fluid_gen_set_default_values(&zone->gen[0]);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include/fluidsynth.h:109,
+                 from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader/fluid_defsfont.h:28,
+                 from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader/fluid_defsfont.c:25:
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include/fluidsynth/gen.h:127:37: note: declared here
+ FLUIDSYNTH_API FLUID_DEPRECATED int fluid_gen_set_default_values(fluid_gen_t* gen);
+                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 42%] Building C object src/CMakeFiles/libfluidsynth.dir/rvoice/fluid_lfo.c.o
+[ 42%] Building C object src/CMakeFiles/libfluidsynth.dir/rvoice/fluid_iir_filter.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/rvoice/fluid_iir_filter.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice/fluid_iir_filter.c
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/rvoice/fluid_lfo.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice/fluid_lfo.c
+[ 45%] Building C object src/CMakeFiles/libfluidsynth.dir/rvoice/fluid_rvoice.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/rvoice/fluid_rvoice.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice/fluid_rvoice.c
+[ 47%] Building C object src/CMakeFiles/libfluidsynth.dir/rvoice/fluid_rvoice_dsp.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/rvoice/fluid_rvoice_dsp.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice/fluid_rvoice_dsp.c
+[ 50%] Building C object src/CMakeFiles/libfluidsynth.dir/rvoice/fluid_rvoice_event.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/rvoice/fluid_rvoice_event.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice/fluid_rvoice_event.c
+[ 54%] Building C object src/CMakeFiles/libfluidsynth.dir/rvoice/fluid_rev.c.o
+[ 54%] Building C object src/CMakeFiles/libfluidsynth.dir/rvoice/fluid_rvoice_mixer.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/rvoice/fluid_rvoice_mixer.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice/fluid_rvoice_mixer.c
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/rvoice/fluid_rev.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice/fluid_rev.c
+[ 57%] Building C object src/CMakeFiles/libfluidsynth.dir/synth/fluid_chan.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/synth/fluid_chan.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth/fluid_chan.c
+[ 59%] Building C object src/CMakeFiles/libfluidsynth.dir/synth/fluid_event.c.o
+[ 61%] Building C object src/CMakeFiles/libfluidsynth.dir/synth/fluid_gen.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/synth/fluid_event.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth/fluid_event.c
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/synth/fluid_gen.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth/fluid_gen.c
+[ 66%] Building C object src/CMakeFiles/libfluidsynth.dir/synth/fluid_mod.c.o
+[ 66%] Building C object src/CMakeFiles/libfluidsynth.dir/synth/fluid_synth.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/synth/fluid_synth.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth/fluid_synth.c
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/synth/fluid_mod.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth/fluid_mod.c
+[ 69%] Building C object src/CMakeFiles/libfluidsynth.dir/synth/fluid_tuning.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/synth/fluid_tuning.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth/fluid_tuning.c
+[ 71%] Building C object src/CMakeFiles/libfluidsynth.dir/midi/fluid_midi.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/midi/fluid_midi.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi/fluid_midi.c
+[ 73%] Building C object src/CMakeFiles/libfluidsynth.dir/synth/fluid_voice.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/synth/fluid_voice.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth/fluid_voice.c
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth/fluid_gen.c: In function ‘fluid_gen_init’:
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth/fluid_gen.c:123:2: warning: ‘fluid_gen_set_default_values’ is deprecated [-Wdeprecated-declarations]
+  fluid_gen_set_default_values(gen);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth/fluid_gen.c:99:1: note: declared here
+ fluid_gen_set_default_values(fluid_gen_t* gen)
+ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 78%] Building C object src/CMakeFiles/libfluidsynth.dir/midi/fluid_midi_router.c.o
+[ 78%] Building C object src/CMakeFiles/libfluidsynth.dir/midi/fluid_seq.c.o
+[ 80%] Building C object src/CMakeFiles/libfluidsynth.dir/midi/fluid_seqbind.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/midi/fluid_midi_router.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi/fluid_midi_router.c
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/midi/fluid_seqbind.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi/fluid_seqbind.c
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/midi/fluid_seq.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi/fluid_seq.c
+[ 83%] Building C object src/CMakeFiles/libfluidsynth.dir/drivers/fluid_adriver.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/drivers/fluid_adriver.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers/fluid_adriver.c
+[ 85%] Building C object src/CMakeFiles/libfluidsynth.dir/drivers/fluid_mdriver.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/drivers/fluid_mdriver.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers/fluid_mdriver.c
+[ 88%] Building C object src/CMakeFiles/libfluidsynth.dir/drivers/fluid_aufile.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/drivers/fluid_aufile.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers/fluid_aufile.c
+[ 90%] Building C object src/CMakeFiles/libfluidsynth.dir/bindings/fluid_filerenderer.c.o
+[ 92%] Building C object src/CMakeFiles/libfluidsynth.dir/bindings/fluid_cmd.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/bindings/fluid_filerenderer.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings/fluid_filerenderer.c
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -Dlibfluidsynth_EXPORTS -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -fPIC   -o CMakeFiles/libfluidsynth.dir/bindings/fluid_cmd.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings/fluid_cmd.c
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings/fluid_cmd.c: In function ‘fluid_handle_channels’:
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings/fluid_cmd.c:592:5: warning: ‘fluid_synth_get_channel_info’ is deprecated [-Wdeprecated-declarations]
+     fluid_synth_get_channel_info (synth, i, &info);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include/fluidsynth.h:97,
+                 from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils/fluidsynth_priv.h:144,
+                 from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings/fluid_cmd.c:23:
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include/fluidsynth/synth.h:99:5: note: declared here
+ int fluid_synth_get_channel_info (fluid_synth_t *synth, int chan, fluid_synth_channel_info_t *info);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings/fluid_cmd.c: In function ‘fluid_handle_tuning’:
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings/fluid_cmd.c:1097:3: warning: ‘fluid_synth_create_key_tuning’ is deprecated [-Wdeprecated-declarations]
+   fluid_synth_create_key_tuning(synth, bank, prog, name, NULL);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include/fluidsynth.h:97,
+                 from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils/fluidsynth_priv.h:144,
+                 from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings/fluid_cmd.c:23:
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include/fluidsynth/synth.h:236:5: note: declared here
+ int fluid_synth_create_key_tuning(fluid_synth_t* synth, int bank, int prog,
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings/fluid_cmd.c: In function ‘fluid_handle_settuning’:
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings/fluid_cmd.c:1194:3: warning: ‘fluid_synth_select_tuning’ is deprecated [-Wdeprecated-declarations]
+   fluid_synth_select_tuning(synth, chan, bank, prog);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include/fluidsynth.h:97,
+                 from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils/fluidsynth_priv.h:144,
+                 from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings/fluid_cmd.c:23:
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include/fluidsynth/synth.h:253:5: note: declared here
+ int fluid_synth_select_tuning(fluid_synth_t* synth, int chan, int bank, int prog);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings/fluid_cmd.c: In function ‘fluid_handle_resettuning’:
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings/fluid_cmd.c:1219:3: warning: ‘fluid_synth_reset_tuning’ is deprecated [-Wdeprecated-declarations]
+   fluid_synth_reset_tuning(synth, chan);
+   ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include/fluidsynth.h:97,
+                 from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils/fluidsynth_priv.h:144,
+                 from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings/fluid_cmd.c:23:
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include/fluidsynth/synth.h:259:5: note: declared here
+ int fluid_synth_reset_tuning(fluid_synth_t* synth, int chan);
+     ^~~~~~~~~~~~~~~~~~~~~~~~
+[ 95%] Linking C shared library libfluidsynth.so
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E cmake_link_script CMakeFiles/libfluidsynth.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -Wl,--no-undefined -shared -Wl,-soname,libfluidsynth.so.1 -o libfluidsynth.so.1.7.2 CMakeFiles/libfluidsynth.dir/drivers/fluid_alsa.c.o CMakeFiles/libfluidsynth.dir/bindings/fluid_rtkit.c.o CMakeFiles/libfluidsynth.dir/drivers/fluid_jack.c.o CMakeFiles/libfluidsynth.dir/bindings/fluid_ladspa.c.o CMakeFiles/libfluidsynth.dir/drivers/fluid_oss.c.o CMakeFiles/libfluidsynth.dir/drivers/fluid_pulse.c.o CMakeFiles/libfluidsynth.dir/utils/fluid_conv.c.o CMakeFiles/libfluidsynth.dir/utils/fluid_hash.c.o CMakeFiles/libfluidsynth.dir/utils/fluid_list.c.o CMakeFiles/libfluidsynth.dir/utils/fluid_ringbuffer.c.o CMakeFiles/libfluidsynth.dir/utils/fluid_settings.c.o CMakeFiles/libfluidsynth.dir/utils/fluid_sys.c.o CMakeFiles/libfluidsynth.dir/sfloader/fluid_defsfont.c.o CMakeFiles/libfluidsynth.dir/sfloader/fluid_ramsfont.c.o CMakeFiles/libfluidsynth.dir/rvoice/fluid_adsr_env.c.o CMakeFiles/libfluidsynth.dir/rvoice/fluid_chorus.c.o CMakeFiles/libfluidsynth.dir/rvoice/fluid_iir_filter.c.o CMakeFiles/libfluidsynth.dir/rvoice/fluid_lfo.c.o CMakeFiles/libfluidsynth.dir/rvoice/fluid_rvoice.c.o CMakeFiles/libfluidsynth.dir/rvoice/fluid_rvoice_dsp.c.o CMakeFiles/libfluidsynth.dir/rvoice/fluid_rvoice_event.c.o CMakeFiles/libfluidsynth.dir/rvoice/fluid_rvoice_mixer.c.o CMakeFiles/libfluidsynth.dir/rvoice/fluid_rev.c.o CMakeFiles/libfluidsynth.dir/synth/fluid_chan.c.o CMakeFiles/libfluidsynth.dir/synth/fluid_event.c.o CMakeFiles/libfluidsynth.dir/synth/fluid_gen.c.o CMakeFiles/libfluidsynth.dir/synth/fluid_mod.c.o CMakeFiles/libfluidsynth.dir/synth/fluid_synth.c.o CMakeFiles/libfluidsynth.dir/synth/fluid_tuning.c.o CMakeFiles/libfluidsynth.dir/synth/fluid_voice.c.o CMakeFiles/libfluidsynth.dir/midi/fluid_midi.c.o CMakeFiles/libfluidsynth.dir/midi/fluid_midi_router.c.o CMakeFiles/libfluidsynth.dir/midi/fluid_seqbind.c.o CMakeFiles/libfluidsynth.dir/midi/fluid_seq.c.o CMakeFiles/libfluidsynth.dir/drivers/fluid_adriver.c.o CMakeFiles/libfluidsynth.dir/drivers/fluid_mdriver.c.o CMakeFiles/libfluidsynth.dir/drivers/fluid_aufile.c.o CMakeFiles/libfluidsynth.dir/bindings/fluid_cmd.c.o CMakeFiles/libfluidsynth.dir/bindings/fluid_filerenderer.c.o -lgthread-2.0 -lglib-2.0 -ljack -lasound -lpulse-simple -lpulse -lsndfile -ldbus-1 -lreadline -lm -lpthread -ldl 
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E cmake_symlink_library libfluidsynth.so.1.7.2 libfluidsynth.so.1 libfluidsynth.so
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+[ 95%] Built target libfluidsynth
+make -f src/CMakeFiles/fluidsynth.dir/build.make src/CMakeFiles/fluidsynth.dir/depend
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1 /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src/CMakeFiles/fluidsynth.dir/DependInfo.cmake --color=
+Scanning dependencies of target fluidsynth
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/fluidsynth.dir/build.make src/CMakeFiles/fluidsynth.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+[ 97%] Building C object src/CMakeFiles/fluidsynth.dir/fluidsynth.c.o
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cc -DHAVE_CONFIG_H -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/drivers -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/synth -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/rvoice -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/midi -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/sfloader -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/bindings -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include -I/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include -I/usr/include/alsa -I/usr/include/dbus-1.0 -I/usr/lib/x86_64-linux-gnu/dbus-1.0/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include  -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3   -o CMakeFiles/fluidsynth.dir/fluidsynth.c.o   -c /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/fluidsynth.c
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/fluidsynth.c: In function ‘main’:
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/fluidsynth.c:666:7: warning: ‘fluid_synth_set_midi_router’ is deprecated [-Wdeprecated-declarations]
+       fluid_synth_set_midi_router(synth, router); /* Fixme, needed for command handler */
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include/fluidsynth.h:97,
+                 from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils/fluidsynth_priv.h:144,
+                 from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/fluidsynth.c:29:
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include/fluidsynth/synth.h:321:6: note: declared here
+ void fluid_synth_set_midi_router(fluid_synth_t* synth, fluid_midi_router_t* router);
+      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/fluidsynth.c:714:7: warning: ‘fluid_settings_getstr’ is deprecated [-Wdeprecated-declarations]
+       if (fluid_settings_getstr(settings, "synth.default-soundfont", &s) <= 0)
+       ^~
+In file included from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/include/fluidsynth.h:96,
+                 from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/utils/fluidsynth_priv.h:144,
+                 from /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src/fluidsynth.c:29:
+/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/include/fluidsynth/settings.h:152:5: note: declared here
+ int fluid_settings_getstr(fluid_settings_t* settings, const char *name, char** str);
+     ^~~~~~~~~~~~~~~~~~~~~
+[100%] Linking C executable fluidsynth
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E cmake_link_script CMakeFiles/fluidsynth.dir/link.txt --verbose=1
+/usr/bin/cc -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3 -march=native -mtune=native -O3  -Wl,-z,relro -Wl,-z,now -Wl,--as-needed -Wl,--as-needed -rdynamic CMakeFiles/fluidsynth.dir/fluidsynth.c.o  -o fluidsynth -Wl,-rpath,/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src: libfluidsynth.so.1.7.2 -lgthread-2.0 -lglib-2.0 -ljack -lasound -lpulse-simple -lpulse -lsndfile -ldbus-1 -lreadline -lm -lpthread -ldl 
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+[100%] Built target fluidsynth
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles 0
+make[1]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+   dh_auto_test -O-Scmake
+   create-stamp debian/debhelper-build-stamp
+ fakeroot debian/rules binary
+dh binary -Scmake --without autoreconf
+   dh_testroot -O-Scmake
+   dh_prep -O-Scmake
+   dh_installdirs -O-Scmake
+   dh_auto_install -O-Scmake
+	cd obj-x86_64-linux-gnu && make -j16 install DESTDIR=/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1\+deb10u1.1/debian/tmp AM_UPDATE_INFO_DIR=no "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -S/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1 -B/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles/progress.marks
+make -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/libfluidsynth.dir/build.make src/CMakeFiles/libfluidsynth.dir/depend
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1 /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src/CMakeFiles/libfluidsynth.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/libfluidsynth.dir/build.make src/CMakeFiles/libfluidsynth.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'src/CMakeFiles/libfluidsynth.dir/build'.
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+[ 95%] Built target libfluidsynth
+make -f src/CMakeFiles/fluidsynth.dir/build.make src/CMakeFiles/fluidsynth.dir/depend
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+cd /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1 /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/src /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/src/CMakeFiles/fluidsynth.dir/DependInfo.cmake --color=
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/fluidsynth.dir/build.make src/CMakeFiles/fluidsynth.dir/build
+make[3]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'src/CMakeFiles/fluidsynth.dir/build'.
+make[3]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+[100%] Built target fluidsynth
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu/CMakeFiles 0
+make -f CMakeFiles/Makefile2 preinstall
+make[2]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+make[2]: Nothing to be done for 'preinstall'.
+make[2]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+Install the project...
+/usr/bin/cmake -P cmake_install.cmake
+-- Install configuration: "None"
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/lib/x86_64-linux-gnu/pkgconfig/fluidsynth.pc
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/bin/fluidsynth
+-- Set runtime path of "/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/bin/fluidsynth" to ""
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/lib/x86_64-linux-gnu/libfluidsynth.so.1.7.2
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/lib/x86_64-linux-gnu/libfluidsynth.so.1
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/lib/x86_64-linux-gnu/libfluidsynth.so
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/include/fluidsynth.h
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/include/fluidsynth/audio.h
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/include/fluidsynth/event.h
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/include/fluidsynth/gen.h
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/include/fluidsynth/log.h
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/include/fluidsynth/midi.h
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/include/fluidsynth/misc.h
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/include/fluidsynth/mod.h
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/include/fluidsynth/ramsfont.h
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/include/fluidsynth/seq.h
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/include/fluidsynth/seqbind.h
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/include/fluidsynth/settings.h
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/include/fluidsynth/sfont.h
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/include/fluidsynth/shell.h
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/include/fluidsynth/synth.h
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/include/fluidsynth/types.h
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/include/fluidsynth/voice.h
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/include/fluidsynth/version.h
+-- Installing: /home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/debian/tmp/usr/share/man/man1/fluidsynth.1
+make[1]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1/obj-x86_64-linux-gnu'
+   debian/rules override_dh_install
+make[1]: Entering directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1'
+dh_install
+mv debian/fluidsynth/etc/default/fluidsynth.conf \
+   debian/fluidsynth/etc/default/fluidsynth
+make[1]: Leaving directory '/home/jeb/BNR/BUILD/fluidsynth1/fluidsynth-1.1.11-1+deb10u1.1'
+   dh_installdocs -O-Scmake
+   dh_installchangelogs -O-Scmake
+   dh_installexamples -O-Scmake
+   dh_installman -O-Scmake
+   dh_installcatalogs -O-Scmake
+   dh_installcron -O-Scmake
+   dh_installdebconf -O-Scmake
+   dh_installemacsen -O-Scmake
+   dh_installifupdown -O-Scmake
+   dh_installinfo -O-Scmake
+   dh_installinit -O-Scmake
+   dh_installsystemd -O-Scmake
+   dh_installmenu -O-Scmake
+   dh_installmime -O-Scmake
+   dh_installmodules -O-Scmake
+   dh_installlogcheck -O-Scmake
+   dh_installlogrotate -O-Scmake
+   dh_installpam -O-Scmake
+   dh_installppp -O-Scmake
+   dh_installudev -O-Scmake
+   dh_installgsettings -O-Scmake
+   dh_bugfiles -O-Scmake
+   dh_ucf -O-Scmake
+   dh_lintian -O-Scmake
+   dh_gconf -O-Scmake
+dh_gconf: Please migrate to dh_installgsettings; gconf + dh_gconf is scheduled for removal.
+   dh_icons -O-Scmake
+   dh_perl -O-Scmake
+   dh_usrlocal -O-Scmake
+   dh_link -O-Scmake
+   dh_installwm -O-Scmake
+   dh_installxfonts -O-Scmake
+   dh_strip_nondeterminism -O-Scmake
+   dh_compress -O-Scmake
+   dh_fixperms -O-Scmake
+   dh_missing -O-Scmake
+   dh_strip -O-Scmake
+   dh_makeshlibs -O-Scmake
+dpkg-gensymbols: warning: some new symbols appeared in the symbols file: see diff output below
+dpkg-gensymbols: warning: debian/libfluidsynth1/DEBIAN/symbols doesn't match completely debian/libfluidsynth1.symbols
+--- debian/libfluidsynth1.symbols (libfluidsynth1_1.1.11-1+deb10u1.1-bnrscustom_amd64)
++++ dpkg-gensymbolsulUWvM	2021-07-30 07:22:52.569643391 -0500
+@@ -448,6 +448,7 @@
+  fluid_revmodel_reset@Base 1.1.6-4~
+  fluid_revmodel_samplerate_change@Base 1.1.6-4~
+  fluid_revmodel_set@Base 1.1.6-4~
++ fluid_rtkit_make_realtime@Base 1.1.11-1+deb10u1.1-bnrscustom
+  fluid_rvoice_buffers_mix@Base 1.1.6-4~
+  fluid_rvoice_buffers_set_amp@Base 1.1.6-4~
+  fluid_rvoice_buffers_set_mapping@Base 1.1.6-4~
+@@ -805,6 +806,11 @@
+  new_fluid_track@Base 1.1.6-4~
+  new_fluid_tuning@Base 1.1.6-4~
+  new_fluid_voice@Base 1.1.6-4~
++ rtkit_get_max_realtime_priority@Base 1.1.11-1+deb10u1.1-bnrscustom
++ rtkit_get_min_nice_level@Base 1.1.11-1+deb10u1.1-bnrscustom
++ rtkit_get_rttime_nsec_max@Base 1.1.11-1+deb10u1.1-bnrscustom
++ rtkit_make_high_priority@Base 1.1.11-1+deb10u1.1-bnrscustom
++ rtkit_make_realtime@Base 1.1.11-1+deb10u1.1-bnrscustom
+  safe_fread@Base 1.1.6-4~
+  safe_fseek@Base 1.1.6-4~
+  sfload_file@Base 1.1.6-4~
+   dh_shlibdeps -O-Scmake
+   dh_installdeb -O-Scmake
+   dh_gencontrol -O-Scmake
+   dh_md5sums -O-Scmake
+   dh_builddeb -O-Scmake
+dpkg-deb: building package 'fluidsynth' in '../fluidsynth_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb'.
+dpkg-deb: building package 'libfluidsynth1' in '../libfluidsynth1_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb'.
+dpkg-deb: building package 'fluidsynth-dbgsym' in '../fluidsynth-dbgsym_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb'.
+dpkg-deb: building package 'libfluidsynth1-dbgsym' in '../libfluidsynth1-dbgsym_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb'.
+dpkg-deb: building package 'libfluidsynth-dev' in '../libfluidsynth-dev_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb'.
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../fluidsynth_1.1.11-1+deb10u1.1-bnrscustom_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)

@@ -1,0 +1,710 @@
+ dpkg-buildpackage -us -uc -ui -b
+dpkg-buildpackage: info: source package non-git
+dpkg-buildpackage: info: source version 5:1.2.0+git20200102.1-bnrcustom
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by falkTX <jeb@bnr4>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean
+   debian/rules override_dh_auto_clean
+make[1]: Entering directory '/home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1'
+./waf clean || true
+invalid lock file in /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1
+The project was not configured: run "waf configure" first!
+make[1]: Leaving directory '/home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1'
+   dh_clean
+ debian/rules build
+make: 'build' is up to date.
+ fakeroot debian/rules binary
+dh binary
+   dh_update_autotools_config
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1'
+# SSE waf flag on NON does nothing but set compiler optimizations, which we already do ourselves
+./waf configure --prefix=/usr --disable-sse
+invalid lock file in /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1
+Setting top to                           : /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1 
+Setting out to                           : /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/build 
+Checking for 'gcc' (C compiler)          : /usr/bin/gcc 
+Checking for 'g++' (C++ compiler)        : /usr/bin/g++ 
+Checking for c flags '-MMD'              : yes 
+Checking for cxx flags '-MMD'            : yes 
+Checking for program 'pkg-config'                    : /usr/bin/pkg-config 
+Checking for 'ntk'                                   : yes 
+Checking for 'ntk_images'                            : yes 
+Checking for program 'ntk-fluid'                     : /opt/kxstudio/bin/ntk-fluid 
+Checking for 'jack'                                  : yes 
+Checking for jack_port_get_latency_range()           : yes 
+Invalid argument 'function_name' in test
+Checking for header jack/metadata.h                  : yes 
+Checking for 'x11'                                   : yes 
+Checking for 'liblo'                                 : yes 
+Checking for compiler pointer alignment hints        : yes 
+Building for performance
+Configuring timeline 
+Checking for 'gcc' (C compiler)                      : /usr/bin/gcc 
+Checking for 'g++' (C++ compiler)                    : /usr/bin/g++ 
+Checking for 'sndfile'                               : yes 
+Checking for SF_FORMAT_VORBIS                        : yes 
+
+Configuring mixer 
+Checking for 'gcc' (C compiler)                      : /usr/bin/gcc 
+Checking for 'g++' (C++ compiler)                    : /usr/bin/g++ 
+Checking for header ladspa.h                         : yes 
+Checking for 'lrdf'                                  : yes 
+Checking for 'lv2'                                   : yes 
+Checking for 'lilv-0'                                : yes 
+
+Configuring sequencer 
+Checking for 'gcc' (C compiler)                      : /usr/bin/gcc 
+Checking for 'g++' (C++ compiler)                    : /usr/bin/g++ 
+Checking for 'sigc++-2.0'                            : yes 
+
+Configuring session-manager 
+Checking for 'gcc' (C compiler)                      : /usr/bin/gcc 
+Checking for 'g++' (C++ compiler)                    : /usr/bin/g++ 
+
+'configure' finished successfully (0.457s)
+make[1]: Leaving directory '/home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1'
+   debian/rules override_dh_auto_build
+make[1]: Entering directory '/home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1'
+./waf build
+Waf: Entering directory `/home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/build'
+[  1/144] Processing FL/New_Project_Dialog.fl
+[  2/144] Processing FL/About_Dialog.fl
+[  3/144] Processing FL/Fl_Text_Edit_Window.fl
+[  4/144] Processing timeline/src/Track_Header.fl
+[  5/144] Processing timeline/src/TLE.fl
+[  6/144] Processing timeline/bin/import-ardour-session_gui.fl
+[  7/144] Processing mixer/src/Plugin_Chooser_UI.fl
+[  8/144] Processing sequencer/src/gui/event_edit.fl
+[  9/144] Processing sequencer/src/gui/ui.fl
+[ 10/144] Processing session-manager/src/NSM_Proxy_UI.fl
+[ 11/144] Compiling timeline/non-timeline.desktop.in
+[ 12/144] Compiling mixer/non-mixer.desktop.in
+[ 13/144] Compiling sequencer/non-sequencer.desktop.in
+[ 14/144] Compiling session-manager/non-session-manager.desktop.in
+[ 15/144] Compiling nonlib/OSC/Endpoint.C
+[ 16/144] Compiling nonlib/Thread.C
+[ 17/144] Compiling nonlib/file.C
+[ 18/144] Compiling nonlib/MIDI/event_list.C
+[ 19/144] Compiling nonlib/NSM/Client.C
+[ 20/144] Compiling nonlib/JACK/Client.C
+[ 21/144] Compiling nonlib/JACK/Port.C
+[ 22/144] Compiling nonlib/Log_Entry.C
+[ 23/144] Compiling nonlib/Loggable.C
+[ 24/144] Compiling nonlib/debug.C
+[ 25/144] Compiling nonlib/dsp.C
+[ 26/144] Compiling nonlib/MIDI/event.C
+[ 27/144] Compiling nonlib/MIDI/midievent.C
+[ 28/144] Compiling nonlib/string_util.C
+[ 29/144] Compiling nonlib/MIDI/midievent.C
+[ 30/144] Compiling build/FL/Fl_Text_Edit_Window.C
+[ 31/144] Compiling build/FL/About_Dialog.C
+[ 32/144] Compiling FL/focus_frame.C
+[ 33/144] Compiling FL/event_name.C
+[ 34/144] Compiling build/FL/New_Project_Dialog.C
+[ 35/144] Compiling FL/Fl_DialX.C
+[ 36/144] Compiling FL/test_press.C
+[ 37/144] Compiling FL/Fl_Value_SliderX.C
+[ 38/144] Compiling FL/menu_popup.C
+[ 39/144] Compiling FL/Fl_SliderX.C
+[ 40/144] Compiling FL/Fl_Menu_Settings.C
+[ 41/144] Compiling FL/Fl_Scalepack.C
+[ 42/144] Compiling timeline/src/Engine/Playback_DS.C
+[ 43/144] Compiling timeline/src/Engine/Peaks.C
+../nonlib/JACK/Port.C: In member function ‘bool JACK::Port::rename()’:
+../nonlib/JACK/Port.C:323:61: warning: ‘int jack_port_set_name(jack_port_t*, const char*)’ is deprecated [-Wdeprecated-declarations]
+             return 0 == jack_port_set_name( _port, jackname );
+                                                             ^
+In file included from ../nonlib/JACK/Client.H:22,
+                 from ../nonlib/JACK/Port.H:23,
+                 from ../nonlib/JACK/Port.C:22:
+/usr/include/jack/jack.h:899:5: note: declared here
+ int jack_port_set_name (jack_port_t *port, const char *port_name) JACK_OPTIONAL_WEAK_DEPRECATED_EXPORT;
+     ^~~~~~~~~~~~~~~~~~
+../nonlib/JACK/Port.C:323:61: warning: ‘int jack_port_set_name(jack_port_t*, const char*)’ is deprecated [-Wdeprecated-declarations]
+             return 0 == jack_port_set_name( _port, jackname );
+                                                             ^
+In file included from ../nonlib/JACK/Client.H:22,
+                 from ../nonlib/JACK/Port.H:23,
+                 from ../nonlib/JACK/Port.C:22:
+/usr/include/jack/jack.h:899:5: note: declared here
+ int jack_port_set_name (jack_port_t *port, const char *port_name) JACK_OPTIONAL_WEAK_DEPRECATED_EXPORT;
+     ^~~~~~~~~~~~~~~~~~
+
+[ 44/144] Compiling timeline/src/Engine/Audio_Sequence.C
+[ 45/144] Compiling timeline/src/Sequence_Point.C
+[ 46/144] Compiling timeline/src/Audio_Region.C
+../nonlib/dsp.C: In function ‘sample_t* buffer_alloc(nframes_t)’:
+../nonlib/dsp.C:41:23: warning: ‘p’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+     return (sample_t*)p;
+                       ^
+
+[ 47/144] Compiling timeline/src/Cursor_Point.C
+[ 48/144] Compiling timeline/src/Engine/Record_DS.C
+[ 49/144] Compiling build/timeline/src/TLE.C
+[ 50/144] Compiling timeline/src/Time_Sequence.C
+../FL/Fl_Menu_Settings.C: In member function ‘const Fl_Menu_Item* Fl_Menu_Settings::find_item_x(const char*, const Fl_Menu_Item*)’:
+../FL/Fl_Menu_Settings.C:169:28: warning: ‘char* strncat(char*, const char*, size_t)’ specified bound 1024 equals destination size [-Wstringop-overflow=]
+                     strlcat( menupath, "/", sizeof( menupath ) );
+                            ^
+../FL/Fl_Menu_Settings.C:205:28: warning: ‘char* strncat(char*, const char*, size_t)’ specified bound 1024 equals destination size [-Wstringop-overflow=]
+                     strlcat( itempath, "/", sizeof( itempath ) );
+                            ^
+../FL/Fl_Menu_Settings.C:207:24: warning: ‘char* strncat(char*, const char*, size_t)’ specified bound 1024 equals destination size [-Wstringop-truncation]
+                 strlcat( itempath, m->label(), sizeof( itempath ) );
+                        ^
+../FL/Fl_Menu_Settings.C:171:24: warning: ‘char* strncat(char*, const char*, size_t)’ specified bound 1024 equals destination size [-Wstringop-truncation]
+                 strlcat( menupath, m->label(), sizeof( menupath ) );
+                        ^
+../FL/Fl_Menu_Settings.C:171:24: warning: ‘char* strncat(char*, const char*, size_t)’ specified bound 1024 equals destination size [-Wstringop-overflow=]
+../FL/Fl_Menu_Settings.C:207:24: warning: ‘char* strncat(char*, const char*, size_t)’ specified bound 1024 equals destination size [-Wstringop-overflow=]
+                 strlcat( itempath, m->label(), sizeof( itempath ) );
+                        ^
+
+[ 51/144] Compiling timeline/src/Control_Point.C
+[ 52/144] Compiling timeline/src/Sequence_Region.C
+[ 53/144] Compiling timeline/src/Sequence_Widget.C
+[ 54/144] Compiling timeline/src/Engine/Timeline.C
+[ 55/144] Compiling timeline/src/Engine/Audio_Region.C
+[ 56/144] Compiling timeline/src/Time_Point.C
+[ 57/144] Linking build/FL/libfl_widgets.a
+[ 58/144] Compiling timeline/src/Engine/Track.C
+[ 59/144] Compiling timeline/src/Engine/Engine.C
+[ 60/144] Compiling timeline/src/Tempo_Point.C
+[ 61/144] Linking build/nonlib/libnonlib.a
+[ 62/144] Compiling timeline/src/Waveform.C
+[ 63/144] Compiling timeline/src/Engine/Control_Sequence.C
+[ 64/144] Compiling timeline/src/Annotation_Region.C
+[ 65/144] Compiling timeline/src/Tempo_Sequence.C
+[ 66/144] Compiling timeline/src/Cursor_Sequence.C
+[ 67/144] Compiling timeline/src/Timeline.C
+[ 68/144] Compiling timeline/src/Sequence.C
+[ 69/144] Compiling timeline/src/Cursor_Region.C
+[ 70/144] Compiling timeline/src/Track.C
+[ 71/144] Compiling timeline/src/OSC_Thread.C
+[ 72/144] Compiling timeline/src/NSM.C
+[ 73/144] Compiling timeline/src/Audio_Sequence.C
+[ 74/144] Compiling timeline/src/main.C
+[ 75/144] Compiling timeline/src/Project.C
+In file included from /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/build/timeline/src/TLE.H:25,
+                 from timeline/src/TLE.C:21:
+../timeline/src/Clock.H: In member function ‘virtual void Clock::draw()’:
+../timeline/src/Clock.H:74:31: warning: ‘:’ directive output may be truncated writing 1 byte into a region of size between 0 and 7 [-Wformat-truncation=]
+             snprintf( dst, n, "%02d:%02d:%02.0f:%02d", H, M, S, HS );
+                               ^~~~~~~~~~~~~~~~~~~~~~~
+../timeline/src/Clock.H:74:21: note: ‘snprintf’ output between 12 and 345 bytes into a destination of size 15
+             snprintf( dst, n, "%02d:%02d:%02.0f:%02d", H, M, S, HS );
+             ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../timeline/src/Clock.H:99:31: warning: ‘snprintf’ output may be truncated before the last format character [-Wformat-truncation=]
+             snprintf( dst, n, "%03d|%1d|%04d", bbt.bar + 1, bbt.beat + 1, bbt.tick );
+                               ^~~~~~~~~~~~~~~
+../timeline/src/Clock.H:99:21: note: ‘snprintf’ output between 11 and 16 bytes into a destination of size 15
+             snprintf( dst, n, "%03d|%1d|%04d", bbt.bar + 1, bbt.beat + 1, bbt.tick );
+             ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../timeline/src/Clock.H:85:31: warning: ‘%06.3f’ directive output may be truncated writing between 6 and 314 bytes into a region of size between 0 and 9 [-Wformat-truncation=]
+             snprintf( dst, n, "%02d:%02d:%06.3f", H, M, S );
+                               ^~~~~~~~~~~~~~~~~~
+../timeline/src/Clock.H:85:21: note: ‘snprintf’ output between 13 and 337 bytes into a destination of size 15
+             snprintf( dst, n, "%02d:%02d:%06.3f", H, M, S );
+             ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[ 76/144] Compiling build/timeline/src/Track_Header.C
+[ 77/144] Compiling timeline/src/Transport.C
+[ 78/144] Compiling timeline/src/Engine/Audio_File_Dummy.C
+[ 79/144] Compiling timeline/src/Engine/Disk_Stream.C
+[ 80/144] Compiling timeline/src/Control_Sequence.C
+[ 81/144] Compiling timeline/src/Engine/Audio_File_SF.C
+[ 82/144] Compiling timeline/src/Engine/Audio_File.C
+[ 83/144] Compiling build/timeline/bin/import-ardour-session_gui.C
+[ 84/144] Compiling mixer/src/Chain.C
+[ 85/144] Compiling mixer/src/Panner.C
+[ 86/144] Compiling mixer/src/Meter_Module.C
+[ 87/144] Linking build/timeline/import-ardour-session_gui
+[ 88/144] Compiling mixer/src/Spatializer_Module.C
+[ 89/144] Compiling mixer/src/DPM.C
+[ 90/144] Compiling mixer/src/SpectrumView.C
+[ 91/144] Compiling mixer/src/Spatialization_Console.C
+[ 92/144] Compiling mixer/src/AUX_Module.C
+[ 93/144] Compiling mixer/src/LADSPAInfo.C
+[ 94/144] Compiling build/mixer/src/Plugin_Chooser_UI.C
+In file included from ../mixer/src/Panner.C:20:
+../mixer/src/Panner.H: In constructor ‘Panner::Panner(int, int, int, int, const char*)’:
+../mixer/src/Panner.H:125:23: warning: ‘<anonymous>.Panner::Point::radius_enabled’ is used uninitialized in this function [-Wuninitialized]
+                 if (! radius_enabled )
+                       ^~~~~~~~~~~~~~
+../mixer/src/Panner.H:93:40: warning: ‘<anonymous>.Panner::Point::x’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+             return atan2f(z,sqrtf(powf(x,2)+powf(y,2)) ) * ( 180 / M_PI );
+                                        ^
+../mixer/src/Panner.H:93:50: warning: ‘<anonymous>.Panner::Point::y’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+             return atan2f(z,sqrtf(powf(x,2)+powf(y,2)) ) * ( 180 / M_PI );
+                                                  ^
+../mixer/src/Panner.H:93:27: warning: ‘<anonymous>.Panner::Point::z’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+             return atan2f(z,sqrtf(powf(x,2)+powf(y,2)) ) * ( 180 / M_PI );
+                           ^
+
+[ 95/144] Compiling mixer/src/Plugin_Chooser.C
+[ 96/144] Compiling mixer/src/NSM.C
+[ 97/144] Compiling mixer/src/Controller_Module.C
+[ 98/144] Compiling mixer/src/main.C
+[ 99/144] Compiling mixer/src/JACK_Module.C
+[100/144] Compiling mixer/src/Mixer_Strip.C
+[101/144] Compiling mixer/src/Group.C
+../timeline/src/Control_Sequence.C: In member function ‘virtual void Control_Sequence::draw()’:
+../timeline/src/Control_Sequence.C:496:8: warning: suggest explicit braces to avoid ambiguous ‘else’ [-Wdangling-else]
+     if ( interpolation() == None || _highlighted == this || Fl::focus() == this )
+        ^
+
+[102/144] Compiling mixer/src/Module_Parameter_Editor.C
+../timeline/src/Timeline.C: In member function ‘position_info Timeline::render_tempomap(nframes_t, nframes_t, void (*)(nframes_t, const BBT&, void*), void*) const’:
+../timeline/src/Timeline.C:1056:36: warning: ‘void* memset(void*, int, size_t)’ clearing an object of non-trivial type ‘struct position_info’; use assignment or value-initialization instead [-Wclass-memaccess]
+     memset( &pos, 0, sizeof( pos ) );
+                                    ^
+In file included from ../timeline/src/Sequence_Point.H:22,
+                 from ../timeline/src/Tempo_Point.H:23,
+                 from ../timeline/src/Tempo_Sequence.H:23,
+                 from ../timeline/src/Timeline.C:36:
+../timeline/src/Sequence_Widget.H:90:8: note: ‘struct position_info’ declared here
+ struct position_info
+        ^~~~~~~~~~~~~
+
+[103/144] Compiling mixer/src/Plugin_Module.C
+[104/144] Linking build/timeline/non-timeline
+[105/144] Compiling mixer/src/Mixer.C
+[106/144] Compiling mixer/src/Mono_Pan_Module.C
+[107/144] Compiling mixer/src/Meter_Indicator_Module.C
+[108/144] Compiling mixer/src/Gain_Module.C
+../mixer/src/Plugin_Chooser.C: In member function ‘void Plugin_Chooser::search(const char*, const char*, const char*, int, int, bool)’:
+../mixer/src/Plugin_Chooser.C:79:13: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+             if ( !
+             ^~
+../mixer/src/Plugin_Chooser.C:85:17: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+                 if ( p->audio_outputs == 0 || p->audio_inputs == 0 )
+                 ^~
+
+[109/144] Compiling mixer/src/Module.C
+[110/144] Compiling mixer/src/Project.C
+[111/144] Compiling mixer/src/midi-mapper.C
+[112/144] Compiling sequencer/src/jack.C
+[113/144] Compiling sequencer/src/main.C
+[114/144] Compiling sequencer/src/NSM/Client.C
+[115/144] Compiling sequencer/src/NSM.C
+In member function ‘void Module_Parameter_Editor::menu_cb(Fl_Menu_*)’,
+    inlined from ‘static void Module_Parameter_Editor::menu_cb(Fl_Widget*, void*)’ at ../mixer/src/Module_Parameter_Editor.C:606:43:
+../mixer/src/Module_Parameter_Editor.C:617:12: warning: ‘char* strncpy(char*, const char*, size_t)’ specified bound 256 equals destination size [-Wstringop-truncation]
+     strncpy( picked, m->mvalue()->label(), sizeof( picked ) );
+     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../mixer/src/Module_Parameter_Editor.C: In member function ‘void Module_Parameter_Editor::menu_cb(Fl_Menu_*)’:
+../mixer/src/Module_Parameter_Editor.C:617:12: warning: ‘char* strncpy(char*, const char*, size_t)’ specified bound 256 equals destination size [-Wstringop-truncation]
+     strncpy( picked, m->mvalue()->label(), sizeof( picked ) );
+     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[116/144] Compiling build/sequencer/src/gui/event_edit.C
+[117/144] Compiling sequencer/src/scale.C
+[118/144] Compiling build/sequencer/src/gui/ui.C
+[119/144] Compiling sequencer/src/instrument.C
+[120/144] Compiling sequencer/src/pattern.C
+[121/144] Compiling sequencer/src/canvas.C
+[122/144] Compiling sequencer/src/debug.C
+../sequencer/src/scale.C: In member function ‘const char* Scale::note_name(int, int) const’:
+../sequencer/src/scale.C:203:37: warning: ‘%i’ directive output may be truncated writing between 1 and 10 bytes into a region of size 5 [-Wformat-truncation=]
+             snprintf( s, sizeof(s), "%s%i",
+                                     ^~~~~~
+../sequencer/src/scale.C:203:37: note: directive argument in the range [-178956970, 178956970]
+../sequencer/src/scale.C:203:21: note: ‘snprintf’ output 2 or more bytes (assuming 11) into a destination of size 5
+             snprintf( s, sizeof(s), "%s%i",
+             ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+                       chromatic_names[ mod_n ],
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~
+                       n / 12 );
+                       ~~~~~~~~
+
+[123/144] Compiling sequencer/src/transport.C
+[124/144] Compiling sequencer/src/phrase.C
+[125/144] Compiling sequencer/src/sequence.C
+[126/144] Compiling sequencer/src/mapping.C
+[127/144] Compiling sequencer/src/grid.C
+[128/144] Linking build/mixer/non-midi-mapper
+../mixer/src/Mixer.C: In member function ‘void Mixer::rows(int)’:
+../mixer/src/Mixer.C:894:5: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+     if ( _strip_height != sh );
+     ^~
+../mixer/src/Mixer.C:895:5: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+     {
+     ^
+
+[129/144] Compiling sequencer/src/smf.C
+[130/144] Compiling session-manager/src/session-manager.C
+[131/144] Compiling session-manager/src/nsmd.C
+[132/144] Compiling session-manager/src/nsm-proxy.C
+[133/144] Compiling session-manager/src/nsm-proxy-gui.C
+[134/144] Compiling build/session-manager/src/NSM_Proxy_UI.C
+[135/144] Compiling session-manager/src/jackpatch.c
+[136/144] Compiling session-manager/src/send_osc.C
+[137/144] Linking build/session-manager/nsm-proxy
+[138/144] Linking build/session-manager/nsm-proxy-gui
+../session-manager/src/jackpatch.c: In function ‘dequeue_new_port’:
+../session-manager/src/jackpatch.c:696:9: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+         if ( jack_ringbuffer_read_space( port_ringbuffer ) >= size );
+         ^~
+../session-manager/src/jackpatch.c:697:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+         {
+         ^
+
+[139/144] Linking build/session-manager/jackpatch
+../mixer/src/Module.C: In member function ‘void Module::menu_cb(const Fl_Menu_*)’:
+../mixer/src/Module.C:946:12: warning: ‘char* strncpy(char*, const char*, size_t)’ specified bound 256 equals destination size [-Wstringop-truncation]
+     strncpy( picked, m->mvalue()->label(), sizeof( picked ) );
+     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In member function ‘void Module::menu_cb(const Fl_Menu_*)’,
+    inlined from ‘static void Module::menu_cb(Fl_Widget*, void*)’ at ../mixer/src/Module.C:995:26:
+../mixer/src/Module.C:946:12: warning: ‘char* strncpy(char*, const char*, size_t)’ specified bound 256 equals destination size [-Wstringop-truncation]
+     strncpy( picked, m->mvalue()->label(), sizeof( picked ) );
+     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[140/144] Linking build/session-manager/send_osc
+[141/144] Linking build/session-manager/non-session-manager
+../sequencer/src/canvas.C: In member function ‘void Canvas::paste()’:
+../sequencer/src/canvas.C:1207:31: warning: comparison of integer expressions of different signedness: ‘uint’ {aka ‘unsigned int’} and ‘int’ [-Wsign-compare]
+     if ( m.p1 != m.p2 && m.p1 > m.vp->x && m.p1 < m.vp->x + m.vp->w )
+                          ~~~~~^~~~~~~~~
+../sequencer/src/canvas.C:1207:49: warning: comparison of integer expressions of different signedness: ‘uint’ {aka ‘unsigned int’} and ‘int’ [-Wsign-compare]
+     if ( m.p1 != m.p2 && m.p1 > m.vp->x && m.p1 < m.vp->x + m.vp->w )
+                                            ~~~~~^~~~~~~~~~~~~~~~~~~
+
+sequencer/src/gui/ui.C: In member function ‘virtual void Visual_Metronome::draw()’:
+sequencer/src/gui/ui.C:102:32: warning: ‘%d’ directive output may be truncated writing between 1 and 10 bytes into a region of size 4 [-Wformat-truncation=]
+    snprintf( pat, sizeof(pat), "%d", i + 1 );
+                                ^~~~
+sequencer/src/gui/ui.C:102:32: note: directive argument in the range [1, 2147483647]
+sequencer/src/gui/ui.C:102:12: note: ‘snprintf’ output between 2 and 11 bytes into a destination of size 4
+    snprintf( pat, sizeof(pat), "%d", i + 1 );
+    ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sequencer/src/gui/ui.C: In member function ‘Overlay_Callback_Window* UI::make_main_window()’:
+sequencer/src/gui/ui.C:1708:83: warning: ‘%i’ directive output may be truncated writing between 2 and 10 bytes into a region of size 4 [-Wformat-truncation=]
+               for ( int i = 32; i <= 256; i <<= 1 ) { snprintf( pat, sizeof(pat), "%i", i ); o->add( pat ); }
+                                                                                   ^~~~
+sequencer/src/gui/ui.C:1708:83: note: directive argument in the range [32, 2147483646]
+sequencer/src/gui/ui.C:1708:63: note: ‘snprintf’ output between 3 and 11 bytes into a destination of size 4
+               for ( int i = 32; i <= 256; i <<= 1 ) { snprintf( pat, sizeof(pat), "%i", i ); o->add( pat ); }
+                                                       ~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[142/144] Linking build/sequencer/non-sequencer
+In file included from ../mixer/src/LV2_RDF_Utils.hpp:50,
+                 from ../mixer/src/Plugin_Module.C:44:
+../mixer/src/lilv/lilvmm.hpp: In function ‘const char* Lilv::uri_to_path(const char*)’:
+../mixer/src/lilv/lilvmm.hpp:32:29: warning: ‘const char* lilv_uri_to_path(const char*)’ is deprecated [-Wdeprecated-declarations]
+  return lilv_uri_to_path(uri);
+                             ^
+In file included from ../mixer/src/lilv/lilvmm.hpp:20,
+                 from ../mixer/src/LV2_RDF_Utils.hpp:50,
+                 from ../mixer/src/Plugin_Module.C:44:
+/opt/kxstudio/include/lilv-0/lilv/lilv.h:129:1: note: declared here
+ lilv_uri_to_path(const char* uri);
+ ^~~~~~~~~~~~~~~~
+In file included from ../mixer/src/LV2_RDF_Utils.hpp:50,
+                 from ../mixer/src/Plugin_Module.C:44:
+../mixer/src/lilv/lilvmm.hpp:32:29: warning: ‘const char* lilv_uri_to_path(const char*)’ is deprecated [-Wdeprecated-declarations]
+  return lilv_uri_to_path(uri);
+                             ^
+In file included from ../mixer/src/lilv/lilvmm.hpp:20,
+                 from ../mixer/src/LV2_RDF_Utils.hpp:50,
+                 from ../mixer/src/Plugin_Module.C:44:
+/opt/kxstudio/include/lilv-0/lilv/lilv.h:129:1: note: declared here
+ lilv_uri_to_path(const char* uri);
+ ^~~~~~~~~~~~~~~~
+In file included from ../mixer/src/Plugin_Module.C:44:
+../mixer/src/LV2_RDF_Utils.hpp: In function ‘const LV2_RDF_Descriptor* lv2_rdf_new(LV2_URI, bool)’:
+../mixer/src/LV2_RDF_Utils.hpp:554:67: warning: ‘const char* lilv_uri_to_path(const char*)’ is deprecated [-Wdeprecated-declarations]
+             rdfDescriptor->Binary = strdup(lilv_uri_to_path(binary));
+                                                                   ^
+In file included from ../mixer/src/lilv/lilvmm.hpp:20,
+                 from ../mixer/src/LV2_RDF_Utils.hpp:50,
+                 from ../mixer/src/Plugin_Module.C:44:
+/opt/kxstudio/include/lilv-0/lilv/lilv.h:129:1: note: declared here
+ lilv_uri_to_path(const char* uri);
+ ^~~~~~~~~~~~~~~~
+In file included from ../mixer/src/Plugin_Module.C:44:
+../mixer/src/LV2_RDF_Utils.hpp:554:67: warning: ‘const char* lilv_uri_to_path(const char*)’ is deprecated [-Wdeprecated-declarations]
+             rdfDescriptor->Binary = strdup(lilv_uri_to_path(binary));
+                                                                   ^
+In file included from ../mixer/src/lilv/lilvmm.hpp:20,
+                 from ../mixer/src/LV2_RDF_Utils.hpp:50,
+                 from ../mixer/src/Plugin_Module.C:44:
+/opt/kxstudio/include/lilv-0/lilv/lilv.h:129:1: note: declared here
+ lilv_uri_to_path(const char* uri);
+ ^~~~~~~~~~~~~~~~
+In file included from ../mixer/src/Plugin_Module.C:44:
+../mixer/src/LV2_RDF_Utils.hpp:557:67: warning: ‘const char* lilv_uri_to_path(const char*)’ is deprecated [-Wdeprecated-declarations]
+             rdfDescriptor->Bundle = strdup(lilv_uri_to_path(bundle));
+                                                                   ^
+In file included from ../mixer/src/lilv/lilvmm.hpp:20,
+                 from ../mixer/src/LV2_RDF_Utils.hpp:50,
+                 from ../mixer/src/Plugin_Module.C:44:
+/opt/kxstudio/include/lilv-0/lilv/lilv.h:129:1: note: declared here
+ lilv_uri_to_path(const char* uri);
+ ^~~~~~~~~~~~~~~~
+In file included from ../mixer/src/Plugin_Module.C:44:
+../mixer/src/LV2_RDF_Utils.hpp:557:67: warning: ‘const char* lilv_uri_to_path(const char*)’ is deprecated [-Wdeprecated-declarations]
+             rdfDescriptor->Bundle = strdup(lilv_uri_to_path(bundle));
+                                                                   ^
+In file included from ../mixer/src/lilv/lilvmm.hpp:20,
+                 from ../mixer/src/LV2_RDF_Utils.hpp:50,
+                 from ../mixer/src/Plugin_Module.C:44:
+/opt/kxstudio/include/lilv-0/lilv/lilv.h:129:1: note: declared here
+ lilv_uri_to_path(const char* uri);
+ ^~~~~~~~~~~~~~~~
+In file included from ../mixer/src/Plugin_Module.C:44:
+../mixer/src/LV2_RDF_Utils.hpp:1292:73: warning: ‘const char* lilv_uri_to_path(const char*)’ is deprecated [-Wdeprecated-declarations]
+                         rdfUI->Binary = strdup(lilv_uri_to_path(uiBinary));
+                                                                         ^
+In file included from ../mixer/src/lilv/lilvmm.hpp:20,
+                 from ../mixer/src/LV2_RDF_Utils.hpp:50,
+                 from ../mixer/src/Plugin_Module.C:44:
+/opt/kxstudio/include/lilv-0/lilv/lilv.h:129:1: note: declared here
+ lilv_uri_to_path(const char* uri);
+ ^~~~~~~~~~~~~~~~
+In file included from ../mixer/src/Plugin_Module.C:44:
+../mixer/src/LV2_RDF_Utils.hpp:1292:73: warning: ‘const char* lilv_uri_to_path(const char*)’ is deprecated [-Wdeprecated-declarations]
+                         rdfUI->Binary = strdup(lilv_uri_to_path(uiBinary));
+                                                                         ^
+In file included from ../mixer/src/lilv/lilvmm.hpp:20,
+                 from ../mixer/src/LV2_RDF_Utils.hpp:50,
+                 from ../mixer/src/Plugin_Module.C:44:
+/opt/kxstudio/include/lilv-0/lilv/lilv.h:129:1: note: declared here
+ lilv_uri_to_path(const char* uri);
+ ^~~~~~~~~~~~~~~~
+In file included from ../mixer/src/Plugin_Module.C:44:
+../mixer/src/LV2_RDF_Utils.hpp:1295:73: warning: ‘const char* lilv_uri_to_path(const char*)’ is deprecated [-Wdeprecated-declarations]
+                         rdfUI->Bundle = strdup(lilv_uri_to_path(uiBundle));
+                                                                         ^
+In file included from ../mixer/src/lilv/lilvmm.hpp:20,
+                 from ../mixer/src/LV2_RDF_Utils.hpp:50,
+                 from ../mixer/src/Plugin_Module.C:44:
+/opt/kxstudio/include/lilv-0/lilv/lilv.h:129:1: note: declared here
+ lilv_uri_to_path(const char* uri);
+ ^~~~~~~~~~~~~~~~
+In file included from ../mixer/src/Plugin_Module.C:44:
+../mixer/src/LV2_RDF_Utils.hpp:1295:73: warning: ‘const char* lilv_uri_to_path(const char*)’ is deprecated [-Wdeprecated-declarations]
+                         rdfUI->Bundle = strdup(lilv_uri_to_path(uiBundle));
+                                                                         ^
+In file included from ../mixer/src/lilv/lilvmm.hpp:20,
+                 from ../mixer/src/LV2_RDF_Utils.hpp:50,
+                 from ../mixer/src/Plugin_Module.C:44:
+/opt/kxstudio/include/lilv-0/lilv/lilv.h:129:1: note: declared here
+ lilv_uri_to_path(const char* uri);
+ ^~~~~~~~~~~~~~~~
+../mixer/src/Plugin_Module.C: At global scope:
+../mixer/src/Plugin_Module.C:269:96: warning: ‘LV2_URI_Map_Callback_Data’ is deprecated [-Wdeprecated-declarations]
+     static uint32_t _lv2_uri_to_id(LV2_URI_Map_Callback_Data data, const char*, const char* uri)
+                                                                                                ^
+../mixer/src/Plugin_Module.C: In destructor ‘Plugin_Module::ImplementationData::~ImplementationData()’:
+../mixer/src/Plugin_Module.C:257:40: warning: ‘LV2_URI_Map_Feature’ is deprecated [-Wdeprecated-declarations]
+             delete (LV2_URI_Map_Feature*)lv2.features[Plugin_Feature_URI_Map]->data;
+                                        ^
+In file included from ../mixer/src/LV2_RDF_Utils.hpp:43,
+                 from ../mixer/src/Plugin_Module.C:44:
+/usr/lib/lv2/uri-map.lv2/uri-map.h:109:3: note: declared here
+ } LV2_URI_Map_Feature;
+   ^~~~~~~~~~~~~~~~~~~
+../mixer/src/Plugin_Module.C: In member function ‘void Plugin_Module::init()’:
+../mixer/src/Plugin_Module.C:417:32: warning: ‘LV2_URI_Map_Feature’ is deprecated [-Wdeprecated-declarations]
+     LV2_URI_Map_Feature* const uriMapFt = new LV2_URI_Map_Feature;
+                                ^~~~~~~~
+In file included from ../mixer/src/LV2_RDF_Utils.hpp:43,
+                 from ../mixer/src/Plugin_Module.C:44:
+/usr/lib/lv2/uri-map.lv2/uri-map.h:109:3: note: declared here
+ } LV2_URI_Map_Feature;
+   ^~~~~~~~~~~~~~~~~~~
+../mixer/src/Plugin_Module.C:417:47: warning: ‘LV2_URI_Map_Feature’ is deprecated [-Wdeprecated-declarations]
+     LV2_URI_Map_Feature* const uriMapFt = new LV2_URI_Map_Feature;
+                                               ^~~~~~~~~~~~~~~~~~~
+In file included from ../mixer/src/LV2_RDF_Utils.hpp:43,
+                 from ../mixer/src/Plugin_Module.C:44:
+/usr/lib/lv2/uri-map.lv2/uri-map.h:109:3: note: declared here
+ } LV2_URI_Map_Feature;
+   ^~~~~~~~~~~~~~~~~~~
+
+[143/144] Linking build/mixer/non-mixer
+[144/144] Linking build/session-manager/nsmd
+Waf: Leaving directory `/home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/build'
+'build' finished successfully (5.146s)
+make[1]: Leaving directory '/home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1'
+   dh_testroot
+   dh_prep
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1'
+./waf install --destdir=/home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp
+Waf: Entering directory `/home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/build'
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/bin/non-timeline (from build/timeline/non-timeline)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/bin/import-ardour-session_gui (from build/timeline/import-ardour-session_gui)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/bin/bin/import-ardour-session (from timeline/bin/import-ardour-session)
++ symlink /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/bin/non-daw (to non-timeline)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/applications/non-timeline.desktop (from build/timeline/non-timeline.desktop)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/pixmaps/non-timeline/icon-256x256.png (from timeline/icons/hicolor/256x256/apps/non-timeline.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/128x128/apps/non-timeline.png (from timeline/icons/hicolor/128x128/apps/non-timeline.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/16x16/apps/non-timeline.png (from timeline/icons/hicolor/16x16/apps/non-timeline.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/192x192/apps/non-timeline.png (from timeline/icons/hicolor/192x192/apps/non-timeline.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/256x256/apps/non-timeline.png (from timeline/icons/hicolor/256x256/apps/non-timeline.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/32x32/apps/non-timeline.png (from timeline/icons/hicolor/32x32/apps/non-timeline.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/36x36/apps/non-timeline.png (from timeline/icons/hicolor/36x36/apps/non-timeline.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/48x48/apps/non-timeline.png (from timeline/icons/hicolor/48x48/apps/non-timeline.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/512x512/apps/non-timeline.png (from timeline/icons/hicolor/512x512/apps/non-timeline.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/64x64/apps/non-timeline.png (from timeline/icons/hicolor/64x64/apps/non-timeline.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/72x72/apps/non-timeline.png (from timeline/icons/hicolor/72x72/apps/non-timeline.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/96x96/apps/non-timeline.png (from timeline/icons/hicolor/96x96/apps/non-timeline.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-timeline/MANUAL.html (from timeline/doc/MANUAL.html)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-timeline/annotations.png (from timeline/doc/annotations.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-timeline/automation.png (from timeline/doc/automation.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-timeline/clocks.png (from timeline/doc/clocks.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-timeline/control-points.png (from timeline/doc/control-points.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-timeline/control-signals.png (from timeline/doc/control-signals.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-timeline/cursors.png (from timeline/doc/cursors.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-timeline/fade-in-out.png (from timeline/doc/fade-in-out.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-timeline/icon.png (from timeline/doc/icon.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-timeline/looping.png (from timeline/doc/looping.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-timeline/new-project.png (from timeline/doc/new-project.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-timeline/project-info.png (from timeline/doc/project-info.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-timeline/range.png (from timeline/doc/range.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-timeline/recording.png (from timeline/doc/recording.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-timeline/tempomap.png (from timeline/doc/tempomap.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-timeline/tle.png (from timeline/doc/tle.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/bin/non-mixer (from build/mixer/non-mixer)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-timeline/track-header.png (from timeline/doc/track-header.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-timeline/transport.png (from timeline/doc/transport.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/bin/non-midi-mapper (from build/mixer/non-midi-mapper)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/applications/non-mixer.desktop (from build/mixer/non-mixer.desktop)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/pixmaps/non-mixer/icon-256x256.png (from mixer/icons/hicolor/256x256/apps/non-mixer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/128x128/apps/non-mixer.png (from mixer/icons/hicolor/128x128/apps/non-mixer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/16x16/apps/non-mixer.png (from mixer/icons/hicolor/16x16/apps/non-mixer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/192x192/apps/non-mixer.png (from mixer/icons/hicolor/192x192/apps/non-mixer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/256x256/apps/non-mixer.png (from mixer/icons/hicolor/256x256/apps/non-mixer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/32x32/apps/non-mixer.png (from mixer/icons/hicolor/32x32/apps/non-mixer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/36x36/apps/non-mixer.png (from mixer/icons/hicolor/36x36/apps/non-mixer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/48x48/apps/non-mixer.png (from mixer/icons/hicolor/48x48/apps/non-mixer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/512x512/apps/non-mixer.png (from mixer/icons/hicolor/512x512/apps/non-mixer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/64x64/apps/non-mixer.png (from mixer/icons/hicolor/64x64/apps/non-mixer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/72x72/apps/non-mixer.png (from mixer/icons/hicolor/72x72/apps/non-mixer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/96x96/apps/non-mixer.png (from mixer/icons/hicolor/96x96/apps/non-mixer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/pixmaps/non-mixer/panner-plane-502x502.png (from mixer/pixmaps/panner-plane-502x502.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/pixmaps/non-mixer/panner-plane-802x802.png (from mixer/pixmaps/panner-plane-802x802.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/pixmaps/non-mixer/panner-plane-92x92.png (from mixer/pixmaps/panner-plane-92x92.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/pixmaps/non-mixer/panner-sphere-502x502.png (from mixer/pixmaps/panner-sphere-502x502.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/pixmaps/non-mixer/panner-sphere-802x802.png (from mixer/pixmaps/panner-sphere-802x802.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/pixmaps/non-mixer/panner-sphere-92x92.png (from mixer/pixmaps/panner-sphere-92x92.png)
++ symlink /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/bin/non-mixer-noui (to non-mixer)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-mixer/MANUAL.html (from mixer/doc/MANUAL.html)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-mixer/controls.png (from mixer/doc/controls.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-mixer/group-dropdown.png (from mixer/doc/group-dropdown.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-mixer/icon.png (from mixer/doc/icon.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-mixer/mixer-strips.png (from mixer/doc/mixer-strips.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-mixer/modules.png (from mixer/doc/modules.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-mixer/new-project.png (from mixer/doc/new-project.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-mixer/non-mixer-and-non-daw-in-patchage.png (from mixer/doc/non-mixer-and-non-daw-in-patchage.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-mixer/non-mixer-complex.png (from mixer/doc/non-mixer-complex.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-mixer/single-strip.png (from mixer/doc/single-strip.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-mixer/spatialization-console.png (from mixer/doc/spatialization-console.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-mixer/spatialization-in-mpe.png (from mixer/doc/spatialization-in-mpe.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-mixer/spatialization-on-strip.png (from mixer/doc/spatialization-on-strip.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-mixer/spatializer-module.png (from mixer/doc/spatializer-module.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/bin/non-sequencer (from build/sequencer/non-sequencer)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/applications/non-sequencer.desktop (from build/sequencer/non-sequencer.desktop)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/non-sequencer/instruments/Default.inst (from sequencer/instruments/Default.inst)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/non-sequencer/instruments/GM-Drum.inst (from sequencer/instruments/GM-Drum.inst)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/non-sequencer/instruments/GS-Brush.inst (from sequencer/instruments/GS-Brush.inst)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/non-sequencer/instruments/GS-Electronic.inst (from sequencer/instruments/GS-Electronic.inst)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/non-sequencer/instruments/GS-Jazz.inst (from sequencer/instruments/GS-Jazz.inst)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/non-sequencer/instruments/GS-Orchestra.inst (from sequencer/instruments/GS-Orchestra.inst)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/non-sequencer/instruments/GS-Power.inst (from sequencer/instruments/GS-Power.inst)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/pixmaps/non-sequencer/icon-256x256.png (from sequencer/icons/hicolor/256x256/apps/non-sequencer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/128x128/apps/non-sequencer.png (from sequencer/icons/hicolor/128x128/apps/non-sequencer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/non-sequencer/instruments/GS-Room.inst (from sequencer/instruments/GS-Room.inst)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/16x16/apps/non-sequencer.png (from sequencer/icons/hicolor/16x16/apps/non-sequencer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/non-sequencer/instruments/GS-SFX.inst (from sequencer/instruments/GS-SFX.inst)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/192x192/apps/non-sequencer.png (from sequencer/icons/hicolor/192x192/apps/non-sequencer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/non-sequencer/instruments/GS-Standard.inst (from sequencer/instruments/GS-Standard.inst)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/256x256/apps/non-sequencer.png (from sequencer/icons/hicolor/256x256/apps/non-sequencer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/non-sequencer/instruments/GS-TR-808.inst (from sequencer/instruments/GS-TR-808.inst)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/32x32/apps/non-sequencer.png (from sequencer/icons/hicolor/32x32/apps/non-sequencer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/36x36/apps/non-sequencer.png (from sequencer/icons/hicolor/36x36/apps/non-sequencer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/48x48/apps/non-sequencer.png (from sequencer/icons/hicolor/48x48/apps/non-sequencer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/512x512/apps/non-sequencer.png (from sequencer/icons/hicolor/512x512/apps/non-sequencer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/64x64/apps/non-sequencer.png (from sequencer/icons/hicolor/64x64/apps/non-sequencer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/72x72/apps/non-sequencer.png (from sequencer/icons/hicolor/72x72/apps/non-sequencer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/96x96/apps/non-sequencer.png (from sequencer/icons/hicolor/96x96/apps/non-sequencer.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-sequencer/KEYS.html (from sequencer/doc/KEYS.html)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-sequencer/MANUAL.html (from sequencer/doc/MANUAL.html)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-sequencer/icon.png (from sequencer/doc/icon.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-sequencer/non-cursors.png (from sequencer/doc/non-cursors.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-sequencer/non-event-editor-notes.png (from sequencer/doc/non-event-editor-notes.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-sequencer/non-new-about.png (from sequencer/doc/non-new-about.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-sequencer/non-patchage.png (from sequencer/doc/non-patchage.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-sequencer/non-pattern-editor.png (from sequencer/doc/non-pattern-editor.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-sequencer/non-pattern-triggers.png (from sequencer/doc/non-pattern-triggers.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-sequencer/non-phrase-editor.png (from sequencer/doc/non-phrase-editor.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/bin/non-session-manager (from build/session-manager/non-session-manager)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/bin/nsmd (from build/session-manager/nsmd)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/bin/nsm-proxy (from build/session-manager/nsm-proxy)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/bin/nsm-proxy-gui (from build/session-manager/nsm-proxy-gui)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/bin/jackpatch (from build/session-manager/jackpatch)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/applications/non-session-manager.desktop (from build/session-manager/non-session-manager.desktop)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/pixmaps/non-session-manager/icon-256x256.png (from session-manager/icons/hicolor/256x256/apps/non-session-manager.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/128x128/apps/non-session-manager.png (from session-manager/icons/hicolor/128x128/apps/non-session-manager.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/16x16/apps/non-session-manager.png (from session-manager/icons/hicolor/16x16/apps/non-session-manager.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-session-manager/API.html (from session-manager/doc/API.html)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/192x192/apps/non-session-manager.png (from session-manager/icons/hicolor/192x192/apps/non-session-manager.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-session-manager/MANUAL.html (from session-manager/doc/MANUAL.html)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/256x256/apps/non-session-manager.png (from session-manager/icons/hicolor/256x256/apps/non-session-manager.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-session-manager/icon.png (from session-manager/doc/icon.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/32x32/apps/non-session-manager.png (from session-manager/icons/hicolor/32x32/apps/non-session-manager.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/doc/non-session-manager/nsm.png (from session-manager/doc/nsm.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/36x36/apps/non-session-manager.png (from session-manager/icons/hicolor/36x36/apps/non-session-manager.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/48x48/apps/non-session-manager.png (from session-manager/icons/hicolor/48x48/apps/non-session-manager.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/512x512/apps/non-session-manager.png (from session-manager/icons/hicolor/512x512/apps/non-session-manager.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/64x64/apps/non-session-manager.png (from session-manager/icons/hicolor/64x64/apps/non-session-manager.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/72x72/apps/non-session-manager.png (from session-manager/icons/hicolor/72x72/apps/non-session-manager.png)
++ install /home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/debian/tmp/usr/share/icons/hicolor/96x96/apps/non-session-manager.png (from session-manager/icons/hicolor/96x96/apps/non-session-manager.png)
+Waf: Leaving directory `/home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1/build'
+'install' finished successfully (0.134s)
+make[1]: Leaving directory '/home/jeb/BNR/BUILD/non-mixer/non-git-1.2.0+git20200102.1'
+   dh_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_icons
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_missing
+   dh_strip
+   dh_makeshlibs
+   dh_shlibdeps
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/non-sequencer-git/usr/bin/non-sequencer was not linked against libgobject-2.0.so.0 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/non-sequencer-git/usr/bin/non-sequencer was not linked against libfreetype.so.6 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/non-sequencer-git/usr/bin/non-sequencer was not linked against libdl.so.2 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/non-sequencer-git/usr/bin/non-sequencer was not linked against libXrender.so.1 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/non-sequencer-git/usr/bin/non-sequencer was not linked against libglib-2.0.so.0 (it uses none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/non-mixer/usr/bin/non-midi-mapper debian/non-mixer/usr/bin/non-mixer were not linked against libfreetype.so.6 (they use none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/non-mixer/usr/bin/non-midi-mapper debian/non-mixer/usr/bin/non-mixer were not linked against libgobject-2.0.so.0 (they use none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/non-mixer/usr/bin/non-midi-mapper debian/non-mixer/usr/bin/non-mixer were not linked against libXrender.so.1 (they use none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/non-mixer/usr/bin/non-midi-mapper debian/non-mixer/usr/bin/non-mixer were not linked against libglib-2.0.so.0 (they use none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/non-timeline/usr/bin/import-ardour-session_gui debian/non-timeline/usr/bin/non-timeline were not linked against libglib-2.0.so.0 (they use none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/non-timeline/usr/bin/import-ardour-session_gui debian/non-timeline/usr/bin/non-timeline were not linked against libfreetype.so.6 (they use none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/non-timeline/usr/bin/import-ardour-session_gui debian/non-timeline/usr/bin/non-timeline were not linked against libgobject-2.0.so.0 (they use none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/non-timeline/usr/bin/import-ardour-session_gui debian/non-timeline/usr/bin/non-timeline were not linked against libXrender.so.1 (they use none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/non-timeline/usr/bin/import-ardour-session_gui debian/non-timeline/usr/bin/non-timeline were not linked against libdl.so.2 (they use none of the library's symbols)
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'non-timeline' in '../non-timeline_1.2.0+git20200102.1-bnrcustom_amd64.deb'.
+dpkg-deb: building package 'non-mixer' in '../non-mixer_1.2.0+git20200102.1-bnrcustom_amd64.deb'.
+dpkg-deb: building package 'non-sequencer-git' in '../non-sequencer-git_1.2.0+git20200102.1-bnrcustom_amd64.deb'.
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../non-git_1.2.0+git20200102.1-bnrcustom_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsfizz_spin_mutex.a  CMakeFiles/sfizz_spin_mutex.dir/sfizz/utility/spin_mutex/spin_mutex.cpp.o CMakeFiles/sfizz_spin_mutex.dir/sfizz/utility/spin_mutex/SpinMutex.cpp.o
+/usr/bin/ranlib libsfizz_spin_mutex.a

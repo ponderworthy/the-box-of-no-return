@@ -1,0 +1,50 @@
+# Turkish translation of jackd2 package
+# Copyright (C) 2014 Mert Dirik
+# This file is distributed under the same license as the jackd2 package.
+# Mert Dirik <mertdirik@gmail.com>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: jackd2 1.9.10+20140719git3eb0ae6a~dfsg-1\n"
+"Report-Msgid-Bugs-To: jackd2@packages.debian.org\n"
+"POT-Creation-Date: 2011-12-22 23:36+0100\n"
+"PO-Revision-Date: 2014-08-31 15:30+0200\n"
+"Last-Translator: Mert Dirik <mertdirik@gmail.com>\n"
+"Language-Team: Debian L10n Turkish <debian-l10n-turkish@lists.debian.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid "Enable realtime process priority?"
+msgstr "Gerçek zamanlı işlem önceliği etkinleştirilsin mi?"
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid ""
+"If you want to run jackd with realtime priorities, the user starting jackd "
+"needs realtime permissions. Accept this option to create the file /etc/"
+"security/limits.d/audio.conf, granting realtime priority and memlock "
+"privileges to the audio group."
+msgstr ""
+"'jackd'nin gerçek zamanlı önceliklerle çalışabilmesi için jackd'yi başlatan "
+"kullanıcının gerçek zaman izinlerine sahip olması gerekir. Bu seçeneği kabul "
+"ettiğiniz takdirde /etc/security/limits.d/audio.conf dosyası oluşturularak "
+"audio grubuna gerçek zamanlı öncelik ve memlock ayrıcalıkları tanınacaktır."
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid ""
+"Running jackd with realtime priority minimizes latency, but may lead to "
+"complete system lock-ups by requesting all the available physical system "
+"memory, which is unacceptable in multi-user environments."
+msgstr ""
+"'jackd'yi gerçek zamanlı öncelikle çalıştırmak gecikmeleri en aza indirir, "
+"fakat mevcut tüm fiziksel sistem belleğini isteyerek sistem kilitlenmelerine "
+"neden olabilir. Bu durum çok kullanıcılı ortamlarda kabul edilemez."

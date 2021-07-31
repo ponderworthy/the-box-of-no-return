@@ -1,0 +1,94 @@
+//==============================================================
+//  Oboe Section : Sustain
+//
+//   Woodwinds - Oboes Sustain.sfz from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//        Oboes Sustain
+// ------------------------------
+
+<group>
+volume=1
+// slightly longer attack (PB)
+ampeg_attack=0.2
+// slightly longer release for sustain (PB)
+ampeg_release=0.9
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-a#3-PB-loop.wav
+lokey=a#3
+hikey=b3
+pitch_keycenter=a#3
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-c#4-PB-loop.wav
+lokey=c4
+hikey=d4
+pitch_keycenter=c#4
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-e4-PB-loop.wav
+lokey=d#4
+hikey=f4
+pitch_keycenter=e4
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-g4-PB-loop.wav
+lokey=f#4
+hikey=g#4
+pitch_keycenter=g4
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-a#4-PB-loop.wav
+lokey=a4
+hikey=b4
+pitch_keycenter=a#4
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-c#5-PB-loop.wav
+lokey=c5
+hikey=d5
+pitch_keycenter=c#5
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-e5-PB-loop.wav
+pan=-10
+lokey=d#5
+hikey=f5
+pitch_keycenter=e5
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-g5-PB-loop.wav
+lokey=f#5
+hikey=g#5
+pitch_keycenter=g5
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-a#5-PB-loop.wav
+lokey=a5
+hikey=d6
+pitch_keycenter=a#5
+
+// removed C#6, had a click sound (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-e6-PB-loop.wav
+lokey=d#6
+hikey=a6 // extend the range (PB)
+pitch_keycenter=e6
+
+

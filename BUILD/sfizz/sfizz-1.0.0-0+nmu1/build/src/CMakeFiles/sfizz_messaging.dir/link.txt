@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsfizz_messaging.a  CMakeFiles/sfizz_messaging.dir/sfizz/Messaging.cpp.o
+/usr/bin/ranlib libsfizz_messaging.a

@@ -1,0 +1,40 @@
+Format: 1.8
+Date: Mon, 26 Jul 2021 06:01:35 -0500
+Source: fluidsynth
+Binary: fluidsynth fluidsynth-dbgsym libfluidsynth-dev libfluidsynth1 libfluidsynth1-dbgsym
+Architecture: amd64
+Version: 1.1.11-1+deb10u1.1-jebscustom
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Changed-By: Reiner Herrmann <jeb@bnr4>
+Description:
+ fluidsynth - Real-time MIDI software synthesizer
+ libfluidsynth-dev - Real-time MIDI software synthesizer (development files)
+ libfluidsynth1 - Real-time MIDI software synthesizer (runtime library)
+Changes:
+ fluidsynth (1.1.11-1+deb10u1.1-jebscustom) UNRELEASED; urgency=medium
+ .
+   * Non-maintainer upload.
+   *
+Checksums-Sha1:
+ d1b7c598eaf68383557012c91f12791ffa56f441 3084 fluidsynth-dbgsym_1.1.11-1+deb10u1.1-jebscustom_amd64.deb
+ bd260e93c1bd08110a76a5926d87a436674a1165 9248 fluidsynth_1.1.11-1+deb10u1.1-jebscustom_amd64.buildinfo
+ e323da12d9beb64eea3a50cc830e6a4d3fc5ea62 50388 fluidsynth_1.1.11-1+deb10u1.1-jebscustom_amd64.deb
+ 3b18323c33d7818cdee92ca292dbbe95a908cca9 48960 libfluidsynth-dev_1.1.11-1+deb10u1.1-jebscustom_amd64.deb
+ 55f6470f39521579294696e8669971504223a932 15740 libfluidsynth1-dbgsym_1.1.11-1+deb10u1.1-jebscustom_amd64.deb
+ 25078c9ac5551eeb57a48b3a34bfc2ae44020df8 178200 libfluidsynth1_1.1.11-1+deb10u1.1-jebscustom_amd64.deb
+Checksums-Sha256:
+ d95adbb890016a305e25b131f4afe083feedffce05ec62ccc77f7a828a8e0419 3084 fluidsynth-dbgsym_1.1.11-1+deb10u1.1-jebscustom_amd64.deb
+ 2fbc9a3aaf579643357d1077a02322297e03645a2772e91427af5124499f6e9d 9248 fluidsynth_1.1.11-1+deb10u1.1-jebscustom_amd64.buildinfo
+ fa3eb71416dc9d8773414585e80ba9a0ec8a1df9713b5190be70bf332b8c9a18 50388 fluidsynth_1.1.11-1+deb10u1.1-jebscustom_amd64.deb
+ c11b7a9301d17c8aae93c4ccbd0612c78891f6203ea504f3f0ff5a4b38488d2a 48960 libfluidsynth-dev_1.1.11-1+deb10u1.1-jebscustom_amd64.deb
+ 122a0ff117d5920ade77e3d54c85796b49da10a1899b1cedc61bb29d2db95560 15740 libfluidsynth1-dbgsym_1.1.11-1+deb10u1.1-jebscustom_amd64.deb
+ ef6fb84cae821658ba838f1671724c32b9f57b0fb7a3f36a592273cf62b9c1f7 178200 libfluidsynth1_1.1.11-1+deb10u1.1-jebscustom_amd64.deb
+Files:
+ b725e3247012730fa70f66c0614efb02 3084 debug optional fluidsynth-dbgsym_1.1.11-1+deb10u1.1-jebscustom_amd64.deb
+ 690a973a4fb056bee94435463481633d 9248 sound optional fluidsynth_1.1.11-1+deb10u1.1-jebscustom_amd64.buildinfo
+ 846a2c2dc318215cf528d0b7f39657ef 50388 sound optional fluidsynth_1.1.11-1+deb10u1.1-jebscustom_amd64.deb
+ bfced597bc04f7075f7f2a5c21e48601 48960 libdevel optional libfluidsynth-dev_1.1.11-1+deb10u1.1-jebscustom_amd64.deb
+ faf67184242e9e6f29dacd316e28e92c 15740 debug optional libfluidsynth1-dbgsym_1.1.11-1+deb10u1.1-jebscustom_amd64.deb
+ 895981267fd28880be90a4e7ac011f4d 178200 libs optional libfluidsynth1_1.1.11-1+deb10u1.1-jebscustom_amd64.deb

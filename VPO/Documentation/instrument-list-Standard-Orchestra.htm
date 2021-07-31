@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8" />
+
+</head>
+<body>
+
+<link rel="stylesheet" type="text/css" rel="stylesheet" href="instrument-list.css" />
+
+<div class="instruments-list">
+<!-- beginWordpress -->
+<h1>Standard Orchestra Notes</h1>
+<ul>
+	<li>Key switches are assigned to the following notes, with "n" representing where the key switches start<br />
+    <br />
+    Cn = Sustain (default) <br />
+    C#n = Tremolo (only for string section) <br />
+    Dn = Normal / General Purpose (mod wheel changes length of note attack) <br />
+    D#n = Accent (an accented sustain) <br />
+    En = Staccato <br />
+    Fn = Pizzicato (only for strings, of course)<br />
+  </li>
+	<li>
+    There seems to be some confusion about use of the mod wheel. The mod wheel will only have
+    an effect on the attack of the samples (how long it takes for the sound to reach
+    it's volume after a key is pressed) on patches labelled "normal-mod-wheel"
+  </li>
+</ul>
+
+  <h1>Standard Orchestra Instruments</h1>
+
+  <h2>Woodwinds</h2>
+  <p>
+    <b>Articulations</b> : <em>Sustain, Normal-mod-wheel, Accent, Staccato</em>
+  </p>
+  <table class="wood-strings-brass">
+    <tr>
+      <th>Instruments</th> <th>Range</th>  <th>Notes</th>
+    </tr>
+    <tr>
+      <td>Piccolo<br />(Solo)</td>  <td>D5-C8</td></td> <td>Key switches start at C2<ul><li>It may be necessary to transpose your MIDI controller up an octave to reach the upper notes</li><li>Load the C3 key switch patch if you transpose the MIDI notes up and you still want key switches at C2</li></ul></td>
+    </tr>
+    <tr>
+      <td>Flute<br />(Solo, Section)</td> <td>C4-D7</td>  <td>Key switches start at C2<ul><li>It may be necessary to transpose your MIDI controller up an octave to reach the upper notes</li><li>Load the C3 key switch patch if you transpose the MIDI notes up and you still want key switches at C2</li></ul></td>
+    </tr>
+    <tr>
+      <td>Alto Flute<br />(Solo)</td> <td>G3-G6</td>  <td>Key switches start at C2</td>
+    </tr>
+    <tr>
+      <td>Oboe<br />(Solo, Section)</td> <td>Bb3-A6</td>  <td>Key switches start at C2</td>
+    </tr>
+    <tr>
+      <td>English Horn<br />(Solo)</td> <td>E3-Bb5</td>  <td>Key switches start at C2</td>
+    </tr>
+    <tr>
+      <td>Clarinet<br />(Solo, Section)</td> <td>D3-Bb6</td>  <td>Key switches start at C2</td>
+    </tr>
+    <tr>
+      <td>Bass Clarinet<br />(Solo)</td> <td>Bb1-A5</td>  <td>Key switches start at C6<ul><li>It may be necessary to transpose your MIDI controller down an octave to reach the lowest notes</li><li>Load the C1 key switch patch if you transpose the MIDI notes down to get key switches at C2</li></ul></td>
+    </tr>
+    <tr>
+      <td>Bassoon<br />(Solo, Section)</td> <td>Bb1-Eb5</td>  <td>Key switches start at C6<ul><li>It may be necessary to transpose your MIDI controller down an octave to reach the lowest notes</li><li>Load the C5 key switch patch if you transpose the MIDI notes down and you still want key switches at C6</li></ul></td>
+    </tr>
+    <tr>
+      <td>Contrabassoon<br />(Solo)</td> <td>Bb0-Bb3</td>  <td>Key switches start at C6<ul><li>It may be necessary to transpose your MIDI controller down an octave or two to reach the lowest notes</li><li>Load the C5 or C4 key switch patch if you transpose the MIDI notes down 1 or 2 octaves and you still want key switches at C6</li></ul></td>
+    </tr>
+    <tr>
+      <td>All Woodwinds<br />(Solo, Section)</td> <td>Bb1-C8</td> <td>All Woodwinds cross faded, spread across the keyboard.<br />2 versions:<ul><li>centered in the stereo field</li><li>panned to orchestra seating positions</li></ul></td>
+    </tr>
+  </table>
+
+  <h2>Strings</h2>
+    <p>
+      <b>Articulations:</b> <em>Sustain, Tremolo, Normal-mod-wheel, Accent, Staccato, Pizzicato</em><br />
+    </p>
+    <table class="wood-strings-brass">
+    <tr>
+      <th>Instruments</th> <th>Range</th> <th>Notes</th>
+    </tr>
+    <tr>
+      <td>1st Violins<br />(Solo, Section)</td> <td>G3-A7</td>  <td>Key switches start at C2<ul><li>It may be necessary to transpose your MIDI controller up an octave to reach the upper notes</li><li>Load the C3 key switch patch if you transpose the MIDI notes up and you still want key switches at C2</li></ul></td>
+    </tr>
+    <tr>
+      <td>2nd Violins<br />(Solo, Section)</td> <td>G3-A7</td>  <td>Key switches start at C2<ul><li>It may be necessary to transpose your MIDI controller up an octave to reach the upper notes</li><li>Load the C3 key switch patch if you transpose the MIDI notes up and you still want key switches at C2</li></ul></td>
+    </tr>
+    <tr>
+      <td>Viola<br />(Solo, Section)</td> <td>C3-A6</td>  <td>Key switches start at C2</td>
+    </tr>
+    <tr>
+      <td>Cello<br />(Solo, Section)</td> <td>C2-A5</td>  <td>Key switches start at C6</td>
+    </tr>
+    <tr>
+      <td>String Bass<br />(Solo, Section)</td> <td>C1-G4</td>  <td>Key switches start at C6<ul><li>It may be necessary to transpose your MIDI controller down an octave to reach the lowest notes</li><li>Load the C5 key switch patch if you transpose the MIDI notes for the String Bass patch down and you still want key switches at C6</li></ul></td>
+    </tr>
+    <tr>
+      <td>All Strings<br />(Solo, Section)</td> <td>C1-A7</td>  <td>All Strings cross faded, spread across the keyboard.<br />2 versions:<ul><li>centered in the stereo field</li><li>panned to orchestra seating positions</li></ul></td>
+    </tr>
+    <tr>
+      <td colspan=3 class="allowWrap">
+        <p>
+          <b>NOTES:</b><br />
+          - Only instrument with SOLO tremolo is 1st violin
+        </p>
+      </td>
+    </tr>
+  </table>
+
+  <h2>Brass</h2>
+  <p>
+    <b>Articulations</b> : <em>Sustain, Normal-mod-wheel, Accent, Staccato</em>
+  </p>
+  <table class="wood-strings-brass">
+    <tr>
+      <th>Instruments</th> <th>Range</th>  <th>Notes</th>
+    </tr>
+    <tr>
+      <td>Trumpet<br />(Solo, Section)</td> <td>F#3-C6</td>  <td>Key switches start at C2.</td>
+    </tr>
+    <tr>
+      <td>French Horn<br />(Solo, Section)</td> <td>B1-F5</td>  <td>Key switches start at C6</td>
+    </tr>
+    <tr>
+      <td>Trombone<br />(Solo, Section)</td> <td>E2-F5</td>  <td>Key switches start at C6</td>
+    </tr>
+    <tr>
+      <td>Bass Trombone<br />(Solo)</td> <td>Bb0-F5</td>  <td>Key switches start at C6<ul><li>It may be necessary to transpose your MIDI controller down an octave to reach the lowest notes</li></ul></td>
+    </tr>
+    <tr>
+      <td>Tuba<br />(Solo)</td> <td>D1-D4</td> <td>Key switches start at C6</td>
+    </tr>
+    <tr>
+      <td>All Brass<br />(Solo, Section)</td> <td>D1-C6</td> <td>All Brass cross faded, spread across the keyboard.<br />2 versions:<ul><li>centered in the stereo field</li><li>panned to orchestra seating positions</li></ul></td>
+    </tr>
+    <tr>
+      <td colspan=3 class="allowWrap">
+        <p>
+          <b>NOTES:</b><br />
+          - Trumpet, French Horn, Trombone also have dynamic cross faded (-DXF) versions of all of the above articulations, such that the mod wheel can be used to control the volume and blending of low and high velocity layers to enable crescendo, decrescendo during a held note.<br /><br />
+          - Dynamic Cross Faded (-DXF) versions of "Normal Mod Wheel" (called "Normal-DXF"), use cc73 (attack time) to control the attack  of the samples, and mod wheel to control the volume and dynamic cross fade.
+      </td>
+    </tr>
+  </table>
+
+  <h2>Vocals</h2>
+  <p>
+    <b>Articulations</b> : <em>Sustain, Normal-mod-wheel</em>
+  </p>
+  <table class="wood-strings-brass">
+    <tr>
+      <th>Instruments</th> <th>Range</th> <th>Notes</th>
+    </tr>
+    <tr>
+      <td>Choir Male</td> <td>G2-F#4</td>  <td></td>
+    </tr>
+    <tr>
+      <td>Choir Female</td> <td>G4-C6</td>  <td></td>
+    </tr>
+    <tr>
+      <td>Choir Mixed</td> <td>G2-C6</td>  <td>Choir Male &amp; Choir Female</td>
+    </tr>
+  </table>
+
+<!-- endWordpress -->
+</div>
+</body>
+</html>

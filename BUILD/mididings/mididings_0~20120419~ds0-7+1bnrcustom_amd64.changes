@@ -1,0 +1,38 @@
+Format: 1.8
+Date: Thu, 29 Jul 2021 21:43:50 -0500
+Source: mididings
+Binary: mididings mididings-doc python-mididings python-mididings-dbgsym
+Architecture: all amd64
+Version: 0~20120419~ds0-7+1bnrcustom
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Changed-By: Emilio Pozuelo Monfort <jeb@bnr4>
+Description:
+ mididings  - MIDI router and processor based on Python
+ mididings-doc - mididings Documentation
+ python-mididings - MIDI routing library for Python
+Changes:
+ mididings (0~20120419~ds0-7+1bnrcustom) UNRELEASED; urgency=medium
+ .
+   *
+   *
+   *
+Checksums-Sha1:
+ b3e3628bd479a79cc48ef559b62c10f42e7f6195 90300 mididings-doc_0~20120419~ds0-7+1bnrcustom_all.deb
+ 22206a6237c95bcb06b699f1287778de09eb26d9 12528 mididings_0~20120419~ds0-7+1bnrcustom_all.deb
+ e7ef16ba96576b29e1b299ef673d7ce373af967d 8511 mididings_0~20120419~ds0-7+1bnrcustom_amd64.buildinfo
+ 120c46f0725fb3f663f8f0846df8dc7ca9474776 2973016 python-mididings-dbgsym_0~20120419~ds0-7+1bnrcustom_amd64.deb
+ bf037ccc26f1594cbfa527d5f7471258c1fddc8c 158612 python-mididings_0~20120419~ds0-7+1bnrcustom_amd64.deb
+Checksums-Sha256:
+ 4badc904eda544104ac2b8d3a2952027c81f91972bee6f7dc6aeca6b0d48ba75 90300 mididings-doc_0~20120419~ds0-7+1bnrcustom_all.deb
+ bd80d9ea96b1401f9dd11b913b4e82241d98b2a696c889e7fce3b60f0ddc01ef 12528 mididings_0~20120419~ds0-7+1bnrcustom_all.deb
+ 58ac9abdc4c0dfe1c29709121a1aa3eace3adfbee02d97804508091dc6f62087 8511 mididings_0~20120419~ds0-7+1bnrcustom_amd64.buildinfo
+ 3a4497161732a0b3839ed3680f10c44d0d976b48b500b319e8766482e42321d9 2973016 python-mididings-dbgsym_0~20120419~ds0-7+1bnrcustom_amd64.deb
+ cee35dc8c830e3936222cbcb4470b77204daed627f8aa656b70f0b6885d5719f 158612 python-mididings_0~20120419~ds0-7+1bnrcustom_amd64.deb
+Files:
+ 2263a99a7ddcb0f76314bbbe22a9cc06 90300 doc optional mididings-doc_0~20120419~ds0-7+1bnrcustom_all.deb
+ b1e30e3aae062d0b6916992f82b48fe0 12528 sound optional mididings_0~20120419~ds0-7+1bnrcustom_all.deb
+ ea69e5a659da1b224778848185256d34 8511 sound optional mididings_0~20120419~ds0-7+1bnrcustom_amd64.buildinfo
+ 65b7eafbd6abddc9057be73099670897 2973016 debug optional python-mididings-dbgsym_0~20120419~ds0-7+1bnrcustom_amd64.deb
+ cf0cdcb80112aeeb7b2d316fc5d5d2b6 158612 python optional python-mididings_0~20120419~ds0-7+1bnrcustom_amd64.deb

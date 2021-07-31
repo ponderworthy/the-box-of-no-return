@@ -1,0 +1,23 @@
+Determining if the function exp10f exists failed with the following output:
+Change Dir: /home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ce301/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ce301.dir/build.make CMakeFiles/cmTC_ce301.dir/build
+make[1]: Entering directory '/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ce301.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=exp10f   -o CMakeFiles/cmTC_ce301.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.13/Modules/CheckFunctionExists.c
+<command-line>: warning: conflicting types for built-in function ‘exp10f’ [-Wbuiltin-declaration-mismatch]
+/usr/share/cmake-3.13/Modules/CheckFunctionExists.c:7:3: note: in expansion of macro ‘CHECK_FUNCTION_EXISTS’
+   CHECK_FUNCTION_EXISTS(void);
+   ^~~~~~~~~~~~~~~~~~~~~
+Linking C executable cmTC_ce301
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ce301.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=exp10f    -rdynamic CMakeFiles/cmTC_ce301.dir/CheckFunctionExists.c.o  -o cmTC_ce301 
+/usr/bin/ld: CMakeFiles/cmTC_ce301.dir/CheckFunctionExists.c.o: in function `main':
+CheckFunctionExists.c:(.text+0x10): undefined reference to `exp10f'
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_ce301.dir/build.make:87: cmTC_ce301] Error 1
+make[1]: Leaving directory '/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_ce301/fast] Error 2
+
+

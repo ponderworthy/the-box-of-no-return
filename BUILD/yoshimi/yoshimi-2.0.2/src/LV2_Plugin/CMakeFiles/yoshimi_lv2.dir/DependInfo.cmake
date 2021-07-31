@@ -1,0 +1,118 @@
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  "CXX"
+  )
+# The set of files for implicit dependencies of each language:
+set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/ADnoteUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/ADnoteUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/BankUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/BankUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/Config.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/Config.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/ConfigUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/ConfigUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/ConsoleUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/ConsoleUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/EffUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/EffUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/EnvelopeUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/EnvelopeUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/FilterUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/FilterUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/LFOUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/LFOUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/MasterMiscUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/MasterMiscUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/MasterUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/MasterUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/MicrotonalUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/MicrotonalUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/MidiLearnUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/MidiLearnUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/OscilGenUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/OscilGenUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/PADnoteUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/PADnoteUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/ParametersUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/ParametersUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/PartUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/PartUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/PresetsUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/PresetsUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/ResonanceUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/ResonanceUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/SUBnoteUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/SUBnoteUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/VectorUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/VectorUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/VirKeyboardUI.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/VirKeyboardUI.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/YoshimiLV2Plugin.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/YoshimiLV2Plugin.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/DSP/AnalogFilter.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/DSP/AnalogFilter.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/DSP/FFTwrapper.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/DSP/FFTwrapper.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/DSP/Filter.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/DSP/Filter.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/DSP/FormantFilter.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/DSP/FormantFilter.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/DSP/SVFilter.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/DSP/SVFilter.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/DSP/Unison.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/DSP/Unison.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Effects/Alienwah.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Effects/Alienwah.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Effects/Chorus.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Effects/Chorus.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Effects/Distorsion.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Effects/Distorsion.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Effects/DynamicFilter.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Effects/DynamicFilter.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Effects/EQ.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Effects/EQ.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Effects/Echo.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Effects/Echo.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Effects/Effect.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Effects/Effect.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Effects/EffectLFO.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Effects/EffectLFO.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Effects/EffectMgr.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Effects/EffectMgr.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Effects/Phaser.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Effects/Phaser.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Effects/Reverb.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Effects/Reverb.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Interface/Data2Text.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Interface/Data2Text.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Interface/InterChange.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Interface/InterChange.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Interface/MidiDecode.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Interface/MidiDecode.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Interface/MidiLearn.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Interface/MidiLearn.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Misc/Bank.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Misc/Bank.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Misc/Microtonal.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Misc/Microtonal.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Misc/Part.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Misc/Part.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Misc/SynthEngine.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Misc/SynthEngine.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Misc/WavFile.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Misc/WavFile.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Misc/XMLwrapper.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Misc/XMLwrapper.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/MusicIO/MusicIO.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/MusicIO/MusicIO.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Params/ADnoteParameters.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Params/ADnoteParameters.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Params/Controller.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Params/Controller.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Params/EnvelopeParams.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Params/EnvelopeParams.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Params/FilterParams.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Params/FilterParams.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Params/LFOParams.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Params/LFOParams.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Params/OscilParameters.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Params/OscilParameters.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Params/PADnoteParameters.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Params/PADnoteParameters.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Params/Presets.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Params/Presets.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Params/PresetsStore.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Params/PresetsStore.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Params/SUBnoteParameters.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Params/SUBnoteParameters.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Synth/ADnote.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Synth/ADnote.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Synth/Envelope.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Synth/Envelope.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Synth/LFO.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Synth/LFO.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Synth/OscilGen.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Synth/OscilGen.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Synth/PADnote.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Synth/PADnote.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Synth/Resonance.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Synth/Resonance.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/Synth/SUBnote.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/Synth/SUBnote.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/UI/DynamicTooltip.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/UI/DynamicTooltip.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/UI/MiscGui.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/UI/MiscGui.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/UI/WidgetCheckButton.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/UI/WidgetCheckButton.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/UI/WidgetMWSlider.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/UI/WidgetMWSlider.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/UI/WidgetPDial.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/UI/WidgetPDial.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/UI/WidgetSpinner.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/UI/WidgetSpinner.cpp.o"
+  "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/UI/YoshiWin.cpp" "/home/jeb/BUILD/yoshimi/yoshimi-2.0.2/src/LV2_Plugin/CMakeFiles/yoshimi_lv2.dir/__/UI/YoshiWin.cpp.o"
+  )
+set(CMAKE_CXX_COMPILER_ID "GNU")
+
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "GUI_FLTK"
+  "HAVE_ALSA"
+  "JACK_LATENCY"
+  "JACK_SESSION"
+  "MIN_CONFIG_MAJOR=2"
+  "MIN_CONFIG_MINOR=0"
+  "YOSHIMI=\"yoshimi\""
+  "YOSHIMI_LV2_PLUGIN=1"
+  "YOSHI_FIFO_DIR=\"\""
+  )
+
+# The include file search paths:
+set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "LV2_Plugin"
+  "/usr/include/alsa"
+  "/usr/include/uuid"
+  "/usr/include/freetype2"
+  "/usr/include/libpng16"
+  "/usr/lib/fltk"
+  "/usr/include/cairo"
+  "/usr/include/glib-2.0"
+  "/usr/lib/x86_64-linux-gnu/glib-2.0/include"
+  "/usr/include/pixman-1"
+  "."
+  )
+
+# Targets to which this target links.
+set(CMAKE_TARGET_LINKED_INFO_FILES
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")

@@ -1,0 +1,256 @@
+//==============================================================
+// Trombone Solo : Staccato + Dynamic Cross Fade
+//
+// mapped by Paul Battersby - http://virtualplaying.com
+//
+// The samples from University of Iowa Electronic Music Studios - http://theremin.music.uiowa.edu/index.html
+// are "freely available"
+//
+// This file by Paul Battersby - http://virtualplaying.com
+// is licensed under:
+//
+// Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+// https://creativecommons.org/licenses/by-sa/4.0/
+//
+//==============================================================
+<control>
+// set some sfz 2.0 default values
+// mod wheel
+set_cc1=64
+// pan (not used but Sforzando will default to 0 = 100%L when
+//  other CC settings are present)
+set_cc10=64
+
+
+// -------------- high vel --------------
+<group>
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+// create staccato from sustain (PB)
+ampeg_attack=0.03
+ampeg_sustain=0
+ampeg_hold=0.12
+ampeg_decay=0.3
+ampeg_release=0.3
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+
+// cc1 (mod wheel) adjusts crossfade and volume (PB)
+xfin_locc1=64
+xfin_hicc1=127
+// this provides a smoother x-fade transition
+xf_cccurve=gain
+// cc1 controls gain after lowering volume of all samples by 24db (PB)
+gain_cc1=24
+// reduce velocity tracking, use cc1 for volume (PB)
+amp_veltrack=60
+
+
+
+volume=-24
+
+
+
+<region>
+sample=../libs/Iowa/samples/Trombone-solo/Trombone-sus.ff.F#2-PB-loop.wav
+pitch_keycenter=f#2
+lokey=e2
+hikey=a2
+volume=-21
+
+<region>
+sample=../libs/Iowa/samples/Trombone-solo/Trombone-sus.ff.C#3-PB-loop.wav
+ampeg_attack=0.01
+// shorten waveform by skipping early part of the attack phase (PB)
+offset=1000
+
+pitch_keycenter=c#3
+lokey=a#2
+hikey=c#3
+volume=-16.5
+
+<region>
+sample=../libs/Iowa/samples/Trombone-solo/Trombone-sus.ff.D3-PB-loop.wav
+pitch_keycenter=d3
+lokey=d3
+hikey=e3
+volume=-16
+
+<region>
+sample=../libs/Iowa/samples/Trombone-solo/Trombone-sus.ff.F#3-PB-loop.wav
+pitch_keycenter=g3
+lokey=f3
+hikey=a3
+volume=-12
+
+<region>
+sample=../libs/Iowa/samples/Trombone-solo/Trombone-sus.ff.C#4-PB-loop.wav
+pitch_keycenter=c#4
+lokey=a#3
+hikey=d4
+volume=-15
+
+<region>
+sample=../libs/Iowa/samples/Trombone-solo/Trombone-sus.ff.E4-PB-loop.wav
+pitch_keycenter=e4
+lokey=d#4
+hikey=e4
+volume=-17.5
+
+<region>
+sample=../libs/Iowa/samples/Trombone-solo/Trombone-sus.ff.F#4-PB-loop.wav
+pitch_keycenter=f#4
+lokey=f4
+hikey=f#4
+volume=-15.5
+
+<region>
+sample=../libs/Iowa/samples/Trombone-solo/Trombone-sus.ff.G4-PB-loop.wav
+pitch_keycenter=g4
+lokey=g4
+hikey=g4
+volume=-18
+
+<region>
+sample=../libs/Iowa/samples/Trombone-solo/Trombone-sus.ff.G#4-PB-loop.wav
+pitch_keycenter=g#4
+lokey=g#4
+hikey=a#4
+volume=-15.5
+
+<region>
+sample=../libs/Iowa/samples/Trombone-solo/Trombone-sus.ff.C5-PB-loop.wav
+pitch_keycenter=c5
+lokey=b4
+hikey=f5
+volume=-20
+
+// -------------- low vel --------------
+<group>
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+// create staccato from sustain (PB)
+ampeg_attack=0.03
+ampeg_sustain=0
+ampeg_hold=0.12
+ampeg_decay=0.3
+ampeg_release=0.3
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+
+// fade out
+
+// cc1 (mod wheel) adjusts crossfade and volume (PB)
+xfout_locc1=64
+xfout_hicc1=127
+// this provides a smoother x-fade transition
+xf_cccurve=gain
+// cc1 controls gain after lowering volume of all samples by 24db (PB)
+gain_cc1=24
+// reduce velocity tracking, use cc1 for volume (PB)
+amp_veltrack=60
+
+
+
+volume=-24
+
+
+
+<region>
+sample=../libs/Iowa/samples/Trombone-solo/Trombone-sus.mf.F#2-PB-loop.wav
+pitch_keycenter=f#2
+lokey=e2
+hikey=a2
+volume=-22
+
+<region>
+sample=../libs/Iowa/samples/Trombone-solo/Trombone-sus.mf.C#3-PB-loop.wav
+ampeg_attack=0.01
+// shorten waveform by skipping early part of the attack phase (PB)
+offset=1000
+
+pitch_keycenter=c#3
+lokey=a#2
+hikey=c#3
+volume=-15.5
+
+<region>
+sample=../libs/Iowa/samples/Trombone-solo/Trombone-sus.mf.D3-PB-loop.wav
+pitch_keycenter=d3
+lokey=d3
+hikey=e3
+volume=-12
+
+<region>
+sample=../libs/Iowa/samples/Trombone-solo/Trombone-sus.mf.F#3-PB-loop.wav
+pitch_keycenter=f#3
+lokey=f3
+hikey=a3
+volume=-11
+
+<region>
+sample=../libs/Iowa/samples/Trombone-solo/Trombone-sus.mf.C#4-PB-loop.wav
+pitch_keycenter=c#4
+lokey=a#3
+hikey=d4
+volume=-17.5
+
+<region>
+sample=../libs/Iowa/samples/Trombone-solo/Trombone-sus.mf.E4-PB-loop.wav
+pitch_keycenter=e4
+lokey=d#4
+hikey=e4
+volume=-22
+
+<region>
+sample=../libs/Iowa/samples/Trombone-solo/Trombone-sus.mf.F#4-PB-loop.wav
+pitch_keycenter=f#4
+lokey=f4
+hikey=f#4
+volume=-20.5
+
+<region>
+sample=../libs/Iowa/samples/Trombone-solo/Trombone-sus.mf.G4-PB-loop.wav
+pitch_keycenter=g4
+lokey=g4
+hikey=g4
+volume=-16.5
+
+<region>
+sample=../libs/Iowa/samples/Trombone-solo/Trombone-sus.mf.G#4-PB-loop.wav
+pitch_keycenter=g#4
+lokey=g#4
+hikey=a#4
+volume=-18
+
+<region>
+sample=../libs/Iowa/samples/Trombone-solo/Trombone-sus.mf.C5-PB-loop.wav
+pitch_keycenter=c5
+lokey=b4
+hikey=f5
+volume=-21.5
+
+
+
+
+

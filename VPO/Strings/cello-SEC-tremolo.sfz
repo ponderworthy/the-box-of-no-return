@@ -1,0 +1,76 @@
+//==============================================================
+// Cello Section : Tremolo
+//
+//   cellos_tremulo.sfz from No Budget Orchestra - https://nobudgetorchestra.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+
+<group>
+ampeg_attack=0.03
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+ ampeg_release=1.1 
+<region> sample=..\libs\NoBudgetOrch2\Cello\CelloSect\Tremulo\2_C_t.wav pitch_keycenter=c2 lokey=c2 hikey=c#2
+<region> sample=..\libs\NoBudgetOrch2\Cello\CelloSect\Tremulo\2_D_t.wav pitch_keycenter=d2 lokey=d2 hikey=d#2
+volume=-1
+<region> sample=..\libs\NoBudgetOrch2\Cello\CelloSect\Tremulo\2_E_t.wav pitch_keycenter=e2 lokey=e2 hikey=f#2
+tune=5
+
+// removed 2_Gb_t.wav (PB)
+// removed 2_Ab_t (PB)
+
+<region> sample=..\libs\NoBudgetOrch2\Cello\CelloSect\Tremulo\2_Bb_t-PB-loop.wav pitch_keycenter=a#2 lokey=g2 hikey=b2
+tune=-10
+<region> sample=..\libs\NoBudgetOrch2\Cello\CelloSect\Tremulo\3_C_t.wav pitch_keycenter=c3 lokey=c3 hikey=c#3
+tune=15
+<region> sample=..\libs\NoBudgetOrch2\Cello\CelloSect\Tremulo\3_D_t.wav pitch_keycenter=d3 lokey=d3 hikey=d#3
+tune=20
+<region> sample=..\libs\NoBudgetOrch2\Cello\CelloSect\Tremulo\3_E_t.wav pitch_keycenter=e3 lokey=e3 hikey=f3
+tune=10
+<region> sample=..\libs\NoBudgetOrch2\Cello\CelloSect\Tremulo\3_Gb_t-PB-loop.wav pitch_keycenter=f#3 lokey=f#3 hikey=g3
+<region> sample=..\libs\NoBudgetOrch2\Cello\CelloSect\Tremulo\3_Ab_t-PB-loop.wav pitch_keycenter=g#3 lokey=g#3 hikey=a3
+tune=5
+<region> sample=..\libs\NoBudgetOrch2\Cello\CelloSect\Tremulo\3_Bb_t.wav pitch_keycenter=a#3 lokey=a#3 hikey=b3
+tune=5
+<region> sample=..\libs\NoBudgetOrch2\Cello\CelloSect\Tremulo\4_C_t-PB-loop.wav pitch_keycenter=c4 lokey=c4 hikey=c#4
+tune=10
+// noise reduction (PB)
+eq1_freq=26.4
+eq1_bw=3.01
+eq1_gain=-12.1
+
+eq2_freq=73.5
+eq2_bw=1.12
+eq2_gain=-12.0
+
+<region> sample=..\libs\NoBudgetOrch2\Cello\CelloSect\Tremulo\4_D_t-PB-loop.wav pitch_keycenter=d4 lokey=d4 hikey=f4
+tune=5
+volume=1
+// noise reduction (PB)
+eq1_freq=49.1
+eq1_bw=2.10
+eq1_gain=-15.6
+
+eq2_freq=165.9
+eq2_bw=1.12
+eq2_gain=-11.0
+
+// removed 4_E_t.wav (PB)
+
+<region> sample=..\libs\NoBudgetOrch2\Cello\CelloSect\Tremulo\4_Gb_t.wav pitch_keycenter=f#4 lokey=f4 hikey=a5
+volume=0
+// noise reduction (PB)
+eq1_freq=49.1
+eq1_bw=2.10
+eq1_gain=-15.6
+
+eq2_freq=168.7
+eq2_bw=1.12
+eq2_gain=-11.4
+

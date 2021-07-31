@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}//usr/lib
+includedir=${prefix}/include
+
+Name: absl_absl_time_zone
+Description: Abseil absl_time_zone library
+URL: https://abseil.io/
+Version: 20210324
+Requires:
+Libs: -L${libdir}  -labsl_absl_time_zone
+Cflags: -I${includedir} -DNOMINMAX

@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <link type="text/css" rel="stylesheet" href="scripts/prettyPhoto.css" />
+        <link type="text/css" rel="stylesheet" href="scripts/style.css" />
+        <script language="javascript" type="text/javascript" src="scripts/jquery.js"></script>
+        <script language="javascript" type="text/javascript" src="scripts/jquery.prettyPhoto.js"></script>
+        <script language="javascript" type="text/javascript" src="scripts/manual.js"></script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>Analyzer</h1>
+            <a href="images/Calf - Analyzer.jpg" title="Calf - Analyzer" class="prettyPhoto"><img class="thumbnail" src="images/Calf - Analyzer.jpg" /></a>
+            <h2>Functionality</h2>
+            <p>
+                An Analyzer inspects the audio signal and displays various graphs to
+                give an impression of the structure of a sound. It is able to draw a
+                <strong>frequency response graph</strong> with adjustable accuracy and some other features
+                as well as a <strong>phase correlation meter (goniometer)</strong>. The frequency response shows
+                how much energy a signal has over the frequency range. The goniometer gives
+                an impression of the stereo behavior of your track.
+            </p>
+            <h2>Tips</h2>
+            <p>
+                The <strong>goniometer</strong> shows mono and stereo allocation of your audio
+                signal. A signal mostly vertical around the center shows a high mono ratio while
+                a signal with a wide spread from left to right displays a signal with a high
+                amount of stereo (phase shift) signal. A signal only audible on the right
+                speaker will produce a line from south west to north east and vice versa.
+                The Calf Goniometer will adapt to the amount of the incoming audio signal 
+                by zooming in or out automatically.
+            </p>
+            <h2>Controls</h2>
+            <ul>
+                <li><strong>Accuracy:</strong> The amount of visible frequencies. It also raises the time, in which audio samples are collected to calculate the frequency response. The higher Accuracy is set, the less responsive to short attacks the graph is.</li>
+                <li><strong>Speed:</strong> How often a FFT is calculated and displayed.</li>
+                <li><strong>Hold:</strong> Draw a maximum peak graph above the output graph.</li>
+                <li><strong>Freeze:</strong> Freeze the graph in the actual state. An eventually displayed peak hold will continue in being pushed to the limit.</li>
+                <li><strong>Display:</strong> Stop displaying this widget.</li>
+                <li><strong>Mode:</strong> Select the analyzers working mode and sources.</li>
+                <li><strong>Zoom:</strong> Changes the zoom for the displayed frequency response. In mode "Stereo Image" it effects the offset above which values will be displayed.</li>
+                <li><strong>Windowing:</strong> Select a window to be used to weight the incoming samples.</li>
+                <li><strong>Smoothing:</strong> Select a method to smooth the transition from one FFT to the next.</li>
+                <li><strong>Post Processing:</strong> Select a calculation, which will be done after the FFT is done. Due to the logarithmic frequency scale, not every value in the FFT can be shown in the graph. The higher the frequency, the more values are left out. Here you can decide what to do with those.
+                <ul>
+                <li><strong>Normalized</strong> will leave out the values between points on your monitor and instead normalize the values shown.</li>
+                <li><strong>Average</strong> will calculate the average of the not-shown values and display it.</li>
+                <li><strong>Additive</strong> will sum up the left-out values.</li>
+                <li><strong>Denoised Peaks</strong> will try to filter out noise in the FFT to leave blank peaks. This does not represent the actual music signal but can help to detect an important frequency.</li></ul></li>
+                <li><strong>Scale:</strong> Select if a linear or logarithmic scale is used for the shown values. The latter works well with <strong>View Mode Bars</strong>.</li>
+                <li><strong>View Mode:</strong> Select if bars or lines are drawn.</li>
+                
+                
+                <li><strong>Dots:</strong> The amount of dots shown on the canvas.</li>
+                <li><strong>Fade:</strong> Choose if a fade out effect should be drawn (doesn't raise the overall CPU consumption).</li>
+            </ul>
+            <div class="footer"><a href="index.html" title="Index">Index</a><a href="#" title="Top">Top</a></a></div>
+        </div>
+    </body>
+</html>

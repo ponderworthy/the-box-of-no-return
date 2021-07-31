@@ -1,0 +1,2 @@
+# Any library symbols changing since 0.116.2 supposedly are outside public API
+symbols-file-contains-current-version-with-debian-revision

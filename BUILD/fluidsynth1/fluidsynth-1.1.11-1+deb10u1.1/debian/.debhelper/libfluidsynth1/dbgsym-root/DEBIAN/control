@@ -1,0 +1,13 @@
+Package: libfluidsynth1-dbgsym
+Source: fluidsynth
+Version: 1.1.11-1+deb10u1.1-bnrscustom
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Installed-Size: 75
+Depends: libfluidsynth1 (= 1.1.11-1+deb10u1.1-bnrscustom)
+Section: debug
+Priority: optional
+Multi-Arch: same
+Description: debug symbols for libfluidsynth1
+Build-Ids: 6412ec7a8dd18ee120e4319afd5785f4f2734851

@@ -1,0 +1,30 @@
+Format: 1.8
+Date: Sun, 25 Jul 2021 22:01:56 -0500
+Source: zita-njbridge
+Binary: zita-njbridge zita-njbridge-dbgsym
+Architecture: amd64
+Version: 0.4.1-1.1-bnrcustom
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Debian Multimedia Maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Changed-By: Jaromír Mikeš <jeb@bnr4>
+Description:
+ zita-njbridge - Jack clients to transmit multichannel audio over a local IP netwo
+Changes:
+ zita-njbridge (0.4.1-1.1-bnrcustom) UNRELEASED; urgency=medium
+ .
+   * Non-maintainer upload.
+   *
+   *
+Checksums-Sha1:
+ 494d6884e16ac119f20fd82e200dfde8f9b51100 7100 zita-njbridge-dbgsym_0.4.1-1.1-bnrcustom_amd64.deb
+ d5562040dc68407966d54192c17446d113ff41e2 5246 zita-njbridge_0.4.1-1.1-bnrcustom_amd64.buildinfo
+ 98b0b46a7738c841306b199b6606428f14cd9f53 30532 zita-njbridge_0.4.1-1.1-bnrcustom_amd64.deb
+Checksums-Sha256:
+ a5593048e0e21c67ca2c87f98c5a0be534977566a88de949fd9051f0ccaa000a 7100 zita-njbridge-dbgsym_0.4.1-1.1-bnrcustom_amd64.deb
+ 2e4c065bd3db7a3d41aa1d5b5a8f0647fa8d75079d09b71d6ea12fe1fa8f349b 5246 zita-njbridge_0.4.1-1.1-bnrcustom_amd64.buildinfo
+ cbe0943b998a33a132f3f2f662af59f32d3024b1ca26d421a8d91b89d1f770b5 30532 zita-njbridge_0.4.1-1.1-bnrcustom_amd64.deb
+Files:
+ 600cb5c86fa3d99fe363cd1b34eb38fc 7100 debug optional zita-njbridge-dbgsym_0.4.1-1.1-bnrcustom_amd64.deb
+ 9d8f62bc6a7f4adb732322ea37b49a8c 5246 sound optional zita-njbridge_0.4.1-1.1-bnrcustom_amd64.buildinfo
+ 22c26b09b78a089ef643590847a8b5b0 30532 sound optional zita-njbridge_0.4.1-1.1-bnrcustom_amd64.deb

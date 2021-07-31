@@ -1,0 +1,19 @@
+Courtesy Lorenzo Sutton
+
+Licensed Creative Commons BY-NC-SA
+
+In order to avoid potential license issues we now post a link to the files rather than carry them ourselves. They can be found at:
+
+https://gitlab.com/lorenzosu/synth-preludes/tree/master/prelude_01
+
+The .rg and .state file pair when loaded into Rosegarden and Yoshimi respectively produce a very pleasant classical style piece of music.
+
+The simplest way to run this is to start Yoshimi first, then Rosegarden.
+
+Next load the .rg file into Rosegarden, and finally the .state file into Yoshimi.
+
+This should work for either Jack or Alsa.
+
+If Rosegarden fails to link to Yoshimi for some reason, enter "Manage Midi Devices" and make the link manually.
+
+It is important that the .state file is the last thing that is loaded. Otherwise Rosegarden will reset volume, panning etc. to it's own defaults.

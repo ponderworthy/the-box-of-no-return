@@ -1,0 +1,20 @@
+Source: sfizz
+Section: sound
+Priority: optional
+Maintainer: Jean Pierre Cimalando <jp-dev@inbox.ru>
+Build-Depends: debhelper (>= 9)
+
+Package: sfizz
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Sampler plugin and library for SFZ instruments
+
+Package: libsfizz1
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Sampler plugin and library for SFZ instruments (libraries)
+
+Package: libsfizz1-dev
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Sampler plugin and library for SFZ instruments (development)

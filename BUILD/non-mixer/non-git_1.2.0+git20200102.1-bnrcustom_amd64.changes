@@ -1,0 +1,35 @@
+Format: 1.8
+Date: Sun, 25 Jul 2021 22:05:46 -0500
+Source: non-git
+Binary: non-mixer non-sequencer-git non-timeline
+Architecture: amd64
+Version: 5:1.2.0+git20200102.1-bnrcustom
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: falkTX <falktx@falktx.com>
+Changed-By: falkTX <jeb@bnr4>
+Description:
+ non-mixer  - powerful, reliable and fast modular Digital Audio Mixer
+ non-sequencer-git - powerful, lightweight, real-time, pattern-based MIDI sequencer
+ non-timeline - powerful, reliable and fast modular Digital Audio Timeline
+Changes:
+ non-git (5:1.2.0+git20200102.1-bnrcustom) UNRELEASED; urgency=medium
+ .
+   * Non-maintainer upload.
+   *
+   *
+Checksums-Sha1:
+ 85e49aaa597740232f807a7256cf7725a6d4e41f 10649 non-git_1.2.0+git20200102.1-bnrcustom_amd64.buildinfo
+ afd170b2ba2c7163e5dad5c3473baefa4290738a 1978620 non-mixer_1.2.0+git20200102.1-bnrcustom_amd64.deb
+ 6a54c82fa0d9ba820f57834842bc93df9acbc621 1415600 non-sequencer-git_1.2.0+git20200102.1-bnrcustom_amd64.deb
+ f93daa249b96f31bb3779e829f96c300ecfd15eb 2110468 non-timeline_1.2.0+git20200102.1-bnrcustom_amd64.deb
+Checksums-Sha256:
+ 5685d9ab66bd56260dbe0b1f8e55b3a3bf633fdb8bdfab7b23f60198d7fa9569 10649 non-git_1.2.0+git20200102.1-bnrcustom_amd64.buildinfo
+ f16229e77fbb7c77acf8ce2569fa5f93433f953c47e8b1f05fcacfd7e166e58e 1978620 non-mixer_1.2.0+git20200102.1-bnrcustom_amd64.deb
+ b3f9d93ff802570203fd8446f1b26660dc1fd7e197f65e073c198db549a2c604 1415600 non-sequencer-git_1.2.0+git20200102.1-bnrcustom_amd64.deb
+ 3d1efa6b665f59e54816d9001883167bdef6284d9b70fd2b01ac855feee5feec 2110468 non-timeline_1.2.0+git20200102.1-bnrcustom_amd64.deb
+Files:
+ 7b835757eb6dd83625edba00a6e4d1e4 10649 sound extra non-git_1.2.0+git20200102.1-bnrcustom_amd64.buildinfo
+ e7575164c073efd1a56464ab7ce65f08 1978620 sound extra non-mixer_1.2.0+git20200102.1-bnrcustom_amd64.deb
+ 901062131996b9167c0be43eb4b999c0 1415600 sound extra non-sequencer-git_1.2.0+git20200102.1-bnrcustom_amd64.deb
+ 1283591bb0bb09a77d5621380e02925c 2110468 sound extra non-timeline_1.2.0+git20200102.1-bnrcustom_amd64.deb

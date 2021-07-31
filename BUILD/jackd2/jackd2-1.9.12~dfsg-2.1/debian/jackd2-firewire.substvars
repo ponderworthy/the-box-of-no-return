@@ -1,0 +1,3 @@
+shlibs:Depends=libc6 (>= 2.2.5), libffado2, libgcc1 (>= 1:3.0), libstdc++6 (>= 5)
+misc:Depends=
+misc:Pre-Depends=

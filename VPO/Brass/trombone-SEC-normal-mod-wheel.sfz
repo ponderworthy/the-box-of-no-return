@@ -1,0 +1,62 @@
+//==============================================================
+// Trombone Section : Normal Mod Wheel
+//
+//   ... where the mod wheel slows the attack
+//
+//   trombones.sfz from No Budget Orchestra - https://nobudgetorchestra.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+<group>
+// mod wheel slows attack (PB)
+ampeg_attackcc1=0.5
+ampeg_attack=0.03
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+ group=1
+xfin_lovel=75 xfin_hivel=90
+ampeg_release=0.6
+
+<region> sample=..\libs\NoBudgetOrch2\Trombone\TromboneSect\Sustain\2_F.wav pitch_keycenter=f2 lokey=e2 hikey=f#2
+<region> sample=..\libs\NoBudgetOrch2\Trombone\TromboneSect\Sustain\2_A.wav pitch_keycenter=a2 lokey=g2 hikey=a#2
+<region> sample=..\libs\NoBudgetOrch2\Trombone\TromboneSect\Sustain\3_C.wav pitch_keycenter=c3 lokey=b2 hikey=c#3
+<region> sample=..\libs\NoBudgetOrch2\Trombone\TromboneSect\Sustain\3_Eb.wav pitch_keycenter=d#3 lokey=d3 hikey=e3
+<region> sample=..\libs\NoBudgetOrch2\Trombone\TromboneSect\Sustain\3_Gb.wav pitch_keycenter=f#3 lokey=f3 hikey=g3
+<region> sample=..\libs\NoBudgetOrch2\Trombone\TromboneSect\Sustain\3_A.wav pitch_keycenter=a3 lokey=g#3 hikey=a#3
+<region> sample=..\libs\NoBudgetOrch2\Trombone\TromboneSect\Sustain\4_C.wav pitch_keycenter=c4 lokey=b3 hikey=c#4
+<region> sample=..\libs\NoBudgetOrch2\Trombone\TromboneSect\Sustain\4_Eb.wav pitch_keycenter=d#4 lokey=d4 hikey=e4
+<region> sample=..\libs\NoBudgetOrch2\Trombone\TromboneSect\Sustain\4_Gb.wav pitch_keycenter=f#4 lokey=f4 hikey=g4
+<region> sample=..\libs\NoBudgetOrch2\Trombone\TromboneSect\Sustain\4_A.wav pitch_keycenter=a4 lokey=g#4 hikey=a#4
+<region> sample=..\libs\NoBudgetOrch2\Trombone\TromboneSect\Sustain\5_C.wav pitch_keycenter=c5 lokey=b4 hikey=f5
+
+<group>
+// mod wheel slows attack (PB)
+ampeg_attackcc1=0.5
+ampeg_attack=0.03
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+ group=1
+xfout_lovel=75 xfout_hivel=90
+ampeg_release=0.6
+
+<region> sample=..\libs\NoBudgetOrch2\Trombone\TromboneSect\Sustain\2_F_p.wav  pitch_keycenter=f2 lokey=e2  hikey=g2
+tune=-5
+<region> sample=..\libs\NoBudgetOrch2\Trombone\TromboneSect\Sustain\2_Bb_p.wav pitch_keycenter=a#2 lokey=g#2 hikey=c3
+tune=-5
+<region> sample=..\libs\NoBudgetOrch2\Trombone\TromboneSect\Sustain\3_Eb_p-PB-loop.wav pitch_keycenter=d#3 lokey=c#3 hikey=f3
+tune=-5
+<region> sample=..\libs\NoBudgetOrch2\Trombone\TromboneSect\Sustain\3_Ab_p.wav pitch_keycenter=g#3 lokey=f#3 hikey=a#3
+<region> sample=..\libs\NoBudgetOrch2\Trombone\TromboneSect\Sustain\4_Db_p.wav pitch_keycenter=c#4 lokey=b3 hikey=d#4
+<region> sample=..\libs\NoBudgetOrch2\Trombone\TromboneSect\Sustain\4_Gb_p.wav pitch_keycenter=f#4 lokey=e4 hikey=g#4
+tune=-15
+<region> sample=..\libs\NoBudgetOrch2\Trombone\TromboneSect\Sustain\4_B_p.wav pitch_keycenter=b4 lokey=a4 hikey=f5
+
+

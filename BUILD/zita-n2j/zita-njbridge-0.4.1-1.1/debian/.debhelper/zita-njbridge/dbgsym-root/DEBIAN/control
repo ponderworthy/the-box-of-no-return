@@ -1,0 +1,12 @@
+Package: zita-njbridge-dbgsym
+Source: zita-njbridge
+Version: 0.4.1-1.1-bnrcustom
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Debian Multimedia Maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Installed-Size: 43
+Depends: zita-njbridge (= 0.4.1-1.1-bnrcustom)
+Section: debug
+Priority: optional
+Description: debug symbols for zita-njbridge
+Build-Ids: 10318a2081c7b687d092f6944721108fd5df2950 dee216174dfab098bf75ace9ff7cf4f50daf939c

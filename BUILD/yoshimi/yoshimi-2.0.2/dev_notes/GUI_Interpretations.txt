@@ -1,0 +1,109 @@
+
+data sent from gui
+
+float           value       (mandatory)
+unsigned char   type        (mandatory)
+unsigned char   source      (mandatory)
+unsigned char   controller  (mandatory)
+unsigned char   part        (mandatory)
+unsigned char   kit
+unsigned char   engine
+unsigned char   insert
+unsigned char   parameter
+unsigned char   offset
+unsigned char   miscMsg
+unsigned char   spare1
+unsigned char   spare0
+
+string          name - handled via simple message system.
+
+Elsewhere, unused chars are set to 0xff as a general test.
+
+e.g.
+If 'part' is 0xf0 (main) and 'kit' is 0xff you're there and it is main volume, key shift etc.
+
+If part is < 0x40 and kit is 0xff it's the general part level controls.
+
+If part is < 0x40 and insert = 0x20 it's the kit engine enable controls.
+
+Microtonal (scales)
+This uses part number 0xe8
+
+Midi Learn
+This uses part number 0xd8
+
+Vector Control
+This uses part number 0xc0
+
+Effects and effect sources.
+In 'part' we use 0xf1 for system effects and 0xf2 for insertion effects. For these and normal part effects, 'kit' ORed with 0x80 is used to denote the effect type (reverb echo etc.) and 'engine' is used to denote the number of the effect being worked on (the limit depends on the effect source). As 'kit' and 'engine' are not relevant for effects it is safe to use them here.
+
+Effects 'kit' numbers offset by 0x80.
+
+0   None
+1   Reverb
+2   Echo
+3   Chorus
+4   Phaser
+5   Alienwah
+6   Distorsion
+7   EQ
+8   Dynfilter
+
+These can't be inserts, as Dynfilter has Filter as an insert!
+
+
+engine
+0       addsynth
+1       subsynth
+2       padsynth
+0x80 - 0x87 addsynth voice 0 to 7
+0xC0 - 0xC8 adsynth voice modulator, matching related voice number
+
+
+inserts
+0   lfo
+1   filter
+        Use engine number 0x88 To access the filter component of the
+        DyneFilter effect
+2   envelope base
+3   envelope freemode graph point add/delete
+4   envelope freemode graph X/Y
+
+5   oscillator (for add voice & pad harmonics)
+6   oscillator harmonic amplitude (for add voice & pad)
+    harmonic amplitude (sub)
+
+7   oscillator harmonic phase (add, pad)
+    harmonc bandwidth (sub)
+
+8   resonance base (for add & pad harmonics)
+9   resonance graph
+
+16  System effect sends
+
+parameter
+    type
+        lfo
+            0 = Amplitude
+            1 = Frequency
+            2 = Filter
+
+        envelope
+            0 = Amplitude
+            1 = Frequency
+            2 = Filter
+            3 = Bandwidth (SubSynth only)
+
+       envelope free mode
+            0 to 39 = point number
+
+        formant filter
+            for controls 18 - 20
+                formant number
+                offset for vowel number
+            for control 37
+                filter sequence position
+
+offset
+    used for offsets to some parameters

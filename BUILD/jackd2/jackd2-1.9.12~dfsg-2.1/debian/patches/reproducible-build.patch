@@ -1,0 +1,12 @@
+Description: Make the build reproducible by eliminating unnecessary variance.
+Last-Updated: 2018-02-25
+Forwarded: not-needed
+--- a/man/fill_template
++++ b/man/fill_template
+@@ -3,5 +3,5 @@ d=""
+ [ -z "$SOURCE_DATE_EPOCH" ] || d=--date=@$SOURCE_DATE_EPOCH
+ 
+ for i in *.0 ; do
+-   sed -e "s/!VERSION!/${1}/g" -e "s/!DATE!/`date $d '+%B %Y'`/g" < ${i} > ${i%%0}1
++   sed -e "s/!VERSION!/${1}/g" -e "s/!DATE!/`LC_ALL=C date --utc --date="$(dpkg-parsechangelog -l../debian/changelog -SDate)" '+%B %Y'`/g" < ${i} > ${i%%0}1
+ done

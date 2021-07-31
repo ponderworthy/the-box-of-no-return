@@ -1,0 +1,27 @@
+Package: calf-plugins
+Source: calf
+Version: 5:0.90.3-1kxstudio3.1-bnrcustom
+Architecture: amd64
+Maintainer: falkTX <falktx@falktx.com>
+Installed-Size: 31528
+Depends: libatk1.0-0 (>= 1.12.4), libc6 (>= 2.22), libcairo2 (>= 1.2.4), libexpat1 (>= 2.0.1), libfontconfig1 (>= 2.12.6), libfreetype6 (>= 2.2.1), libgcc1 (>= 1:3.0), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.31.8), libgtk2.0-0 (>= 2.24.32), libjack-jackd2-0 (>= 1.9.10+20150825) | libjack-0.125, libpango-1.0-0 (>= 1.14.0), libpangocairo-1.0-0 (>= 1.14.0), libpangoft2-1.0-0 (>= 1.14.0), libstdc++6 (>= 5.2), gtk2-engines-pixbuf
+Breaks: calf-ladspa (<< 5:0.90.3-1kxstudio1)
+Replaces: calf-ladspa (<< 5:0.90.3-1kxstudio1)
+Provides: lv2-plugin, standalone-plugin
+Section: sound
+Priority: extra
+Homepage: http://calf.sourceforge.net/
+Description: Calf Studiogear - audio effects and sound generators
+ The Calf plugins include all todays frequently used studio effects
+ along with some feature-rich sound processors.
+ .
+ Calf Studiogear is designed to run under the most flexible plugin
+ standard in Linux, namely LV2. So you're able to insert them in lots of
+ plugin-capable audio software like Ardour, Rosegarden and others.
+ .
+ The Calf Rack offers you all Calf effects and synthesizers in an
+ easy-to-use studio rack. Wire the effects through Jack to build your own
+ studio environment and trigger the sound processors live or through a
+ MIDI sequencer or tracker.
+ .
+ Calf Rack supports LADISH level 1.

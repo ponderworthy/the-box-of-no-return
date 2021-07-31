@@ -1,0 +1,28 @@
+#!/bin/sh
+
+set -e
+
+# Source debconf library.
+. /usr/share/debconf/confmodule
+
+CONFIG_FILE=/etc/security/limits.d/audio.conf
+
+# if neither $CONFIG_FILE nor ${CONFIG_FILE}.disabled exists,
+# let's copy it over from /usr/share/
+if [ ! -s ${CONFIG_FILE} ] && [ ! -s ${CONFIG_FILE}.disabled ]; then
+	cp /usr/share/jackd/audio.conf ${CONFIG_FILE}.disabled
+fi
+
+db_get jackd/tweak_rt_limits
+if [ "x$RET" = "xtrue" ]; then
+	if [ -e ${CONFIG_FILE}.disabled ]; then
+		mv ${CONFIG_FILE}.disabled ${CONFIG_FILE} || true
+	fi
+else
+	# user doesn't want RT prio
+	if [ -e $CONFIG_FILE ]; then
+		mv $CONFIG_FILE ${CONFIG_FILE}.disabled || true
+	fi
+fi
+
+#DEBHELPER#

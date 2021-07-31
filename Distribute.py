@@ -1,5 +1,8 @@
 #!/usr/bin/python2
 
+# Keeping this as a Python2 script, because have not found
+# documentation for mididings syntax changes for Python3.
+
 # Level 1:
 # All control changes (e.g., the foot-pedal) are sent to all active JACK ports (currently, 1 2 4 5)
 # Everything which is not a control change (e.g., notes) are split:

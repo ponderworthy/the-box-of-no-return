@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=${exec_prefix}//usr/lib
+includedir=${prefix}/include
+
+Name: sfizz
+Description: A library to load SFZ description files and use them to render music.
+Version: 1.0.0
+
+Requires.private:
+Libs: -L${libdir} -lsfizz
+Cflags: -I${includedir}

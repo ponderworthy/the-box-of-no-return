@@ -1,0 +1,41 @@
+Format: 1.8
+Date: Mon, 26 Jul 2021 06:01:35 -0500
+Source: fluidsynth
+Binary: fluidsynth fluidsynth-dbgsym libfluidsynth-dev libfluidsynth1 libfluidsynth1-dbgsym
+Architecture: amd64
+Version: 1.1.11-1+deb10u1.1-bnrscustom
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
+Changed-By: Reiner Herrmann <jeb@bnr4>
+Description:
+ fluidsynth - Real-time MIDI software synthesizer
+ libfluidsynth-dev - Real-time MIDI software synthesizer (development files)
+ libfluidsynth1 - Real-time MIDI software synthesizer (runtime library)
+Changes:
+ fluidsynth (1.1.11-1+deb10u1.1-bnrscustom) UNRELEASED; urgency=medium
+ .
+   * Non-maintainer upload.
+   *
+   *
+Checksums-Sha1:
+ 56891617435fb6cf3f014926025578796041d50d 3080 fluidsynth-dbgsym_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb
+ 348fca73812e055f43c314ea80a481f7e2272723 9252 fluidsynth_1.1.11-1+deb10u1.1-bnrscustom_amd64.buildinfo
+ 2be0e8d4942f2d504089b7d76370e35bb47eff24 50380 fluidsynth_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb
+ 31774cc4f5884df7b8d0ee803e54bee16a0eec7d 48964 libfluidsynth-dev_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb
+ 6f72395ef97672cb20c19ef9cb1d9088d28dccab 15760 libfluidsynth1-dbgsym_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb
+ aef32d0622bcc30440b22cc67aa5b3b2842b4810 178692 libfluidsynth1_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb
+Checksums-Sha256:
+ 6dc26651532adfdf483dc3558a74511d5d93a0cbe1f548673e1de17ff634c6e4 3080 fluidsynth-dbgsym_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb
+ 62eba1e6c054ddf89e3e739c252ceba86162001e9184c353baf2c71d1bb92dce 9252 fluidsynth_1.1.11-1+deb10u1.1-bnrscustom_amd64.buildinfo
+ f30251f47f7d0b6f180d99d381b0ec9d92b1c535d801207d3a4d7b3a40b4034d 50380 fluidsynth_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb
+ fa091d25441ffbb1319c97c46456f5f3180ccd25aee9d9ed6d511ead6eea4351 48964 libfluidsynth-dev_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb
+ 17e8c42a8753b7957eadb94b6051e951a11e2039934b20461ad0160fea6a1430 15760 libfluidsynth1-dbgsym_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb
+ f18b2b37f9bd60f6fd89baf1604b5253afccbaefe789e87d6105ec4ad52e2f50 178692 libfluidsynth1_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb
+Files:
+ 3896179e4724c48eff6a76f03546109d 3080 debug optional fluidsynth-dbgsym_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb
+ b2affdf87091faceeb043f433263af66 9252 sound optional fluidsynth_1.1.11-1+deb10u1.1-bnrscustom_amd64.buildinfo
+ 0996508f5d085d1123a3ae6ab6ae963a 50380 sound optional fluidsynth_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb
+ 19aa31109eff67686e2f63080cbe4d8e 48964 libdevel optional libfluidsynth-dev_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb
+ a213e0f06cdc3dad35e1c354bdb9873e 15760 debug optional libfluidsynth1-dbgsym_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb
+ 5eaca83cf9b3d2b69065829255a73720 178692 libs optional libfluidsynth1_1.1.11-1+deb10u1.1-bnrscustom_amd64.deb

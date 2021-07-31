@@ -1,0 +1,4 @@
+#!/bin/bash
+JACK_DEFAULT_SERVER=SOFT1 patchage
+
+

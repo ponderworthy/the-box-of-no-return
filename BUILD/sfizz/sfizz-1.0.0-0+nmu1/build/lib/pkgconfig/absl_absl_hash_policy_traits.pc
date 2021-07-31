@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}//usr/lib
+includedir=${prefix}/include
+
+Name: absl_absl_hash_policy_traits
+Description: Abseil absl_hash_policy_traits library
+URL: https://abseil.io/
+Version: 20210324
+Requires: absl_meta = 20210324
+Libs: -L${libdir}  
+Cflags: -I${includedir} -DNOMINMAX

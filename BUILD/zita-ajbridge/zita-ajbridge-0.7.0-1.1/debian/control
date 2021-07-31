@@ -1,0 +1,34 @@
+Source: zita-ajbridge
+Section: sound
+Priority: optional
+Maintainer: Debian Multimedia Maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Uploaders:
+ Robin Gareus <robin@gareus.org>,
+ Jaromír Mikeš <mira.mikes@seznam.cz>
+Build-Depends:
+ debhelper (>= 10),
+ libasound2-dev,
+ libjack-dev,
+ libzita-alsa-pcmi-dev (>= 0.2.0),
+ libzita-resampler-dev (>= 1.1.0)
+Homepage: http://kokkinizita.linuxaudio.org/linuxaudio/
+Standards-Version: 3.9.8
+Vcs-Git: https://anonscm.debian.org/git/pkg-multimedia/zita-ajbridge.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-multimedia/zita-ajbridge.git
+
+Package: zita-ajbridge
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends}
+Description: alsa to jack bridge
+ This package provides two applications, zita-a2j and zita-j2a.
+ They allow one to use an ALSA device as a Jack client, to provide
+ additional capture (a2j) or playback (j2a) channels.
+ .
+ Functionally these are equivalent to the alsa_in and alsa_out
+ clients that come with Jack, but they provide much better audio
+ quality. The resampling ratio will typically be stable within
+ 1 PPM and change only very smoothly. Delay will be stable as
+ well even under worse case conditions, e.g. the Jack client
+ running near the end of the cycle.

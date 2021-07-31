@@ -1,0 +1,126 @@
+<table rows="21" cols="4">
+    <align attach-x="0" attach-y="0"   align-x="1"><label param="meter_L"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="0" expand-x="1" fill-x="1" param="meter_L" />
+    <value param="meter_L"  attach-x="2" attach-y="0" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="1"   align-x="1"><label param="meter_R"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="1" expand-x="1" fill-x="1" param="meter_R" />
+    <value param="meter_R"  attach-x="2" attach-y="1" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="2"   align-x="1"><label param="clip_L"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="2" shrink-x="1" param="clip_L"  />
+    <value param="clip_L"  attach-x="2" attach-y="2" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="3"   align-x="1"><label param="clip_R"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="3" shrink-x="1" param="clip_R"  />
+    <value param="clip_R"  attach-x="2" attach-y="3" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="4"   align-x="1"><label param="analyzer_level"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="4" shrink-x="1" param="analyzer_level"  />
+    <value param="analyzer_level"  attach-x="2" attach-y="4" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="5"   align-x="1"><label param="analyzer_mode"  /></align>
+    <combo attach-x="1" attach-w="2" attach-y="5" param="analyzer_mode" expand-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="6"   align-x="1"><label param="analyzer_scale"  /></align>
+    <combo attach-x="1" attach-w="2" attach-y="6" param="analyzer_scale" expand-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="7"   align-x="1"><label param="analyzer_post"  /></align>
+    <combo attach-x="1" attach-w="2" attach-y="7" param="analyzer_post" expand-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="8"   align-x="1"><label param="analyzer_view"  /></align>
+    <combo attach-x="1" attach-w="2" attach-y="8" param="analyzer_view" expand-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="9"   align-x="1"><label param="analyzer_smoothing"  /></align>
+    <combo attach-x="1" attach-w="2" attach-y="9" param="analyzer_smoothing" expand-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="10"   align-x="1"><label param="analyzer_windowing"  /></align>
+    <combo attach-x="1" attach-w="2" attach-y="10" param="analyzer_windowing" expand-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="11"   align-x="1"><label param="analyzer_accuracy"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="11" shrink-x="1" param="analyzer_accuracy"  />
+    <value param="analyzer_accuracy"  attach-x="2" attach-y="11" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="12"   align-x="1"><label param="analyzer_speed"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="12" shrink-x="1" param="analyzer_speed"  />
+    <value param="analyzer_speed"  attach-x="2" attach-y="12" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="13"   align-x="1"><label param="analyzer_display"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="13" expand-x="1" fill-x="1" pad-x="10" ><toggle param="analyzer_display" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="14"   align-x="1"><label param="analyzer_hold"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="14" expand-x="1" fill-x="1" pad-x="10" ><toggle param="analyzer_hold" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="15"   align-x="1"><label param="analyzer_freeze"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="15" expand-x="1" fill-x="1" pad-x="10" ><toggle param="analyzer_freeze" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="16"   align-x="1"><label param="gonio_mode"  /></align>
+    <combo attach-x="1" attach-w="2" attach-y="16" param="gonio_mode" expand-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="17"   align-x="1"><label param="gonio_use_fade"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="17" expand-x="1" fill-x="1" pad-x="10" ><toggle param="gonio_use_fade" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="18"   align-x="1"><label param="gonio_fade"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="18" shrink-x="1" param="gonio_fade"  />
+    <value param="gonio_fade"  attach-x="2" attach-y="18" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="19"   align-x="1"><label param="gonio_accuracy"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="19" shrink-x="1" param="gonio_accuracy"  />
+    <value param="gonio_accuracy"  attach-x="2" attach-y="19" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="20"   align-x="1"><label param="gonio_display"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="20" expand-x="1" fill-x="1" pad-x="10" ><toggle param="gonio_display" /></align>
+    <if cond="directlink">
+        <vbox expand-x="1" fill-x="1" attach-x="3" attach-y="0" attach-h="21">
+            <line-graph refresh="1" width="160" param="analyzer_accuracy"/>
+
+            <line-graph refresh="1" width="160" param="analyzer_speed"/>
+
+            <line-graph refresh="1" width="160" param="gonio_fade"/>
+
+            <line-graph refresh="1" width="160" param="gonio_accuracy"/>
+
+        </vbox>
+    </if>
+</table>
+

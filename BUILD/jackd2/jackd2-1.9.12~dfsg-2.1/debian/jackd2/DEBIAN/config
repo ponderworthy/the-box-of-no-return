@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+# Source debconf library.
+. /usr/share/debconf/confmodule
+
+# realtime prio?
+db_input high jackd/tweak_rt_limits || true
+db_go
+

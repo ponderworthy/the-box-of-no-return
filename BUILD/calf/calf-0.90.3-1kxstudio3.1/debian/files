@@ -1,0 +1,4 @@
+calf-ladspa_0.90.3-1kxstudio3.1-bnrcustom_all.deb sound extra
+calf-plugins-dbgsym_0.90.3-1kxstudio3.1-bnrcustom_amd64.deb debug optional automatic=yes
+calf-plugins_0.90.3-1kxstudio3.1-bnrcustom_amd64.deb sound extra
+calf_0.90.3-1kxstudio3.1-bnrcustom_amd64.buildinfo sound extra

@@ -1,0 +1,96 @@
+fluidsynth2-static (5:2.1.2-1kxstudio2.1-jebscustom) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * 
+
+ -- falkTX <jeb@bnr4>  Mon, 26 Jul 2021 05:39:26 -0500
+
+fluidsynth2-static (5:2.1.2-1kxstudio2) bionic; urgency=medium
+
+  * Build with instpatch support enabled
+
+ -- falkTX <falktx@gmail.com>  Tue, 19 May 2020 00:48:53 +0100
+
+fluidsynth2-static (5:2.1.2-1kxstudio1) bionic; urgency=medium
+
+  * Package v2
+
+ -- falkTX <falktx@gmail.com>  Mon, 18 May 2020 23:23:04 +0100
+
+fluidsynth-static (5:1.1.11-1kxstudio6) bionic; urgency=medium
+
+  * Rebuild for math problems
+
+ -- falkTX <falktx@gmail.com>  Thu, 14 May 2020 03:39:20 +0100
+
+fluidsynth-static (5:1.1.11-1kxstudio5) bionic; urgency=medium
+
+  * Build for arm
+
+ -- falkTX <falktx@gmail.com>  Sun, 08 Sep 2019 01:47:27 +0100
+
+fluidsynth-static (2:1.1.11-1kxstudio4) trusty; urgency=medium
+
+  * Dont build drivers
+
+ -- falkTX <falktx@gmail.com>  Sat, 08 Sep 2018 20:23:05 +0200
+
+fluidsynth-static (2:1.1.11-1kxstudio3) trusty; urgency=medium
+
+  * Update
+
+ -- falkTX <falktx@gmail.com>  Thu, 06 Sep 2018 09:47:08 +0200
+
+fluidsynth-static (2:1.1.6-1kxstudio2) trusty; urgency=medium
+
+  * Tweak flags
+
+ -- falkTX <falktx@gmail.com>  Thu, 07 Jul 2016 12:01:16 +0200
+
+fluidsynth-static (2:1.1.6-1kxstudio1) trusty; urgency=medium
+
+  * Repack
+
+ -- falkTX <falktx@gmail.com>  Tue, 12 May 2015 10:31:26 +0200
+
+fluidsynth-static (1.1.6-3kxstudio2) lucid; urgency=medium
+
+  * Hide visibility
+
+ -- falkTX <falktx@gmail.com>  Sun, 21 Sep 2014 02:13:26 +0100
+
+fluidsynth-static (1.1.6-3kxstudio1) lucid; urgency=medium
+
+  * Always build against shared glib
+
+ -- falkTX <falktx@gmail.com>  Tue, 16 Sep 2014 21:02:24 +0100
+
+fluidsynth-static (1.1.6-2kxstudio3) lucid; urgency=low
+
+  * Fix libs
+
+ -- falkTX <falktx@gmail.com>  Sun, 02 Mar 2014 15:27:06 +0000
+
+fluidsynth-static (1.1.6-2kxstudio2) lucid; urgency=low
+
+  * Rebuild against new glib headers
+
+ -- falkTX <falktx@gmail.com>  Fri, 10 Jan 2014 18:26:00 +0000
+
+fluidsynth-static (1.1.6-2kxstudio1) lucid; urgency=low
+
+  * Build against gcc4.8
+
+ -- falkTX <falktx@gmail.com>  Tue, 05 Nov 2013 09:10:34 +0000
+
+fluidsynth-static (1.1.6-1kxstudio1) lucid; urgency=low
+
+  * Enable optimizations
+
+ -- falkTX <falktx@gmail.com>  Wed, 28 Aug 2013 09:18:33 +0100
+
+fluidsynth-static (1.1.6-0kxstudio1) lucid; urgency=low
+
+  * Initial release
+
+ -- falkTX <falktx@gmail.com>  Tue, 15 May 2012 01:49:53 +0100

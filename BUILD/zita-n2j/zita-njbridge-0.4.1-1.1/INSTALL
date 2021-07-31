@@ -1,0 +1,11 @@
+Dependencies
+------------
+
+zita-resampler-1.3.0
+
+
+Installing the application(s)
+-----------------------------
+
+cd source; make; sudo make install; make clean
+

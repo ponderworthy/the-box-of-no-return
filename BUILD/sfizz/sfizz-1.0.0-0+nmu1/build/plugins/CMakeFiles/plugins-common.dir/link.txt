@@ -1,0 +1,2 @@
+/usr/bin/ar qc libplugins-common.a  CMakeFiles/plugins-common.dir/common/plugin/MessageUtils.cpp.o CMakeFiles/plugins-common.dir/common/plugin/InstrumentDescription.cpp.o CMakeFiles/plugins-common.dir/common/plugin/NativeHelpers.cpp.o CMakeFiles/plugins-common.dir/common/plugin/SfizzFileScan.cpp.o CMakeFiles/plugins-common.dir/common/plugin/FileTrie.cpp.o CMakeFiles/plugins-common.dir/common/plugin/SfizzForeignPaths.cpp.o CMakeFiles/plugins-common.dir/common/plugin/SfizzSettings.cpp.o
+/usr/bin/ranlib libplugins-common.a

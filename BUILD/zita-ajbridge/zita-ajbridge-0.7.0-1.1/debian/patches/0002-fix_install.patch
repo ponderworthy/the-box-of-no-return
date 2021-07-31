@@ -1,0 +1,59 @@
+Author: Jaromír Mikeš <mira.mikes@seznam.cz>
+Description: Fix install and let debian gzip man pages
+Forwarded: Fons Adriaensen <fons@linuxaudio.org> 
+
+Index: zita-ajbridge/source/Makefile
+===================================================================
+--- zita-ajbridge.orig/source/Makefile
++++ zita-ajbridge/source/Makefile
+@@ -24,14 +24,14 @@ VERSION = 0.6.0
+ PREFIX ?= /usr
+ BINDIR ?= $(PREFIX)/bin
+ LIBDIR ?= lib$(SUFFIX)
+-MANDIR ?= /usr/share/man/man1
++MANDIR ?= $(PREFIX)/share/man/man1
+ 
+ LDFLAGS += -L$(PREFIX)/$(LIBDIR)
+ CPPFLAGS += -DVERSION=\"$(VERSION)\"
+ CXXFLAGS += -O2 -Wall -MMD -MP
+ 
+ 
+-all:	zita-a2j zita-j2a zita-ajbridge.1.gz zita-a2j.1.gz zita-j2a.1.gz 
++all:	zita-a2j zita-j2a zita-ajbridge.1 zita-a2j.1 zita-j2a.1 
+ 
+ 
+ ZITA-A2J_O = zita-a2j.o alsathread.o jackclient.o pxthread.o lfqueue.o
+@@ -52,22 +52,22 @@ zita-j2a:	$(ZITA-J2A_O)
+ 	g++ $(LDFLAGS) -o $@ $(ZITA-J2A_O) $(LDLIBS)
+ 
+ 
+-zita-ajbridge.1.gz:	zita-ajbridge.1
+-	gzip -c zita-ajbridge.1 > zita-ajbridge.1.gz
++#zita-ajbridge.1.gz:	zita-ajbridge.1
++#	gzip -c zita-ajbridge.1 > zita-ajbridge.1.gz
+ 
+-zita-a2j.1.gz:	zita-a2j.1
+-	gzip -c zita-a2j.1 > zita-a2j.1.gz
++#zita-a2j.1.gz:	zita-a2j.1
++#	gzip -c zita-a2j.1 > zita-a2j.1.gz
+ 
+-zita-j2a.1.gz:	zita-j2a.1
+-	gzip -c zita-j2a.1 > zita-j2a.1.gz
++#zita-j2a.1.gz:	zita-j2a.1
++#	gzip -c zita-j2a.1 > zita-j2a.1.gz
+ 
+ 
+ install:	all
+-	install -Dm 755 zita-a2j $(DESTDIR)$(BINDIR)
+-	install -Dm 755 zita-j2a $(DESTDIR)$(BINDIR)
+-	install -Dm 644 zita-ajbridge.1.gz $(DESTDIR)$(MANDIR)
+-	install -Dm 644 zita-a2j.1.gz $(DESTDIR)$(MANDIR)
+-	install -Dm 644 zita-j2a.1.gz $(DESTDIR)$(MANDIR)
++	install -Dm 755 zita-a2j $(DESTDIR)$(BINDIR)/zita-a2j
++	install -Dm 755 zita-j2a $(DESTDIR)$(BINDIR)/zita-j2a
++	install -Dm 644 zita-ajbridge.1 $(DESTDIR)$(MANDIR)/zita-ajbridge.1
++	install -Dm 644 zita-a2j.1 $(DESTDIR)$(MANDIR)/zita-a2j.1
++	install -Dm 644 zita-j2a.1 $(DESTDIR)$(MANDIR)/zita-j2a.1
+ 
+ 
+ uninstall:

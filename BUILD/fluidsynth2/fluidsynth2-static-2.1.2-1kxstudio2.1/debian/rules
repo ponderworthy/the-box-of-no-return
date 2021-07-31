@@ -1,0 +1,60 @@
+#!/usr/bin/make -f
+
+DEB_HOST_ARCH = $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+FLAGS  = -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG
+ifeq ($(DEB_HOST_ARCH),armhf)
+FLAGS += -march=armv7ve -mcpu=cortex-a7 -mfloat-abi=hard -mfpu=neon-vfpv4
+else ifeq ($(DEB_HOST_ARCH),arm64)
+FLAGS += -march=armv8-a -mcpu=cortex-a53
+else
+FLAGS += -mtune=generic -msse -msse2 -mfpmath=sse
+endif
+
+FLAGS += -march=native -mtune=native
+
+export CFLAGS=$(FLAGS)
+export CXXFLAGS=$(FLAGS) -fvisibility-inlines-hidden
+export CPPFLAGS=
+export LDFLAGS=-Wl,-O1 -Wl,--as-needed -Wl,--no-undefined -Wl,--gc-sections -Wl,--strip-all
+export PATH:=/opt/kxstudio/bin:$(PATH)
+export PKG_CONFIG_PATH=/opt/kxstudio/lib/pkgconfig
+
+EXTRA_CONF_FLAGS  = -DCMAKE_BUILD_TYPE=Release
+EXTRA_CONF_FLAGS += -DCMAKE_INSTALL_PREFIX=/opt/kxstudio
+EXTRA_CONF_FLAGS += -DBUILD_SHARED_LIBS=OFF
+EXTRA_CONF_FLAGS += -DLIB_SUFFIX=""
+EXTRA_CONF_FLAGS += -Denable-debug=OFF
+EXTRA_CONF_FLAGS += -Denable-profiling=OFF
+EXTRA_CONF_FLAGS += -Denable-ladspa=OFF
+EXTRA_CONF_FLAGS += -Denable-fpe-check=OFF
+EXTRA_CONF_FLAGS += -Denable-portaudio=OFF
+EXTRA_CONF_FLAGS += -Denable-trap-on-fpe=OFF
+EXTRA_CONF_FLAGS += -Denable-aufile=OFF
+EXTRA_CONF_FLAGS += -Denable-dbus=OFF
+EXTRA_CONF_FLAGS += -Denable-ipv6=OFF
+EXTRA_CONF_FLAGS += -Denable-jack=OFF
+EXTRA_CONF_FLAGS += -Denable-midishare=OFF
+EXTRA_CONF_FLAGS += -Denable-oss=OFF
+EXTRA_CONF_FLAGS += -Denable-pulseaudio=OFF
+EXTRA_CONF_FLAGS += -Denable-readline=OFF
+EXTRA_CONF_FLAGS += -Denable-ladcca=OFF
+EXTRA_CONF_FLAGS += -Denable-lash=OFF
+EXTRA_CONF_FLAGS += -Denable-alsa=OFF
+EXTRA_CONF_FLAGS += -Denable-coreaudio=OFF
+EXTRA_CONF_FLAGS += -Denable-coremidi=OFF
+EXTRA_CONF_FLAGS += -Denable-framework=OFF
+EXTRA_CONF_FLAGS += -Denable-libinstpatch=ON
+EXTRA_CONF_FLAGS += -Denable-floats=ON
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(EXTRA_CONF_FLAGS)
+
+override_dh_auto_install:
+	dh_auto_install -- DESTDIR=$(CURDIR)/debian/tmp
+
+override_dh_auto_test:
+	# nothing here
+
+%:
+	dh $@ -S cmake

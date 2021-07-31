@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsfizz_cephes.a  CMakeFiles/sfizz_cephes.dir/external/cephes/src/chbevl.c.o CMakeFiles/sfizz_cephes.dir/external/cephes/src/i0.c.o
+/usr/bin/ranlib libsfizz_cephes.a

@@ -1,0 +1,13 @@
+--- a/tests/iodelay.cpp
++++ b/tests/iodelay.cpp
+@@ -167,8 +167,8 @@ static jack_client_t  *jack_handle;
+ static jack_port_t    *jack_capt;
+ static jack_port_t    *jack_play;
+ 
+-jack_latency_range_t   capture_latency = {-1, -1};
+-jack_latency_range_t   playback_latency = {-1, -1};
++jack_latency_range_t   capture_latency = {(jack_nframes_t)-1, (jack_nframes_t)-1};
++jack_latency_range_t   playback_latency = {(jack_nframes_t)-1, (jack_nframes_t)-1};
+ 
+ void
+ latency_cb (jack_latency_callback_mode_t mode, void *arg)

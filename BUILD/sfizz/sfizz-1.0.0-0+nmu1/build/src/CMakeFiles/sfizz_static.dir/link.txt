@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsfizz.a  CMakeFiles/sfizz_static.dir/sfizz/sfizz_wrapper.cpp.o CMakeFiles/sfizz_static.dir/sfizz/sfizz.cpp.o
+/usr/bin/ranlib libsfizz.a

@@ -1,0 +1,154 @@
+<table rows="26" cols="4">
+    <align attach-x="0" attach-y="0"   align-x="1"><label param="bypass"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="0" expand-x="1" fill-x="1" pad-x="10" ><toggle param="bypass" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="1"   align-x="1"><label param="level_in"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="1" shrink-x="1" param="level_in"  />
+    <value param="level_in"  attach-x="2" attach-y="1" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="2"   align-x="1"><label param="meter_in"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="2" expand-x="1" fill-x="1" param="meter_in" />
+    <value param="meter_in"  attach-x="2" attach-y="2" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="3"   align-x="1"><label param="meter_out"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="3" expand-x="1" fill-x="1" param="meter_out" />
+    <value param="meter_out"  attach-x="2" attach-y="3" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="4"   align-x="1"><label param="clip_in"  /></align>
+    <led attach-x="1" attach-w="2" attach-y="4" param="clip_in" shrink-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="5"   align-x="1"><label param="clip_out"  /></align>
+    <led attach-x="1" attach-w="2" attach-y="5" param="clip_out" shrink-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="6"   align-x="1"><label param="range"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="6" shrink-x="1" param="range"  />
+    <value param="range"  attach-x="2" attach-y="6" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="7"   align-x="1"><label param="threshold"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="7" shrink-x="1" param="threshold"  />
+    <value param="threshold"  attach-x="2" attach-y="7" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="8"   align-x="1"><label param="ratio"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="8" shrink-x="1" param="ratio"  />
+    <value param="ratio"  attach-x="2" attach-y="8" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="9"   align-x="1"><label param="attack"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="9" shrink-x="1" param="attack"  />
+    <value param="attack"  attach-x="2" attach-y="9" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="10"   align-x="1"><label param="release"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="10" shrink-x="1" param="release"  />
+    <value param="release"  attach-x="2" attach-y="10" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="11"   align-x="1"><label param="makeup"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="11" shrink-x="1" param="makeup"  />
+    <value param="makeup"  attach-x="2" attach-y="11" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="12"   align-x="1"><label param="knee"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="12" shrink-x="1" param="knee"  />
+    <value param="knee"  attach-x="2" attach-y="12" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="13"   align-x="1"><label param="detection"  /></align>
+    <combo attach-x="1" attach-w="2" attach-y="13" param="detection" expand-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="14"   align-x="1"><label param="stereo_link"  /></align>
+    <combo attach-x="1" attach-w="2" attach-y="14" param="stereo_link" expand-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="15"   align-x="1"><label param="gating"  /></align>
+    <vumeter attach-x="1" attach-w="1" attach-y="15" expand-x="1" fill-x="1" param="gating" mode="2"/>
+    <value param="gating"  attach-x="2" attach-y="15" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="16"   align-x="1"><label param="sc_mode"  /></align>
+    <combo attach-x="1" attach-w="2" attach-y="16" param="sc_mode" expand-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="17"   align-x="1"><label param="f1_freq"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="17" shrink-x="1" param="f1_freq"  />
+    <value param="f1_freq"  attach-x="2" attach-y="17" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="18"   align-x="1"><label param="f2_freq"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="18" shrink-x="1" param="f2_freq"  />
+    <value param="f2_freq"  attach-x="2" attach-y="18" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="19"   align-x="1"><label param="f1_level"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="19" shrink-x="1" param="f1_level"  />
+    <value param="f1_level"  attach-x="2" attach-y="19" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="20"   align-x="1"><label param="f2_level"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="20" shrink-x="1" param="f2_level"  />
+    <value param="f2_level"  attach-x="2" attach-y="20" pad-x="10" />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="21"   align-x="1"><label param="sc_listen"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="21" expand-x="1" fill-x="1" pad-x="10" ><toggle param="sc_listen" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="22"   align-x="1"><label param="f1_active"  /></align>
+    <led attach-x="1" attach-w="2" attach-y="22" param="f1_active" shrink-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="23"   align-x="1"><label param="f2_active"  /></align>
+    <led attach-x="1" attach-w="2" attach-y="23" param="f2_active" shrink-x="1" pad-x="10"  />
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="24"   align-x="1"><label param="sc_route"  /></align>
+    <align attach-x="1" attach-w="2" attach-y="24" expand-x="1" fill-x="1" pad-x="10" ><toggle param="sc_route" /></align>
+
+    <!-- -->
+
+    <align attach-x="0" attach-y="25"   align-x="1"><label param="sc_level"  /></align>
+    <knob attach-x="1" attach-w="1" attach-y="25" shrink-x="1" param="sc_level"  />
+    <value param="sc_level"  attach-x="2" attach-y="25" pad-x="10" />
+    <if cond="directlink">
+        <vbox expand-x="1" fill-x="1" attach-x="3" attach-y="0" attach-h="26">
+            <line-graph refresh="1" width="160" param="gating"/>
+
+            <line-graph refresh="1" width="160" param="f1_freq"/>
+
+        </vbox>
+    </if>
+</table>
+

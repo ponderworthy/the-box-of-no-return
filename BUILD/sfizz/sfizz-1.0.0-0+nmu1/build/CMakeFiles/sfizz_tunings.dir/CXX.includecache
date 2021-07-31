@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/external/tunings/include/Tunings.h
+string
+-
+memory
+-
+array
+-
+
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/src/external/tunings/src/Tunings.cpp
+Tunings.h
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/src/external/tunings/src/Tunings.h
+iostream
+-
+iomanip
+-
+fstream
+-
+sstream
+-
+cstdlib
+-
+cctype
+-
+cmath
+-
+

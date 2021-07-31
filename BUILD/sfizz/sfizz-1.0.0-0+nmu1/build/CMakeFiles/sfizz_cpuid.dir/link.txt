@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsfizz_cpuid.a  CMakeFiles/sfizz_cpuid.dir/src/external/cpuid/src/cpuid/cpuinfo.cpp.o CMakeFiles/sfizz_cpuid.dir/src/external/cpuid/src/cpuid/version.cpp.o
+/usr/bin/ranlib libsfizz_cpuid.a

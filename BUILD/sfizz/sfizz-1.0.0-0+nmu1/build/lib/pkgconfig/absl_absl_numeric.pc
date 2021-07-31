@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}//usr/lib
+includedir=${prefix}/include
+
+Name: absl_absl_numeric
+Description: Abseil absl_numeric library
+URL: https://abseil.io/
+Version: 20210324
+Requires: absl_int128 = 20210324
+Libs: -L${libdir}  
+Cflags: -I${includedir} -DNOMINMAX

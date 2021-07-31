@@ -1,0 +1,12 @@
+Package: calf-plugins-dbgsym
+Source: calf
+Version: 5:0.90.3-1kxstudio3.1-bnrcustom
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: falkTX <falktx@falktx.com>
+Installed-Size: 21
+Depends: calf-plugins (= 5:0.90.3-1kxstudio3.1-bnrcustom)
+Section: debug
+Priority: optional
+Description: debug symbols for calf-plugins
+Build-Ids: 98d3c069041f6695c1100ea01e53186645492325 c94c271d3330081e95b60640b965cc7fffeea13a

@@ -1,0 +1,135 @@
+OVERVIEW
+--------
+
+This build (July-August 2021) was done on MX Linux, a highly optimized,
+resource-light Debian-based distro which has given me better performance
+than any of the several other distros I've used.  Ask me how they have
+done it and I may scream, because I used to think I knew something of
+performance on Linux, but it's clear that these folks have very
+effective people.  
+
+The Box of No Return does make use of all of the latency reduction 
+you give it, and a number of packages have been chosen for recompilation
+with CPU optimizations.  A friend of the project, Bruce Schultz, 
+has done a full build in Gentoo, and I'll think he probably has
+a better performer cycle-for-cycle; using MX is probably at least
+a bit easier to set up for some.
+
+REPACKAGING DEBIAN PACKAGES
+---------------------------
+
+You'll find a very relevant directory "BUILD".  This contains
+all of the package-code which was recompiled.  By the time you
+read these words, most of them will be out of date, but they
+may be helpful so you can see what I did.  The short version:
+
+1.  mkdir <packagename>
+
+It has to be the actual Debian packagename.  You can find
+these with 'apt search' or 'apt-cache search'.  Some of
+them need third-party repos to be reasonably recent.
+Grateful kudos to the kx people and others.
+
+2.  cd <pkgname> ; apt-get source <packagename>
+
+This brings in the current standard Debian package source, which
+includes Debian-specific compilation setup and rules.  Using
+Debian source can make it enormously easier to figure out
+which -dev libraries you don't have yet, if the next step
+doesn't do the job.
+
+3.  apt-get build-dep <packagename>
+
+This pulls in everything you need to build the package...theoretically.
+Often works just dandy :-)
+
+4.  ls
+
+Look at the files and folders.  There may be just one folder
+downward, or not.  You'll want to find whichever folder downward,
+possibly one or more levels down, called "debian".  Usually 
+easy to find.  You'll need to cd there.
+
+5.  Edit the file called "rules".  Near the top, almost always,
+is a collection of lines which includes "CFLAGS" and sometimes
+"CPPFLAGS" or "C++FLAGS".  Just after those lines, add this:
+
+CPPFLAGS += "-march=native -mtune=native -O2"
+
+Some packages have three or four or more of these, and you'll
+need to add a += line to each.
+
+-O3 is a performance boost, but is a bit of a risk because there
+are significant code changes involved.  The other two cause gcc
+to use everything your hardware CPU has to offer, which is also
+major.
+
+6.  dch
+
+The top line has a version number in parenthesis, e.g.:
+
+calf (5:0.90.3-1kxstudio3.1) UNRELEASED; urgency=medium
+
+You'll find, in the BUILD folders, that this line looks like this:
+
+calf (5:0.90.3-1kxstudio3.1-bnrcustom) UNRELEASED; urgency=medium
+
+This helps the Debian distro setup understand that we're replacing
+its own native packages with custom ones.
+
+7.  debuild -us -uc -b
+
+This builds the Debian packages.  Here's where you learn
+if you need more packages to do the compilation!
+
+8.  The packages are .deb files, located almost certainly two 
+directory levels above.  Find them, and:
+
+sudo dpkg -i *.deb
+
+For package jackd2 only, I had to use this:
+
+sudo dpkg --force-all -i *.deb
+
+--force-all is generally to be avoided whenever you possibly
+can.  In the case of jackd2, however, there is a lot of integration
+with other packages, including a lot of packages I didn't want
+to rebuild, so I have used it in this case.  No gotchas at all
+so far.  
+
+9.  You may have dependencies to deal with, or packages which
+already exist, et cetera.  You can force the install as an overwrite
+and it will go fine, if you haven't made any other mistakes :-)
+
+
+SOME DISTRO HINTS
+-----------------
+
+JACK2 is at the core.  Some distros are doing various forms of automatic
+integration, and we don't want this, we want simple classic startup.
+The steps below weren't needed under MX, but I keep them here in case
+you do:
+
+CFLAGS="-march=native -mtune=native -O3" CXXFLAGS="-march=native -mtune=native -O3" ./waf configure
+CFLAGS="-march=native -mtune=native -O3" CXXFLAGS="-march=native -mtune=native -O3" ./waf build
+sudo CFLAGS="-march=native -mtune=native -O3" CXXFLAGS="-march=native -mtune=native -O3" ./waf install
+
+The optimizations give us tremendously improved performance.  I don't always put in
+-O3, but it is a performance increment, and I have not had problems with it in JACK
+thus far.
+
+Performance is also very important for zita-njbridge.  A few Arch Linux variants
+have been used for builds in the past, and for these, one sets CFLAGS like the above,
+inside /etc/makepkg.conf, and then:
+
+cd ~/Downloads
+yay -G zita-njbridge
+cd zita-njbridge
+makepkg -s PKGBUILD
+pacman -U *.pkg.tar.xz
+
+yoshimi is built from latest stable source, using its own
+tools for building for 'this CPU'.
+
+Other packages to build:
+fluidsynth, glibc, eigen, gtk3, gtk

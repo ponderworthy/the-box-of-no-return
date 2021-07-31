@@ -1,0 +1,519 @@
+//==============================================================
+// Cello Section : Staccato
+//
+//   CelloEnsSpic.sfz from Versilian Studios - http://vis.versilstudios.net/vsco-2.html
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// removed control and global, doesn't work when merged with other files (PB)
+
+<group> //Begin Group 1
+
+seq_length=2
+seq_position=1
+group_label=gr_1
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+ampeg_attack=0.001
+ampeg_release=2.0
+ampeg_dynamic=1
+
+
+
+// -------------- RR1 low vel v1 --------------
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_C1_v1_RR1.wav
+pan=-10
+
+lokey=36
+hikey=37
+pitch_keycenter=36
+lovel=0
+hivel=62
+volume=24
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_E1_v1_RR1.wav
+pan=-10
+
+lokey=38
+hikey=41
+pitch_keycenter=40
+lovel=0
+hivel=62
+volume=27
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_G1_v1_RR1.wav
+pan=-35
+
+lokey=42
+hikey=47
+pitch_keycenter=43
+lovel=0
+hivel=62
+volume=27
+
+// removed spic_B1_v1_RR1.wav (PB)
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_D2_v1_RR1.wav
+pan=-0
+
+lokey=48
+hikey=53
+pitch_keycenter=50
+lovel=0
+hivel=62
+volume=24
+
+// removed spic_F2_v1_RR1.wav (PB)
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_A2_v1_RR1.wav
+pan=-15
+
+lokey=54
+hikey=58
+pitch_keycenter=57
+lovel=0
+hivel=62
+volume=23
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_C3_v1_RR1.wav
+pan=-5
+tune=-10
+
+lokey=59
+hikey=61
+pitch_keycenter=60
+lovel=0
+hivel=62
+volume=25
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_E3_v1_RR1.wav
+pan=5
+
+lokey=62
+hikey=65
+pitch_keycenter=64
+lovel=0
+hivel=62
+volume=25
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_G3_v1_RR1.wav
+pan=-5
+
+lokey=66
+hikey=68
+pitch_keycenter=67
+lovel=0
+hivel=62
+volume=21
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_B3_v1_RR1.wav
+pan=5
+
+lokey=69
+hikey=72
+pitch_keycenter=71
+lovel=0
+hivel=62
+volume=24
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_D4_v1_RR1.wav
+pan=-30
+
+lokey=73
+hikey=81
+pitch_keycenter=74
+lovel=0
+hivel=62
+volume=25
+
+// removed spic_F4_v1_RR1.wav (PB)
+
+
+// -------------- RR1 high vel v2 --------------
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_C1_v2_RR1.wav
+pan=-15
+
+lokey=36
+hikey=37
+pitch_keycenter=36
+lovel=63
+hivel=127
+volume=9
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_E1_v2_RR1.wav
+pan=-10
+
+lokey=38
+hikey=41
+pitch_keycenter=40
+lovel=63
+hivel=127
+volume=10
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_G1_v2_RR1.wav
+pan=-20
+
+lokey=42
+hikey=47
+pitch_keycenter=43
+lovel=63
+hivel=127
+volume=12
+
+// removed spic_B1_v2_RR1.wav (PB)
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_D2_v2_RR1.wav
+pan=-9
+
+lokey=48
+hikey=53
+pitch_keycenter=50
+lovel=63
+hivel=127
+volume=9
+
+// removed spic_F2_v2_RR1.wav (PB)
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_A2_v2_RR1-PB.wav
+pan=-10
+
+lokey=54
+hikey=58
+pitch_keycenter=57
+lovel=63
+hivel=127
+volume=7
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_C3_v2_RR1.wav
+pan=-10
+tune=-10
+
+lokey=59
+hikey=61
+pitch_keycenter=60
+lovel=63
+hivel=127
+volume=10
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_E3_v2_RR1.wav
+pan=-10
+
+lokey=62
+hikey=65
+pitch_keycenter=64
+lovel=63
+hivel=127
+volume=10
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_G3_v2_RR1.wav
+pan=-8
+
+lokey=66
+hikey=68
+pitch_keycenter=67
+lovel=63
+hivel=127
+volume=6
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_B3_v2_RR1-PB.wav
+pan=5
+
+lokey=69
+hikey=72
+pitch_keycenter=71
+lovel=63
+hivel=127
+volume=9
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_D4_v2_RR1.wav
+pan=-25
+
+lokey=73
+hikey=81
+pitch_keycenter=74
+lovel=63
+hivel=127
+volume=10
+
+// removed spic_F4_v2_RR1.wav (PB)
+
+<group> //Begin Group 2
+seq_length=2
+seq_position=2
+group_label=gr_1
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+ampeg_attack=0.001
+ampeg_release=2.0
+ampeg_dynamic=1
+
+
+// -------------- RR2 low vel v1 --------------
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_C1_v1_RR2.wav
+pan=-20
+
+lokey=36
+hikey=37
+pitch_keycenter=36
+lovel=0
+hivel=62
+volume=22.5
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_E1_v1_RR2.wav
+pan=-10
+
+lokey=38
+hikey=41
+pitch_keycenter=40
+lovel=0
+hivel=62
+volume=27
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_G1_v1_RR2.wav
+pan=-5
+
+lokey=42
+hikey=47
+pitch_keycenter=43
+lovel=0
+hivel=62
+volume=25
+
+// removed spic_B1_v1_RR2.wav (PB)
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_D2_v1_RR2.wav
+pan=-10
+
+lokey=48
+hikey=53
+pitch_keycenter=50
+lovel=0
+hivel=62
+volume=22
+
+// removed spic_F2_v1_RR2.wav (PB)
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_A2_v1_RR2.wav
+lokey=54
+hikey=58
+pitch_keycenter=57
+lovel=0
+hivel=62
+volume=21
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_C3_v1_RR2.wav
+pan=-15
+tune=-7
+
+lokey=59
+hikey=61
+pitch_keycenter=60
+lovel=0
+hivel=62
+volume=24
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_E3_v1_RR2.wav
+pan=-10
+tune=-5
+
+lokey=62
+hikey=65
+pitch_keycenter=64
+lovel=0
+hivel=62
+volume=24
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_G3_v1_RR2.wav
+pan=-15
+
+lokey=66
+hikey=68
+pitch_keycenter=67
+lovel=0
+hivel=62
+volume=21
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_B3_v1_RR2.wav
+pan=-15
+
+lokey=69
+hikey=72
+pitch_keycenter=71
+lovel=0
+hivel=62
+volume=24
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_D4_v1_RR2.wav
+pan=-25
+
+lokey=73
+hikey=81
+pitch_keycenter=74
+lovel=0
+hivel=62
+volume=23
+
+// removed spic_F4_v1_RR2.wav (PB)
+
+
+// -------------- RR2 high vel v2 --------------
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_C1_v2_RR2.wav
+pan=-15
+
+lokey=36
+hikey=37
+pitch_keycenter=36
+lovel=63
+hivel=127
+volume=7.5
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_E1_v2_RR2.wav
+pan=-10
+
+lokey=38
+hikey=41
+pitch_keycenter=40
+lovel=63
+hivel=127
+volume=9
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_G1_v2_RR2.wav
+pan=-20
+
+lokey=42
+hikey=47
+pitch_keycenter=43
+lovel=63
+hivel=127
+volume=10
+
+// removed spic_B1_v2_RR2.wav
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_D2_v2_RR2.wav
+pan=-7
+
+lokey=48
+hikey=53
+pitch_keycenter=50
+lovel=63
+hivel=127
+volume=7
+
+// removed spic_F2_v2_RR2.wav (PB)
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_A2_v2_RR2.wav
+pan=-5
+
+lokey=54
+hikey=58
+pitch_keycenter=57
+lovel=63
+hivel=127
+volume=5
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_C3_v2_RR2.wav
+pan=-10
+tune=-7
+
+lokey=59
+hikey=61
+pitch_keycenter=60
+lovel=63
+hivel=127
+volume=9
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_E3_v2_RR2.wav
+pan=0
+tune=-5
+
+lokey=62
+hikey=65
+pitch_keycenter=64
+lovel=63
+hivel=127
+volume=9
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_G3_v2_RR2.wav
+pan=-12
+
+lokey=66
+hikey=68
+pitch_keycenter=67
+lovel=63
+hivel=127
+volume=6
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_B3_v2_RR2.wav
+pan=-15
+
+lokey=69
+hikey=72
+pitch_keycenter=71
+lovel=63
+hivel=127
+volume=9
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Cello Section\spic\spic_D4_v2_RR2.wav
+pan=-20
+
+lokey=73
+hikey=81
+pitch_keycenter=74
+lovel=63
+hivel=127
+volume=8
+
+// removed spic_F4_v2_RR2.wav (PB)
+

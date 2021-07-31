@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}//usr/lib
+includedir=${prefix}/include
+
+Name: absl_absl_have_sse
+Description: Abseil absl_have_sse library
+URL: https://abseil.io/
+Version: 20210324
+Requires:
+Libs: -L${libdir}  
+Cflags: -I${includedir} -DNOMINMAX

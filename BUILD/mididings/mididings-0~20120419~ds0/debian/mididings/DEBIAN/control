@@ -1,0 +1,16 @@
+Package: mididings
+Version: 0~20120419~ds0-7+1bnrcustom
+Architecture: all
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Installed-Size: 29
+Depends: python, python-dbus, python-liblo, python-mididings (<< 0~20120419~ds0+1~), python-mididings (>= 0~20120419~ds0-7+1bnrcustom), python-pyinotify, python-tk, python:any
+Suggests: mididings-doc
+Section: sound
+Priority: optional
+Homepage: http://das.nasophon.de/mididings/
+Description: MIDI router and processor based on Python
+ mididings is a MIDI router and processor based on Python,
+ supporting ALSA and JACK MIDI.
+ .
+ This package contains the mididings and livedings
+ applications.

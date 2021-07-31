@@ -1,0 +1,500 @@
+ dpkg-buildpackage -us -uc -ui -b
+dpkg-buildpackage: info: source package fluidsynth2-static
+dpkg-buildpackage: info: source version 5:2.1.2-1kxstudio2.1-jebscustom
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by falkTX <jeb@bnr4>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean -S cmake
+dh: Compatibility levels before 9 are deprecated (level 7 in use)
+   dh_testdir -O-Scmake
+   dh_auto_clean -O-Scmake
+dh_auto_clean: Compatibility levels before 9 are deprecated (level 7 in use)
+   dh_clean -O-Scmake
+dh_clean: Compatibility levels before 9 are deprecated (level 7 in use)
+ debian/rules build
+dh build -S cmake
+dh: Compatibility levels before 9 are deprecated (level 7 in use)
+   dh_testdir -O-Scmake
+   dh_update_autotools_config -O-Scmake
+   debian/rules override_dh_auto_configure
+make[1]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1'
+dh_auto_configure -- -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/opt/kxstudio -DBUILD_SHARED_LIBS=OFF -DLIB_SUFFIX="" -Denable-debug=OFF -Denable-profiling=OFF -Denable-ladspa=OFF -Denable-fpe-check=OFF -Denable-portaudio=OFF -Denable-trap-on-fpe=OFF -Denable-aufile=OFF -Denable-dbus=OFF -Denable-ipv6=OFF -Denable-jack=OFF -Denable-midishare=OFF -Denable-oss=OFF -Denable-pulseaudio=OFF -Denable-readline=OFF -Denable-ladcca=OFF -Denable-lash=OFF -Denable-alsa=OFF -Denable-coreaudio=OFF -Denable-coremidi=OFF -Denable-framework=OFF -Denable-libinstpatch=ON -Denable-floats=ON
+dh_auto_configure: Compatibility levels before 9 are deprecated (level 7 in use)
+	cd obj-x86_64-linux-gnu && cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None -DCMAKE_INSTALL_SYSCONFDIR=/etc -DCMAKE_INSTALL_LOCALSTATEDIR=/var -DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON -DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON "-GUnix Makefiles" -DCMAKE_VERBOSE_MAKEFILE=ON -DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/opt/kxstudio -DBUILD_SHARED_LIBS=OFF -DLIB_SUFFIX= -Denable-debug=OFF -Denable-profiling=OFF -Denable-ladspa=OFF -Denable-fpe-check=OFF -Denable-portaudio=OFF -Denable-trap-on-fpe=OFF -Denable-aufile=OFF -Denable-dbus=OFF -Denable-ipv6=OFF -Denable-jack=OFF -Denable-midishare=OFF -Denable-oss=OFF -Denable-pulseaudio=OFF -Denable-readline=OFF -Denable-ladcca=OFF -Denable-lash=OFF -Denable-alsa=OFF -Denable-coreaudio=OFF -Denable-coremidi=OFF -Denable-framework=OFF -Denable-libinstpatch=ON -Denable-floats=ON ..
+-- The C compiler identification is GNU 8.3.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Checking whether system has ANSI C header files
+-- Looking for 8 include files dlfcn.h, ..., float.h
+-- Looking for 8 include files dlfcn.h, ..., float.h - found
+-- Performing Test memchrExists
+-- Performing Test memchrExists - Success
+-- Performing Test freeExists
+-- Performing Test freeExists - Success
+-- ANSI C header files - found
+-- Looking for include file unistd.h
+-- Looking for include file unistd.h - found
+-- Looking for DIR in sys/stat.h;sys/types.h;dirent.h
+-- Looking for DIR in sys/stat.h;sys/types.h;dirent.h - found
+-- Looking for stdio.h
+-- Looking for stdio.h - found
+-- Looking for math.h
+-- Looking for math.h - found
+-- Looking for errno.h
+-- Looking for errno.h - found
+-- Looking for stdarg.h
+-- Looking for stdarg.h - found
+-- Looking for sys/mman.h
+-- Looking for sys/mman.h - found
+-- Looking for sys/time.h
+-- Looking for sys/time.h - found
+-- Looking for fcntl.h
+-- Looking for fcntl.h - found
+-- Looking for sys/socket.h
+-- Looking for sys/socket.h - found
+-- Looking for netinet/in.h
+-- Looking for netinet/in.h - found
+-- Looking for netinet/tcp.h
+-- Looking for netinet/tcp.h - found
+-- Looking for arpa/inet.h
+-- Looking for arpa/inet.h - found
+-- Looking for limits.h
+-- Looking for limits.h - found
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for signal.h
+-- Looking for signal.h - found
+-- Looking for getopt.h
+-- Looking for getopt.h - found
+-- Performing Test _have_inline
+-- Performing Test _have_inline - Success
+-- Performing Test _have_vla
+-- Performing Test _have_vla - Success
+-- Check if the system is big endian
+-- Searching 16 bit integer
+-- Check size of unsigned short
+-- Check size of unsigned short - done
+-- Using unsigned short
+-- Check if the system is big endian - little endian
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread_create
+-- Looking for pthread_create - not found
+-- Looking for pthread_create in pthreads
+-- Looking for pthread_create in pthreads - not found
+-- Looking for pthread_create in pthread
+-- Looking for pthread_create in pthread - found
+-- Found Threads: TRUE  
+-- Looking for inet_ntop
+-- Looking for inet_ntop - found
+-- Found PkgConfig: /usr/bin/pkg-config (found version "0.29") 
+-- Checking for modules 'glib-2.0>=2.6.5;gthread-2.0>=2.6.5'
+--   Found glib-2.0, version 2.58.3
+--   Found gthread-2.0, version 2.58.3
+-- Checking for module 'sndfile>=1.0.0'
+--   Found sndfile, version 1.0.28
+-- Checking for module 'sndfile>=1.0.18'
+--   Found sndfile, version 1.0.28
+-- Checking for module 'libsystemd'
+--   No package 'libsystemd' found
+-- Checking for module 'libinstpatch-1.0>=1.1.0'
+--   Found libinstpatch-1.0, version 1.1.4
+-- Checking for module 'sdl2'
+--   No package 'sdl2' found
+-- Found OpenMP 201511
+-- Looking for sinf
+-- Looking for sinf - not found
+-- Looking for cosf
+-- Looking for cosf - not found
+-- Looking for fabsf
+-- Looking for fabsf - not found
+-- Looking for powf
+-- Looking for powf - not found
+-- Looking for sqrtf
+-- Looking for sqrtf - not found
+-- Looking for logf
+-- Looking for logf - not found
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- 
+**************************************************************
+Build Summary:
+Build type:            Release
+Install Prefix:        /opt/kxstudio
+
+Audio / MIDI driver support:
+  ALSA:                  no
+  CoreAudio:             no
+  CoreMIDI:              no
+  DSound:                no
+  JACK:                  no
+  MidiShare:             no
+  Oboe:                  no
+  OpenSLES:              no
+  OS/2 DART:             no
+  OSS:                   no
+  PortAudio:             no
+  PulseAudio:            no
+  SDL2:                  no
+  WaveOut:               no
+  WinMidi:               no
+
+Support for SF3 files:   yes
+Support for DLS files:   yes
+
+Audio to file rendering: no
+  libsndfile:            yes
+
+Miscellaneous support:
+  D-Bus:                 no
+  LADSPA support:        no
+  LASH support:          no
+  NETWORK Support:       yes
+    IPV6 Support:        no
+  Readline:              no
+  systemd:               no
+
+Developer nerds info:
+  Samples type:          float
+  Multithread rendering: yes
+  OpenMP 4.0:            yes
+  Profiling:             no
+  Debug Build:           no
+  Trap on FPE (debug):   no
+  Check FPE (debug):     no
+  UBSan (debug):         no
+
+**************************************************************
+
+
+-- Configuring done
+-- Generating done
+CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    CMAKE_EXPORT_NO_PACKAGE_REGISTRY
+    CMAKE_INSTALL_LIBDIR
+    CMAKE_INSTALL_LOCALSTATEDIR
+    CMAKE_INSTALL_SYSCONFDIR
+    enable-coreaudio
+    enable-coremidi
+    enable-framework
+    enable-ladcca
+
+
+-- Build files have been written to: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu
+make[1]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1'
+   dh_auto_build -O-Scmake
+dh_auto_build: Compatibility levels before 9 are deprecated (level 7 in use)
+	cd obj-x86_64-linux-gnu && make -j1
+make[1]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -S/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1 -B/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/CMakeFiles /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/CMakeFiles/progress.marks
+make -f CMakeFiles/Makefile2 all
+make[2]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/gentables.dir/build.make src/CMakeFiles/gentables.dir/depend
+make[3]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1 /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/CMakeFiles/gentables.dir/DependInfo.cmake --color=
+Scanning dependencies of target gentables
+make[3]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/gentables.dir/build.make src/CMakeFiles/gentables.dir/build
+make[3]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+[  2%] Creating directories for 'gentables'
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E make_directory /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/gentables
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E make_directory /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E make_directory /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables-prefix
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E make_directory /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables-prefix/tmp
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E make_directory /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables-prefix/src/gentables-stamp
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E make_directory /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables-prefix/src
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E touch /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables-prefix/src/gentables-stamp/gentables-mkdir
+[  4%] No download step for 'gentables'
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables-prefix/src && /usr/bin/cmake -E echo_append
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables-prefix/src && /usr/bin/cmake -E touch /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables-prefix/src/gentables-stamp/gentables-download
+[  6%] No patch step for 'gentables'
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E echo_append
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E touch /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables-prefix/src/gentables-stamp/gentables-patch
+[  9%] No update step for 'gentables'
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E echo_append
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E touch /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables-prefix/src/gentables-stamp/gentables-update
+[ 11%] Performing configure step for 'gentables'
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables && /usr/bin/cmake "-GUnix Makefiles" /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/gentables
+-- The C compiler identification is GNU 8.3.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables && /usr/bin/cmake -E touch /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables-prefix/src/gentables-stamp/gentables-configure
+[ 13%] Performing build step for 'gentables'
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables && make
+make[4]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables'
+make[5]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables'
+make[6]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables'
+Scanning dependencies of target make_tables
+make[6]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables'
+make[6]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables'
+[ 25%] Building C object CMakeFiles/make_tables.dir/make_tables.c.o
+[ 50%] Building C object CMakeFiles/make_tables.dir/gen_conv.c.o
+[ 75%] Building C object CMakeFiles/make_tables.dir/gen_rvoice_dsp.c.o
+[100%] Linking C executable make_tables.exe
+make[6]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables'
+[100%] Built target make_tables
+make[5]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables'
+make[4]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables'
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables && /usr/bin/cmake -E touch /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables-prefix/src/gentables-stamp/gentables-build
+[ 15%] Performing install step for 'gentables'
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables && /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables/make_tables.exe /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables && /usr/bin/cmake -E touch /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables-prefix/src/gentables-stamp/gentables-install
+[ 18%] Completed 'gentables'
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E make_directory /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/CMakeFiles
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E touch /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/CMakeFiles/gentables-complete
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E touch /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/gentables-prefix/src/gentables-stamp/gentables-done
+make[3]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+[ 18%] Built target gentables
+make -f src/CMakeFiles/libfluidsynth-OBJ.dir/build.make src/CMakeFiles/libfluidsynth-OBJ.dir/depend
+make[3]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1 /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/CMakeFiles/libfluidsynth-OBJ.dir/DependInfo.cmake --color=
+Scanning dependencies of target libfluidsynth-OBJ
+make[3]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/libfluidsynth-OBJ.dir/build.make src/CMakeFiles/libfluidsynth-OBJ.dir/build
+make[3]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+[ 20%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_instpatch.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_instpatch.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader/fluid_instpatch.c
+[ 22%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_conv.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_conv.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils/fluid_conv.c
+[ 25%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_hash.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_hash.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils/fluid_hash.c
+[ 27%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_list.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_list.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils/fluid_list.c
+[ 29%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_ringbuffer.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_ringbuffer.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils/fluid_ringbuffer.c
+[ 31%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_settings.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_settings.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils/fluid_settings.c
+[ 34%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_sys.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_sys.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils/fluid_sys.c
+[ 36%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_defsfont.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_defsfont.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader/fluid_defsfont.c
+[ 38%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_sfont.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_sfont.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader/fluid_sfont.c
+[ 40%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_sffile.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_sffile.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader/fluid_sffile.c
+[ 43%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_samplecache.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_samplecache.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader/fluid_samplecache.c
+[ 45%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_adsr_env.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_adsr_env.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice/fluid_adsr_env.c
+[ 47%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_chorus.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_chorus.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice/fluid_chorus.c
+[ 50%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_iir_filter.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_iir_filter.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice/fluid_iir_filter.c
+[ 52%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_lfo.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_lfo.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice/fluid_lfo.c
+[ 54%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rvoice.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rvoice.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice/fluid_rvoice.c
+[ 56%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rvoice_dsp.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rvoice_dsp.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice/fluid_rvoice_dsp.c
+[ 59%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rvoice_event.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rvoice_event.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice/fluid_rvoice_event.c
+[ 61%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rvoice_mixer.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rvoice_mixer.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice/fluid_rvoice_mixer.c
+[ 63%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rev.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rev.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice/fluid_rev.c
+[ 65%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_chan.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_chan.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth/fluid_chan.c
+[ 68%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_event.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_event.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth/fluid_event.c
+[ 70%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_gen.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_gen.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth/fluid_gen.c
+[ 72%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_mod.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_mod.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth/fluid_mod.c
+[ 75%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_synth.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_synth.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth/fluid_synth.c
+[ 77%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_synth_monopoly.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_synth_monopoly.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth/fluid_synth_monopoly.c
+[ 79%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_tuning.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_tuning.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth/fluid_tuning.c
+[ 81%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_voice.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_voice.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth/fluid_voice.c
+[ 84%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_midi.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_midi.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi/fluid_midi.c
+[ 86%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_midi_router.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_midi_router.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi/fluid_midi_router.c
+[ 88%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_seqbind.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_seqbind.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi/fluid_seqbind.c
+[ 90%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_seq.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_seq.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi/fluid_seq.c
+[ 93%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/bindings/fluid_cmd.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/bindings/fluid_cmd.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings/fluid_cmd.c
+[ 95%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/bindings/fluid_filerenderer.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/bindings/fluid_filerenderer.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings/fluid_filerenderer.c
+[ 97%] Building C object src/CMakeFiles/libfluidsynth-OBJ.dir/bindings/fluid_ladspa.c.o
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cc  -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/drivers -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/synth -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/rvoice -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/midi -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/utils -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/sfloader -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/include -I/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/include -isystem /usr/include/glib-2.0 -isystem /usr/lib/x86_64-linux-gnu/glib-2.0/include -isystem /opt/kxstudio/include/libinstpatch-2 -isystem /opt/kxstudio/include  -O3 -ffast-math -fPIC -DPIC -fvisibility=hidden -fdata-sections -ffunction-sections -DNDEBUG -mtune=generic -msse -msse2 -mfpmath=sse -march=native -mtune=native -Wall -W -Wpointer-arith -Wcast-qual -Wstrict-prototypes -Wno-unused-parameter -Wdeclaration-after-statement -Werror=implicit-function-declaration -Wbad-function-cast -Wcast-align -fopenmp -O3 -DNDEBUG -fvisibility=hidden   -std=gnu90 -o CMakeFiles/libfluidsynth-OBJ.dir/bindings/fluid_ladspa.c.o   -c /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src/bindings/fluid_ladspa.c
+make[3]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+[ 97%] Built target libfluidsynth-OBJ
+make -f src/CMakeFiles/libfluidsynth.dir/build.make src/CMakeFiles/libfluidsynth.dir/depend
+make[3]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1 /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/CMakeFiles/libfluidsynth.dir/DependInfo.cmake --color=
+Scanning dependencies of target libfluidsynth
+make[3]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/libfluidsynth.dir/build.make src/CMakeFiles/libfluidsynth.dir/build
+make[3]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+[100%] Linking C static library libfluidsynth.a
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cmake -P CMakeFiles/libfluidsynth.dir/cmake_clean_target.cmake
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src && /usr/bin/cmake -E cmake_link_script CMakeFiles/libfluidsynth.dir/link.txt --verbose=1
+/usr/bin/ar qc libfluidsynth.a  CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_instpatch.c.o CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_conv.c.o CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_hash.c.o CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_list.c.o CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_ringbuffer.c.o CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_settings.c.o CMakeFiles/libfluidsynth-OBJ.dir/utils/fluid_sys.c.o CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_defsfont.c.o CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_sfont.c.o CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_sffile.c.o CMakeFiles/libfluidsynth-OBJ.dir/sfloader/fluid_samplecache.c.o CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_adsr_env.c.o CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_chorus.c.o CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_iir_filter.c.o CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_lfo.c.o CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rvoice.c.o CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rvoice_dsp.c.o CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rvoice_event.c.o CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rvoice_mixer.c.o CMakeFiles/libfluidsynth-OBJ.dir/rvoice/fluid_rev.c.o CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_chan.c.o CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_event.c.o CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_gen.c.o CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_mod.c.o CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_synth.c.o CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_synth_monopoly.c.o CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_tuning.c.o CMakeFiles/libfluidsynth-OBJ.dir/synth/fluid_voice.c.o CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_midi.c.o CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_midi_router.c.o CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_seqbind.c.o CMakeFiles/libfluidsynth-OBJ.dir/midi/fluid_seq.c.o CMakeFiles/libfluidsynth-OBJ.dir/bindings/fluid_cmd.c.o CMakeFiles/libfluidsynth-OBJ.dir/bindings/fluid_filerenderer.c.o CMakeFiles/libfluidsynth-OBJ.dir/bindings/fluid_ladspa.c.o
+/usr/bin/ranlib libfluidsynth.a
+make[3]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+[100%] Built target libfluidsynth
+make[2]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/CMakeFiles 0
+make[1]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+   debian/rules override_dh_auto_test
+make[1]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1'
+# nothing here
+make[1]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1'
+ fakeroot debian/rules binary
+dh binary -S cmake
+dh: Compatibility levels before 9 are deprecated (level 7 in use)
+   dh_testroot -O-Scmake
+   dh_prep -O-Scmake
+   dh_installdirs -O-Scmake
+dh_installdirs: Compatibility levels before 9 are deprecated (level 7 in use)
+   debian/rules override_dh_auto_install
+make[1]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1'
+dh_auto_install -- DESTDIR=/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp
+dh_auto_install: Compatibility levels before 9 are deprecated (level 7 in use)
+	cd obj-x86_64-linux-gnu && make -j1 install DESTDIR=/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/fluidsynth2-static AM_UPDATE_INFO_DIR=no DESTDIR=/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp
+make[2]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -S/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1 -B/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/CMakeFiles /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/CMakeFiles/progress.marks
+make -f CMakeFiles/Makefile2 all
+make[3]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/gentables.dir/build.make src/CMakeFiles/gentables.dir/depend
+make[4]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1 /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/CMakeFiles/gentables.dir/DependInfo.cmake --color=
+make[4]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/gentables.dir/build.make src/CMakeFiles/gentables.dir/build
+make[4]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+make[4]: Nothing to be done for 'src/CMakeFiles/gentables.dir/build'.
+make[4]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+[ 18%] Built target gentables
+make -f src/CMakeFiles/libfluidsynth-OBJ.dir/build.make src/CMakeFiles/libfluidsynth-OBJ.dir/depend
+make[4]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1 /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/CMakeFiles/libfluidsynth-OBJ.dir/DependInfo.cmake --color=
+make[4]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/libfluidsynth-OBJ.dir/build.make src/CMakeFiles/libfluidsynth-OBJ.dir/build
+make[4]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+make[4]: Nothing to be done for 'src/CMakeFiles/libfluidsynth-OBJ.dir/build'.
+make[4]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+[ 97%] Built target libfluidsynth-OBJ
+make -f src/CMakeFiles/libfluidsynth.dir/build.make src/CMakeFiles/libfluidsynth.dir/depend
+make[4]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+cd /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1 /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/src /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/src/CMakeFiles/libfluidsynth.dir/DependInfo.cmake --color=
+make[4]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+make -f src/CMakeFiles/libfluidsynth.dir/build.make src/CMakeFiles/libfluidsynth.dir/build
+make[4]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+make[4]: Nothing to be done for 'src/CMakeFiles/libfluidsynth.dir/build'.
+make[4]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+[100%] Built target libfluidsynth
+make[3]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+/usr/bin/cmake -E cmake_progress_start /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu/CMakeFiles 0
+make -f CMakeFiles/Makefile2 preinstall
+make[3]: Entering directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+make[3]: Nothing to be done for 'preinstall'.
+make[3]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+Install the project...
+/usr/bin/cmake -P cmake_install.cmake
+-- Install configuration: "Release"
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/lib/pkgconfig/fluidsynth.pc
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/lib/libfluidsynth.a
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/include/fluidsynth/audio.h
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/include/fluidsynth/event.h
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/include/fluidsynth/gen.h
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/include/fluidsynth/ladspa.h
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/include/fluidsynth/log.h
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/include/fluidsynth/midi.h
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/include/fluidsynth/misc.h
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/include/fluidsynth/mod.h
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/include/fluidsynth/seq.h
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/include/fluidsynth/seqbind.h
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/include/fluidsynth/settings.h
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/include/fluidsynth/sfont.h
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/include/fluidsynth/shell.h
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/include/fluidsynth/synth.h
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/include/fluidsynth/types.h
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/include/fluidsynth/voice.h
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/include/fluidsynth/version.h
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/include/fluidsynth.h
+-- Installing: /home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/debian/tmp/opt/kxstudio/share/man/man1/fluidsynth.1
+make[2]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1/obj-x86_64-linux-gnu'
+make[1]: Leaving directory '/home/jeb/BUILD/fluidsynth2-static-2.1.2-1kxstudio2.1'
+   dh_install -O-Scmake
+dh_install: Compatibility levels before 9 are deprecated (level 7 in use)
+   dh_installdocs -O-Scmake
+dh_installdocs: Compatibility levels before 9 are deprecated (level 7 in use)
+   dh_installchangelogs -O-Scmake
+dh_installchangelogs: Compatibility levels before 9 are deprecated (level 7 in use)
+   dh_installexamples -O-Scmake
+dh_installexamples: Compatibility levels before 9 are deprecated (level 7 in use)
+   dh_installman -O-Scmake
+dh_installman: Compatibility levels before 9 are deprecated (level 7 in use)
+   dh_installcatalogs -O-Scmake
+   dh_installcron -O-Scmake
+   dh_installdebconf -O-Scmake
+   dh_installemacsen -O-Scmake
+   dh_installifupdown -O-Scmake
+   dh_installinfo -O-Scmake
+dh_installinfo: Compatibility levels before 9 are deprecated (level 7 in use)
+   dh_installinit -O-Scmake
+dh_installinit: Compatibility levels before 9 are deprecated (level 7 in use)
+   dh_installmenu -O-Scmake
+   dh_installmime -O-Scmake
+   dh_installmodules -O-Scmake
+   dh_installlogcheck -O-Scmake
+   dh_installlogrotate -O-Scmake
+   dh_installpam -O-Scmake
+   dh_installppp -O-Scmake
+   dh_installudev -O-Scmake
+   dh_installgsettings -O-Scmake
+   dh_bugfiles -O-Scmake
+   dh_ucf -O-Scmake
+   dh_lintian -O-Scmake
+   dh_gconf -O-Scmake
+dh_gconf: Please migrate to dh_installgsettings; gconf + dh_gconf is scheduled for removal.
+   dh_icons -O-Scmake
+   dh_perl -O-Scmake
+   dh_usrlocal -O-Scmake
+   dh_link -O-Scmake
+   dh_installwm -O-Scmake
+   dh_installxfonts -O-Scmake
+   dh_strip_nondeterminism -O-Scmake
+   dh_compress -O-Scmake
+dh_compress: Compatibility levels before 9 are deprecated (level 7 in use)
+   dh_fixperms -O-Scmake
+   dh_missing -O-Scmake
+dh_missing: Compatibility levels before 9 are deprecated (level 7 in use)
+   dh_strip -O-Scmake
+dh_strip: Compatibility levels before 9 are deprecated (level 7 in use)
+   dh_makeshlibs -O-Scmake
+   dh_shlibdeps -O-Scmake
+dh_shlibdeps: Compatibility levels before 9 are deprecated (level 7 in use)
+   dh_installdeb -O-Scmake
+dh_installdeb: Compatibility levels before 9 are deprecated (level 7 in use)
+   dh_gencontrol -O-Scmake
+dpkg-gencontrol: warning: Depends field of package fluidsynth2-static: substitution variable ${shlibs:Depends} used, but is not defined
+   dh_md5sums -O-Scmake
+   dh_builddeb -O-Scmake
+dpkg-deb: building package 'fluidsynth2-static' in '../fluidsynth2-static_2.1.2-1kxstudio2.1-jebscustom_amd64.deb'.
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../fluidsynth2-static_2.1.2-1kxstudio2.1-jebscustom_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)

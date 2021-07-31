@@ -1,0 +1,62 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the jack-audio-connection-kit package.
+# Martin Sin <martin.sin@zshk.cz>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: jack-audio-connection-kit 0.116.2+svn3592-2\n"
+"Report-Msgid-Bugs-To: jackd2@packages.debian.org\n"
+"POT-Creation-Date: 2011-12-22 23:36+0100\n"
+"PO-Revision-Date: 2009-10-10 18:49+0200\n"
+"Last-Translator: Martin Sin <martin.sin@zshk.cz>\n"
+"Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid "Enable realtime process priority?"
+msgstr "Povolit realtimovou prioritu procesu?"
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid ""
+"If you want to run jackd with realtime priorities, the user starting jackd "
+"needs realtime permissions. Accept this option to create the file /etc/"
+"security/limits.d/audio.conf, granting realtime priority and memlock "
+"privileges to the audio group."
+msgstr ""
+"Pokud chcete spouštět jackd s realtimovými prioritami, potřebuje uživatel "
+"který spouští jackd příslušná realtimová oprávnění. Budete-li s tím "
+"souhlasit, dojde k vytvoření souboru /etc/security/limits.d/audio.conf a "
+"přiřazení příslušných práv (realtimové priority a memlock) pro skupinu audio."
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid ""
+"Running jackd with realtime priority minimizes latency, but may lead to "
+"complete system lock-ups by requesting all the available physical system "
+"memory, which is unacceptable in multi-user environments."
+msgstr ""
+"Spuštění jackd s realtimovou prioritou minimalizuje reakce počítače, ale "
+"může vést ke kompletnímu zatuhnutí systému způsobenému plným obsazením "
+"fyzické paměti což je nepřípustné zejména ve více-uživatelských prostředích."
+
+#~ msgid "Do you want to enable realtime priorities in /etc/security/limits.d?"
+#~ msgstr "Chcete povolit realtimové priority v /etc/security/limits.d?"
+
+#~ msgid ""
+#~ "The Debian default is to DISABLE realtime priorities, however, if you "
+#~ "intend to run jackd with very low latencies, enable this option in order "
+#~ "to place the approriate settings in /etc/security/limits.d/audio.conf."
+#~ msgstr ""
+#~ "Výchozím nastavením v Debianu je ZAKÁZAT realtimové priority, samozřejmě "
+#~ "pokud chcete spouštět jackd s nízkým reakčním časem, povolte tuto volbu a "
+#~ "tím budou provedena odpovídající nastavení v /etc/security/limits.d/audio."
+#~ "conf za vás."

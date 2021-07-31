@@ -1,0 +1,460 @@
+Version 3.2.2 - Oct 31 2020
+---------------------------
+* IMPROVED
+- Glockenspiel
+  - there was a small click at the very end of each Glockenspiel note.
+     Instead of loop_mode=one_shot, I now use a long decay instead which 
+     prevents the click from being heard (this issue was accidentally 
+     introduced. The original source file does not have this problem)
+  - added standard randomization to Glockenspiel
+
+* BUGS FIXED
+- added extra blank lines before first <region> in french-horn-SEC-sustain-DXF.json
+   to ensure first <region> starts on a new line (could have caused problems for 
+   some .sfz players)
+- french-horn-sec-sustain-DXF for notes b1-f2 need an extra carriage return in the
+  .sfz file to prevent issues with 2 command being on the same line for some
+  sfz players. This may have been affecting other patches based on french-horn-sec-sustain-DXF
+  as well
+
+Version 3.2.1.1 - Apr 24 2020
+-----------------------------
+* BUGS FIXED
+- contrabassoon and "all-woodwinds" patches had upper case / lower case issues
+with file paths on Linux causing a file not found error
+(thanks to Aaron Walker for finding this)
+- bass clarinet and bass trombone had the same uppercase / lowercase issue
+(thanks to Dmitri (Dimitris).Giannos for finding this)
+
+
+Version 3.2.1 - Apr 13 2020
+---------------------------
+* IMPROVED
+- adjusted pitch of Flute SEC Sustain g5-f6
+- e3 sounded like it had too much vibrato for some reason so now 3_Bb-PB-loop.wav
+is used to play e3 instead of 3_Db-PB-loop.wav
+- randomization of stacc and sus patches is now consistently 
+this
+  pitch_random=12
+  amp_random=1.5 
+  delay_random=0.012
+
+instead of mostly but not always this
+  pitch_random=5
+  amp_random=1
+
+
+Version 3.2 - Nov 23 2019
+-------------------------
+* ADDED
+- more articulations for ensemble patches (sustain, staccato, accent etc)
+- sustain choir patches
+
+* IMPROVED
+- adjusted tuning of CELLO-SEC for a4-c5
+- adjusted tuning of CELLO-SEC for c4-d4
+- adjusted tuning of CELLO-SEC for f#2-g#2
+- adjusted tuning of CELLO-SEC for d#2-f2
+- adjusted tuning of CELLO-SEC for c2-d2
+- bass trombone SOLO removed sample c#3 - due to buzz noise
+- bass trombone SOLO improved sound of e3
+
+* BUGS FIXED
+- tubular bells are now mono
+- MIXED, MALE, FEMALE choir now share the same attack, decay etc. settings
+- slightly adjusted panning of FEMALE singers in the MIXED choir 
+
+Version 3.1.2 - March 1 2019
+------------------------------
+* ADDED 
+These were accidentally omitted since 3.0
+- 1st-violin-SOLO-KS-C3
+- 1st-violin-SEC-KS-C3
+- 2nd-violin-SOLO-KS-C3
+- 2nd-violin-SEC-KS-C3
+
+* IMPROVED
+- cello SEC sustain, improved a few notes by shifting which samples were
+triggered by which notes
+- cello SEC staccato, improved a few notes by shifting which samples were
+triggered by which notes
+- cello SEC, removed sample SEC 3_E-PB-loop.wav, note sounded weak when 
+compared to others, stretched 3_Db-PB-loop.wav instead
+- cello SOLO sustain, removed extra vibrato
+- cello SOLO sustain, adjusted key mapping for a few notes to improve 
+   sustained vibrato (vibrato becomes too fast if low notes stretched too high)
+- now using "xf_cccurve=gain", instead of default "xf_cccurve=power" for cross
+fade patches (-DXF) for smoother transition between samples 
+as suggested by (Zeger Knaepen)
+- All sustain strings, now using ampeg_vel2release for legato like
+transition between slowly played string notes which means the slower the 
+note is played, the longer the decay so it overlaps better with the next note.
+(as suggested by Zeger Knaepen)
+- timpani - replaced artificial round robin with randomized pitch for
+humanization of each hit
+
+* BUGS FIXED
+- french-horn-SEC-sustain-DXF - removed an old comment
+- timpani-hit - moved an inline comment to a line by itself. Inline
+   comments have been known to cause trouble for at least one .sfz player
+
+Version 3.1.1 - October 8 2018
+------------------------------
+* BUGS FIXED
+- enabled Sforzando to properly handle sustain pedal such that
+CC64 values 0-63 are "sustain off" as per the MIDI spec instead of just
+0 being used for "sustain off".
+- corrected instrument list for 1st violins, 2nd violins to warn of potential
+need to transpose to reach upper notes as well as mention the C3 keyswitch option
+
+Version 3.1 - June 12, 2018
+----------------------------
+* BUGS FIXED
+- clarinet-SOLO : relocated an inline comment that could cause problems for
+some sfz players
+- timpani-KS-C6.sfz, there was no sound until a key switch was selected because
+the default was not set correctly in the file.
+- clarinet SOLO and clarinet SEC, highest note was C7, should only be Bb6
+- documentation directory was missing the .css file for the instrument lists
+
+* ADDED
+- alto flute, bass clarinet, contrabassoon, bass trombone, celesta
+- contrabassoon to all-woodwinds-SOLO-normal-modwheel.sfz, 
+                   all-woodwinds-SOLO-normal-modwheel-panned.sfz, 
+                   all-woodwinds-SEC-normal-modwheel.sfz,
+                   all-woodwinds-SEC-normal-modwheel-panned.sfz
+
+Version 3.0 - Feb 10, 2018
+-------------------------
+- renamed change-log.txt to change-log-standard-orchestra.txt
+
+* BUGS FIXED
+- 1st violin solo e4 (lowest E) was not playing on some MAC systems
+  This has to do with the use of key=65 without also specfifying BOTH
+   lokey=64 and hikey=65. This fix should now work with both MAC and Linux
+   systems
+- clarinet-SEC-staccato.sfz, the attack was too long so staccato notes
+   lasted too long and didn't sound very staccato
+- restored randomization of 1st-violin-SEC-sustain notes
+- corrected a minor documentation error in most SEC-KS files
+- piccolo and flute had been shifted so all notes were playable on a 61 key
+  MIDI controller. These instuments have been restored to their proper octaves.
+  To get the notes to appear in their proper range on a piano roll or staff.
+- trombone-SEC-sustain, the low volume sample of E2 (lowest note) was not
+   being played
+- trumpet-SEC-staccato.sfz, volume adjustments were not being properly applied
+    to low volume samples
+- all-brass-SEC-panned.sfz, all-brass-SOLO-panned.sfz, all-brass-SEC-panned-DXF.sfz,
+   all-brass-SEC-panned-DXF.sfz, all had incorrect panning settings
+- Glockenspiel.sfz had been shifted down 2 octaves to fit on a 61 key MIDI controller
+   It has now been mapped to match the pitch of the piano note that plays it
+   (i.e. it has been shifted back up 2 octaves where it belongs)
+- Glockenspiel.sfz - the lowest note F5 was not being played
+
+* IMPROVED
+- added noise reduction to 1st-violins-SEC-sustain note E5
+- reduced delay between accent and sustain of flute SOLO accent, flute SEC accent
+    notes
+- 2nd-violin-SOLO-staccato notes G2 .. B2 were too scratchy
+- 2nd-violin-SOLO-staccato notes were too harsh in general, applied some EQ
+- adjusted tuning on bassoon-SEC-staccato.sfz
+- added some EQ to timpani (hits and rolls) to add extra clarity to the sound
+
+* REPLACED
+- trombone-SOLO-staccato samples, this also affects the accent articulation.
+  The previous staccato sounded too different from sustain samples
+
+* DELETED
+- To maintain consistency of all key switches appearing at C2 or C6 as needed
+  the following have been deleted
+  - bassoon-SEC-KS-F5.sfz
+  - bassoon-SOLO-KS-F5.sfz
+  - oboe-SEC-KS-C3.sfz
+  - oboe-SOLO-KS-C3.sfz
+  - timpani-KS-C5.sfz
+
+* ADDED
+- flute-SOLO-KS-C3.sfz, flute-SEC-KS-C3.sfz, piccolo-SOLO-KS-C3.sfz
+    To use these, transpose the MIDI up an octave so that the C3 key switches
+    will work at C2 and the MIDI notes will fit on a standard 61 key MIDI controller.
+    Unshifted, the flute, piccolo notes will appear in the proper place in the
+    piano roll or on a musical the staff than they should.
+- timpani-KS-C6.sfz so that all key switches exist as either C2 or C6
+- timpani-LR.sfz - instead of round robin hits, this give you individual access
+   to right and left hand hits
+- string-bass-SEC-KS-C7.sfz to provide key switches at C6 when string bass
+  MIDI is transposed up an octave to appear at the correct pitch on a musical
+  staff
+- tuba-SOLO-KS-C6.sfz, bass-SEC-C6.sfz, bass-SOLO-C6.sfz
+- a higher pitch triangle (in misc.sfz - at G2, G#2, A2)
+- a higher pitch cymbal (in cymbals.sfz & bassdrum-snare-cymbals.sfz - D#4, A#4)
+- timpani-KS-C6.sfz so that all key switches exist as either C2 or C6
+- timpani-LR.sfz - instead of round robin hits, this provides individual access
+   to right and left hand hits
+
+* MOVED
+- all samples (.wav files) are now in a separate samples release file
+- change log for all percussion and patches other that woodwinds, strings and
+brass now appear in a different change log file "change-log-Other.txt"
+
+Version 2.3 - Aug 10 2017
+-------------------------
+* ADDED
+- dynamic cross faded brass patches (-DXF) for solo and section
+   trumpets, french horns, trombones
+
+- bassoon-SOLO-KS-C6, bassoon-SEC-KS-C6
+   - just to provide a more consistent key switching option
+     instead of KS-F5
+
+- timpani-hit-n-roll.sfz
+  - this is just timpani hits from c3-c4, timpani rolls from c5-c7
+    for those that would rather use timpani hits/rolls this way
+    rather than with key switches
+
+- bassdrum.sfz, cymbals.sfz, snare.sfz
+  - these were added to make bassdrum, cymbals, snare available to be
+    independantly placed in the stereo field
+
+* IMPROVED
+- 2nd violins SEC tremolo - A5 and A6 were too loud
+- slightly increased clarinet section sustain release time
+- blended 1st sec tremolo and 1st solo tremolo for better 1st sec tremolo sound
+- blended 2nd sec tremolo and 1st solo tremolo for better 2nd sec tremolo sound
+- blended viola sec tremolo and 1st solo tremolo for better viola sec tremolo sound
+
+Version 2.2 - Apr 20 2017
+-------------------------
+* BUGS FIXED
+- corrected a volume setting in all-brass-SEC-normal and all-brass-SOLO-normal
+   patches where a volume was set to 0.030.2
+- 1st violin solo e4 (lowest E) was not playing on some Linux related
+    systems
+- 2nd violin solo was not properly constructed from 1st violin solo
+   since version 2.0
+- choir-MALE-normal-mod-wheel.sfz had redundant volume settings
+- choir-MIXED-normal-mod-wheel.sfz had redundant volume settings
+- oboe-SEC-staccato.sfz volumes were far too low
+
+- corrected many patches where scripted adjustments were undone
+   by version 2.0 when samples were renamed to indicate they
+   had been looped but the old name was still used in the script so
+   the scripted adjustments were not applied
+
+- repositioned all inline comments (causes problems on some tablets)
+  - comments now always appear on a line by themselves
+
+* IMPROVED
+- slightly reduced duration of oboe-SOLO-staccato.sfz notes
+
+Version 2.01 - Mar 22 2017
+--------------------------
+- removed oboe-SEC-sustain-test.sfz (left over from testing)
+
+Version 2.0 - Mar 20 2017
+-------------------------
+* ADDED
+- 1st violin solo tremolo
+- vibraphone
+
+* REPLACED
+- all tremolo samples (new tremolo is also less noisy)
+- Viola Sec Sustain
+- Trumpet Sec Sustain
+- Trombone Solo Staccato
+- Trombone Sec Sustain
+- Timpani Roll
+
+* LOOPED
+- ALL sustain samples
+- ALL tremolo samples
+- ALL choir samples
+- timpani samples
+
+* BUGS FIXED
+- Trombone-sus.mf.F#2-PB.wav was not mapped to cover G2
+- removed vibrato on solo clarinets (vibrato not typically used
+   by clarinets in an orchestra)
+- fixed bug in flute-SOLO-accent.sfz where delay was set to a negative number
+   which could cause sustain portion of sound to be muted
+- half the time, xylophone C6 (which is heard when playing C4 on the keyboard)
+  was sounding like C7. This has been fixed.
+
+* IMPROVED
+[ Woodwinds ]
+- removed a squeak sound from the the 6-Ab.wav in flute-SEC-sustain.sfz
+  (also affects anything derived from flute-SEC-sustain.sfz)
+- adjusted tuning on a few notes from bassoon-SEC-sustain.sfz
+- improved some notes in oboe-SOLO-accent.sfz
+- removed EQ from oboe-SEC-sustain.sfz after comment that oboes were
+   souding a little too weak
+- removed click in c#6 in oboe-SEC-sustain.sfz
+- adjusted Bb, B in oboe-SEC-normal-mod-wheel, they sounded accented
+- corrected volume of g3 in bassoon-SEC-sustain.sfz
+
+[ Strings ]
+- added noise reduction to upper notes in 1st-violin-SEC-sustain.sfz
+- added noise reduction to upper notes in viola-SEC-sustain.sfz
+- converted all .wav samples in 1st-violin-SEC-sustain.sfz to mono
+   (was always playing back as mono but .wav files were still in stereo)
+- adjusted tuning on solo and section bass sustain
+- removed delay before each harp note
+- reduced noise (a hissing sound) on harp D2, F2
+- adjusted volume of some 1st and 2nd violin solo pizzicato notes
+- slightly slowed the attack of 1st-violin-SEC-sustain,
+   2nd-violin-SEC-sustain, violo-SEC-sustain
+   to further separate "sustain" from "normal" articulation
+- slightly adjusted cello-SEC-attack timing beetween accent and sustain
+
+[ Brass ]
+- improved crossover between mf and ff for solo trumpet
+- added 2nd velocity layer to solo trombone
+- adjusted tone and volume of solo trumpet sustain
+- reworked solo trombone sustain to get a better tone
+- adjusted split point between samples in French-Horn-SEC-sustain and
+  Trombone-SEC-sustain, Trombone-SOLO-sustain so that loud samples begin
+  playing at a higher velocity. This makes playing soft passages easier
+  while still being able to play loud when needed
+- re-looped Trombone-SEC-sustain Eb_p.wav sample
+- slightly reduced volume of tuba SOLO staccato C2, C#2, D2
+
+[ Vocals ]
+- adjusted volume of male choir
+- removed click in male choir G2
+- added mod wheel control of attack, to all choir patches
+- renamed choir-male.sfz to choir-MALE-normal-mod-wheel.sfz
+- renamed choir-female.sfz to choir-FEMALE-normal-mod-wheel.sfz
+- renamed choir-mixed.sfz to choir-MIXED-normal-mod-wheel.sfz
+
+[ Percussion]
+- adjusted xylophone volume
+- xylophone.sfz no longer uses sfz <control> opcodes
+- adjusted volume of tubular bells
+- tubular-bells.sfz no longer uses sfz <control> opcodes
+- reduced sustain of tubular bells from 60s to 10s
+- adjusted volume of timpani
+- glockenspiel.sfz no longer uses sfz <control> opcodes
+
+Version 1.11 - Nov 16 2016
+--------------------------
+- cello-SOLO-sustain note 3_A, was cut short. It has now been re-looped
+
+Version 1.1 - Nov 14 2016
+-------------------------
+- in bassdrum-snare-cymbals.sfz,
+  - the "Cymbals 2 Long Roll" (key=A4) played the entire sample every time,
+     now respects the midi note length
+  - had "Cymbals 1 Crash" mapped to e4 instead of c#4
+  - adjusted length of early release on cymbal rolls
+    (one release was too short, others were too long)
+  - adjusted "Cymbals 1 Crash" (key=C#4) and "Cymbals 2 Crash" (key=F#4)
+    so that short notes represent closed crash, long notes represent open
+    ringing crash
+- removed <control> opcode from bassoon-SEC files, was causing an error
+  when all-woodwinds-SEC-normal-mod-wheel.sfz was created
+- removed <control> opcode from
+    viola-SOLO-pizzicato,
+    cello-SOLO-pizzicato files,
+  was causing an error when all-strings-SOLO-normal-mod-wheel.sfz was created
+- corrected licencing information in
+    viola-SOLO-staccato.sfz,
+    viola-SOLO-normal-mod-wheel.sfz
+    viola-SOLO-accent.sfz
+    viola-SOLO-KS-C2.sfz
+- corrected documentation in misc.sfz
+- added all-strings-SEC-normal-mod-wheel.sfz
+- added all-strings-SEC-normal-mod-wheel-panned.sfz
+- added all-strings-SEC-pizzicato.sfz
+- added all-strings-SEC-pizzicato-panned.sfz
+- added all-strings-SOLO-normal-mod-wheel.sfz
+- added all-strings-SOLO-normal-mod-wheel-panned.sfz
+- added all-strings-SOLO-pizzicato.sfz
+- added all-strings-SOLO-pizzicato-panned.sfz
+
+- added all-brass-SEC-normal-mod-wheel.sfz
+- added all-brass-SEC-normal-mod-wheel-panned.sfz
+- added all-brass-SOLO-normal-mod-wheel.sfz
+- added all-brass-SOLO-normal-mod-wheel-panned.sfz
+
+- added all-woodwinds-SEC-normal-mod-wheel.sfz
+- added all-woodwinds-SEC-normal-mod-wheel-panned.sfz
+- added all-woodwinds-SOLO-normal-mod-wheel.sfz
+- added all-woodwinds-SOLO-normal-mod-wheel-panned.sfz
+
+Version 1.0 - Nov 3 2016
+------------------------
+- [ First Public Release ]
+  - deleted unused Strings-1st-violin-SEC-staccato-fix.sfz
+  - deleted unused Strings-1st-violin-SOLO-sustain2.sfz
+  - deleted unused Strings-1st-violin-SOLO-sustain-SSO.sfz
+  - renamed "Horn" .sfz files to "French-Horn"
+  - renamed all .sfz files to remove redundant instrument classes from name
+     ex "Strings-1st-violin-SEC-sustain.sfz" becomes "1st-violin-SEC-sustain.sfz"
+    renamed all "Sustain-mod-wheel" files to "Normal-mod-wheel"
+  - made glockenspiel samples mono
+  - moved keyswitch for timpani from C1 to C5
+  - made small adjustment for better ending of timpani roll
+  - renamed "Choir" subdirectory to "Vocals"
+  - adjusted tuning of piccolo
+  - adjusted tuning of flute-SEC-sustain
+  - completely replaced solo trombone
+  - added c3 keyswitch option for Piccolo and Oboe
+  - removed delay as a randomization factor from all instruments
+  - adjusted marcato timing for smaller delay between accent and sustain
+  - renamed all "marcato" patches to "accent"
+  - replaced tremolo for bass, cello, viola
+  - removed 1st violin sec pizzicato round robin
+  - removed 2nd violin sec pizzicato round robin
+
+Version 0.4 patch - Oct 25 2016
+-------------------------------
+  - Choir-mixed.sfz referenced the "chorus" instead of "Chorus" directory causing
+    problems for LinuxSampler
+  - Bassoon-SOLO .sfz files referenced the "bassoon" instead of "Bassoon" directory
+    causing problems for LinuxSampler
+  - Oboe-SOLO .sfz files referenced the "oboe" instead of "Oboe" directory
+    causing problems for LinuxSampler
+  - Piccolo-SOLO .sfz files referenced the "piccolo" instead of "Piccolo" directory
+    causing problems for LinuxSampler
+  - removed vibrato from solo horn
+  - ensured all pizz samples have 0.03 ampeg_attack to avoid clicks due to random
+    offset
+  - removed round robin from Strings-cello-SEC-pizzicato
+  - converted viola solo pizz to mono (instead of using width=0 opcode)
+  - converted xylophone to mono, adjusted volume of each note
+  - replaced timpani rolls
+  - adjusted trombone-SEC-staccato to fix problem of double hits
+      sounding for some notes
+
+  - added tremolo articulation for all section strings
+  - added English Horn Solo
+
+  - stretched range of 1st and 2nd violins from c7 to a7
+  - stretched range of violas from e6 to a6
+  - stretched range of cellos from e5 to a5
+  - set range of trumpet to F#3-C6
+  - set range of french horn to B1-F5
+  - set range of glockenspiel to F5-C8
+  - set range of xylophone to C4-C8
+  - set range of tubular bells to C4-G5
+
+Version 0.3 patch - Oct 17 2016
+-------------------------------
+  - renamed 2nd-violins-piz-rr2-g3-pb.wav to
+            2nd-violins-piz-rr2-g3-PB.wav
+  - deleted Strings-1st-violin-SEC-staccato-fix.sfz
+  - deleted Strings-1st-violin-SOLO-sustain2.sfz
+  - deleted Strings-1st-violin-SOLO-sustain-SSO.sfz
+  - Percussion-glockenepiel.sfz had the path wrong after <global> opcode was
+    removed and glockenspiel needed to be transposed -24 instead of -12 to get the
+    correct key mapping
+
+Version 0.2 patch - Oct 17 2016
+--------------------------------
+ - modified keyswitch and glockenspiel patches to avoid use of <global> opcode
+   for compatibility with LinuxSampler
+
+Version 0.1 - Oct 13 2016
+-------------------------
+- [Beta Release for Testing]
+

@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+
+DEB_HOST_ARCH = $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+FLAGS  = -O3 -ffast-math -fPIC -DPIC -fdata-sections -ffunction-sections -DNDEBUG -I/opt/kxstudio/include
+ifeq ($(DEB_HOST_ARCH),armhf)
+FLAGS += -march=armv7ve -mcpu=cortex-a7 -mfloat-abi=hard -mfpu=neon-vfpv4
+else ifeq ($(DEB_HOST_ARCH),arm64)
+FLAGS += -march=armv8-a -mcpu=cortex-a53
+else
+FLAGS += -mtune=generic -msse -msse2 -mfpmath=sse
+EXTRA_CONF_FLAGS = --enable-sse
+endif
+
+FLAGS += -mtune=native -march=native -O3
+
+export CFLAGS=$(FLAGS)
+export CXXFLAGS=$(FLAGS) -fvisibility-inlines-hidden
+export CPPFLAGS=
+export LDFLAGS=-Wl,-O1 -Wl,--as-needed -Wl,--no-undefined -Wl,--gc-sections -Wl,--strip-all -Wl,-z,nodelete
+export PATH:=/opt/kxstudio/bin:$(PATH)
+export PKG_CONFIG_PATH=/opt/kxstudio/lib/pkgconfig
+
+override_dh_auto_configure:
+	env NOCONFIGURE=1 ./autogen.sh
+	./configure --enable-experimental --without-lash --prefix=/usr $(EXTRA_CONF_FLAGS)
+
+%:
+	dh $@ --with autoreconf

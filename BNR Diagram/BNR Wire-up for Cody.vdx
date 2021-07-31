@@ -1,0 +1,2812 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!-- Created by Dia -->
+<VisioDocument xmlns='urn:schemas-microsoft-com:office:visio'>
+  <Colors>
+    <ColorEntry IX='0' RGB='#000000'/>
+    <ColorEntry IX='1' RGB='#FFFFFF'/>
+  </Colors>
+  <Fonts>
+    <FontEntry ID='0' Unicode='0' Weight='0' Attributes='23040' CharSet='0' PitchAndFamily='32' Name='Arial'/>
+  </Fonts>
+  <StyleSheets>
+    <StyleSheet ID='0' NameU='No Style'>
+      <StyleProp>
+        <EnableFillProps>1</EnableFillProps>
+        <EnableLineProps>1</EnableLineProps>
+        <EnableTextProps>1</EnableTextProps>
+        <HideForApply>0</HideForApply>
+      </StyleProp>
+      <Line>
+        <BeginArrow>0</BeginArrow>
+        <BeginArrowSize>0</BeginArrowSize>
+        <EndArrow>0</EndArrow>
+        <EndArrowSize>0</EndArrowSize>
+        <LineCap>0</LineCap>
+        <LineColor>#000000</LineColor>
+        <LineColorTrans>0.000000</LineColorTrans>
+        <LinePattern>1</LinePattern>
+        <LineWeight>0.010000</LineWeight>
+        <Rounding>0.000000</Rounding>
+      </Line>
+      <Fill>
+        <FillBkgnd>#000000</FillBkgnd>
+        <FillBkgndTrans>0.000000</FillBkgndTrans>
+        <FillForegnd>#000000</FillForegnd>
+        <FillForegndTrans>0.000000</FillForegndTrans>
+        <FillPattern>1</FillPattern>
+        <ShapeShdwObliqueAngle>0.000000</ShapeShdwObliqueAngle>
+        <ShapeShdwOffsetX>0.000000</ShapeShdwOffsetX>
+        <ShapeShdwOffsetY>0.000000</ShapeShdwOffsetY>
+        <ShapeShdwScaleFactor>0.000000</ShapeShdwScaleFactor>
+        <ShapeShdwType>0</ShapeShdwType>
+        <ShdwBkgnd>0</ShdwBkgnd>
+        <ShdwBkgndTrans>0.000000</ShdwBkgndTrans>
+        <ShdwForegnd>#000000</ShdwForegnd>
+        <ShdwForegndTrans>0.000000</ShdwForegndTrans>
+        <ShdwPattern>0</ShdwPattern>
+      </Fill>
+      <TextBlock>
+        <BottomMargin>0.000000</BottomMargin>
+        <DefaultTabStop>0.590551</DefaultTabStop>
+        <LeftMargin>0.000000</LeftMargin>
+        <RightMargin>0.000000</RightMargin>
+        <TextBkgnd>0</TextBkgnd>
+        <TextBkgndTrans>0.000000</TextBkgndTrans>
+        <TextDirection>0</TextDirection>
+        <TopMargin>0.000000</TopMargin>
+        <VerticalAlign>1</VerticalAlign>
+      </TextBlock>
+      <Char IX='0'>
+        <AsianFont>0</AsianFont>
+        <Case>0</Case>
+        <Color>#000000</Color>
+        <ColorTrans>0.000000</ColorTrans>
+        <ComplexScriptFont>0</ComplexScriptFont>
+        <ComplexScriptSize>0.000000</ComplexScriptSize>
+        <DblUnderline>0</DblUnderline>
+        <DoubleStrikethrough>0</DoubleStrikethrough>
+        <Font>0</Font>
+        <FontScale>1.000000</FontScale>
+        <Highlight>0</Highlight>
+        <LangID>0</LangID>
+        <Letterspace>0.000000</Letterspace>
+        <Locale>0</Locale>
+        <LocalizeFont>0</LocalizeFont>
+        <Overline>0</Overline>
+        <Perpendicular>0</Perpendicular>
+        <Pos>0</Pos>
+        <RTLText>0</RTLText>
+        <Size>0.166667</Size>
+        <Strikethru>0</Strikethru>
+        <Style>0</Style>
+        <UseVertical>0</UseVertical>
+      </Char>
+      <Para IX='0'>
+        <Bullet>0</Bullet>
+        <BulletFont>0</BulletFont>
+        <BulletFontSize>-1</BulletFontSize>
+        <BulletStr>&amp;#xe000;</BulletStr>
+        <Flags>0</Flags>
+        <HorzAlign>1</HorzAlign>
+        <IndFirst>0.000000</IndFirst>
+        <IndLeft>0.000000</IndLeft>
+        <IndRight>0.000000</IndRight>
+        <LocalizeBulletFont>0</LocalizeBulletFont>
+        <SpAfter>0.000000</SpAfter>
+        <SpBefore>0.000000</SpBefore>
+        <SpLine>-1.200000</SpLine>
+        <TextPosAfterBullet>0</TextPosAfterBullet>
+      </Para>
+      <Tabs IX='0'/>
+    </StyleSheet>
+  </StyleSheets>
+  <Pages>
+    <Page ID='0' NameU='Page-1' ViewScale='-1' ViewCenterX='5.8425196850394' ViewCenterY='3.7244094488189'>
+      <Shapes>
+        <Shape ID='0' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='FillPolygon.0'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>1.299213</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>5.157480</PinX>
+            <PinY>-3.996063</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>10.492126</Width>
+          </XForm>
+          <Fill>
+            <FillBkgnd>#000000</FillBkgnd>
+            <FillBkgndTrans>0.000000</FillBkgndTrans>
+            <FillForegnd>#FFFFFF</FillForegnd>
+            <FillForegndTrans>0.000000</FillForegndTrans>
+            <FillPattern>1</FillPattern>
+            <ShapeShdwObliqueAngle>0.000000</ShapeShdwObliqueAngle>
+            <ShapeShdwOffsetX>0.000000</ShapeShdwOffsetX>
+            <ShapeShdwOffsetY>0.000000</ShapeShdwOffsetY>
+            <ShapeShdwScaleFactor>0.000000</ShapeShdwScaleFactor>
+            <ShapeShdwType>0</ShapeShdwType>
+            <ShdwBkgnd>0</ShdwBkgnd>
+            <ShdwBkgndTrans>0.000000</ShdwBkgndTrans>
+            <ShdwForegnd>#000000</ShdwForegnd>
+            <ShdwForegndTrans>0.000000</ShdwForegndTrans>
+            <ShdwPattern>0</ShdwPattern>
+          </Fill>
+          <Geom IX='0'>
+            <NoFill>0</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>10.492126</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>10.492126</X>
+              <Y>1.299213</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>0.000000</X>
+              <Y>1.299213</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='6'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='1' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='PolyLine.1'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>1.299213</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>5.157480</PinX>
+            <PinY>-3.996063</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>10.492126</Width>
+          </XForm>
+          <Line>
+            <BeginArrow>0</BeginArrow>
+            <BeginArrowSize>0</BeginArrowSize>
+            <EndArrow>0</EndArrow>
+            <EndArrowSize>0</EndArrowSize>
+            <LineCap>0</LineCap>
+            <LineColor>#000000</LineColor>
+            <LineColorTrans>0.000000</LineColorTrans>
+            <LinePattern>1</LinePattern>
+            <LineWeight>0.039370</LineWeight>
+            <Rounding>0.000000</Rounding>
+          </Line>
+          <Geom IX='0'>
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>10.492126</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>10.492126</X>
+              <Y>1.299213</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>0.000000</X>
+              <Y>1.299213</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='6'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='2' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Text.2'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.247563</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>10.403543</PinX>
+            <PinY>-3.423228</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>5.941521</Width>
+          </XForm>
+          <Char IX='0'>
+            <AsianFont>0</AsianFont>
+            <Case>0</Case>
+            <Color>#000000</Color>
+            <ColorTrans>0.000000</ColorTrans>
+            <ComplexScriptFont>0</ComplexScriptFont>
+            <ComplexScriptSize>0.000000</ComplexScriptSize>
+            <DblUnderline>0</DblUnderline>
+            <DoubleStrikethrough>0</DoubleStrikethrough>
+            <Font>1</Font>
+            <FontScale>1.000000</FontScale>
+            <Highlight>0</Highlight>
+            <LangID>0</LangID>
+            <Letterspace>0.000000</Letterspace>
+            <Locale>0</Locale>
+            <LocalizeFont>0</LocalizeFont>
+            <Overline>0</Overline>
+            <Perpendicular>0</Perpendicular>
+            <Pos>0</Pos>
+            <RTLText>0</RTLText>
+            <Size>0.247563</Size>
+            <Strikethru>0</Strikethru>
+            <Style>0</Style>
+            <UseVertical>0</UseVertical>
+          </Char>
+          <Text IX='0'>MIDI Keyboard Controller</Text>
+        </Shape>
+        <Shape ID='3' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Line.3'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>2.144914</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>10.403543</PinX>
+            <PinY>-2.696850</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>3.546634</Width>
+          </XForm>
+          <XForm1D>
+            <BeginX>10.403543</BeginX>
+            <BeginY>-2.696850</BeginY>
+            <EndX>13.950177</EndX>
+            <EndY>-0.551937</EndY>
+          </XForm1D>
+          <Line>
+            <BeginArrow>0</BeginArrow>
+            <BeginArrowSize>0</BeginArrowSize>
+            <EndArrow>0</EndArrow>
+            <EndArrowSize>0</EndArrowSize>
+            <LineCap>0</LineCap>
+            <LineColor>#000000</LineColor>
+            <LineColorTrans>0.000000</LineColorTrans>
+            <LinePattern>1</LinePattern>
+            <LineWeight>0.039370</LineWeight>
+            <Rounding>0.000000</Rounding>
+          </Line>
+          <Geom IX='0'>
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>3.546634</X>
+              <Y>2.144914</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='4' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='FillPolygon.4'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.186090</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>14.076509</PinX>
+            <PinY>-0.475535</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.219377</Width>
+          </XForm>
+          <Fill>
+            <FillBkgnd>#000000</FillBkgnd>
+            <FillBkgndTrans>0.000000</FillBkgndTrans>
+            <FillForegnd>#000000</FillForegnd>
+            <FillForegndTrans>0.000000</FillForegndTrans>
+            <FillPattern>1</FillPattern>
+            <ShapeShdwObliqueAngle>0.000000</ShapeShdwObliqueAngle>
+            <ShapeShdwOffsetX>0.000000</ShapeShdwOffsetX>
+            <ShapeShdwOffsetY>0.000000</ShapeShdwOffsetY>
+            <ShapeShdwScaleFactor>0.000000</ShapeShdwScaleFactor>
+            <ShapeShdwType>0</ShapeShdwType>
+            <ShdwBkgnd>0</ShdwBkgnd>
+            <ShdwBkgndTrans>0.000000</ShdwBkgndTrans>
+            <ShdwForegnd>#000000</ShdwForegnd>
+            <ShdwForegndTrans>0.000000</ShdwForegndTrans>
+            <ShdwPattern>0</ShdwPattern>
+          </Fill>
+          <Geom IX='0'>
+            <NoFill>0</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>-0.117507</X>
+              <Y>-0.186090</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>-0.126331</X>
+              <Y>-0.076402</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>-0.219377</X>
+              <Y>-0.017648</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='5' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='PolyLine.5'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.186090</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>14.076509</PinX>
+            <PinY>-0.475535</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.219377</Width>
+          </XForm>
+          <Line>
+            <BeginArrow>0</BeginArrow>
+            <BeginArrowSize>0</BeginArrowSize>
+            <EndArrow>0</EndArrow>
+            <EndArrowSize>0</EndArrowSize>
+            <LineCap>0</LineCap>
+            <LineColor>#000000</LineColor>
+            <LineColorTrans>0.000000</LineColorTrans>
+            <LinePattern>1</LinePattern>
+            <LineWeight>0.039370</LineWeight>
+            <Rounding>0.000000</Rounding>
+          </Line>
+          <Geom IX='0'>
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>-0.117507</X>
+              <Y>-0.186090</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>-0.126331</X>
+              <Y>-0.076402</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>-0.219377</X>
+              <Y>-0.017648</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='6' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='FillPolygon.6'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>1.535433</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>12.086615</PinX>
+            <PinY>-0.452756</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>4.055118</Width>
+          </XForm>
+          <Fill>
+            <FillBkgnd>#000000</FillBkgnd>
+            <FillBkgndTrans>0.000000</FillBkgndTrans>
+            <FillForegnd>#FFFFFF</FillForegnd>
+            <FillForegndTrans>0.000000</FillForegndTrans>
+            <FillPattern>1</FillPattern>
+            <ShapeShdwObliqueAngle>0.000000</ShapeShdwObliqueAngle>
+            <ShapeShdwOffsetX>0.000000</ShapeShdwOffsetX>
+            <ShapeShdwOffsetY>0.000000</ShapeShdwOffsetY>
+            <ShapeShdwScaleFactor>0.000000</ShapeShdwScaleFactor>
+            <ShapeShdwType>0</ShapeShdwType>
+            <ShdwBkgnd>0</ShdwBkgnd>
+            <ShdwBkgndTrans>0.000000</ShdwBkgndTrans>
+            <ShdwForegnd>#000000</ShdwForegnd>
+            <ShdwForegndTrans>0.000000</ShdwForegndTrans>
+            <ShdwPattern>0</ShdwPattern>
+          </Fill>
+          <Geom IX='0'>
+            <NoFill>0</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>4.055118</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>4.055118</X>
+              <Y>1.535433</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>0.000000</X>
+              <Y>1.535433</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='6'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='7' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='PolyLine.7'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>1.535433</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>12.086615</PinX>
+            <PinY>-0.452756</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>4.055118</Width>
+          </XForm>
+          <Line>
+            <BeginArrow>0</BeginArrow>
+            <BeginArrowSize>0</BeginArrowSize>
+            <EndArrow>0</EndArrow>
+            <EndArrowSize>0</EndArrowSize>
+            <LineCap>0</LineCap>
+            <LineColor>#000000</LineColor>
+            <LineColorTrans>0.000000</LineColorTrans>
+            <LinePattern>1</LinePattern>
+            <LineWeight>0.039370</LineWeight>
+            <Rounding>0.000000</Rounding>
+          </Line>
+          <Geom IX='0'>
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>4.055118</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>4.055118</X>
+              <Y>1.535433</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>0.000000</X>
+              <Y>1.535433</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='6'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='8' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Text.8'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.247563</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>14.114173</PinX>
+            <PinY>0.395669</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>3.961014</Width>
+          </XForm>
+          <Char IX='0'>
+            <AsianFont>0</AsianFont>
+            <Case>0</Case>
+            <Color>#000000</Color>
+            <ColorTrans>0.000000</ColorTrans>
+            <ComplexScriptFont>0</ComplexScriptFont>
+            <ComplexScriptSize>0.000000</ComplexScriptSize>
+            <DblUnderline>0</DblUnderline>
+            <DoubleStrikethrough>0</DoubleStrikethrough>
+            <Font>0</Font>
+            <FontScale>1.000000</FontScale>
+            <Highlight>0</Highlight>
+            <LangID>0</LangID>
+            <Letterspace>0.000000</Letterspace>
+            <Locale>0</Locale>
+            <LocalizeFont>0</LocalizeFont>
+            <Overline>0</Overline>
+            <Perpendicular>0</Perpendicular>
+            <Pos>0</Pos>
+            <RTLText>0</RTLText>
+            <Size>0.247563</Size>
+            <Strikethru>0</Strikethru>
+            <Style>0</Style>
+            <UseVertical>0</UseVertical>
+          </Char>
+          <Text IX='0'>Box of No Return</Text>
+        </Shape>
+        <Shape ID='9' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Text.9'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.247563</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>14.114173</PinX>
+            <PinY>0.080709</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>5.693957</Width>
+          </XForm>
+          <Char IX='0'>
+            <AsianFont>0</AsianFont>
+            <Case>0</Case>
+            <Color>#000000</Color>
+            <ColorTrans>0.000000</ColorTrans>
+            <ComplexScriptFont>0</ComplexScriptFont>
+            <ComplexScriptSize>0.000000</ComplexScriptSize>
+            <DblUnderline>0</DblUnderline>
+            <DoubleStrikethrough>0</DoubleStrikethrough>
+            <Font>0</Font>
+            <FontScale>1.000000</FontScale>
+            <Highlight>0</Highlight>
+            <LangID>0</LangID>
+            <Letterspace>0.000000</Letterspace>
+            <Locale>0</Locale>
+            <LocalizeFont>0</LocalizeFont>
+            <Overline>0</Overline>
+            <Perpendicular>0</Perpendicular>
+            <Pos>0</Pos>
+            <RTLText>0</RTLText>
+            <Size>0.247563</Size>
+            <Strikethru>0</Strikethru>
+            <Style>0</Style>
+            <UseVertical>0</UseVertical>
+          </Char>
+          <Text IX='0'>(Linux PC, 8-core 4GHz)</Text>
+        </Shape>
+        <Shape ID='10' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Text.10'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.247563</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>10.157480</PinX>
+            <PinY>-1.377953</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.000000</Width>
+          </XForm>
+          <Char IX='0'>
+            <AsianFont>0</AsianFont>
+            <Case>0</Case>
+            <Color>#000000</Color>
+            <ColorTrans>0.000000</ColorTrans>
+            <ComplexScriptFont>0</ComplexScriptFont>
+            <ComplexScriptSize>0.000000</ComplexScriptSize>
+            <DblUnderline>0</DblUnderline>
+            <DoubleStrikethrough>0</DoubleStrikethrough>
+            <Font>0</Font>
+            <FontScale>1.000000</FontScale>
+            <Highlight>0</Highlight>
+            <LangID>0</LangID>
+            <Letterspace>0.000000</Letterspace>
+            <Locale>0</Locale>
+            <LocalizeFont>0</LocalizeFont>
+            <Overline>0</Overline>
+            <Perpendicular>0</Perpendicular>
+            <Pos>0</Pos>
+            <RTLText>0</RTLText>
+            <Size>0.247563</Size>
+            <Strikethru>0</Strikethru>
+            <Style>0</Style>
+            <UseVertical>0</UseVertical>
+          </Char>
+          <Text IX='0'></Text>
+        </Shape>
+        <Shape ID='11' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Text.11'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.247563</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>14.114173</PinX>
+            <PinY>0.314961</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.000000</Width>
+          </XForm>
+          <Char IX='0'>
+            <AsianFont>0</AsianFont>
+            <Case>0</Case>
+            <Color>#000000</Color>
+            <ColorTrans>0.000000</ColorTrans>
+            <ComplexScriptFont>0</ComplexScriptFont>
+            <ComplexScriptSize>0.000000</ComplexScriptSize>
+            <DblUnderline>0</DblUnderline>
+            <DoubleStrikethrough>0</DoubleStrikethrough>
+            <Font>0</Font>
+            <FontScale>1.000000</FontScale>
+            <Highlight>0</Highlight>
+            <LangID>0</LangID>
+            <Letterspace>0.000000</Letterspace>
+            <Locale>0</Locale>
+            <LocalizeFont>0</LocalizeFont>
+            <Overline>0</Overline>
+            <Perpendicular>0</Perpendicular>
+            <Pos>0</Pos>
+            <RTLText>0</RTLText>
+            <Size>0.247563</Size>
+            <Strikethru>0</Strikethru>
+            <Style>0</Style>
+            <UseVertical>0</UseVertical>
+          </Char>
+          <Text IX='0'></Text>
+        </Shape>
+        <Shape ID='12' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Text.12'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.247563</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>14.212599</PinX>
+            <PinY>-0.787402</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.742690</Width>
+          </XForm>
+          <Char IX='0'>
+            <AsianFont>0</AsianFont>
+            <Case>0</Case>
+            <Color>#000000</Color>
+            <ColorTrans>0.000000</ColorTrans>
+            <ComplexScriptFont>0</ComplexScriptFont>
+            <ComplexScriptSize>0.000000</ComplexScriptSize>
+            <DblUnderline>0</DblUnderline>
+            <DoubleStrikethrough>0</DoubleStrikethrough>
+            <Font>0</Font>
+            <FontScale>1.000000</FontScale>
+            <Highlight>0</Highlight>
+            <LangID>0</LangID>
+            <Letterspace>0.000000</Letterspace>
+            <Locale>0</Locale>
+            <LocalizeFont>0</LocalizeFont>
+            <Overline>0</Overline>
+            <Perpendicular>0</Perpendicular>
+            <Pos>0</Pos>
+            <RTLText>0</RTLText>
+            <Size>0.247563</Size>
+            <Strikethru>0</Strikethru>
+            <Style>0</Style>
+            <UseVertical>0</UseVertical>
+          </Char>
+          <Text IX='0'>USB</Text>
+        </Shape>
+        <Shape ID='13' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Text.13'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.247563</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>9.822835</PinX>
+            <PinY>-2.283465</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>3.465887</Width>
+          </XForm>
+          <Char IX='0'>
+            <AsianFont>0</AsianFont>
+            <Case>0</Case>
+            <Color>#000000</Color>
+            <ColorTrans>0.000000</ColorTrans>
+            <ComplexScriptFont>0</ComplexScriptFont>
+            <ComplexScriptSize>0.000000</ComplexScriptSize>
+            <DblUnderline>0</DblUnderline>
+            <DoubleStrikethrough>0</DoubleStrikethrough>
+            <Font>0</Font>
+            <FontScale>1.000000</FontScale>
+            <Highlight>0</Highlight>
+            <LangID>0</LangID>
+            <Letterspace>0.000000</Letterspace>
+            <Locale>0</Locale>
+            <LocalizeFont>0</LocalizeFont>
+            <Overline>0</Overline>
+            <Perpendicular>0</Perpendicular>
+            <Pos>0</Pos>
+            <RTLText>0</RTLText>
+            <Size>0.247563</Size>
+            <Strikethru>0</Strikethru>
+            <Style>0</Style>
+            <UseVertical>0</UseVertical>
+          </Char>
+          <Text IX='0'>Either USB or </Text>
+        </Shape>
+        <Shape ID='14' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Text.14'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.247563</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>9.822835</PinX>
+            <PinY>-2.598425</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>2.723197</Width>
+          </XForm>
+          <Char IX='0'>
+            <AsianFont>0</AsianFont>
+            <Case>0</Case>
+            <Color>#000000</Color>
+            <ColorTrans>0.000000</ColorTrans>
+            <ComplexScriptFont>0</ComplexScriptFont>
+            <ComplexScriptSize>0.000000</ComplexScriptSize>
+            <DblUnderline>0</DblUnderline>
+            <DoubleStrikethrough>0</DoubleStrikethrough>
+            <Font>0</Font>
+            <FontScale>1.000000</FontScale>
+            <Highlight>0</Highlight>
+            <LangID>0</LangID>
+            <Letterspace>0.000000</Letterspace>
+            <Locale>0</Locale>
+            <LocalizeFont>0</LocalizeFont>
+            <Overline>0</Overline>
+            <Perpendicular>0</Perpendicular>
+            <Pos>0</Pos>
+            <RTLText>0</RTLText>
+            <Size>0.247563</Size>
+            <Strikethru>0</Strikethru>
+            <Style>0</Style>
+            <UseVertical>0</UseVertical>
+          </Char>
+          <Text IX='0'>2x DIN MIDI</Text>
+        </Shape>
+        <Shape ID='15' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Text.15'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.247563</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>10.511811</PinX>
+            <PinY>-1.496063</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.000000</Width>
+          </XForm>
+          <Char IX='0'>
+            <AsianFont>0</AsianFont>
+            <Case>0</Case>
+            <Color>#000000</Color>
+            <ColorTrans>0.000000</ColorTrans>
+            <ComplexScriptFont>0</ComplexScriptFont>
+            <ComplexScriptSize>0.000000</ComplexScriptSize>
+            <DblUnderline>0</DblUnderline>
+            <DoubleStrikethrough>0</DoubleStrikethrough>
+            <Font>0</Font>
+            <FontScale>1.000000</FontScale>
+            <Highlight>0</Highlight>
+            <LangID>0</LangID>
+            <Letterspace>0.000000</Letterspace>
+            <Locale>0</Locale>
+            <LocalizeFont>0</LocalizeFont>
+            <Overline>0</Overline>
+            <Perpendicular>0</Perpendicular>
+            <Pos>0</Pos>
+            <RTLText>0</RTLText>
+            <Size>0.247563</Size>
+            <Strikethru>0</Strikethru>
+            <Style>0</Style>
+            <UseVertical>0</UseVertical>
+          </Char>
+          <Text IX='0'></Text>
+        </Shape>
+        <Shape ID='16' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='FillPolygon.16'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>1.929134</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>17.755905</PinX>
+            <PinY>-3.287402</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>2.578740</Width>
+          </XForm>
+          <Fill>
+            <FillBkgnd>#000000</FillBkgnd>
+            <FillBkgndTrans>0.000000</FillBkgndTrans>
+            <FillForegnd>#FFFFFF</FillForegnd>
+            <FillForegndTrans>0.000000</FillForegndTrans>
+            <FillPattern>1</FillPattern>
+            <ShapeShdwObliqueAngle>0.000000</ShapeShdwObliqueAngle>
+            <ShapeShdwOffsetX>0.000000</ShapeShdwOffsetX>
+            <ShapeShdwOffsetY>0.000000</ShapeShdwOffsetY>
+            <ShapeShdwScaleFactor>0.000000</ShapeShdwScaleFactor>
+            <ShapeShdwType>0</ShapeShdwType>
+            <ShdwBkgnd>0</ShdwBkgnd>
+            <ShdwBkgndTrans>0.000000</ShdwBkgndTrans>
+            <ShdwForegnd>#000000</ShdwForegnd>
+            <ShdwForegndTrans>0.000000</ShdwForegndTrans>
+            <ShdwPattern>0</ShdwPattern>
+          </Fill>
+          <Geom IX='0'>
+            <NoFill>0</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>2.578740</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>2.578740</X>
+              <Y>1.929134</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>0.000000</X>
+              <Y>1.929134</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='6'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='17' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='PolyLine.17'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>1.929134</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>17.755905</PinX>
+            <PinY>-3.287402</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>2.578740</Width>
+          </XForm>
+          <Line>
+            <BeginArrow>0</BeginArrow>
+            <BeginArrowSize>0</BeginArrowSize>
+            <EndArrow>0</EndArrow>
+            <EndArrowSize>0</EndArrowSize>
+            <LineCap>0</LineCap>
+            <LineColor>#000000</LineColor>
+            <LineColorTrans>0.000000</LineColorTrans>
+            <LinePattern>1</LinePattern>
+            <LineWeight>0.039370</LineWeight>
+            <Rounding>0.000000</Rounding>
+          </Line>
+          <Geom IX='0'>
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>2.578740</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>2.578740</X>
+              <Y>1.929134</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>0.000000</X>
+              <Y>1.929134</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='6'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='18' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Text.18'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.247563</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>19.045275</PinX>
+            <PinY>-2.242126</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>1.237817</Width>
+          </XForm>
+          <Char IX='0'>
+            <AsianFont>0</AsianFont>
+            <Case>0</Case>
+            <Color>#000000</Color>
+            <ColorTrans>0.000000</ColorTrans>
+            <ComplexScriptFont>0</ComplexScriptFont>
+            <ComplexScriptSize>0.000000</ComplexScriptSize>
+            <DblUnderline>0</DblUnderline>
+            <DoubleStrikethrough>0</DoubleStrikethrough>
+            <Font>0</Font>
+            <FontScale>1.000000</FontScale>
+            <Highlight>0</Highlight>
+            <LangID>0</LangID>
+            <Letterspace>0.000000</Letterspace>
+            <Locale>0</Locale>
+            <LocalizeFont>0</LocalizeFont>
+            <Overline>0</Overline>
+            <Perpendicular>0</Perpendicular>
+            <Pos>0</Pos>
+            <RTLText>0</RTLText>
+            <Size>0.247563</Size>
+            <Strikethru>0</Strikethru>
+            <Style>0</Style>
+            <UseVertical>0</UseVertical>
+          </Char>
+          <Text IX='0'>Power</Text>
+        </Shape>
+        <Shape ID='19' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Text.19'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.247563</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>19.045275</PinX>
+            <PinY>-2.557087</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>1.237817</Width>
+          </XForm>
+          <Char IX='0'>
+            <AsianFont>0</AsianFont>
+            <Case>0</Case>
+            <Color>#000000</Color>
+            <ColorTrans>0.000000</ColorTrans>
+            <ComplexScriptFont>0</ComplexScriptFont>
+            <ComplexScriptSize>0.000000</ComplexScriptSize>
+            <DblUnderline>0</DblUnderline>
+            <DoubleStrikethrough>0</DoubleStrikethrough>
+            <Font>0</Font>
+            <FontScale>1.000000</FontScale>
+            <Highlight>0</Highlight>
+            <LangID>0</LangID>
+            <Letterspace>0.000000</Letterspace>
+            <Locale>0</Locale>
+            <LocalizeFont>0</LocalizeFont>
+            <Overline>0</Overline>
+            <Perpendicular>0</Perpendicular>
+            <Pos>0</Pos>
+            <RTLText>0</RTLText>
+            <Size>0.247563</Size>
+            <Strikethru>0</Strikethru>
+            <Style>0</Style>
+            <UseVertical>0</UseVertical>
+          </Char>
+          <Text IX='0'>Strip</Text>
+        </Shape>
+        <Shape ID='20' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Line.20'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.793253</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>15.649607</PinX>
+            <PinY>-3.671260</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>1.929046</Width>
+          </XForm>
+          <XForm1D>
+            <BeginX>15.649607</BeginX>
+            <BeginY>-3.671260</BeginY>
+            <EndX>17.578651</EndX>
+            <EndY>-2.878007</EndY>
+          </XForm1D>
+          <Line>
+            <BeginArrow>0</BeginArrow>
+            <BeginArrowSize>0</BeginArrowSize>
+            <EndArrow>0</EndArrow>
+            <EndArrowSize>0</EndArrowSize>
+            <LineCap>0</LineCap>
+            <LineColor>#000000</LineColor>
+            <LineColorTrans>0.000000</LineColorTrans>
+            <LinePattern>1</LinePattern>
+            <LineWeight>0.039370</LineWeight>
+            <Rounding>0.000000</Rounding>
+          </Line>
+          <Geom IX='0'>
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>1.929046</X>
+              <Y>0.793253</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='21' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='FillPolygon.21'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.182058</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>17.715197</PinX>
+            <PinY>-2.821858</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.219491</Width>
+          </XForm>
+          <Fill>
+            <FillBkgnd>#000000</FillBkgnd>
+            <FillBkgndTrans>0.000000</FillBkgndTrans>
+            <FillForegnd>#000000</FillForegnd>
+            <FillForegndTrans>0.000000</FillForegndTrans>
+            <FillPattern>1</FillPattern>
+            <ShapeShdwObliqueAngle>0.000000</ShapeShdwObliqueAngle>
+            <ShapeShdwOffsetX>0.000000</ShapeShdwOffsetX>
+            <ShapeShdwOffsetY>0.000000</ShapeShdwOffsetY>
+            <ShapeShdwScaleFactor>0.000000</ShapeShdwScaleFactor>
+            <ShapeShdwType>0</ShapeShdwType>
+            <ShdwBkgnd>0</ShdwBkgnd>
+            <ShdwBkgndTrans>0.000000</ShdwBkgndTrans>
+            <ShdwForegnd>#000000</ShdwForegnd>
+            <ShdwForegndTrans>0.000000</ShdwForegndTrans>
+            <ShdwPattern>0</ShdwPattern>
+          </Fill>
+          <Geom IX='0'>
+            <NoFill>0</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>-0.144626</X>
+              <Y>-0.165894</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>-0.136544</X>
+              <Y>-0.056149</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>-0.219491</X>
+              <Y>0.016164</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='22' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='PolyLine.22'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.182058</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>17.715197</PinX>
+            <PinY>-2.821858</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.219491</Width>
+          </XForm>
+          <Line>
+            <BeginArrow>0</BeginArrow>
+            <BeginArrowSize>0</BeginArrowSize>
+            <EndArrow>0</EndArrow>
+            <EndArrowSize>0</EndArrowSize>
+            <LineCap>0</LineCap>
+            <LineColor>#000000</LineColor>
+            <LineColorTrans>0.000000</LineColorTrans>
+            <LinePattern>1</LinePattern>
+            <LineWeight>0.039370</LineWeight>
+            <Rounding>0.000000</Rounding>
+          </Line>
+          <Geom IX='0'>
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>-0.144626</X>
+              <Y>-0.165894</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>-0.136544</X>
+              <Y>-0.056149</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>-0.219491</X>
+              <Y>0.016164</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='23' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Line.23'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>2.098119</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>16.141733</PinX>
+            <PinY>-0.068898</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>1.502583</Width>
+          </XForm>
+          <XForm1D>
+            <BeginX>16.141733</BeginX>
+            <BeginY>-0.068898</BeginY>
+            <EndX>17.644316</EndX>
+            <EndY>-2.167017</EndY>
+          </XForm1D>
+          <Line>
+            <BeginArrow>0</BeginArrow>
+            <BeginArrowSize>0</BeginArrowSize>
+            <EndArrow>0</EndArrow>
+            <EndArrowSize>0</EndArrowSize>
+            <LineCap>0</LineCap>
+            <LineColor>#000000</LineColor>
+            <LineColorTrans>0.000000</LineColorTrans>
+            <LinePattern>1</LinePattern>
+            <LineWeight>0.039370</LineWeight>
+            <Rounding>0.000000</Rounding>
+          </Line>
+          <Geom IX='0'>
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>1.502583</X>
+              <Y>-2.098119</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='24' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='FillPolygon.24'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.217350</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>17.730276</PinX>
+            <PinY>-2.287048</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.194636</Width>
+          </XForm>
+          <Fill>
+            <FillBkgnd>#000000</FillBkgnd>
+            <FillBkgndTrans>0.000000</FillBkgndTrans>
+            <FillForegnd>#000000</FillForegnd>
+            <FillForegndTrans>0.000000</FillForegndTrans>
+            <FillPattern>1</FillPattern>
+            <ShapeShdwObliqueAngle>0.000000</ShapeShdwObliqueAngle>
+            <ShapeShdwOffsetX>0.000000</ShapeShdwOffsetX>
+            <ShapeShdwOffsetY>0.000000</ShapeShdwOffsetY>
+            <ShapeShdwScaleFactor>0.000000</ShapeShdwScaleFactor>
+            <ShapeShdwType>0</ShapeShdwType>
+            <ShdwBkgnd>0</ShdwBkgnd>
+            <ShdwBkgndTrans>0.000000</ShdwBkgndTrans>
+            <ShdwForegnd>#000000</ShdwForegnd>
+            <ShdwForegndTrans>0.000000</ShdwForegndTrans>
+            <ShdwPattern>0</ShdwPattern>
+          </Fill>
+          <Geom IX='0'>
+            <NoFill>0</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>-0.194636</X>
+              <Y>0.102734</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>-0.085961</X>
+              <Y>0.120031</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>-0.034594</X>
+              <Y>0.217350</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='25' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='PolyLine.25'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.217350</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>17.730276</PinX>
+            <PinY>-2.287048</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.194636</Width>
+          </XForm>
+          <Line>
+            <BeginArrow>0</BeginArrow>
+            <BeginArrowSize>0</BeginArrowSize>
+            <EndArrow>0</EndArrow>
+            <EndArrowSize>0</EndArrowSize>
+            <LineCap>0</LineCap>
+            <LineColor>#000000</LineColor>
+            <LineColorTrans>0.000000</LineColorTrans>
+            <LinePattern>1</LinePattern>
+            <LineWeight>0.039370</LineWeight>
+            <Rounding>0.000000</Rounding>
+          </Line>
+          <Geom IX='0'>
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>-0.194636</X>
+              <Y>0.102734</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>-0.085961</X>
+              <Y>0.120031</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>-0.034594</X>
+              <Y>0.217350</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='26' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='FillPolygon.26'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>1.062992</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>12.358760</PinX>
+            <PinY>1.998031</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>3.589567</Width>
+          </XForm>
+          <Fill>
+            <FillBkgnd>#000000</FillBkgnd>
+            <FillBkgndTrans>0.000000</FillBkgndTrans>
+            <FillForegnd>#FFFFFF</FillForegnd>
+            <FillForegndTrans>0.000000</FillForegndTrans>
+            <FillPattern>1</FillPattern>
+            <ShapeShdwObliqueAngle>0.000000</ShapeShdwObliqueAngle>
+            <ShapeShdwOffsetX>0.000000</ShapeShdwOffsetX>
+            <ShapeShdwOffsetY>0.000000</ShapeShdwOffsetY>
+            <ShapeShdwScaleFactor>0.000000</ShapeShdwScaleFactor>
+            <ShapeShdwType>0</ShapeShdwType>
+            <ShdwBkgnd>0</ShdwBkgnd>
+            <ShdwBkgndTrans>0.000000</ShdwBkgndTrans>
+            <ShdwForegnd>#000000</ShdwForegnd>
+            <ShdwForegndTrans>0.000000</ShdwForegndTrans>
+            <ShdwPattern>0</ShdwPattern>
+          </Fill>
+          <Geom IX='0'>
+            <NoFill>0</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>3.589567</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>3.589567</X>
+              <Y>1.062992</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>0.000000</X>
+              <Y>1.062992</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='6'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='27' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='PolyLine.27'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>1.062992</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>12.358760</PinX>
+            <PinY>1.998031</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>3.589567</Width>
+          </XForm>
+          <Line>
+            <BeginArrow>0</BeginArrow>
+            <BeginArrowSize>0</BeginArrowSize>
+            <EndArrow>0</EndArrow>
+            <EndArrowSize>0</EndArrowSize>
+            <LineCap>0</LineCap>
+            <LineColor>#000000</LineColor>
+            <LineColorTrans>0.000000</LineColorTrans>
+            <LinePattern>1</LinePattern>
+            <LineWeight>0.039370</LineWeight>
+            <Rounding>0.000000</Rounding>
+          </Line>
+          <Geom IX='0'>
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>3.589567</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>3.589567</X>
+              <Y>1.062992</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>0.000000</X>
+              <Y>1.062992</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='6'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='28' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Text.28'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.247563</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>14.153543</PinX>
+            <PinY>2.610236</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>4.208577</Width>
+          </XForm>
+          <Char IX='0'>
+            <AsianFont>0</AsianFont>
+            <Case>0</Case>
+            <Color>#000000</Color>
+            <ColorTrans>0.000000</ColorTrans>
+            <ComplexScriptFont>0</ComplexScriptFont>
+            <ComplexScriptSize>0.000000</ComplexScriptSize>
+            <DblUnderline>0</DblUnderline>
+            <DoubleStrikethrough>0</DoubleStrikethrough>
+            <Font>0</Font>
+            <FontScale>1.000000</FontScale>
+            <Highlight>0</Highlight>
+            <LangID>0</LangID>
+            <Letterspace>0.000000</Letterspace>
+            <Locale>0</Locale>
+            <LocalizeFont>0</LocalizeFont>
+            <Overline>0</Overline>
+            <Perpendicular>0</Perpendicular>
+            <Pos>0</Pos>
+            <RTLText>0</RTLText>
+            <Size>0.247563</Size>
+            <Strikethru>0</Strikethru>
+            <Style>0</Style>
+            <UseVertical>0</UseVertical>
+          </Char>
+          <Text IX='0'>Behringer FCA202 </Text>
+        </Shape>
+        <Shape ID='29' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Text.29'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.247563</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>14.153543</PinX>
+            <PinY>2.295276</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>3.465887</Width>
+          </XForm>
+          <Char IX='0'>
+            <AsianFont>0</AsianFont>
+            <Case>0</Case>
+            <Color>#000000</Color>
+            <ColorTrans>0.000000</ColorTrans>
+            <ComplexScriptFont>0</ComplexScriptFont>
+            <ComplexScriptSize>0.000000</ComplexScriptSize>
+            <DblUnderline>0</DblUnderline>
+            <DoubleStrikethrough>0</DoubleStrikethrough>
+            <Font>0</Font>
+            <FontScale>1.000000</FontScale>
+            <Highlight>0</Highlight>
+            <LangID>0</LangID>
+            <Letterspace>0.000000</Letterspace>
+            <Locale>0</Locale>
+            <LocalizeFont>0</LocalizeFont>
+            <Overline>0</Overline>
+            <Perpendicular>0</Perpendicular>
+            <Pos>0</Pos>
+            <RTLText>0</RTLText>
+            <Size>0.247563</Size>
+            <Strikethru>0</Strikethru>
+            <Style>0</Style>
+            <UseVertical>0</UseVertical>
+          </Char>
+          <Text IX='0'>FIrewire Audio</Text>
+        </Shape>
+        <Shape ID='30' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Line.30'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.723876</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>14.114173</PinX>
+            <PinY>1.082677</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.031134</Width>
+          </XForm>
+          <XForm1D>
+            <BeginX>14.114173</BeginX>
+            <BeginY>1.082677</BeginY>
+            <EndX>14.145308</EndX>
+            <EndY>1.806554</EndY>
+          </XForm1D>
+          <Line>
+            <BeginArrow>0</BeginArrow>
+            <BeginArrowSize>0</BeginArrowSize>
+            <EndArrow>0</EndArrow>
+            <EndArrowSize>0</EndArrowSize>
+            <LineCap>0</LineCap>
+            <LineColor>#000000</LineColor>
+            <LineColorTrans>0.000000</LineColorTrans>
+            <LinePattern>1</LinePattern>
+            <LineWeight>0.039370</LineWeight>
+            <Rounding>0.000000</Rounding>
+          </Line>
+          <Geom IX='0'>
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>0.031134</X>
+              <Y>0.723876</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='31' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='FillPolygon.31'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.200898</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>14.151651</PinX>
+            <PinY>1.954055</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.196669</Width>
+          </XForm>
+          <Fill>
+            <FillBkgnd>#000000</FillBkgnd>
+            <FillBkgndTrans>0.000000</FillBkgndTrans>
+            <FillForegnd>#000000</FillForegnd>
+            <FillForegndTrans>0.000000</FillForegndTrans>
+            <FillPattern>1</FillPattern>
+            <ShapeShdwObliqueAngle>0.000000</ShapeShdwObliqueAngle>
+            <ShapeShdwOffsetX>0.000000</ShapeShdwOffsetX>
+            <ShapeShdwOffsetY>0.000000</ShapeShdwOffsetY>
+            <ShapeShdwScaleFactor>0.000000</ShapeShdwScaleFactor>
+            <ShapeShdwType>0</ShapeShdwType>
+            <ShdwBkgnd>0</ShdwBkgnd>
+            <ShdwBkgndTrans>0.000000</ShdwBkgndTrans>
+            <ShdwForegnd>#000000</ShdwForegnd>
+            <ShdwForegndTrans>0.000000</ShdwForegndTrans>
+            <ShdwPattern>0</ShdwPattern>
+          </Fill>
+          <Geom IX='0'>
+            <NoFill>0</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>0.089875</X>
+              <Y>-0.200898</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>-0.006344</X>
+              <Y>-0.147501</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>-0.106793</X>
+              <Y>-0.192439</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='32' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='PolyLine.32'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.200898</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>14.151651</PinX>
+            <PinY>1.954055</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.196669</Width>
+          </XForm>
+          <Line>
+            <BeginArrow>0</BeginArrow>
+            <BeginArrowSize>0</BeginArrowSize>
+            <EndArrow>0</EndArrow>
+            <EndArrowSize>0</EndArrowSize>
+            <LineCap>0</LineCap>
+            <LineColor>#000000</LineColor>
+            <LineColorTrans>0.000000</LineColorTrans>
+            <LinePattern>1</LinePattern>
+            <LineWeight>0.039370</LineWeight>
+            <Rounding>0.000000</Rounding>
+          </Line>
+          <Geom IX='0'>
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>0.089875</X>
+              <Y>-0.200898</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>-0.006344</X>
+              <Y>-0.147501</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>-0.106793</X>
+              <Y>-0.192439</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='33' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Text.33'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.247563</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>14.311024</PinX>
+            <PinY>1.437008</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>1.980507</Width>
+          </XForm>
+          <Char IX='0'>
+            <AsianFont>0</AsianFont>
+            <Case>0</Case>
+            <Color>#000000</Color>
+            <ColorTrans>0.000000</ColorTrans>
+            <ComplexScriptFont>0</ComplexScriptFont>
+            <ComplexScriptSize>0.000000</ComplexScriptSize>
+            <DblUnderline>0</DblUnderline>
+            <DoubleStrikethrough>0</DoubleStrikethrough>
+            <Font>0</Font>
+            <FontScale>1.000000</FontScale>
+            <Highlight>0</Highlight>
+            <LangID>0</LangID>
+            <Letterspace>0.000000</Letterspace>
+            <Locale>0</Locale>
+            <LocalizeFont>0</LocalizeFont>
+            <Overline>0</Overline>
+            <Perpendicular>0</Perpendicular>
+            <Pos>0</Pos>
+            <RTLText>0</RTLText>
+            <Size>0.247563</Size>
+            <Strikethru>0</Strikethru>
+            <Style>0</Style>
+            <UseVertical>0</UseVertical>
+          </Char>
+          <Text IX='0'>Firewire</Text>
+        </Shape>
+        <Shape ID='34' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='FillPolygon.34'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>1.555118</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>11.948819</PinX>
+            <PinY>4.822834</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>4.507874</Width>
+          </XForm>
+          <Fill>
+            <FillBkgnd>#000000</FillBkgnd>
+            <FillBkgndTrans>0.000000</FillBkgndTrans>
+            <FillForegnd>#FFFFFF</FillForegnd>
+            <FillForegndTrans>0.000000</FillForegndTrans>
+            <FillPattern>1</FillPattern>
+            <ShapeShdwObliqueAngle>0.000000</ShapeShdwObliqueAngle>
+            <ShapeShdwOffsetX>0.000000</ShapeShdwOffsetX>
+            <ShapeShdwOffsetY>0.000000</ShapeShdwOffsetY>
+            <ShapeShdwScaleFactor>0.000000</ShapeShdwScaleFactor>
+            <ShapeShdwType>0</ShapeShdwType>
+            <ShdwBkgnd>0</ShdwBkgnd>
+            <ShdwBkgndTrans>0.000000</ShdwBkgndTrans>
+            <ShdwForegnd>#000000</ShdwForegnd>
+            <ShdwForegndTrans>0.000000</ShdwForegndTrans>
+            <ShdwPattern>0</ShdwPattern>
+          </Fill>
+          <Geom IX='0'>
+            <NoFill>0</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>4.507874</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>4.507874</X>
+              <Y>1.555118</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>0.000000</X>
+              <Y>1.555118</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='6'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='35' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='PolyLine.35'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>1.555118</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>11.948819</PinX>
+            <PinY>4.822834</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>4.507874</Width>
+          </XForm>
+          <Line>
+            <BeginArrow>0</BeginArrow>
+            <BeginArrowSize>0</BeginArrowSize>
+            <EndArrow>0</EndArrow>
+            <EndArrowSize>0</EndArrowSize>
+            <LineCap>0</LineCap>
+            <LineColor>#000000</LineColor>
+            <LineColorTrans>0.000000</LineColorTrans>
+            <LinePattern>1</LinePattern>
+            <LineWeight>0.039370</LineWeight>
+            <Rounding>0.000000</Rounding>
+          </Line>
+          <Geom IX='0'>
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>4.507874</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>4.507874</X>
+              <Y>1.555118</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>0.000000</X>
+              <Y>1.555118</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='6'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='36' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Text.36'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.247563</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>14.202756</PinX>
+            <PinY>5.523622</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>4.456141</Width>
+          </XForm>
+          <Char IX='0'>
+            <AsianFont>0</AsianFont>
+            <Case>0</Case>
+            <Color>#000000</Color>
+            <ColorTrans>0.000000</ColorTrans>
+            <ComplexScriptFont>0</ComplexScriptFont>
+            <ComplexScriptSize>0.000000</ComplexScriptSize>
+            <DblUnderline>0</DblUnderline>
+            <DoubleStrikethrough>0</DoubleStrikethrough>
+            <Font>0</Font>
+            <FontScale>1.000000</FontScale>
+            <Highlight>0</Highlight>
+            <LangID>0</LangID>
+            <Letterspace>0.000000</Letterspace>
+            <Locale>0</Locale>
+            <LocalizeFont>0</LocalizeFont>
+            <Overline>0</Overline>
+            <Perpendicular>0</Perpendicular>
+            <Pos>0</Pos>
+            <RTLText>0</RTLText>
+            <Size>0.247563</Size>
+            <Strikethru>0</Strikethru>
+            <Style>0</Style>
+            <UseVertical>0</UseVertical>
+          </Char>
+          <Text IX='0'>Amplifier or Mixer</Text>
+        </Shape>
+        <Shape ID='37' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Line.37'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>1.570231</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>14.153543</PinX>
+            <PinY>3.061024</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.043861</Width>
+          </XForm>
+          <XForm1D>
+            <BeginX>14.153543</BeginX>
+            <BeginY>3.061024</BeginY>
+            <EndX>14.197405</EndX>
+            <EndY>4.631255</EndY>
+          </XForm1D>
+          <Line>
+            <BeginArrow>0</BeginArrow>
+            <BeginArrowSize>0</BeginArrowSize>
+            <EndArrow>0</EndArrow>
+            <EndArrowSize>0</EndArrowSize>
+            <LineCap>0</LineCap>
+            <LineColor>#000000</LineColor>
+            <LineColorTrans>0.000000</LineColorTrans>
+            <LinePattern>1</LinePattern>
+            <LineWeight>0.039370</LineWeight>
+            <Rounding>0.000000</Rounding>
+          </Line>
+          <Geom IX='0'>
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>0.043861</X>
+              <Y>1.570231</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='38' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='FillPolygon.38'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.199522</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>14.201527</PinX>
+            <PinY>4.778835</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.196774</Width>
+          </XForm>
+          <Fill>
+            <FillBkgnd>#000000</FillBkgnd>
+            <FillBkgndTrans>0.000000</FillBkgndTrans>
+            <FillForegnd>#000000</FillForegnd>
+            <FillForegndTrans>0.000000</FillForegndTrans>
+            <FillPattern>1</FillPattern>
+            <ShapeShdwObliqueAngle>0.000000</ShapeShdwObliqueAngle>
+            <ShapeShdwOffsetX>0.000000</ShapeShdwOffsetX>
+            <ShapeShdwOffsetY>0.000000</ShapeShdwOffsetY>
+            <ShapeShdwScaleFactor>0.000000</ShapeShdwScaleFactor>
+            <ShapeShdwType>0</ShapeShdwType>
+            <ShdwBkgnd>0</ShdwBkgnd>
+            <ShdwBkgndTrans>0.000000</ShdwBkgndTrans>
+            <ShdwForegnd>#000000</ShdwForegnd>
+            <ShdwForegndTrans>0.000000</ShdwForegndTrans>
+            <ShdwPattern>0</ShdwPattern>
+          </Fill>
+          <Geom IX='0'>
+            <NoFill>0</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>0.092890</X>
+              <Y>-0.199522</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>-0.004122</X>
+              <Y>-0.147580</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>-0.103883</X>
+              <Y>-0.194025</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='39' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='PolyLine.39'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.199522</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>14.201527</PinX>
+            <PinY>4.778835</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.196774</Width>
+          </XForm>
+          <Line>
+            <BeginArrow>0</BeginArrow>
+            <BeginArrowSize>0</BeginArrowSize>
+            <EndArrow>0</EndArrow>
+            <EndArrowSize>0</EndArrowSize>
+            <LineCap>0</LineCap>
+            <LineColor>#000000</LineColor>
+            <LineColorTrans>0.000000</LineColorTrans>
+            <LinePattern>1</LinePattern>
+            <LineWeight>0.039370</LineWeight>
+            <Rounding>0.000000</Rounding>
+          </Line>
+          <Geom IX='0'>
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>0.092890</X>
+              <Y>-0.199522</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>-0.004122</X>
+              <Y>-0.147580</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>-0.103883</X>
+              <Y>-0.194025</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='40' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Line.40'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>6.774074</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>16.456694</PinX>
+            <PinY>5.600394</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>1.892333</Width>
+          </XForm>
+          <XForm1D>
+            <BeginX>16.456694</BeginX>
+            <BeginY>5.600394</BeginY>
+            <EndX>18.349026</EndX>
+            <EndY>-1.173680</EndY>
+          </XForm1D>
+          <Line>
+            <BeginArrow>0</BeginArrow>
+            <BeginArrowSize>0</BeginArrowSize>
+            <EndArrow>0</EndArrow>
+            <EndArrowSize>0</EndArrowSize>
+            <LineCap>0</LineCap>
+            <LineColor>#000000</LineColor>
+            <LineColorTrans>0.000000</LineColorTrans>
+            <LinePattern>1</LinePattern>
+            <LineWeight>0.039370</LineWeight>
+            <Rounding>0.000000</Rounding>
+          </Line>
+          <Geom IX='0'>
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>1.892333</X>
+              <Y>-6.774074</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='41' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='FillPolygon.41'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.216073</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>18.388748</PinX>
+            <PinY>-1.315874</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.189592</Width>
+          </XForm>
+          <Fill>
+            <FillBkgnd>#000000</FillBkgnd>
+            <FillBkgndTrans>0.000000</FillBkgndTrans>
+            <FillForegnd>#000000</FillForegnd>
+            <FillForegndTrans>0.000000</FillForegndTrans>
+            <FillPattern>1</FillPattern>
+            <ShapeShdwObliqueAngle>0.000000</ShapeShdwObliqueAngle>
+            <ShapeShdwOffsetX>0.000000</ShapeShdwOffsetX>
+            <ShapeShdwOffsetY>0.000000</ShapeShdwOffsetY>
+            <ShapeShdwScaleFactor>0.000000</ShapeShdwScaleFactor>
+            <ShapeShdwType>0</ShapeShdwType>
+            <ShdwBkgnd>0</ShdwBkgnd>
+            <ShdwBkgndTrans>0.000000</ShdwBkgndTrans>
+            <ShdwForegnd>#000000</ShdwForegnd>
+            <ShdwForegndTrans>0.000000</ShdwForegndTrans>
+            <ShdwPattern>0</ShdwPattern>
+          </Fill>
+          <Geom IX='0'>
+            <NoFill>0</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>-0.147758</X>
+              <Y>0.163111</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>-0.039722</X>
+              <Y>0.142194</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>0.041834</X>
+              <Y>0.216073</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='42' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='PolyLine.42'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.216073</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>18.388748</PinX>
+            <PinY>-1.315874</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.189592</Width>
+          </XForm>
+          <Line>
+            <BeginArrow>0</BeginArrow>
+            <BeginArrowSize>0</BeginArrowSize>
+            <EndArrow>0</EndArrow>
+            <EndArrowSize>0</EndArrowSize>
+            <LineCap>0</LineCap>
+            <LineColor>#000000</LineColor>
+            <LineColorTrans>0.000000</LineColorTrans>
+            <LinePattern>1</LinePattern>
+            <LineWeight>0.039370</LineWeight>
+            <Rounding>0.000000</Rounding>
+          </Line>
+          <Geom IX='0'>
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>-0.147758</X>
+              <Y>0.163111</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>-0.039722</X>
+              <Y>0.142194</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>0.041834</X>
+              <Y>0.216073</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='43' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Text.43'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.247563</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>14.350393</PinX>
+            <PinY>4.055118</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.990253</Width>
+          </XForm>
+          <Char IX='0'>
+            <AsianFont>0</AsianFont>
+            <Case>0</Case>
+            <Color>#000000</Color>
+            <ColorTrans>0.000000</ColorTrans>
+            <ComplexScriptFont>0</ComplexScriptFont>
+            <ComplexScriptSize>0.000000</ComplexScriptSize>
+            <DblUnderline>0</DblUnderline>
+            <DoubleStrikethrough>0</DoubleStrikethrough>
+            <Font>0</Font>
+            <FontScale>1.000000</FontScale>
+            <Highlight>0</Highlight>
+            <LangID>0</LangID>
+            <Letterspace>0.000000</Letterspace>
+            <Locale>0</Locale>
+            <LocalizeFont>0</LocalizeFont>
+            <Overline>0</Overline>
+            <Perpendicular>0</Perpendicular>
+            <Pos>0</Pos>
+            <RTLText>0</RTLText>
+            <Size>0.247563</Size>
+            <Strikethru>0</Strikethru>
+            <Style>0</Style>
+            <UseVertical>0</UseVertical>
+          </Char>
+          <Text IX='0'>1/4&quot;</Text>
+        </Shape>
+        <Shape ID='44' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Text.44'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.247563</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>14.350393</PinX>
+            <PinY>3.740157</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>3.713450</Width>
+          </XForm>
+          <Char IX='0'>
+            <AsianFont>0</AsianFont>
+            <Case>0</Case>
+            <Color>#000000</Color>
+            <ColorTrans>0.000000</ColorTrans>
+            <ComplexScriptFont>0</ComplexScriptFont>
+            <ComplexScriptSize>0.000000</ComplexScriptSize>
+            <DblUnderline>0</DblUnderline>
+            <DoubleStrikethrough>0</DoubleStrikethrough>
+            <Font>0</Font>
+            <FontScale>1.000000</FontScale>
+            <Highlight>0</Highlight>
+            <LangID>0</LangID>
+            <Letterspace>0.000000</Letterspace>
+            <Locale>0</Locale>
+            <LocalizeFont>0</LocalizeFont>
+            <Overline>0</Overline>
+            <Perpendicular>0</Perpendicular>
+            <Pos>0</Pos>
+            <RTLText>0</RTLText>
+            <Size>0.247563</Size>
+            <Strikethru>0</Strikethru>
+            <Style>0</Style>
+            <UseVertical>0</UseVertical>
+          </Char>
+          <Text IX='0'>Tip-Ring-Sleeve</Text>
+        </Shape>
+        <Shape ID='45' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Text.45'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.247563</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>14.350393</PinX>
+            <PinY>3.425197</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>1.237817</Width>
+          </XForm>
+          <Char IX='0'>
+            <AsianFont>0</AsianFont>
+            <Case>0</Case>
+            <Color>#000000</Color>
+            <ColorTrans>0.000000</ColorTrans>
+            <ComplexScriptFont>0</ComplexScriptFont>
+            <ComplexScriptSize>0.000000</ComplexScriptSize>
+            <DblUnderline>0</DblUnderline>
+            <DoubleStrikethrough>0</DoubleStrikethrough>
+            <Font>0</Font>
+            <FontScale>1.000000</FontScale>
+            <Highlight>0</Highlight>
+            <LangID>0</LangID>
+            <Letterspace>0.000000</Letterspace>
+            <Locale>0</Locale>
+            <LocalizeFont>0</LocalizeFont>
+            <Overline>0</Overline>
+            <Perpendicular>0</Perpendicular>
+            <Pos>0</Pos>
+            <RTLText>0</RTLText>
+            <Size>0.247563</Size>
+            <Strikethru>0</Strikethru>
+            <Style>0</Style>
+            <UseVertical>0</UseVertical>
+          </Char>
+          <Text IX='0'>Audio</Text>
+        </Shape>
+        <Shape ID='46' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='FillPolygon.46'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>1.771654</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>5.472480</PinX>
+            <PinY>4.783464</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>3.208661</Width>
+          </XForm>
+          <Fill>
+            <FillBkgnd>#000000</FillBkgnd>
+            <FillBkgndTrans>0.000000</FillBkgndTrans>
+            <FillForegnd>#FFFFFF</FillForegnd>
+            <FillForegndTrans>0.000000</FillForegndTrans>
+            <FillPattern>1</FillPattern>
+            <ShapeShdwObliqueAngle>0.000000</ShapeShdwObliqueAngle>
+            <ShapeShdwOffsetX>0.000000</ShapeShdwOffsetX>
+            <ShapeShdwOffsetY>0.000000</ShapeShdwOffsetY>
+            <ShapeShdwScaleFactor>0.000000</ShapeShdwScaleFactor>
+            <ShapeShdwType>0</ShapeShdwType>
+            <ShdwBkgnd>0</ShdwBkgnd>
+            <ShdwBkgndTrans>0.000000</ShdwBkgndTrans>
+            <ShdwForegnd>#000000</ShdwForegnd>
+            <ShdwForegndTrans>0.000000</ShdwForegndTrans>
+            <ShdwPattern>0</ShdwPattern>
+          </Fill>
+          <Geom IX='0'>
+            <NoFill>0</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>3.208661</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>3.208661</X>
+              <Y>1.771654</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>0.000000</X>
+              <Y>1.771654</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='6'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='47' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='PolyLine.47'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>1.771654</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>5.472480</PinX>
+            <PinY>4.783464</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>3.208661</Width>
+          </XForm>
+          <Line>
+            <BeginArrow>0</BeginArrow>
+            <BeginArrowSize>0</BeginArrowSize>
+            <EndArrow>0</EndArrow>
+            <EndArrowSize>0</EndArrowSize>
+            <LineCap>0</LineCap>
+            <LineColor>#000000</LineColor>
+            <LineColorTrans>0.000000</LineColorTrans>
+            <LinePattern>1</LinePattern>
+            <LineWeight>0.039370</LineWeight>
+            <Rounding>0.000000</Rounding>
+          </Line>
+          <Geom IX='0'>
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>3.208661</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>3.208661</X>
+              <Y>1.771654</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>0.000000</X>
+              <Y>1.771654</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+            <LineTo IX='6'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='48' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Text.48'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.247563</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>7.076811</PinX>
+            <PinY>5.592520</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>4.456141</Width>
+          </XForm>
+          <Char IX='0'>
+            <AsianFont>0</AsianFont>
+            <Case>0</Case>
+            <Color>#000000</Color>
+            <ColorTrans>0.000000</ColorTrans>
+            <ComplexScriptFont>0</ComplexScriptFont>
+            <ComplexScriptSize>0.000000</ComplexScriptSize>
+            <DblUnderline>0</DblUnderline>
+            <DoubleStrikethrough>0</DoubleStrikethrough>
+            <Font>0</Font>
+            <FontScale>1.000000</FontScale>
+            <Highlight>0</Highlight>
+            <LangID>0</LangID>
+            <Letterspace>0.000000</Letterspace>
+            <Locale>0</Locale>
+            <LocalizeFont>0</LocalizeFont>
+            <Overline>0</Overline>
+            <Perpendicular>0</Perpendicular>
+            <Pos>0</Pos>
+            <RTLText>0</RTLText>
+            <Size>0.247563</Size>
+            <Strikethru>0</Strikethru>
+            <Style>0</Style>
+            <UseVertical>0</UseVertical>
+          </Char>
+          <Text IX='0'>PA and/or Speakers</Text>
+        </Shape>
+        <Shape ID='49' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='Line.49'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.064858</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>11.948819</PinX>
+            <PinY>5.600394</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>3.076065</Width>
+          </XForm>
+          <XForm1D>
+            <BeginX>11.948819</BeginX>
+            <BeginY>5.600394</BeginY>
+            <EndX>8.872754</EndX>
+            <EndY>5.665251</EndY>
+          </XForm1D>
+          <Line>
+            <BeginArrow>0</BeginArrow>
+            <BeginArrowSize>0</BeginArrowSize>
+            <EndArrow>0</EndArrow>
+            <EndArrowSize>0</EndArrowSize>
+            <LineCap>0</LineCap>
+            <LineColor>#000000</LineColor>
+            <LineColorTrans>0.000000</LineColorTrans>
+            <LinePattern>1</LinePattern>
+            <LineWeight>0.039370</LineWeight>
+            <Rounding>0.000000</Rounding>
+          </Line>
+          <Geom IX='0'>
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>-3.076065</X>
+              <Y>0.064858</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='50' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='FillPolygon.50'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.196807</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>8.725149</PinX>
+            <PinY>5.668364</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.198881</Width>
+          </XForm>
+          <Fill>
+            <FillBkgnd>#000000</FillBkgnd>
+            <FillBkgndTrans>0.000000</FillBkgndTrans>
+            <FillForegnd>#000000</FillForegnd>
+            <FillForegndTrans>0.000000</FillForegndTrans>
+            <FillPattern>1</FillPattern>
+            <ShapeShdwObliqueAngle>0.000000</ShapeShdwObliqueAngle>
+            <ShapeShdwOffsetX>0.000000</ShapeShdwOffsetX>
+            <ShapeShdwOffsetY>0.000000</ShapeShdwOffsetY>
+            <ShapeShdwScaleFactor>0.000000</ShapeShdwScaleFactor>
+            <ShapeShdwType>0</ShapeShdwType>
+            <ShdwBkgnd>0</ShdwBkgnd>
+            <ShdwBkgndTrans>0.000000</ShdwBkgndTrans>
+            <ShdwForegnd>#000000</ShdwForegnd>
+            <ShdwForegndTrans>0.000000</ShdwForegndTrans>
+            <ShdwPattern>0</ShdwPattern>
+          </Fill>
+          <Geom IX='0'>
+            <NoFill>0</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>0.198881</X>
+              <Y>0.094254</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>0.147605</X>
+              <Y>-0.003112</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>0.194732</X>
+              <Y>-0.102553</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+        <Shape ID='51' Type='Shape' FillStyle='0' LineStyle='0' TextStyle='0' NameU='PolyLine.51'>
+          <Data1>0</Data1>
+          <Data2>0</Data2>
+          <Data3>0</Data3>
+          <XForm>
+            <Angle>0.000000</Angle>
+            <FlipX>0</FlipX>
+            <FlipY>0</FlipY>
+            <Height>0.196807</Height>
+            <LocPinX>0.000000</LocPinX>
+            <LocPinY>0.000000</LocPinY>
+            <PinX>8.725149</PinX>
+            <PinY>5.668364</PinY>
+            <ResizeMode>0</ResizeMode>
+            <Width>0.198881</Width>
+          </XForm>
+          <Line>
+            <BeginArrow>0</BeginArrow>
+            <BeginArrowSize>0</BeginArrowSize>
+            <EndArrow>0</EndArrow>
+            <EndArrowSize>0</EndArrowSize>
+            <LineCap>0</LineCap>
+            <LineColor>#000000</LineColor>
+            <LineColorTrans>0.000000</LineColorTrans>
+            <LinePattern>1</LinePattern>
+            <LineWeight>0.039370</LineWeight>
+            <Rounding>0.000000</Rounding>
+          </Line>
+          <Geom IX='0'>
+            <NoFill>1</NoFill>
+            <NoLine>0</NoLine>
+            <NoShow>0</NoShow>
+            <NoSnap>0</NoSnap>
+            <MoveTo IX='1'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </MoveTo>
+            <LineTo IX='2'>
+              <X>0.198881</X>
+              <Y>0.094254</Y>
+            </LineTo>
+            <LineTo IX='3'>
+              <X>0.147605</X>
+              <Y>-0.003112</Y>
+            </LineTo>
+            <LineTo IX='4'>
+              <X>0.194732</X>
+              <Y>-0.102553</Y>
+            </LineTo>
+            <LineTo IX='5'>
+              <X>0.000000</X>
+              <Y>0.000000</Y>
+            </LineTo>
+          </Geom>
+        </Shape>
+      </Shapes>
+    </Page>
+  </Pages>
+</VisioDocument>

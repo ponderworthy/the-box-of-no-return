@@ -1,0 +1,62 @@
+zita-ajbridge (0.7.0-1.1-bnrcustom) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * 
+  * 
+
+ -- Jaromír Mikeš <jeb@bnr4>  Sun, 25 Jul 2021 21:59:14 -0500
+
+zita-ajbridge (0.7.0-1) unstable; urgency=medium
+
+  * New upstream version 0.7.0
+  * Patch refreshed.
+  * Bump Standards.
+  * Fix VCS fields.
+  * Set dh/compat 10.
+  * Fix hardening.
+  * Update copyright file.
+
+ -- Jaromír Mikeš <mira.mikes@seznam.cz>  Mon, 17 Oct 2016 06:18:28 +0200
+
+zita-ajbridge (0.6.0-1) unstable; urgency=medium
+
+  * Bump Standards.
+  * Build parallel.
+  * Patch refreshed.
+  * Install upstream man pages.
+  * Spelling fix in description.
+  * Added patch to fix install.
+  * Added patch to fix spelling.
+
+ -- Jaromír Mikeš <mira.mikes@seznam.cz>  Fri, 04 Sep 2015 05:17:20 +0200
+
+zita-ajbridge (0.4.0-1) unstable; urgency=low
+
+  [ Jaromír Mikeš ]
+  * Added myself as uploader.
+  * New upstream release.
+  * Refreshed patch.
+  * Set PREFIX in patch.
+  * Set dh/compat 9
+  * Bump Standards.
+  * Fixed spelling in man pages.
+
+  [ IOhannes m zmölnig ]
+  * Fixed URL of Quick Guide.
+
+ -- Jaromír Mikeš <mira.mikes@seznam.cz>  Sat, 05 Oct 2013 00:26:05 +0200
+
+zita-ajbridge (0.2.2-1) unstable; urgency=low
+
+  * Team upload.
+  * New upstream release.
+  * Refresh 0001-makefile.patch.
+  * Bump dependency on libzita-alsa-pcmi to 0.2.0.
+
+ -- Alessio Treglia <alessio@debian.org>  Sat, 24 Mar 2012 16:01:31 +0100
+
+zita-ajbridge (0.1.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #664665).
+
+ -- Robin Gareus <robin@gareus.org>  Mon, 19 Mar 2012 16:33:04 +0100

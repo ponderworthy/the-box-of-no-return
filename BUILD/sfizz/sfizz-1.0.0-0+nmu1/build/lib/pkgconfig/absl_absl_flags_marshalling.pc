@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}//usr/lib
+includedir=${prefix}/include
+
+Name: absl_absl_flags_marshalling
+Description: Abseil absl_flags_marshalling library
+URL: https://abseil.io/
+Version: 20210324
+Requires: absl_config = 20210324, absl_core_headers = 20210324, absl_log_severity = 20210324, absl_strings = 20210324, absl_str_format = 20210324
+Libs: -L${libdir}  -labsl_absl_flags_marshalling
+Cflags: -I${includedir} -DNOMINMAX

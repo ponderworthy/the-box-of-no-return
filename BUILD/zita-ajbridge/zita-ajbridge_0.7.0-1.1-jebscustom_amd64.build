@@ -1,0 +1,109 @@
+ dpkg-buildpackage -us -uc -ui -b
+dpkg-buildpackage: info: source package zita-ajbridge
+dpkg-buildpackage: info: source version 0.7.0-1.1-jebscustom
+dpkg-buildpackage: info: source distribution UNRELEASED
+dpkg-buildpackage: info: source changed by Jaromír Mikeš <jeb@bnr4>
+ dpkg-source --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ fakeroot debian/rules clean
+dh clean -Smakefile -Dsource
+   dh_testdir -O-Smakefile -O-Dsource
+   dh_auto_clean -O-Smakefile -O-Dsource
+	cd source && make -j16 clean
+make[1]: Entering directory '/home/jeb/BUILD/zita-ajbridge/zita-ajbridge-0.7.0-1.1/source'
+/bin/rm -f *~ *.o *.a *.d *.so *.gz
+/bin/rm -f zita-a2j zita-j2a
+make[1]: Leaving directory '/home/jeb/BUILD/zita-ajbridge/zita-ajbridge-0.7.0-1.1/source'
+   dh_autoreconf_clean -O-Smakefile -O-Dsource
+   dh_clean -O-Smakefile -O-Dsource
+ debian/rules build
+dh build -Smakefile -Dsource
+   dh_testdir -O-Smakefile -O-Dsource
+   dh_update_autotools_config -O-Smakefile -O-Dsource
+   dh_autoreconf -O-Smakefile -O-Dsource
+   dh_auto_configure -O-Smakefile -O-Dsource
+   dh_auto_build -O-Smakefile -O-Dsource
+	cd source && make -j16
+make[1]: Entering directory '/home/jeb/BUILD/zita-ajbridge/zita-ajbridge-0.7.0-1.1/source'
+g++ -g -O2 -fdebug-prefix-map=/home/jeb/BUILD/zita-ajbridge/zita-ajbridge-0.7.0-1.1=. -fstack-protector-strong -Wformat -Werror=format-security -O2 -Wall -MMD -MP -Wdate-time -D_FORTIFY_SOURCE=2 -DVERSION=\"0.7.0\" -DAPPNAME=\"zita-a2j\"  -c -o zita-a2j.o zita-a2j.cc
+g++ -g -O2 -fdebug-prefix-map=/home/jeb/BUILD/zita-ajbridge/zita-ajbridge-0.7.0-1.1=. -fstack-protector-strong -Wformat -Werror=format-security -O2 -Wall -MMD -MP -Wdate-time -D_FORTIFY_SOURCE=2 -DVERSION=\"0.7.0\" -DAPPNAME=\"zita-a2j\"  -c -o alsathread.o alsathread.cc
+g++ -g -O2 -fdebug-prefix-map=/home/jeb/BUILD/zita-ajbridge/zita-ajbridge-0.7.0-1.1=. -fstack-protector-strong -Wformat -Werror=format-security -O2 -Wall -MMD -MP -Wdate-time -D_FORTIFY_SOURCE=2 -DVERSION=\"0.7.0\" -DAPPNAME=\"zita-a2j\"  -c -o jackclient.o jackclient.cc
+g++ -g -O2 -fdebug-prefix-map=/home/jeb/BUILD/zita-ajbridge/zita-ajbridge-0.7.0-1.1=. -fstack-protector-strong -Wformat -Werror=format-security -O2 -Wall -MMD -MP -Wdate-time -D_FORTIFY_SOURCE=2 -DVERSION=\"0.7.0\" -DAPPNAME=\"zita-a2j\"  -c -o pxthread.o pxthread.cc
+g++ -g -O2 -fdebug-prefix-map=/home/jeb/BUILD/zita-ajbridge/zita-ajbridge-0.7.0-1.1=. -fstack-protector-strong -Wformat -Werror=format-security -O2 -Wall -MMD -MP -Wdate-time -D_FORTIFY_SOURCE=2 -DVERSION=\"0.7.0\" -DAPPNAME=\"zita-a2j\"  -c -o lfqueue.o lfqueue.cc
+g++ -g -O2 -fdebug-prefix-map=/home/jeb/BUILD/zita-ajbridge/zita-ajbridge-0.7.0-1.1=. -fstack-protector-strong -Wformat -Werror=format-security -O2 -Wall -MMD -MP -Wdate-time -D_FORTIFY_SOURCE=2 -DVERSION=\"0.7.0\" -DAPPNAME=\"zita-j2a\"  -c -o zita-j2a.o zita-j2a.cc
+g++ -Wl,-z,relro -Wl,-z,now -L/usr/lib -o zita-a2j zita-a2j.o alsathread.o jackclient.o pxthread.o lfqueue.o -lzita-resampler -lzita-alsa-pcmi -ljack -lasound -lpthread -lm -lrt
+g++ -Wl,-z,relro -Wl,-z,now -L/usr/lib -o zita-j2a zita-j2a.o alsathread.o jackclient.o pxthread.o lfqueue.o -lzita-resampler -lzita-alsa-pcmi -ljack -lasound -lpthread -lm -lrt
+make[1]: Leaving directory '/home/jeb/BUILD/zita-ajbridge/zita-ajbridge-0.7.0-1.1/source'
+   dh_auto_test -O-Smakefile -O-Dsource
+   create-stamp debian/debhelper-build-stamp
+ fakeroot debian/rules binary
+dh binary -Smakefile -Dsource
+   dh_testroot -O-Smakefile -O-Dsource
+   dh_prep -O-Smakefile -O-Dsource
+   dh_installdirs -O-Smakefile -O-Dsource
+   dh_auto_install -O-Smakefile -O-Dsource
+	cd source && make -j16 install DESTDIR=/home/jeb/BUILD/zita-ajbridge/zita-ajbridge-0.7.0-1.1/debian/zita-ajbridge AM_UPDATE_INFO_DIR=no
+make[1]: Entering directory '/home/jeb/BUILD/zita-ajbridge/zita-ajbridge-0.7.0-1.1/source'
+install -Dm 755 zita-a2j /home/jeb/BUILD/zita-ajbridge/zita-ajbridge-0.7.0-1.1/debian/zita-ajbridge/usr/bin/zita-a2j
+install -Dm 755 zita-j2a /home/jeb/BUILD/zita-ajbridge/zita-ajbridge-0.7.0-1.1/debian/zita-ajbridge/usr/bin/zita-j2a
+install -Dm 644 zita-ajbridge.1 /home/jeb/BUILD/zita-ajbridge/zita-ajbridge-0.7.0-1.1/debian/zita-ajbridge/usr/share/man/man1/zita-ajbridge.1
+install -Dm 644 zita-a2j.1 /home/jeb/BUILD/zita-ajbridge/zita-ajbridge-0.7.0-1.1/debian/zita-ajbridge/usr/share/man/man1/zita-a2j.1
+install -Dm 644 zita-j2a.1 /home/jeb/BUILD/zita-ajbridge/zita-ajbridge-0.7.0-1.1/debian/zita-ajbridge/usr/share/man/man1/zita-j2a.1
+make[1]: Leaving directory '/home/jeb/BUILD/zita-ajbridge/zita-ajbridge-0.7.0-1.1/source'
+   dh_install -O-Smakefile -O-Dsource
+   dh_installdocs -O-Smakefile -O-Dsource
+   debian/rules override_dh_installchangelogs
+make[1]: Entering directory '/home/jeb/BUILD/zita-ajbridge/zita-ajbridge-0.7.0-1.1'
+dh_installchangelogs README
+make[1]: Leaving directory '/home/jeb/BUILD/zita-ajbridge/zita-ajbridge-0.7.0-1.1'
+   dh_installexamples -O-Smakefile -O-Dsource
+   dh_installman -O-Smakefile -O-Dsource
+   dh_installcatalogs -O-Smakefile -O-Dsource
+   dh_installcron -O-Smakefile -O-Dsource
+   dh_installdebconf -O-Smakefile -O-Dsource
+   dh_installemacsen -O-Smakefile -O-Dsource
+   dh_installifupdown -O-Smakefile -O-Dsource
+   dh_installinfo -O-Smakefile -O-Dsource
+   dh_systemd_enable -O-Smakefile -O-Dsource
+   dh_installinit -O-Smakefile -O-Dsource
+   dh_systemd_start -O-Smakefile -O-Dsource
+   dh_installmenu -O-Smakefile -O-Dsource
+   dh_installmime -O-Smakefile -O-Dsource
+   dh_installmodules -O-Smakefile -O-Dsource
+   dh_installlogcheck -O-Smakefile -O-Dsource
+   dh_installlogrotate -O-Smakefile -O-Dsource
+   dh_installpam -O-Smakefile -O-Dsource
+   dh_installppp -O-Smakefile -O-Dsource
+   dh_installudev -O-Smakefile -O-Dsource
+   dh_installgsettings -O-Smakefile -O-Dsource
+   dh_bugfiles -O-Smakefile -O-Dsource
+   dh_ucf -O-Smakefile -O-Dsource
+   dh_lintian -O-Smakefile -O-Dsource
+   dh_gconf -O-Smakefile -O-Dsource
+dh_gconf: Please migrate to dh_installgsettings; gconf + dh_gconf is scheduled for removal.
+   dh_icons -O-Smakefile -O-Dsource
+   dh_perl -O-Smakefile -O-Dsource
+   dh_usrlocal -O-Smakefile -O-Dsource
+   dh_link -O-Smakefile -O-Dsource
+   dh_installwm -O-Smakefile -O-Dsource
+   dh_installxfonts -O-Smakefile -O-Dsource
+   dh_strip_nondeterminism -O-Smakefile -O-Dsource
+   dh_compress -O-Smakefile -O-Dsource
+   dh_fixperms -O-Smakefile -O-Dsource
+   dh_missing -O-Smakefile -O-Dsource
+   dh_strip -O-Smakefile -O-Dsource
+   dh_makeshlibs -O-Smakefile -O-Dsource
+   dh_shlibdeps -O-Smakefile -O-Dsource
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/zita-ajbridge/usr/bin/zita-a2j debian/zita-ajbridge/usr/bin/zita-j2a were not linked against libasound.so.2 (they use none of the library's symbols)
+dpkg-shlibdeps: warning: package could avoid a useless dependency if debian/zita-ajbridge/usr/bin/zita-a2j debian/zita-ajbridge/usr/bin/zita-j2a were not linked against librt.so.1 (they use none of the library's symbols)
+   dh_installdeb -O-Smakefile -O-Dsource
+   dh_gencontrol -O-Smakefile -O-Dsource
+   dh_md5sums -O-Smakefile -O-Dsource
+   dh_builddeb -O-Smakefile -O-Dsource
+dpkg-deb: building package 'zita-ajbridge' in '../zita-ajbridge_0.7.0-1.1-jebscustom_amd64.deb'.
+dpkg-deb: building package 'zita-ajbridge-dbgsym' in '../zita-ajbridge-dbgsym_0.7.0-1.1-jebscustom_amd64.deb'.
+ dpkg-genbuildinfo --build=binary
+ dpkg-genchanges --build=binary >../zita-ajbridge_0.7.0-1.1-jebscustom_amd64.changes
+dpkg-genchanges: info: binary-only upload (no source code included)
+ dpkg-source --after-build .
+dpkg-buildpackage: info: binary-only upload (no source included)

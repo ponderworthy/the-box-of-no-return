@@ -1,0 +1,581 @@
+fluidsynth (1.1.11-1+deb10u1.1-bnrscustom) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * 
+  * 
+
+ -- Reiner Herrmann <jeb@bnr4>  Mon, 26 Jul 2021 06:01:35 -0500
+
+fluidsynth (1.1.11-1+deb10u1) buster; urgency=medium
+
+  * Non-maintainer upload.
+  * Backport fix for use-after-free vulnerability. (CVE-2021-28421)
+    (Closes: #987168)
+
+ -- Reiner Herrmann <reiner@reiner-h.de>  Sat, 24 Apr 2021 18:46:20 +0200
+
+fluidsynth (1.1.11-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Felipe Sateler ]
+  * Change maintainer address to debian-multimedia@lists.debian.org
+
+  [ Fabian Greffrath ]
+  * New upstream version 1.1.11.
+  * Install fluidsynth config file (Closes: #760209) and
+    systemd user service unit file (Closes: #760210).
+
+ -- Fabian Greffrath <fabian@debian.org>  Sat, 02 Jun 2018 10:45:52 +0200
+
+fluidsynth (1.1.10-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Jaromír Mikeš ]
+  * Drop explicit Testsuite field, not needed anymore.
+
+  [ Ondřej Nový ]
+  * d/copyright: Use https protocol in Format field
+  * d/control: Set Vcs-* to salsa.debian.org
+
+  [ Fabian Greffrath ]
+  * New upstream version 1.1.10
+
+ -- Fabian Greffrath <fabian@debian.org>  Thu, 15 Mar 2018 17:27:53 +0100
+
+fluidsynth (1.1.9-1) unstable; urgency=medium
+
+  * New upstream version 1.1.9
+  * Set dh/compat 11.
+  * Bump Standards.
+  * Update download page in d/copyright file.
+  * Update upstream contacts d/copyright file.
+  * Update d/docs file.
+  * Update d/symbols file.
+
+ -- Jaromír Mikeš <mira.mikes@seznam.cz>  Sun, 07 Jan 2018 12:50:51 +0100
+
+fluidsynth (1.1.8-3) unstable; urgency=medium
+
+  * Symbols changed on non-linux arch - more fixes. (Closes: #883684)
+
+ -- Jaromír Mikeš <mira.mikes@seznam.cz>  Sun, 10 Dec 2017 02:10:59 +0100
+
+fluidsynth (1.1.8-2) unstable; urgency=medium
+
+  [ Fabian Greffrath ]
+  * add Suggests on some common soundfonts to the libfluidsynth1 package
+
+  [ Jaromír Mikeš ]
+  * Symbols changed on non-linux archs. (Closes: #883684)
+  * Remove trailing whitespace from changelog.
+
+ -- Jaromír Mikeš <mira.mikes@seznam.cz>  Thu, 07 Dec 2017 15:12:36 +0100
+
+fluidsynth (1.1.8-1) unstable; urgency=medium
+
+  * Improve changelog.
+  * New upstream version 1.1.8
+  * Update Vcs to use git instead of cgit.
+  * Bump Standards.
+  * Continuation comma.
+  * Update copyright file.
+
+ -- Jaromír Mikeš <mira.mikes@seznam.cz>  Sat, 14 Oct 2017 06:41:12 +0200
+
+fluidsynth (1.1.7-1) unstable; urgency=medium
+
+  * Update watch file.
+  * New upstream version 1.1.7 (Closes: #877308)
+   + consistently relicense libfluidsynth under LGPL-2.1+ (Closes: #859793)
+   + add support of vorbis-compressed sf3 sound fonts (Closes: #740710)
+  * Introduce postclone.sh script to ignore .pc/ dir.
+  * Patches refreshed/deleted.
+  * Allow all compressions.
+  * Bump Standards.
+  * Build without autoreconf.
+  * Update symbols file.
+  * Remove autotools-dev from B-D.
+  * Avoid useless linking.
+  * Update copyright file.
+
+ -- Jaromír Mikeš <mira.mikes@seznam.cz>  Mon, 02 Oct 2017 12:51:06 +0200
+
+fluidsynth (1.1.6-4) unstable; urgency=medium
+
+  * Set dh/compat 10.
+  * Bump Standards.
+  * Fix VCS fields.
+  * B-D autotools-dev.
+  * Fix hardening.
+  * Add symbols file.
+  * Sign tags.
+  * Tune .gitignore file.
+
+ -- Jaromír Mikeš <mira.mikes@seznam.cz>  Sun, 18 Dec 2016 15:14:56 +0100
+
+fluidsynth (1.1.6-3) unstable; urgency=medium
+
+  * Bump Standards.
+  * Update VCS fields.
+  * Remove XS- prefix from Testsuite field.
+  * Build with autoreconf.
+  * Update copyright file.
+  * Remove excessive dependencies of libfluidsynth-dev. (Closes: #738206)
+  * Add patch to fix server connection. (Closes: #798815)
+
+ -- Jaromír Mikeš <mira.mikes@seznam.cz>  Mon, 14 Sep 2015 05:59:58 +0200
+
+fluidsynth (1.1.6-2) unstable; urgency=low
+
+  [ Christoph Egger ]
+  * fix FTBFS (Closes: #690006)
+
+  [ Rafał Cieślak ]
+  * Add a compile/run autopkg test. (Closes: #692812)
+
+  [ Alessio Treglia ]
+  * Bump debhelper requirement to 9.
+  * Bump Standards.
+
+ -- Alessio Treglia <alessio@debian.org>  Sat, 02 Feb 2013 13:40:54 +0000
+
+fluidsynth (1.1.6-1) unstable; urgency=low
+
+  * New upstream bugfix-only release:
+    - Handle MIDI End of track events, ticket #101
+    - Prevent broken rendering after an voice overflow, ticket #100
+    - Enable long arguments where available
+    - Prevent libdbus crash
+  * Remove build-dependency on libncurses5-dev. (Closes: #667892)
+  * Bump Standards.
+
+ -- Alessio Treglia <alessio@debian.org>  Tue, 28 Aug 2012 14:43:04 +0200
+
+fluidsynth (1.1.5-2) unstable; urgency=low
+
+  * Build with MultiArch.
+  * Enable parallel builds.
+
+ -- Alessio Treglia <alessio@debian.org>  Tue, 24 Jan 2012 18:45:57 +0100
+
+fluidsynth (1.1.5-1) unstable; urgency=low
+
+  * New upstream bugfix release.
+
+ -- Alessio Treglia <alessio@debian.org>  Mon, 05 Sep 2011 12:10:31 +0200
+
+fluidsynth (1.1.4-2) unstable; urgency=low
+
+  * Upload to unstable
+  * Remove alternative build-dep on libjack-jackd2-dev.
+  * Disable alsa and dbus on hurd (Closes: #637158).
+    Thanks to Samuel Thibault for the patch.
+  * Revert ABI break introduced with FluidSynth 1.1.4.
+    - This is now binary compatible with FluidSynth << 1.1.4,
+      patch taken from upstream trunk.
+
+ -- Alessio Treglia <alessio@debian.org>  Sat, 13 Aug 2011 11:21:32 +0200
+
+fluidsynth (1.1.4-1) experimental; urgency=low
+
+  * New upstream release:
+    - Several improvements and fixes to the CMake build system.
+    - Several bug fixes to the engine, notably quite a few which could
+      cause FluidSynth to sound bad in some cases.
+    - API additions, that make it possible to load MIDI files from memory
+      to inspect/modify MIDI events as they are being played from a MIDI
+      file to change channels between melodic and drum mode and to silence
+      all notes in one command.
+    - Improvements to the CoreAudio driver.
+
+ -- Alessio Treglia <alessio@debian.org>  Fri, 05 Aug 2011 10:08:40 +0200
+
+fluidsynth (1.1.3-4) unstable; urgency=low
+
+  * Drop LASH support.
+  * Bump Standards.
+
+ -- Alessio Treglia <alessio@debian.org>  Thu, 19 May 2011 14:59:53 +0200
+
+fluidsynth (1.1.3-3) unstable; urgency=low
+
+  * Demote liblash-dev to
+    libfluidsynth-dev's Suggests field (Closes: #611457).
+  * Append -Wl,--as-needed flag to LDFLAGS.
+
+ -- Alessio Treglia <alessio@debian.org>  Wed, 09 Mar 2011 13:32:37 +0100
+
+fluidsynth (1.1.3-2) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Alessio Treglia <alessio@debian.org>  Wed, 09 Feb 2011 00:12:25 +0100
+
+fluidsynth (1.1.3-1) experimental; urgency=low
+
+  * New upstream release:
+    - Compilation with LADSPA enabled was broken in 1.1.2 - fixed.
+    - Multichannel output broken when double precision was used - fixed.
+    - Doxygen settings.
+    - Mac OS X build system fixes.
+    - Fix build problem with scummvm.
+    - Optimize by not starting unused threads with multicore rendering.
+    - Window handle creation/destruction in Windows dll version.
+    - Race condition in alsa_seq / alsa_raw drivers caused them not to quit.
+  * Remove patches, applied upstream.
+
+ -- Alessio Treglia <alessio@debian.org>  Sat, 16 Oct 2010 12:27:50 +0200
+
+fluidsynth (1.1.2-2) experimental; urgency=low
+
+  * Build-dep and dep on libjack-jackd2-dev (Closes: #597265).
+  * Disable DBus support on kfreebsd-* archs to avoid it FTBFS (Closes:
+    #597977).
+
+ -- Alessio Treglia <alessio@debian.org>  Wed, 29 Sep 2010 11:18:56 +0200
+
+fluidsynth (1.1.2-1) experimental; urgency=low
+
+  * New upstream release:
+    - New CMake build system.
+      + Winbuild and Macbuild directories dropped.
+      + Autotools build system is deprecated, but is still working.
+    - Rewriting of thread safety.
+      + Two new settings control the thread safety mode.
+        The default is to be backwards compatible.
+    - Voice overflow settings.
+    - Possible to update polyphony, up to 65536 (and beyond initial setting).
+    - Possible to update sample rate (jack driver updates sample rate
+      correctly).
+    - MIDI Bank Select handling fixed.
+    - Source files moved into different subdirectories.
+    - Can use RealTimeKit (on Linux) to get real-time priority.
+    - Shell commands for pitch bend and pitch bend range.
+    - PulseAudio driver: specify media role, and allow pulseaudio to adjust
+      latency.
+    - Other bug fixes.
+  * Change my email address.
+  * Remove DM-Upload-Allowed: yes field.
+  * Update Homepage field.
+  * Bump Standards.
+  * Update watch file.
+  * Switch to format 3.0 (quilt).
+  * Add debian/gbp.conf file.
+  * Drop pulse-adjust-latency.patch patch, applied upstream.
+  * Remove quilt build-dependency.
+  * Static libraries are no longer provided.
+  * Switch to cmake buildsystem, drop autotools stuff.
+  * Adjust override_dh_auto_configure target to match cmake variables.
+  * Really enable LADSPA support, patch taken from upstream's trunk.
+  * Update debian/copyright file.
+  * Set architecture of -DEV package to all.
+
+ -- Alessio Treglia <alessio@debian.org>  Tue, 14 Sep 2010 16:25:10 +0200
+
+fluidsynth (1.1.1-4) unstable; urgency=low
+
+  * Remove debian/README.Debian, no longer useful.
+  * Disable ALSA support on kfreebsd-* architectures (Closes: #579914).
+
+ -- Alessio Treglia <quadrispro@ubuntu.com>  Sun, 02 May 2010 16:38:57 +0200
+
+fluidsynth (1.1.1-3) unstable; urgency=low
+
+  [ David Henningsson ]
+  * Allow pulseaudio to adjust latency by default.
+
+  [ Alessio Treglia ]
+  * Remove unneeded .la file.
+  * Bump Standards-Version.
+
+ -- Alessio Treglia <quadrispro@ubuntu.com>  Mon, 22 Mar 2010 18:41:22 +0100
+
+fluidsynth (1.1.1-2) unstable; urgency=low
+
+  * Fix libfluidsynth-dev uninstallable state by adjusting libglib2.0-dev
+    dependency.
+  * Switch to debhelper 7.
+  * Drop CDBS.
+  * Bump quilt build-dependency.
+
+ -- Alessio Treglia <quadrispro@ubuntu.com>  Sat, 09 Jan 2010 13:58:45 +0100
+
+fluidsynth (1.1.1-1) unstable; urgency=low
+
+  [ David Henningsson ]
+  * New upstream release
+  * All code changes dropped (fixed upstream)
+  * Update build system: debhelper 7, cdbs and quilt
+  * New maintainer: Debian Multimedia Maintainers team
+  * Bump Standards-Version to 3.8.3, no changes required
+  * Remove optional dependency on libreadline5-dev (Closes: #553756)
+  * Remove obsolete DFSG paragraph
+
+  [ Alessio Treglia ]
+  * Add myself as uploader.
+  * Allow uploads by Debian Maintainers.
+  * Lines should be shorter than 80 chars.
+  * Add Vcs-* tags.
+  * Enable LADSPA effect unit.
+  * Fix copyright-refers-to-symlink-license lintian warning.
+
+ -- David Henningsson <diwic@ubuntu.com>  Sun, 13 Dec 2009 11:43:00 +0100
+
+fluidsynth (1.0.9+dfsg-2) unstable; urgency=low
+
+  * Enable pulseaudio support (Closes: #531579)
+  * Run commands after midi router is created (Closes: #528701)
+
+ -- David Henningsson <launchpad.web@epost.diwic.se>  Mon, 18 Jun 2009 19:05:39 +0200
+
+fluidsynth (1.0.9+dfsg-1.1) unstable; urgency=low
+
+  * NMU to fix wrongly set maintainer in previous version
+  * New maintainer (Closes: #503528)
+
+ -- Ralf Treinen <treinen@debian.org>  Thu, 21 May 2009 14:24:22 +0200
+
+fluidsynth (1.0.9+dfsg-1) unstable; urgency=low
+
+  [ Ralf Treinen ]
+  * QA upload (sponsoring David Henningsson).
+
+  [ David Henningsson <launchpad.web@epost.diwic.se> ]
+  * New upstream release (Closes: #524066)
+  * Remove non-DFSG soundfonts and documentation (Closes: #524566)
+  * Depend on libjack-dev instead of libjack0.100.0-dev (Closes: #527410)
+  * Optionally depend on lash instead of ladcca
+  * Rewrite debian/copyright file, now it includes exact copyright notices
+  * Fix build problem with new libtool (moved ltmain.sh) (Closes: #527832)
+  * Erase autotools files in debian/rules to avoid large diff.gz
+  * Remove unused debian/manpages file
+  * Keep upstream's config.{sub,guess}, since they're recent enough
+  * Bump Standards-Version to 3.8.1, no changes required
+
+ -- Ralf Treinen <treinen@debian.org>  Thu, 21 May 2009 10:22:08 +0200
+
+fluidsynth (1.0.8-2) unstable; urgency=low
+
+  * QA upload.
+  * Set Maintainer to Debian QA Group.
+  * Remove Uploaders field.
+  * Remove Vcs fields - repository contains only an initial svn-inject.
+  * Bump Standards-Version to 3.8.0 - no changes required.
+  * Remove DH_COMPAT=3 from rules and add a compat file for version 5.
+  * Depend on unversioned debhelper.
+  * Replace ${Source-Version} with ${binary:Version} on fluidsynth-dev.
+  * Don't ignore make clean errors.
+  * Convert copyright file to utf-8.
+  * Remove unused dh_ calls from rules.
+  * Remove empty postinst scripts.
+  * Remove the autotools target from rules. Automatic modification of the
+    changelog are discouraged and it's not doing something useful here anyway.
+  * Depend on the default automake instead of automake1.4.
+  * Enable autoreconf in the configure target and remove ltconfig.
+  * Remove a file '?' from the diff - seems to be an error from some former
+    upload and shouldn't be there.
+  * Modify fluidsynth manpage so that it's a section 1 manpage.
+  * Add a missing space in fluidsynth.1.
+  * Escape some hyphens in fluidsynth.1 so that groff interprets them as minus.
+  * ACK NMU from Peter Eisentraut (Closes: #478380).
+
+ -- Sven Hoexter <sven@timegate.de>  Thu, 25 Dec 2008 17:35:40 +0100
+
+fluidsynth (1.0.8-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix bashism in debian/rules (closes: #478380)
+
+ -- Peter Eisentraut <petere@debian.org>  Mon, 26 May 2008 16:43:17 +0200
+
+fluidsynth (1.0.8-1) unstable; urgency=low
+
+  * New upstream release (closes: #467431, #364355)
+  * debian/control
+     - added myself as Uploader
+     - added Vcs-Browser Vcs-Svn and Homepage fields
+     - recommend qsynth (closes: #462287)
+
+ -- Free Ekanayaka <freee@debian.org>  Mon, 14 Apr 2008 15:59:30 +0100
+
+fluidsynth (1.0.7a-1) unstable; urgency=low
+
+  [ Eric Van Buggenhaut ]
+  * New upstream release
+  * stop Build-Depending on automake (closes: #380717)
+
+  [ root ]
+  * GNU config automated update: config.sub     (20050602 to 20060223),
+    config.guess     (20050527 to 20060223)
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Wed,  2 Aug 2006 19:36:08 +0200
+
+fluidsynth (1.0.6-5) unstable; urgency=low
+
+  [ Eric Van Buggenhaut ]
+  * Added some dependencies to libfluidsynth-dev (closes: #376844)
+
+  [ root ]
+  * GNU config automated update: config.sub     (20050708 to 20060223),
+    config.guess     (20050803 to 20060223)
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Fri,  7 Jul 2006 01:27:46 +0200
+
+fluidsynth (1.0.6-4) unstable; urgency=low
+
+  [ Eric Van Buggenhaut ]
+  * Fixed various dependencies (closes: #339622)
+
+  [ root ]
+  * GNU config automated update: config.sub (20050422 to 20050708),
+    config.guess (20050422 to 20050803)
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Fri, 18 Nov 2005 03:28:46 +0100
+
+fluidsynth (1.0.6-3) unstable; urgency=low
+
+  * Update build dependencies to libreadline5-dev (closes: #326336)
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Sat,  3 Sep 2005 00:57:56 +0200
+
+fluidsynth (1.0.6-2) unstable; urgency=low
+
+  * Added ALSA support (closes: #317085)
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Wed,  6 Jul 2005 19:13:43 +0200
+
+fluidsynth (1.0.6-1) unstable; urgency=low
+
+  * New upstream release
+  * Build against libjack-0.100.0-dev
+  * GNU config automated update: config.sub (20040312 to 20050422),
+    config.guess (20040312 to 20050422)
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Sat,  2 Jul 2005 16:21:14 +0200
+
+fluidsynth (1.0.5-2) unstable; urgency=low
+
+  * Re-applied A. Jochens' patch for amd64 (closes: #289146)
+  * GNU config automated update: config.sub (20040624 to 20041130),
+    config.guess (20040813 to 20041112)
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Mon, 10 Jan 2005 13:41:29 +0100
+
+fluidsynth (1.0.5-1) unstable; urgency=low
+
+  * New upstream release
+  * now builds on amd64 (closes: #285951)
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Thu, 16 Dec 2004 19:01:19 +0100
+
+fluidsynth (1.0.4-2-1) unstable; urgency=low
+
+  * New upstream release
+  * GNU config automated update: config.sub (20040105 to 20040624),
+    config.guess (20040105 to 20040719)
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Tue, 17 Aug 2004 03:13:42 +0200
+
+fluidsynth (1.0.3-6) unstable; urgency=low
+
+  * Included examples for the use of the library (closes: #252037)
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Tue,  1 Jun 2004 11:16:12 +0200
+
+fluidsynth (1.0.3-5) unstable; urgency=low
+
+  * debian/control:  Make dev package strictly depend on corresponding version
+   of the runtime library package.(kobras@debian.org)
+  * debian/control: Disambiguate short descriptions of lib and dev package.
+   (kobras@debian.org)
+  * fix RPATH problems (closes: #229056) (kobras@debian.org)
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Sat, 24 Jan 2004 13:16:29 +0100
+
+fluidsynth (1.0.3-4) unstable; urgency=low
+
+  * Rebuild against ladcca2 and jack0.80.0 (closes: #228348)
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Wed, 21 Jan 2004 14:44:17 +0100
+
+fluidsynth (1.0.3-3) unstable; urgency=low
+
+  * Disabled LADSPA support (closes: #226257)
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Tue,  6 Jan 2004 00:26:47 +0100
+
+fluidsynth (1.0.3-2) unstable; urgency=low
+
+  * Building against ladcca-dev 0.3.2-1
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Tue, 21 Oct 2003 12:47:16 +0200
+
+fluidsynth (1.0.3-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Mon,  1 Sep 2003 00:27:58 +0200
+
+fluidsynth (1.0.2-2) unstable; urgency=low
+
+  * Added LADSPA support
+  * Removed buggy /usr/lib/pkggconfig dir
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Sun, 24 Aug 2003 12:54:31 +0200
+
+fluidsynth (1.0.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Removed build-dep on automake. We now run automake on the unpacked source
+    tree and then ship the changed Makefile.in's in the diff.gz.
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Sun, 24 Aug 2003 02:26:38 +0200
+
+fluidsynth (1.0.1-7) unstable; urgency=low
+
+  * Removed build-dep on automake1.5 (closes: #205983)
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Mon, 18 Aug 2003 23:55:49 +0200
+
+fluidsynth (1.0.1-6) unstable; urgency=low
+
+  * -dev now includes fluidsynth.pc (closes: #202297)
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Sat,  9 Aug 2003 04:42:31 +0200
+
+fluidsynth (1.0.1-5) unstable; urgency=low
+
+  * corrected rpath (closes: #204025)
+  * libfluidsynth-dev also depends on libncurses5-dev and libreadline4-dev
+    (closes: #202561)
+  * Updated to last version of Debian Policy
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Tue,  5 Aug 2003 01:08:20 +0200
+
+fluidsynth (1.0.1-4) unstable; urgency=low
+
+  * Recompiled against libjack-0.71.2
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Fri, 13 Jun 2003 19:26:43 +0200
+
+fluidsynth (1.0.1-3) unstable; urgency=low
+
+  * Patched upstream code, in order to compile on non-i386 arches.
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Tue, 29 Apr 2003 02:54:51 +0200
+
+fluidsynth (1.0.1-2) unstable; urgency=low
+
+  * Innstall header files into /usr/include (closes: #190846)
+  * libfluidsynth and libfluidsynth-dev needn't replace: and conflicts:
+    libiiwusynth and libiiwusynth-dev
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Sat, 26 Apr 2003 23:40:47 +0200
+
+fluidsynth (1.0.1-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Eric Van Buggenhaut <ericvb@debian.org>  Mon, 14 Apr 2003 02:10:02 +0200

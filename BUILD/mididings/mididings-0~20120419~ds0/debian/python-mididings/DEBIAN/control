@@ -1,0 +1,38 @@
+Package: python-mididings
+Source: mididings
+Version: 0~20120419~ds0-7+1bnrcustom
+Architecture: amd64
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Installed-Size: 694
+Depends: python-decorator, python (<< 2.8), python (>= 2.7), python:any (>= 2.6.6-7~), libasound2 (>= 1.0.16), libboost-python1.67.0, libboost-thread1.67.0, libc6 (>= 2.27), libgcc1 (>= 1:3.0), libglib2.0-0 (>= 2.12.0), libjack-jackd2-0 (>= 1.9.10+20150825) | libjack-0.125, libsmf0 (>= 1.3), libstdc++6 (>= 5.2)
+Suggests: python-dbus, python-liblo, python-pyinotify, python-tk
+Provides: python2.7-mididings
+Section: python
+Priority: optional
+Homepage: http://das.nasophon.de/mididings/
+Description: MIDI routing library for Python
+ mididings is a MIDI router and processor based on Python,
+ supporting ALSA and JACK MIDI.
+ .
+ Features:
+  * MIDI routing and filtering
+    Filter events depending on their event type, channel,
+    note number, velocity, etc., and freely route them
+    between an arbitrary number of input and output ports.
+  * Modifying and converting MIDI events
+    Transpose notes, apply velocity curves, change
+    controller values and ranges, or convert events to any
+    other MIDI event type. mididings also includes more
+    complex functions like a diatonic harmonizer, floating
+    split points, latched notes, and more.
+  * Seamless switching between patches
+    Set up different "scenes", each with its own MIDI
+    routing and processing, and switch between them at any
+    time, even while playing. Switching scenes does not
+    affect notes already held, and does not result in
+    dropouts or stuck notes!
+  * MIDI event monitoring, running external commands
+    Print MIDI event data to the console to help debugging
+    your patches and configuring your MIDI controllers. In
+    addition to its MIDI output, mididings can also
+    execute shell commands and send OSC or DBUS messages.

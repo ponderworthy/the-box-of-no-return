@@ -1,0 +1,4 @@
+usr/bin/*
+usr/share/man/*
+*/fluidsynth.service usr/lib/systemd/user
+*/fluidsynth.conf etc/default

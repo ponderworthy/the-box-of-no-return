@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${prefix}//usr/lib
+includedir=${prefix}/include
+
+Name: absl_absl_random_internal_mock_helpers
+Description: Abseil absl_random_internal_mock_helpers library
+URL: https://abseil.io/
+Version: 20210324
+Requires: absl_fast_type_id = 20210324, absl_optional = 20210324
+Libs: -L${libdir}  
+Cflags: -I${includedir} -DNOMINMAX

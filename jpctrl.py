@@ -7,18 +7,14 @@
 # (c) 2017 Jonathan E. Brickman
 # released under the LGPL:
 # https://www.gnu.org/copyleft/lesser.html
-#
-# This file is the scene of very active development right now.
-# A 2015 working version, in Python 2, is visible here:
-# https://lsn.ponderworthy.com/doku.php/concurrent_patch_management
 ###########################################################################
 
 import subprocess
 import os
-import psutil
+import psutil	# This is python3-psutil
 import shlex
 import time
-import jack     # This is JACK-Client, installed as python-jack-client for python3
+import jack     # This is JACK-Client, installed as python3-jack-client for python3
                 # see https://pypi.python.org/pypi/JACK-Client/
 
 # This and the next depend on a Linux command by the name of "beep",

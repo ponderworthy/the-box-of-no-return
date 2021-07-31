@@ -1,0 +1,3 @@
+usr/lib/*/libjack.so.*
+usr/lib/*/libjacknet.so.*
+usr/lib/*/libjackserver.so.*

@@ -1,0 +1,42 @@
+Aj-snapshot is a command line utility to store/restore all ALSA 
+and/or JACK connections to/from an XML file.
+
+To compile this program from source, you will need these libraries:
+
+- the ALSA library and headers (libasound)
+- the JACK library and headers (libjack)
+- the MXML library and headers (libmxml)
+
+On Debian based systems, you will also need the development versions 
+of these packages. These are marked by the -dev suffix.
+E.g. you would need to have both libasound, and libasound-dev installed.
+
+-------------------------------------------------
+
+To install aj-snapshot do :
+
+tar xvf aj-snapshot-X.X.X.tar.bz2
+cd aj-snapshot-X.X.X
+
+./configure
+make
+sudo make install 
+
+(or: sudo make install DESTDIR=/path/)
+
+-------------------------------------------------
+
+For more information on how to use aj-snapshot see:
+http://aj-snapshot.sourceforge.net/
+
+You can read the manual page before installation 
+from within the source directory with:
+man man/aj-snapshot.1
+
+Or after installation with:
+man aj-snapshot
+
+or do:
+aj-snapshot -h
+
+to get a short summary of all the options.

@@ -1,0 +1,51 @@
+# Italian translation of jack-audio-connection-kit.
+# COPYRIGHT (C) 2009 THE JACK-AUDIO-CONNECTION-KIT'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the jack-audio-connection-kit package.
+# Luca Monducci <luca.mo@tiscali.it>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: jack-audio-connection-kit 0.116.2+svn3592 debconf "
+"templates\n"
+"Report-Msgid-Bugs-To: jackd2@packages.debian.org\n"
+"POT-Creation-Date: 2011-12-22 23:36+0100\n"
+"PO-Revision-Date: 2009-10-21 21:31+0200\n"
+"Last-Translator: Luca Monducci <luca.mo@tiscali.it>\n"
+"Language-Team: Italian <debian-l10n-italian@lists.debian.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid "Enable realtime process priority?"
+msgstr "Attivare la priorità realtime del processo?"
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid ""
+"If you want to run jackd with realtime priorities, the user starting jackd "
+"needs realtime permissions. Accept this option to create the file /etc/"
+"security/limits.d/audio.conf, granting realtime priority and memlock "
+"privileges to the audio group."
+msgstr ""
+"Per eseguire jackd con le priorità realtime, l'utente che avvia jackd "
+"necessita dei permessi realtime. Accettando verrà creato il file /etc/"
+"security/limits.conf, che garantirà i privilegi di priorità realtime e di "
+"memlock al gruppo audio."
+
+#. Type: boolean
+#. Description
+#: ../jackd2.templates:2001
+msgid ""
+"Running jackd with realtime priority minimizes latency, but may lead to "
+"complete system lock-ups by requesting all the available physical system "
+"memory, which is unacceptable in multi-user environments."
+msgstr ""
+"L'esecuzione di jackd con priorità in realtime minimizza la latenza, ma "
+"potrebbe comportare dei blocchi del sistema dovuti alla richiesta di tutta "
+"la memoria fisica disponibile sul sistema, inaccettabile in ambienti multi-"
+"utente."

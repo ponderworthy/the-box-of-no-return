@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsfizz-ring-buffer.a  CMakeFiles/sfizz-ring-buffer.dir/external/ring_buffer/ring_buffer/ring_buffer.cpp.o
+/usr/bin/ranlib libsfizz-ring-buffer.a

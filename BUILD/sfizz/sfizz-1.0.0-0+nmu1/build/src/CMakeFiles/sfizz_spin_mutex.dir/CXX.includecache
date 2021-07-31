@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../external/atomic_queue/include/atomic_queue/defs.h
+atomic
+-
+emmintrin.h
+-
+
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/src/sfizz/utility/spin_mutex/SpinMutex.cpp
+SpinMutex.h
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/src/sfizz/utility/spin_mutex/SpinMutex.h
+atomic_queue/defs.h
+-
+thread
+-
+
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/src/sfizz/utility/spin_mutex/SpinMutex.h
+atomic
+-
+
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/src/sfizz/utility/spin_mutex/spin_mutex.cpp
+spin_mutex.h
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/src/sfizz/utility/spin_mutex/spin_mutex.h
+SpinMutex.h
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/src/sfizz/utility/spin_mutex/SpinMutex.h
+
+/home/jeb/BNR/BUILD/sfizz/sfizz-1.0.0-0+nmu1/src/sfizz/utility/spin_mutex/spin_mutex.h
+stdbool.h
+-
+

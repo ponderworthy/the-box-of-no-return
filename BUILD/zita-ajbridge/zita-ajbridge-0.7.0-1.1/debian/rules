@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+LDFLAGS+=-Wl,--as-needed
+CFLAGS+=-march=native -mtune=native -O3
+CXXFLAGS+=-march=native -mtune=native -O3
+
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+%:
+	dh $@ -Smakefile -Dsource
+
+override_dh_installchangelogs:
+	dh_installchangelogs README

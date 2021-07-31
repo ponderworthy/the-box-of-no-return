@@ -1,0 +1,35 @@
+Description: Fix small misspellings.
+Author: Jaromír Mikeš <mira.mikes@seznam.cz>
+Forwarded: no
+
+Index: zita-njbridge/source/zita-njbridge.1
+===================================================================
+--- zita-njbridge.orig/source/zita-njbridge.1
++++ zita-njbridge/source/zita-njbridge.1
+@@ -40,7 +40,7 @@ Both IPv4 and IPv6 are supported.
+ For a one-to-one setup the first form of the commands shown above should
+ be used. The protocol used is UDP and the ip-address argument required
+ for both sender and receiver is that of the receiver. A host name can be
+-used instead of a numerical IP adresses, this will be looked up using
++used instead of a numerical IP addresses, this will be looked up using
+ getaddrinfo().
+ .PP
+ For a one-to-many setup the second form must be used The ip-address 
+@@ -57,7 +57,7 @@ are received.
+ Zita-njbridge will select a filter length based on the lower of the
+ sender and receiver sample rates. For sample rates of 44.1 Khz and
+ above the value chosen will result in an attenuation of no more than
+-0.1 dB up to 20 kHz. The --filt option allows to override the automatic
++0.1 dB up to 20 kHz. The --filt option allows one to override the automatic
+ configuration, but this will normally not be necessary. 
+ 
+ .SS Latency issues.
+@@ -204,7 +204,7 @@ two sample rates, in the range 16..96. S
+ Print additional diagnostic information. Three values will
+ be printed twice per second: The average resampler control
+ loop error in frames, the resampler ratio correction factor,
+-and the minumum number of frames available in the receive buffer.
++and the minimum number of frames available in the receive buffer.
+ 
+ 
+ .SH "AUTHOR"

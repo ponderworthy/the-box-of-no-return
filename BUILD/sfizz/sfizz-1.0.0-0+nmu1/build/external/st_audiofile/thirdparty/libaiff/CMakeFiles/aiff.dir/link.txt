@@ -1,0 +1,2 @@
+/usr/bin/ar qc libaiff.a  CMakeFiles/aiff.dir/libaiff.all.c.o
+/usr/bin/ranlib libaiff.a

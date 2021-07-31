@@ -1,0 +1,6 @@
+libjack.so.0 libjack0 #MINVER#
+#include "symbols-common"
+#include "symbols-libjack"
+libjackserver.so.0 libjack0 #MINVER#
+#include "symbols-common"
+#include "symbols-libjackserver"

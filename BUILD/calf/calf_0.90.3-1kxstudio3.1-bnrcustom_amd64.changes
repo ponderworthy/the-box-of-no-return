@@ -1,0 +1,34 @@
+Format: 1.8
+Date: Sun, 25 Jul 2021 21:44:26 -0500
+Source: calf
+Binary: calf-ladspa calf-plugins calf-plugins-dbgsym
+Architecture: all amd64
+Version: 5:0.90.3-1kxstudio3.1-bnrcustom
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: falkTX <falktx@falktx.com>
+Changed-By: falkTX <jeb@bnr4>
+Description:
+ calf-ladspa - dummy package
+ calf-plugins - Calf Studiogear - audio effects and sound generators
+Changes:
+ calf (5:0.90.3-1kxstudio3.1-bnrcustom) UNRELEASED; urgency=medium
+ .
+   * Non-maintainer upload.
+   *
+   *
+Checksums-Sha1:
+ f309e2a5f23178c651399aca875a2195f38d40e8 7460 calf-ladspa_0.90.3-1kxstudio3.1-bnrcustom_all.deb
+ c79b0be59d9f925b4b5642d1c41d7812ea9e9a03 3040 calf-plugins-dbgsym_0.90.3-1kxstudio3.1-bnrcustom_amd64.deb
+ 0b3524ec3aac575e98233fe0034e2a626602ff68 14531088 calf-plugins_0.90.3-1kxstudio3.1-bnrcustom_amd64.deb
+ 174931fcea68b11296e2dd72f3ee7f0ddf2fafc0 12584 calf_0.90.3-1kxstudio3.1-bnrcustom_amd64.buildinfo
+Checksums-Sha256:
+ 0726f7e6904f00266b1aee4a9b10aeefbd17823cd862e8bfeaa3ad8c9e7acee5 7460 calf-ladspa_0.90.3-1kxstudio3.1-bnrcustom_all.deb
+ efb847ea8fc94d32f36e3253dc6965520810b6a3cbf9f6cb800385207a2156c2 3040 calf-plugins-dbgsym_0.90.3-1kxstudio3.1-bnrcustom_amd64.deb
+ f1ae940f2ae97f9fde5b9fadfeb8ad1ab13ea2f4f26aec519926832e9882f1ed 14531088 calf-plugins_0.90.3-1kxstudio3.1-bnrcustom_amd64.deb
+ d3408ac6402cb5e88a9659e2768e984a50e82f18b56d69cfe4b56a876930aa92 12584 calf_0.90.3-1kxstudio3.1-bnrcustom_amd64.buildinfo
+Files:
+ b61de0cf8905a19bd2cacfb0d08c516f 7460 sound extra calf-ladspa_0.90.3-1kxstudio3.1-bnrcustom_all.deb
+ 53aff56f123d79da5f1bf95c90656789 3040 debug optional calf-plugins-dbgsym_0.90.3-1kxstudio3.1-bnrcustom_amd64.deb
+ d5e80508bb3421e5562f5e6f2d02fe97 14531088 sound extra calf-plugins_0.90.3-1kxstudio3.1-bnrcustom_amd64.deb
+ d9d698c33c5f2ba0f0858489ed97bf15 12584 sound extra calf_0.90.3-1kxstudio3.1-bnrcustom_amd64.buildinfo

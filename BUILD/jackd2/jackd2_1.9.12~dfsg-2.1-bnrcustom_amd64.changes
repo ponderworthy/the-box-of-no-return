@@ -1,0 +1,47 @@
+Format: 1.8
+Date: Fri, 30 Jul 2021 07:26:10 -0500
+Source: jackd2
+Binary: jackd2 jackd2-dbgsym jackd2-firewire jackd2-firewire-dbgsym libjack-jackd2-0 libjack-jackd2-0-dbgsym libjack-jackd2-dev
+Architecture: amd64
+Version: 1.9.12~dfsg-2.1-bnrcustom
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: Debian Multimedia Maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Changed-By: Adrian Knoth <jeb@bnr4>
+Description:
+ jackd2     - JACK Audio Connection Kit (server and example clients)
+ jackd2-firewire - JACK Audio Connection Kit (FFADO and FreeBoB backends)
+ libjack-jackd2-0 - JACK Audio Connection Kit (libraries)
+ libjack-jackd2-dev - JACK Audio Connection Kit (development files)
+Changes:
+ jackd2 (1.9.12~dfsg-2.1-bnrcustom) UNRELEASED; urgency=medium
+ .
+   * Non-maintainer upload.
+   *
+Checksums-Sha1:
+ 68c1a90672f36e70d26718fbbd336324e3ab02fa 58036 jackd2-dbgsym_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
+ e9b9fa2424fa37e0c3718c2ffcb9e95bf7bca9ce 4824 jackd2-firewire-dbgsym_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
+ c331ed3b4c95bbbbef82d6753412c78b7aa437ff 71444 jackd2-firewire_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
+ 3655888543d929a00dc2c3495afbca2889c1a5cf 9082 jackd2_1.9.12~dfsg-2.1-bnrcustom_amd64.buildinfo
+ aa39b84d0cd1df6656964efccc25a5dca9026e1f 337648 jackd2_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
+ b4eb1fd6c086dde9a73b9c996859af9dbb79c3af 49772 libjack-jackd2-0-dbgsym_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
+ 91c0f7f75ff76fc5b8f2d2d3f7f1e498ab474ff7 320340 libjack-jackd2-0_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
+ 60e7577522eaf12c605dca8954c6dbeb3577d2ab 92996 libjack-jackd2-dev_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
+Checksums-Sha256:
+ dcf5efc1193e0f73555650c26500fdeffb1e97dc097b33d645ee4d02d1a62e85 58036 jackd2-dbgsym_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
+ 95870f866705bed6af2536836526f103bbfa4cad1bf148ff15e9e40e347b8ca6 4824 jackd2-firewire-dbgsym_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
+ 5cbcd91ee4a2869ec32cd848cfd509f2c2fa35a0784425a0cba40f6d04aeeb98 71444 jackd2-firewire_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
+ 0614fb4f7ee2c6886db748d77afcd17f42c1bb3f68cf9944f48f36ad3f6ff588 9082 jackd2_1.9.12~dfsg-2.1-bnrcustom_amd64.buildinfo
+ ad87e4a52f21746ae06c4b0e7b3c0f2ca74bfac72f5212cdd90630bee167013c 337648 jackd2_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
+ dbd739d6c294a503d67d14879b11d6a5a52d49fad89bff2ea8b25f1d93ebb4d0 49772 libjack-jackd2-0-dbgsym_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
+ e5e4cf704cc8a181f547e3201d391156f5087a676f1df6fbe8a5267296366a6f 320340 libjack-jackd2-0_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
+ 554e4413a3718dca8f08497f8270dd8459e2da287e15cbd402dece6cc545e17f 92996 libjack-jackd2-dev_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
+Files:
+ 05bd9d561c4232e16ec67cce311ea5f7 58036 debug optional jackd2-dbgsym_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
+ 2950bdfb1e4c60bf9f4d4612b162cc4f 4824 debug optional jackd2-firewire-dbgsym_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
+ fefd7c727863381d2294fabb3a9018e7 71444 sound optional jackd2-firewire_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
+ 3f12fdd414828e5013894c9abba10565 9082 sound optional jackd2_1.9.12~dfsg-2.1-bnrcustom_amd64.buildinfo
+ ceba4bf2dc24d89a47cfb2fbeb2a301e 337648 sound optional jackd2_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
+ 542ac36cd757d3aa819f2a5b530c1232 49772 debug optional libjack-jackd2-0-dbgsym_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
+ 6b8c3c8fd60ba124e602f50534cb95fa 320340 libs optional libjack-jackd2-0_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
+ 6d0f825cddb2f820a9d9fb1c9af03f18 92996 libdevel optional libjack-jackd2-dev_1.9.12~dfsg-2.1-bnrcustom_amd64.deb
