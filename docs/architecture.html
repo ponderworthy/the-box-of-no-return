@@ -45,11 +45,11 @@
       GUIs support it.&nbsp; So in the current configuration, the hard server
       doesn't touch MIDI at all.&nbsp; There is a tool called a2jmidid, which is
       a background service normally used to set up a single bridge between ALSA
-      MIDI and JACK MIDI on a hard server; but this tool ships with something
-      else called a2jmidi_bridge which can be run multiple times manually.&nbsp;
-      And this is how it is working at this writing, one a2jmidi_bridge per soft
-      server, delivering MIDI via ALSA alone from the hardware direct into each
-      soft server.</p>
+      MIDI and JACK MIDI on a usual single-server setup; but this tool ships
+      with something else called a2jmidi_bridge, which can be run multiple times
+      manually.&nbsp; And this is how it is working at this writing, one
+      a2jmidi_bridge per soft server, delivering MIDI via ALSA alone from the
+      hardware direct into each soft server.</p>
     <p>There is a likely future change of the MIDI side of things. The one
       problem with ALSA MIDI, for a very long time, has been that it requires
       powering the keyboard off and then on after the BNR is booted, before it

@@ -29,6 +29,8 @@
       thence to zita-j2n, which sends the signal over the network to the hard
       server.</p>
     <p>This use of multiple JACK servers in one box is called <a href="https://github.com/ponderworthy/MultiJACK">MultiJACK</a>.</p>
+<<<<<<< HEAD
+=======
     <p>To see the connections, <a href="images/hard-server-connections.png" target="_blank">click
         here for the hard server</a>, <a href="images/soft1-server-connections.png"
         target="_blank">here for soft server #1</a>, <a href="images/soft2-server-connections.png"
@@ -39,16 +41,17 @@
     <p>You may notice that ALSA MIDI connections, in green, are replicated
       across all of them; this is because when Catia was started to produce
       them, it was "aimed" at a single </p>
+>>>>>>> master
     <h2>midi</h2>
     <p>ALSA (non-JACK) MIDI is very well-supported, and worthwhile JACK wiring
       GUIs support it.&nbsp; So in the current configuration, the hard server
       doesn't touch MIDI at all.&nbsp; There is a tool called a2jmidid, which is
       a background service normally used to set up a single bridge between ALSA
-      MIDI and JACK MIDI on a hard server; but this tool ships with something
-      else called a2jmidi_bridge which can be run multiple times manually.&nbsp;
-      And this is how it is working at this writing, one a2jmidi_bridge per soft
-      server, delivering MIDI via ALSA alone from the hardware direct into each
-      soft server.</p>
+      MIDI and JACK MIDI on a usual single-server setup; but this tool also
+      ships with something else called a2jmidi_bridge, which can be run multiple
+      times manually.&nbsp; And this is how it is working at this writing, one
+      a2jmidi_bridge per soft server, delivering MIDI via ALSA alone from the
+      hardware direct into each soft server.</p>
     <p>There is a likely future change of the MIDI side of things. The one
       problem with ALSA MIDI, for a very long time, has been that it requires
       powering the keyboard off and then on after the BNR is booted, before it

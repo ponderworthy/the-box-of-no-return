@@ -89,5 +89,17 @@
       emerged, and is now in place most wonderfully&nbsp;☺ &nbsp; 96 kHz, still
       about 25-30% of the big octo's CPU in use, and all the tone I can
       use.&nbsp; Hallelujah!</p>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-76358613-4"></script>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-76358613-4');
+</script>
+    
+    
   </body>
 </html>
