@@ -13,3 +13,5 @@ creating alsa driver ... hw:Generic|-|128|2|96000|0|0|nomon|swmeter|-|32bit
 configuring for 96000Hz, period = 128 frames (1.3 ms), buffer = 2 periods
 ALSA: final selected sample format for playback: 32bit integer little-endian
 ALSA: use 2 periods for playback
+Released audio card Audio1
+audio_reservation_finish
