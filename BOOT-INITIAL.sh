@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #######################################
 # BOOT-INITIAL
 #
@@ -6,8 +8,6 @@
 # if done in bash rather than needing
 # careful process control.
 ########################################
-
-#!/bin/bash
 
 # Change this according to your sound card name
 # as found in /proc/asound/cards
