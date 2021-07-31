@@ -1,0 +1,18 @@
+Package: linuxsampler
+Version: 5:2.1.1-1kxstudio2.1-bnrcustom
+Architecture: amd64
+Maintainer: falkTX <falktx@falktx.com>
+Installed-Size: 6535
+Depends: libasound2 (>= 1.0.16), libc6 (>= 2.22), libgcc1 (>= 1:3.0), libjack-jackd2-0 (>= 1.9.10+20150825) | libjack-0.125, libstdc++6 (>= 5.2), libuuid1 (>= 2.16)
+Suggests: gigtools
+Provides: standalone-plugin
+Section: sound
+Priority: extra
+Description: realtime audio sampler
+ LinuxSampler is a work in progress. It's goal is to produce a free
+ software audio sampler with professional grade features.
+ .
+ This package provides the backend application of LinuxSampler.
+ LinuxSampler can be controlled via network interface which uses an ASCII
+ based protocol called LSCP. You might consider to install a GUI frontend
+ for LinuxSampler as well.

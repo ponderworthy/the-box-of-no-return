@@ -1,0 +1,13 @@
+if HAVE_DSSI
+  DSSI_SUBDIR = dssi
+endif
+if HAVE_LV2
+  LV2_SUBDIR = lv2
+endif
+if HAVE_VST
+  VST_SUBDIR = vst
+endif
+if HAVE_AU
+  AU_SUBDIR = au
+endif
+SUBDIRS = $(DSSI_SUBDIR) $(LV2_SUBDIR) $(VST_SUBDIR) $(AU_SUBDIR)

@@ -1,0 +1,24 @@
+on init
+  declare $foo := 7
+
+  { you can also use parentheses, i.e.:  select ($foo) }
+  select $foo
+    case 0
+      message("unary select case does not work!")
+    case 6
+      message("unary select case does not work!")
+    case 7
+      message("unary select case works.")
+    case 8
+      message("unary select case does not work!")
+  end select
+
+  select $foo
+    case 0 to 4
+      message("range select case does not work!")
+    case 10 to 12
+      message("range select case does not work!")
+    case 5 to 9
+      message("range select case works.")
+  end select
+end on

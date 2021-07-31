@@ -1,0 +1,45 @@
+{
+    This example is just a test case for checking the correct behavior of
+    nested USE_CODE_IF() preprocessor statements.
+}
+on init
+
+  SET_CONDITION(foo)
+
+  USE_CODE_IF(bar)
+    USE_CODE_IF(foo)
+      message("This is a bug!")
+    END_USE_CODE
+  END_USE_CODE
+
+  USE_CODE_IF(foo)
+    USE_CODE_IF(bar)
+      message("This is a bug!")
+    END_USE_CODE
+  END_USE_CODE
+
+  USE_CODE_IF(foo)
+    USE_CODE_IF(foo)
+      message("Nested USE_CODE_IF works!")
+    END_USE_CODE
+  END_USE_CODE
+
+  USE_CODE_IF_NOT(foo)
+    USE_CODE_IF_NOT(bar)
+      message("This is a bug!")
+    END_USE_CODE
+  END_USE_CODE
+
+  USE_CODE_IF_NOT(bar)
+    USE_CODE_IF_NOT(foo)
+      message("This is a bug!")
+    END_USE_CODE
+  END_USE_CODE
+
+  USE_CODE_IF_NOT(bar)
+    USE_CODE_IF_NOT(bar)
+      message("Nested USE_CODE_IF_NOT works!")
+    END_USE_CODE
+  END_USE_CODE
+
+end on

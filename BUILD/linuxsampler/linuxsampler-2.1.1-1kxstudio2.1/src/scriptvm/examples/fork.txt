@@ -1,0 +1,50 @@
+{ The fork() function can be used to "split" the respective script handler
+  instance into multiple script handler instances which then continue to run
+  on their own. So this is like creating new script "threads". As you can
+  see in this example, as soon as the child threads have been forked, they
+  continue to manage their own polyphonic variable instances, so polyphonic
+  variables start to deviate in the individual threads after fork() as soon as
+  threads are modifying the polyphonic variables. }
+
+on init
+  declare polyphonic $i
+  declare $k
+end on
+
+on note
+  { set the polyphonic variable to some arbitrary start value }
+  $i := 10
+
+  { create 2 sub-threads for this current script handler, and don't let the
+    children be auto aborted when parent thread terminates }
+  select fork(2, 0)
+  case 0
+    { will print "10" for $i }
+    message("This is parent thread: $i=" & $i)
+
+    $k := num_elements(%NKSP_CALLBACK_CHILD_ID) - 1
+    while ($k >= 0)
+      message("  - ID of my child " & ($k+1) & " is: " & %NKSP_CALLBACK_CHILD_ID[$k])
+      dec($k)
+    end while
+
+  case 1
+    inc($i)
+
+    { will print "11" for $i }
+    message("This is 1st child thread: $i=" & $i)
+
+    message("  - ID of my parent is: " & $NKSP_CALLBACK_PARENT_ID)
+
+  case 2
+    dec($i)
+
+    { will print "9" for $i }
+    message("This is 2nd child thread: $i=" & $i)
+
+    message("  - ID of my parent is: " & $NKSP_CALLBACK_PARENT_ID)
+
+  end select
+
+  message("  - my ID is: " & $NI_CALLBACK_ID)
+end on

@@ -1,0 +1,9 @@
+function printSomeMessage
+   message("Hello there!")
+end function
+
+on init
+  call printSomeMessage
+  call printSomeMessage
+  call printSomeMessage
+end on

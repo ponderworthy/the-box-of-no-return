@@ -1,0 +1,19 @@
+{ Polyhonic variables are, in contrast to all other variable types, not global
+  variables, but instead they exist separately in each event. Which circumvents
+  the problem that (global) variables may be altered undesiredly if event
+  handlers are called in "parallel". Downside: polyphonic variables need to be
+  allocated as many times as events exist in the system. Thus: one single
+  polyphonic variable takes a lot of memory! Due to this reason, only integer
+  variables are allowed to be declared as polyphonics ATM. }
+
+on init
+  declare polyphonic $p
+end on 
+
+on note
+  message($p)
+  $p := $p + 1
+  message($p)
+  $p := $p + 1
+  message($p)
+end on

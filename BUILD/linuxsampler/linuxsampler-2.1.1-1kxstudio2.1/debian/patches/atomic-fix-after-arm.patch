@@ -1,0 +1,29 @@
+--- linuxsampler-plugins-32chan-2.1.1.orig/src/drivers/midi/VirtualMidiDevice.cpp
++++ linuxsampler-plugins-32chan-2.1.1/src/drivers/midi/VirtualMidiDevice.cpp
+@@ -32,18 +32,15 @@ namespace LinuxSampler {
+     };
+ 
+     VirtualMidiDevice::VirtualMidiDevice() : p(new private_data_t) {
+-        atomic_t zero = ATOMIC_INIT(0);
+-        atomic_t defaultVelocity = ATOMIC_INIT(127);
+-        atomic_t defaultCCValue = ATOMIC_INIT(0);
+-        atomic_set( &p->notesChanged, zero );
+-        atomic_set( &p->ccsChanged, zero );
++        atomic_set( &p->notesChanged, 0 );
++        atomic_set( &p->ccsChanged, 0 );
+         for (int i = 0; i < MIDI_KEYS; i++) {
+-            atomic_set( &p->pNoteChanged[i], zero );
+-            atomic_set( &p->pNoteIsActive[i], zero );
+-            atomic_set( &p->pNoteOnVelocity[i], defaultVelocity );
+-            atomic_set( &p->pNoteOffVelocity[i], defaultVelocity );
+-            atomic_set( &p->pCCChanged[i], zero );
+-            atomic_set( &p->pCCValue[i], defaultCCValue );
++            atomic_set( &p->pNoteChanged[i], 0 );
++            atomic_set( &p->pNoteIsActive[i], 0 );
++            atomic_set( &p->pNoteOnVelocity[i], 127 );
++            atomic_set( &p->pNoteOffVelocity[i], 127 );
++            atomic_set( &p->pCCChanged[i], 0 );
++            atomic_set( &p->pCCValue[i], 0 );
+         }
+     }
+ 

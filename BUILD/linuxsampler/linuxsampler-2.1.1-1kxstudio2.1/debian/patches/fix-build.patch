@@ -1,0 +1,21 @@
+--- linuxsampler-static-1.0.0+svn2435.orig/Makefile.am
++++ linuxsampler-static-1.0.0+svn2435/Makefile.am
+@@ -1,7 +1,7 @@
+ # require automake (>= 1.5) due to 'dist-bzip2' option
+ AUTOMAKE_OPTIONS = 1.5 dist-bzip2
+ 
+-SUBDIRS = man src scripts osx Artwork Documentation debian
++SUBDIRS = man src scripts osx Artwork Documentation
+ 
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = linuxsampler.pc
+--- linuxsampler-static-1.0.0+svn2435.orig/configure.ac
++++ linuxsampler-static-1.0.0+svn2435/configure.ac
+@@ -1328,7 +1328,6 @@ AC_CONFIG_FILES([\
+     src/scriptvm/editor/Makefile \
+     src/shell/Makefile \
+     linuxsampler.spec \
+-    debian/Makefile \
+     Artwork/Makefile \
+     scripts/Makefile \
+     osx/Makefile \

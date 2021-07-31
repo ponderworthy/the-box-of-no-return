@@ -1,0 +1,20 @@
+{ The wait function can be used to suspend execution of the current event
+  handler for the given amount of microseconds. Note that execution of an event
+  handler might also be automatically suspended by the sampler in case its
+  execution exceeded a certain limit of time.
+
+  If your script might get suspended for the reasons mentioned above, you should
+  be aware that all variables are global variables by default and all global
+  variables are shared with other execution instances of the script. So after a
+  suspended event handler execution is woken up again, the respective global
+  variables might not reflect what you wanted them to be, because in the
+  meantime other execution instances of your script might have altered them
+  already. In case this is an undesired behavior for you, then you should use
+  the "polyphonic" variable type for the respective variable instead.
+}
+
+on note
+  message("function should suspend now")
+  wait(1000000)
+  message("this would be after suspension of 1000000 microseconds")
+end on 

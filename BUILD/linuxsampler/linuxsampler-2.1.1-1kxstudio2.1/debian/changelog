@@ -1,0 +1,73 @@
+linuxsampler (5:2.1.1-1kxstudio2.1-bnrcustom) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * 
+
+ -- falkTX <jeb@bnr4>  Fri, 30 Jul 2021 21:58:41 -0500
+
+linuxsampler (5:2.1.1-1kxstudio2) bionic; urgency=medium
+
+  * Update and build for arm
+
+ -- falkTX <falktx@gmail.com>  Mon, 30 Sep 2019 12:34:48 +0100
+
+linuxsampler (2:2.1.0-1kxstudio1v5) xenial; urgency=medium
+
+  * GCC5 build
+
+ -- falkTX <falktx@gmail.com>  Tue, 12 Dec 2017 23:29:01 +0100
+
+linuxsampler (2:2.1.0-1kxstudio1) trusty; urgency=medium
+
+  * Update
+
+ -- falkTX <falktx@gmail.com>  Tue, 12 Dec 2017 23:28:36 +0100
+
+linuxsampler (2:2.0.0+svn3347-1kxstudio2) trusty; urgency=medium
+
+  * Update
+
+ -- falkTX <falktx@gmail.com>  Sun, 17 Sep 2017 21:35:12 +0200
+
+linuxsampler (2:2.0.0-1kxstudio3) trusty; urgency=medium
+
+  * Use shared libs
+
+ -- falkTX <falktx@gmail.com>  Sat, 25 Jul 2015 20:11:57 +0200
+
+linuxsampler (2:2.0.0-1kxstudio2) trusty; urgency=medium
+
+  * Use lazy binding of LS plugins
+
+ -- falkTX <falktx@gmail.com>  Sat, 25 Jul 2015 19:04:50 +0200
+
+linuxsampler (2:2.0.0-1kxstudio1) trusty; urgency=medium
+
+  * Update to new stable release
+
+ -- falkTX <falktx@gmail.com>  Sat, 25 Jul 2015 15:42:39 +0200
+
+linuxsampler (1.0.0+svn2593-1kxstudio3) lucid; urgency=medium
+
+  * New SVN
+
+ -- falkTX <falktx@gmail.com>  Thu, 10 Jul 2014 13:39:37 +0100
+
+linuxsampler (1.0.0+svn2497-1kxstudio1) lucid; urgency=low
+
+  * New svn
+
+ -- falkTX <falktx@gmail.com>  Thu, 09 Jan 2014 20:49:06 +0000
+
+linuxsampler (1.0.0+svn2480-2kxstudio1) lucid; urgency=low
+
+  * New SVN
+  * Build against gcc4.8, sqlite3-static
+
+ -- falkTX <falktx@gmail.com>  Fri, 15 Nov 2013 16:00:58 +0000
+
+linuxsampler (1.0.0+svn2459-1kxstudio1) lucid; urgency=low
+
+  * Initial release
+
+ -- falkTX <falktx@gmail.com>  Wed, 28 Aug 2013 09:13:02 +0100

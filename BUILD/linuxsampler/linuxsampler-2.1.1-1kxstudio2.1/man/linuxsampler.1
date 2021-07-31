@@ -1,0 +1,103 @@
+.TH "linuxsampler" "1" "13 Jun 2017" "linuxsampler 2.1.1" "User Manuals"
+.SH NAME
+linuxsampler \- modular, streaming capable sampler
+.SH SYNOPSIS
+.B linuxsampler
+[OPTIONS]
+.SH DESCRIPTION
+LinuxSampler is a modular, streaming capable sampler. Currently it supports the
+sampler formats Gigasampler/GigaStudio (.gig), SoundFont v2 (.sf2) and SFZ v2
+(.sfz).
+
+The sampler is designed as
+backend, that is server-like console application. You will need a frontend
+application like QSampler or JSampler/Fantasia, which provide a graphical user
+interface (GUI) to control the sampler and manage sampler sessions conveniently.
+If you prefer, you can also control the sampler from the command line instead,
+for example by using the
+.BR lscp (1)
+shell application shipped with
+LinuxSampler, which provides LSCP aware color highlighting, auto completion and
+more. Since the LSCP network interface is based on a human readable text
+protocol, you can also send LSCP commands by any other means to the sampler,
+e.g. by using
+.BR telnet (1)
+or
+.BR netcat (1).
+You can find examples and detailed informations
+about LinuxSampler's network protocol (LSCP) on
+http://linuxsampler.org/documentation.html#lscp_spec
+
+Various audio and MIDI driver systems are supported, like ALSA (audio & MIDI),
+JACK (audio & MIDI), ASIO, CoreAudio, CoreMIDI, Arts, MidiShare and MME.
+LinuxSampler can also be run as virtual instrument plugin. The following
+instrument plugin formats are currently supported: AudioUnit (AU), DSSI, LV2
+and VST. You can also load effect plugins into the sampler. Currently only the
+LADSPA plugin format is supported for sampler internal effects.
+
+If you are using sounds in the Gigasampler/GigaStudio format, then you may also
+want to install the graphical instrument editor application called "gigedit",
+which can directly be launched by LinuxSampler, allowing to edit instruments in
+real-time (changes immediately being audible, without needing to reload the
+sound files in the sampler).
+.SH OPTIONS
+.IP "--exec-after-init"
+Executes the provided shell command(s) after initialization of application
+completed. You may use this to automatically restore a previous sampler
+session on startup, i.e. by sending a previously stored LSCP file via
+.BR netcat (1).
+to the sampler.
+.IP "--help"
+Print command line help and exit.
+.IP "--version"
+Print version information and exit.
+.IP "--profile"
+This option is currently not supported anymore, since the respective
+profiling code is currently broken. Original behavior:
+Output benchmark messages on the console. This reflects the current
+efficiency as abstract BogoVoice count which is something like a
+theoretical limit of the amount of voices which can be rendered in the given
+scenario. It does not include all aspects of the sampler, that's why this
+value is usually higher than what you really can achieve on your box. Also
+note that this value is as well dependant on what instrument patch you are
+using and what you are playing.
+For a compact synthesis core benchmark, independent from drivers and
+instrument files, you might want to use the one coming with the sampler's
+source files instead (directory "benchmarks" of the source files).
+.IP "--no-tune"
+Disable assembly optimizations. Usually the sampler will detect CPU specific
+features like MMX and SSE at runtime and use an appropriate assembly
+optimized code in that case. With that switch you can disable this feature
+and force the sampler to skip the assembly optimizations at runtime.
+.IP "--statistics"
+Output voice and disk stream count periodically on the console.
+.IP "--lscp-addr IPADDRESS"
+Defines IP address on which the LSCP server should listen to (default: any).
+.IP "--lscp-port NUMBER"
+Defines TCP port on which the LSCP server should listen to (default: 8888).
+.IP "--create-instruments-db [FILE]"
+Creates a database file with the given filename which can be used by the
+sampler's instruments database system to maintain the user's collection of
+instrument libraries. When this argument is given, the sampler will just
+create the instruments DB file and exit. If the optional file argument is
+omitted, then a default location for the instrument DB file is used instead.
+.IP "--instruments-db-location FILE"
+Overrides the location of the database file, which the sampler shall use for
+its instruments database system
+(default: /var/lib/linuxsampler/instruments.db).
+.SH ENVIRONMENT VARIABLES
+.IP "LINUXSAMPLER_PLUGIN_DIR"
+Allows to override the directory where LinuxSampler shall look for instrument
+editor plugins.
+.IP "LADSPA_PATH"
+Allows to override the directory where LinuxSampler shall look for LADSPA
+effect plugins. Multiple paths may be given, separated by colon (":") character
+on POSIX systems (i.e. Linux and Mac), or separated by semi-colon (";")
+character on Windows systems.
+.SH "SEE ALSO"
+.BR lscp (1),
+.BR qsampler (1)
+.SH "BUGS"
+Report bugs to http://bugs.linuxsampler.org
+.SH "Author"
+Written by Christian Schoenebeck <cuse@users.sf.net>

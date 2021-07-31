@@ -1,0 +1,27 @@
+on init
+  declare $foo := 1
+
+  if ($foo)
+    message("if works.")
+  end if
+
+  $foo := 0
+
+  if ($foo)
+    message("if does not work!")
+  end if
+
+  if ($foo)
+    message("if else does not work!")
+  else
+    message("if else works.")
+  end if
+
+  $foo := 1
+
+  if ($foo)
+    message("if else works.")
+  else
+    message("if else does not work!")
+  end if
+end on

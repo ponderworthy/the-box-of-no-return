@@ -1,0 +1,26 @@
+Format: 1.8
+Date: Fri, 30 Jul 2021 21:58:41 -0500
+Source: linuxsampler
+Binary: linuxsampler
+Architecture: amd64
+Version: 5:2.1.1-1kxstudio2.1-bnrcustom
+Distribution: UNRELEASED
+Urgency: medium
+Maintainer: falkTX <falktx@falktx.com>
+Changed-By: falkTX <jeb@bnr4>
+Description:
+ linuxsampler - realtime audio sampler
+Changes:
+ linuxsampler (5:2.1.1-1kxstudio2.1-bnrcustom) UNRELEASED; urgency=medium
+ .
+   * Non-maintainer upload.
+   *
+Checksums-Sha1:
+ b8a46f794bebf434ed9928a7a9d33dfb67a40fd5 6222 linuxsampler_2.1.1-1kxstudio2.1-bnrcustom_amd64.buildinfo
+ cb9e20f0983d6ae3c9fc71a00105197163b769ff 1647204 linuxsampler_2.1.1-1kxstudio2.1-bnrcustom_amd64.deb
+Checksums-Sha256:
+ 877eb6aaca007ca31d601c2479f53e4321203dea9d943cb813f1a829e5bd712c 6222 linuxsampler_2.1.1-1kxstudio2.1-bnrcustom_amd64.buildinfo
+ 9fb3414053f091532a96e75134b83f1e15c718994e2c88db15f76d81d8e7bc79 1647204 linuxsampler_2.1.1-1kxstudio2.1-bnrcustom_amd64.deb
+Files:
+ 56ffe81bfcb7e5c802a17b4016dbdebe 6222 libs extra linuxsampler_2.1.1-1kxstudio2.1-bnrcustom_amd64.buildinfo
+ 8452aea28448887619cb488935a900da 1647204 sound extra linuxsampler_2.1.1-1kxstudio2.1-bnrcustom_amd64.deb

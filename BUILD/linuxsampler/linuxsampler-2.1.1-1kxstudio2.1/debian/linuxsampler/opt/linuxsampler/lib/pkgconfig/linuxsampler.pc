@@ -1,0 +1,11 @@
+prefix=/opt/linuxsampler
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib/linuxsampler
+includedir=${prefix}/include
+plugindir=${exec_prefix}/lib/linuxsampler/plugins
+
+Name: linuxsampler
+Description: LinuxSampler C++ library
+Version: 2.1.1
+Libs: -L${libdir} -llinuxsampler
+Cflags: -I${includedir}

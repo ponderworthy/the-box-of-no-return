@@ -1,0 +1,8 @@
+on init
+  declare $g1 := 3
+
+  declare const $c1 := 5
+  { declare const $c2 := $g1 }
+  declare const $c3 := $c1
+
+end on

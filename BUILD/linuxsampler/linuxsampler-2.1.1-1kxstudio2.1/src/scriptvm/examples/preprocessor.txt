@@ -1,0 +1,57 @@
+on init
+
+  { These are preprocessor statements, which are not executed at runtime.
+    They are instead processed at early parser stage. You can set a
+    preprocessor condition with:
+    
+    SET_CONDITION(<condition-name>)
+
+    Then you can use such preprocessor conditions to conditionally let the
+    script parser know which code parts shall be used and which code parts
+    shall be ignored. The ignored code parts will never be executed and thus
+    will not waste any resources at runtime.
+
+    There are also built-in conditions, already defined by the sampler, which
+    allows you to execute script parts depending on certain circumstances.
+  }
+
+  SET_CONDITION(foo)
+
+  { This will raise a warning, because it has already been set before. }
+  SET_CONDITION(foo)
+
+  USE_CODE_IF(foo)
+    message("SET_CONDITION works.")
+  END_USE_CODE
+
+  USE_CODE_IF_NOT(foo)
+    message("SET_CONDITION does not work!")
+  END_USE_CODE
+
+  RESET_CONDITION(foo)
+
+  USE_CODE_IF_NOT(foo)
+    message("RESET_CONDITION works.")
+  END_USE_CODE
+
+  USE_CODE_IF(foo)
+    message("RESET_CONDITION does not work!")
+  END_USE_CODE
+
+
+  SET_CONDITION(bar)
+
+  USE_CODE_IF(bar)
+    SET_CONDITION(bla)
+    USE_CODE_IF(bla)
+      message("Nested conditions work.")
+    END_USE_CODE
+    USE_CODE_IF_NOT(bla)
+      message("Nested conditions do not work!")
+    END_USE_CODE
+  END_USE_CODE
+
+  { If you uncomment the following, it will throw an error. }
+  { RESET_CONDITION(somethingthatdoesnotexist) }
+
+end on

@@ -1,0 +1,120 @@
+
+%define name    linuxsampler
+%define version 2.1.1
+%define release 16
+%define prefix  /opt/linuxsampler
+
+Summary:	LinuxSampler - modular, streaming capable, realtime audio sampler
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
+Prefix:	%{prefix}
+License:	GPL
+Group:		Sound
+Source0:	%{name}-%{version}.tar.bz2
+URL:		https://www.linuxsampler.org/
+BuildRoot:	/var/tmp/%{name}-%{version}-buildroot
+Requires:	libgig >= 4.2.0
+
+%description
+LinuxSampler is a free software audio sampler with professional grade
+features. It offers disk streaming capability, real-time instrument
+scripts, and supports the following three sampler formats:
+
+ - GigaStudio 4, previously known as Gigasampler (.gig)
+ - SFZ2 (.sfz)
+ - SoundFont 2 (.sf2)
+
+This package provides the backend of LinuxSampler, that is the
+sampler engine together with audio and MIDI drivers. LinuxSampler
+can be controlled via network interface which uses an ASCII based
+protocol called LSCP. You might consider to install a GUI frontend
+for LinuxSampler as well.
+
+For more information please visit https://www.linuxsampler.org
+
+%package devel
+Summary:        Linuxsampler development files
+Group:          Development/Libraries
+Requires:       %{name} = %{version}
+
+%description devel
+Linuxsampler development files for allowing 3rd party applications
+to link against liblinuxsampler
+
+%prep
+
+%setup
+[ -f Makefile.cvs ] && make -f Makefile.cvs
+
+%build
+./configure --prefix=%{prefix} --enable-optimize
+[ -f Makefile.cvs ] && make parser
+make
+make docs
+
+%install
+if [ -d $RPM_BUILD_ROOT ]; then rm -rf $RPM_BUILD_ROOT; fi
+mkdir -p $RPM_BUILD_ROOT
+make DESTDIR=%{buildroot} install
+
+%post
+/sbin/ldconfig
+
+%postun
+/sbin/ldconfig
+
+%clean
+if [ -d $RPM_BUILD_ROOT ]; then rm -rf $RPM_BUILD_ROOT; fi
+
+%files
+%defattr(-,root,root)
+%doc AUTHORS COPYING ChangeLog README
+%{prefix}/bin/linuxsampler
+%{prefix}/bin/lscp
+%{prefix}/lib/linuxsampler/liblinuxsampler.so*
+%{prefix}/share/man/man1/linuxsampler.*
+%{prefix}/share/man/man1/lscp.*
+%{prefix}/lib/dssi/*
+%{prefix}/lib/lv2/linuxsampler*
+/var/lib/linuxsampler/instruments.db
+
+%files devel
+%defattr(-,root,root)
+%doc doc/html/*
+%{prefix}/lib/linuxsampler/liblinuxsampler.a
+%{prefix}/lib/linuxsampler/liblinuxsampler.la
+%{prefix}/lib/pkgconfig/linuxsampler.pc
+%{prefix}/include/*
+
+%changelog
+* Sat Jul 27 2019 Christian Schoenebeck <cuse@users.sourceforge.net>
+- Going for linuxsampler 2.1.1 bugfix release.
+* Wed Nov 25 2017 Christian Schoenebeck <cuse@users.sourceforge.net>
+- Going for linuxsampler 2.1.0 release.
+* Wed Jul 15 2015 Christian Schoenebeck <cuse@users.sourceforge.net>
+- Going for linuxsampler 2.0.0 release.
+- Added "lscp" shell binary (and its man page) to package.
+* Fri Jul 31 2009 Christian Schoenebeck <cuse@users.sourceforge.net>
+- Going for linuxsampler 1.0.0 release.
+* Fri Mar 27 2009 Christian Schoenebeck <cuse@users.sourceforge.net>
+- included DSSI and LV2 binaries into linuxsampler package
+* Wed Dec 03 2008 Christian Schoenebeck <cuse@users.sourceforge.net>
+- fixed rpmbuild: config.h is no longer exported
+  (fixes #87, patch by Devin Anderson)
+* Thu Dec 06 2007 Christian Schoenebeck <cuse@users.sourceforge.net>
+- Going for linuxsampler 0.5.1 release.
+* Mon Oct 15 2007 Christian Schoenebeck <cuse@users.sourceforge.net>
+- Going for linuxsampler 0.5.0 release.
+* Fri Nov 24 2006 Christian Schoenebeck <cuse@users.sourceforge.net>
+- Going for linuxsampler 0.4.0 release.
+* Thu Jun 01 2006 Rui Nuno Capela <rncbc@users.sourceforge.net>
+- changed deprecated copyright attribute to license
+- added ldconfig to post-(un)install steps
+- added devel package for liblinuxsampler
+* Fri Jul 15 2005 Christian Schoenebeck <cuse@users.sourceforge.net>
+- Going for linuxsampler 0.3.3 bugfix release.
+* Thu Jun 23 2005 Rui Nuno Capela <rncbc@users.sourceforge.net>
+- Ready for linuxsampler 0.3.2 bugfix release.
+* Sun Jun 12 2005 Rui Nuno Capela <rncbc@users.sourceforge.net>
+- Created first official linuxsampler.spec

@@ -1,0 +1,64 @@
+Compiling linuxsampler for Mac OS X with XCode
+==============================================
+
+Requirements
+------------
+
+  The XCode project uses autotools build files. On Mac OS 10.4, you need
+  to install pkg-config (available at http://pkgconfig.freedesktop.org/wiki/).
+  
+  If you are to build the CVS snapshot, then you need to do the following
+  steps to make autotools work correctly:
+  
+  $ sudo ln -sf /usr/bin/glibtoolize /usr/local/bin/libtoolize
+  $ sudo cat >/usr/local/bin/aclocal <<'EOF'
+  #!/bin/sh
+  /usr/bin/aclocal -I /usr/local/share/aclocal $@
+  EOF
+  $ sudo chmod +x /usr/local/bin/aclocal
+  
+Layout of the Directories
+-------------------------
+
+  The XCode project for libgig creates a temporary build directory as
+  "$LS/../temp_build/$BUILD_STYLE" (where $LS is the linuxsampler 
+  directory, and $BUILD_STYLE is the build style defined in the XCode 
+  project). In this directory, the following subdirectories are created 
+  and used:
+    $BASELS.build:
+      Intermediate build directory. Symbolic links to the original 
+      source files are placed and "configure && make" is performed in 
+      this directory. ($BASELS is the basename of the linuxsampler 
+      directory.)
+    local:
+      The linuxsampler binary is "installed" in this directory as 
+      local/bin/linuxsampler.
+  
+  This layout of the directories is similar to that of the libgig
+  project, on which linuxsampler is dependent. You need to compile
+  libgig first (with the same settings as this linuxsampler XCode
+  project). So it is best to create a common directory, place the 
+  libgig and linuxsampler directories in it, and build libgig and
+  linuxsampler in this order. See also "osx/README.mac" in libgig.
+
+Universal Binaries
+------------------
+
+  You can create the Universal Binaries by selecting "Deployment_UB" build
+  style and build. The binaries for i386 and ppc architectures are built
+  separately and then automatically combined. The Universal version of
+  linuxsampler is found in $LS/../temp_build/Deployment_UB/local/bin.
+
+  You do not need to have the Universal version of libgig, but you _do_
+  need to build libgig both for i386 and ppc architectures.
+
+Additional Information
+----------------------
+
+  The XCode project just invokes autoconf_builder.sh with after
+  setting relevant environmental variables. If you are interested
+  (or feel suspicious), please examine autoconf_builder.sh.
+
+6 May 2007: First written by Toshi Nagata
+9 May 2007: Updated to account for the Deployment_UB target
+

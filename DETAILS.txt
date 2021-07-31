@@ -1,0 +1,9 @@
+LinuxSynth
+----------
+
+Running a massive SFZ soundfont setup takes a lot of power.
+One of the things we're doing to make things work well,
+is to hold the SFZ files in the Linux RAM disk cache:
+
+vmtouch -d -L ~/BNR/VPO
+

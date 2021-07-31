@@ -1,0 +1,25 @@
+Source: linuxsampler
+Section: libs
+Priority: extra
+Maintainer: falkTX <falktx@falktx.com>
+Build-Depends: debhelper (>= 7), dh-autoreconf,
+  autotools-dev, automake, libtool, autoconf,
+  bison, flex, libxml-libxml-perl, libxml-parser-perl, pkg-config,
+  libasound2-dev, libjack-dev,
+  libgig-static (>= 2:4.0.0+svn3347-1kxstudio1)
+Standards-Version: 3.8.4
+
+Package: linuxsampler
+Section: sound
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: gigtools
+Provides: standalone-plugin
+Description: realtime audio sampler
+ LinuxSampler is a work in progress. It's goal is to produce a free
+ software audio sampler with professional grade features.
+ .
+ This package provides the backend application of LinuxSampler.
+ LinuxSampler can be controlled via network interface which uses an ASCII
+ based protocol called LSCP. You might consider to install a GUI frontend
+ for LinuxSampler as well.

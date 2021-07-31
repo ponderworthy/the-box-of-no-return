@@ -1,0 +1,29 @@
+on init
+    { The amount of notes to play }
+    declare const $delayNotes := 4
+    { Tempo with which the new notes will follow the orignal note }
+    declare const $bpm := 90
+    { Convert BPM to microseconds (duration between the notes) }
+    declare const $delayMicroSeconds := 60 * 1000000 / $bpm
+    { Just a working variable for being used with the while loop below }
+    declare polyphonic $i
+    { For each successive note we trigger, we will reduce the velocity a bit}
+    declare polyphonic $velocity
+end on
+
+on note
+  { First initialize the variable $i with 4 each time we enter this event
+    handler, because each time we executed this handler, the variable will be 0 }
+  $i := $delayNotes
+  { Loop which will be executed 4 times in a row }
+  while ($i)
+    { Calculate the velocity for the next note being triggered }
+    $velocity := 127 * $i / ($delayNotes + 1)
+    { Suspend this script for a short moment ... }
+    wait($delayMicroSeconds)
+    { ... and after that short break, trigger a new note. }
+    play_note($EVENT_NOTE, $velocity)
+    { Decrement loop counter $i by one }
+    $i := $i - 1
+  end while
+end on

@@ -1,0 +1,28 @@
+{
+   This example demonstrates how to benchmark a NKSP instrument script.
+}
+on init
+  declare $start
+  declare $end
+  declare $i
+  declare const $TOTAL_LOOPS := 1000
+
+  { measures and prints the total amount of microseconds the following loop took in reality }
+  $i := 0
+  $start := $NKSP_REAL_TIMER
+  while ($i < $TOTAL_LOOPS)
+    $i := $i + 1
+  end while
+  $end := $NKSP_REAL_TIMER;
+  message($TOTAL_LOOPS & " loops took " & ($end - $start) & " microseconds (real time)")
+
+  { measures and prints the amount of microseconds CPU execution time the following loop took }
+  $i := 0
+  $start := $NKSP_PERF_TIMER
+  while ($i < $TOTAL_LOOPS)
+    $i := $i + 1
+  end while
+  $end := $NKSP_PERF_TIMER;
+  message($TOTAL_LOOPS & " loops took " & ($end - $start) & " microseconds (CPU time)")
+
+end on

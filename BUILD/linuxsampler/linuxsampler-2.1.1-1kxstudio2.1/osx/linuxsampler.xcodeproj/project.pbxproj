@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXFileReference section */
+		E4019E270BED928D0094EB0E /* autoconf_builder.sh */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text.script.sh; path = autoconf_builder.sh; sourceTree = "<group>"; };
+		E4019E280BED928D0094EB0E /* wrapper.sh */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text.script.sh; path = wrapper.sh; sourceTree = "<group>"; };
+		E489ABAC0D27952A0091F602 /* ArrayList.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = ArrayList.h; sourceTree = "<group>"; };
+		E489ABAD0D27952A0091F602 /* atomic.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = atomic.h; sourceTree = "<group>"; };
+		E489ABAE0D27952A0091F602 /* Condition.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = Condition.cpp; sourceTree = "<group>"; };
+		E489ABAF0D27952A0091F602 /* Condition.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = Condition.h; sourceTree = "<group>"; };
+		E489ABB00D27952A0091F602 /* ConditionServer.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = ConditionServer.cpp; sourceTree = "<group>"; };
+		E489ABB10D27952A0091F602 /* ConditionServer.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = ConditionServer.h; sourceTree = "<group>"; };
+		E489ABB20D27952A0091F602 /* Exception.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = Exception.h; sourceTree = "<group>"; };
+		E489ABB30D27952A0091F602 /* Features.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = Features.cpp; sourceTree = "<group>"; };
+		E489ABB40D27952A0091F602 /* Features.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = Features.h; sourceTree = "<group>"; };
+		E489ABB50D27952A0091F602 /* global.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = global.h; sourceTree = "<group>"; };
+		E489ABB60D27952A0091F602 /* global_private.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = global_private.cpp; sourceTree = "<group>"; };
+		E489ABB70D27952A0091F602 /* global_private.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = global_private.h; sourceTree = "<group>"; };
+		E489ABB80D27952A0091F602 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		E489ABB90D27952A0091F602 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		E489ABBA0D27952A0091F602 /* Mutex.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = Mutex.cpp; sourceTree = "<group>"; };
+		E489ABBB0D27952A0091F602 /* Mutex.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = Mutex.h; sourceTree = "<group>"; };
+		E489ABBC0D27952A0091F602 /* optional.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = optional.cpp; sourceTree = "<group>"; };
+		E489ABBD0D27952A0091F602 /* optional.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = optional.h; sourceTree = "<group>"; };
+		E489ABBE0D27952A0091F602 /* Path.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = Path.cpp; sourceTree = "<group>"; };
+		E489ABBF0D27952A0091F602 /* Path.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = Path.h; sourceTree = "<group>"; };
+		E489ABC00D27952A0091F602 /* Pool.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = Pool.h; sourceTree = "<group>"; };
+		E489ABC10D27952A0091F602 /* ResourceManager.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = ResourceManager.h; sourceTree = "<group>"; };
+		E489ABC20D27952A0091F602 /* RingBuffer.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = RingBuffer.h; sourceTree = "<group>"; };
+		E489ABC30D27952A0091F602 /* RTMath.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = RTMath.cpp; sourceTree = "<group>"; };
+		E489ABC40D27952A0091F602 /* RTMath.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = RTMath.h; sourceTree = "<group>"; };
+		E489ABC50D27952A0091F602 /* stacktrace.c */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.c; path = stacktrace.c; sourceTree = "<group>"; };
+		E489ABC60D27952A0091F602 /* stacktrace.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = stacktrace.h; sourceTree = "<group>"; };
+		E489ABC70D27952A0091F602 /* SynchronizedConfig.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = SynchronizedConfig.h; sourceTree = "<group>"; };
+		E489ABC80D27952A0091F602 /* Thread.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = Thread.cpp; sourceTree = "<group>"; };
+		E489ABC90D27952A0091F602 /* Thread.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = Thread.h; sourceTree = "<group>"; };
+		E489ABCA0D27952A0091F602 /* WorkerThread.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = WorkerThread.cpp; sourceTree = "<group>"; };
+		E489ABCB0D27952A0091F602 /* WorkerThread.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = WorkerThread.h; sourceTree = "<group>"; };
+		E489ABCD0D27952A0091F602 /* InstrumentsDb.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = InstrumentsDb.cpp; sourceTree = "<group>"; };
+		E489ABCE0D27952A0091F602 /* InstrumentsDb.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = InstrumentsDb.h; sourceTree = "<group>"; };
+		E489ABCF0D27952A0091F602 /* InstrumentsDbUtilities.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = InstrumentsDbUtilities.cpp; sourceTree = "<group>"; };
+		E489ABD00D27952A0091F602 /* InstrumentsDbUtilities.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = InstrumentsDbUtilities.h; sourceTree = "<group>"; };
+		E489ABD10D27952A0091F602 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		E489ABD20D27952A0091F602 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		E489ABD50D27952A0091F602 /* AudioChannel.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = AudioChannel.cpp; sourceTree = "<group>"; };
+		E489ABD60D27952A0091F602 /* AudioChannel.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = AudioChannel.h; sourceTree = "<group>"; };
+		E489ABD70D27952A0091F602 /* AudioOutputDevice.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = AudioOutputDevice.cpp; sourceTree = "<group>"; };
+		E489ABD80D27952A0091F602 /* AudioOutputDevice.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = AudioOutputDevice.h; sourceTree = "<group>"; };
+		E489ABD90D27952A0091F602 /* AudioOutputDeviceAlsa.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = AudioOutputDeviceAlsa.cpp; sourceTree = "<group>"; };
+		E489ABDA0D27952A0091F602 /* AudioOutputDeviceAlsa.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = AudioOutputDeviceAlsa.h; sourceTree = "<group>"; };
+		E489ABDB0D27952A0091F602 /* AudioOutputDeviceArts.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = AudioOutputDeviceArts.cpp; sourceTree = "<group>"; };
+		E489ABDC0D27952A0091F602 /* AudioOutputDeviceArts.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = AudioOutputDeviceArts.h; sourceTree = "<group>"; };
+		E489ABDD0D27952A0091F602 /* AudioOutputDeviceAsio.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = AudioOutputDeviceAsio.cpp; sourceTree = "<group>"; };
+		E489ABDE0D27952A0091F602 /* AudioOutputDeviceAsio.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = AudioOutputDeviceAsio.h; sourceTree = "<group>"; };
+		E489ABDF0D27952A0091F602 /* AudioOutputDeviceFactory.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = AudioOutputDeviceFactory.cpp; sourceTree = "<group>"; };
+		E489ABE00D27952A0091F602 /* AudioOutputDeviceFactory.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = AudioOutputDeviceFactory.h; sourceTree = "<group>"; };
+		E489ABE10D27952A0091F602 /* AudioOutputDeviceJack.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = AudioOutputDeviceJack.cpp; sourceTree = "<group>"; };
+		E489ABE20D27952A0091F602 /* AudioOutputDeviceJack.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = AudioOutputDeviceJack.h; sourceTree = "<group>"; };
+		E489ABE30D27952A0091F602 /* iasiothiscallresolver.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = iasiothiscallresolver.cpp; sourceTree = "<group>"; };
+		E489ABE40D27952A0091F602 /* iasiothiscallresolver.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = iasiothiscallresolver.h; sourceTree = "<group>"; };
+		E489ABE50D27952A0091F602 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		E489ABE60D27952A0091F602 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		E489ABE70D27952A0091F602 /* Device.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
+		E489ABE80D27952A0091F602 /* DeviceParameter.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = DeviceParameter.cpp; sourceTree = "<group>"; };
+		E489ABE90D27952A0091F602 /* DeviceParameter.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = DeviceParameter.h; sourceTree = "<group>"; };
+		E489ABEA0D27952A0091F602 /* DeviceParameterFactory.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = DeviceParameterFactory.cpp; sourceTree = "<group>"; };
+		E489ABEB0D27952A0091F602 /* DeviceParameterFactory.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = DeviceParameterFactory.h; sourceTree = "<group>"; };
+		E489ABEC0D27952A0091F602 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		E489ABED0D27952A0091F602 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		E489ABEF0D27952A0091F602 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		E489ABF00D27952A0091F602 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		E489ABF10D27952A0091F602 /* midi.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = midi.h; sourceTree = "<group>"; };
+		E489ABF20D27952A0091F602 /* MidiInputDevice.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = MidiInputDevice.cpp; sourceTree = "<group>"; };
+		E489ABF30D27952A0091F602 /* MidiInputDevice.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = MidiInputDevice.h; sourceTree = "<group>"; };
+		E489ABF40D27952A0091F602 /* MidiInputDeviceAlsa.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = MidiInputDeviceAlsa.cpp; sourceTree = "<group>"; };
+		E489ABF50D27952A0091F602 /* MidiInputDeviceAlsa.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = MidiInputDeviceAlsa.h; sourceTree = "<group>"; };
+		E489ABF60D27952A0091F602 /* MidiInputDeviceCoreMidi.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = MidiInputDeviceCoreMidi.cpp; sourceTree = "<group>"; };
+		E489ABF70D27952A0091F602 /* MidiInputDeviceCoreMidi.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = MidiInputDeviceCoreMidi.h; sourceTree = "<group>"; };
+		E489ABF80D27952A0091F602 /* MidiInputDeviceFactory.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = MidiInputDeviceFactory.cpp; sourceTree = "<group>"; };
+		E489ABF90D27952A0091F602 /* MidiInputDeviceFactory.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = MidiInputDeviceFactory.h; sourceTree = "<group>"; };
+		E489ABFA0D27952A0091F602 /* MidiInputDeviceMidiShare.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = MidiInputDeviceMidiShare.cpp; sourceTree = "<group>"; };
+		E489ABFB0D27952A0091F602 /* MidiInputDeviceMidiShare.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = MidiInputDeviceMidiShare.h; sourceTree = "<group>"; };
+		E489ABFC0D27952A0091F602 /* MidiInputDeviceMme.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = MidiInputDeviceMme.cpp; sourceTree = "<group>"; };
+		E489ABFD0D27952A0091F602 /* MidiInputDeviceMme.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = MidiInputDeviceMme.h; sourceTree = "<group>"; };
+		E489ABFE0D27952A0091F602 /* MidiInputPort.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = MidiInputPort.cpp; sourceTree = "<group>"; };
+		E489ABFF0D27952A0091F602 /* MidiInputPort.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = MidiInputPort.h; sourceTree = "<group>"; };
+		E489AC000D27952A0091F602 /* MidiInstrumentMapper.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = MidiInstrumentMapper.cpp; sourceTree = "<group>"; };
+		E489AC010D27952A0091F602 /* MidiInstrumentMapper.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = MidiInstrumentMapper.h; sourceTree = "<group>"; };
+		E489AC040D27952A0091F602 /* BiquadFilter.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = BiquadFilter.h; sourceTree = "<group>"; };
+		E489AC050D27952A0091F602 /* Event.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = Event.cpp; sourceTree = "<group>"; };
+		E489AC060D27952A0091F602 /* Event.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		E489AC070D27952A0091F602 /* LFOBase.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = LFOBase.h; sourceTree = "<group>"; };
+		E489AC080D27952A0091F602 /* LFOTriangleDiHarmonic.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = LFOTriangleDiHarmonic.h; sourceTree = "<group>"; };
+		E489AC090D27952A0091F602 /* LFOTriangleIntAbsMath.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = LFOTriangleIntAbsMath.h; sourceTree = "<group>"; };
+		E489AC0A0D27952A0091F602 /* LFOTriangleIntMath.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = LFOTriangleIntMath.h; sourceTree = "<group>"; };
+		E489AC0B0D27952A0091F602 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		E489AC0C0D27952A0091F602 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		E489AC0D0D27952A0091F602 /* Resampler.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = Resampler.h; sourceTree = "<group>"; };
+		E489AC0E0D27952A0091F602 /* Engine.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = Engine.cpp; sourceTree = "<group>"; };
+		E489AC0F0D27952A0091F602 /* Engine.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = Engine.h; sourceTree = "<group>"; };
+		E489AC100D27952A0091F602 /* EngineChannel.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = EngineChannel.cpp; sourceTree = "<group>"; };
+		E489AC110D27952A0091F602 /* EngineChannel.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = EngineChannel.h; sourceTree = "<group>"; };
+		E489AC120D27952A0091F602 /* EngineChannelFactory.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = EngineChannelFactory.cpp; sourceTree = "<group>"; };
+		E489AC130D27952A0091F602 /* EngineChannelFactory.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = EngineChannelFactory.h; sourceTree = "<group>"; };
+		E489AC140D27952A0091F602 /* EngineFactory.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = EngineFactory.cpp; sourceTree = "<group>"; };
+		E489AC150D27952A0091F602 /* EngineFactory.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = EngineFactory.h; sourceTree = "<group>"; };
+		E489AC160D27952A0091F602 /* FxSend.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = FxSend.cpp; sourceTree = "<group>"; };
+		E489AC170D27952A0091F602 /* FxSend.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = FxSend.h; sourceTree = "<group>"; };
+		E489AC190D27952A0091F602 /* DiskThread.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = DiskThread.cpp; sourceTree = "<group>"; };
+		E489AC1A0D27952A0091F602 /* DiskThread.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = DiskThread.h; sourceTree = "<group>"; };
+		E489AC1B0D27952A0091F602 /* EGADSR.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = EGADSR.cpp; sourceTree = "<group>"; };
+		E489AC1C0D27952A0091F602 /* EGADSR.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = EGADSR.h; sourceTree = "<group>"; };
+		E489AC1D0D27952A0091F602 /* EGDecay.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = EGDecay.cpp; sourceTree = "<group>"; };
+		E489AC1E0D27952A0091F602 /* EGDecay.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = EGDecay.h; sourceTree = "<group>"; };
+		E489AC1F0D27952A0091F602 /* Engine.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = Engine.cpp; sourceTree = "<group>"; };
+		E489AC200D27952A0091F602 /* Engine.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = Engine.h; sourceTree = "<group>"; };
+		E489AC210D27952A0091F602 /* EngineChannel.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = EngineChannel.cpp; sourceTree = "<group>"; };
+		E489AC220D27952A0091F602 /* EngineChannel.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = EngineChannel.h; sourceTree = "<group>"; };
+		E489AC230D27952A0091F602 /* EngineGlobals.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = EngineGlobals.h; sourceTree = "<group>"; };
+		E489AC240D27952A0091F602 /* Filter.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = Filter.h; sourceTree = "<group>"; };
+		E489AC250D27952A0091F602 /* InstrumentResourceManager.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = InstrumentResourceManager.cpp; sourceTree = "<group>"; };
+		E489AC260D27952A0091F602 /* InstrumentResourceManager.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = InstrumentResourceManager.h; sourceTree = "<group>"; };
+		E489AC270D27952A0091F602 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		E489AC280D27952A0091F602 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		E489AC290D27952A0091F602 /* Profiler.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = Profiler.cpp; sourceTree = "<group>"; };
+		E489AC2A0D27952A0091F602 /* Profiler.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = Profiler.h; sourceTree = "<group>"; };
+		E489AC2B0D27952A0091F602 /* SmoothVolume.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = SmoothVolume.cpp; sourceTree = "<group>"; };
+		E489AC2C0D27952A0091F602 /* SmoothVolume.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = SmoothVolume.h; sourceTree = "<group>"; };
+		E489AC2D0D27952A0091F602 /* Stream.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = Stream.cpp; sourceTree = "<group>"; };
+		E489AC2E0D27952A0091F602 /* Stream.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = Stream.h; sourceTree = "<group>"; };
+		E489AC2F0D27952A0091F602 /* SynthesisParam.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = SynthesisParam.h; sourceTree = "<group>"; };
+		E489AC300D27952A0091F602 /* Synthesizer.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = Synthesizer.cpp; sourceTree = "<group>"; };
+		E489AC310D27952A0091F602 /* Synthesizer.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = Synthesizer.h; sourceTree = "<group>"; };
+		E489AC320D27952A0091F602 /* Voice.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = Voice.cpp; sourceTree = "<group>"; };
+		E489AC330D27952A0091F602 /* Voice.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = Voice.h; sourceTree = "<group>"; };
+		E489AC340D27952A0091F602 /* InstrumentManager.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = InstrumentManager.cpp; sourceTree = "<group>"; };
+		E489AC350D27952A0091F602 /* InstrumentManager.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = InstrumentManager.h; sourceTree = "<group>"; };
+		E489AC360D27952A0091F602 /* InstrumentManagerThread.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = InstrumentManagerThread.cpp; sourceTree = "<group>"; };
+		E489AC370D27952A0091F602 /* InstrumentManagerThread.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = InstrumentManagerThread.h; sourceTree = "<group>"; };
+		E489AC380D27952A0091F602 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		E489AC390D27952A0091F602 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		E489AC3A0D27952A0091F602 /* EventListeners.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = EventListeners.h; sourceTree = "<group>"; };
+		E489AC3B0D27952A0091F602 /* linuxsampler.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = linuxsampler.cpp; sourceTree = "<group>"; };
+		E489AC3C0D27952A0091F602 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		E489AC3D0D27952A0091F602 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		E489AC3F0D27952A0091F602 /* lscp.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = lscp.h; sourceTree = "<group>"; };
+		E489AC400D27952A0091F602 /* lscp.y */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.yacc; path = lscp.y; sourceTree = "<group>"; };
+		E489AC410D27952A0091F602 /* lscpevent.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = lscpevent.cpp; sourceTree = "<group>"; };
+		E489AC420D27952A0091F602 /* lscpevent.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = lscpevent.h; sourceTree = "<group>"; };
+		E489AC430D27952A0091F602 /* lscpparser.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = lscpparser.cpp; sourceTree = "<group>"; };
+		E489AC440D27952A0091F602 /* lscpparser.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = lscpparser.h; sourceTree = "<group>"; };
+		E489AC450D27952A0091F602 /* lscpresultset.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = lscpresultset.cpp; sourceTree = "<group>"; };
+		E489AC460D27952A0091F602 /* lscpresultset.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = lscpresultset.h; sourceTree = "<group>"; };
+		E489AC470D27952A0091F602 /* lscpserver.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = lscpserver.cpp; sourceTree = "<group>"; };
+		E489AC480D27952A0091F602 /* lscpserver.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = lscpserver.h; sourceTree = "<group>"; };
+		E489AC490D27952A0091F602 /* lscpsymbols.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = lscpsymbols.h; sourceTree = "<group>"; };
+		E489AC4A0D27952A0091F602 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		E489AC4B0D27952A0091F602 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		E489AC4D0D27952A0091F602 /* InstrumentEditor.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = InstrumentEditor.cpp; sourceTree = "<group>"; };
+		E489AC4E0D27952A0091F602 /* InstrumentEditor.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = InstrumentEditor.h; sourceTree = "<group>"; };
+		E489AC4F0D27952A0091F602 /* InstrumentEditorFactory.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = InstrumentEditorFactory.cpp; sourceTree = "<group>"; };
+		E489AC500D27952A0091F602 /* InstrumentEditorFactory.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = InstrumentEditorFactory.h; sourceTree = "<group>"; };
+		E489AC510D27952A0091F602 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		E489AC520D27952A0091F602 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		E489AC530D27952A0091F602 /* Sampler.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = Sampler.cpp; sourceTree = "<group>"; };
+		E489AC540D27952A0091F602 /* Sampler.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = Sampler.h; sourceTree = "<group>"; };
+		E489AC560D27952A0091F602 /* ConditionTest.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = ConditionTest.cpp; sourceTree = "<group>"; };
+		E489AC570D27952A0091F602 /* ConditionTest.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = ConditionTest.h; sourceTree = "<group>"; };
+		E489AC580D27952A0091F602 /* linuxsamplertest.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = linuxsamplertest.cpp; sourceTree = "<group>"; };
+		E489AC590D27952A0091F602 /* LSCPTest.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = LSCPTest.cpp; sourceTree = "<group>"; };
+		E489AC5A0D27952A0091F602 /* LSCPTest.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = LSCPTest.h; sourceTree = "<group>"; };
+		E489AC5B0D27952A0091F602 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.am; sourceTree = "<group>"; };
+		E489AC5C0D27952A0091F602 /* Makefile.in */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = text; path = Makefile.in; sourceTree = "<group>"; };
+		E489AC5D0D27952A0091F602 /* MutexTest.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = MutexTest.cpp; sourceTree = "<group>"; };
+		E489AC5E0D27952A0091F602 /* MutexTest.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = MutexTest.h; sourceTree = "<group>"; };
+		E489AC5F0D27952A0091F602 /* PoolTest.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = PoolTest.cpp; sourceTree = "<group>"; };
+		E489AC600D27952A0091F602 /* PoolTest.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = PoolTest.h; sourceTree = "<group>"; };
+		E489AC610D27952A0091F602 /* ThreadTest.cpp */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.cpp.cpp; path = ThreadTest.cpp; sourceTree = "<group>"; };
+		E489AC620D27952A0091F602 /* ThreadTest.h */ = {isa = PBXFileReference; fileEncoding = "-2147483647"; lastKnownFileType = sourcecode.c.h; path = ThreadTest.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* LinuxSampler */ = {
+			isa = PBXGroup;
+			children = (
+				E4019E270BED928D0094EB0E /* autoconf_builder.sh */,
+				E4019E280BED928D0094EB0E /* wrapper.sh */,
+				E489ABAA0D27952A0091F602 /* src */,
+			);
+			name = LinuxSampler;
+			sourceTree = "<group>";
+		};
+		E489ABAA0D27952A0091F602 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				E489ABAB0D27952A0091F602 /* common */,
+				E489ABCC0D27952A0091F602 /* db */,
+				E489ABD30D27952A0091F602 /* drivers */,
+				E489AC020D27952A0091F602 /* engines */,
+				E489AC3A0D27952A0091F602 /* EventListeners.h */,
+				E489AC3B0D27952A0091F602 /* linuxsampler.cpp */,
+				E489AC3C0D27952A0091F602 /* Makefile.am */,
+				E489AC3D0D27952A0091F602 /* Makefile.in */,
+				E489AC3E0D27952A0091F602 /* network */,
+				E489AC4C0D27952A0091F602 /* plugins */,
+				E489AC530D27952A0091F602 /* Sampler.cpp */,
+				E489AC540D27952A0091F602 /* Sampler.h */,
+				E489AC550D27952A0091F602 /* testcases */,
+			);
+			name = src;
+			path = ../src;
+			sourceTree = SOURCE_ROOT;
+		};
+		E489ABAB0D27952A0091F602 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				E489ABAC0D27952A0091F602 /* ArrayList.h */,
+				E489ABAD0D27952A0091F602 /* atomic.h */,
+				E489ABAE0D27952A0091F602 /* Condition.cpp */,
+				E489ABAF0D27952A0091F602 /* Condition.h */,
+				E489ABB00D27952A0091F602 /* ConditionServer.cpp */,
+				E489ABB10D27952A0091F602 /* ConditionServer.h */,
+				E489ABB20D27952A0091F602 /* Exception.h */,
+				E489ABB30D27952A0091F602 /* Features.cpp */,
+				E489ABB40D27952A0091F602 /* Features.h */,
+				E489ABB50D27952A0091F602 /* global.h */,
+				E489ABB60D27952A0091F602 /* global_private.cpp */,
+				E489ABB70D27952A0091F602 /* global_private.h */,
+				E489ABB80D27952A0091F602 /* Makefile.am */,
+				E489ABB90D27952A0091F602 /* Makefile.in */,
+				E489ABBA0D27952A0091F602 /* Mutex.cpp */,
+				E489ABBB0D27952A0091F602 /* Mutex.h */,
+				E489ABBC0D27952A0091F602 /* optional.cpp */,
+				E489ABBD0D27952A0091F602 /* optional.h */,
+				E489ABBE0D27952A0091F602 /* Path.cpp */,
+				E489ABBF0D27952A0091F602 /* Path.h */,
+				E489ABC00D27952A0091F602 /* Pool.h */,
+				E489ABC10D27952A0091F602 /* ResourceManager.h */,
+				E489ABC20D27952A0091F602 /* RingBuffer.h */,
+				E489ABC30D27952A0091F602 /* RTMath.cpp */,
+				E489ABC40D27952A0091F602 /* RTMath.h */,
+				E489ABC50D27952A0091F602 /* stacktrace.c */,
+				E489ABC60D27952A0091F602 /* stacktrace.h */,
+				E489ABC70D27952A0091F602 /* SynchronizedConfig.h */,
+				E489ABC80D27952A0091F602 /* Thread.cpp */,
+				E489ABC90D27952A0091F602 /* Thread.h */,
+				E489ABCA0D27952A0091F602 /* WorkerThread.cpp */,
+				E489ABCB0D27952A0091F602 /* WorkerThread.h */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		E489ABCC0D27952A0091F602 /* db */ = {
+			isa = PBXGroup;
+			children = (
+				E489ABCD0D27952A0091F602 /* InstrumentsDb.cpp */,
+				E489ABCE0D27952A0091F602 /* InstrumentsDb.h */,
+				E489ABCF0D27952A0091F602 /* InstrumentsDbUtilities.cpp */,
+				E489ABD00D27952A0091F602 /* InstrumentsDbUtilities.h */,
+				E489ABD10D27952A0091F602 /* Makefile.am */,
+				E489ABD20D27952A0091F602 /* Makefile.in */,
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
+		E489ABD30D27952A0091F602 /* drivers */ = {
+			isa = PBXGroup;
+			children = (
+				E489ABD40D27952A0091F602 /* audio */,
+				E489ABE70D27952A0091F602 /* Device.h */,
+				E489ABE80D27952A0091F602 /* DeviceParameter.cpp */,
+				E489ABE90D27952A0091F602 /* DeviceParameter.h */,
+				E489ABEA0D27952A0091F602 /* DeviceParameterFactory.cpp */,
+				E489ABEB0D27952A0091F602 /* DeviceParameterFactory.h */,
+				E489ABEC0D27952A0091F602 /* Makefile.am */,
+				E489ABED0D27952A0091F602 /* Makefile.in */,
+				E489ABEE0D27952A0091F602 /* midi */,
+			);
+			path = drivers;
+			sourceTree = "<group>";
+		};
+		E489ABD40D27952A0091F602 /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				E489ABD50D27952A0091F602 /* AudioChannel.cpp */,
+				E489ABD60D27952A0091F602 /* AudioChannel.h */,
+				E489ABD70D27952A0091F602 /* AudioOutputDevice.cpp */,
+				E489ABD80D27952A0091F602 /* AudioOutputDevice.h */,
+				E489ABD90D27952A0091F602 /* AudioOutputDeviceAlsa.cpp */,
+				E489ABDA0D27952A0091F602 /* AudioOutputDeviceAlsa.h */,
+				E489ABDB0D27952A0091F602 /* AudioOutputDeviceArts.cpp */,
+				E489ABDC0D27952A0091F602 /* AudioOutputDeviceArts.h */,
+				E489ABDD0D27952A0091F602 /* AudioOutputDeviceAsio.cpp */,
+				E489ABDE0D27952A0091F602 /* AudioOutputDeviceAsio.h */,
+				E489ABDF0D27952A0091F602 /* AudioOutputDeviceFactory.cpp */,
+				E489ABE00D27952A0091F602 /* AudioOutputDeviceFactory.h */,
+				E489ABE10D27952A0091F602 /* AudioOutputDeviceJack.cpp */,
+				E489ABE20D27952A0091F602 /* AudioOutputDeviceJack.h */,
+				E489ABE30D27952A0091F602 /* iasiothiscallresolver.cpp */,
+				E489ABE40D27952A0091F602 /* iasiothiscallresolver.h */,
+				E489ABE50D27952A0091F602 /* Makefile.am */,
+				E489ABE60D27952A0091F602 /* Makefile.in */,
+			);
+			path = audio;
+			sourceTree = "<group>";
+		};
+		E489ABEE0D27952A0091F602 /* midi */ = {
+			isa = PBXGroup;
+			children = (
+				E489ABEF0D27952A0091F602 /* Makefile.am */,
+				E489ABF00D27952A0091F602 /* Makefile.in */,
+				E489ABF10D27952A0091F602 /* midi.h */,
+				E489ABF20D27952A0091F602 /* MidiInputDevice.cpp */,
+				E489ABF30D27952A0091F602 /* MidiInputDevice.h */,
+				E489ABF40D27952A0091F602 /* MidiInputDeviceAlsa.cpp */,
+				E489ABF50D27952A0091F602 /* MidiInputDeviceAlsa.h */,
+				E489ABF60D27952A0091F602 /* MidiInputDeviceCoreMidi.cpp */,
+				E489ABF70D27952A0091F602 /* MidiInputDeviceCoreMidi.h */,
+				E489ABF80D27952A0091F602 /* MidiInputDeviceFactory.cpp */,
+				E489ABF90D27952A0091F602 /* MidiInputDeviceFactory.h */,
+				E489ABFA0D27952A0091F602 /* MidiInputDeviceMidiShare.cpp */,
+				E489ABFB0D27952A0091F602 /* MidiInputDeviceMidiShare.h */,
+				E489ABFC0D27952A0091F602 /* MidiInputDeviceMme.cpp */,
+				E489ABFD0D27952A0091F602 /* MidiInputDeviceMme.h */,
+				E489ABFE0D27952A0091F602 /* MidiInputPort.cpp */,
+				E489ABFF0D27952A0091F602 /* MidiInputPort.h */,
+				E489AC000D27952A0091F602 /* MidiInstrumentMapper.cpp */,
+				E489AC010D27952A0091F602 /* MidiInstrumentMapper.h */,
+			);
+			path = midi;
+			sourceTree = "<group>";
+		};
+		E489AC020D27952A0091F602 /* engines */ = {
+			isa = PBXGroup;
+			children = (
+				E489AC030D27952A0091F602 /* common */,
+				E489AC0E0D27952A0091F602 /* Engine.cpp */,
+				E489AC0F0D27952A0091F602 /* Engine.h */,
+				E489AC100D27952A0091F602 /* EngineChannel.cpp */,
+				E489AC110D27952A0091F602 /* EngineChannel.h */,
+				E489AC120D27952A0091F602 /* EngineChannelFactory.cpp */,
+				E489AC130D27952A0091F602 /* EngineChannelFactory.h */,
+				E489AC140D27952A0091F602 /* EngineFactory.cpp */,
+				E489AC150D27952A0091F602 /* EngineFactory.h */,
+				E489AC160D27952A0091F602 /* FxSend.cpp */,
+				E489AC170D27952A0091F602 /* FxSend.h */,
+				E489AC180D27952A0091F602 /* gig */,
+				E489AC340D27952A0091F602 /* InstrumentManager.cpp */,
+				E489AC350D27952A0091F602 /* InstrumentManager.h */,
+				E489AC360D27952A0091F602 /* InstrumentManagerThread.cpp */,
+				E489AC370D27952A0091F602 /* InstrumentManagerThread.h */,
+				E489AC380D27952A0091F602 /* Makefile.am */,
+				E489AC390D27952A0091F602 /* Makefile.in */,
+			);
+			path = engines;
+			sourceTree = "<group>";
+		};
+		E489AC030D27952A0091F602 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				E489AC040D27952A0091F602 /* BiquadFilter.h */,
+				E489AC050D27952A0091F602 /* Event.cpp */,
+				E489AC060D27952A0091F602 /* Event.h */,
+				E489AC070D27952A0091F602 /* LFOBase.h */,
+				E489AC080D27952A0091F602 /* LFOTriangleDiHarmonic.h */,
+				E489AC090D27952A0091F602 /* LFOTriangleIntAbsMath.h */,
+				E489AC0A0D27952A0091F602 /* LFOTriangleIntMath.h */,
+				E489AC0B0D27952A0091F602 /* Makefile.am */,
+				E489AC0C0D27952A0091F602 /* Makefile.in */,
+				E489AC0D0D27952A0091F602 /* Resampler.h */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		E489AC180D27952A0091F602 /* gig */ = {
+			isa = PBXGroup;
+			children = (
+				E489AC190D27952A0091F602 /* DiskThread.cpp */,
+				E489AC1A0D27952A0091F602 /* DiskThread.h */,
+				E489AC1B0D27952A0091F602 /* EGADSR.cpp */,
+				E489AC1C0D27952A0091F602 /* EGADSR.h */,
+				E489AC1D0D27952A0091F602 /* EGDecay.cpp */,
+				E489AC1E0D27952A0091F602 /* EGDecay.h */,
+				E489AC1F0D27952A0091F602 /* Engine.cpp */,
+				E489AC200D27952A0091F602 /* Engine.h */,
+				E489AC210D27952A0091F602 /* EngineChannel.cpp */,
+				E489AC220D27952A0091F602 /* EngineChannel.h */,
+				E489AC230D27952A0091F602 /* EngineGlobals.h */,
+				E489AC240D27952A0091F602 /* Filter.h */,
+				E489AC250D27952A0091F602 /* InstrumentResourceManager.cpp */,
+				E489AC260D27952A0091F602 /* InstrumentResourceManager.h */,
+				E489AC270D27952A0091F602 /* Makefile.am */,
+				E489AC280D27952A0091F602 /* Makefile.in */,
+				E489AC290D27952A0091F602 /* Profiler.cpp */,
+				E489AC2A0D27952A0091F602 /* Profiler.h */,
+				E489AC2B0D27952A0091F602 /* SmoothVolume.cpp */,
+				E489AC2C0D27952A0091F602 /* SmoothVolume.h */,
+				E489AC2D0D27952A0091F602 /* Stream.cpp */,
+				E489AC2E0D27952A0091F602 /* Stream.h */,
+				E489AC2F0D27952A0091F602 /* SynthesisParam.h */,
+				E489AC300D27952A0091F602 /* Synthesizer.cpp */,
+				E489AC310D27952A0091F602 /* Synthesizer.h */,
+				E489AC320D27952A0091F602 /* Voice.cpp */,
+				E489AC330D27952A0091F602 /* Voice.h */,
+			);
+			path = gig;
+			sourceTree = "<group>";
+		};
+		E489AC3E0D27952A0091F602 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				E489AC3F0D27952A0091F602 /* lscp.h */,
+				E489AC400D27952A0091F602 /* lscp.y */,
+				E489AC410D27952A0091F602 /* lscpevent.cpp */,
+				E489AC420D27952A0091F602 /* lscpevent.h */,
+				E489AC430D27952A0091F602 /* lscpparser.cpp */,
+				E489AC440D27952A0091F602 /* lscpparser.h */,
+				E489AC450D27952A0091F602 /* lscpresultset.cpp */,
+				E489AC460D27952A0091F602 /* lscpresultset.h */,
+				E489AC470D27952A0091F602 /* lscpserver.cpp */,
+				E489AC480D27952A0091F602 /* lscpserver.h */,
+				E489AC490D27952A0091F602 /* lscpsymbols.h */,
+				E489AC4A0D27952A0091F602 /* Makefile.am */,
+				E489AC4B0D27952A0091F602 /* Makefile.in */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		E489AC4C0D27952A0091F602 /* plugins */ = {
+			isa = PBXGroup;
+			children = (
+				E489AC4D0D27952A0091F602 /* InstrumentEditor.cpp */,
+				E489AC4E0D27952A0091F602 /* InstrumentEditor.h */,
+				E489AC4F0D27952A0091F602 /* InstrumentEditorFactory.cpp */,
+				E489AC500D27952A0091F602 /* InstrumentEditorFactory.h */,
+				E489AC510D27952A0091F602 /* Makefile.am */,
+				E489AC520D27952A0091F602 /* Makefile.in */,
+			);
+			path = plugins;
+			sourceTree = "<group>";
+		};
+		E489AC550D27952A0091F602 /* testcases */ = {
+			isa = PBXGroup;
+			children = (
+				E489AC560D27952A0091F602 /* ConditionTest.cpp */,
+				E489AC570D27952A0091F602 /* ConditionTest.h */,
+				E489AC580D27952A0091F602 /* linuxsamplertest.cpp */,
+				E489AC590D27952A0091F602 /* LSCPTest.cpp */,
+				E489AC5A0D27952A0091F602 /* LSCPTest.h */,
+				E489AC5B0D27952A0091F602 /* Makefile.am */,
+				E489AC5C0D27952A0091F602 /* Makefile.in */,
+				E489AC5D0D27952A0091F602 /* MutexTest.cpp */,
+				E489AC5E0D27952A0091F602 /* MutexTest.h */,
+				E489AC5F0D27952A0091F602 /* PoolTest.cpp */,
+				E489AC600D27952A0091F602 /* PoolTest.h */,
+				E489AC610D27952A0091F602 /* ThreadTest.cpp */,
+				E489AC620D27952A0091F602 /* ThreadTest.h */,
+			);
+			path = testcases;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXLegacyTarget section */
+		E4102B730BCBD832006B57FE /* linuxsampler */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "$(PROJECT_DIR)/wrapper.sh";
+			buildConfigurationList = E4102B740BCBD85E006B57FE /* Build configuration list for PBXLegacyTarget "linuxsampler" */;
+			buildPhases = (
+			);
+			buildToolPath = /bin/sh;
+			buildWorkingDirectory = ..;
+			dependencies = (
+			);
+			name = linuxsampler;
+			passBuildSettingsInEnvironment = 1;
+			productName = libgig;
+		};
+/* End PBXLegacyTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB919308733D9F0010E9CD /* Build configuration list for PBXProject "linuxsampler" */;
+			hasScannedForEncodings = 1;
+			mainGroup = 08FB7794FE84155DC02AAC07 /* LinuxSampler */;
+			projectDirPath = "";
+			targets = (
+				E4102B730BCBD832006B57FE /* linuxsampler */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB919408733D9F0010E9CD /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Development;
+		};
+		E4102B750BCBD85E006B57FE /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = linuxsampler;
+			};
+			name = Development;
+		};
+		E4102B770BCBD8A9006B57FE /* Deployment_ppc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = linuxsampler;
+			};
+			name = Deployment_ppc;
+		};
+		E4102B780BCBD8A9006B57FE /* Deployment_i386 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = linuxsampler;
+			};
+			name = Deployment_i386;
+		};
+		E4102B7B0BCBD8A9006B57FE /* Deployment_ppc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Deployment_ppc;
+		};
+		E4102B7C0BCBD8A9006B57FE /* Deployment_i386 */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Deployment_i386;
+		};
+		E49D6A780BEE280600432768 /* Deployment_UB */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = linuxsampler;
+			};
+			name = Deployment_UB;
+		};
+		E49D6A790BEE280600432768 /* Deployment_UB */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+			};
+			name = Deployment_UB;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB919308733D9F0010E9CD /* Build configuration list for PBXProject "linuxsampler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB919408733D9F0010E9CD /* Development */,
+				E4102B7B0BCBD8A9006B57FE /* Deployment_ppc */,
+				E4102B7C0BCBD8A9006B57FE /* Deployment_i386 */,
+				E49D6A790BEE280600432768 /* Deployment_UB */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Development;
+		};
+		E4102B740BCBD85E006B57FE /* Build configuration list for PBXLegacyTarget "linuxsampler" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4102B750BCBD85E006B57FE /* Development */,
+				E4102B770BCBD8A9006B57FE /* Deployment_ppc */,
+				E4102B780BCBD8A9006B57FE /* Deployment_i386 */,
+				E49D6A780BEE280600432768 /* Deployment_UB */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Development;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

@@ -1,0 +1,32 @@
+default: all
+
+.PHONY: clean
+
+all: configure
+
+configure: configure.ac m4/arts.m4 m4/nptl_bug.m4 m4/pthread.m4
+	@aclocal -I m4
+	@libtoolize --force --copy
+	@autoheader
+	@automake --add-missing --copy
+	@autoconf
+	@scripts/generate_lscp_parser.sh
+	@scripts/generate_instrument_script_parser.sh
+	@scripts/generate_nksp_editor_parser.sh
+	######################################################################
+	# If you are compiling LinuxSampler from SVN, make sure to use the   #
+	# latest version of libgig from SVN as well !                        #
+	######################################################################
+
+clean:
+	@if [ -f Makefile ]; then make distclean; fi || true
+	@rm -rvf *.cache *.log *.status *.m4 stamp-h* config.*
+	@rm -rvf `find . -name Makefile.in`
+	@rm -rvf missing install-sh mkinstalldirs depcomp ltmain.sh configure
+	@rm -rvf src/scriptvm/parser.cpp src/scriptvm/editor/nksp.cpp
+	@rm -rvf src/scriptvm/parser.cpp src/scriptvm/parser.h
+	@rm -rvf src/scriptvm/scanner.cpp
+	@rm -rvf src/network/lscpparser.cpp src/network/lscpsymbols.h
+	@rm -rvf src/network/lscp_shell_reference.cpp
+	@rm -rvf linuxsampler-*.tar.*
+	@rm -rvf Doxyfile

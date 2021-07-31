@@ -1,0 +1,9 @@
+on init
+  { this will throw a warning: int variable, but string expression assignment }
+  declare $a := "bla"
+
+  declare @h := "Hello "
+  declare const @w := "world!"
+  message(@h)
+  message(@w)
+end on

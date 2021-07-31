@@ -1,0 +1,9 @@
+#!/bin/bash
+
+nohup linuxsampler > linuxsampler.log &
+
+sudo renice -10 `pidof linuxsampler`
+
+cat LINUXSAMPLER/StringsFurther.lscp | nc localhost 8888
+
+

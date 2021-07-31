@@ -1,0 +1,186 @@
+Version 2.1.1 (27 Jul 2019)
+
+  This is a maintenance release with various fixes. There are only two
+  minor new features in this release:
+
+  The Giga format engine adds a format extension which allows sound
+  designers to define whether release trigger samples shall be played when
+  the sustain pedal is released. In the previous release this was actually
+  the default behaviour by the sampler, but meanwhile there was a consensus
+  on the mailing list that release samples being triggered by sustain pedal
+  is not the common, expected behaviour. So this is no longer the default
+  behaviour, but you can still opt in to this old behaviour by using this
+  new format extension option (i.e. by using latest release version of
+  libgig and gigedit and enabling the respective checkbox for your
+  gig instrument). If you don't enable this option then release samples are
+  now only triggered by note-off events.
+
+  The sfz engine adds support for the commonly used built-in sample
+  '*silence' of the sfz format. It does what you think it does; it
+  instructs the sampler to play no sound at all. This is commonly used
+  in sfz files for instance for the lowest velocity switch to not play any
+  sample. With the previous release trying to load sfz files which used this
+  built-in sample caused a file loading error. There are various other
+  commonly used built-in samples in sfz files which you can denote by the
+  leading star character in the sample name, however the '*silence' one is
+  currently the only supported built-in sample by our sfz engine yet. Trying
+  to load sfz files which are using other built-in samples does not prevent
+  your instrument from being loaded by the sampler, however you will get a
+  warning message on the console that the built-in sample is not supported
+  yet and the sampler will simply play silence for that non supported
+  built-in sample.
+
+Version 2.1.0 (25 November 2017)
+
+  This release adds a large amount of extensions and improvements for the
+  real-time instrument scripting support of LinuxSampler (NKSP).
+  For example 48 new built-in NKSP functions and 21 new built-in NKSP
+  variables have been added. Also the NKSP language itself was extended.
+  Most notably the script engine now has an execution scheduler which is
+  the basis for many of the timing relevant new NKSP features in this
+  release, like programmatically suspending and resuming scripts for an
+  exact amount of time or triggering or killing notes at very precise
+  times. Bitwise operators have been added to NKSP, as well as support for
+  read only built-in variables, "synchronized" code blocks
+  ("synchronized .. end synchronized"), user declared functions and user
+  declared const array variables have been added to the NKSP language,
+  and automatic suspension of RT threatening scripts by the RT script engine
+  has been implemented. Also syntax error messages with NKSP scripts have
+  been improved to output more clear and user friendly error messages, as
+  well as NKSP editor API has been improved which brings handy new features
+  to gigedit's NKSP script editor like automatically graying out code blocks
+  which are disabled by NKSP preprocessor statements.
+
+  The SFZ engine now supports <global>, <master>, #define and set_ccN
+  statements. And finally the SFZ engine now supports NKSP real-time
+  instrument scripts as well by adding a new "script" opcode.
+
+  Also the Instruments Database feature has received important maintenance
+  fixes. Before this release the instrument DB feature was barely usable
+  for quite some time. Fundamental instruments DB issues have been fixed in
+  this release to finally consider this feature stable again.
+
+  And finally this release provides a huge amount of general bug fixes.
+
+Version 2.0.0 (15 July 2015)
+
+  The sampler's code base has seen substantial changes in the last six years,
+  since the last release of LinuxSampler. The sampler engine code base has
+  been unified to a set of abstract base classes which cleared the way for
+  two new sampler engines: The SFZ2 format engine (.sfz) and the SoundFont 2
+  engine (.sf2). So LinuxSampler is not limited to the GigaStudio/Gigasampler
+  format (.gig) anymore. Another major new feature is support for real-time
+  instrument scripts, which may be bundled with sound files to extend the
+  sampler with custom behavior for individual sounds. You may know such scripts
+  from commercial software samplers. Find out more about instrument scripts
+  on http://doc.linuxsampler.org/Instrument_Scripts/. At the moment this
+  scripting feature is yet limited to the Giga format engine. Also noteworthy
+  is the new command line application "lscp", which is a text based shell for
+  controlling the sampler from the command line, providing colored output,
+  type completion, help text while typing LSCP commands and other convenient
+  features. You may now also load external effects directly into the sampler
+  (only LADSPA plugins yet). The LSCP network protocol (v1.7) has been extended
+  to manage such effects respectively. Also new with latest LSCP version is the
+  ability to trigger MIDI CCs by LSCP commands. You may have heard that the
+  GigaStudio software has seen its last version with GigaStudio 4. Tascam
+  officially discontinued this product, its intellectual property has been sold
+  several times among companies and there is currently no way to buy a new copy
+  of GigaStudio anymore. However the GigaStudio format is still under active
+  development with LinuxSampler. We not only added support for the latest
+  features introduced with GigaStudio 4: iMIDI rules for example which allow to
+  trigger notes by MIDI CC and allow i.e. defining a set of legato samples; for
+  the first time ever we also added our own extensions to the Giga format: one
+  of it is the previously mentioned new instrument scripting feature and a more
+  minor extension is support for various other MIDI CCs which were never
+  supported by GigaStudio before. The sampler's host plugins have also seen
+  some enhancements: the LV2 plugin now stores and restores the sampler's
+  overall state with your DAW application's song, the LV2 and AudioUnit
+  plugin's outputs were increased from 2 audio channels to 16 upon request by
+  some users and the VST plugin now uses the sampler's MIDI instrument mapping
+  system to show a list of available sounds to allow the user to switch among
+  them. And last but not least the VST plugin may also be used on Mac now.
+
+Version 1.0.0 (31 July 2009)
+
+  This is the first release which allows the sampler to be used as audio
+  host plugin, namely supporting the standards VST, AU, DSSI and LV2. The
+  sampler's limits for max. voices & disk streams can now be altered at
+  runtime by frontends, no need to recompile the sampler anymore. The Mac
+  version now also supports CoreAudio as audio driver. The Windows version
+  finally supports the sampler's instruments DB feature as well, however
+  expect it still to be unstable at this point. Along to the already
+  existing JACK audio driver, Jack MIDI support has been added in this
+  release. The sampler allows frontends now basic MIDI control, that is to
+  monitor incoming MIDI data on MIDI input devices and sampler channels and
+  to send note-on and note-off MIDI events to sampler channels, which
+  allows frontends to provide a virtual MIDI keyboard to the user. Besides
+  these major changes there were countless bugfixes and optimizations.
+
+Version 0.5.1 (6 December 2007)
+
+  This is the first release for the Windows platform, providing a MME MIDI
+  input driver and ASIO audio output driver. Note that the instruments DB
+  feature is not yet available for Windows systems, since the respective
+  code base has yet to be ported. Needless to say that there still might be
+  plenty of issues on MS systems. Beside that support for Windows, this is
+  merely a bugfix release (i.e. fixing one serious crash) with only minor
+  new features.
+
+Version 0.5.0 (15 October 2007)
+
+  This release comes with a bunch of important new features. We implemented
+  a very powerful and easy MIDI program change mapping, which not only
+  allows you to define which instrument to load on which MIDI program
+  change number (and bank select number), it also allows further parameters
+  like whether the instrument shall be pre-cached or loaded only when needed
+  (and likewise freed when not needed). You can create arbitrary amount of
+  effect sends for each sampler channel, each having an arbitrary MIDI
+  controller for controlling the effect send level in realtime and can
+  flexible be routed to some of the sampler's audio output channel, i.e.
+  to a dedicated one for a certain effect type. The new instruments
+  database allows you to keep track even of largest instrument library
+  collections. You can order them in categories and search by various
+  criteria. The sampler now allows third party applications to offer so
+  called 'instrument editor plugins' which the sampler can use to spawn
+  an appropriate instrument editor application for a selected instrument
+  and for allowing to edit instruments with such an external editor
+  application on-the-fly, that is all modifications made with the editor
+  will immediately be audible with the sampler. No need to reload instrument
+  files anymore. Checkout our brand new instrument editor application called
+  'gigedit' which you can use for this feature. Loading huge instruments may
+  take a long time, that's why the sampler now allows to play an instrument
+  while loading. That way you can i.e. play and hold notes on the keyboard
+  while loading a new instrument on the same sampler channel at the same
+  time. Beside these new features, you can find the common huge list of bug
+  fixes and quality improvements.
+
+Version 0.4.0 (24 November 2006)
+
+  Finally a new release after a long development cycle. The sampler now has
+  a completely revised synthesis core. Note that due to this, most of the
+  assembly code became incompatible and is thus deactivated at compile
+  time. So don't bother trying to activate the assembly option, it won't
+  compile! That's not an issue though, because even without assembly, the
+  new synthesis core is faster than the old one with assembly. The
+  Gigasampler engine now has real support for 24 bit samples, that is they
+  won't be truncated anymore, and finally supports all filter types of the
+  Gigasampler format. A lot of effort has been put into making all filters
+  under all parameters being as accurate as possible, compared to the
+  original Gigasampler ones. Analogue to hardware mixers, sampler channels
+  can now be muted and solo-ed and there is support for GM portamento and
+  GM mono mode (single note per channel) as well as support for sostenuto
+  pedal. Beside LSCP, third-party applications can now also link against
+  liblinuxsampler directly (using the sampler's C++ API). Beside these,
+  there have been of course a huge bunch of fixes and quality improvements.
+
+Version 0.3.3 (15 July 2005)
+
+  Another bug fix release. It solves one usability issue regarding small
+  fragments / high sampling rates of audio drivers, fixes some compile time
+  errors with GCC 4.0 and fixes a minor efficiency bug.
+
+Version 0.3.2 (24 June 2005)
+
+  This is more or less just a bug fix release. Beside a bunch of little
+  fixes it solves a serious crash in conjunction with voice stealing and
+  slightly improves Gigasampler format playback accuracy.

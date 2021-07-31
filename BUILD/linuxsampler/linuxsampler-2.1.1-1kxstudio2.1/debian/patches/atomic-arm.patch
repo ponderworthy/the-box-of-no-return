@@ -1,0 +1,172 @@
+--- linuxsampler-plugins-32chan-2.1.1.orig/src/common/ChangeFlagRelaxed.h
++++ linuxsampler-plugins-32chan-2.1.1/src/common/ChangeFlagRelaxed.h
+@@ -20,7 +20,7 @@
+ class ChangeFlagRelaxed {
+ public:
+     ChangeFlagRelaxed() {
+-        newval = (atomic_t) ATOMIC_INIT(0);
++        newval = ATOMIC_INIT(0);
+         oldval = 0;
+     }
+     
+--- linuxsampler-plugins-32chan-2.1.1.orig/src/common/atomic.h
++++ linuxsampler-plugins-32chan-2.1.1/src/common/atomic.h
+@@ -1187,50 +1187,115 @@ static __inline__ int atomic_dec_and_tes
+ 
+ #else
+ 
+-#warning libs/pbd has no implementation of strictly atomic operations for your hardware.
++#include <atomic>
+ 
+-#define __NO_STRICT_ATOMIC
+-#ifdef __NO_STRICT_ATOMIC
++typedef std::atomic_int atomic_t;
+ 
+-/*
+- * Because the implementations from the kernel (where all these come
+- * from) use cli and spinlocks for hppa and arm...
++#define ATOMIC_INIT(i)	{ (i) }
++
++/**
++ * atomic_read - read atomic variable
++ * @v: pointer of type atomic_t
++ *
++ * Atomically reads the value of @v.  Note that the guaranteed
++ * useful range of an atomic_t is only 24 bits.
+  */
++#define atomic_read(v)		((v)->load())
+ 
+-typedef struct { volatile int counter; } atomic_t;
++/**
++ * atomic_set - set atomic variable
++ * @v: pointer of type atomic_t
++ * @i: required value
++ *
++ * Atomically sets the value of @v to @i.  Note that the guaranteed
++ * useful range of an atomic_t is only 24 bits.
++ */
++#define atomic_set(v,i)		((v)->store(i))
+ 
+-#define ATOMIC_INIT(i)	( (atomic_t) { (i) } )
++/**
++ * atomic_add - add integer to atomic variable
++ * @i: integer value to add
++ * @v: pointer of type atomic_t
++ *
++ * Atomically adds @i to @v.  Note that the guaranteed useful range
++ * of an atomic_t is only 24 bits.
++ */
++static __inline__ void atomic_add(int i, atomic_t *v)
++{
++	*(v) += i;
++}
+ 
+-#define atomic_read(v)		((v)->counter)
+-#define atomic_set(v,i)		((v)->counter = (i))
++/**
++ * atomic_sub - subtract the atomic variable
++ * @i: integer value to subtract
++ * @v: pointer of type atomic_t
++ *
++ * Atomically subtracts @i from @v.  Note that the guaranteed
++ * useful range of an atomic_t is only 24 bits.
++ */
++static __inline__ void atomic_sub(int i, atomic_t *v)
++{
++	*(v) -= i;
++}
+ 
++/**
++ * atomic_inc - increment atomic variable
++ * @v: pointer of type atomic_t
++ *
++ * Atomically increments @v by 1.  Note that the guaranteed
++ * useful range of an atomic_t is only 24 bits.
++ */
+ static __inline__ void atomic_inc(atomic_t *v)
+ {
+-	v->counter++;
++	++(*(v));
+ }
+ 
++/**
++ * atomic_dec - decrement atomic variable
++ * @v: pointer of type atomic_t
++ *
++ * Atomically decrements @v by 1.  Note that the guaranteed
++ * useful range of an atomic_t is only 24 bits.
++ */
+ static __inline__ void atomic_dec(atomic_t *v)
+ {
+-	v->counter--;
++	--(*(v));
+ }
+ 
++/**
++ * atomic_dec_and_test - decrement and test
++ * @v: pointer of type atomic_t
++ *
++ * Atomically decrements @v by 1 and
++ * returns true if the result is 0, or false for all other
++ * cases.  Note that the guaranteed
++ * useful range of an atomic_t is only 24 bits.
++ */
+ static __inline__ int atomic_dec_and_test(atomic_t *v)
+ {
+ 	int res;
+-	v->counter--;
+-	res = v->counter;
++	--(*(v));
++	res = *(v);
+ 	return res == 0;
+ }
+ 
++/**
++ * atomic_inc_and_test - increment and test
++ * @v: pointer of type atomic_t
++ *
++ * Atomically increments @v by 1
++ * and returns true if the result is zero, or false for all
++ * other cases.  Note that the guaranteed
++ * useful range of an atomic_t is only 24 bits.
++ */
+ static __inline__ int atomic_inc_and_test(atomic_t *v)
+ {
+ 	int res;
+-	v->counter++;
+-	res = v->counter;
++	++(*(v));
++	res = *(v);
+ 	return res == 0;
+ }
+ 
+-#  endif /* __NO_STRICT_ATOMIC */
+ #  endif /* m68k */
+ #  endif /* mips */
+ #  endif /* s390 */
+--- linuxsampler-plugins-32chan-2.1.1.orig/src/drivers/midi/VirtualMidiDevice.cpp
++++ linuxsampler-plugins-32chan-2.1.1/src/drivers/midi/VirtualMidiDevice.cpp
+@@ -35,15 +35,15 @@ namespace LinuxSampler {
+         atomic_t zero = ATOMIC_INIT(0);
+         atomic_t defaultVelocity = ATOMIC_INIT(127);
+         atomic_t defaultCCValue = ATOMIC_INIT(0);
+-        p->notesChanged = zero;
+-        p->ccsChanged   = zero;
++        atomic_set( &p->notesChanged, zero );
++        atomic_set( &p->ccsChanged, zero );
+         for (int i = 0; i < MIDI_KEYS; i++) {
+-            p->pNoteChanged[i]  = zero;
+-            p->pNoteIsActive[i] = zero;
+-            p->pNoteOnVelocity[i] = defaultVelocity;
+-            p->pNoteOffVelocity[i] = defaultVelocity;
+-            p->pCCChanged[i] = zero;
+-            p->pCCValue[i]   = defaultCCValue;
++            atomic_set( &p->pNoteChanged[i], zero );
++            atomic_set( &p->pNoteIsActive[i], zero );
++            atomic_set( &p->pNoteOnVelocity[i], defaultVelocity );
++            atomic_set( &p->pNoteOffVelocity[i], defaultVelocity );
++            atomic_set( &p->pCCChanged[i], zero );
++            atomic_set( &p->pCCValue[i], defaultCCValue );
+         }
+     }
+ 

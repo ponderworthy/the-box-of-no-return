@@ -1,0 +1,46 @@
+{ Array variables are always global variables, with constant size defined at
+  parse time. Trying to declare an array size with a runtime expression (i.e. a
+  non const variable), will cause a parser error. }
+
+on init
+  declare const $SIZE := 5
+  declare %a[$SIZE] := ( 0,1,2,3,4 )
+  declare $i
+
+  message("num_elements(%a) = " & num_elements(%a))
+
+  message("Initial values of array:")
+
+  $i := 0
+  while ($i < $SIZE)
+    message("array[" & $i & "] = " & %a[$i])
+    $i := $i + 1
+  end while
+
+  %a[0] := 5
+  %a[1] := 11
+  %a[2] := 2
+  %a[3] := 7
+  %a[4] := 3
+
+  message("")
+  message("New values of array:")
+
+  $i := 0
+  while ($i < $SIZE)
+    message("array[" & $i & "] = " & %a[$i])
+    $i := $i + 1
+  end while
+
+  sort(%a)
+
+  message("")
+  message("Sorted values of array:")
+
+  $i := 0
+  while ($i < $SIZE)
+    message("array[" & $i & "] = " & %a[$i])
+    $i := $i + 1
+  end while
+
+end on

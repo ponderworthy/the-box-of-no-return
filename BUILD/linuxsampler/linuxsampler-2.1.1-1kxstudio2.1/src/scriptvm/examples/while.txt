@@ -1,0 +1,8 @@
+on init
+  declare $i := 3
+
+  while ($i)
+    message("Print this three times.")
+    $i := $i - 1
+  end while
+end on

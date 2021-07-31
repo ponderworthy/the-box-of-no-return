@@ -1,0 +1,96 @@
+#!/usr/bin/make -f
+
+DEB_HOST_ARCH = $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+FLAGS  = -O3 -ffast-math -fPIC -DPIC -fdata-sections -ffunction-sections -DNDEBUG -Wno-deprecated
+ifeq ($(DEB_HOST_ARCH),armhf)
+FLAGS += -march=armv7ve -mcpu=cortex-a7 -mfloat-abi=hard -mfpu=neon-vfpv4
+else ifeq ($(DEB_HOST_ARCH),arm64)
+FLAGS += -march=armv8-a -mcpu=cortex-a53
+else
+FLAGS += -mtune=generic -msse -msse2 -mfpmath=sse
+endif
+
+FLAGS += -march=native -mtune=native -O3
+
+export CFLAGS=$(FLAGS)
+export CXXFLAGS=$(FLAGS) -fvisibility-inlines-hidden
+export CPPFLAGS=
+export LDFLAGS=-Wl,-O1 -Wl,--as-needed -Wl,--no-undefined -Wl,--gc-sections -Wl,--strip-all
+export PATH:=/opt/kxstudio/bin:$(PATH)
+export PKG_CONFIG_PATH=/opt/kxstudio/lib/pkgconfig
+
+EXTRA_CONF_FLAGS  = --disable-arts-driver --disable-artstest
+EXTRA_CONF_FLAGS += --disable-asio-driver --disable-midishare-driver --disable-coremidi-driver --disable-coreaudio-driver --disable-mmemidi-driver
+EXTRA_CONF_FLAGS += --disable-instruments-db
+
+override_dh_auto_configure:
+	make -f Makefile.svn
+	./configure --disable-maintainer-mode \
+	            --prefix=/opt/linuxsampler \
+	            --enable-plugin-dir=/opt/linuxsampler/lib/plugins \
+	            $(EXTRA_CONF_FLAGS)
+
+override_dh_auto_install:
+	mkdir -p touch $(CURDIR)/debian/tmp/var/lib/linuxsampler
+	touch $(CURDIR)/debian/tmp/var/lib/linuxsampler/instruments.db
+
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp/
+	find $(CURDIR)/debian/tmp/ -name *.a -delete
+	find $(CURDIR)/debian/tmp/ -name *.la -delete
+
+	mkdir -p $(CURDIR)/debian/tmp/usr/bin
+	mv $(CURDIR)/debian/tmp/opt/linuxsampler/bin/* $(CURDIR)/debian/tmp/usr/bin/
+	rmdir $(CURDIR)/debian/tmp/opt/linuxsampler/bin
+
+	mkdir -p $(CURDIR)/debian/tmp/usr/share/man/man1
+	mv $(CURDIR)/debian/tmp/opt/linuxsampler/share/man/man1/* $(CURDIR)/debian/tmp/usr/share/man/man1/
+	rmdir $(CURDIR)/debian/tmp/opt/linuxsampler/share/man/man1
+
+override_dh_auto_clean:
+	if [ -f Makefile ]; then make clean; make -f Makefile.cvs clean; fi
+
+	rm -f Artwork/Makefile.in
+	rm -f Documentation/Engines/Makefile.in
+	rm -f Documentation/Engines/gig/Makefile.in
+	rm -f Documentation/Makefile.in
+	rm -f Makefile.in
+	rm -f aclocal.m4
+	rm -f compile
+	rm -f config.guess
+	rm -f config.h.in
+	rm -f config.sub
+	rm -f configure
+	rm -f depcomp
+	rm -f install-sh
+	rm -f ltmain.sh
+	rm -f man/Makefile.in
+	rm -f missing
+	rm -f osx/Makefile.in
+	rm -f osx/linuxsampler.xcodeproj/Makefile.in
+	rm -f scripts/Makefile.in
+	rm -f src/Makefile.in
+	rm -f src/common/Makefile.in
+	rm -f src/db/Makefile.in
+	rm -f src/drivers/Makefile.in
+	rm -f src/drivers/audio/Makefile.in
+	rm -f src/drivers/midi/Makefile.in
+	rm -f src/effects/Makefile.in
+	rm -f src/engines/Makefile.in
+	rm -f src/engines/common/Makefile.in
+	rm -f src/engines/gig/Makefile.in
+	rm -f src/engines/sf2/Makefile.in
+	rm -f src/engines/sfz/Makefile.in
+	rm -f src/hostplugins/Makefile.in
+	rm -f src/hostplugins/au/Makefile.in
+	rm -f src/hostplugins/dssi/Makefile.in
+	rm -f src/hostplugins/lv2/Makefile.in
+	rm -f src/hostplugins/vst/Makefile.in
+	rm -f src/network/Makefile.in
+	rm -f src/network/lscpparser.cpp
+	rm -f src/network/lscpsymbols.h
+	rm -f src/plugins/Makefile.in
+	rm -f src/testcases/Makefile.in
+
+%:
+	dh $@

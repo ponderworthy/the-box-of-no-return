@@ -1,0 +1,43 @@
+--- linuxsampler-plugins-32chan-2.1.1.orig/src/common/RTMath.cpp
++++ linuxsampler-plugins-32chan-2.1.1/src/common/RTMath.cpp
+@@ -37,6 +37,28 @@ float* RTMathBase::pCentsToFreqTable(Ini
+ typedef uint64_t time_stamp_t;
+ #endif
+ 
++#if defined(__arm__) || defined(__aarch64__)
++#include <unistd.h>
++#include <sys/syscall.h>
++#include <linux/perf_event.h>
++
++static int fddev = -1; 
++__attribute__((constructor))
++static void __init_z(void)
++{
++    static struct perf_event_attr attr;
++    attr.type = PERF_TYPE_HARDWARE;
++    attr.config = PERF_COUNT_HW_CPU_CYCLES;
++    fddev = syscall(__NR_perf_event_open, &attr, 0, -1, -1, 0); 
++}
++
++__attribute__((destructor))
++static void __fini_z(void)
++{
++    close(fddev);
++}
++#endif
++
+ /*
+  * Creates a real time stamp for the current moment. Out of efficiency this
+  * is implemented in inline assembly for each CPU independently; we currently
+@@ -73,6 +95,11 @@ RTMathBase::time_stamp_t RTMathBase::Cre
+     return t;
+     #elif defined(__APPLE__)
+     return (time_stamp_t) mach_absolute_time();
++    #elif defined(__arm__) || defined(__aarch64__)
++    long long result = 0;
++    if (fddev == -1 || read(fddev, &result, sizeof(result)) < sizeof(result))
++        return 0;
++    return result;
+     #else // we don't want to use a slow generic solution
+     #  error "Sorry, LinuxSampler lacks time stamp code for your system."
+     #  error "Please report this error and the CPU you are using to the LinuxSampler developers mailing list!"

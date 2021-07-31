@@ -1,0 +1,5 @@
+Device.lo: Device.cpp /usr/include/stdc-predef.h Device.h
+
+/usr/include/stdc-predef.h:
+
+Device.h:

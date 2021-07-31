@@ -1,0 +1,119 @@
+LinuxSampler 2.1.1
+Copyright (C) 2003,2004 by Benno Senoner and Christian Schoenebeck
+Copyright (C) 2005-2019 Christian Schoenebeck
+Binary built: Jul 31 2021
+Detected features: MMX SSE SSE2
+Automatic Stacktrace: Off
+Creating Sampler...OK
+Registered sampler engines: 'GIG','SF2','SFZ'
+Registered MIDI input drivers: ALSA,JACK
+Registered audio output drivers: ALSA,JACK
+Loading instrument editor plugins...OK
+Registered instrument editors: 
+Registered internal effect systems: LADSPA
+Could not scan LADSPA effects: library path '/home/jeb/.ladspa' doesn't exist
+Could not scan LADSPA effects: library path '/usr/local/lib/ladspa' doesn't exist
+Registered internal effects: 10
+Starting LSCP network server (0.0.0.0:8888)...LSCLinuxSampler initialization completed. :-)
+
+LSCPServer: Client connection established on socket:4.
+libjackBufferSizeCallback(128)
+jack_port_set_name: deprecated
+jack_port_set_name: deprecated
+Thread: WARNING, can't assign realtime scheduling to thread!
+EngineBase: WARNING, CONFIG_EG_MIN_RELEASE_TIME too big for current audio fragment size & sampling rate! May lead to click sounds if voice stealing chimes in!
+Starting disk thread...OK
+EQ support: no
+Scheduling '/home/jeb/BNR/VPO/Strings/1st-violin-SEC-sustain.sfz' (Index=0) to be loaded in background (if not loaded yet).
+Loading sfz file '/home/jeb/BNR/VPO/Strings/1st-violin-SEC-sustain.sfz'...Scheduling '/home/jeb/BNR/VPO/Strings/1st-violin-SEC-normal-mod-wheel.sfz' (Index=0) to be loaded in background (if not loaded yet).
+OK
+Loading sfz instrument ('/home/jeb/BNR/VPO/Strings/1st-violin-SEC-sustain.sfz',0)...OK
+Caching initial samples...Scheduling '/home/jeb/BNR/VPO/Strings/1st-violin-SEC-tremolo.sfz' (Index=0) to be loaded in background (if not loaded yet).
+Scheduling '/home/jeb/BNR/VPO/Strings/2nd-violin-SEC-sustain.sfz' (Index=0) to be loaded in background (if not loaded yet).
+OK
+Loading sfz file '/home/jeb/BNR/VPO/Strings/1st-violin-SEC-normal-mod-wheel.sfz'...Scheduling '/home/jeb/BNR/VPO/Strings/2nd-violin-SEC-normal-mod-wheel.sfz' (Index=0) to be loaded in background (if not loaded yet).
+Scheduling '/home/jeb/BNR/VPO/Strings/2nd-violin-SEC-tremolo.sfz' (Index=0) to be loaded in background (if not loaded yet).
+OK
+Loading sfz instrument ('/home/jeb/BNR/VPO/Strings/1st-violin-SEC-normal-mod-wheel.sfz',0)...OK
+Caching initial samples...Scheduling '/home/jeb/BNR/VPO/Strings/all-strings-SEC-sustain.sfz' (Index=0) to be loaded in background (if not loaded yet).
+Scheduling '/home/jeb/BNR/VPO/Strings/all-strings-SEC-normal-mod-wheel.sfz' (Index=0) to be loaded in background (if not loaded yet).
+Scheduling '/home/jeb/BNR/VPO/Strings/all-strings-SEC-tremolo.sfz' (Index=0) to be loaded in background (if not loaded yet).
+Scheduling '/home/jeb/BNR/VPO/Strings/bass-SEC-sustain.sfz' (Index=0) to be loaded in background (if not loaded yet).
+OK
+Loading sfz file '/home/jeb/BNR/VPO/Strings/1st-violin-SEC-tremolo.sfz'...Scheduling '/home/jeb/BNR/VPO/Strings/bass-SEC-normal-mod-wheel.sfz' (Index=0) to be loaded in background (if not loaded yet).
+OK
+Loading sfz instrument ('/home/jeb/BNR/VPO/Strings/1st-violin-SEC-tremolo.sfz',0)...OK
+Caching initial samples...Scheduling '/home/jeb/BNR/VPO/Strings/bass-SEC-tremolo.sfz' (Index=0) to be loaded in background (if not loaded yet).
+Scheduling '/home/jeb/BNR/VPO/Strings/cello-SEC-sustain.sfz' (Index=0) to be loaded in background (if not loaded yet).
+Scheduling '/home/jeb/BNR/VPO/Strings/cello-SEC-normal-mod-wheel.sfz' (Index=0) to be loaded in background (if not loaded yet).
+Scheduling '/home/jeb/BNR/VPO/Strings/cello-SEC-tremolo.sfz' (Index=0) to be loaded in background (if not loaded yet).
+OK
+Loading sfz file '/home/jeb/BNR/VPO/Strings/2nd-violin-SEC-sustain.sfz'...Scheduling '/home/jeb/BNR/VPO/Strings/viola-SEC-sustain.sfz' (Index=0) to be loaded in background (if not loaded yet).
+OK
+Loading sfz instrument ('/home/jeb/BNR/VPO/Strings/2nd-violin-SEC-sustain.sfz',0)...OK
+Caching initial samples...Scheduling '/home/jeb/BNR/VPO/Strings/viola-SEC-normal-mod-wheel.sfz' (Index=0) to be loaded in background (if not loaded yet).
+Scheduling '/home/jeb/BNR/VPO/Strings/viola-SEC-tremolo.sfz' (Index=0) to be loaded in background (if not loaded yet).
+OK
+Loading sfz file '/home/jeb/BNR/VPO/Strings/2nd-violin-SEC-normal-mod-wheel.sfz'...OK
+Loading sfz instrument ('/home/jeb/BNR/VPO/Strings/2nd-violin-SEC-normal-mod-wheel.sfz',0)...OK
+Caching initial samples...OK
+Loading sfz file '/home/jeb/BNR/VPO/Strings/2nd-violin-SEC-tremolo.sfz'...OK
+Loading sfz instrument ('/home/jeb/BNR/VPO/Strings/2nd-violin-SEC-tremolo.sfz',0)...OK
+Caching initial samples...OK
+Loading sfz file '/home/jeb/BNR/VPO/Strings/all-strings-SEC-sustain.sfz'...OK
+Loading sfz instrument ('/home/jeb/BNR/VPO/Strings/all-strings-SEC-sustain.sfz',0)...OK
+Caching initial samples...OK
+Loading sfz file '/home/jeb/BNR/VPO/Strings/all-strings-SEC-normal-mod-wheel.sfz'...The opcode 'group_label' is unsupported by libsfz!
+The opcode 'ampeg_dynamic' is unsupported by libsfz!
+The opcode 'group_label' is unsupported by libsfz!
+The opcode 'ampeg_dynamic' is unsupported by libsfz!
+The opcode 'ampeg_dynamic' is unsupported by libsfz!
+The opcode 'group_label' is unsupported by libsfz!
+The opcode 'ampeg_dynamic' is unsupported by libsfz!
+The opcode 'group_label' is unsupported by libsfz!
+OK
+Loading sfz instrument ('/home/jeb/BNR/VPO/Strings/all-strings-SEC-normal-mod-wheel.sfz',0)...OK
+Caching initial samples...OK
+Loading sfz file '/home/jeb/BNR/VPO/Strings/all-strings-SEC-tremolo.sfz'...OK
+Loading sfz instrument ('/home/jeb/BNR/VPO/Strings/all-strings-SEC-tremolo.sfz',0)...OK
+Caching initial samples...OK
+Loading sfz file '/home/jeb/BNR/VPO/Strings/bass-SEC-sustain.sfz'...OK
+Loading sfz instrument ('/home/jeb/BNR/VPO/Strings/bass-SEC-sustain.sfz',0)...OK
+Caching initial samples...OK
+Loading sfz file '/home/jeb/BNR/VPO/Strings/bass-SEC-normal-mod-wheel.sfz'...OK
+Loading sfz instrument ('/home/jeb/BNR/VPO/Strings/bass-SEC-normal-mod-wheel.sfz',0)...OK
+Caching initial samples...OK
+Loading sfz file '/home/jeb/BNR/VPO/Strings/bass-SEC-tremolo.sfz'...OK
+Loading sfz instrument ('/home/jeb/BNR/VPO/Strings/bass-SEC-tremolo.sfz',0)...OK
+Caching initial samples...OK
+Loading sfz file '/home/jeb/BNR/VPO/Strings/cello-SEC-sustain.sfz'...OK
+Loading sfz instrument ('/home/jeb/BNR/VPO/Strings/cello-SEC-sustain.sfz',0)...OK
+Caching initial samples...OK
+Loading sfz file '/home/jeb/BNR/VPO/Strings/cello-SEC-normal-mod-wheel.sfz'...The opcode 'group_label' is unsupported by libsfz!
+The opcode 'ampeg_dynamic' is unsupported by libsfz!
+The opcode 'group_label' is unsupported by libsfz!
+The opcode 'ampeg_dynamic' is unsupported by libsfz!
+OK
+Loading sfz instrument ('/home/jeb/BNR/VPO/Strings/cello-SEC-normal-mod-wheel.sfz',0)...OK
+Caching initial samples...OK
+Loading sfz file '/home/jeb/BNR/VPO/Strings/cello-SEC-tremolo.sfz'...OK
+Loading sfz instrument ('/home/jeb/BNR/VPO/Strings/cello-SEC-tremolo.sfz',0)...OK
+Caching initial samples...OK
+Loading sfz file '/home/jeb/BNR/VPO/Strings/viola-SEC-sustain.sfz'...OK
+Loading sfz instrument ('/home/jeb/BNR/VPO/Strings/viola-SEC-sustain.sfz',0)...OK
+Caching initial samples...OK
+Loading sfz file '/home/jeb/BNR/VPO/Strings/viola-SEC-normal-mod-wheel.sfz'...The opcode 'ampeg_dynamic' is unsupported by libsfz!
+The opcode 'group_label' is unsupported by libsfz!
+The opcode 'ampeg_dynamic' is unsupported by libsfz!
+The opcode 'group_label' is unsupported by libsfz!
+OK
+Loading sfz instrument ('/home/jeb/BNR/VPO/Strings/viola-SEC-normal-mod-wheel.sfz',0)...OK
+Caching initial samples...OK
+Loading sfz file '/home/jeb/BNR/VPO/Strings/viola-SEC-tremolo.sfz'...OK
+Loading sfz instrument ('/home/jeb/BNR/VPO/Strings/viola-SEC-tremolo.sfz',0)...OK
+Caching initial samples...OK
+Jack: Jack server shutdown, exiting.
+Cannot read socket fd = 7 err = Success
+CheckRes error
+JackSocketClientChannel read fail
+LSCPServer: Client connection terminated on socket:4.

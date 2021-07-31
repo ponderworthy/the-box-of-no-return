@@ -1,0 +1,1449 @@
+Version 2.1.1 (27 Jul 2019)
+
+  * Real-time instrument scripts:
+    - Fixed behavior of built-in NKSP functions change_sustain(),
+      change_cutoff_attack(), change_cutoff_decay(), change_cutoff_sustain()
+      and change_cutoff_release().
+
+  * general changes:
+    - Only play release trigger samples on sustain pedal up if this behaviour
+      was explicitly requested by the instrument (otherwise only on note-off).
+    - Fixed compiler warnings.
+    - Fixed compilation error when cross-compiling to Mac.
+    - FX Sends: Provide more useful error messages on routing problems
+      (see bug #169).
+    - LSCP doc: Be more clear describing the two distinct approaches
+      of using external vs. internal effects (see bug #169).
+    - "optional" class: Fixed comparison operators.
+
+  * Gigasampler/GigaStudio format engine:
+    - Format extension: If requested by instrument then don't play release
+      trigger sample on note-off events.
+
+  * SFZ format engine:
+    - Fixed memory leak when releasing samples
+      (fixes bug #307, patch by Jacek Roszkowski)
+    - Fixed potential crash when a sample is shared by more than one region
+      (fixes bug #308, patch by Jacek Roszkowski).
+    - Opcode 'sample': Added support for built-in sample '*silence'
+      (fixes bug #310, patch by Jacek Roszkowski).
+
+Version 2.1.0 (25 Nov 2017)
+
+  * SFZ format engine:
+    - added support for <global>, <master> and #define (patch by Alby M)
+    - Removed code duplication in SFZ file loading code.
+    - Added support for sfz extension opcode 'script' which may be used to
+      load real-time instrument script file (NKSP script language).
+    - Implemented opcode set_ccN (initial patch by Giovanni Senatore).
+    - Fixed unintended volume fade-in of voices under certain conditions.
+    - sfz parser: allow missing space between header and opcode
+
+  * Gigasampler/GigaStudio format engine:
+    - Fixed clicks and pumping noise with Lowpass Turbo filter on very low
+      cutoff settings.
+    - Got rid of resembling an ancient GSt misbehavior which did not pitch at
+      all if an up-pitch of more than 40 semi tones was requested (I don't
+      think there is any stock gig sound that requires this behavior to
+      resemble its original sound).
+    - Added support for controlling whether the individual EGADSR stages may
+      be aborted (as LinuxSampler extension to the original GigaStudio 4
+      format).
+
+  * general changes:
+    - fixed printf type errors (mostly in debug messages)
+    - use unique_ptr instead of auto_ptr when building with C++11
+    - Added RTAVLTree class which is a real-time safe ordered multi-map, thus
+      allowing to sort data efficiently in real-time safe manner.
+    - RTList class: added methods for moving/inserting elements to arbitrary
+      position within a list.
+    - RTList class: added method fromPtr() for creating an Iterator object from
+      a raw element pointer.
+    - Attempt to partly fix resetting engine channels vs. resetting engine, an
+      overall cleanup of the Reset*(), ConnectAudioDevice(),
+      DisconnectAudioDevice() API methods would still be desirable though,
+      because the current situation is still inconsistent and error prone.
+    - Active voices are now internally grouped to "Note" objects, instead of
+      being directly assigned to a keyboard key. This allows more fine graded
+      processing of voices, which is i.e. required for certain instrument
+      script features.
+    - Fix: Release trigger voices were not spawned on sustain pedal up
+      (CC #64) events.
+    - Fix: Release trigger voices can now also distinguish correctly between
+      note-off and sustain pedal up events.
+    - All engines: Increased ramp speed of volume smoother and pan smoother
+      (while slow rate of crossfade smoother is preserved) to allow quick
+      volume and pan changes by instrument scripts for instance.
+    - gig/sf2/sfz: Fixed aftertouch channel pressure events being processed
+      properly and thus were ignored for certain uses.
+    - Added new C++ API method
+      VirtualMidiDevice::SendChannelPressureToSampler().
+    - windows, 32-bit: fixed potential crashes by making sure the stack in
+      sub threads is 16-byte aligned
+    - fixed numerous compiler warnings
+    - Fixed invalid (note-on) event ID being assigned to new Note objects.
+    - Revised fundamental C++ classes "Thread", "Mutex" and "Condition" which
+      fixes potential undefined behavior.
+    - Fixed Note object leak when triggering notes on keys which did not
+      have a valid sample mapped (fixes bug #252).
+    - Fixed compilation errors when compiling with CONFIG_DEVMODE enabled.
+    - linuxsampler binary fix: option --create-instruments-db ignored
+      subsequent optional argument due to glibc's implementation oddity
+      which expects a "=" sign, but no space between them.
+
+  * packaging changes:
+    - removed unnecessary dependency to libuuid
+      (originated by libgig's usage of it)
+    - Automake: set environment variable GCC_COLORS=auto to allow GCC to
+      auto detect whether it (sh/c)ould output its messages in color.
+    - Debian: Fixed packaging error about invalid "Source-Version"
+      substitution variable.
+    - Debian: Raised Debian compatibility level to Debian 9 "Stretch".
+    - Debian: Added build dependency to libsqlite3-dev for building
+      linuxsampler with instruments DB support.
+
+  * Real-time instrument scripts:
+    - Implemented scheduler for delayed MIDI events and for suspended scripts.
+    - Built-in script function "wait()": implemented support for function's
+      "duration-us" argument, thus scripts using this function are now
+      correctly resumed after the requested amount of microseconds.
+    - Built-in script function "play_note()": implemented support for
+      function's "duration-us" argument, thus notes triggered with this
+      argument are now correctly released after the requested amount of
+      microseconds.
+    - Fix: script events were not cleared when engine channel was reset,
+      potentially causing undefined behavior.
+    - Fixed crash which happened when trying to reference an undeclared
+      variable.
+    - Built-in script function "play_note()": Added support for passing
+      special value -1 for "duration-us" argument, which will cause the
+      triggered note to be released once the original note was released.
+    - Instrument script classes now exported with the liblinuxsampler C++ API.
+    - Added new API method ScriptVM::syntaxHighlighting() which provides
+      a convenient syntax highlighting backend for external instrument
+      script editor applications.
+    - Added new C++ API class "ScriptVMFactory".
+    - Extended parser issues to provide not only first line and first
+      column, but also last line and last column of issue (thus marking
+      the precise span of the issue within the source code).
+    - Reload script automatically after being modified by an instrument
+      editor.
+    - NKSP language grammar correction: allow empty event handler bodies
+      like "on note end on".
+    - Implemented built-in script function "change_vol()".
+    - Implemented built-in script function "change_tune()".
+    - Implemented built-in script function "change_pan()".
+    - Implemented built-in script function "change_cutoff()".
+    - Implemented built-in script function "change_reso()".
+    - Implemented built-in script function "event_status()".
+    - Added built-in script constants "$EVENT_STATUS_INACTIVE" and
+      "$EVENT_STATUS_NOTE_QUEUE" both for being used as flags for
+      "event_status()" function.
+    - NKSP language: Added support for bitwise operators ".or.", ".and."
+      and ".not.".
+    - NKSP language scanner: Fixed IDs matching to require at least one
+      character (i.e. when matching function names or variable names).
+    - NKSP language scanner: disabled unusued rules.
+    - Fixed behavior of play_note() and note_off() functions which must
+      be distinguished engine internally from "real" MIDI note on/off
+      events in order to avoid misbehaviors like hanging notes.
+    - Implemented built-in script variable "$KSP_TIMER".
+    - Implemented built-in script variable "$NKSP_REAL_TIMER".
+    - Implemented built-in script variable "$NKSP_PERF_TIMER".
+    - Implemented built-in script variable "$ENGINE_UPTIME".
+    - Implemented built-in script function "inc()".
+    - Implemented built-in script function "dec()".
+    - NKSP language fix: division expressions were evaluated too often.
+    - NKSP language fix: string concatenation operator was right
+      associative instead of left (to right).
+    - NKSP language correction: allow empty statements in entire language
+      (i.e. "if end if").
+    - Implemented built-in script function "stop_wait()".
+    - Implemented built-in script variable "$NI_CALLBACK_ID".
+    - Implemented built-in script variable "$NI_CALLBACK_TYPE".
+    - Implemented built-in script variable "$NKSP_IGNORE_WAIT".
+    - Added support for read-only built-in variables (respectively
+      handled by the script parser).
+    - Added built-in script constant "$NI_CB_TYPE_INIT".
+    - Added built-in script constant "$NI_CB_TYPE_NOTE".
+    - Added built-in script constant "$NI_CB_TYPE_RELEASE".
+    - Added built-in script constant "$NI_CB_TYPE_CONTROLLER".
+    - NKSP Language: Added support for user defined script functions.
+    - Implemented built-in script function "change_attack()".
+    - Implemented built-in script function "change_decay()".
+    - Implemented built-in script function "change_release()".
+    - Fixed all change_*() built-in script functions to apply their
+      synthesis parameter changes immediately in case the respective note
+      was triggered at the same time, instead of scheduling the parameter
+      change, especially because it would cause some parameter types's
+      changes either to be ramped (i.e. change_vol()) or other types even
+      to have not effect at all (i.e. change_attack()).
+    - Implemented built-in script function "sh_left()".
+    - Implemented built-in script function "sh_right()".
+    - Implemented built-in script function "min()".
+    - Implemented built-in script function "max()".
+    - NKSP Fix: "init" event handler was not always executed when a script
+      was loaded.
+    - NKSP built-in wait() script function: abort script execution if
+      a negative or zero wait time was passed as argument (since this is
+      a common indication of a bug either of the script or even of the
+      engine, which could lead to RT instability or even worse).
+    - ScriptVM: Implemented automatic suspension of RT safety
+      threatening scripts.
+    - Provide more user friendly error messages on syntax errors.
+    - Fixed NKSP parser warning "Not a statement" when assigning an
+      initializer list to an array variable.
+    - Implemented built-in script array variable "%ALL_EVENTS".
+    - Implemented built-in script function "in_range()".
+    - Implemented built-in script function "change_amp_lfo_depth()".
+    - Implemented built-in script function "change_amp_lfo_freq()".
+    - Implemented built-in script function "change_pitch_lfo_depth()".
+    - Implemented built-in script function "change_pitch_lfo_freq()".
+    - Implemented built-in script function "change_vol_time()".
+    - Implemented built-in script function "change_tune_time()".
+    - Implemented built-in script function "fade_in()".
+    - Implemented built-in script function "fade_out()".
+    - Fixed acceptance of wrong data type of parameters passed to built-in
+      script functions "change_vol()", "change_tune()", "change_pan()",
+      "change_cutoff()", "change_reso()", "change_attack()", "change_decay()",
+      "change_release()", "change_amp_lfo_depth()", "change_amp_lfo_freq()",
+      "change_pitch_lfo_depth()" and "change_pitch_lfo_freq()".
+    - Added built-in script function "get_event_par()" and implemented some
+      of its possible parameter selections.
+    - Added built-in script function "set_event_par()" and implemented some
+      of its possible parameter selections.
+    - Fixed a bunch of scheduler time related bugs.
+    - Fixed polyphonic variables not being reset to zero after usage.
+    - Built-in "ignore_event()" function: argument is now optional, like with
+      built-in function "ignore_controller()".
+    - Implemented built-in script function "change_velo()".
+    - Implemented built-in script function "change_note()".
+    - Adjusted behavior of "change_vol()" and "change_tune()" to a more
+      intuitive behavior if used in combination with "change_vol_time()" or
+      "change_tune_time()" respectively: now tuning/volume changes are only
+      assigned (without delay) immediately to a new note if the respective
+      timing function has not been called before, otherwise the volume/tuning
+      changes are automatically faded (before, only the event's time stamp was
+      relevant).
+     - Implemented built-in script function "array_equal()".
+     - Implemented built-in script function "search()".
+     - Implemented built-in script function "sort()".
+     - NKSP Fix: Never suspend "init" event handlers.
+     - Implemented built-in script function "same_region()" (currently only
+       available for gig format engine).
+     - Added built-in script constant "$NKSP_LINEAR".
+     - Added built-in script constant "$NKSP_EASE_IN_EASE_OUT".
+     - Implemented built-in script function "change_vol_curve()".
+     - Implemented built-in script function "change_tune_curve()".
+     - built-in "play_note()" function now supports a sample playback start
+       offset with argument 3, where special value -1 means to use the regular
+       sample offset as defined by the instrument file.
+     - Built-in array variable %KEY_DOWN[] is now a read-only variable.
+     - Built-in variable $EVENT_NOTE is now a read-only variable.
+     - Built-in variable $EVENT_VELOCITY is now a read-only variable.
+     - built-in "play_note()" function now accepts -2 for its fourth argument
+       (note duration) which means the life time of the note shall be sticked
+       to the requested note number of argument 1.
+     - Fix: built-in "play_note()" function now returns 0 as result value if
+       -1 was passed for its fourth argument (note duration) and the respective
+       parent note is already gone.
+    - Implemented built-in script function "change_play_pos()".
+    - NKSP language: Added support for user declared const array variables.
+    - NKSP language: Raise parser warning if array variable is accessed with
+      an index that exceeds the array's size.
+    - NKSP language fix: Unknown characters were not handled correctly.
+    - NKSP language: Added support for "synchronized .. end synchronized"
+      code blocks.
+    - Implemented built-in script function "abort()" which allows to abort
+      another script handler by passing its callback ID.
+    - Fixed potential memory access bug and potential undefined behavior of
+      "init" event handlers.
+    - Print a time stamp along to each call of built-in function "message()".
+    - ScriptVM API: Added VMParserContext::preprocessorComments() which allows
+      to retrieve all code blocks filtered out by the preprocessor.
+    - Added built-in script function "fork()".
+    - Added built-in array variable %NKSP_CALLBACK_CHILD_ID[].
+    - Added built-in variable $NKSP_CALLBACK_PARENT_ID.
+    - Fixed potential crash when accessing dynamic built-in array variables.
+    - Added built-in script function "callback_status()".
+    - Added built-in constant $CALLBACK_STATUS_TERMINATED.
+    - Added built-in constant $CALLBACK_STATUS_QUEUE.
+    - Added built-in constant $CALLBACK_STATUS_RUNNING.
+    - Removed max. value limitation of built-in functions "change_attack()",
+      "change_decay()" and "change_release()" to i.e. allow passing 2000000
+      for doubling the respective time.
+    - NKSP script editor syntax highlighting API: Fixed app termination due
+      to a lexer start condition stack underrun.
+    - NKSP preprocessor: Fixed wrong behavior on nested USE_CODE_IF() and
+      USE_CODE_IF_NOT() preprocessor statements.
+    - NKSP: Added built-in preprocessor condition NKSP_NO_MESSAGE, which
+      can be set to disable all subsequent built-in "message()" function calls
+      on preprocessor level.
+    - Implemented built-in script function "change_sustain()".
+    - NKSP script editor syntax highlighting API: catch all fatal lexer errors,
+      to avoid the editor app to crash on ill-formed text input.
+    - Added built-in script function "change_pan_time()".
+    - Added built-in script function "change_pan_curve()".
+    - Added built-in script function "change_cutoff_attack()".
+    - Added built-in script function "change_cutoff_decay()".
+    - Added built-in script function "change_cutoff_sustain()".
+    - Added built-in script function "change_cutoff_release()".
+    - Added built-in script function "change_cutoff_lfo_depth()".
+    - Added built-in script function "change_cutoff_lfo_freq()".
+
+  * Instruments DB:
+    - Fixed memory access bug of general DB access code which lead to
+      undefined behavior.
+    - Cleanup of instruments DB file creation and opening code.
+    - The instrument DB path of linuxsampler's --create-instruments-db argument
+      is now optional, if it is missing, then a default location is used.
+    - Added support for scanning SFZ (.sfz) files.
+    - Added support for scanning Sound Font (.sf2) files.
+    - Fixed undefined DB transaction behavior.
+
+Version 2.0.0 (15 July 2015)
+
+  * packaging changes:
+    - fixed building with newer MinGW-w64
+    - Mac OS X: support the new dir for Core Audio SDK
+    - Mac OS X: fixed building outside source directory
+    - made sure all source files for hostplugins are included when
+      doing "make dist"
+    - removed empty directories left from the cvs to svn migration
+    - fixed compilation with gcc 4.6.1
+    - another "make dist" fix, for the LV2 plugin
+    - made --enable-pthread-testcancel default on Mac OS X
+    - minor Makefile fix for building lscpparser when build and source
+      directories are separate
+    - Mac OS X: made it possible to specify plugin installation dir to
+      configure
+    - Mac OS X: Makefile fix for the install-strip target
+    - fixed compilation with gcc 4.7
+    - fixed configure script error with old autoconf versions
+    - lsatomic.h: use gcc provided atomic functions if building with
+      gcc 4.7 and C++11
+    - modernized configure script
+    - fixed linkage error when building with
+      LDFLAGS="-Wl,--no-undefined" (#190)
+    - fixed compilation with Clang 3.2
+    - removed usage of deprecated Automake variable INCLUDES
+    - fixed building with C++11
+    - build fix: ChangeFlagRelaxed.h was missing in makefile
+    - build fix: libsndfile compiler flags were missing in some
+      makefiles
+    - fix for building with bison 3.0 (#202)
+    - Mac OS X: added temporary hack allowing to spawn gigedit as callback
+      on the process's main thread
+    - fixed build error on newer MinGW
+    - support building with older jack versions
+    - support building with spaces in vst sdk path
+    - enabled automake 'subdir-objects' option and moved external
+      source references (vst, au, asio) from makefiles to cpp files,
+      in order to get rid of warnings from automake 1.14
+
+  * general changes:
+    - Refactoring: moved the independent code from
+      the Gigasampler format engine to base classes
+    - command line option '--profile' is currently disabled, since the
+      respective profiling code is currently broken
+    - Introduced support for optional environment variable
+      "LINUXSAMPLER_PLUGIN_DIR" which allows to override the directory
+      where the sampler shall look for instrument editor plugins
+      (patch by Luis Garrido, slightly modified).
+    - implemented Roland GS NRPN 1ArrH which allows to set volume per note
+    - implemented Roland GS NRPN 1CrrH which allows to set pan per note
+    - implemented Roland GS NRPN 1DrrH which allows to set reverb send per
+      note (in this implementation of the sampler its simply hard routed to
+      the 1st effect send of the sampler channel, no matter what the actual
+      effect type is)
+    - implemented Roland GS NRPN 1ErrH which allows to set chorus send per
+      note (in this implementation of the sampler its simply hard routed to
+      the 2nd effect send of the sampler channel, no matter what the actual
+      effect type is)
+    - implemented support for internal LADSPA effects
+    - raised limit of program change queue from 100 to 512
+      (as suggested by Alex Stone)
+    - implemented sine LFO, pulse LFO and saw LFO
+    - experimental support for per voice equalization
+    - added command line option --exec-after-init
+    - Introduced new C++ API method:
+      EngineChannel::InstrumentFileName(int index)
+      allowing to retrieve the whole list of files used for the loaded
+      instrument on an engine channel (a.k.a. part). Some GigaStudio
+      instruments for example are splitted over several files like
+      "Foo.gig", "Foo.gx01", "Foo.gx02", ...
+    - Added new C++ API method Sampler::GetGlobalMaxVoices().
+    - Added new C++ API method Sampler::GetGlobalMaxStreams().
+    - Added new C++ API method Sampler::SetGlobalMaxVoices().
+    - Added new C++ API method Sampler::SetGlobalMaxStreams().
+    - Various "const" and "restrict" optimizations.
+    - all engines: add pan CC value to instrument pan parameter before
+      applying panning, instead of using two separate pan functions in
+      series (#182)
+    - added a lock guard class for exception safe mutex handling and
+      used it everywhere appropriate
+    - Immediately apply scale tuning changes to active voices.
+    - Exposed scale tuning to C++ API (along to the already existing standard
+      SysEx way).
+    - lsatomic.h fixes: seq_cst load and store were suboptimal for x86
+      and broken for ppc64. (Seq_cst loads and stores are actually not
+      used in LS, so the bug wasn't noticable.)
+    - lsatomic.h: added ARMv7 support
+    - Added support for multiple MIDI input ports per sampler channel (and
+      added various new C++ methods for this new feature / design change, old
+      C++ API methods for managing SamplerChannel's MIDI inputs are now marked
+      as deprecated but are still there and should provide full behavior
+      backward compatibility).
+    - AbstractEngine::GSChecksum(): don't allocate memory on the stack (was
+      unsafe and caused compilation error with clang 2.x).
+    - Bugfix: only process the latest MIDI program change event.
+    - Introducing the LSCP shell, which provides convenient control of the
+      sampler from the command line by providing LSCP aware features.
+    - VirtualMidiDevice: Added support for program change.
+    - VirtualMidiDevice: Added support for bank select (MSB & LSB).
+    - VirtualMidiDevice: Added support for pitch bend.
+    - Aftertouch: extended API to explicitly handle channel pressure and
+      polyphonic key pressure events (so far polyphonic pressure was not
+      supported at all, and channel pressure was rerouted as CC128 but not
+      used so far).
+    - Added initial support for real-time instrument scripts. The script VM
+      code is shared by all sampler engine implemementations, however only the
+      gig file format currently provides support for storing instrument scripts
+      (as LinuxSampler extension to the original GigaStudio 4 format).
+
+  * Gigasampler format engine:
+    - implemented the "round robin keyboard" dimension
+    - fixed round robin and random dimensions for cases when number of
+      dimension zones is not a power of two
+    - made round robin use a counter for each region instead of each
+      key
+    - bugfix: pitch LFO controller "internal+aftertouch" was broken
+    - bugfix: filter keyboard tracking was broken
+    - filter performance fix (an unnecessary copy was made of the
+      filter parameters in each sub fragment)
+    - handle special case when pan parameter in gig file has max or
+      min value
+    - Exclusive Groups: don't ever stop voices of the same note,
+      doesn't sound naturally with a drumkit
+    - fixed EG1 modulation when attack or release is zero
+    - Fixed support for 'aftertouch' attenuation controller.
+    - Fixed crash that happened with velocity split sounds under certain
+      conditions (see also previous commit on libgig).
+    - fixed behaviour of filter LFO
+
+  * SFZ format engine:
+    - Initial implementation (not usable yet)
+    - added support for v2 multiple stage envelope generators
+    - added a fine-tuned v1 envelope generator instead of using the
+      one from the gig engine
+    - fixed memory leak and memory handling errors
+    - added support for trigger=first, trigger=legato and sw_previous
+    - allow non-numerical key values ("C#4" for example)
+    - "key" opcode now sets pitch_keycenter too
+    - fixed error when unloading instrument with same sample used by
+      multiple regions
+    - added some opcode aliases, like loopmode for loop_mode, to be
+      more compatible
+    - added support for trigger=release and rt_decay
+    - added support for off_mode=normal
+    - added support for random, seq_position, seq_length and volume
+    - added v1 LFO opcodes to parser (no support in engine yet)
+    - added support for amp_veltrack and amp_velcurve_N
+    - fine-tuned the default velocity curve
+    - added support for transpose
+    - fixed crash when using sw_down/up
+    - improved logic for sw_lokey/hikey/up/down/last
+    - added more v1 aliases to parser
+    - reduced memory usage for sfz data
+    - RT-safeness: avoid malloc in audio thread
+    - fixed a bug that could cause voice stealing to fail
+    - optimized sample lookup
+    - improved support for exclusive groups (group, off_by and
+      off_mode)
+    - added support for controller triggered regions (on_locc/on_hicc)
+    - added support for loop_mode=one_shot
+    - fixed playback of 16 bit wav files on big endian CPUs
+    - added support for Ogg Vorbis sample files
+    - use loop markers from sample file if loop_start and loop_end are
+      not set in sfz file
+    - implemeted filters. Filter types: lowpass, bandpass, bandreject
+      and highpass. 1, 2, 4 and 6 pole filters. Opcodes: fil_type,
+      cutoff, resonance, fil_veltrack, fil_keytrack, fil_keycenter,
+      cutoff_cc, cutoff_chanaft.
+    - bugfix: zero ampeg_sustain didn't work
+    - added support for velocity effect on amplifier envelope time
+      (ampeg_vel2attack, ampeg_vel2decay, ampeg_vel2sustain and
+      ampeg_vel2release)
+    - added support for EG hold (ampeg_hold)
+    - added support for sample offset (offset)
+    - use the newly introduced signal units model
+    - implemented opcodes lfoN_delay,
+      lfoN_freq, lfoN_pan, lfoN_cutoff, lfoN_resonance
+    - implemented opcodes ampeg_delay, ampeg_vel2delay
+      pitcheg_delay, pitcheg_start, pitcheg_attack, pitcheg_hold,
+      pitcheg_decay, pitcheg_sustain, pitcheg_release, pitcheg_vel2delay,
+      pitcheg_vel2attack, pitcheg_vel2hold, pitcheg_vel2decay,
+      pitcheg_vel2sustain, pitcheg_vel2release, pitcheg_depth
+    - implemented opcodes pitchlfo_delay, pitchlfo_freq,
+      pitchlfo_depth, fillfo_delay, fillfo_freq, fillfo_depth,
+      amplfo_delay, amplfo_freq, amplfo_depth
+    - implemented opcodes fileg_delay, fileg_start, fileg_attack,
+      fileg_hold, fileg_decay, fileg_sustain, fileg_release, fileg_vel2delay,
+      fileg_vel2attack, fileg_vel2hold, fileg_vel2decay, fileg_vel2sustain,
+      fileg_vel2release
+    - implemented opcode lfoN_wave
+    - implemented opcode pitchlfo_depthccN
+    - implemented opcodes lfoN_phase, lfoN_phase_onccX,
+      lfoN_pitch, lfoN_pitch_onccX
+    - implemented opcodes pitchlfo_fade,
+      fillfo_fade, amplfo_fade, lfoN_fade, lfoN_fade_onccX
+    - implemented opcodes fillfo_freqccN,
+      pitchlfo_freqccN, amplfo_freqccN, lfoN_freq_onccX
+    - implemented opcodes ampeg_delayccN, ampeg_startccN,
+      ampeg_attackccN, ampeg_holdccN, ampeg_decayccN, ampeg_sustainccN,
+      ampeg_releaseccN, egN_timeX_onccY, egN_levelX_onccY
+    - lfoN_* and egN_* opcodes defined in group sections
+      are now taken into account
+    - implemented curves
+    - implemented opcodes volume_onccN, volume_curveccN
+    - implemented opcode volume_smoothccN
+    - implemented opcodes fillfo_depthccN, amplfo_depthccN,
+      lfoN_volume, lfoN_volume_onccX, lfoN_volume_smoothccX,
+      lfoN_freq_smoothccX, lfoN_pitch_smoothccX, lfoN_pan_onccX,
+      lfoN_pan_smoothccX, lfoN_cutoff_onccX, lfoN_cutoff_smoothccX,
+      lfoN_resonance_onccX, lfoN_resonance_smoothccX, lfoN_delay_onccX
+    - implemented opcode end
+    - implemented opcodes egN_amplitude_onccX,
+      egN_volume, egN_volume_onccX, egN_cutoff, egN_cutoff_onccX,
+      egN_pitch, egN_pitch_onccX, egN_resonance, egN_resonance_onccX
+    - implemented opcodes xfin_lokey, xfin_hikey,
+      xfout_lokey, xfout_hikey, xf_keycurve, xfin_lovel, xfin_hivel,
+      xfout_lovel, xfout_hivel, xf_velcurve, xfin_loccN, xfin_hiccN,
+      xfout_loccN, xfout_hiccN, xf_cccurve
+    - implemented opcodes pan_onccN, pan_smoothccN,
+      pan_curveccN, egN_pan, egN_pan_curve, egN_pan_onccX,
+      egN_pan_curveccX, pitch_veltrack
+    - when failed to parse a sfz file
+      print the line number on which the error occurs
+    - use common pool of CC objects to minimize RAM usage
+    - implemented opcodes amplfo_delay_onccN,
+      amplfo_fade_onccN, fillfo_delay_onccN, fillfo_fade_onccN,
+      pitchlfo_delay_onccN, pitchlfo_fade_onccN
+    - implemented opcodes fileg_delay_onccN,
+      fileg_start_onccN, fileg_attack_onccN, fileg_hold_onccN,
+      fileg_decay_onccN, fileg_sustain_onccN, fileg_release_onccN,
+      fileg_depth_onccN, pitcheg_delay_onccN, pitcheg_start_onccN,
+      pitcheg_attack_onccN, pitcheg_hold_onccN, pitcheg_decay_onccN,
+      pitcheg_sustain_onccN, pitcheg_release_onccN, pitcheg_depth_onccN
+    - implemented automatic aliasing *ccN <-> *_onccN
+    - *lfo_freqccN wasn't working when the respective *lfo_freq
+      was not set or was set to zero
+    - lfoN_freq_onccX wasn't working when lfoN_freq
+      was not set or was set to zero
+    - implemented opcodes resonance_onccN, resonance_smoothccN,
+      resonance_curveccN, cutoff_smoothccN, cutoff_curveccN
+    - implemented opcodes fillfo_depthchanaft,
+      fillfo_freqchanaft, amplfo_depthchanaft, amplfo_freqchanaft,
+      pitchlfo_depthchanaft, pitchlfo_freqchanaft
+    - implemented opcodes pitch_onccN,
+      pitch_curveccN, pitch_smoothccN, pitch_stepccN
+    - implemented opcodes volume_stepccN, pan_stepccN,
+      cutoff_stepccN, resonance_stepccN, lfoN_freq_stepccX,
+      lfoN_volume_stepccX, lfoN_pitch_stepccX, lfoN_pan_stepccX,
+      lfoN_cutoff_stepccX, lfoN_resonance_stepccX
+    - implemented opcodes eq1_freq, eq2_freq, eq3_freq,
+      eq1_freqccN, eq2_freqccN, eq3_freqccN, eq1_bw, eq2_bw, eq3_bw,
+      eq1_bwccN, eq2_bwccN, eq3_bwccN, eq1_gain, eq2_gain, eq3_gain,
+      eq1_gainccN, eq2_gainccN, eq3_gainccN
+    - implemented opcodes delay, delay_onccN, delay_random,
+      delay_samples, delay_samples_onccN
+    - implemented opcodes egN_eq1gain, egN_eq2gain, egN_eq3gain,
+      egN_eq1gain_onccX, egN_eq2gain_onccX, egN_eq3gain_onccX, egN_eq1freq,
+      egN_eq2freq, egN_eq3freq, egN_eq1freq_onccX, egN_eq2freq_onccX,
+      egN_eq3freq_onccX, egN_eq1bw, egN_eq2bw, egN_eq3bw, egN_eq1bw_onccX,
+      egN_eq2bw_onccX, egN_eq3bw_onccX, lfoN_eq1gain, lfoN_eq2gain,
+      lfoN_eq3gain, lfoN_eq1gain_onccX, lfoN_eq2gain_onccX, lfoN_eq3gain_onccX,
+      lfoN_eq1gain_smoothccX, lfoN_eq2gain_smoothccX, lfoN_eq3gain_smoothccX,
+      lfoN_eq1gain_stepccX, lfoN_eq2gain_stepccX, lfoN_eq3gain_stepccX,
+      lfoN_eq1freq, lfoN_eq2freq, lfoN_eq3freq, lfoN_eq1freq_onccX,
+      lfoN_eq2freq_onccX, lfoN_eq3freq_onccX, lfoN_eq1freq_smoothccX,
+      lfoN_eq2freq_smoothccX, lfoN_eq3freq_smoothccX, lfoN_eq1freq_stepccX,
+      lfoN_eq2freq_stepccX, lfoN_eq3freq_stepccX, lfoN_eq1bw, lfoN_eq2bw,
+      lfoN_eq3bw, lfoN_eq1bw_onccX, lfoN_eq2bw_onccX, lfoN_eq3bw_onccX,
+      lfoN_eq1bw_smoothccX, lfoN_eq2bw_smoothccX, lfoN_eq3bw_smoothccX,
+      lfoN_eq1bw_stepccX, lfoN_eq2bw_stepccX, lfoN_eq3bw_stepccX
+    - implemented opcodes eq1_vel2freq, eq2_vel2freq,
+      eq3_vel2freq, eq1_vel2gain, eq2_vel2gain, eq3_vel2gain
+    - sfz parser: allow double spaces in sample filenames
+    - sfz parser: allow absolute paths for sample filenames
+    - use linear decay and release for filter and pitch EG
+    - bugfix: only the first amp_veltrack definition in a file was
+      used
+    - bugfix: looping was disabled if loop_start was set to 0
+    - allow regions with end=-1 to turn off other regions using the
+      group and off_by opcodes (#168)
+    - made end=0 play the whole sample
+    - fixed support for lochan and hichan opcodes (#155)
+    - fixed crash when using lochan/hichan opcodes (#187)
+    - sfz parser: allow -200 to 200 for pan_oncc opcode (#182)
+    - added FLAC support (#191)
+    - sfz parser bugfix: lines starting with whitespace were ignored
+    - added amplitude opcode
+    - added support for "#include" instruction
+      (modified patch which was originally posted by Sergey on LS mailing list)
+    - bugfix: generation of velocity curves etc should not be done
+      after each "#include", only after the main file is parsed
+    - bugfix: line numbers in error messages were wrong after "#include"
+    - added support for float and 32 bit sample files
+
+  * SoundFont format engine:
+    - Initial implementation (not usable yet)
+    - RT-safeness: avoid malloc in audio thread
+    - fixed a bug that could cause voice stealing to fail
+    - fine-tuned amplitude EG (by switching from gig to sfz EG)
+    - initial implementation of Vibrato LFO and Modulation LFO
+    - initial implementation of cutoff filter
+    - use linear decay and release for filter and pitch EG
+
+  * Host plugins (VST, AU, LV2, DSSI):
+    - AU bugfix: failed to destroy its audio/MIDI devices
+    - Listen to all interfaces on Mac OS X (INADDR_ANY)
+    - VST bugfix: If the host called resume() before and after
+      changing sample rate or block size, the number of channels was
+      incorrectly set to two. This caused silence in Cubase 5.
+    - save engine type (gig, sfz or sf2) in plugin state
+    - VST: when opening Fantasia, look for both 32 and 64 bit Java on
+      64 bit Windows
+    - AU: changed number of output channels from one stereo to 16
+      stereo
+    - VST: made it possible to build the VST plugin for Mac
+    - AU: link AU plugin dynamically if --disable-shared isn't
+      specified
+    - LV2 "state" extension support (patch by David Robillard)
+    - VST bugfix: instrument loading hang and crashed the host when
+      the plugin was loaded a second time (#174)
+    - plugin bugfix: instrument loading hang when the plugin was
+      loaded a second time (this time it's for Linux and Mac, previous
+      similar fix was for Windows)
+    - thread safety fixes for the instrument loading thread
+    - LV2: use the new lv2 package if present
+    - VST: try to open Fantasia automatically on Linux and Mac too (on
+      Linux, the Fantasia jar should be placed in <prefix>/share/java)
+    - VST: fixed crashes on Linux Ardour and EnergyXT
+    - DSSI bugfix: it wasn't possible to change engine type. The MIDI
+      port and audio channel routing for DSSI plugins are now visible.
+    - LV2: use urid and atom extensions instead of deprecated uri-map
+      and event
+    - LV2: lv2 package 1.0 is now required to build the LV2 plugin
+    - LV2: changed number of output channels to 16 stereo, just like
+      the VST and AU plugins
+    - LV2: fixed save/restore of SFZ state (patch by David Robillard)
+    - LV2: made LV2 plugin buildable on Windows and Mac
+    - VST: implemented retrieval and switching of programs using the
+      sampler's internal MIDI instrument mapping system
+
+  * Instrument editor interface:
+    - Changed instrument editor plugin interface, providing additional
+      informations like the EngineChannel for which the instrument editor was
+      spawned for. This allows the instrument editors to interact more actively
+      with the sampler.
+
+  * MIDI driver:
+    - ALSA MIDI driver supports now "NAME" device parameter, for overriding
+      the ALSA sequencer client name
+    - removed limit of maximum amount of MIDI ports per MIDI device, since
+      there is no reason for this limit
+    - MME: fixed memory handling bug found with cppcheck
+    - MME: removed compiler warning
+    - CoreMIDI: implemented driver specific port parameter "CORE_MIDI_BINDINGS",
+      which allows to retrieve the list of CoreMIDI clients / ports and to connect
+      to them a la JACK, via the usual sampler APIs
+    - CoreMIDI: added driver specific port parameter "AUTO_BIND", if enabled
+      the driver will automatically connect to other CoreMIDI clients' ports
+      (e.g. external MIDI devices being attached to the Mac)
+    - added support for MIDI note on velocity filter
+    - CoreMIDI: fixed memory deallocation error
+    - Fixed variable underflow in VirtualMidiDevice, which caused graphical
+      virtual keyboards in frontends / instrument editors being stuck.
+    - Bugfix in VirtualMidiDevice: process note on with velocity 0 as note off.
+    - Implemented missing handling of MIDI "running status".
+    - CoreMIDI fix: a MIDIPacket can contain more than one event per packet.
+    - MME bugfix: driver wasn't closed properly
+    - CoreMIDI: automatically connect to all input sources by default (driver
+      parameter "AUTO_BIND").
+    - CoreMIDI: fixed auto bind feature to CoreMIDI ports that go online
+    - CoreMIDI: fixed minor memory leak
+
+  * audio driver:
+    - ASIO driver fixes for newer gcc versions (fix from PortAudio)
+    - JACK audio: react on sample rate changes.
+    - JACK audio: react on buffer size changes.
+    - JACK audio: jack_port_get_buffer() was cached and called outside
+      RT context.
+    - ASIO driver: removed compiler warnings
+    - CoreAudio: fixed minor error handling bug
+    - ASIO driver: be more verbose when no ASIO card could be found (fixes #203)
+    - JACK audio: return the JACK server's current sample rate as default value
+      for audio device parameter "SAMPLERATE" (fixes #166).
+
+  * LSCP server:
+    - added support for sending MIDI CC messages via LSCP command
+      "SEND CHANNEL MIDI_DATA CC <sampler-chan> <ctrl> <val>"
+    - added LSCP command "GET AVAILABLE_EFFECTS"
+    - added LSCP command "LIST AVAILABLE_EFFECTS"
+    - added LSCP command "GET EFFECT INFO <effect-index>"
+    - added LSCP command "CREATE EFFECT_INSTANCE <effect-index>"
+    - added LSCP command
+      "CREATE EFFECT_INSTANCE <effect-system> <module> <effect-name>"
+    - added LSCP command "DESTROY EFFECT_INSTANCE <effect-instance>"
+    - added LSCP command "GET EFFECT_INSTANCES"
+    - added LSCP command "LIST EFFECT_INSTANCES"
+    - added LSCP command "GET EFFECT_INSTANCE INFO <effect-instance>"
+    - added LSCP command
+      "GET EFFECT_INSTANCE_INPUT_CONTROL INFO <effect-instance> <input-control>"
+    - added LSCP command "SET EFFECT_INSTANCE_INPUT_CONTROL VALUE
+      <effect-instance> <input-control> <value>"
+    - added LSCP command "GET SEND_EFFECT_CHAINS <audio-device>"
+    - added LSCP command "LIST SEND_EFFECT_CHAINS <audio-device>"
+    - added LSCP command "ADD SEND_EFFECT_CHAIN <audio-device>"
+    - added LSCP command
+      "REMOVE SEND_EFFECT_CHAIN <audio-device> <effect-chain>"
+    - added LSCP command
+      "GET SEND_EFFECT_CHAIN INFO <audio-device> <effect-chain>"
+    - added LSCP command "APPEND SEND_EFFECT_CHAIN EFFECT <audio-device>
+      <effect-chain> <effect-instance>"
+    - added LSCP command "INSERT SEND_EFFECT_CHAIN EFFECT <audio-device>
+      <effect-chain> <effect-chain-pos> <effect-instance>"
+    - added LSCP command "REMOVE SEND_EFFECT_CHAIN EFFECT <audio-device>
+      <effect-chain> <chain-pos>"
+    - added LSCP command "SET FX_SEND EFFECT <sampler_channel>
+      <fx_send_id> <effect_chain> <chain_pos>"
+    - added LSCP command "REMOVE FX_SEND EFFECT <sampler_channel> <fx_send_id>"
+    - added LSCP commands "SUBSCRIBE EFFECT_INSTANCE_COUNT",
+      "SUBSCRIBE EFFECT_INSTANCE_INFO", "SUBSCRIBE SEND_EFFECT_CHAIN_COUNT",
+      "SUBSCRIBE SEND_EFFECT_CHAIN_INFO"
+    - provide comprehensive error messages on LSCP syntax errors
+      (suggesting expected next non-terminal symbols)
+    - Fixed client connection not being closed after network errors.
+
+  * LSCP shell:
+    - Added support for auto correction of obvious and trivial syntax mistakes.
+    - Added support for auto completion by tab key.
+    - Show currently available auto completion while typing.
+    - Added support for browsing command history with up / down keys.
+    - Show all possible next symbols immediately right to the current command
+      line while typing (no double tab required for this feature, as it would
+      be the case in other shells).
+    - Added support for moving cursor left/right with arrow keys.
+    - Added support for built-in LSCP reference documentation, which will
+      automatically show the relevant LSCP reference section on screen as soon
+      as one specific LSCP command was detected while typing on the command
+      line.
+
+  * Real-time instrument scripts:
+    - Implemented built-in script array variable %CC.
+    - Implemented built-in script int variable $CC_NUM.
+    - Implemented built-in script int variable $EVENT_NOTE.
+    - Implemented built-in script int variable $EVENT_VELOCITY.
+    - Implemented built-in script constant variable $VCC_MONO_AT.
+    - Implemented built-in script constant variable $VCC_PITCH_BEND.
+    - Implemented execution of script event handler "init".
+    - Implemented execution of script event handler "controller".
+    - Implemented execution of script event handler "note".
+    - Implemented execution of script event handler "release".
+    - Implemented built-in script function "play_note()" (only two of the
+      max. four function arguments are currently implemented yet though).
+    - Implemented built-in script int variable $EVENT_ID.
+    - Implemented built-in script function "ignore_event()"
+    - Implemented built-in script function "ignore_controller()" (may have one
+      or no argument).
+    - Implemented built-in script function "set_controller()".
+    - Added extended script VM for the Gigasampler/GigaStudio format sampler
+      engine, which extends the general instrument script VM with Giga format
+      specific variables and functions.
+    - Giga format scripts: added built-in script int constant variables
+      $GIG_DIM_CHANNEL, $GIG_DIM_LAYER, $GIG_DIM_VELOCITY, $GIG_DIM_AFTERTOUCH,
+      $GIG_DIM_RELEASE, $GIG_DIM_KEYBOARD, $GIG_DIM_ROUNDROBIN, $GIG_DIM_RANDOM,
+      $GIG_DIM_SMARTMIDI, $GIG_DIM_ROUNDROBINKEY, $GIG_DIM_MODWHEEL,
+      $GIG_DIM_BREATH, $GIG_DIM_FOOT, $GIG_DIM_PORTAMENTOTIME, $GIG_DIM_EFFECT1,
+      $GIG_DIM_EFFECT2, $GIG_DIM_GENPURPOSE1, $GIG_DIM_GENPURPOSE2,
+      $GIG_DIM_GENPURPOSE3, $GIG_DIM_GENPURPOSE4, $GIG_DIM_SUSTAIN,
+      $GIG_DIM_PORTAMENTO, $GIG_DIM_SOSTENUTO, $GIG_DIM_SOFT,
+      $GIG_DIM_GENPURPOSE5, $GIG_DIM_GENPURPOSE6, $GIG_DIM_GENPURPOSE7,
+      $GIG_DIM_GENPURPOSE8, $GIG_DIM_EFFECT1DEPTH, $GIG_DIM_EFFECT2DEPTH,
+      $GIG_DIM_EFFECT3DEPTH, $GIG_DIM_EFFECT4DEPTH, $GIG_DIM_EFFECT5DEPTH.
+    - Giga format scripts: Implemented built-in script function
+      "gig_set_dim_zone(event_id, dimension, zone)".
+    - Implemented built-in script int array variable %KEY_DOWN.
+    - Implemented built-in script function "abs()".
+    - Implemented built-in script function "random()".
+    - Implemented built-in script function "num_elements()".
+    - Implemented built-in script function "note_off()".
+    - Implemented built-in script function "set_event_mark()".
+    - Implemented built-in script function "delete_event_mark()".
+    - Implemented built-in script function "by_marks()".
+    - Added built-in script int const variables $MARK_1 to $MARK_28.
+    - Built-in script functions "ignore_event()", "note_off()" and
+      "gig_set_dim_zone()" now also accept an array of event IDs as argument
+      (i.e. return value of new script function "by_marks()").
+    - Pass/preserve polyphonic variable data from respective "note" event
+      handler to "release" event handler.
+    - Fixed crash when using built-in script function "by_marks()".
+
+  * Bug fixes:
+    - Fixed crash which may occur when MIDI key + transpose is out of range
+    - minor valgrind fixes
+    - fixed crash which occurred when changing an already deployed sampler
+      channel to a different engine type
+    - fixed crash when deleting a sampler channel or changing engine
+      type while an instrument load was in progress
+    - bugfix: playing a note while changing the instrument could cause
+      a crash, or give "Handing back unknown region" error messages
+    - bugfix: calling SET VOICES (which Fantasia does on start and
+      refresh) could cause instruments to be unloaded
+    - Mac OS X: fixed name collision of enum in EffectControl and
+      wrong name of destructor in AudioOutputDeviceCoreAudio.cpp
+    - Mac OS X: fixed hanging threads
+    - Windows: disabled the previous thread fix on non-Mac systems, as
+      it caused hanging threads on Windows
+    - Fixed possible crashes due to corrupted MIDI/audio device list
+      after MIDI/audio device creation failure
+    - When creating MIDI instrument map entries with "PERSISTENT" type, the
+      instruments were uselessly precached with zero samples, however it still
+      took the full preloading time and on 1st program change the respective
+      instrument was completely reloaded again.
+    - fixed handling of rapid bank select and program change messages
+      sent to the same sampler channel (patch from the Open Octave
+      project, slightly adjusted)
+    - fixed crash when trying to create an effect instance with controls
+      which min and/or max values depend on the sample rate
+    - fixed bug #162
+    - bugfix: LADSPA_PATH was not evaluated correctly when containing
+      multiple paths (#165)
+    - thread safety fixes for the instrument loading thread
+    - bugfix: instrument loading crashed for sfz and sf2 in Ardour
+      (#176)
+    - more thread safety fixes for the instrument loading thread
+    - sfz/sf2 engine: fixed crash when using small audio fragment size
+    - Mac OS X: fixed crash when unloading plugin on 10.7 and later
+    - Mac OS X: fixed process hang when unloading 32-bit plugin (bug
+      introduced in previous fix)
+    - fixed crash when a channel received a program change while
+      playing a note in a key group
+    - fixed erroneous error message piping in VoiceBase.h
+      (labelled "Disk stream not available in time")
+    - Update effects on sample rate & period size changes (to avoid
+      crashes and noise on such transitions).
+    - ignore missing LADSPA paths without ignoring valid LADSPA paths
+      (fixes #208)
+    - Fixed bug in LSCP grammar definition which caused a statement like
+      "GET SERVER INFOasdf\n" to be accepted as valid statement (was so far
+      practically irrelevant, however it caused problems with the new LSCP
+      shell's auto completion feature).
+    - Fixed MIDI program change messages being ignored if quickly executed
+      after each other (fixes #231).
+
+Version 1.0.0 (31 July 2009)
+
+  * packaging changes:
+    - autoconf bugfix: the PKG_CONFIG variable wasn't initialized properly,
+      causing e.g. the libgig test to fail when
+      "./configure --disable-jack-driver" was used
+      (patch by Alexis Ballier)
+    - fixed compilation with gcc 4.3
+    - fixes for building on OS X (thanks to Ebrahim Mayat for testing)
+    - fixed configure so it detects x86_64 (#107)
+    - fixes for building with newer MinGW versions
+    - fix for building with bison 2.4 (#111)
+    - fixed building with libgig installed in a non-standard directory
+    - minor fix in configure for mmsystem.h detection on MinGW
+    - Windows: look for editor plugins and Fantasia using base
+      directory of liblinuxsampler dll (look in the same directory and one
+      directory above)
+    - configure script fix: removed unconditional use of SSE
+    - fixed building with sqlite installed in a non-standard directory
+    - when cross-compiling, don't try to create instruments.db
+    - fix for new mingw-w64 version, which has usleep
+
+  * general changes:
+    - bugfix: on some POSIX systems instrument editor plugins refused to
+      load as we used a non-portable Linux specific struct field
+      (fixes bug #70, patch by Ronald Baljeu)
+    - fixed endless loop which occured when loading an instrument editor
+      plugin DLL on Windows systems failed
+    - fixed memory leaks that occurred when liblinuxsampler was unloaded
+    - optimized the SynchronizedConfig class so it doesn't wait
+      unnecessarily long after an update
+    - added support for notifying instrument editors on note-on / note-off
+      events (e.g. to highlight the pressed keys on the virtual keyboard
+      of gigedit)
+    - added support for triggering notes by instrument editors (see above)
+    - be verbose on DLL load errors (on Linux)
+    - fixed di-harmonic triangle LFO implementation (this LFO implementation
+      is only used by very few systems, most pick the int math
+      implementation, which is usually faster)
+    - fixes for audio drivers with varying buffer sizes
+    - experimental support for running LinuxSampler as a DSSI, LV2 and
+      VST plugin
+    - notification events for stream/voice count statistics are now sent
+      only when there are actual changes
+    - added memory ordering constraints to improve stability on
+      multi-core and multi-cpu systems
+    - maximum voices and disk streams can now be altered at runtime
+    - fixed CPU feature detection on x86_64 (maybe fixes #108)
+    - automatic stacktrace mechanism is now turned off by default and can
+      be switched on by command line option "--stacktrace" (the automatic
+      stacktrace mechanism seems to be broken on most systems at the moment)
+    - C++ API method InstrumentManager::LaunchInstrumentEditor() now returns
+      a pointer to the launched InstrumentEditor object
+    - added optional 3rd party user data parameter for following
+      liblinuxsampler C++ API methods: InstrumentEditor::Main(),
+      InstrumentEditor::Launch(),
+      InstrumentManager::LaunchInstrumentEditor()
+    - theoretical fix: made SynchronizedConfig follow C++0x memory
+      model more strictly
+    - fixes for using large audio device buffers
+    - Windows: add the installation directory to the DLL search path
+      when loading an editor plugin (solves problems with VST and
+      gigedit on systems with other GTK versions installed)
+    - updated linuxsampler man page
+
+  * audio driver:
+    - removed the nonsense audio channel constraint (which was hard coded to
+      max. 100 audio channels) for most audio drivers
+    - JACK audio driver did not offer a device parameter "SAMPLERATE" as
+      opposed to the LSCP specs
+    - bugfix: the SAMPLERATE parameter of some drivers (e.g. JACK)
+      reflected the wrong value
+    - fixed a memory management bug in ASIO driver
+    - Makefile fix: JACK_CFLAGS wasn't used
+    - JACK: use jack_client_open instead of the deprecated
+      jack_client_new
+    - added (experimental) CoreAudio driver
+    - applied old fixes to the ASIO driver that were included in the
+      previous binary release but accidentally never committed to CVS
+      (fixes #117)
+    - fixes for ASIO on mingw-w64 (iasio wrapper is not needed on
+      win64)
+    - VST: added support for sample rate and buffer size changes
+    - VST: close editor (Fantasia) when the VST is removed
+    - VST: avoid opening Fantasia more than once for each VST instance
+    - VST: export main function as "main" on Linux too (fix for
+      energyXT)
+    - VST: changed number of output channels from one stereo to 16
+      stereo
+    - added channel routing, fxsends and midi maps to the settings
+      stored in the plugin state
+    - performance optimization of AudioChannel::MixTo() and
+      AudioChannel::CopyTo() methods using GCC vector exensions
+      (if available)
+    - ASIO fixes: avoid initializing the device twice, avoid throwing
+      exception when getting parameters from a disconnected device
+
+  * MIDI driver:
+    - added JACK MIDI driver
+    - dispatch bank select as ordinary CC as well, the user might seriously
+      want to (mis)use it for some purpose ("fixed" in all current MIDI
+      input drivers: ALSA, CoreMIDI, JACK, MidiShare, MME)
+    - bugfix: pitch bend wasn't working with JackMidi, VST, LV2, MME,
+      CoreMidi or AU
+    - fixed mingw-w64 compilation error in MME driver
+    - made program change handling in MIDI thread real-time safe by
+      moving the logic to a non-RT thread
+    - fixed minor memory leak in ALSA driver
+
+  * instruments database:
+    - avoid time consuming samples scanning when adding instruments
+      to the instruments database
+    - added support for handling lost files in the instruments database
+    - Implemented option for adding instruments in separate directories
+      in the instruments database
+      (patch by Chris Cherrett & Andrew Williams, a bit adjusted)
+    - work-around for missing fnmatch function on Windows to make
+      instrument database compilable
+    - added instrument database support on Windows
+      works with both standalone mode and VST plugin.
+      the instruments DB file is located in
+      %USERPROFILE%\.linuxsampler\instruments.db which allows different
+      databases for each windows user
+      if no DB is present it automatically creates the .linuxsampler subdir
+      and then creates an empty DB
+    - fixed recursive import, which was broken on Windows
+
+  * Gigasampler format engine:
+    - fixed a memory leak that could happen when a channel was deleted
+      while notes were playing
+    - made it possible to load an instrument even if the audio thread
+      isn't running
+    - added partial support for the "Controller Triggered" MIDI rule,
+      enough for piano gigs with pedal noise samples
+    - minor fix: only mark FX sends as being modified if really the
+      respective FX send MIDI controller was used
+    - added support for GM global device volume SysEx message
+      (can be selected at compile time to either apply globally to the
+      whole sampler [default] or only to the sampler channels that are
+      connected to the respective MIDI input port the SysEx message arrived
+      on)
+    - bugfix: notes triggered at position 0 in the audio buffer were
+      sometimes wrongly killed in the same buffer, causing no sound to
+      be played
+    - added support for chromatic / drumkit mode Roland GS Sysex message
+      which is usally used to switch a part between chromatic sounds and
+      drumkit sounds (as opposed to their common default setting of MIDI
+      part 10 being a drumkit part and all other ones chromatic parts), in
+      LS however one can switch between the first 16 MIDI instrument maps
+      defined for the sampler
+    - made it possible to create multiple sample channels even if the
+      audio thread isn't running
+    - fixed crash when removing channel with active voices (#116)
+    - bugfix: on sample reference changes (instrument editor), only
+      un-cache the respective sample if it's really not used by any
+      sampler engine anymore
+    - re-cache samples in case they were changed by an instrument editor,
+      e.g. when a sample was added while playing (#82)
+    - fixed hanging notes which occured when note-off event had the exact
+      same time stamp as the voice's note-on event and occured both in the
+      same audio fragment cycle (fixes bug #112)
+    - added support for the "fine tune" and "pitch bend range"
+      instrument-level gig parameters
+    - fixed minor artifacts in pitch bend handling
+    - added support for GS Reset SysEx message
+    - allow gig files to use unlimited downward pitch shifting
+    - added a limit check for upward pitch shifting
+    - bugfix: sometimes, when playing a note twice fast, the second
+      note was silent
+    - fixed crash happening when a pitch bend event arrived at the
+      same time a new instrument was loading
+
+  * LSCP server:
+    - added new LSCP event "CHANNEL_MIDI" which can be used by frontends to
+      react on MIDI data arriving on certain sampler channels (so far only
+      Note-On and Note-Off events are sent via this LSCP event)
+    - added new LSCP event "DEVICE_MIDI" which can be used by frontends to
+      react on MIDI data arriving on certain MIDI input devices (so far only
+      Note-On and Note-Off events are sent via this LSCP event)
+    - added new LSCP commands: FIND LOST DB_INSTRUMENT_FILES and
+      SET DB_INSTRUMENT FILE_PATH
+    - added new LSCP command: SEND CHANNEL MIDI_DATA which can be used by
+      frontends to send MIDI messages to specific sampler channel
+    - added two additional fields to GET FILE INSTRUMENT INFO command -
+      KEY_BINDINGS and KEYSWITCH_BINDINGS
+    - bugfix: the bank number provided by MIDI_INSTRUMENT_INFO notifications
+      was incorrect
+    - Optimized the retrieval of the MIDI instrument mappings
+    - added new LSCP command "SET VOICES" to globally alter the maximum
+      amount of voices, added new LSCP event "GLOBAL_INFO:VOICES" which will
+      be triggered respectively
+    - added new LSCP command "SET STREAMS" to globally alter the maximum
+      amount of disk streams, added new LSCP event "GLOBAL_INFO:STREAMS"
+      which will be triggered respectively
+    - bugfix: retry if "select" returns EINTR (this fixes a crash when
+      a gigedit file dialog is opened)
+    - close all connections when LSCPServer is deleted
+    - hard close of all sockets on exit
+    - bugfix: SET CHANNEL MIDI_INPUT_TYPE didn't work with the MME
+      driver
+
+  * Bug fixes:
+    - fixed a crash which occurs when removing a sampler channel waiting
+      to start instrument loading after another channel
+    - fixed a crash which occurs when removing a sampler channel with
+      instrument loading in progress (bug #113)
+    - fixed termination caused by uncaught exception when adding MIDI
+      instrument with PERSISTENT load mode
+    - fixed possible iterator invalidations when resetting the sampler
+    - fixed memory leaks when issuing the following LSCP commands:
+      GET AUDIO_OUTPUT_DRIVER INFO
+      GET AUDIO_OUTPUT_DRIVER_PARAMETER INFO
+      GET MIDI_INPUT_DRIVER INFO
+      GET MIDI_INPUT_DRIVER_PARAMETER INFO
+    - fixed possible compilation error when sqlite is not present
+    - fixed orphaned pointers when setting maximum voices limit (bug #118)
+    - fixed crash when changing the audio output device of a sampler
+      channel with loaded instrument and start playing notes
+    - fixed endless loop in Engine::SuspendAll() (bug #120)
+    - fixed a low-level atomic load function that was broken on 64-bit
+      PowerPC, which probably could cause crashes on that platform
+    - fixed a memory management error which could cause a crash when a
+      plugin was unloaded
+    - bugfix: two private structs had the same name, which could cause
+      problems if the linker chose the wrong constructor
+    - fixed low-level ConditionServer usage bug that caused lockups on
+      Windows
+
+
+Version 0.5.1 (6 December 2007)
+
+  * packaging changes:
+    - added autoconf checks for pthread library
+    - added autoconf check for pthread bug found on certain NPTL-enabled
+      glibc versions (see Gentoo bug report #194076)
+    - added autoconf checks for MS Windows
+
+  * general changes:
+    - bugfix: the thread used by an editor plugin didn't die when the
+      editor closed
+    - bugfix: Ringbuffer.h: fill_write_space_with_null() did not zero
+      out all the space. operator--() did not apply size_mask after
+      decrementing the read_ptr. DEFAULT_WRAP_ELEMENTS set to 0 in
+      order to avoid problems with the _NonVolatileReader functions.
+    - bugfix: Stream.h: added a missing divide by BytesPerSample in
+      GetWriteSpace(). Since this function is currently only used in
+      the stream's qsort() compare function, it didn't trigger any
+      bugs.
+    - Resampler.h, Synthesizer.h: cubic interpolation now works in
+      24bit mode too. Faster method to read 24bit words on little
+      endian machines (x86): replaced 3 byte reads + shifts with a 1
+      unaligned 32bit read and shift
+    - experimental support for MS Windows (MIDI input via MME, AUDIO
+      output via ASIO)
+    - made handling of SIGINT signal (Ctrl-C) a bit more robust
+    - support for monitoring the total number of active disk streams
+      (new LSCP commands: GET TOTAL_STREAM_COUNT,
+      SUBSCRIBE TOTAL_STREAM_COUNT, UNSUBSCRIBE TOTAL_STREAM_COUNT)
+
+  * AUDIO driver:
+    - added Windows ASIO low latency audio driver
+
+  * MIDI driver:
+    - added MME Windows MIDI driver
+
+  * LSCP server:
+    - added support for Windows style path / filenames, however with
+      forward slash path separators instead of backslash
+      (i.e. "C:/foo/bar.gig")
+    - allow naughty liblscp to send non-string device parameters within
+      apostrophes as well
+    - added new LSCP commands: "GET FILE INSTRUMENTS <file>",
+      "LIST FILE INSTRUMENTS <file>" and
+      "GET FILE INSTRUMENT INFO <file> <index>" for retrieving informations
+      about an arbitrary instrument file on the system where the sampler is
+      running on
+
+Version 0.5.0 (15 October 2007)
+
+  * packaging changes:
+    - config.h is not going to be installed along with liblinuxsampler's
+      API header files anymore
+    - only the API relevant header (and source) files will be exported to
+      the Doxygen API documentation (explicitly listed in Doxyfile.in)
+    - added completely new XCode project files for Mac OSX which is now
+      capable to execute our autoconf environment, thus no need anymore
+      to maintain the compile time configuration file (osx/version.h) for
+      OSX manually (patch by Toshi Nagata)
+    - fixed buggy boolean --enable-foo / --disable-foo configure script
+      parameters
+    - global.h now only covers global definitions that are needed for the
+      C++ API header files, all implementation internal global definitions
+      are now in global_private.h
+    - atomic.h is not exposed to the C++ API anymore
+    - no need to include config.h anymore for using LS's API header files
+    - fixed warnings in API doc generation
+
+  * general changes:
+    - replaced the old, confusing MIDI program change mechanism by a
+      flexible MIDI instrument mapper which allows to map arbitrary
+      (MIDI bank, MIDI program) pairs with arbitrary
+      (engine type, instrument file, file index) triplets which will be
+      loaded on the respective channel when such MIDI program change
+      messages arrive, beside that, each entry allows to define a life-time
+      strategy for the instrument, so the user can define whether the
+      instrument should i.e. be permanently loaded (to be able to switch
+      quickly among sounds) or i.e. loaded just on demand when the
+      respective program change arrives (to safe RAM space), as well as a
+      global volume factor for each entry, so the user can adjust the volume
+      dynamic of his mapped instrument collection without having to modify
+      the instrument files, also one can manage arbitrary amount of such
+      MIDI instrument maps and assign each sampler channel individually
+      a certain map, so that i.e. separation of normal instruments and
+      drumkits is possible
+    - new notification events for tracking changes to audio/MIDI devices,
+      MIDI instrument maps, MIDI instruments, FX sends, global volume.
+    - sampler was limited to load max. 200 instruments in the background
+      due to a constant size RingBuffer FIFO which is now replaced by a
+      dynamic (unlimited) size std::list FIFO
+    - added FX sends, these allow to route audio signals to arbitrary audio
+      output channels for being processed by external effect processors
+      (i.e. jack-rack), the send levels are controllable via arbitrary MIDI
+      controllers
+    - global (sampler wide) volume can now be controlled at runtime
+    - Implemented new, improved notification system
+    - fixed compilation errors regarding OSX
+      (patch by Toshi Nagata)
+    - implemented instruments database
+    - added support for escape sequences to the instruments database
+    - added highly experimental support for on-the-fly instrument editing
+      within the sampler's process (by using instrument editor plugins),
+      you'll notice the new "Registered instrument editors:" message on
+      startup, added a new LSCP command:
+      "EDIT CHANNEL INSTRUMENT <sampler-channel>"
+      to spawn a matching instrument editor for the instrument on the
+      given sampler channel, the plugin path can be overridden at compile
+      time with ./configure --enable-plugin-dir=/some/dir
+    - added experimental code for synchronizing instrument editors hosted
+      in the sampler's process to safely edit instruments while playing
+      without a crash (hopefully) by either suspending single regions
+      wherever possible or if unavoidable whole engine(s)
+    - fixed several issues in fundamental "Thread" class: set scheduling
+      policy and priority on thread level, set a minimum stack size for
+      thread (TODO: a reasonable value yet to be tested), bugfix: non-RT
+      threads simply inherited properties of starting thread instead of
+      setting their own policy and priority
+    - minor fix in our automatic stack trace mechanism on crashes, the
+      main process did not wait for the stack trace process to finish
+      its output
+    - fixed some minor memory leaks
+    - reenabled assembly features support, at the moment only for
+      enabling a fast denormal FPU mode (x86 platforms supporting SSE2)
+    - minor assembly fix in x86 features detection (don't use the PIC
+      register, to avoid relocations in the text segment at runtime)
+    - POSIX callback functions of Thread.h are hidden
+
+  * MIDI driver:
+    - dispatch bank select (MSB and LSB) messages
+
+  * audio driver:
+    - the ALSA audio output driver parameters now reflect the correct
+      parameter value ranges for the respective selected sound card
+      (patch by Till Wimmer, a bit fixed and extended)
+
+  * Gigasampler format engine:
+    - if a filter is used and EG2 finishes before EG1, let the voice
+      die when EG2 has finished (this fixes a problem with clicks and
+      voice starvation for some gigs)
+    - playback is no longer disabled during instrument loading
+    - all notes playing on a channel that changes its instrument keep
+      playing with the old instrument until they get a note off
+      command
+    - EG fix: a release value of zero could cause noises or crash
+    - handle MIDI coarse tuning messages (MIDI RPN #0 MSB #2 LSB)
+    - EG fine tuning: when attack is zero the EG starts at a level
+      above max sustain level, which means that there is a decay phase
+      even if sustain is 100%
+    - more EG fixes: the level could sometimes go below zero and cause
+      noises or crashes
+    - minor fix of EGDecay (patch by Toshi Nagata)
+    - fixed compiler error when --enable-override-filter-type was
+      supplied to the configure script (fixes #46)
+    - disk thread: queue sizes are now proportional to CONFIG_MAX_STREAMS
+      instead of a fix value
+    - behavior fix: on MIDI CC# 65 (portamento on / off), 126 (mono mode),
+      127 (solo mode) only kill voices if the respective mode really
+      changed
+
+  * LSCP server:
+    - fixed compile time error for old Bison versions
+      (i.e. v1.28 found on MacOS 10.4, patch by Toshi Nagata)
+    - parser now supports extended ASCII character set
+      (up to ASCII code 255, i.e. includes now umlauts and accents)
+    - filename arguments in LSCP commands now allow to use escape
+      sequences, that is directly literal as one of: \', \", \\, \n, \r,
+      \f, \t, \v, or as octal ASCII code value like \132, or as hex ASCII
+      code value like \xf2) (fixes bug #24)
+    - the following LSCP commands now also support escape sequences for at
+      least one of their text-based parameters (i.e. name, description):
+      "ADD MIDI_INSTRUMENT_MAP", "MAP MIDI_INSTRUMENT",
+      "SET MIDI_INSTRUMENT_MAP NAME", "SET FX_SEND NAME", "CREATE FX_SEND",
+      "SET DB_INSTRUMENT_DIRECTORY NAME",
+      "SET DB_INSTRUMENT_DIRECTORY DESCRIPTION", "SET DB_INSTRUMENT NAME",
+      "SET DB_INSTRUMENT DESCRIPTION", "FIND DB_INSTRUMENTS",
+      "FIND DB_INSTRUMENT_DIRECTORIES"
+    - returns verbose syntax errors (line and column where syntax error
+      occured, the unexpected character and the actually expected, possible
+      character(s), the latter only if less than 5 possibilities)
+    - made sure that LSCP syntax is not affected by gigedit locale
+      settings
+    - bugfix regarding strings parameter lists: all comma separated lists
+      of strings were treated as being one string containing commas
+      (fixes #57)
+
+  * Bug fixes:
+    - fixed crash occurring on certain LSCP scripts (Bug 39)
+    - another thread safety fix for lscp "load engine" and "set
+      channel audio output device"
+    - fixed a crash which occurs when reassigning the same engine
+      on a sampler channel with connected MIDI device
+    - fixed a crash which occurs when changing the number of ports of a MIDI
+      device connected to a sampler channel to number less then or equal
+      to the index of the port to which the sampler channel is connected.
+    - The previous bindings were not been disconnected when altering
+      the ALSA_SEQ_BINDINGS parameter. Introduced a NONE keyword for
+      unsubscribing from all bindings (e.g. ALSA_SEQ_BINDINGS=NONE).
+    - The active stream/voice count statistic was incorrect.
+    - notification events were not been sent for some sampler
+      channel changes
+    - added default min and max values to restrict the number of allowed
+      audio output channels and MIDI input ports
+    - the connection to the PCM interface is now closed when destroying
+      an audio output device
+    - files with slash in their path or filename could not be loaded
+
+  * test cases:
+    - updated and fixed (haven't been touched in a while)
+
+Version 0.4.0 (24 November 2006)
+
+  * packaging changes:
+    - changed deprecated copyright attribute to license; added ldconfig
+      to post-(un)install steps; added devel package for liblinuxsampler;
+      to linuxsampler.spec (RPM)
+    - install necessary development header files for allowing 3rd party
+      applications to link against liblinuxsampler
+    - liblinuxsampler's API documentation can be generated with 'make docs'
+      (Doxygen required)
+    - added benchmark to automatically detect the best triangle LFO
+      implementation (currently either an integer math solution or a
+      di-harmonic approximation), automatic detection can be overriden
+      with --enable-signed-triang-algo=x and --enable-unsigned-triang-algo=x
+      configure script argument though (mandatory for cross-compilation)
+    - do not automatically pick optimized gcc flags if the user already
+      provided some on his own (as CXXFLAGS)
+    - added compile time option to disable processing of All-Notes-Off MIDI
+      messages
+    - added compile time options to allow disabling the various audio and
+      MIDI drivers
+    - fixed automatic GCC CPU switch detection on PPC
+      (patch by Ebrahim Mayat)
+
+  * Gigasampler format engine:
+    - extensive synthesis optimization
+      (reimplementation of EGs and LFO(s), removed synthesis parameter
+      prerendering and the synthesis parameter matrix in general, splitting
+      each audio fragment into subfragments now where each subfragment uses
+      constant pitch and filter coefficients. The volume coefficient is
+      linearly interpolated inside a subfragment, unless
+      --disable-interpolate-volume is set.)
+    - fine tuning of the EG modulation parameters
+    - improved filter cutoff calculation by adding support for the
+      following gig parameters: Cutoff freq (used when no cutoff
+      controller is defined), Control invert, Minimum cutoff, Velocity
+      curve and Velocity range. The keyboard tracking now scales
+      cutoff frequency instead of resonance.
+    - added support for gig parameter Resonance.
+    - fixed bug in sysex handling (patch by Juan Linietsky)
+    - added global volume attenuation of -9 dB (0.35f) to prevent clipping
+      which can be overridden with --enable-global-attenuation
+    - EG fixes: made the length of "attack hold" stage more
+      accurate. Release stage can now start before attack stage
+      ends. Cancel release didn't work when sustain was zero. Attack
+      time now has a minimal value to prevent clicks.
+    - fixed pitch changes larger than one octave
+    - fixed EG3 (pitch envelope) synthesis which was neutral all the time
+    - implemented portamento mode and solo mode (a.k.a 'mono mode'):
+      all modes can be altered via standard GM messages, that is CC5 for
+      altering portamento time, CC65 for enabling / disabling portamento
+      mode, CC126 for enabling solo mode and CC127 for disabling solo mode
+    - fine tuning of the curves for volume (CC7), pan (CC10 and gig
+      parameter) and crossfade
+    - added support for the "attenuation controller threshold" gig
+      parameter
+    - added smoothing of volume changes caused by control change
+      messages
+    - sample loop parameters are now taken from the DimensionRegion
+      instead of the wave chunk
+    - fixed keyswitching for v3 gigs with a number of keyswitch splits
+      not equal to a power of two
+    - reimplementation of the filter algorithm. The new filter is more
+      accurate and supports all gig filter types, including bandreject
+      and lowpass turbo.
+    - real support for 24 bit samples - samples are not truncated to
+      16 bits anymore
+    - support for aftertouch (channel pressure, not polyphonic
+      aftertouch)
+    - LFO1 behaviour fixed (dampening from max volume instead of
+      amplifying from 0)
+
+  * LSCP server:
+    - fixed application exit on broken pipe error (fixes bug #20)
+    - fixed the notification messages delay due to lack of
+      network activity (fixes bug #26)
+    - fixed parser bug which occured on space(s) within device parameters
+      (e.g. "SET AUDIO_OUTPUT_CHANNEL_PARAMETER 0 0 SOMEPARAM='foo bar'")
+
+  * audio driver:
+    - added aRts audio output driver (by no means RT safe)
+
+  * MIDI driver:
+    - fixed legacy sysex code which caused dispatching of MIDI SysEx
+      messages several times instead of once
+    - API extension for MIDI drivers which already supply exact time stamps
+      for events (i.e. for offline rendering based MIDI drivers)
+    - added checks for bad MIDI data
+
+  * linuxsampler application:
+    - show available sampler engine types on startup
+
+  * general changes:
+    - support for muting sampler channels and solo mode of the same, two new
+      LSCP commands ("SET CHANNEL MUTE" and "SET CHANNEL SOLO") and two new
+      fields ("MUTE" and "SOLO") for command "GET CHANNEL INFO" were
+      introduced for this, the behavior is the same like on a mixer console
+      (patch by Grigor Iliev, a bit adjusted). Also added configure option
+      --enable-process-muted-channels which can be used to enable the
+      processing of muted channels.
+    - support for sostenuto pedal
+    - support for monitoring the total number of active voices
+      (new LSCP commands: GET TOTAL_VOICE_COUNT, GET TOTAL_VOICE_COUNT_MAX,
+      SUBSCRIBE TOTAL_VOICE_COUNT, UNSUBSCRIBE TOTAL_VOICE_COUNT)
+    - fixed some memory management errors
+    - fixed some concurrency problems that could lead to crashes when
+      LSCP commands were executed
+    - fixed crash when instrument loading failed previously on the same
+      sampler channel (fixes bug #36)
+
+Version 0.3.3 (15 July 2005)
+
+  * packaging changes:
+    - fixed compilation with gcc 4.0
+
+  * Gigasampler format engine:
+    - LFO preprocessing was performed even though the respective LFO was
+      disabled by the instrument patch (minor efficiency fix)
+    - if period time of chosen audio device is too small (< MIN_RELEASE_TIME)
+      for volume ramp downs in the same fragment (needed for current voice
+      stealing implementation) then simply inform the user with a warning
+      about possible click sounds and reduce the volume ramp down
+      appropriately instead of cancelling the audio device connection
+
+Version 0.3.2 (24 June 2005)
+
+  * packaging changes:
+    - updated autotools build files to compile on OS X
+      (conditional compilation of CoreMIDI and MidiShare drivers)
+    - hand-crafted assembly optimization code can be disabled with
+      './configure --disable-asm' (definitely not recommended)
+    - fixed 'make dist' rule to include all necessary files
+    - require automake (>= 1.5) for 'make -f Makefile.cvs'
+      (due to 'dist-bzip2' automake option)
+
+  * Gigasampler format engine:
+    - support for the gig parameters for "release velocity response" curves
+    - fine tuning of the EGADSR envelope
+    - volume of release triggered samples now depends on note-on velocity,
+      note length and gig parameter "release trigger decay" instead of
+      note-off velocity.
+    - revised voice stealing
+      (fixes crash and endless loop caused by voice stealing)
+    - don't reset scale tuning on instrument or audio output device change
+    - handle key group conflicts right at the beginning of each fragment
+      instead of when the respective voice is actually launched
+      (fixes undefined behavior if stolen voices belonged to a key group -
+      this case was followed by a "killed voice survived" error message)
+    - fixed minor issue with null/silence samples
+      (those stole voices even though they don't need a voice at all which
+      resulted in "voice stealing didn't work out" messages)
+    - don't reset volume, pan, pitch and MIDI controller values on
+      instrument or audio output device change
+
+  * LSCP server:
+    - fixed some crashes (patch by Grigor Iliev, fixes #19)
+    - fixed LSCP event "CHANNEL_INFO" notification
+      (e.g. did not notify on volume changes or MIDI program change events)
+
+  * linuxsampler application:
+    - added command line parameters --lscp-addr and --lscp-port to override
+      default IP address and port of LSCP server
+
+Version 0.3.1 (24 May 2005)
+
+  * initial release

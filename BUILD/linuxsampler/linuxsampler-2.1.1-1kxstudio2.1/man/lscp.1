@@ -1,0 +1,53 @@
+.TH "lscp" "1" "09 Mar 2014" "linuxsampler 2.1.1" "User Manuals"
+.SH NAME
+lscp \- the LinuxSampler Control Protocol (LSCP) shell
+.SH SYNOPSIS
+.B lscp
+[OPTIONS]
+.SH DESCRIPTION
+The LSCP shell allows to control a running instance of
+.BR linuxsampler (1)
+from the command line. By default, the LSCP shell will assume LinuxSampler to
+run on the local machine and accordingly will try to connect to LinuxSampler on
+the local machine. You can however also connect to LinuxSampler instances
+running on any another machine available on the network. Since LSCP is
+essentially just a human readable text protocol, you can also control the
+sampler simply by using
+.BR telnet (1)
+or
+.BR netcat (1),
+however since the LSCP shell is aware about the details of the LSCP protocol,
+it has various advantages, i.e. it provides colored highlighting of correct,
+incorrect and complete commands while typing them on the terminal, automatic
+correction of obvious and trivial syntax errors, visual suggestion for
+completing the current command and also supports auto completion by tab key.
+
+You can find examples and detailed informations
+about LinuxSampler's network protocol (LSCP) on
+http://linuxsampler.org/documentation.html#lscp_spec
+
+The LSCP shell is designed as thin client, that is it forwards the individual
+key strokes to the sampler's LSCP server, which will actually perform all the
+LSCP knowledge based operations like syntactical error checks and suggestions
+for auto completions. The shell application then receives the generated
+informations and handles only output formatting on the command line terminal.
+This solution has one major advantage: one and the same LSCP shell can work
+with multiple different LinuxSampler versions and accordingly will still handle
+different LSCP versions correctly.
+.SH OPTIONS
+.IP "-h HOSTNAME or --host HOSTNAME"
+Host name of LSCP server (default "localhost").
+.IP "-p PORTNR or --port PORTNR"
+TCP port number of LSCP server (default 8888).
+.IP "--no-auto-correct"
+Don't perform auto correction of obvious syntax errors.
+.IP "--no-doc"
+Don't show LSCP reference documentation on screen.
+.SH ENVIRONMENT VARIABLES
+None (yet).
+.SH "SEE ALSO"
+.BR linuxsampler (1)
+.SH "BUGS"
+Report bugs to http://bugs.linuxsampler.org
+.SH "Author"
+Written by Christian Schoenebeck <cuse@users.sf.net>

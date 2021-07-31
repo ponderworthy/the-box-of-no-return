@@ -1,0 +1,14 @@
+{ The exit function can be used to stop current execution of the current event
+  handler. It does not stop overall execution of scripts. }
+
+on init
+  declare $foo := 1
+
+  message("if this is the last message you see, then exit works")
+
+  if ($foo)
+    exit()
+  end if
+
+  message("exit does not work!")
+end on 

@@ -238,7 +238,7 @@ print('-----------------------------------------------------------------')
 print('Start Zita IP bridge processes...')
 print('-----------------------------------------------------------------')
 
-print('\nThree receivers on the hard server...\n')
+print('\nFour receivers on the hard server...\n')
 
 if not jpctrl.spawn_and_settle('zita-n2j --filt 32 --buff 14 --jname zita-n2j-4soft1 127.0.0.1 55551'):
     jpctrl.exit_with_beep()
